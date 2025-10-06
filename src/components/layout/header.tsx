@@ -20,7 +20,7 @@ export function Header() {
   const isLightHeader = pathname === '/about';
 
   const textColor = isLightHeader ? 'text-primary-foreground' : 'text-primary';
-  const hoverTextColor = isLightHeader ? 'text-primary-foreground/80' : 'text-primary/80';
+  const hoverTextColor = isLightHeader ? 'hover:text-primary-foreground/80' : 'hover:text-primary/80';
 
   return (
     <header className="absolute top-0 z-50 w-full">
