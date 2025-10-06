@@ -4,35 +4,34 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export function Hero() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
 
   return (
-    <section className="relative h-[calc(100vh-4rem)] min-h-[500px] flex items-center justify-center text-center">
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
-      <div className="absolute inset-0 bg-primary/70" />
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 text-white">
-        <h1 className="font-headline text-5xl font-bold leading-tight text-white md:text-7xl">
-          Uphold Truth For Justice With Northman Law Firm
-        </h1>
-        <p className="mt-6 max-w-3xl mx-auto text-lg text-white/90 md:text-xl">
-          Northman Law is a premier law firm dedicated to providing exceptional legal services and achieving outstanding results for our clients.
-        </p>
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="#contact">Request a Free Consultation</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-            <Link href="#services">Explore Our Services</Link>
-          </Button>
+    <section className="bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[calc(100vh-4rem)] py-12 md:py-0">
+          <div className="text-center md:text-left">
+            <h1 className="font-headline text-5xl font-bold leading-tight text-primary md:text-7xl">
+              Uphold Truth For Justice With <span className="text-accent">Northman</span> Law Firm
+            </h1>
+            <div className="mt-10">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Link href="#contact">Get started</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="relative h-96 md:h-[600px]">
+            {heroImage && (
+              <Image
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                fill
+                className="object-contain"
+                priority
+                data-ai-hint={heroImage.imageHint}
+              />
+            )}
+          </div>
         </div>
       </div>
     </section>
