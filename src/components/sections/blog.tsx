@@ -41,7 +41,7 @@ export function Blog() {
             <h2 className="font-headline text-5xl font-bold leading-tight text-primary">
               The Latest News
               <br />
-              And Blog From Northman
+              And Blog From Lexocrates
             </h2>
           </div>
           <Button variant="link" asChild className="text-foreground/80 hover:text-accent">
@@ -58,8 +58,9 @@ export function Blog() {
                     <Image
                       src={post.image.imageUrl}
                       alt={post.image.description}
-                      fill
-                      className="object-cover"
+                      width={post.image.width}
+                      height={post.image.height}
+                      className="object-cover w-full h-full"
                       data-ai-hint={post.image.imageHint}
                     />
                 </div>

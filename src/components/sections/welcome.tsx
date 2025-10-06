@@ -13,8 +13,9 @@ export function Welcome() {
                 <Image
                     src={welcomeImage.imageUrl}
                     alt={welcomeImage.description}
-                    fill
-                    className="object-cover"
+                    width={welcomeImage.width}
+                    height={welcomeImage.height}
+                    className="object-cover w-full h-full"
                     data-ai-hint={welcomeImage.imageHint}
                 />
             )}
@@ -24,7 +25,7 @@ export function Welcome() {
             <h2 className="font-headline text-5xl font-bold text-primary leading-tight">
               Hello People,
               <br />
-              Welcome To Northman
+              Welcome To Lexocrates
             </h2>
             <div className="mt-6 space-y-4 text-foreground/80">
                 <p>

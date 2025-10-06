@@ -38,8 +38,8 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-accent mt-1" />
                   <div>
                     <h3 className="font-bold text-lg text-primary">Email</h3>
-                    <p>contact@northmanlaw.com</p>
-                    <p>support@northmanlaw.com</p>
+                    <p>contact@lexocrates.com</p>
+                    <p>support@lexocrates.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

@@ -12,7 +12,7 @@ export function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-screen pt-24 md:pt-0">
           <div className="text-center md:text-left">
             <h1 className="font-headline text-5xl font-bold leading-tight text-primary md:text-7xl">
-              Uphold Truth For Justice With <span className="text-accent">Northman</span> Law Firm
+              Uphold Truth For Justice With <span className="text-accent">Lexocrates</span> Law Firm
             </h1>
             <div className="mt-10">
               <Button asChild size="lg">
@@ -25,8 +25,9 @@ export function Hero() {
               <Image
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
-                fill
-                className="object-cover"
+                width={heroImage.width}
+                height={heroImage.height}
+                className="object-cover w-full h-full"
                 priority
                 data-ai-hint={heroImage.imageHint}
               />

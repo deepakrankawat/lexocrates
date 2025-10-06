@@ -15,7 +15,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <Scale className="h-8 w-8 text-accent" />
-              <span className="font-headline text-2xl font-bold">Northman Law</span>
+              <span className="font-headline text-2xl font-bold">Lexocrates</span>
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/80">
               Your trusted partner in navigating the complexities of the legal world.
@@ -45,14 +45,14 @@ export function Footer() {
               <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
                 <li>123 Law Street, Justice City, 10101</li>
                 <li>(555) 123-4567</li>
-                <li>contact@northmanlaw.com</li>
+                <li>contact@lexocrates.com</li>
                 <li>Mon-Fri: 9am - 5pm</li>
               </ul>
             </div>
           </div>
         </div>
         <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Northman Law. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Lexocrates. All rights reserved.</p>
         </div>
       </div>
     </footer>

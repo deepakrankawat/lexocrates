@@ -13,7 +13,7 @@ export function Award() {
             <h2 className="font-headline text-5xl font-bold leading-tight">
                 The Best Award Has Been Given To
                 <br />
-                Northman Legal Lawyer International
+                Lexocrates Legal Lawyer International
             </h2>
         </div>
 
@@ -23,8 +23,9 @@ export function Award() {
                     <Image
                         src={awardImage.imageUrl}
                         alt={awardImage.description}
-                        fill
-                        className="object-cover"
+                        width={awardImage.width}
+                        height={awardImage.height}
+                        className="object-cover w-full h-full"
                         data-ai-hint={awardImage.imageHint}
                     />
                 )}
@@ -39,8 +40,9 @@ export function Award() {
                             <Image
                                 src={lawyerImage.imageUrl}
                                 alt={lawyerImage.description}
-                                fill
-                                className="object-cover"
+                                width={lawyerImage.width}
+                                height={lawyerImage.height}
+                                className="object-cover w-full h-full"
                                 data-ai-hint={lawyerImage.imageHint}
                             />
                         )}
