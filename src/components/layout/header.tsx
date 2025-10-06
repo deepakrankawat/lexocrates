@@ -18,8 +18,7 @@ const navLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-  const isLightHeader = pathname === '/about' || pathname === '/free-consultation' || pathname === '/lawyer';
+  const isLightHeader = true;
 
   const textColor = isLightHeader ? 'text-primary-foreground' : 'text-primary';
   const hoverTextColor = isLightHeader ? 'hover:text-primary-foreground/80' : 'hover:text-primary/80';
