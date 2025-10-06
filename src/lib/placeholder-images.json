@@ -58,27 +58,51 @@
     },
     {
       "id": "lawyer-1",
-      "description": "Professional portrait of Jeniffer Smith",
-      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTk3MTgwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "woman portrait",
+      "description": "Professional portrait of a female lawyer",
+      "imageUrl": "https://images.unsplash.com/photo-1614283995738-9543831be9e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmZW1hbGUlMjBsYXd5ZXJ8ZW58MHx8fHwxNzYwNDI0MTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "female lawyer",
       "width": 1080,
-      "height": 720
+      "height": 1350
     },
     {
       "id": "lawyer-2",
-      "description": "Professional portrait of Nada Geomorgant",
-      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTk2NzcyNjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "man portrait",
+      "description": "Professional portrait of a female judge",
+      "imageUrl": "https://images.unsplash.com/photo-1605870445348-15b5e7ee4435?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBqdWRnZXxlbnwwfHx8fDE3NjA0MjQxMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "female judge",
       "width": 1080,
       "height": 1350
     },
     {
       "id": "lawyer-3",
-      "description": "Professional portrait of Desy Willy",
-      "imageUrl": "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NTk2NTIyNTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Professional portrait of a female lawyer in a suit",
+      "imageUrl": "https://images.unsplash.com/photo-1551821899-2364a487f547?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmZW1hbGUlMjBsYXd5ZXJ8ZW58MHx8fHwxNzYwNDI0MTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "female lawyer",
+      "width": 1080,
+      "height": 1620
+    },
+    {
+      "id": "lawyer-4",
+      "description": "Professional portrait of a male lawyer",
+      "imageUrl": "https://images.unsplash.com/photo-1589519157209-663a45c67b93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYWxlJTIwbGF3eWVyfGVufDB8fHx8MTc2MDQyNDE3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "male lawyer",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "id": "lawyer-5",
+      "description": "Portrait of a man in a suit",
+      "imageUrl": "https://images.unsplash.com/photo-1600175844297-a72a85368366?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBpbiUyMHN1aXR8ZW58MHx8fHwxNzYwNDI0MTkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man suit",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "id": "lawyer-6",
+      "description": "Portrait of a woman with glasses",
+      "imageUrl": "https://images.unsplash.com/photo-1574693635393-0de5594fd43d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MDQyNDIyNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional woman",
       "width": 1080,
-      "height": 720
+      "height": 1350
     },
     {
       "id": "client-avatar-1",

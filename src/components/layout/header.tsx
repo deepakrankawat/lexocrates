@@ -11,13 +11,14 @@ import { cn } from '@/lib/utils';
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
+  { href: '/lawyer', label: 'Lawyer' },
   { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isLightHeader = pathname === '/about' || pathname === '/free-consultation';
+  const isLightHeader = pathname === '/about' || pathname === '/free-consultation' || pathname === '/lawyer';
 
   const textColor = isLightHeader ? 'text-primary-foreground' : 'text-primary';
   const hoverTextColor = isLightHeader ? 'hover:text-primary-foreground/80' : 'hover:text-primary/80';
