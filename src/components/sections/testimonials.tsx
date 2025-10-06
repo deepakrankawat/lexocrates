@@ -17,7 +17,7 @@ const testimonials = [
 
 export function Testimonials() {
     const testimonial = testimonials[0];
-    const testimonialImage = PlaceHolderImages.find(img => img.id === 'blog-image-1');
+    const testimonialImage = PlaceHolderImages.find(img => img.id === 'gavel-book');
 
 
   return (

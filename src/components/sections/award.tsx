@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Award() {
-  const awardImage = PlaceHolderImages.find(img => img.id === 'blog-image-1'); // Placeholder, replace with gavel image
+  const awardImage = PlaceHolderImages.find(img => img.id === 'gavel-book');
   const lawyerImage = PlaceHolderImages.find(img => img.id === 'lawyer-3');
 
   return (
@@ -21,11 +21,11 @@ export function Award() {
             <div className="relative h-96">
                 {awardImage && (
                     <Image
-                        src="https://images.unsplash.com/photo-1590005354257-659c3969b743?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Gavel and law book"
+                        src={awardImage.imageUrl}
+                        alt={awardImage.description}
                         fill
                         className="object-cover"
-                        data-ai-hint="gavel law book"
+                        data-ai-hint={awardImage.imageHint}
                     />
                 )}
             </div>

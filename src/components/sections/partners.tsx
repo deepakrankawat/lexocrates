@@ -29,7 +29,7 @@ export function Partners() {
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
           {partners.map((partner) => (
             <div key={partner.name} className="flex flex-col items-center gap-4 text-center">
-              <div className="relative h-20 w-20">
+              <div className="relative h-10 w-32">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} logo`}
