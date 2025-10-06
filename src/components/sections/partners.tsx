@@ -8,7 +8,7 @@ export function Partners() {
     <section className="py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h3 className="text-center font-headline text-lg font-semibold text-primary/80">
-          Trusted by Industry Leaders
+          Our Partnership
         </h3>
         <div className="mt-8 flow-root">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-10 sm:gap-x-12 lg:gap-x-16">

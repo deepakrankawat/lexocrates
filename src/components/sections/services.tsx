@@ -34,7 +34,7 @@ export function Services() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
           <div className="flex flex-col justify-center">
             <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
-              Our Areas of Expertise
+              Professional Services Prepared To Be Your Lawyer Firm
             </h2>
             <p className="mt-4 text-lg text-foreground/80">
               We offer a wide range of legal services tailored to meet the unique needs of each client. Our commitment is to provide strategic advice and effective representation.

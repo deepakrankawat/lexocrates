@@ -38,7 +38,7 @@ export function Testimonials() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
-            What Our Clients Say
+            Our Happy Client Say About Us
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
             Our clients' success is our greatest achievement. Hear directly from those we've had the privilege to represent.

@@ -21,7 +21,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-primary/70" />
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 text-white">
         <h1 className="font-headline text-5xl font-bold leading-tight text-white md:text-7xl">
-          Excellence in Legal Representation
+          Uphold Truth For Justice With Northman Law Firm
         </h1>
         <p className="mt-6 max-w-3xl mx-auto text-lg text-white/90 md:text-xl">
           Northman Law is a premier law firm dedicated to providing exceptional legal services and achieving outstanding results for our clients.
