@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Twitter, Linkedin, Scale } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Scale, Mail, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
   const socialLinks = [
@@ -11,14 +11,14 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-5">
+          <div className="md:col-span-1 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
               <Scale className="h-8 w-8 text-accent" />
               <span className="font-headline text-2xl font-bold">Lexocrates</span>
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/80">
-              Your trusted partner in navigating the complexities of the legal world.
+              Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molesti.
             </p>
             <div className="mt-6 flex space-x-4">
               {socialLinks.map((social) => (
@@ -30,29 +30,47 @@ export function Footer() {
             </div>
           </div>
           
-          <div className="mt-8 grid grid-cols-2 gap-8 md:col-span-3 md:mt-0">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:col-span-3">
             <div>
-              <h3 className="font-headline font-semibold uppercase tracking-wider text-primary-foreground/90">Solutions</h3>
+              <h3 className="font-headline font-semibold uppercase tracking-wider text-primary-foreground/90">Services</h3>
               <ul className="mt-4 space-y-2">
-                <li><Link href="/services" className="text-sm text-primary-foreground/80 hover:text-accent">Corporate Law</Link></li>
-                <li><Link href="/services" className="text-sm text-primary-foreground/80 hover:text-accent">Family Law</Link></li>
-                <li><Link href="/services" className="text-sm text-primary-foreground/80 hover:text-accent">Real Estate</Link></li>
-                <li><Link href="/services" className="text-sm text-primary-foreground/80 hover:text-accent">Intellectual Property</Link></li>
+                <li><Link href="/services/detail" className="text-sm text-primary-foreground/80 hover:text-accent">Business Law</Link></li>
+                <li><Link href="/services/detail" className="text-sm text-primary-foreground/80 hover:text-accent">Education Law</Link></li>
+                <li><Link href="/services/detail" className="text-sm text-primary-foreground/80 hover:text-accent">Legal Consultan</Link></li>
+                <li><Link href="/services/detail" className="text-sm text-primary-foreground/80 hover:text-accent">General Lawyer</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-headline font-semibold uppercase tracking-wider text-primary-foreground/90">Page</h3>
+              <ul className="mt-4 space-y-2">
+                <li><Link href="#" className="text-sm text-primary-foreground/80 hover:text-accent">Lawyer</Link></li>
+                <li><Link href="#" className="text-sm text-primary-foreground/80 hover:text-accent">Appointment</Link></li>
+                <li><Link href="#" className="text-sm text-primary-foreground/80 hover:text-accent">Documentation</Link></li>
+                <li><Link href="#" className="text-sm text-primary-foreground/80 hover:text-accent">Cases</Link></li>
+                <li><Link href="#" className="text-sm text-primary-foreground/80 hover:text-accent">News</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="font-headline font-semibold uppercase tracking-wider text-primary-foreground/90">Contact Us</h3>
               <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
-                <li>123 Law Street, Justice City, 10101</li>
-                <li>(555) 123-4567</li>
-                <li>contact@lexocrates.com</li>
-                <li>Mon-Fri: 9am - 5pm</li>
+                <li className="flex items-start gap-2">
+                  <Phone className="h-4 w-4 mt-1 shrink-0" />
+                  <span>+22 7272 8282</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <MapPin className="h-4 w-4 mt-1 shrink-0" />
+                  <span>7889 Mechanic Rd. Miami, FL 33125</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Mail className="h-4 w-4 mt-1 shrink-0" />
+                  <span>contact@lexocrates.com</span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
         <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Lexocrates. All rights reserved.</p>
+          <p>Copyright &copy; {new Date().getFullYear()} Lexocrates. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
