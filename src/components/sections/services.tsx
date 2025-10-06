@@ -5,12 +5,12 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 
 const servicesList = [
-  { name: 'Education Lawyer & Consultation', slug: 'education-lawyer-consultation' },
-  { name: 'Business Law', slug: 'business-law' },
-  { name: 'Education Lawyer & Consultation', slug: 'education-lawyer-consultation' },
-  { name: 'Business Law', slug: 'business-law' },
-  { name: 'Education Lawyer & Consultation', slug: 'education-lawyer-consultation' },
-  { name: 'Business Law', slug: 'business-law' },
+  { name: 'Corporate Law', slug: 'corporate-law' },
+  { name: 'Family Law', slug: 'family-law' },
+  { name: 'Real Estate Law', slug: 'real-estate-law' },
+  { name: 'Intellectual Property', slug: 'intellectual-property' },
+  { name: 'Criminal Defense', slug: 'criminal-defense' },
+  { name: 'Immigration Law', slug: 'immigration-law' },
 ];
 
 export function Services() {
