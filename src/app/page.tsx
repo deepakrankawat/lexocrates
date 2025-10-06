@@ -13,11 +13,11 @@ export default function HomePage() {
     <main className="bg-background">
       <Hero />
       <About />
+      <Partners />
       <Services />
       <Experience />
       <Team />
       <Testimonials />
-      <Partners />
       <Blog />
       <Cta />
     </main>
