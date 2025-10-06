@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
@@ -17,20 +18,26 @@ const navLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const isLightHeader = true;
+  const pathname = usePathname();
+  const isHomepage = pathname === '/';
 
-  const textColor = isLightHeader ? 'text-primary-foreground' : 'text-primary';
-  const hoverTextColor = isLightHeader ? 'hover:text-primary-foreground/80' : 'hover:text-primary/80';
+  const headerClasses = cn(
+    'absolute top-0 z-50 w-full',
+    isHomepage ? 'text-primary' : 'text-primary-foreground'
+  );
+  
+  const hoverTextColor = isHomepage ? 'hover:text-primary/80' : 'hover:text-primary-foreground/80';
+
 
   return (
-    <header className="absolute top-0 z-50 w-full">
+    <header className={headerClasses}>
       <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className={cn("flex items-center gap-2", textColor)}>
+        <Link href="/" className="flex items-center gap-2">
           <Logo className="h-6 w-auto" />
         </Link>
         <nav className="hidden md:flex md:items-center md:gap-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={cn("text-sm font-medium transition-colors", textColor, hoverTextColor)}>
+            <Link key={link.href} href={link.href} className={cn("text-sm font-medium transition-colors", hoverTextColor)}>
               {link.label}
             </Link>
           ))}
@@ -38,7 +45,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn(textColor, 'hover:bg-transparent', hoverTextColor)}>
+              <Button variant="ghost" size="icon" className={cn('hover:bg-transparent', hoverTextColor)}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
