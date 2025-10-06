@@ -40,7 +40,7 @@ export function Team() {
           {teamMembers.map((member) => (
             <div key={member.name} className="text-center">
               {member.image && (
-                <div className="relative h-[400px] w-full mb-6">
+                <div className="relative h-[500px] w-full mb-6">
                   <Image
                     src={member.image.imageUrl}
                     alt={`Portrait of ${member.name}`}

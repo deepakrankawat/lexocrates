@@ -9,7 +9,7 @@ const testimonials = [
     quote: "Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida ultricies eleifend in pharetra faucibus orci sem. Proin ac a cursus praesent. Malesuada risus amet nunc posuere rhoncus accumsan congue id dolor. Convallis maecenas sed in pellentesque.",
     name: 'Johnatan G.',
     title: 'CEO, Innovate Corp',
-    avatar: PlaceHolderImages.find(img => img.id === 'lawyer-2'),
+    avatar: PlaceHolderImages.find(img => img.id === 'client-avatar-1'),
     rating: 4.8,
     reviews: 322,
   },

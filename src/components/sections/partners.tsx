@@ -1,21 +1,22 @@
 import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const partners = [
   {
     name: 'Daerazo',
-    logo: '/daerazo.svg',
+    logo: PlaceHolderImages.find(p => p.id === 'partner-logo-1')
   },
   {
     name: 'Miguxian',
-    logo: '/miguxian.svg',
+    logo: PlaceHolderImages.find(p => p.id === 'partner-logo-2')
   },
   {
     name: 'Jeninayln',
-    logo: '/jeninayln.svg',
+    logo: PlaceHolderImages.find(p => p.id === 'partner-logo-3')
   },
   {
     name: 'Superanzo',
-    logo: '/superanzo.svg',
+    logo: PlaceHolderImages.find(p => p.id === 'partner-logo-4')
   },
 ];
 
@@ -28,13 +29,15 @@ export function Partners() {
         </h3>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
           {partners.map((partner) => (
+            partner.logo &&
             <div key={partner.name} className="flex flex-col items-center gap-4 text-center">
               <div className="relative h-10 w-32">
                 <Image
-                  src={partner.logo}
+                  src={partner.logo.imageUrl}
                   alt={`${partner.name} logo`}
                   fill
-                  className="object-contain filter invert"
+                  className="object-contain"
+                  data-ai-hint={partner.logo.imageHint}
                 />
               </div>
               <span className="font-headline text-lg">{partner.name}</span>

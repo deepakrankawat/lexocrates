@@ -27,7 +27,7 @@ const blogPosts = [
     id: 4,
     title: 'Real Estate Law: Trends and Predictions',
     excerpt: 'Key insights into the future of the real estate market and legalities.',
-    image: PlaceHolderImages.find(img => img.id === 'about-us-lady-justice'),
+    image: PlaceHolderImages.find(img => img.id === 'blog-image-4'),
   },
 ];
 
