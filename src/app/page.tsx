@@ -9,7 +9,7 @@ import { Contact } from '@/components/sections/contact';
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="bg-background">
       <Hero />
       <About />
       <Partners />
