@@ -17,11 +17,11 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isAboutPage = pathname === '/about';
+  const isLightHeader = pathname === '/about' || pathname === '/';
 
-  const textColor = isAboutPage ? 'text-primary' : 'text-primary-foreground';
-  const hoverTextColor = isAboutPage ? 'text-primary/80' : 'text-primary-foreground/80';
-  const buttonHoverBg = isAboutPage ? 'hover:bg-accent hover:text-accent-foreground' : 'hover:bg-primary-foreground/10';
+  const textColor = isLightHeader ? 'text-primary' : 'text-primary-foreground';
+  const hoverTextColor = isLightHeader ? 'text-primary/80' : 'text-primary-foreground/80';
+  const buttonHoverBg = isLightHeader ? 'hover:bg-accent hover:text-accent-foreground' : 'hover:bg-primary-foreground/10';
 
   return (
     <header className="absolute top-0 z-50 w-full">
@@ -37,7 +37,7 @@ export function Header() {
             </Link>
           ))}
           <Button variant="outline" size="sm" className={cn("border-accent text-accent hover:bg-accent hover:text-accent-foreground", {
-            'border-primary text-primary hover:bg-primary hover:text-primary-foreground': isAboutPage
+            'border-primary text-primary hover:bg-primary hover:text-primary-foreground': isLightHeader
           })}>
             Free Consultation
           </Button>
