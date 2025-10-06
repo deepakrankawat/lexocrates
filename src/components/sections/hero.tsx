@@ -25,9 +25,8 @@ export function Hero() {
               <Image
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
-                width={heroImage.width}
-                height={heroImage.height}
-                className="object-cover w-full h-full"
+                fill
+                className="object-cover"
                 priority
                 data-ai-hint={heroImage.imageHint}
               />
