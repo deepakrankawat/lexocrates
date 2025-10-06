@@ -9,9 +9,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/co
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
-  { href: '#team', label: 'Our Team' },
-  { href: '#blog', label: 'Blog' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
