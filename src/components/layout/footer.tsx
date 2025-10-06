@@ -44,7 +44,6 @@ export function Footer() {
               <h3 className="font-headline font-semibold uppercase tracking-wider text-primary-foreground/90">Page</h3>
               <ul className="mt-4 space-y-2">
                 <li><Link href="/lawyer" className="text-sm text-primary-foreground/80 hover:text-accent">Lawyer</Link></li>
-                <li><Link href="/free-consultation" className="text-sm text-primary-foreground/80 hover:text-accent">Appointment</Link></li>
                 <li><Link href="#" className="text-sm text-primary-foreground/80 hover:text-accent">Documentation</Link></li>
                 <li><Link href="#" className="text-sm text-primary-foreground/80 hover:text-accent">Cases</Link></li>
                 <li><Link href="#" className="text-sm text-primary-foreground/80 hover:text-accent">News</Link></li>

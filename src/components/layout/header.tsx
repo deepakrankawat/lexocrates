@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
@@ -35,19 +34,6 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Button
-            variant="outline"
-            size="sm"
-            asChild
-            className={cn(
-              'transition-colors',
-              isLightHeader
-                ? 'border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary'
-                : 'border-accent text-accent hover:bg-accent hover:text-accent-foreground'
-            )}
-          >
-            <Link href="/free-consultation">Free Consultation</Link>
-          </Button>
         </nav>
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -73,13 +59,7 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
-                   <Link href="/free-consultation" onClick={() => setIsOpen(false)} className="text-base font-medium text-foreground hover:text-primary">
-                      Free Consultation
-                    </Link>
                 </nav>
-                <Button asChild variant="outline" size="sm" className="mt-6 border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-                  <Link href="/free-consultation">Free Consultation</Link>
-                </Button>
               </div>
             </SheetContent>
           </Sheet>
