@@ -27,7 +27,7 @@ export function Hero() {
                         </Button>
                     </div>
                 </div>
-                <div className="relative h-[500px] w-full">
+                <div className="relative w-full h-80 md:h-[500px]">
                     {heroImage && (
                         <Image
                             src={heroImage.imageUrl}
