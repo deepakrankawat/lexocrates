@@ -7,26 +7,26 @@ import Link from 'next/link';
 const blogPosts = [
   {
     id: 1,
-    title: '7 Cases Have Been Success',
-    excerpt: 'Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero',
+    title: 'The Evolving Landscape of Corporate Law',
+    excerpt: 'Explore how technology is reshaping corporate governance and mergers.',
     image: PlaceHolderImages.find(img => img.id === 'blog-image-1'),
   },
   {
     id: 2,
-    title: '7 Cases Have Been Success',
-    excerpt: 'Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero',
+    title: 'Navigating Complex Family Law Matters',
+    excerpt: 'A compassionate approach to handling sensitive family law cases.',
     image: PlaceHolderImages.find(img => img.id === 'blog-image-2'),
   },
   {
     id: 3,
-    title: '7 Cases Have Been Success',
-    excerpt: 'Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero',
+    title: 'Intellectual Property in the AI Era',
+    excerpt: 'Protecting your innovations in a rapidly changing technological landscape.',
     image: PlaceHolderImages.find(img => img.id === 'blog-image-3'),
   },
   {
     id: 4,
-    title: '7 Cases Have Been Success',
-    excerpt: 'Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero',
+    title: 'Real Estate Law: Trends and Predictions',
+    excerpt: 'Key insights into the future of the real estate market and legalities.',
     image: PlaceHolderImages.find(img => img.id === 'about-us-lady-justice'),
   },
 ];
