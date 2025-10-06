@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
+  { href: '/about', label: 'About' },
   { href: '#services', label: 'Services' },
   { href: '#team', label: 'Our Team' },
   { href: '#blog', label: 'Blog' },
@@ -43,7 +44,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[240px]">
               <SheetHeader>
-                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
               <div className="flex h-full flex-col">
                 <div className="mb-6 flex items-center justify-between">
