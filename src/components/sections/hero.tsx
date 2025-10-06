@@ -7,31 +7,48 @@ export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
 
   return (
-    <section className="bg-background pt-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[calc(100vh-6rem)]">
-          <div className="text-center md:text-left">
-            <h1 className="font-headline text-5xl font-bold leading-tight text-primary md:text-7xl">
-              Uphold Truth For Justice With <span className="text-accent">Lexocrates</span> Law Firm
+    <section className="relative min-h-screen bg-background text-foreground">
+      <div className="absolute inset-0 md:grid md:grid-cols-12">
+        <div className="col-span-4 bg-primary"></div>
+        <div className="hidden md:block col-span-8 relative">
+          {heroImage && (
+            <Image
+              src={heroImage.imageUrl}
+              alt={heroImage.description}
+              fill
+              className="object-cover"
+              priority
+              data-ai-hint={heroImage.imageHint}
+            />
+          )}
+        </div>
+      </div>
+      <div className="relative min-h-screen grid md:grid-cols-12 items-center">
+        <div className="col-span-12 md:col-span-4 p-8 md:p-12 text-primary-foreground">
+            <h1 className="font-headline text-5xl font-bold leading-tight md:text-6xl">
+              Uphold Truth For
+              <br/>
+              Justice With <span className="text-accent">Lexocrates</span>
+              <br/>
+              Law Firm
             </h1>
             <div className="mt-10">
-              <Button asChild size="lg">
+              <Button asChild size="lg" variant="secondary">
                 <Link href="#contact">Get started</Link>
               </Button>
             </div>
-          </div>
-          <div className="relative h-96 md:h-full w-full">
-            {heroImage && (
-              <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="object-cover"
-                priority
-                data-ai-hint={heroImage.imageHint}
-              />
-            )}
-          </div>
+        </div>
+        <div className="col-span-12 md:col-span-8 relative min-h-[50vh] md:min-h-0">
+          {heroImage && (
+            <Image
+              src={heroImage.imageUrl}
+              alt={heroImage.description}
+              fill
+              className="object-cover md:hidden"
+              priority
+              data-ai-hint={heroImage.imageHint}
+            />
+          )}
         </div>
       </div>
     </section>
