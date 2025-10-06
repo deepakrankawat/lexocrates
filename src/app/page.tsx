@@ -2,6 +2,7 @@ import { Hero } from '@/components/sections/hero';
 import { About } from '@/components/sections/about';
 import { Partners } from '@/components/sections/partners';
 import { Services } from '@/components/sections/services';
+import { Experience } from '@/components/sections/experience';
 import { Team } from '@/components/sections/team';
 import { Testimonials } from '@/components/sections/testimonials';
 import { Blog } from '@/components/sections/blog';
@@ -12,10 +13,11 @@ export default function HomePage() {
     <main className="bg-background">
       <Hero />
       <About />
-      <Partners />
       <Services />
+      <Experience />
       <Team />
       <Testimonials />
+      <Partners />
       <Blog />
       <Cta />
     </main>
