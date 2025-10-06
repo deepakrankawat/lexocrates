@@ -1,7 +1,7 @@
 "use client";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Gavel, Scale, Landmark, Shield, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 const services: { title: string; content: string; icon?: LucideIcon }[] = [
@@ -40,11 +40,13 @@ export function Services() {
             <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
               {services.map((service, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border-b-2 border-primary/10">
-                  <AccordionTrigger className="py-6 text-left font-headline text-lg hover:no-underline justify-between">
-                    <div className="flex items-center gap-4">
-                      {service.title}
+                  <AccordionTrigger className="group py-6 text-left font-headline text-lg hover:no-underline">
+                    <div className="flex w-full items-center justify-between">
+                      <span className="flex items-center gap-4">
+                        {service.title}
+                      </span>
+                      <ArrowRight className="h-5 w-5 text-primary transition-transform duration-200 group-data-[state=open]:rotate-90" />
                     </div>
-                     <ArrowRight className="h-5 w-5 text-primary" />
                   </AccordionTrigger>
                   <AccordionContent className="pb-6 text-base text-foreground/80">
                     {service.content}
