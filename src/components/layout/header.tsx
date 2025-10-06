@@ -41,7 +41,7 @@ export function Header() {
           ))}
           <Button variant="outline" size="sm" className={cn(buttonBorderColor, buttonTextColor, buttonHoverBg, {
             'hover:text-primary': !isLightHeader,
-            'hover:text-accent-foreground': isLightHeader
+            'hover:text-primary': isLightHeader
           })}>
             Free Consultation
           </Button>
