@@ -21,7 +21,7 @@ export function Header() {
 
   const textColor = isLightHeader ? 'text-primary-foreground' : 'text-primary';
   const hoverTextColor = isLightHeader ? 'text-primary-foreground/80' : 'text-primary/80';
-  const buttonHoverBg = isLightHeader ? 'hover:bg-primary-foreground/10' : 'hover:bg-accent hover:text-accent-foreground';
+  const buttonHoverBg = isLightHeader ? 'hover:bg-primary-foreground/10' : 'hover:bg-accent';
   const buttonBorderColor = isLightHeader ? 'border-primary-foreground' : 'border-accent';
   const buttonTextColor = isLightHeader ? 'text-primary-foreground' : 'text-accent';
 
@@ -49,7 +49,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn(textColor, 'hover:'+textColor)}>
+              <Button variant="ghost" size="icon" className={cn(textColor, 'hover:bg-transparent', hoverTextColor)}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
