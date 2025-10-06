@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 const servicesList = [
-  'Education Lawyer & Consultation',
-  'Business Law',
-  'Education Lawyer & Consultation',
-  'Business Law',
-  'Education Lawyer & Consultation',
-  'Business Law',
+  { name: 'Education Lawyer & Consultation', slug: 'education-lawyer-consultation' },
+  { name: 'Business Law', slug: 'business-law' },
+  { name: 'Education Lawyer & Consultation', slug: 'education-lawyer-consultation' },
+  { name: 'Business Law', slug: 'business-law' },
+  { name: 'Education Lawyer & Consultation', slug: 'education-lawyer-consultation' },
+  { name: 'Business Law', slug: 'business-law' },
 ];
 
 export function Services() {
@@ -37,10 +37,10 @@ export function Services() {
           {servicesList.map((service, index) => (
             <Link
               key={index}
-              href="/services"
+              href={`/services/${service.slug}`}
               className="flex items-center justify-between border-b border-border py-4 transition-colors hover:text-accent"
             >
-              <span className="font-headline text-xl text-primary">{service}</span>
+              <span className="font-headline text-xl text-primary">{service.name}</span>
               <ArrowRight className="h-5 w-5" />
             </Link>
           ))}

@@ -33,7 +33,7 @@
     {
       "id": "partner-logo-3",
       "description": "Logo for a fictional company called 'Apex Properties'",
-      "imageUrl": "https://images.unsplash.com/photo-1566559531953-d8789d8fbb05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc1OTczODIyNnww&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1566559531953-d8789d8fbb05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc1OTczODIyNnww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "corporate logo"
     },
     {
@@ -105,14 +105,26 @@
     {
       "id": "blog-image-2",
       "description": "Image for a blog post about digital assets",
-      "imageUrl": "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkaWdpdGFsJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzU5NzM1NjUzfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkaWdpdGFsJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzU5NzM1NjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "digital abstract"
     },
     {
       "id": "blog-image-3",
       "description": "Image for a blog post about AI and IP law",
-      "imageUrl": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1OTcyMjIzMXww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1OTcyMjIzMXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "artificial intelligence"
+    },
+    {
+      "id": "service-detail-1",
+      "description": "Close-up of Lady Justice statue",
+      "imageUrl": "https://images.unsplash.com/photo-1589829545856-d10d3298118f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsYWR5JTIwanVzdGljZXxlbnwwfHx8fDE3NTk3NDc3MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lady justice"
+    },
+    {
+      "id": "service-detail-2",
+      "description": "Small statue of Lady Justice on a desk",
+      "imageUrl": "https://images.unsplash.com/photo-1605496035985-07494a504020?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8bGF3JTIwc3RhdHVlfGVufDB8fHx8MTc1OTc4MTg4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "law statue"
     }
   ]
 }
