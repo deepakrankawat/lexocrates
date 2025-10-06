@@ -1,30 +1,45 @@
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-const partnerImages = PlaceHolderImages.filter(img => img.id.startsWith('partner-logo-'));
+const partners = [
+  {
+    name: 'Daerazo',
+    logo: '/daerazo.svg',
+  },
+  {
+    name: 'Miguxian',
+    logo: '/miguxian.svg',
+  },
+  {
+    name: 'Jeninayln',
+    logo: '/jeninayln.svg',
+  },
+  {
+    name: 'Superanzo',
+    logo: '/superanzo.svg',
+  },
+];
 
 export function Partners() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-primary text-primary-foreground/80 py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-center font-headline text-lg font-semibold text-primary/80">
+        <h3 className="text-center font-headline text-lg font-semibold text-primary-foreground/90">
           Our Partnership
         </h3>
-        <div className="mt-8 flow-root">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-10 sm:gap-x-12 lg:gap-x-16">
-            {partnerImages.map((logo) => (
-              <div key={logo.id} className="flex-shrink-0">
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+          {partners.map((partner) => (
+            <div key={partner.name} className="flex flex-col items-center gap-4 text-center">
+              <div className="relative h-20 w-20">
                 <Image
-                  className="h-10 w-auto object-contain transition-all duration-300 grayscale hover:grayscale-0"
-                  src={logo.imageUrl}
-                  alt={logo.description}
-                  width={158}
-                  height={48}
-                  data-ai-hint={logo.imageHint}
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  fill
+                  className="object-contain filter invert"
                 />
               </div>
-            ))}
-          </div>
+              <span className="font-headline text-lg">{partner.name}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
