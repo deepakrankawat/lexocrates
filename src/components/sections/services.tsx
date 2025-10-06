@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+
 
 const servicesList = [
   { name: 'Education Lawyer & Consultation', slug: 'education-lawyer-consultation' },
@@ -12,18 +14,21 @@ const servicesList = [
 ];
 
 export function Services() {
+  const serviceImage = PlaceHolderImages.find(img => img.id === 'gavel-book');
   return (
     <section id="services" className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-80">
+            {serviceImage && (
             <Image
-              src="https://images.unsplash.com/photo-1590005354257-659c3969b743?q=80&w=2070&auto=format&fit=crop"
-              alt="Gavel and law book"
+              src={serviceImage.imageUrl}
+              alt={serviceImage.description}
               fill
               className="object-cover"
-              data-ai-hint="gavel law book"
+              data-ai-hint={serviceImage.imageHint}
             />
+            )}
           </div>
           <h2 className="font-headline text-5xl font-bold leading-tight text-primary">
             Professional Services
@@ -37,7 +42,7 @@ export function Services() {
           {servicesList.map((service, index) => (
             <Link
               key={index}
-              href={`/services/${service.slug}`}
+              href={`/services/detail`}
               className="flex items-center justify-between border-b border-border py-4 transition-colors hover:text-accent"
             >
               <span className="font-headline text-xl text-primary">{service.name}</span>

@@ -19,6 +19,12 @@
       "imageHint": "lady justice"
     },
     {
+      "id": "gavel-book",
+      "description": "Gavel and law book",
+      "imageUrl": "https://images.unsplash.com/photo-1590005354257-659c3969b743?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "gavel law book"
+    },
+    {
       "id": "partner-logo-1",
       "description": "Logo for a fictional company called 'Innovate Corp'",
       "imageUrl": "https://images.unsplash.com/photo-1529612700005-e35377bf1415?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTk3MjQ2OTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -33,7 +39,7 @@
     {
       "id": "partner-logo-3",
       "description": "Logo for a fictional company called 'Apex Properties'",
-      "imageUrl": "https://images.unsplash.com/photo-1566559531953-d8789d8fbb05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc1OTczODIyNnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1566559531953-d8789d8fbb05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc1OTczODIyNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "corporate logo"
     },
     {
@@ -75,7 +81,7 @@
     {
       "id": "lawyer-4",
       "description": "Professional portrait of Julian Adler",
-      "imageUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBtYW58ZW58MHx8fHwxNzU5NzIyNTgwfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBtYW58ZW58MHx8fHwxNzU5NzIyNTgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional man"
     },
     {
@@ -93,13 +99,13 @@
     {
       "id": "client-logo-3",
       "description": "Logo for Apex Properties",
-      "imageUrl": "https://images.unsplash.com/photo-1554260570-9140fd3b7614?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc1OTczODIyNnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1554260570-9140fd3b7614?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc1OTczODIyNnww&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "corporate logo"
     },
     {
       "id": "blog-image-1",
       "description": "Image for a blog post about corporate mergers",
-      "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3Jwb3JhdGUlMjBtZWV0aW5nfGVufDB8fHx8MTc1OTY2NjQxNXww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3Jwb3JhdGUlMjBtZWV0aW5nfGVufDB8fHx8MTc1OTY2NjQxNXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "corporate meeting"
     },
     {
