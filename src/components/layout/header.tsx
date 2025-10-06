@@ -17,7 +17,7 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isLightHeader = pathname === '/about';
+  const isLightHeader = pathname === '/about' || pathname === '/free-consultation';
 
   const textColor = isLightHeader ? 'text-primary-foreground' : 'text-primary';
   const hoverTextColor = isLightHeader ? 'hover:text-primary-foreground/80' : 'hover:text-primary/80';
@@ -38,6 +38,7 @@ export function Header() {
           <Button
             variant="outline"
             size="sm"
+            asChild
             className={cn(
               'transition-colors',
               isLightHeader
@@ -45,7 +46,7 @@ export function Header() {
                 : 'border-accent text-accent hover:bg-accent hover:text-accent-foreground'
             )}
           >
-            Free Consultation
+            <Link href="/free-consultation">Free Consultation</Link>
           </Button>
         </nav>
         <div className="md:hidden">
@@ -73,9 +74,12 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
+                   <Link href="/free-consultation" onClick={() => setIsOpen(false)} className="text-base font-medium text-foreground hover:text-primary">
+                      Free Consultation
+                    </Link>
                 </nav>
-                <Button variant="outline" size="sm" className="mt-6 border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-                  Free Consultation
+                <Button asChild variant="outline" size="sm" className="mt-6 border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+                  <Link href="/free-consultation">Free Consultation</Link>
                 </Button>
               </div>
             </SheetContent>
