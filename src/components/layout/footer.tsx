@@ -34,10 +34,10 @@ export function Footer() {
             <div>
               <h3 className="font-headline font-semibold uppercase tracking-wider text-primary-foreground/90">Solutions</h3>
               <ul className="mt-4 space-y-2">
-                <li><Link href="#services" className="text-sm text-primary-foreground/80 hover:text-accent">Corporate Law</Link></li>
-                <li><Link href="#services" className="text-sm text-primary-foreground/80 hover:text-accent">Family Law</Link></li>
-                <li><Link href="#services" className="text-sm text-primary-foreground/80 hover:text-accent">Real Estate</Link></li>
-                <li><Link href="#services" className="text-sm text-primary-foreground/80 hover:text-accent">Intellectual Property</Link></li>
+                <li><Link href="/services" className="text-sm text-primary-foreground/80 hover:text-accent">Corporate Law</Link></li>
+                <li><Link href="/services" className="text-sm text-primary-foreground/80 hover:text-accent">Family Law</Link></li>
+                <li><Link href="/services" className="text-sm text-primary-foreground/80 hover:text-accent">Real Estate</Link></li>
+                <li><Link href="/services" className="text-sm text-primary-foreground/80 hover:text-accent">Intellectual Property</Link></li>
               </ul>
             </div>
             <div>
