@@ -41,7 +41,7 @@ export function Header() {
             className={cn(
               'transition-colors',
               isLightHeader
-                ? 'border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground'
+                ? 'border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary'
                 : 'border-accent text-accent hover:bg-accent hover:text-accent-foreground'
             )}
           >
