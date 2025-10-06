@@ -8,32 +8,27 @@ export function Welcome() {
     <section className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-80 w-80 justify-self-center">
+          <div className="relative h-96 w-96 justify-self-center rounded-full overflow-hidden">
             {welcomeImage && (
                 <Image
                     src={welcomeImage.imageUrl}
                     alt={welcomeImage.description}
-                    width={welcomeImage.width}
-                    height={welcomeImage.height}
-                    className="object-cover w-full h-full"
+                    fill
+                    className="object-cover"
                     data-ai-hint={welcomeImage.imageHint}
                 />
             )}
           </div>
           <div>
-            <h3 className="text-accent font-medium mb-2">Welcome Message</h3>
-            <h2 className="font-headline text-5xl font-bold text-primary leading-tight">
-              Hello People,
-              <br />
-              Welcome To Lexocrates
+            <p className="font-body font-bold text-accent uppercase tracking-wider">Welcome Message from the Founder</p>
+            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
+              A Commitment to Justice and Our Clients
             </h2>
             <div className="mt-6 space-y-4 text-foreground/80">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida ultricies eleifend in pharetra faucibus orci sem. Proin ac a cursus praesent.
+                <p className="italic text-lg">
+                    “Welcome to Northman Law. We founded this firm on the belief that everyone deserves exceptional legal representation. Our team is dedicated to you, your case, and your success. We are honored to be your trusted advisors.”
                 </p>
-                <p>
-                    Cum mattis mollis odio gravida adipiscing. Facilisis scelerisque non lacinia tincidunt faucibus tortor vel. Erat risus etiam quam pretium ornare.
-                </p>
+                <p className="font-bold text-primary">- Smilly Ilani, Founder</p>
             </div>
           </div>
         </div>

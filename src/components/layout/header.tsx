@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -18,26 +18,35 @@ const navLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const isHomepage = pathname === '/';
 
-  const headerClasses = cn(
-    'absolute top-0 z-50 w-full',
-    isHomepage ? 'text-primary' : 'text-primary-foreground'
-  );
-  
-  const hoverTextColor = isHomepage ? 'hover:text-primary/80' : 'hover:text-primary-foreground/80';
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
+  const headerClasses = cn(
+    'fixed top-0 z-50 w-full transition-all duration-300',
+    isScrolled || !isHomepage ? 'bg-background shadow-md' : 'bg-transparent',
+    isHomepage && !isScrolled ? 'text-primary' : 'text-primary'
+  );
+
+  const linkColor = isHomepage && !isScrolled ? 'text-primary hover:text-primary/80' : 'text-primary hover:text-primary/80';
 
   return (
     <header className={headerClasses}>
       <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Logo className="h-6 w-auto" />
+          <Logo className={cn("h-7 w-auto", isHomepage && !isScrolled ? 'text-primary' : 'text-primary')} />
         </Link>
-        <nav className="hidden md:flex md:items-center md:gap-6">
+        <nav className="hidden md:flex md:items-center md:gap-8">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={cn("text-sm font-medium transition-colors", hoverTextColor)}>
+            <Link key={link.href} href={link.href} className={cn("text-sm font-bold transition-colors", linkColor)}>
               {link.label}
             </Link>
           ))}
@@ -45,24 +54,24 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn('hover:bg-transparent', hoverTextColor)}>
+              <Button variant="ghost" size="icon" className={cn('hover:bg-transparent', linkColor)}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[240px]">
-              <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
-              </SheetHeader>
-              <div className="flex h-full flex-col">
-                <div className="mb-6 flex items-center justify-between">
-                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                    <Logo className="h-6 w-auto text-primary" />
+            <SheetContent side="right" className="w-full bg-background">
+              <SheetHeader className="flex flex-row items-center justify-between">
+                 <Link href="/" onClick={() => setIsOpen(false)}>
+                    <Logo className="h-7 w-auto text-primary" />
                   </Link>
-                </div>
-                <nav className="flex flex-col gap-4">
+                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+                  <X className="h-6 w-6" />
+                </Button>
+              </SheetHeader>
+              <div className="mt-8 flex h-full flex-col">
+                <nav className="flex flex-col gap-6">
                   {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-base font-medium text-foreground hover:text-primary">
+                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary hover:text-accent">
                       {link.label}
                     </Link>
                   ))}

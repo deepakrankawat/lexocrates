@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from "@/components/ui/button";
@@ -21,92 +20,92 @@ export default function ContactPage() {
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
                 fill
-                className="object-cover opacity-20"
+                className="object-cover opacity-10"
                 priority
                 data-ai-hint={heroImage.imageHint}
             />
         )}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-              <h1 className="font-headline text-6xl md:text-7xl font-bold">Contact us</h1>
-              <div className="flex items-center gap-8">
-                  <div className="w-px h-24 bg-primary-foreground/50 hidden md:block"></div>
-                  <p className="max-w-2xl text-lg text-primary-foreground/80">
-                      Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida
-                  </p>
-              </div>
-          </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+            <h1 className="font-headline text-5xl md:text-6xl font-bold">Contact Us</h1>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
+                We're here to help. Reach out to us for any legal inquiries or to schedule a consultation with our expert team.
+            </p>
         </div>
       </section>
 
-      <section id="contact-form" className="py-20 sm:py-28 bg-secondary">
+      <section id="contact-form" className="py-20 sm:py-28 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-headline text-5xl font-bold text-primary mb-12">Get In Touch</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <form className="space-y-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <Label htmlFor="first-name">First Name*</Label>
-                  <Input id="first-name" placeholder="Enter first name" />
+          <div className="text-center mb-16">
+            <p className="font-body font-bold text-accent uppercase tracking-wider">Get In Touch</p>
+            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">Send Us a Message</h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-secondary p-8 rounded-lg">
+                <form className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                    <Label htmlFor="first-name">First Name*</Label>
+                    <Input id="first-name" placeholder="John" />
+                    </div>
+                    <div className="space-y-2">
+                    <Label htmlFor="last-name">Last Name*</Label>
+                    <Input id="last-name" placeholder="Doe" />
+                    </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="last-name">Last Name*</Label>
-                  <Input id="last-name" placeholder="Enter last name" />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Your Phone*</Label>
-                  <Input id="phone" type="tel" placeholder="Enter your phone" />
+                    <Label htmlFor="email">Your Email*</Label>
+                    <Input id="email" type="email" placeholder="john.doe@example.com" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Your Email*</Label>
-                  <Input id="email" type="email" placeholder="Enter your email" />
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea id="message" placeholder="How can we help you?" rows={5} />
                 </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="message">Message <span className="text-muted-foreground">(optional)</span></Label>
-                <Textarea id="message" placeholder="Enter message" rows={6} />
-              </div>
-              <Button type="submit" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Send Message
-              </Button>
-            </form>
-            <div className="relative h-full min-h-[400px]">
-              {mapImage && (
-                <Image
-                  src={mapImage.imageUrl}
-                  alt={mapImage.description}
-                  fill
-                  className="object-cover"
-                  data-ai-hint={mapImage.imageHint}
-                />
-              )}
+                <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                    Send Message
+                </Button>
+                </form>
+            </div>
+            <div className="space-y-8">
+                <div className="flex items-start gap-4">
+                    <div className="bg-accent/10 p-3 rounded-full">
+                        <MapPin className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-bold text-primary">Our Office</h3>
+                        <p className="text-foreground/80">7889 Mechanic Rd. Miami, FL 33125</p>
+                    </div>
+                </div>
+                 <div className="flex items-start gap-4">
+                    <div className="bg-accent/10 p-3 rounded-full">
+                        <Phone className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-bold text-primary">Phone</h3>
+                        <p className="text-foreground/80">+22 7272 8282</p>
+                    </div>
+                </div>
+                 <div className="flex items-start gap-4">
+                    <div className="bg-accent/10 p-3 rounded-full">
+                        <Mail className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-bold text-primary">Email</h3>
+                        <p className="text-foreground/80">contact@northmanlaw.com</p>
+                    </div>
+                </div>
+                <div className="relative h-80 w-full rounded-lg overflow-hidden mt-8">
+                {mapImage && (
+                    <Image
+                    src={mapImage.imageUrl}
+                    alt={mapImage.description}
+                    fill
+                    className="object-cover"
+                    data-ai-hint={mapImage.imageHint}
+                    />
+                )}
+                </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-secondary text-foreground py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div className="flex items-center justify-center gap-3">
-                    <Phone className="h-6 w-6 text-primary" />
-                    <p>+22 7272 8282</p>
-                </div>
-                <div className="flex items-center justify-center gap-3">
-                    <MapPin className="h-6 w-6 text-primary" />
-                    <p>7889 Mechanic Rd. Miami, FL 33125</p>
-                </div>
-                <div className="flex items-center justify-center gap-3">
-                    <Mail className="h-6 w-6 text-primary" />
-                    <p>contact@lexocrates.com</p>
-                </div>
-                <div className="flex items-center justify-center gap-3">
-                    <Clock className="h-6 w-6 text-primary" />
-                    <p>07.00 am - 09.00 pm</p>
-                </div>
-            </div>
         </div>
       </section>
     </main>

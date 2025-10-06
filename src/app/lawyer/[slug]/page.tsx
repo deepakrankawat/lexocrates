@@ -1,4 +1,3 @@
-
 import { Team } from '@/components/sections/team';
 import { Cta } from '@/components/sections/cta';
 import { Testimonials } from '@/components/sections/testimonials';
@@ -60,14 +59,14 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
                   src={lawyer.image.imageUrl}
                   alt={lawyer.image.description}
                   fill
-                  className="object-cover opacity-20"
+                  className="object-cover opacity-10"
                   priority
                   data-ai-hint={lawyer.image.imageHint}
               />
           )}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
-              <h1 className="font-headline text-6xl md:text-7xl font-bold">{lawyer.name}</h1>
+              <h1 className="font-headline text-5xl md:text-6xl font-bold">{lawyer.name}</h1>
               <p className="mt-4 text-lg text-primary-foreground/80">{lawyer.title}</p>
           </div>
         </div>
@@ -78,7 +77,7 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-1">
                     {lawyer.image && (
-                        <div className="relative h-[400px] w-full">
+                        <div className="relative h-[25rem] w-full rounded-lg overflow-hidden">
                         <Image
                             src={lawyer.image.imageUrl}
                             alt={`Portrait of ${lawyer.name}`}
@@ -91,8 +90,8 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
                 </div>
                 <div className="md:col-span-2 space-y-6 text-foreground/80">
                     <h2 className="font-headline text-4xl font-bold text-primary">About {lawyer.name}</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida ultricies eleifend in pharetra faucibus orci sem. Proin ac a cursus praesent. Malesuada risus amet nunc posuere rhoncus accumsan congue id dolor. Convallis maecenas sed in pellentesque.</p>
-                    <p>Cum mattis mollis odio gravida adipiscing. Facilisis scelerisque non lacinia tincidunt faucibus tortor vel. Erat risus etiam quam pretium ornare. Semper orci arcu pulvinar adipiscing pretium. Erat facilisis dis arcu senectus sit mi fermentum eu aliquam. Felis neque posuere pharetra porttitor lacinia proin pretium. Et et pharetra tincidunt vel egestas risus sed mollis adipiscing. Lobortis risus mauris vitae pellentesque.</p>
+                    <p>An accomplished legal professional, {lawyer.name} has been a cornerstone of Northman Law for over a decade. With a sharp legal mind and a passion for justice, {lawyer.name} specializes in {lawyer.title.replace('Senior ', '').replace('Lawyer', 'Law')}.</p>
+                    <p>Clients appreciate a no-nonsense approach, combined with a deep sense of empathy and a commitment to achieving the best possible outcomes. When not in the courtroom, {lawyer.name} is an avid reader and a community volunteer.</p>
                     <h3 className="font-headline text-3xl font-bold text-primary pt-8">Education</h3>
                     <ul className="list-disc list-inside space-y-2">
                         <li>Juris Doctor, University of Law, 2010</li>

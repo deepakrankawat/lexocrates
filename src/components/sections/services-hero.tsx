@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -12,15 +11,15 @@ export function ServicesHero() {
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
                 fill
-                className="object-cover opacity-20"
+                className="object-cover opacity-10"
                 priority
                 data-ai-hint={heroImage.imageHint}
             />
         )}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-        <h1 className="font-headline text-6xl md:text-7xl font-bold">Services</h1>
+        <h1 className="font-headline text-5xl md:text-6xl font-bold">Our Services</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
-          Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta.
+          Discover our comprehensive range of legal services designed to provide expert guidance and robust representation.
         </p>
       </div>
     </section>

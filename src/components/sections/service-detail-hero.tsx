@@ -11,21 +11,16 @@ export function ServiceDetailHero() {
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
                 fill
-                className="object-cover opacity-20"
+                className="object-cover opacity-10"
                 priority
                 data-ai-hint={heroImage.imageHint}
             />
         )}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            <h1 className="font-headline text-6xl md:text-7xl font-bold">Services Detail</h1>
-            <div className="flex items-center gap-8">
-                <div className="w-px h-24 bg-primary-foreground/50 hidden md:block"></div>
-                <p className="max-w-2xl text-lg text-primary-foreground/80">
-                    Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta.
-                </p>
-            </div>
-        </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+        <h1 className="font-headline text-5xl md:text-6xl font-bold">Service Details</h1>
+        <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
+            In-depth information about our specialized legal services, tailored to meet your unique needs.
+        </p>
       </div>
     </section>
   );

@@ -9,47 +9,44 @@ export function Award() {
     <section className="bg-primary text-primary-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-            <h3 className="text-accent font-medium mb-2">Recognition</h3>
-            <h2 className="font-headline text-5xl font-bold leading-tight">
-                The Best Award Has Been Given To
-                <br />
-                Lexocrates Legal Lawyer International
+            <p className="font-body font-bold text-accent uppercase tracking-wider">Recognition</p>
+            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight">
+                Award-Winning Legal Excellence
             </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96">
+            <div className="relative h-96 rounded-lg overflow-hidden">
                 {awardImage && (
                     <Image
                         src={awardImage.imageUrl}
                         alt={awardImage.description}
-                        width={awardImage.width}
-                        height={awardImage.height}
-                        className="object-cover w-full h-full"
+                        fill
+                        className="object-cover"
                         data-ai-hint={awardImage.imageHint}
                     />
                 )}
             </div>
             <div className="flex flex-col gap-6">
-                <p className="text-primary-foreground/80">
-                    Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida ultricies eleifend in pharetra faucibus orci sem. Proin ac a cursus praesent.
+                <p className="text-lg text-primary-foreground/80">
+                    Our firm and its attorneys are consistently recognized by prestigious legal organizations for our dedication to the profession and our outstanding results. These accolades reflect our commitment to providing top-tier legal representation.
                 </p>
-                <div className="flex gap-6 items-center">
-                    <div className="relative h-48 w-48 shrink-0">
+                <div className="flex gap-6 items-center mt-4">
+                    <div className="relative h-24 w-24 shrink-0 rounded-full overflow-hidden">
                         {lawyerImage && (
                             <Image
                                 src={lawyerImage.imageUrl}
                                 alt={lawyerImage.description}
-                                width={lawyerImage.width}
-                                height={lawyerImage.height}
-                                className="object-cover w-full h-full"
+                                fill
+                                className="object-cover"
                                 data-ai-hint={lawyerImage.imageHint}
                             />
                         )}
                     </div>
-                    <p className="text-primary-foreground/80">
-                        Cum mattis mollis odio gravida adipiscing. Facilisis scelerisque non lacinia tincidunt faucibus tortor vel. Erat risus etiam quam pretium ornare. Semper orci arcu pulvinar adipiscing pretium.
-                    </p>
+                    <div>
+                        <p className="font-bold text-lg">"The Best Legal Firm in the Nation"</p>
+                        <p className="text-sm text-primary-foreground/70">- National Law Review, 2023</p>
+                    </div>
                 </div>
             </div>
         </div>
