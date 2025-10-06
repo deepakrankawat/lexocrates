@@ -21,10 +21,6 @@ export function Header() {
 
   const textColor = isLightHeader ? 'text-primary-foreground' : 'text-primary';
   const hoverTextColor = isLightHeader ? 'text-primary-foreground/80' : 'text-primary/80';
-  const buttonHoverBg = isLightHeader ? 'hover:bg-primary-foreground/10' : 'hover:bg-accent';
-  const buttonBorderColor = isLightHeader ? 'border-primary-foreground' : 'border-accent';
-  const buttonTextColor = isLightHeader ? 'text-primary-foreground' : 'text-accent';
-
 
   return (
     <header className="absolute top-0 z-50 w-full">
@@ -39,10 +35,16 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Button variant="outline" size="sm" className={cn(buttonBorderColor, buttonTextColor, buttonHoverBg, {
-            'hover:text-primary': !isLightHeader,
-            'hover:text-primary': isLightHeader
-          })}>
+          <Button
+            variant="outline"
+            size="sm"
+            className={cn(
+              'transition-colors',
+              isLightHeader
+                ? 'border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground'
+                : 'border-accent text-accent hover:bg-accent hover:text-accent-foreground'
+            )}
+          >
             Free Consultation
           </Button>
         </nav>
