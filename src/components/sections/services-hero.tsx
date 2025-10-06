@@ -6,7 +6,7 @@ export function ServicesHero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
 
   return (
-    <section className="relative bg-primary text-primary-foreground py-20 sm:py-32">
+    <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32">
         {heroImage && (
             <Image
                 src={heroImage.imageUrl}

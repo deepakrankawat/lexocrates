@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section className="bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[calc(100vh-4rem)] py-12 md:py-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-screen pt-24 md:pt-0">
           <div className="text-center md:text-left">
             <h1 className="font-headline text-5xl font-bold leading-tight text-primary md:text-7xl">
               Uphold Truth For Justice With <span className="text-accent">Northman</span> Law Firm

@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export default function ContactPage() {
   return (
     <main className="bg-background">
-      <section className="relative bg-primary text-primary-foreground py-20 sm:py-32">
+      <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <h1 className="font-headline text-6xl md:text-7xl font-bold">Contact Us</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">

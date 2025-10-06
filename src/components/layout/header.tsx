@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Scale, Menu, X } from 'lucide-react';
+import { Scale, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
@@ -16,15 +16,15 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="absolute top-0 z-50 w-full">
+      <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Scale className="h-7 w-7 text-primary" />
-          <span className="font-headline text-xl font-bold text-primary">Northman Law</span>
+          <Scale className="h-7 w-7 text-primary-foreground" />
+          <span className="font-headline text-xl font-bold text-primary-foreground">Northman Law</span>
         </Link>
         <nav className="hidden md:flex md:items-center md:gap-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary">
+            <Link key={link.href} href={link.href} className="text-sm font-medium text-primary-foreground/80 transition-colors hover:text-primary-foreground">
               {link.label}
             </Link>
           ))}
@@ -35,7 +35,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
