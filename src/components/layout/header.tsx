@@ -17,11 +17,11 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isLightHeader = pathname === '/about' || pathname === '/';
+  const isLightHeader = pathname === '/about';
 
-  const textColor = isLightHeader ? 'text-primary' : 'text-primary-foreground';
-  const hoverTextColor = isLightHeader ? 'text-primary/80' : 'text-primary-foreground/80';
-  const buttonHoverBg = isLightHeader ? 'hover:bg-accent hover:text-accent-foreground' : 'hover:bg-primary-foreground/10';
+  const textColor = isLightHeader ? 'text-primary-foreground' : 'text-primary';
+  const hoverTextColor = isLightHeader ? 'text-primary-foreground/80' : 'text-primary/80';
+  const buttonHoverBg = isLightHeader ? 'hover:bg-primary-foreground/10' : 'hover:bg-accent hover:text-accent-foreground';
 
   return (
     <header className="absolute top-0 z-50 w-full">
@@ -36,16 +36,16 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Button variant="outline" size="sm" className={cn("border-accent text-accent hover:bg-accent hover:text-accent-foreground", {
-            'border-primary text-primary hover:bg-primary hover:text-primary-foreground': isLightHeader
-          })}>
+          <Button variant="outline" size="sm" className={cn("border-accent text-accent", buttonHoverBg, {
+            'text-accent-foreground': !isLightHeader
+          }, isLightHeader ? 'hover:text-accent-foreground' : 'hover:text-primary')}>
             Free Consultation
           </Button>
         </nav>
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn(textColor, buttonHoverBg, 'hover:'+textColor)}>
+              <Button variant="ghost" size="icon" className={cn(textColor, 'hover:'+textColor)}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
