@@ -13,7 +13,7 @@ const servicesList = [
 
 export function Services() {
   return (
-    <section id="services" className="bg-primary text-primary-foreground py-20 sm:py-28">
+    <section id="services" className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-80">
@@ -25,7 +25,7 @@ export function Services() {
               data-ai-hint="gavel law book"
             />
           </div>
-          <h2 className="font-headline text-5xl font-bold leading-tight">
+          <h2 className="font-headline text-5xl font-bold leading-tight text-primary">
             Professional Services
             <br />
             Prepared To Be Your
@@ -38,9 +38,9 @@ export function Services() {
             <Link
               key={index}
               href="/services"
-              className="flex items-center justify-between border-b border-primary-foreground/20 py-4 transition-colors hover:text-accent"
+              className="flex items-center justify-between border-b border-border py-4 transition-colors hover:text-accent"
             >
-              <span className="font-headline text-xl">{service}</span>
+              <span className="font-headline text-xl text-primary">{service}</span>
               <ArrowRight className="h-5 w-5" />
             </Link>
           ))}
