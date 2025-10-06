@@ -15,7 +15,7 @@ export function Hero() {
               Uphold Truth For Justice With <span className="text-accent">Northman</span> Law Firm
             </h1>
             <div className="mt-10">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button asChild size="lg">
                 <Link href="#contact">Get started</Link>
               </Button>
             </div>
