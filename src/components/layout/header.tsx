@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Scale, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import { Logo } from '@/components/ui/logo';
 
 const navLinks = [
   { href: '/about', label: 'About' },
@@ -27,8 +28,7 @@ export function Header() {
     <header className="absolute top-0 z-50 w-full">
       <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className={cn("flex items-center gap-2", textColor)}>
-          <Scale className="h-7 w-7" />
-          <span className="font-headline text-xl font-bold">Lexocrates</span>
+          <Logo className="h-6 w-auto" />
         </Link>
         <nav className="hidden md:flex md:items-center md:gap-6">
           {navLinks.map((link) => (
@@ -65,8 +65,7 @@ export function Header() {
               <div className="flex h-full flex-col">
                 <div className="mb-6 flex items-center justify-between">
                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                    <Scale className="h-6 w-6 text-primary" />
-                    <span className="font-headline text-lg font-bold text-primary">Lexocrates</span>
+                    <Logo className="h-6 w-auto text-primary" />
                   </Link>
                 </div>
                 <nav className="flex flex-col gap-4">

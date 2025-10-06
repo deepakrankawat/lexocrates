@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Facebook, Twitter, Linkedin, Scale, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Logo } from '@/components/ui/logo';
 
 export function Footer() {
   const socialLinks = [
@@ -13,9 +14,8 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-5">
           <div className="md:col-span-1 lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2">
-              <Scale className="h-8 w-8 text-accent" />
-              <span className="font-headline text-2xl font-bold">Lexocrates</span>
+            <Link href="/" className="flex items-center gap-2 text-accent">
+              <Logo className="h-7 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/80">
               Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molesti.
