@@ -1,60 +1,49 @@
-"use client";
-
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 
-const services: { title: string; content: string; icon?: LucideIcon }[] = [
-  {
-    title: 'Education Lawyer & Consultation',
-    content: 'We provide comprehensive legal services for businesses, from formation and governance to mergers and acquisitions. Our team ensures your corporate structure is sound and your transactions are seamless.',
-  },
-  {
-    title: 'Business Law',
-    content: 'Navigating family legal matters requires sensitivity and expertise. We handle cases involving divorce, child custody, and adoption with the utmost care and professionalism to protect your family\'s interests.',
-  },
-    {
-    title: 'Education Lawyer & Consultation',
-    content: 'We provide comprehensive legal services for businesses, from formation and governance to mergers and acquisitions. Our team ensures your corporate structure is sound and your transactions are seamless.',
-  },
-  {
-    title: 'Business Law',
-    content: 'Navigating family legal matters requires sensitivity and expertise. We handle cases involving divorce, child custody, and adoption with the utmost care and professionalism to protect your family\'s interests.',
-  },
+const servicesList = [
+  'Education Lawyer & Consultation',
+  'Business Law',
+  'Education Lawyer & Consultation',
+  'Business Law',
+  'Education Lawyer & Consultation',
+  'Business Law',
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-20 sm:py-28 bg-background">
+    <section id="services" className="bg-primary text-primary-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
-          <div className="flex flex-col justify-center">
-            <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
-              Professional Services Prepared To Be Your Lawyer Firm
-            </h2>
-            <p className="mt-4 text-lg text-foreground/80">
-              We offer a wide range of legal services tailored to meet the unique needs of each client. Our commitment is to provide strategic advice and effective representation.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="relative h-80">
+            <Image
+              src="https://images.unsplash.com/photo-1590005354257-659c3969b743?q=80&w=2070&auto=format&fit=crop"
+              alt="Gavel and law book"
+              fill
+              className="object-cover"
+              data-ai-hint="gavel law book"
+            />
           </div>
-          <div>
-            <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
-              {services.map((service, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border-b-2 border-primary/10">
-                  <AccordionTrigger className="group py-6 text-left font-headline text-lg hover:no-underline">
-                    <div className="flex w-full items-center justify-between">
-                      <span className="flex items-center gap-4">
-                        {service.title}
-                      </span>
-                      <ArrowRight className="h-5 w-5 text-primary transition-transform duration-200 group-data-[state=open]:rotate-90" />
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-6 text-base text-foreground/80">
-                    {service.content}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+          <h2 className="font-headline text-5xl font-bold leading-tight">
+            Professional Services
+            <br />
+            Prepared To Be Your
+            <br />
+            Lawyer Firm
+          </h2>
+        </div>
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+          {servicesList.map((service, index) => (
+            <Link
+              key={index}
+              href="/services"
+              className="flex items-center justify-between border-b border-primary-foreground/20 py-4 transition-colors hover:text-accent"
+            >
+              <span className="font-headline text-xl">{service}</span>
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          ))}
         </div>
       </div>
     </section>
