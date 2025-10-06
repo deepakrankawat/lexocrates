@@ -33,18 +33,18 @@ const blogPosts = [
 
 export function Blog() {
   return (
-    <section id="blog" className="bg-primary text-primary-foreground py-20 sm:py-28">
+    <section id="blog" className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-16">
           <div>
             <h3 className="text-accent font-medium mb-2">News</h3>
-            <h2 className="font-headline text-5xl font-bold leading-tight">
+            <h2 className="font-headline text-5xl font-bold leading-tight text-primary">
               The Latest News
               <br />
               And Blog From Northman
             </h2>
           </div>
-          <Button variant="link" asChild className="text-primary-foreground/80 hover:text-accent">
+          <Button variant="link" asChild className="text-foreground/80 hover:text-accent">
             <Link href="#">
               See more <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -65,9 +65,9 @@ export function Blog() {
                 </div>
               )}
               <div className="flex flex-col gap-4">
-                <h3 className="font-headline text-3xl font-bold">{post.title}</h3>
+                <h3 className="font-headline text-3xl font-bold text-primary">{post.title}</h3>
                 <div className="w-16 h-px bg-accent"></div>
-                <p className="text-primary-foreground/80">{post.excerpt}</p>
+                <p className="text-foreground/80">{post.excerpt}</p>
                 <Button variant="secondary" className="self-start">
                   Read now
                 </Button>
