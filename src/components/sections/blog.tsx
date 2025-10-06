@@ -1,47 +1,60 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const blogPosts = [
   {
     id: 1,
-    title: 'Navigating Corporate Mergers: A 2024 Guide',
-    excerpt: 'The landscape of corporate mergers is constantly evolving. Our latest guide provides crucial insights for a seamless transition.',
+    title: '7 Cases Have Been Success',
+    excerpt: 'Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero',
     image: PlaceHolderImages.find(img => img.id === 'blog-image-1'),
   },
   {
     id: 2,
-    title: 'The Rise of Digital Assets in Estate Planning',
-    excerpt: 'Discover how to incorporate cryptocurrencies and other digital assets into your estate plan for future-proof security.',
+    title: '7 Cases Have Been Success',
+    excerpt: 'Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero',
     image: PlaceHolderImages.find(img => img.id === 'blog-image-2'),
   },
   {
     id: 3,
-    title: 'Intellectual Property in the AI Era',
-    excerpt: 'Artificial intelligence presents new challenges and opportunities for IP law. Learn how to protect your innovations.',
+    title: '7 Cases Have Been Success',
+    excerpt: 'Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero',
     image: PlaceHolderImages.find(img => img.id === 'blog-image-3'),
+  },
+  {
+    id: 4,
+    title: '7 Cases Have Been Success',
+    excerpt: 'Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero',
+    image: PlaceHolderImages.find(img => img.id === 'about-us-lady-justice'),
   },
 ];
 
 export function Blog() {
   return (
-    <section id="blog" className="bg-secondary py-20 sm:py-28">
+    <section id="blog" className="bg-primary text-primary-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
-            The Latest News And Blog From Northman
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            Stay informed with our expert analysis on the latest legal trends and developments.
-          </p>
+        <div className="flex justify-between items-end mb-16">
+          <div>
+            <h3 className="text-accent font-medium mb-2">News</h3>
+            <h2 className="font-headline text-5xl font-bold leading-tight">
+              The Latest News
+              <br />
+              And Blog From Northman
+            </h2>
+          </div>
+          <Button variant="link" asChild className="text-primary-foreground/80 hover:text-accent">
+            <Link href="#">
+              See more <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-2">
           {blogPosts.map((post) => (
-            <Card key={post.id} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div key={post.id} className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               {post.image && (
-                <div className="aspect-h-2 aspect-w-3 relative">
+                <div className="relative h-64 w-full">
                     <Image
                       src={post.image.imageUrl}
                       alt={post.image.description}
@@ -51,18 +64,15 @@ export function Blog() {
                     />
                 </div>
               )}
-              <CardHeader>
-                <CardTitle className="font-headline text-xl">{post.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-foreground/80">{post.excerpt}</p>
-              </CardContent>
-              <CardFooter>
-                <Button variant="link" className="text-accent p-0 hover:text-accent/80">
-                  Read More <ArrowRight className="ml-2 h-4 w-4" />
+              <div className="flex flex-col gap-4">
+                <h3 className="font-headline text-3xl font-bold">{post.title}</h3>
+                <div className="w-16 h-px bg-accent"></div>
+                <p className="text-primary-foreground/80">{post.excerpt}</p>
+                <Button variant="secondary" className="self-start">
+                  Read now
                 </Button>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
