@@ -33,17 +33,18 @@ export function Header() {
 
   const headerClasses = cn(
     'fixed top-0 z-50 w-full transition-all duration-300',
-    isScrolled || !isHomepage ? 'bg-background shadow-md' : 'bg-transparent',
-    isHomepage && !isScrolled ? 'text-primary' : 'text-primary'
+    isScrolled || !isHomepage ? 'bg-primary shadow-md' : 'bg-transparent',
+    isHomepage && !isScrolled ? 'text-primary-foreground' : 'text-primary-foreground'
   );
 
-  const linkColor = isHomepage && !isScrolled ? 'text-primary hover:text-primary/80' : 'text-primary hover:text-primary/80';
+  const linkColor = isHomepage && !isScrolled ? 'text-primary-foreground hover:text-primary-foreground/80' : 'text-primary-foreground hover:text-primary-foreground/80';
+  const logoColor = isHomepage && !isScrolled ? 'text-primary-foreground' : 'text-primary-foreground';
 
   return (
     <header className={headerClasses}>
       <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Logo className={cn("h-7 w-auto", isHomepage && !isScrolled ? 'text-primary' : 'text-primary')} />
+          <Logo className={cn("h-7 w-auto", logoColor)} />
         </Link>
         <nav className="hidden md:flex md:items-center md:gap-8">
           {navLinks.map((link) => (
@@ -60,20 +61,20 @@ export function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full bg-background">
+            <SheetContent side="right" className="w-full bg-primary">
               <SheetHeader className="flex flex-row items-center justify-between">
                  <Link href="/" onClick={() => setIsOpen(false)}>
-                    <Logo className="h-7 w-auto text-primary" />
+                    <Logo className="h-7 w-auto text-primary-foreground" />
                   </Link>
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
-                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-primary-foreground">
                   <X className="h-6 w-6" />
                 </Button>
               </SheetHeader>
               <div className="mt-8 flex h-full flex-col">
                 <nav className="flex flex-col gap-6">
                   {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary hover:text-accent">
+                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary-foreground hover:text-accent">
                       {link.label}
                     </Link>
                   ))}

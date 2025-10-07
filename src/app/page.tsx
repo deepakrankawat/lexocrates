@@ -12,14 +12,14 @@ export default function HomePage() {
   return (
     <main className="bg-background">
       <Hero />
-      <About />
       <Partners />
+      <About />
       <Services />
-      <Experience />
       <Team />
+      <Cta />
+      <Experience />
       <Testimonials />
       <Blog />
-      <Cta />
     </main>
   );
 }

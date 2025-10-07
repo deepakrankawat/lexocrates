@@ -26,11 +26,11 @@ const partners = [
 
 export function Partners() {
   return (
-    <section className="bg-background text-foreground/80 py-16 sm:py-20">
+    <section className="bg-background text-foreground/80 py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-center text-sm font-bold text-primary uppercase tracking-widest">
-          Trusted by Industry Leaders
-        </h3>
+        <h2 className="text-center font-headline text-4xl font-bold text-primary">
+          Our Partnership
+        </h2>
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-8 gap-x-12 items-center justify-items-center">
           {partners.map((partner, index) => (
             partner.logo &&
