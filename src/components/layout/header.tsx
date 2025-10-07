@@ -64,6 +64,7 @@ export function Header() {
                  <Link href="/" onClick={() => setIsOpen(false)}>
                     <Logo className="h-7 w-auto text-primary" />
                   </Link>
+                 <SheetTitle className="sr-only">Main Menu</SheetTitle>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                   <X className="h-6 w-6" />
                 </Button>
