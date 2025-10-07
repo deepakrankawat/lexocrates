@@ -43,7 +43,7 @@ export function Services() {
                     )}>
                     <service.icon className="h-6 w-6" />
                   </div>
-                  <div>
+                  <div className="flex-grow">
                     <h3 className="font-headline text-xl font-bold text-primary">{service.name}</h3>
                     <p className="text-foreground/80 text-sm mt-1">{service.description}</p>
                   </div>
