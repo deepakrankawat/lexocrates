@@ -6,6 +6,7 @@ import { Cta } from '@/components/sections/cta';
 import { Testimonials } from '@/components/sections/testimonials';
 import { servicesList } from '@/lib/services-data';
 import { notFound } from 'next/navigation';
+import { Experience } from '@/components/sections/experience';
 
 export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
   const service = servicesList.find(s => s.slug === params.slug);
@@ -20,6 +21,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       <ServiceDetailContent service={service} />
       <LegalProcess />
       <Team />
+      <Experience />
       <Cta />
       <Testimonials />
     </main>
