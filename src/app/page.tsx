@@ -1,3 +1,4 @@
+
 import { Hero } from '@/components/sections/hero';
 import { Services } from '@/components/sections/services';
 import { Experience } from '@/components/sections/experience';
@@ -13,15 +14,15 @@ export default function HomePage() {
   return (
     <main className="bg-white">
       <Hero />
+      <Partners />
       <About />
       <Services />
       <WhyChooseUs />
       <Experience />
       <Team />
       <Testimonials />
-      <Cta />
-      <Partners />
       <Blog />
+      <Cta />
     </main>
   );
 }

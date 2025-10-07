@@ -1,8 +1,12 @@
+
+'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog-data';
+import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
+import { motion } from 'framer-motion';
 
 const featuredPosts = blogPosts.slice(0, 3);
 
@@ -16,17 +20,22 @@ export function Blog() {
               The Latest News And Blog From Lexocrates
             </h2>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerFadeIn className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {featuredPosts.map((post) => (
-            <div key={post.id} className="group">
+            <motion.div 
+              key={post.id}
+              className="group"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
+            >
                  <Link href={`/blog/${post.slug}`}>
                     {post.image && (
-                        <div className="relative h-64 w-full">
+                        <div className="relative h-64 w-full overflow-hidden">
                             <Image
                             src={post.image.imageUrl}
                             alt={post.image.description}
                             fill
-                            className="object-cover"
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
                             data-ai-hint={post.image.imageHint}
                             />
                         </div>
@@ -43,9 +52,9 @@ export function Blog() {
                     </Link>
                 </Button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </StaggerFadeIn>
       </div>
     </section>
   );

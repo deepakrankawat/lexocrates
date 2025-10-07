@@ -1,36 +1,61 @@
+
+'use client';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
 
   return (
-    <section className="relative bg-primary text-primary-foreground h-screen flex items-center justify-center">
+    <section className="relative bg-primary text-primary-foreground h-screen flex items-center justify-center overflow-hidden">
       {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
+        <motion.div 
+          className="absolute inset-0"
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.1 }}
+          transition={{ duration: 15, ease: 'easeInOut' }}
+        >
+          <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
+            fill
+            className="object-cover"
+            priority
+            data-ai-hint={heroImage.imageHint}
+          />
+        </motion.div>
       )}
       <div className="absolute inset-0 bg-primary/60" />
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        <motion.h1 
+          className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+        >
           Uphold Truth For Justice With Lexocrates
-        </h1>
-        <p className="mt-6 mx-auto max-w-2xl text-lg text-primary-foreground/80">
+        </motion.h1>
+        <motion.p 
+          className="mt-6 mx-auto max-w-2xl text-lg text-primary-foreground/80"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+        >
           We are a team of passionate and experienced legal professionals dedicated to providing the highest quality of service.
-        </p>
-        <div className="mt-10">
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+          className="mt-10"
+        >
           <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
             <Link href="/contact">Get Started</Link>
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,12 +1,16 @@
+
 "use client";
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Quote } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { SlideIn } from '@/components/animations/slide-in';
+import { FadeIn } from '@/components/animations/fade-in';
 
 const testimonials = [
   {
-    quote: "Working with Northman Law was a game-changer. Their expertise and dedication were evident from day one. I couldn't have asked for a better team to handle my case.",
+    quote: "Working with Lexocrates was a game-changer. Their expertise and dedication were evident from day one. I couldn't have asked for a better team to handle my case.",
     name: 'Johnathan G.',
     title: 'CEO, Innovate Corp',
     avatar: PlaceHolderImages.find(img => img.id === 'client-avatar-1'),
@@ -15,10 +19,10 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="bg-background text-foreground py-20 sm:py-28">
+    <section className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <SlideIn direction="right">
               <p className="font-body font-bold text-accent uppercase tracking-wider">Testimonials</p>
               <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
                   Our Happy Client Say About Us
@@ -26,31 +30,42 @@ export function Testimonials() {
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="mt-8">
                    <div className="text-left">
-                       <Quote className="h-12 w-12 text-accent mb-6" fill="currentColor" />
-                       <blockquote className="text-xl md:text-2xl font-light text-foreground/90 mb-8 italic">
-                           “{testimonial.quote}”
-                       </blockquote>
-                       <footer className="flex items-center gap-4">
-                           {testimonial.avatar && (
-                                <Image
-                                    src={testimonial.avatar.imageUrl}
-                                    alt={`Portrait of ${testimonial.name}`}
-                                    width={64}
-                                    height={64}
-                                    className="object-cover rounded-full"
-                                    data-ai-hint={testimonial.avatar.imageHint}
-                                />
-                           )}
-                           <div>
-                               <p className="font-headline text-xl font-bold">{testimonial.name}</p>
-                               <p className="text-sm text-foreground/70">{testimonial.title}</p>
-                           </div>
-                       </footer>
+                       <motion.div
+                         initial={{ scale: 0 }}
+                         whileInView={{ scale: 1 }}
+                         viewport={{ once: true }}
+                         transition={{ duration: 0.5, delay: 0.2 }}
+                       >
+                         <Quote className="h-12 w-12 text-accent mb-6" fill="currentColor" />
+                       </motion.div>
+                       <FadeIn delay={0.4}>
+                         <blockquote className="text-xl md:text-2xl font-light text-foreground/90 mb-8 italic">
+                             “{testimonial.quote}”
+                         </blockquote>
+                       </FadeIn>
+                       <FadeIn delay={0.6}>
+                         <footer className="flex items-center gap-4">
+                             {testimonial.avatar && (
+                                  <Image
+                                      src={testimonial.avatar.imageUrl}
+                                      alt={`Portrait of ${testimonial.name}`}
+                                      width={64}
+                                      height={64}
+                                      className="object-cover rounded-full"
+                                      data-ai-hint={testimonial.avatar.imageHint}
+                                  />
+                             )}
+                             <div>
+                                 <p className="font-headline text-xl font-bold">{testimonial.name}</p>
+                                 <p className="text-sm text-foreground/70">{testimonial.title}</p>
+                             </div>
+                         </footer>
+                       </FadeIn>
                    </div>
                 </div>
               ))}
-          </div>
-          <div className="relative h-96 w-full">
+          </SlideIn>
+          <SlideIn direction="left" className="relative h-96 w-full">
             <Image
                 src="https://images.unsplash.com/photo-1590099543482-3b3d3083a474?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsYWR5JTIwanVzdGljZXxlbnwwfHx8fDE3NTk3NTIyNDd8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Architectural columns"
@@ -58,7 +73,7 @@ export function Testimonials() {
                 className="object-cover"
                 data-ai-hint="architecture columns"
             />
-          </div>
+          </SlideIn>
         </div>
       </div>
     </section>

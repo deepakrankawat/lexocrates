@@ -1,5 +1,9 @@
+
+'use client';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
+import { motion } from 'framer-motion';
 
 const partners = [
   {
@@ -31,10 +35,15 @@ export function Partners() {
         <h2 className="text-center font-headline text-4xl font-bold text-primary">
           Our Partnership
         </h2>
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-8 gap-x-12 items-center justify-items-center">
+        <StaggerFadeIn className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-8 gap-x-12 items-center justify-items-center">
           {partners.map((partner, index) => (
             partner.logo &&
-            <div key={index} className="flex justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+            <motion.div 
+              key={index}
+              className="flex justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
                 <Image
                   src={partner.logo.imageUrl}
                   alt={`${partner.name} logo`}
@@ -43,9 +52,9 @@ export function Partners() {
                   className="object-contain"
                   data-ai-hint={partner.logo.imageHint}
                 />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </StaggerFadeIn>
       </div>
     </section>
   );
