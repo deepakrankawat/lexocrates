@@ -48,8 +48,8 @@ export function Services() {
                     <p className="text-foreground/80 text-sm mt-1">{service.description}</p>
                   </div>
                    <ArrowRight className={cn(
-                    "ml-auto h-6 w-6 text-accent transition-opacity",
-                    activeService.slug === service.slug ? 'opacity-100' : 'opacity-0'
+                    "h-6 w-6 text-accent transition-opacity flex-shrink-0",
+                    activeService.slug === service.slug ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                     )} />
                 </div>
                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-accent group-hover:w-full transition-all duration-300" />
