@@ -17,7 +17,7 @@ export function RelatedPosts({ posts }: { posts: Post[] }) {
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <Card key={post.id} className="overflow-hidden group bg-card shadow-sm rounded-lg">
+            <Card key={post.id} className="overflow-hidden group bg-card shadow-sm">
                 {post.image && (
                     <Link href={`/blog/${post.slug}`}>
                         <div className="relative h-64 w-full">
