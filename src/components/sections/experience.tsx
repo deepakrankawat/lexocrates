@@ -6,7 +6,7 @@ export function Experience() {
   const experienceImage = PlaceHolderImages.find(img => img.id === 'gavel-book');
 
   return (
-    <section id="experience" className="bg-secondary text-foreground py-20 sm:py-28">
+    <section id="experience" className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col">
