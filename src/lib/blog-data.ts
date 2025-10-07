@@ -1,3 +1,4 @@
+
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const blogPosts = [
@@ -86,7 +87,7 @@ export const blogPosts = [
     slug: 'the-future-of-immigration-policy',
     title: 'The Future of Immigration Policy',
     excerpt: 'Analyzing the potential changes and their impact.',
-    image: PlaceHolderImages.find(img => img.id === 'service-detail-2'),
+    image: PlaceHolderImages.find(img => img.id === 'service-detail-1'),
     date: 'Aug 28, 2024',
     category: 'Immigration Law',
     fullContent: `
