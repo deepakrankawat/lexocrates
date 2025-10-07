@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -5,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
 
@@ -20,6 +21,8 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,31 +33,29 @@ export function Header() {
   }, []);
 
   const headerClasses = cn(
-    'fixed top-0 z-50 w-full transition-all duration-300 bg-primary text-primary-foreground',
-    isScrolled && 'shadow-md'
+    'fixed top-0 z-50 w-full transition-all duration-300',
+    isScrolled || !isHome ? 'bg-primary text-primary-foreground shadow-md' : 'bg-transparent text-primary-foreground'
   );
 
   return (
     <header className={headerClasses}>
       <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Logo className="h-7 w-auto text-primary-foreground" />
+          <Logo className="h-7 w-auto" />
         </Link>
         <nav className="hidden md:flex md:items-center md:gap-8">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-bold text-primary-foreground transition-colors hover:text-primary-foreground/80">
+            <Link key={link.href} href={link.href} className="text-sm font-bold transition-colors hover:text-primary-foreground/80">
               {link.label}
             </Link>
           ))}
         </nav>
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-transparent">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </SheetTrigger>
+            <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-transparent" onClick={() => setIsOpen(true)}>
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Open menu</span>
+            </Button>
             <SheetContent side="right" className="w-full bg-primary">
               <SheetHeader className="flex flex-row items-center justify-between">
                  <Link href="/" onClick={() => setIsOpen(false)}>
