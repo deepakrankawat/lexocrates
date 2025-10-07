@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { servicesList } from '@/lib/services-data';
 
-export function ServiceDetailHero() {
+type Service = typeof servicesList[0];
+
+export function ServiceDetailHero({ service }: { service: Service }) {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
 
   return (
@@ -17,9 +20,9 @@ export function ServiceDetailHero() {
             />
         )}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-        <h1 className="font-headline text-5xl md:text-6xl font-bold">Service Details</h1>
+        <h1 className="font-headline text-5xl md:text-6xl font-bold">{service.name}</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
-            In-depth information about our specialized legal services, tailored to meet your unique needs.
+            In-depth information about our specialized {service.name.toLowerCase()} services, tailored to meet your unique needs.
         </p>
       </div>
     </section>

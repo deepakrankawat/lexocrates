@@ -4,13 +4,20 @@ import { LegalProcess } from '@/components/sections/legal-process';
 import { Team } from '@/components/sections/team';
 import { Cta } from '@/components/sections/cta';
 import { Testimonials } from '@/components/sections/testimonials';
+import { servicesList } from '@/lib/services-data';
+import { notFound } from 'next/navigation';
 
+export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
+  const service = servicesList.find(s => s.slug === params.slug);
 
-export default function ServiceDetailPage() {
+  if (!service) {
+    notFound();
+  }
+
   return (
     <main className="bg-background">
-      <ServiceDetailHero />
-      <ServiceDetailContent />
+      <ServiceDetailHero service={service} />
+      <ServiceDetailContent service={service} />
       <LegalProcess />
       <Team />
       <Cta />

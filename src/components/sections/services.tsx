@@ -1,15 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, Briefcase, Users, Home, Brain, Shield, Landmark } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-
-const servicesList = [
-  { name: 'Corporate Law', slug: 'corporate-law', icon: Briefcase, description: "Expert guidance on business formation, contracts, and corporate governance." },
-  { name: 'Family Law', slug: 'family-law', icon: Users, description: "Compassionate handling of divorce, custody, and adoption cases." },
-  { name: 'Real Estate Law', slug: 'real-estate-law', icon: Home, description: "Seamless transactions for residential and commercial properties." },
-  { name: 'Intellectual Property', slug: 'intellectual-property', icon: Brain, description: "Protecting your patents, trademarks, and creative works." },
-  { name: 'Criminal Defense', slug: 'criminal-defense', icon: Shield, description: "Vigorous defense to protect your rights and freedom." },
-  { name: 'Immigration Law', slug: 'immigration-law', icon: Landmark, description: "Navigating complex immigration laws for visas and citizenship." },
-];
+import { servicesList } from '@/lib/services-data';
 
 export function Services() {
   return (
@@ -26,7 +18,7 @@ export function Services() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesList.map((service) => (
-            <Link key={service.slug} href={`/services/detail`} className="group">
+            <Link key={service.slug} href={`/services/${service.slug}`} className="group">
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-transparent hover:border-accent">
                 <CardHeader className="flex flex-row items-center gap-4">
                   <div className="bg-accent/10 p-4 rounded-full">

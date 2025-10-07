@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 import { Button } from '@/components/ui/button';
+import { servicesList } from '@/lib/services-data';
 
 export function Footer() {
   const socialLinks = [
@@ -10,6 +11,8 @@ export function Footer() {
     { icon: Linkedin, href: '#', name: 'LinkedIn' },
     { icon: Instagram, href: '#', name: 'Instagram' },
   ];
+
+  const footerServices = servicesList.slice(0, 4);
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -32,10 +35,13 @@ export function Footer() {
             <div>
               <h3 className="font-headline font-bold text-lg text-primary-foreground">Services</h3>
               <ul className="mt-6 space-y-4 text-sm">
-                <li><Link href="/services/detail" className="text-primary-foreground/80 hover:text-accent transition-colors">Business Law</Link></li>
-                <li><Link href="/services/detail" className="text-primary-foreground/80 hover:text-accent transition-colors">Education Law</Link></li>
-                <li><Link href="/services/detail" className="text-primary-foreground/80 hover:text-accent transition-colors">Legal Consultant</Link></li>
-                <li><Link href="/services/detail" className="text-primary-foreground/80 hover:text-accent transition-colors">General Lawyer</Link></li>
+                {footerServices.map(service => (
+                  <li key={service.slug}>
+                    <Link href={`/services/${service.slug}`} className="text-primary-foreground/80 hover:text-accent transition-colors">
+                      {service.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>

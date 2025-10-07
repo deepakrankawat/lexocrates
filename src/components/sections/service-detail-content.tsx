@@ -2,8 +2,11 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { servicesList } from '@/lib/services-data';
 
-export function ServiceDetailContent() {
+type Service = typeof servicesList[0];
+
+export function ServiceDetailContent({ service }: { service: Service }) {
   const image1 = PlaceHolderImages.find(img => img.id === 'service-detail-1');
   const image2 = PlaceHolderImages.find(img => img.id === 'service-detail-2');
 
@@ -36,16 +39,13 @@ export function ServiceDetailContent() {
             </div>
           </div>
           <div>
-            <p className="font-body font-bold text-accent uppercase tracking-wider">Corporate Law</p>
+            <p className="font-body font-bold text-accent uppercase tracking-wider">{service.name}</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
-              Expert Corporate Law & Consultation
+              Expert {service.name} & Consultation
             </h2>
             <div className="mt-8 space-y-6 text-foreground/80">
               <p>
-                Navigating the complexities of corporate law requires a skilled and experienced hand. At Northman Law, we provide comprehensive legal services for businesses of all sizes, from startups to established corporations. Our expertise covers everything from business formation and compliance to mergers and acquisitions.
-              </p>
-              <p>
-                We act as your strategic partners, helping you mitigate risk, ensure compliance, and achieve your business objectives. Trust us to provide the sound legal counsel you need to thrive in a competitive marketplace.
+                {service.longDescription}
               </p>
             </div>
             <div className="mt-10">
