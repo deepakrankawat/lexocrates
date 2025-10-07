@@ -19,7 +19,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
             {/* Main content */}
             <div className="lg:col-span-2">
                  {post.image && (
-                    <div className="relative h-[25rem] w-full mb-12 rounded-lg overflow-hidden">
+                    <div className="relative h-[25rem] w-full mb-12">
                         <Image
                             src={post.image.imageUrl}
                             alt={post.image.description}
@@ -36,7 +36,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="group">
                              {image1 && (
-                                <div className="relative h-72 w-full mb-6 rounded-lg overflow-hidden">
+                                <div className="relative h-72 w-full mb-6">
                                     <Image
                                         src={image1.imageUrl}
                                         alt={image1.description}
@@ -51,7 +51,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
                         </div>
                         <div className="group">
                              {image2 && (
-                                <div className="relative h-72 w-full mb-6 rounded-lg overflow-hidden">
+                                <div className="relative h-72 w-full mb-6">
                                     <Image
                                         src={image2.imageUrl}
                                         alt={image2.description}
@@ -77,7 +77,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
                         <li key={recPost.id}>
                             <Link href={`/blog/${recPost.slug}`} className="group flex items-start gap-4">
                                 {recPost.image && (
-                                    <div className="relative h-20 w-20 flex-shrink-0 rounded-md overflow-hidden">
+                                    <div className="relative h-20 w-20 flex-shrink-0">
                                         <Image
                                             src={recPost.image.imageUrl}
                                             alt={recPost.image.description}

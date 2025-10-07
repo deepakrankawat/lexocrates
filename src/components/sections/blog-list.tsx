@@ -12,7 +12,7 @@ export function BlogList() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
-            <Card key={post.id} className="overflow-hidden group">
+            <Card key={post.id} className="overflow-hidden group rounded-none">
                 {post.image && (
                     <Link href={`/blog/${post.slug}`}>
                         <div className="relative h-64 w-full">

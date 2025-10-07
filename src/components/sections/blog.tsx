@@ -22,7 +22,7 @@ export function Blog() {
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {featuredPosts.map((post) => (
-            <Card key={post.id} className="overflow-hidden group">
+            <Card key={post.id} className="overflow-hidden group rounded-none">
                  <Link href={`/blog/${post.slug}`}>
                     {post.image && (
                         <div className="relative h-64 w-full">
