@@ -29,7 +29,7 @@ export function Services() {
                 href={`/services/${service.slug}`} 
                 key={service.slug} 
                 className={cn(
-                  "p-6 border-l-4 transition-colors duration-300 relative group",
+                  "p-6 border-l-4 transition-colors duration-300 relative group flex items-center justify-between",
                   activeService.slug === service.slug 
                     ? 'bg-background border-accent shadow-md' 
                     : 'border-transparent hover:bg-background/50'
@@ -43,15 +43,15 @@ export function Services() {
                     )}>
                     <service.icon className="h-6 w-6" />
                   </div>
-                  <div className="flex-grow">
+                  <div>
                     <h3 className="font-headline text-xl font-bold text-primary">{service.name}</h3>
                     <p className="text-foreground/80 text-sm mt-1">{service.description}</p>
                   </div>
-                   <ArrowRight className={cn(
-                    "h-6 w-6 text-accent transition-opacity flex-shrink-0",
-                    activeService.slug === service.slug ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                    )} />
                 </div>
+                 <ArrowRight className={cn(
+                  "h-6 w-6 text-accent transition-opacity flex-shrink-0",
+                  activeService.slug === service.slug ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  )} />
               </Link>
             ))}
           </StaggerFadeIn>
