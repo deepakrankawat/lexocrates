@@ -31,10 +31,10 @@ export function WhyChooseUs() {
                     <div className="flex flex-col">
                         <p className="font-body font-bold text-accent uppercase tracking-wider">Why Choose Us</p>
                         <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
-                            Experience The Northman Law Difference
+                            Experience The Lexocrates Difference
                         </h2>
                         <p className="mt-6 text-foreground/80">
-                            When you choose Northman Law, you're not just hiring an attorney; you're partnering with a dedicated team committed to your success. We combine legal expertise with a deep understanding of our clients' needs to deliver unparalleled service and results.
+                            When you choose Lexocrates, you're not just hiring an attorney; you're partnering with a dedicated team committed to your success. We combine legal expertise with a deep understanding of our clients' needs to deliver unparalleled service and results.
                         </p>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-8">

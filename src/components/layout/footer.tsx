@@ -58,7 +58,7 @@ export function Footer() {
               <ul className="mt-6 space-y-4 text-sm text-primary-foreground/80">
                 <li><p>7889 Mechanic Rd. Miami, FL 33125</p></li>
                 <li><p>+22 7272 8282</p></li>
-                <li><p>contact@northmanlaw.com</p></li>
+                <li><p>contact@lexocrates.com</p></li>
                 <li><p>Mon - Fri: 8:00 am - 5:00 pm</p></li>
               </ul>
             </div>
@@ -67,7 +67,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-primary-foreground/20 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-sm text-primary-foreground/60">
-            Copyright &copy; {new Date().getFullYear()} Northman Law. All Rights Reserved.
+            Copyright &copy; {new Date().getFullYear()} Lexocrates. All Rights Reserved.
           </p>
           <div className="mt-4 sm:mt-0 flex space-x-4">
             {socialLinks.map((social) => (

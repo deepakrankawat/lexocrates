@@ -26,7 +26,7 @@ export function AboutIntro() {
             </h2>
             <div className="mt-8 text-foreground/80 space-y-6">
                 <p>
-                    Founded on the principles of integrity, dedication, and excellence, Northman Law has grown from a small practice into a leading firm renowned for its formidable presence in the courtroom and its unwavering commitment to clients. We believe that every client deserves a voice, and we fight tirelessly to ensure that voice is heard.
+                    Founded on the principles of integrity, dedication, and excellence, Lexocrates has grown from a small practice into a leading firm renowned for its formidable presence in the courtroom and its unwavering commitment to clients. We believe that every client deserves a voice, and we fight tirelessly to ensure that voice is heard.
                 </p>
                 <p>
                     Our journey has been one of continuous growth, learning, and adaptation, always staying ahead of the legal curve to provide the most effective counsel possible. We are more than just lawyers; we are partners in your pursuit of justice.

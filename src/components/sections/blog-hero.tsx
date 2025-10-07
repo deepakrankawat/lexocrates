@@ -17,7 +17,7 @@ export function BlogHero() {
             />
         )}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-        <h1 className="font-headline text-5xl md:text-6xl font-bold">The Latest From Northman Blog</h1>
+        <h1 className="font-headline text-5xl md:text-6xl font-bold">The Latest From Lexocrates Blog</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo pellentesque massa libero velit porta. Velit pellentesque hac gravida tristique est semper.
         </p>

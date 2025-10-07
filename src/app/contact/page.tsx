@@ -90,7 +90,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                         <h3 className="text-lg font-bold text-primary">Email</h3>
-                        <p className="text-foreground/80">contact@northmanlaw.com</p>
+                        <p className="text-foreground/80">contact@lexocrates.com</p>
                     </div>
                 </div>
                 <div className="relative h-80 w-full overflow-hidden mt-8">

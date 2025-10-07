@@ -90,7 +90,7 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
                 </div>
                 <div className="md:col-span-2 space-y-6 text-foreground/80">
                     <h2 className="font-headline text-4xl font-bold text-primary">About {lawyer.name}</h2>
-                    <p>An accomplished legal professional, {lawyer.name} has been a cornerstone of Northman Law for over a decade. With a sharp legal mind and a passion for justice, {lawyer.name} specializes in {lawyer.title.replace('Senior ', '').replace('Lawyer', 'Law')}.</p>
+                    <p>An accomplished legal professional, {lawyer.name} has been a cornerstone of Lexocrates for over a decade. With a sharp legal mind and a passion for justice, {lawyer.name} specializes in {lawyer.title.replace('Senior ', '').replace('Lawyer', 'Law')}.</p>
                     <p>Clients appreciate a no-nonsense approach, combined with a deep sense of empathy and a commitment to achieving the best possible outcomes. When not in the courtroom, {lawyer.name} is an avid reader and a community volunteer.</p>
                     <h3 className="font-headline text-3xl font-bold text-primary pt-8">Education</h3>
                     <ul className="list-disc list-inside space-y-2">

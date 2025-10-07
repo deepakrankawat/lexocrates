@@ -26,7 +26,7 @@ export function Welcome() {
             </h2>
             <div className="mt-6 space-y-4 text-foreground/80">
                 <p className="italic text-lg">
-                    “Welcome to Northman Law. We founded this firm on the belief that everyone deserves exceptional legal representation. Our team is dedicated to you, your case, and your success. We are honored to be your trusted advisors.”
+                    “Welcome to Lexocrates. We founded this firm on the belief that everyone deserves exceptional legal representation. Our team is dedicated to you, your case, and your success. We are honored to be your trusted advisors.”
                 </p>
                 <p className="font-bold text-primary">- Smilly Ilani, Founder</p>
             </div>

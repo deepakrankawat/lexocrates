@@ -13,7 +13,7 @@ export function Blog() {
         <div className="text-center mb-16">
             <p className="font-body font-bold text-accent uppercase tracking-wider">Our Blog</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
-              The Latest News And Blog From Northman
+              The Latest News And Blog From Lexocrates
             </h2>
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

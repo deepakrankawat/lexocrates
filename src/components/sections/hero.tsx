@@ -21,7 +21,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-primary/60" />
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          Uphold Truth For Justice With Northman Law Firm
+          Uphold Truth For Justice With Lexocrates
         </h1>
         <p className="mt-6 mx-auto max-w-2xl text-lg text-primary-foreground/80">
           We are a team of passionate and experienced legal professionals dedicated to providing the highest quality of service.

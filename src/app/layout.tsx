@@ -5,7 +5,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Northman Law',
+  title: 'Lexocrates',
   description: 'Trusted Legal Expertise. Your Partners in Justice.',
 };
 
