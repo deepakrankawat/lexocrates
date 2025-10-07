@@ -20,8 +20,6 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
-  const isHomepage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,23 +30,19 @@ export function Header() {
   }, []);
 
   const headerClasses = cn(
-    'fixed top-0 z-50 w-full transition-all duration-300',
-    isScrolled || !isHomepage ? 'bg-primary shadow-md' : 'bg-transparent',
-    isHomepage && !isScrolled ? 'text-primary-foreground' : 'text-primary-foreground'
+    'fixed top-0 z-50 w-full transition-all duration-300 bg-primary text-primary-foreground',
+    isScrolled && 'shadow-md'
   );
-
-  const linkColor = isHomepage && !isScrolled ? 'text-primary-foreground hover:text-primary-foreground/80' : 'text-primary-foreground hover:text-primary-foreground/80';
-  const logoColor = isHomepage && !isScrolled ? 'text-primary-foreground' : 'text-primary-foreground';
 
   return (
     <header className={headerClasses}>
       <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Logo className={cn("h-7 w-auto", logoColor)} />
+          <Logo className="h-7 w-auto text-primary-foreground" />
         </Link>
         <nav className="hidden md:flex md:items-center md:gap-8">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={cn("text-sm font-bold transition-colors", linkColor)}>
+            <Link key={link.href} href={link.href} className="text-sm font-bold text-primary-foreground transition-colors hover:text-primary-foreground/80">
               {link.label}
             </Link>
           ))}
@@ -56,7 +50,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn('hover:bg-transparent', linkColor)}>
+              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-transparent">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
