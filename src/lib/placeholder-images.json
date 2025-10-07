@@ -27,7 +27,7 @@
     {
       "id": "partner-logo-1",
       "description": "Logo for a fictional company called 'Daerazo'",
-      "imageUrl": "https://placeholder.pics/svg/150x50/FFFFFF/000000/Logo",
+      "imageUrl": "https://picsum.photos/seed/daerazo/150/50",
       "imageHint": "company logo",
       "width": 150,
       "height": 50
@@ -35,7 +35,7 @@
     {
       "id": "partner-logo-2",
       "description": "Logo for a fictional company called 'Miguxian'",
-      "imageUrl": "https://placeholder.pics/svg/150x50/FFFFFF/000000/Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1569605803663-e9337d901ff9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTk3NzUxMjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo",
       "width": 150,
       "height": 50
@@ -43,7 +43,7 @@
     {
       "id": "partner-logo-3",
       "description": "Logo for a fictional company called 'Jeninayln'",
-      "imageUrl": "https://placeholder.pics/svg/150x50/FFFFFF/000000/Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1618588429012-0559f1cbc5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc1OTczODIyNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "corporate logo",
       "width": 150,
       "height": 50
@@ -51,7 +51,7 @@
     {
       "id": "partner-logo-4",
       "description": "Logo for a fictional company called 'Superanzo'",
-      "imageUrl": "https://placeholder.pics/svg/150x50/FFFFFF/000000/Logo",
+      "imageUrl": "https://picsum.photos/seed/superanzo/150/50",
       "imageHint": "modern logo",
       "width": 150,
       "height": 50
@@ -59,7 +59,7 @@
     {
       "id": "lawyer-1",
       "description": "Professional portrait of a female lawyer",
-      "imageUrl": "https://images.unsplash.com/photo-1574693635393-0de5594fd43d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8fDE3NjA0OTc2MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NTk3NjIyNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional woman",
       "width": 1080,
       "height": 1350
@@ -67,7 +67,7 @@
     {
       "id": "lawyer-2",
       "description": "Professional portrait of a female judge",
-      "imageUrl": "https://images.unsplash.com/photo-1621206148386-302a0d0434a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmZW1hbGUlMjBqdWRnZXxlbnwwfHx8fDE3NjA0OTc2NDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://picsum.photos/seed/lawyer2/1080/1350",
       "imageHint": "female judge",
       "width": 1080,
       "height": 1350
@@ -75,7 +75,7 @@
     {
       "id": "lawyer-3",
       "description": "Professional portrait of a female lawyer in a suit",
-      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2N0b3IlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjA0OTc4MDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://picsum.photos/seed/lawyer3/1080/1620",
       "imageHint": "female lawyer",
       "width": 1080,
       "height": 1620
