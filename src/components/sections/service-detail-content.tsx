@@ -41,7 +41,7 @@ export function ServiceDetailContent({ service }: { service: Service }) {
           <div>
             <p className="font-body font-bold text-accent uppercase tracking-wider">{service.name}</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
-              Expert {service.name} & Consultation
+              Expert Solutions for {service.name}
             </h2>
             <div className="mt-8 space-y-6 text-foreground/80">
               <p>
@@ -50,7 +50,7 @@ export function ServiceDetailContent({ service }: { service: Service }) {
             </div>
             <div className="mt-10">
                 <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href="/contact">Book Appointment</Link>
+                    <Link href="/contact">Schedule a Consultation</Link>
                 </Button>
             </div>
           </div>

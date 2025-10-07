@@ -11,13 +11,13 @@ export function Cta() {
         <FadeIn>
           <div className="flex flex-col items-center justify-center text-center">
               <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold">
-                We Help You With Quality Legal Lawyer
+                Ready to Optimize Your Legal Workflow?
               </h2>
               <p className="mt-4 max-w-2xl text-primary-foreground/80">
-                Let's talk about how we can help you achieve your legal goals. Schedule a free, no-obligation consultation with our expert team today.
+                Let's discuss how Lexocrates can help you achieve your business goals. Schedule a free, no-obligation consultation with our expert team today.
               </p>
               <Button asChild size="lg" variant="secondary" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/contact">Get a Quote</Link>
+                <Link href="/contact">Request a Consultation</Link>
               </Button>
           </div>
         </FadeIn>

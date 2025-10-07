@@ -11,37 +11,37 @@ import { motion } from 'framer-motion';
 const teamMembers = [
   {
     name: 'Laitman Harry',
-    title: 'Senior Business Lawyer',
+    title: 'Head of Corporate Solutions',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-4'),
     slug: 'laitman-harry',
   },
   {
     name: 'Nada Geomorgant',
-    title: 'Senior Criminal Lawyer',
+    title: 'Lead, Contract Management',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-2'),
     slug: 'nada-geomorgant',
   },
   {
     name: 'Desy Willy',
-    title: 'Senior Family Lawyer',
+    title: 'Director of Compliance',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-3'),
     slug: 'desy-willy',
   },
   {
     name: 'Hernando Jully',
-    title: 'Associate Attorney',
+    title: 'Senior Legal Researcher',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-5'),
     slug: 'hernando-jully',
   },
    {
     name: 'Lydia Dary',
-    title: 'Paralegal',
+    title: 'Document Review Specialist',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-6'),
     slug: 'lydia-dary',
   },
   {
     name: 'Smilly Ilani',
-    title: 'Legal Assistant',
+    title: 'Founder & CEO',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-1'),
     slug: 'smilly-ilani',
   },
@@ -54,10 +54,10 @@ export function Team() {
         <div className="text-center mb-16">
             <p className="font-body font-bold text-accent uppercase tracking-wider">Our Experts</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
-                Meet Our Legal Team
+                Meet Our Leadership Team
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-foreground/80">
-              Our attorneys are highly skilled, dedicated professionals committed to achieving the best outcomes for our clients.
+              Our leaders are highly skilled, dedicated professionals committed to delivering excellence in legal outsourcing.
             </p>
         </div>
         <StaggerFadeIn className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

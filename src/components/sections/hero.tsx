@@ -36,7 +36,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
         >
-          Uphold Truth For Justice With Lexocrates
+          Streamline Your Legal Operations with Lexocrates
         </motion.h1>
         <motion.p 
           className="mt-6 mx-auto max-w-2xl text-lg text-primary-foreground/80"
@@ -44,7 +44,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
         >
-          We are a team of passionate and experienced legal professionals dedicated to providing the highest quality of service.
+          We provide expert legal outsourcing solutions, empowering your business to focus on growth while we handle the complexities.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export function Hero() {
           className="mt-10"
         >
           <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/contact">Get Started</Link>
+            <Link href="/contact">Get Consultation</Link>
           </Button>
         </motion.div>
       </div>

@@ -16,16 +16,16 @@ export function About() {
           
           <SlideIn direction="right">
             <div className="flex flex-col">
-              <p className="font-body font-bold text-accent uppercase tracking-wider">About Us</p>
+              <p className="font-body font-bold text-accent uppercase tracking-wider">About Lexocrates</p>
               <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
-                Helping To Overcome And Ease The Legal Burden
+                Your Trusted Partner in Legal Process Outsourcing
               </h2>
               <p className="mt-6 text-foreground/80">
-                  With decades of combined experience, Lexocrates has established itself as a pillar of the legal community. We believe in a client-first approach, ensuring personalized and effective solutions for every case.
+                  Lexocrates was founded to bridge the gap between high-quality legal services and cost-effective operational management. We empower law firms and corporate legal departments to achieve more by handling their essential legal tasks with precision and expertise.
               </p>
               <div className="mt-10">
                   <Button asChild size="lg">
-                      <Link href="/about">Learn More</Link>
+                      <Link href="/about">Discover Our Story</Link>
                   </Button>
               </div>
             </div>

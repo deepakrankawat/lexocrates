@@ -15,9 +15,9 @@ export function Blog() {
     <section id="blog" className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-            <p className="font-body font-bold text-accent uppercase tracking-wider">Our Blog</p>
+            <p className="font-body font-bold text-accent uppercase tracking-wider">Our Insights</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
-              The Latest News And Blog From Lexocrates
+              Latest News and Analysis from Lexocrates
             </h2>
         </div>
         <StaggerFadeIn className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

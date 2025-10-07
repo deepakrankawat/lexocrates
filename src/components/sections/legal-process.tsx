@@ -3,10 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 
 const processSteps = [
-    { icon: Users, title: 'Initial Consultation', description: 'We discuss your case, goals, and outline potential strategies.' },
-    { icon: Library, title: 'Strategy & Planning', description: 'Our team develops a comprehensive legal plan tailored to your needs.' },
-    { icon: FileText, title: 'Case Execution', description: 'We file motions, handle negotiations, and prepare for trial.' },
-    { icon: Landmark, title: 'Resolution & Success', description: 'We work towards achieving the best possible outcome for your case.' },
+    { icon: Users, title: 'Initial Consultation', description: 'We discuss your needs and define the scope of work.' },
+    { icon: Library, title: 'Strategy & Onboarding', description: 'Our team develops a tailored workflow and integrates with your systems.' },
+    { icon: FileText, title: 'Execution & Delivery', description: 'We execute tasks with precision and provide regular progress updates.' },
+    { icon: Landmark, title: 'Review & Optimization', description: 'We review outcomes and optimize processes for continuous improvement.' },
 ];
 
 export function LegalProcess() {
@@ -16,10 +16,10 @@ export function LegalProcess() {
         <div className="text-center mb-16">
             <p className="font-body font-bold text-accent uppercase tracking-wider">How We Work</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">
-                Our Legal Process
+                Our Engagement Process
             </h2>
              <p className="mt-4 max-w-2xl mx-auto text-foreground/80">
-                We follow a structured and transparent process to ensure you are informed and confident at every stage of your legal journey.
+                We follow a structured and transparent process to ensure seamless integration and consistent, high-quality results.
             </p>
         </div>
         <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

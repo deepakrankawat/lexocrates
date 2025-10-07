@@ -17,9 +17,9 @@ export function Services() {
     <section id="services" className="bg-secondary text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-16">
-          <p className="font-body font-bold text-accent uppercase tracking-wider">Our Practice Areas</p>
+          <p className="font-body font-bold text-accent uppercase tracking-wider">Our Services</p>
           <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
-            We Are Specialized In The Following Services
+            We Specialize In The Following Areas
           </h2>
         </SlideIn>
         <div className="grid lg:grid-cols-2 gap-12 items-start">

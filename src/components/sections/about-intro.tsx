@@ -22,14 +22,14 @@ export function AboutIntro() {
           <div className="flex flex-col">
             <p className="font-body font-bold text-accent uppercase tracking-wider">Our Story</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
-              Helping To Overcome And Ease The Legal Burden
+              Pioneering Efficiency and Excellence in Legal Services
             </h2>
             <div className="mt-8 text-foreground/80 space-y-6">
                 <p>
-                    Founded on the principles of integrity, dedication, and excellence, Lexocrates has grown from a small practice into a leading firm renowned for its formidable presence in the courtroom and its unwavering commitment to clients. We believe that every client deserves a voice, and we fight tirelessly to ensure that voice is heard.
+                    Founded by legal industry veterans, Lexocrates was born from a vision to transform the traditional legal service model. We recognized the growing need for flexible, high-quality, and cost-effective legal support for law firms and corporations alike.
                 </p>
                 <p>
-                    Our journey has been one of continuous growth, learning, and adaptation, always staying ahead of the legal curve to provide the most effective counsel possible. We are more than just lawyers; we are partners in your pursuit of justice.
+                    Our journey has been driven by a commitment to innovation, leveraging technology and specialized talent to deliver unparalleled value. We are more than a service provider; we are a strategic partner dedicated to our clients' success.
                 </p>
             </div>
           </div>

@@ -19,7 +19,7 @@ export function ServicesHero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         <h1 className="font-headline text-5xl md:text-6xl font-bold">Our Services</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
-          Discover our comprehensive range of legal services designed to provide expert guidance and robust representation.
+          Explore our comprehensive suite of legal outsourcing solutions designed to enhance efficiency and reduce overhead.
         </p>
       </div>
     </section>

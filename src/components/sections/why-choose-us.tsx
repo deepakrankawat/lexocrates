@@ -3,23 +3,23 @@ import { ShieldCheck, Scale, Users, Award } from "lucide-react";
 const features = [
     {
         icon: ShieldCheck,
-        title: '99% Success Rate',
-        description: 'Our track record speaks for itself. We consistently achieve favorable outcomes for our clients.'
+        title: 'Confidentiality & Security',
+        description: 'We adhere to the strictest data security protocols to ensure your information is always protected.'
     },
     {
         icon: Scale,
-        title: 'Expert Legal Team',
-        description: 'Our attorneys are recognized leaders in their fields, bringing a wealth of knowledge to every case.'
+        title: 'Expert Legal Professionals',
+        description: 'Our team consists of qualified legal experts with experience across diverse jurisdictions and industries.'
     },
     {
         icon: Users,
-        title: 'Client-Focused Approach',
-        description: 'We prioritize your needs and goals, offering personalized strategies and transparent communication.'
+        title: 'Client-Centric Model',
+        description: 'We tailor our solutions to your specific needs, integrating seamlessly with your existing workflows.'
     },
     {
         icon: Award,
-        title: 'Award-Winning Firm',
-        description: 'We have been recognized by numerous prestigious organizations for our legal excellence.'
+        title: 'Commitment to Quality',
+        description: 'Our rigorous quality assurance processes guarantee that all deliverables meet the highest standards.'
     }
 ]
 
@@ -29,12 +29,12 @@ export function WhyChooseUs() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div className="flex flex-col">
-                        <p className="font-body font-bold text-accent uppercase tracking-wider">Why Choose Us</p>
+                        <p className="font-body font-bold text-accent uppercase tracking-wider">Why Choose Lexocrates</p>
                         <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
-                            Experience The Lexocrates Difference
+                            Experience the Lexocrates Advantage
                         </h2>
                         <p className="mt-6 text-foreground/80">
-                            When you choose Lexocrates, you're not just hiring an attorney; you're partnering with a dedicated team committed to your success. We combine legal expertise with a deep understanding of our clients' needs to deliver unparalleled service and results.
+                            When you partner with Lexocrates, you gain a dedicated team committed to enhancing your legal operations. We combine specialized expertise with advanced technology to deliver unparalleled efficiency, accuracy, and value.
                         </p>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-8">

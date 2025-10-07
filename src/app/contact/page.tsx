@@ -28,7 +28,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
             <h1 className="font-headline text-5xl md:text-6xl font-bold">Contact Us</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
-                We're here to help. Reach out to us for any legal inquiries or to schedule a consultation with our expert team.
+                We're here to help. Reach out to us for any inquiries or to schedule a consultation with our expert team.
             </p>
         </div>
       </section>

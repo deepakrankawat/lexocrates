@@ -11,7 +11,7 @@ export function Award() {
         <div className="text-center mb-16">
             <p className="font-body font-bold text-accent uppercase tracking-wider">Recognition</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
-                Award-Winning Legal Excellence
+                Award-Winning Service and Quality
             </h2>
         </div>
 
@@ -29,7 +29,7 @@ export function Award() {
             </div>
             <div className="flex flex-col gap-6">
                 <p className="text-lg text-foreground/80">
-                    Our firm and its attorneys are consistently recognized by prestigious legal organizations for our dedication to the profession and our outstanding results. These accolades reflect our commitment to providing top-tier legal representation.
+                    Our firm and our professionals are consistently recognized by industry organizations for our dedication to excellence and our outstanding results. These accolades reflect our commitment to providing top-tier legal support.
                 </p>
                 <div className="flex gap-6 items-center mt-4">
                     <div className="relative h-24 w-24 shrink-0 rounded-full overflow-hidden">
@@ -44,8 +44,8 @@ export function Award() {
                         )}
                     </div>
                     <div>
-                        <p className="font-bold text-lg text-primary">"The Best Legal Firm in the Nation"</p>
-                        <p className="text-sm text-foreground/70">- National Law Review, 2023</p>
+                        <p className="font-bold text-lg text-primary">"Top Legal Process Outsourcing Provider"</p>
+                        <p className="text-sm text-foreground/70">- Global Legal Review, 2023</p>
                     </div>
                 </div>
             </div>

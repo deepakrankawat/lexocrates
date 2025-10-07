@@ -28,7 +28,7 @@ export function Footer() {
                 <Logo className="h-8 w-auto text-background" />
               </Link>
               <p className="mt-6 max-w-sm text-primary-foreground/80">
-                Join our mailing list to stay up to date and get notices about our new releases.
+                Subscribe to our newsletter for the latest insights on legal outsourcing and industry trends.
               </p>
               <form className="mt-6 flex gap-2">
                 <Input type="email" placeholder="Enter your email" className="bg-transparent border-primary-foreground/30 placeholder:text-primary-foreground/60 focus:border-accent" />
@@ -50,11 +50,11 @@ export function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-headline font-bold text-lg text-primary-foreground">About</h3>
+                <h3 className="font-headline font-bold text-lg text-primary-foreground">Company</h3>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li><Link href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
-                  <li><Link href="/lawyer" className="text-primary-foreground/80 hover:text-accent transition-colors">Lawyers</Link></li>
-                  <li><Link href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">Cases</Link></li>
+                  <li><Link href="/lawyer" className="text-primary-foreground/80 hover:text-accent transition-colors">Our Team</Link></li>
+                  <li><Link href="/blog" className="text-primary-foreground/80 hover:text-accent transition-colors">Blog</Link></li>
                   <li><Link href="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">Contact</Link></li>
                 </ul>
               </div>
@@ -64,7 +64,7 @@ export function Footer() {
                   <li><p>7889 Mechanic Rd. Miami, FL 33125</p></li>
                   <li><p>+22 7272 8282</p></li>
                   <li><p>contact@lexocrates.com</p></li>
-                  <li><p>Mon - Fri: 8:00 am - 5:00 pm</p></li>
+                  <li><p>Mon - Fri: 9:00 am - 6:00 pm EST</p></li>
                 </ul>
               </div>
             </div>

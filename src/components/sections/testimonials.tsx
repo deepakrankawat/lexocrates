@@ -10,9 +10,9 @@ import { FadeIn } from '@/components/animations/fade-in';
 
 const testimonials = [
   {
-    quote: "Working with Lexocrates was a game-changer. Their expertise and dedication were evident from day one. I couldn't have asked for a better team to handle my case.",
+    quote: "Partnering with Lexocrates transformed our legal operations. Their expertise and efficiency are unmatched. We can now focus on our core business, knowing our legal tasks are in expert hands.",
     name: 'Johnathan G.',
-    title: 'CEO, Innovate Corp',
+    title: 'General Counsel, Innovate Corp',
     avatar: PlaceHolderImages.find(img => img.id === 'client-avatar-1'),
   },
 ];
@@ -25,7 +25,7 @@ export function Testimonials() {
           <SlideIn direction="right">
               <p className="font-body font-bold text-accent uppercase tracking-wider">Testimonials</p>
               <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
-                  Our Happy Client Say About Us
+                  What Our Valued Clients Say
               </h2>
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="mt-8">

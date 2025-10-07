@@ -8,37 +8,37 @@ import { notFound } from 'next/navigation';
 const teamMembers = [
   {
     name: 'Laitman Harry',
-    title: 'Senior Business Lawyer',
+    title: 'Head of Corporate Solutions',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-4'),
     slug: 'laitman-harry',
   },
   {
     name: 'Nada Geomorgant',
-    title: 'Senior Criminal Lawyer',
+    title: 'Lead, Contract Management',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-2'),
     slug: 'nada-geomorgant',
   },
   {
     name: 'Desy Willy',
-    title: 'Senior Family Lawyer',
+    title: 'Director of Compliance',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-3'),
     slug: 'desy-willy',
   },
   {
     name: 'Hernando Jully',
-    title: 'Associate Attorney',
+    title: 'Senior Legal Researcher',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-5'),
     slug: 'hernando-jully',
   },
   {
     name: 'Lydia Dary',
-    title: 'Paralegal',
+    title: 'Document Review Specialist',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-6'),
     slug: 'lydia-dary',
   },
   {
     name: 'Smilly Ilani',
-    title: 'Legal Assistant',
+    title: 'Founder & CEO',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-1'),
     slug: 'smilly-ilani',
   },
@@ -90,17 +90,18 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
                 </div>
                 <div className="md:col-span-2 space-y-6 text-foreground/80">
                     <h2 className="font-headline text-4xl font-bold text-primary">About {lawyer.name}</h2>
-                    <p>An accomplished legal professional, {lawyer.name} has been a cornerstone of Lexocrates for over a decade. With a sharp legal mind and a passion for justice, {lawyer.name} specializes in {lawyer.title.replace('Senior ', '').replace('Lawyer', 'Law')}.</p>
-                    <p>Clients appreciate a no-nonsense approach, combined with a deep sense of empathy and a commitment to achieving the best possible outcomes. When not in the courtroom, {lawyer.name} is an avid reader and a community volunteer.</p>
-                    <h3 className="font-headline text-3xl font-bold text-primary pt-8">Education</h3>
+                    <p>An accomplished professional, {lawyer.name} has been a cornerstone of Lexocrates since its inception. With a sharp mind and a passion for excellence, {lawyer.name} specializes in {lawyer.title.replace('Senior ', '')}.</p>
+                    <p>Clients appreciate a results-driven approach, combined with a deep sense of partnership and a commitment to achieving the best possible outcomes. When not leading the team, {lawyer.name} is an avid reader and a community volunteer.</p>
+                    <h3 className="font-headline text-3xl font-bold text-primary pt-8">Education & Certifications</h3>
                     <ul className="list-disc list-inside space-y-2">
                         <li>Juris Doctor, University of Law, 2010</li>
-                        <li>Bachelor of Arts in Political Science, State University, 2007</li>
+                        <li>Certified Legal Project Manager (CLPM)</li>
+                        <li>Bachelor of Arts in Business Administration, State University, 2007</li>
                     </ul>
-                     <h3 className="font-headline text-3xl font-bold text-primary pt-8">Bar Admissions</h3>
+                     <h3 className="font-headline text-3xl font-bold text-primary pt-8">Professional Admissions</h3>
                      <ul className="list-disc list-inside space-y-2">
                         <li>State Bar, 2011</li>
-                        <li>Federal District Court, 2012</li>
+                        <li>International Association for Contract & Commercial Management (IACCM)</li>
                     </ul>
                 </div>
             </div>

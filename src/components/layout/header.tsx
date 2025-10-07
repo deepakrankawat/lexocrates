@@ -13,14 +13,15 @@ import { Logo } from '@/components/ui/logo';
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
-  { href: '/lawyer', label: 'Lawyer' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/lawyer', label: 'Our Team' },
+  { href: '/blog', label: 'Insights' },
   { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +31,12 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isTransparent = !isScrolled;
+
   const headerClasses = cn(
     'fixed top-0 z-50 w-full transition-all duration-300',
-    isScrolled ? 'bg-primary text-primary-foreground shadow-md' : 'bg-transparent text-primary-foreground'
+    isTransparent ? 'bg-transparent' : 'bg-primary shadow-md',
+    isScrolled ? 'text-primary-foreground' : 'text-primary-foreground'
   );
 
   return (

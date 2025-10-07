@@ -5,8 +5,8 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Lexocrates',
-  description: 'Trusted Legal Expertise. Your Partners in Justice.',
+  title: 'Lexocrates | Premier Legal Outsourcing Solutions',
+  description: 'Lexocrates provides expert legal outsourcing services, including contract drafting, compliance, and legal research for global clients.',
 };
 
 export default function RootLayout({

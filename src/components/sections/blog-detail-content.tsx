@@ -32,7 +32,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
                 <div className="prose prose-lg max-w-none text-foreground/80" dangerouslySetInnerHTML={{ __html: post.fullContent }} />
                 
                 <div className="mt-16">
-                    <h3 className="font-headline text-3xl font-bold text-primary mb-8">Longest Handled Cases</h3>
+                    <h3 className="font-headline text-3xl font-bold text-primary mb-8">Related Case Studies</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="group">
                              {image1 && (
@@ -46,8 +46,8 @@ export function BlogDetailContent({ post }: { post: Post }) {
                                     />
                                 </div>
                             )}
-                            <h4 className="font-headline text-xl font-bold text-primary mb-2 group-hover:text-accent">The Case of Grand Theft of Money at the Bank</h4>
-                            <p className="text-foreground/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et est eleifend, faster aliquet.</p>
+                            <h4 className="font-headline text-xl font-bold text-primary mb-2 group-hover:text-accent">Streamlining Contract Management for a Tech Giant</h4>
+                            <p className="text-foreground/80">Discover how we reduced contract cycle times by 40% for a Fortune 500 company.</p>
                         </div>
                         <div className="group">
                              {image2 && (
@@ -61,8 +61,8 @@ export function BlogDetailContent({ post }: { post: Post }) {
                                     />
                                 </div>
                             )}
-                            <h4 className="font-headline text-xl font-bold text-primary mb-2 group-hover:text-accent">Mysterious Murder Cases In Manhlu City</h4>
-                            <p className="text-foreground/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et est eleifend, faster aliquet.</p>
+                            <h4 className="font-headline text-xl font-bold text-primary mb-2 group-hover:text-accent">Global Compliance for a Financial Services Firm</h4>
+                            <p className="text-foreground/80">Learn how we built a scalable compliance framework across 20+ jurisdictions.</p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
             {/* Sidebar */}
             <aside className="lg:col-span-1">
                 <div className="sticky top-28 bg-secondary p-8 rounded-lg">
-                    <h3 className="font-headline text-2xl font-bold text-primary mb-6">Recommendation Blog</h3>
+                    <h3 className="font-headline text-2xl font-bold text-primary mb-6">Recommended Reading</h3>
                     <ul className="space-y-6">
                         {recommendedPosts.map((recPost) => (
                         <li key={recPost.id}>

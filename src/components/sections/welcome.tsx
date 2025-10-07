@@ -20,15 +20,15 @@ export function Welcome() {
             )}
           </div>
           <div>
-            <p className="font-body font-bold text-accent uppercase tracking-wider">Welcome Message from the Founder</p>
+            <p className="font-body font-bold text-accent uppercase tracking-wider">A Message from Our Founder</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
-              A Commitment to Justice and Our Clients
+              A Commitment to Partnership and Excellence
             </h2>
             <div className="mt-6 space-y-4 text-foreground/80">
                 <p className="italic text-lg">
-                    “Welcome to Lexocrates. We founded this firm on the belief that everyone deserves exceptional legal representation. Our team is dedicated to you, your case, and your success. We are honored to be your trusted advisors.”
+                    “Welcome to Lexocrates. We built this firm on the principle of partnership—working as an extension of your team to achieve shared goals. Our commitment is to deliver excellence in every task, enabling you to thrive.”
                 </p>
-                <p className="font-bold text-primary">- Smilly Ilani, Founder</p>
+                <p className="font-bold text-primary">- Smilly Ilani, Founder & CEO</p>
             </div>
           </div>
         </div>
