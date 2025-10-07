@@ -21,7 +21,7 @@ export const servicesList = [
     slug: 'family-law', 
     icon: Users, 
     description: "Compassionate handling of divorce, custody, and adoption cases.",
-    longDescription: "Family law matters are deeply personal and often emotionally charged. Our compassionate team provides sensitive and effective representation for divorce, child custody, adoption, and other family-related legal issues. We prioritize clear communication and work to achieve amicable resolutions whenever possible, while vigorously protecting your interests in court when necessary. Your family's well-being is our primary concern. We also handle prenuptial agreements, spousal support, and domestic violence cases with the utmost discretion and care.",
+    longDescription: "Family law matters are deeply personal and often emotionally charged. Our compassionate team provides sensitive and effective representation for divorce, child custody, adoption, and other family-related legal issues. We prioritize clear communication and work to achieve amicable resolutions whenever possible, while vigorously protecting your interests in court when necessary. Your family's well-being is our primary concern. We understand the delicate nature of these cases and are committed to guiding you through this difficult time with dignity and respect. We also handle prenuptial agreements, spousal support, and domestic violence cases with the utmost discretion and care.",
     keyAreas: [
       "Divorce and Separation",
       "Child Custody and Support",
@@ -81,7 +81,7 @@ export const servicesList = [
     slug: 'immigration-law', 
     icon: Landmark, 
     description: "Navigating complex immigration laws for visas and citizenship.",
-    longDescription: "The immigration process can be complex and confusing. Our immigration law experts guide individuals, families, and businesses through the intricate landscape of U.S. immigration law. We assist with visa applications, green cards, naturalization, and defense against deportation. We are dedicated to helping you achieve your American dream by providing clear, strategic, and effective legal support every step of the way.",
+    longDescription: "The immigration process can be complex and confusing. Our immigration law experts guide individuals, families, and businesses through the intricate landscape of U.S. immigration law. We assist with visa applications, green cards, naturalization, and defense against deportation. Whether you are an employer seeking to hire foreign talent or an individual looking to build a new life, we provide clear, strategic, and effective legal support. We are dedicated to helping you achieve your American dream by providing clear, strategic, and effective legal support every step of the way.",
     keyAreas: [
       "Family-Based Visas",
       "Employment-Based Visas",
