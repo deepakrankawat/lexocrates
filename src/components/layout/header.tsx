@@ -21,8 +21,6 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
-  const isHome = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +32,7 @@ export function Header() {
 
   const headerClasses = cn(
     'fixed top-0 z-50 w-full transition-all duration-300',
-    isScrolled || !isHome ? 'bg-primary text-primary-foreground shadow-md' : 'bg-transparent text-primary-foreground'
+    isScrolled ? 'bg-primary text-primary-foreground shadow-md' : 'bg-transparent text-primary-foreground'
   );
 
   return (
