@@ -1,4 +1,5 @@
 import { Briefcase, Users, Home, Brain, Shield, Landmark } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const servicesList = [
   { 
@@ -14,7 +15,8 @@ export const servicesList = [
       "Corporate Governance and Compliance",
       "Shareholder Agreements",
       "Securities Law"
-    ]
+    ],
+    image: PlaceHolderImages.find(img => img.id === 'service-corporate-law')
   },
   { 
     name: 'Family Law', 
@@ -29,7 +31,8 @@ export const servicesList = [
       "Prenuptial and Postnuptial Agreements",
       "Domestic Violence and Restraining Orders",
       "Alimony and Spousal Support"
-    ]
+    ],
+    image: PlaceHolderImages.find(img => img.id === 'service-family-law')
   },
   { 
     name: 'Real Estate Law', 
@@ -44,7 +47,8 @@ export const servicesList = [
       "Title Examination and Insurance",
       "Real Estate Development",
       "Landlord-Tenant Law"
-    ]
+    ],
+    image: PlaceHolderImages.find(img => img.id === 'service-real-estate-law')
   },
   { 
     name: 'Intellectual Property', 
@@ -59,12 +63,13 @@ export const servicesList = [
       "IP Licensing and Transactions",
       "Domain Name Disputes",
       "Portfolio Management"
-    ]
+    ],
+    image: PlaceHolderImages.find(img => img.id === 'service-ip-law')
   },
   { 
     name: 'Criminal Defense', 
     slug: 'criminal-defense', 
-    icon: Shield, 
+    icon: Shield,
     description: "Vigorous defense to protect your rights and freedom.",
     longDescription: "Facing criminal charges can be a daunting experience. Our criminal defense team provides a vigorous defense for clients accused of a wide range of offenses, from misdemeanors to serious felonies. We are committed to protecting your rights, ensuring due process, and fighting for the best possible outcome. With a deep understanding of criminal law and procedure, we are your strongest advocates in the justice system, from investigation through to trial and appeals.",
     keyAreas: [
@@ -74,7 +79,8 @@ export const servicesList = [
       "Theft and Fraud",
       "White-Collar Crimes",
       "Federal and State Felonies"
-    ]
+    ],
+    image: PlaceHolderImages.find(img => img.id === 'service-criminal-defense')
   },
   { 
     name: 'Immigration Law', 
@@ -89,6 +95,7 @@ export const servicesList = [
       "Citizenship and Naturalization",
       "Deportation Defense",
       "Asylum and Refugee Status"
-    ]
+    ],
+    image: PlaceHolderImages.find(img => img.id === 'service-immigration-law')
   },
 ];

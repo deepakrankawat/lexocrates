@@ -35,7 +35,7 @@
     {
       "id": "partner-logo-2",
       "description": "Logo for a fictional company called 'Miguxian'",
-      "imageUrl": "https://images.unsplash.com/photo-1569605803663-e9337d901ff9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTk3NzUxMjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1680530033206-881e0a7e44b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTk3NzUxMjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo",
       "width": 150,
       "height": 50
@@ -43,7 +43,7 @@
     {
       "id": "partner-logo-3",
       "description": "Logo for a fictional company called 'Jeninayln'",
-      "imageUrl": "https://images.unsplash.com/photo-1618588429012-0559f1cbc5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc1OTczODIyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1731012189558-c2d035998542?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc1OTczODIyNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "corporate logo",
       "width": 150,
       "height": 50
@@ -59,7 +59,7 @@
     {
       "id": "lawyer-1",
       "description": "Professional portrait of a female lawyer",
-      "imageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NTk3NjIyNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1573496358961-3c82861ab8f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NTk3NjIyNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional woman",
       "width": 1080,
       "height": 1350
@@ -139,7 +139,7 @@
     {
       "id": "blog-image-4",
       "description": "Image for a blog post about real estate law",
-      "imageUrl": "https://images.unsplash.com/photo-1565402170291-8491f14678db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxyZWFsJTIwZXN0YXRlfGVufDB8fHx8MTc1OTY1MTEzMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1565402170291-8491f14678db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxyZWFsJTIwZXN0YXRlfGVufDB8fHx8fDE3NTk2NTE0OTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "real estate",
       "width": 1080,
       "height": 720
@@ -167,6 +167,54 @@
       "imageHint": "city map",
       "width": 1080,
       "height": 1350
+    },
+    {
+      "id": "service-corporate-law",
+      "description": "Modern office building",
+      "imageUrl": "https://picsum.photos/seed/corporate/600/800",
+      "imageHint": "corporate office",
+      "width": 600,
+      "height": 800
+    },
+    {
+      "id": "service-family-law",
+      "description": "A happy family",
+      "imageUrl": "https://picsum.photos/seed/family/600/800",
+      "imageHint": "happy family",
+      "width": 600,
+      "height": 800
+    },
+    {
+      "id": "service-real-estate-law",
+      "description": "A modern house",
+      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NTk3NjkyMzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern house",
+      "width": 600,
+      "height": 800
+    },
+    {
+      "id": "service-ip-law",
+      "description": "A lightbulb representing ideas",
+      "imageUrl": "https://picsum.photos/seed/idea/600/800",
+      "imageHint": "idea lightbulb",
+      "width": 600,
+      "height": 800
+    },
+    {
+      "id": "service-criminal-defense",
+      "description": "A courtroom",
+      "imageUrl": "https://images.unsplash.com/photo-1711003596883-63fa072778e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb3VydHJvb20lMjBnYXZlbHxlbnwwfHx8fDE3NTk3NjI4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "courtroom gavel",
+      "width": 600,
+      "height": 800
+    },
+    {
+      "id": "service-immigration-law",
+      "description": "A passport and a flag",
+      "imageUrl": "https://picsum.photos/seed/passport/600/800",
+      "imageHint": "passport flag",
+      "width": 600,
+      "height": 800
     }
   ]
 }

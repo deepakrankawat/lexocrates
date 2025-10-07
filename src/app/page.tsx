@@ -7,18 +7,20 @@ import { Blog } from '@/components/sections/blog';
 import { Cta } from '@/components/sections/cta';
 import { About } from '@/components/sections/about';
 import { Partners } from '@/components/sections/partners';
+import { WhyChooseUs } from '@/components/sections/why-choose-us';
 
 export default function HomePage() {
   return (
-    <main className="bg-background">
+    <main className="bg-white">
       <Hero />
-      <Partners />
       <About />
       <Services />
-      <Team />
-      <Cta />
+      <WhyChooseUs />
       <Experience />
+      <Team />
       <Testimonials />
+      <Cta />
+      <Partners />
       <Blog />
     </main>
   );
