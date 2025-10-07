@@ -13,7 +13,7 @@ export function RelatedPosts({ posts }: { posts: Post[] }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
-              Related News
+              Related Articles
             </h2>
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

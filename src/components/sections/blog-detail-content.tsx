@@ -71,7 +71,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
             {/* Sidebar */}
             <aside className="lg:col-span-1">
                 <div className="sticky top-28 bg-secondary p-8 rounded-lg">
-                    <h3 className="font-headline text-2xl font-bold text-primary mb-6">Recommendation News</h3>
+                    <h3 className="font-headline text-2xl font-bold text-primary mb-6">Recommendation Blog</h3>
                     <ul className="space-y-6">
                         {recommendedPosts.map((recPost) => (
                         <li key={recPost.id}>

@@ -12,12 +12,12 @@ export function Blog() {
     <section id="blog" className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-            <p className="font-body font-bold text-accent uppercase tracking-wider">News & Articles</p>
+            <p className="font-body font-bold text-accent uppercase tracking-wider">Blog & Articles</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
               From Our Blog
             </h2>
              <p className="mt-4 max-w-2xl mx-auto text-foreground/80">
-                Stay informed with our latest legal insights, case studies, and firm news.
+                Stay informed with our latest legal insights, case studies, and firm updates.
             </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
