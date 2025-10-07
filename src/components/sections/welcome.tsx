@@ -8,7 +8,7 @@ export function Welcome() {
     <section className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-96 w-96 justify-self-center rounded-full overflow-hidden">
+          <div className="relative h-96 w-96 justify-self-center overflow-hidden">
             {welcomeImage && (
                 <Image
                     src={welcomeImage.imageUrl}

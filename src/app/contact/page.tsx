@@ -40,7 +40,7 @@ export default function ContactPage() {
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">Send Us a Message</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-secondary p-8 rounded-lg">
+            <div className="bg-secondary p-8">
                 <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -93,7 +93,7 @@ export default function ContactPage() {
                         <p className="text-foreground/80">contact@northmanlaw.com</p>
                     </div>
                 </div>
-                <div className="relative h-80 w-full rounded-lg overflow-hidden mt-8">
+                <div className="relative h-80 w-full overflow-hidden mt-8">
                 {mapImage && (
                     <Image
                     src={mapImage.imageUrl}

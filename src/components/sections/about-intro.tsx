@@ -14,7 +14,7 @@ export function AboutIntro() {
                     src={aboutImage.imageUrl}
                     alt={aboutImage.description}
                     fill
-                    className="object-cover rounded-lg"
+                    className="object-cover"
                     data-ai-hint={aboutImage.imageHint}
                 />
             )}

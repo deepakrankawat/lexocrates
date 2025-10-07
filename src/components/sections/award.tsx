@@ -16,7 +16,7 @@ export function Award() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 rounded-lg overflow-hidden">
+            <div className="relative h-96 overflow-hidden">
                 {awardImage && (
                     <Image
                         src={awardImage.imageUrl}

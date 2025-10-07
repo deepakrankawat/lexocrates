@@ -21,7 +21,7 @@ export function ServiceDetailContent({ service }: { service: Service }) {
                         src={image1.imageUrl}
                         alt={image1.description}
                         fill
-                        className="object-cover rounded-lg"
+                        className="object-cover"
                         data-ai-hint={image1.imageHint}
                     />
                 )}
@@ -32,7 +32,7 @@ export function ServiceDetailContent({ service }: { service: Service }) {
                         src={image2.imageUrl}
                         alt={image2.description}
                         fill
-                        className="object-cover rounded-lg"
+                        className="object-cover"
                         data-ai-hint={image2.imageHint}
                     />
                 )}

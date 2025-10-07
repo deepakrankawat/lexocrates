@@ -77,7 +77,7 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-1">
                     {lawyer.image && (
-                        <div className="relative h-[25rem] w-full rounded-lg overflow-hidden">
+                        <div className="relative h-[25rem] w-full overflow-hidden">
                         <Image
                             src={lawyer.image.imageUrl}
                             alt={`Portrait of ${lawyer.name}`}

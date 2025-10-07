@@ -8,7 +8,7 @@ export function Cta() {
   return (
     <section className="bg-background py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative bg-primary text-primary-foreground py-20 sm:py-24 rounded-lg overflow-hidden">
+        <div className="relative bg-primary text-primary-foreground py-20 sm:py-24 overflow-hidden">
              {ctaImage && <Image src={ctaImage.imageUrl} alt="CTA background" fill className="object-cover opacity-10" />}
             <div className="relative flex flex-col items-center justify-center text-center">
                 <p className="font-body font-bold text-accent uppercase tracking-wider">Get In Touch</p>

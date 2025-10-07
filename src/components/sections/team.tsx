@@ -58,7 +58,7 @@ export function Team() {
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {teamMembers.map((member) => (
-            <Card key={member.name} className="group overflow-hidden text-center">
+            <Card key={member.name} className="group overflow-hidden text-center rounded-none">
               {member.image && (
                 <div className="relative h-96 w-full overflow-hidden">
                   <Image

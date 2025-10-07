@@ -41,7 +41,7 @@ export function Experience() {
                 src={experienceImage.imageUrl}
                 alt={experienceImage.description}
                 fill
-                className="object-cover rounded-lg"
+                className="object-cover"
                 data-ai-hint={experienceImage.imageHint}
               />
             )}

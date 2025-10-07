@@ -26,7 +26,7 @@ export function Footer() {
               Join our mailing list to stay up to date and get notices about our new releases.
             </p>
              <form className="mt-6 flex gap-2">
-              <input type="email" placeholder="Enter your email" className="w-full rounded-md border-gray-700 bg-gray-800 p-3 text-white focus:ring-accent" />
+              <input type="email" placeholder="Enter your email" className="w-full border-gray-700 bg-gray-800 p-3 text-white focus:ring-accent" />
               <Button type="submit" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">Subscribe</Button>
             </form>
           </div>
