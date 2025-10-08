@@ -16,6 +16,9 @@ export default {
       },
     },
     extend: {
+      backdropBlur: {
+        'xs': '2px',
+      },
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Playfair Display', 'serif'],
