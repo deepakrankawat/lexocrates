@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Faq } from "@/components/sections/faq";
 
 export default function ContactPage() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
@@ -108,6 +109,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <Faq />
     </main>
   );
 }
