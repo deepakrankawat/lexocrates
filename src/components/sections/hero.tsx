@@ -1,8 +1,6 @@
 'use client';
 
 import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -19,28 +17,9 @@ const AnimatedText = ({ children, delay }: { children: React.ReactNode, delay: n
   </motion.div>
 );
 
-const Scene = () => {
-    return (
-        <Canvas>
-            <Suspense fallback={null}>
-                <ambientLight intensity={1} />
-                <directionalLight position={[3, 2, 1]} />
-                <Sphere args={[1, 100, 200]} scale={2.4}>
-                    <MeshDistortMaterial
-                        color="#192A56"
-                        attach="material"
-                        distort={0.5}
-                        speed={1.5}
-                        metalness={0.7}
-                        roughness={0.3}
-                    />
-                </Sphere>
-            </Suspense>
-        </Canvas>
-    );
-};
-
-const DynamicScene = dynamic(() => Promise.resolve(Scene), { ssr: false });
+const Scene = dynamic(() => import('@/components/three/scene').then(mod => mod.Scene), {
+  ssr: false,
+});
 
 
 export function Hero() {
@@ -48,7 +27,9 @@ export function Hero() {
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#101C40] to-[#0A122A] z-0">
              <div className="absolute inset-0 opacity-50">
-                <DynamicScene />
+                <Suspense fallback={<div className="h-full w-full bg-transparent" />}>
+                  <Scene />
+                </Suspense>
              </div>
         </div>
       
