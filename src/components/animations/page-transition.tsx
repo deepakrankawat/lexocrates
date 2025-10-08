@@ -7,18 +7,12 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   const variants = {
     initial: {
       opacity: 0,
-      rotateX: 90,
-      transformOrigin: 'top center',
     },
     animate: {
       opacity: 1,
-      rotateX: 0,
-      transformOrigin: 'top center',
     },
     exit: {
       opacity: 0,
-      rotateX: -90,
-      transformOrigin: 'top center',
     },
   };
 
@@ -30,7 +24,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         animate="animate"
         exit="exit"
         transition={{
-          duration: 0.8,
+          duration: 0.5,
           ease: 'easeInOut',
         }}
       >
