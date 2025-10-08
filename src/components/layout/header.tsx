@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
 
 const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/lawyer', label: 'Our Team' },
