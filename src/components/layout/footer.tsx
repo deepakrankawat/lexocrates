@@ -54,6 +54,7 @@ export function Footer() {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li><Link href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
                   <li><Link href="/lawyer" className="text-primary-foreground/80 hover:text-accent transition-colors">Our Team</Link></li>
+                  <li><Link href="/careers" className="text-primary-foreground/80 hover:text-accent transition-colors">Careers</Link></li>
                   <li><Link href="/blog" className="text-primary-foreground/80 hover:text-accent transition-colors">Blog</Link></li>
                   <li><Link href="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">Contact</Link></li>
                 </ul>
