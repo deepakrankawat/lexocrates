@@ -36,13 +36,6 @@ const nextConfig: NextConfig = {
       }
     ],
   },
-  webpack: (config, { isServer }) => {
-    // Exclude @react-three/drei from server-side bundling
-    if (isServer) {
-      config.externals.push('@react-three/drei');
-    }
-    return config;
-  },
 };
 
 export default nextConfig;
