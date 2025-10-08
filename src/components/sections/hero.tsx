@@ -1,9 +1,15 @@
 'use client';
 
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
+
+const Scene = dynamic(() => import('@/components/three/scene').then(mod => mod.Scene), {
+  ssr: false,
+});
 
 const AnimatedText = ({ children, delay }: { children: React.ReactNode, delay: number }) => (
   <motion.div
@@ -18,7 +24,11 @@ const AnimatedText = ({ children, delay }: { children: React.ReactNode, delay: n
 export function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#101C40] to-[#0A122A] z-0" />
+      <div className="absolute inset-0 z-0">
+        <Suspense fallback={<div className="h-full w-full bg-gradient-to-b from-[#101C40] to-[#0A122A]" />}>
+          <Scene />
+        </Suspense>
+      </div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <AnimatedText delay={0.2}>
