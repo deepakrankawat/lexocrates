@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Facebook, Linkedin, Twitter } from 'lucide-react';
 import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
 import { motion } from 'framer-motion';
+import { SlideIn } from '../animations/slide-in';
 
 const teamMembers = [
   {
@@ -51,7 +52,7 @@ export function Team() {
   return (
     <section id="team" className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <SlideIn className="text-center mb-16">
             <p className="font-body font-bold text-accent uppercase tracking-wider">Our Experts</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
                 Meet Our Leadership Team
@@ -59,7 +60,7 @@ export function Team() {
             <p className="mt-4 max-w-2xl mx-auto text-foreground/80">
               Our leaders are highly skilled, dedicated professionals committed to delivering excellence in legal outsourcing.
             </p>
-        </div>
+        </SlideIn>
         <StaggerFadeIn className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {teamMembers.map((member) => (
             <motion.div

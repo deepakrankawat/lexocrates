@@ -1,4 +1,7 @@
+
 import { ShieldCheck, Scale, Users, Award } from "lucide-react";
+import { StaggerFadeIn } from "../animations/stagger-fade-in";
+import { SlideIn } from "../animations/slide-in";
 
 const features = [
     {
@@ -25,19 +28,21 @@ const features = [
 
 export function WhyChooseUs() {
     return (
-        <section className="bg-secondary text-foreground py-20 sm:py-28">
+        <section className="bg-secondary text-foreground py-20 sm:py-28 overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    <div className="flex flex-col">
-                        <p className="font-body font-bold text-accent uppercase tracking-wider">Why Choose Lexocrates</p>
-                        <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
-                            Experience the Lexocrates Advantage
-                        </h2>
-                        <p className="mt-6 text-foreground/80">
-                            When you partner with Lexocrates, you gain a dedicated team committed to enhancing your legal operations. We combine specialized expertise with advanced technology to deliver unparalleled efficiency, accuracy, and value.
-                        </p>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-8">
+                    <SlideIn direction="right">
+                        <div className="flex flex-col">
+                            <p className="font-body font-bold text-accent uppercase tracking-wider">Why Choose Lexocrates</p>
+                            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
+                                Experience the Lexocrates Advantage
+                            </h2>
+                            <p className="mt-6 text-foreground/80">
+                                When you partner with Lexocrates, you gain a dedicated team committed to enhancing your legal operations. We combine specialized expertise with advanced technology to deliver unparalleled efficiency, accuracy, and value.
+                            </p>
+                        </div>
+                    </SlideIn>
+                    <StaggerFadeIn className="grid sm:grid-cols-2 gap-8">
                         {features.map((feature) => (
                             <div key={feature.title} className="flex flex-col gap-4">
                                 <feature.icon className="h-10 w-10 text-accent" />
@@ -45,7 +50,7 @@ export function WhyChooseUs() {
                                 <p className="text-foreground/80">{feature.description}</p>
                             </div>
                         ))}
-                    </div>
+                    </StaggerFadeIn>
                 </div>
             </div>
         </section>

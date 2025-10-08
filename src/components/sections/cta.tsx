@@ -6,10 +6,10 @@ import { FadeIn } from '@/components/animations/fade-in';
 
 export function Cta() {
   return (
-    <section className="bg-background py-20 sm:py-28 text-foreground">
+    <section className="bg-secondary py-20 sm:py-28 text-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <div className="flex flex-col items-center justify-center text-center">
+          <div className="flex flex-col items-center justify-center text-center bg-background p-12">
               <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">
                 Ready to Optimize Your Legal Workflow?
               </h2>
