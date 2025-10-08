@@ -23,8 +23,9 @@ export function BlogDetailContent({ post }: { post: Post }) {
                         <Image
                             src={post.image.imageUrl}
                             alt={post.image.description}
-                            fill
-                            className="object-cover"
+                            width={post.image.width}
+                            height={post.image.height}
+                            className="object-cover w-full h-full"
                             data-ai-hint={post.image.imageHint}
                         />
                     </div>
@@ -40,8 +41,9 @@ export function BlogDetailContent({ post }: { post: Post }) {
                                     <Image
                                         src={image1.imageUrl}
                                         alt={image1.description}
-                                        fill
-                                        className="object-cover"
+                                        width={image1.width}
+                                        height={image1.height}
+                                        className="object-cover w-full h-full"
                                         data-ai-hint={image1.imageHint}
                                     />
                                 </div>
@@ -55,8 +57,9 @@ export function BlogDetailContent({ post }: { post: Post }) {
                                     <Image
                                         src={image2.imageUrl}
                                         alt={image2.description}
-                                        fill
-                                        className="object-cover"
+                                        width={image2.width}
+                                        height={image2.height}
+                                        className="object-cover w-full h-full"
                                         data-ai-hint={image2.imageHint}
                                     />
                                 </div>
@@ -81,8 +84,9 @@ export function BlogDetailContent({ post }: { post: Post }) {
                                         <Image
                                             src={recPost.image.imageUrl}
                                             alt={recPost.image.description}
-                                            fill
-                                            className="object-cover"
+                                            width={recPost.image.width}
+                                            height={recPost.image.height}
+                                            className="object-cover w-full h-full"
                                             data-ai-hint={recPost.image.imageHint}
                                         />
                                     </div>
@@ -102,3 +106,4 @@ export function BlogDetailContent({ post }: { post: Post }) {
     </section>
   );
 }
+    

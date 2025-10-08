@@ -24,8 +24,9 @@ export function RelatedPosts({ posts }: { posts: Post[] }) {
                             <Image
                             src={post.image.imageUrl}
                             alt={post.image.description}
-                            fill
-                            className="object-cover"
+                            width={post.image.width}
+                            height={post.image.height}
+                            className="object-cover w-full h-full"
                             data-ai-hint={post.image.imageHint}
                             />
                         </div>
@@ -49,3 +50,4 @@ export function RelatedPosts({ posts }: { posts: Post[] }) {
     </section>
   );
 }
+    

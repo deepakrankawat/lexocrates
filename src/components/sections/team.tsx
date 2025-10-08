@@ -74,8 +74,9 @@ export function Team() {
                           <Image
                           src={member.image.imageUrl}
                           alt={`Portrait of ${member.name}`}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          width={member.image.width}
+                          height={member.image.height}
+                          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                           data-ai-hint={member.image.imageHint}
                           />
                       )}
@@ -106,3 +107,5 @@ export function Team() {
     </section>
   );
 }
+
+    

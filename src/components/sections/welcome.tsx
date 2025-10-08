@@ -13,8 +13,9 @@ export function Welcome() {
                 <Image
                     src={welcomeImage.imageUrl}
                     alt={welcomeImage.description}
-                    fill
-                    className="object-cover"
+                    width={welcomeImage.width}
+                    height={welcomeImage.height}
+                    className="object-cover w-full h-full"
                     data-ai-hint={welcomeImage.imageHint}
                 />
             )}
@@ -36,3 +37,5 @@ export function Welcome() {
     </section>
   );
 }
+
+    

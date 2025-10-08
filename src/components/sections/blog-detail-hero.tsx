@@ -29,3 +29,4 @@ export function BlogDetailHero({ post }: { post: Post }) {
     </section>
   );
 }
+    

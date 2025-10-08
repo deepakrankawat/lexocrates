@@ -19,8 +19,9 @@ export function BlogList() {
                             <Image
                             src={post.image.imageUrl}
                             alt={post.image.description}
-                            fill
-                            className="object-cover"
+                            width={post.image.width}
+                            height={post.image.height}
+                            className="object-cover w-full h-full"
                             data-ai-hint={post.image.imageHint}
                             />
                             <div className="absolute top-4 left-4 bg-accent text-accent-foreground text-xs font-bold uppercase px-3 py-1 rounded-full">{post.category}</div>
@@ -72,3 +73,4 @@ export function BlogList() {
     </section>
   );
 }
+    

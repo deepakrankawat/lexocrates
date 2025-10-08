@@ -20,8 +20,9 @@ export function ServiceDetailContent({ service }: { service: Service }) {
                     <Image
                         src={image1.imageUrl}
                         alt={image1.description}
-                        fill
-                        className="object-cover"
+                        width={image1.width}
+                        height={image1.height}
+                        className="object-cover w-full h-full"
                         data-ai-hint={image1.imageHint}
                     />
                 )}
@@ -31,8 +32,9 @@ export function ServiceDetailContent({ service }: { service: Service }) {
                     <Image
                         src={image2.imageUrl}
                         alt={image2.description}
-                        fill
-                        className="object-cover"
+                        width={image2.width}
+                        height={image2.height}
+                        className="object-cover w-full h-full"
                         data-ai-hint={image2.imageHint}
                     />
                 )}
@@ -59,3 +61,4 @@ export function ServiceDetailContent({ service }: { service: Service }) {
     </section>
   );
 }
+    

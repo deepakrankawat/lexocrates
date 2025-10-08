@@ -81,8 +81,9 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
                         <Image
                             src={lawyer.image.imageUrl}
                             alt={`Portrait of ${lawyer.name}`}
-                            fill
-                            className="object-cover"
+                            width={lawyer.image.width}
+                            height={lawyer.image.height}
+                            className="object-cover w-full h-full"
                             data-ai-hint={lawyer.image.imageHint}
                         />
                         </div>
@@ -113,3 +114,4 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
     </main>
   );
 }
+    

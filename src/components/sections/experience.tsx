@@ -51,8 +51,9 @@ export function Experience() {
               <Image
                 src={experienceImage.imageUrl}
                 alt={experienceImage.description}
-                fill
-                className="object-cover"
+                width={experienceImage.width}
+                height={experienceImage.height}
+                className="object-cover w-full h-full"
                 data-ai-hint={experienceImage.imageHint}
               />
             )}
@@ -62,3 +63,5 @@ export function Experience() {
     </section>
   );
 }
+
+    

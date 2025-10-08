@@ -13,8 +13,9 @@ export function AboutIntro() {
                 <Image
                     src={aboutImage.imageUrl}
                     alt={aboutImage.description}
-                    fill
-                    className="object-cover"
+                    width={aboutImage.width}
+                    height={aboutImage.height}
+                    className="object-cover w-full h-full"
                     data-ai-hint={aboutImage.imageHint}
                 />
             )}
@@ -38,3 +39,4 @@ export function AboutIntro() {
     </section>
   );
 }
+    

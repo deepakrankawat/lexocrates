@@ -18,6 +18,8 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const architecturalImage = PlaceHolderImages.find(p => p.id === 'about-us-lady-justice')
+
   return (
     <section className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,16 +68,21 @@ export function Testimonials() {
               ))}
           </SlideIn>
           <SlideIn direction="left" className="relative h-96 w-full">
-            <Image
-                src="https://images.unsplash.com/photo-1590099543482-3b3d3083a474?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsYWR5JTIwanVzdGljZXxlbnwwfHx8fDE3NTk3NTIyNDd8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Architectural columns"
-                fill
-                className="object-cover"
-                data-ai-hint="architecture columns"
-            />
+            {architecturalImage && (
+              <Image
+                  src={architecturalImage.imageUrl}
+                  alt={architecturalImage.description}
+                  width={architecturalImage.width}
+                  height={architecturalImage.height}
+                  className="object-cover w-full h-full"
+                  data-ai-hint={architecturalImage.imageHint}
+              />
+            )}
           </SlideIn>
         </div>
       </div>
     </section>
   );
 }
+
+    

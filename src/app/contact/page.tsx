@@ -101,8 +101,9 @@ export default function ContactPage() {
                     <Image
                     src={mapImage.imageUrl}
                     alt={mapImage.description}
-                    fill
-                    className="object-cover"
+                    width={mapImage.width}
+                    height={mapImage.height}
+                    className="object-cover w-full h-full"
                     data-ai-hint={mapImage.imageHint}
                     />
                 )}
@@ -117,3 +118,4 @@ export default function ContactPage() {
     </main>
   );
 }
+    

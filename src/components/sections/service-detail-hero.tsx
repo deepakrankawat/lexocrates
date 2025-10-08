@@ -28,3 +28,4 @@ export function ServiceDetailHero({ service }: { service: Service }) {
     </section>
   );
 }
+    

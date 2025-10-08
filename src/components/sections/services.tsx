@@ -69,8 +69,9 @@ export function Services() {
                     <Image
                     src={activeService.image.imageUrl}
                     alt={activeService.image.description}
-                    fill
-                    className="object-cover"
+                    width={activeService.image.width}
+                    height={activeService.image.height}
+                    className="object-cover w-full h-full"
                     data-ai-hint={activeService.image.imageHint}
                     />
                   </motion.div>
@@ -82,3 +83,5 @@ export function Services() {
     </section>
   );
 }
+
+    

@@ -35,8 +35,9 @@ export function Blog() {
                             <Image
                             src={post.image.imageUrl}
                             alt={post.image.description}
-                            fill
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            width={post.image.width}
+                            height={post.image.height}
+                            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                             data-ai-hint={post.image.imageHint}
                             />
                         </div>
@@ -60,3 +61,5 @@ export function Blog() {
     </section>
   );
 }
+
+    
