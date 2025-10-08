@@ -52,8 +52,16 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
           className="mt-10"
         >
-          <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/contact">Get Consultation</Link>
+          <Button 
+            asChild 
+            size="lg" 
+            variant="secondary"
+            className="group relative overflow-hidden bg-accent text-accent-foreground hover:bg-accent/90"
+          >
+            <Link href="/contact">
+              <span className="absolute inset-0 border-2 border-transparent transition-all duration-300 group-hover:border-accent-foreground"></span>
+              Get Consultation
+            </Link>
           </Button>
         </motion.div>
       </div>
