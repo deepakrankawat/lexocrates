@@ -3,6 +3,7 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SlideIn } from "../animations/slide-in";
+import { StaggerFadeIn } from "../animations/stagger-fade-in";
 
 const faqs = [
     {
@@ -42,14 +43,16 @@ export function Faq() {
         </SlideIn>
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-background px-6">
-                    <AccordionTrigger className="text-left font-headline text-xl text-primary hover:no-underline">{faq.question}</AccordionTrigger>
-                    <AccordionContent className="text-foreground/80">
-                    {faq.answer}
-                    </AccordionContent>
-                </AccordionItem>
-            ))}
+            <StaggerFadeIn>
+                {faqs.map((faq, index) => (
+                    <AccordionItem key={index} value={`item-${index}`} className="bg-background px-6">
+                        <AccordionTrigger className="text-left font-headline text-xl text-primary hover:no-underline">{faq.question}</AccordionTrigger>
+                        <AccordionContent className="text-foreground/80">
+                        {faq.answer}
+                        </AccordionContent>
+                    </AccordionItem>
+                ))}
+            </StaggerFadeIn>
           </Accordion>
         </div>
       </div>
