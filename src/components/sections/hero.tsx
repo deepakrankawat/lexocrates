@@ -24,8 +24,8 @@ const AnimatedText = ({ children, delay }: { children: React.ReactNode, delay: n
 export function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <Suspense fallback={<div className="h-full w-full bg-gradient-to-b from-[#101C40] to-[#0A122A]" />}>
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#101C40] to-[#0A122A]">
+        <Suspense fallback={null}>
           <Scene />
         </Suspense>
       </div>
