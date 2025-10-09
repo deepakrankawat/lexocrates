@@ -33,12 +33,9 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isTransparent = !isScrolled;
-
   const headerClasses = cn(
     'fixed top-0 z-50 w-full transition-all duration-300',
-    isTransparent ? 'bg-transparent' : 'bg-primary shadow-md',
-    isScrolled ? 'text-primary-foreground' : 'text-primary-foreground'
+    'bg-primary shadow-md text-primary-foreground'
   );
 
   return (
