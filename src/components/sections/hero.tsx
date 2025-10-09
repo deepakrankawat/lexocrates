@@ -5,42 +5,49 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { FadeIn } from '@/components/animations/fade-in';
+import { SlideIn } from '@/components/animations/slide-in';
 
 export function Hero() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
+  const heroImage = PlaceHolderImages.find(img => img.id === 'about-us-lady-justice');
 
   return (
-    <section className="relative h-screen min-h-[40rem] flex items-center justify-center text-center text-white">
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
-      <div className="absolute inset-0 bg-primary/60" />
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn>
-          <div className="flex flex-col items-center">
-            <h1 className="font-headline text-5xl md:text-7xl font-bold leading-tight">
-              Delivering Legal Outcomes with Precision
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-white/90">
-              Empowering law firms and enterprises through secure, efficient, and scalable legal outsourcing.
-            </p>
-            <div className="mt-10">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/services">
-                  Explore Services
-                </Link>
-              </Button>
+    <section className="bg-background text-foreground overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-6rem)] py-20 sm:py-28">
+                <SlideIn direction="right">
+                    <div className="flex flex-col items-start text-left">
+                        <p className="font-body font-bold text-accent uppercase tracking-wider">
+                            Legal Process Outsourcing
+                        </p>
+                        <h1 className="mt-4 font-headline text-5xl md:text-6xl font-bold text-primary leading-tight">
+                            Empowering Global Legal Excellence
+                        </h1>
+                        <p className="mt-6 max-w-xl text-lg text-foreground/80">
+                            Lexocrates provides end-to-end legal outsourcing solutions, enabling your firm to focus on strategy while we handle precision legal work.
+                        </p>
+                        <div className="mt-10">
+                            <Button asChild size="lg">
+                                <Link href="/services">
+                                Explore Services
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+                </SlideIn>
+                <SlideIn direction="left" className="relative h-[30rem] w-full hidden lg:block">
+                     {heroImage && (
+                        <Image
+                            src={heroImage.imageUrl}
+                            alt={heroImage.description}
+                            width={heroImage.width}
+                            height={heroImage.height}
+                            className="object-cover w-full h-full"
+                            priority
+                            data-ai-hint={heroImage.imageHint}
+                        />
+                    )}
+                </SlideIn>
             </div>
-          </div>
-        </FadeIn>
       </div>
     </section>
   );
