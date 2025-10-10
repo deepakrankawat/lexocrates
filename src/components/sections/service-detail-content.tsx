@@ -1,8 +1,10 @@
+
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { servicesList } from '@/lib/services-data';
+import { AppImage } from '../ui/app-image';
 
 type Service = typeof servicesList[0];
 
@@ -17,7 +19,7 @@ export function ServiceDetailContent({ service }: { service: Service }) {
           <div className="grid grid-cols-2 gap-6">
             <div className="relative h-96">
                 {image1 && (
-                    <Image
+                    <AppImage
                         src={image1.imageUrl}
                         alt={image1.description}
                         width={image1.width}
@@ -29,7 +31,7 @@ export function ServiceDetailContent({ service }: { service: Service }) {
             </div>
             <div className="relative h-96 mt-12">
                 {image2 && (
-                    <Image
+                    <AppImage
                         src={image2.imageUrl}
                         alt={image2.description}
                         width={image2.width}
@@ -61,4 +63,3 @@ export function ServiceDetailContent({ service }: { service: Service }) {
     </section>
   );
 }
-    

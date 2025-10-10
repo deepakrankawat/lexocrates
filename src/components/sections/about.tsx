@@ -1,12 +1,10 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
+import { Landmark } from 'lucide-react';
 import { SlideIn } from '@/components/animations/slide-in';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function About() {
-  const image = PlaceHolderImages.find(img => img.id === 'service-detail-2');
   return (
     <section id="about" className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,17 +26,8 @@ export function About() {
               </div>
             </div>
           </SlideIn>
-          <SlideIn direction="left" className="relative h-[30rem] w-full">
-            {image && (
-              <Image
-                src={image.imageUrl}
-                alt={image.description}
-                width={image.width}
-                height={image.height}
-                className="object-cover w-full h-full"
-                data-ai-hint={image.imageHint}
-              />
-            )}
+          <SlideIn direction="left" className="relative h-96 lg:h-[32rem] bg-secondary flex items-center justify-center">
+            <Landmark className="h-48 w-48 text-accent/80" strokeWidth={0.5} />
           </SlideIn>
         </div>
       </div>

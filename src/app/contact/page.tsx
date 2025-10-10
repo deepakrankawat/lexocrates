@@ -12,6 +12,7 @@ import { Faq } from "@/components/sections/faq";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Cta } from "@/components/sections/cta";
 import Link from "next/link";
+import { AppImage } from "@/components/ui/app-image";
 
 export default function ContactPage() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
@@ -127,7 +128,7 @@ export default function ContactPage() {
               </Link>
                 <div className="relative h-80 w-full overflow-hidden mt-8">
                 {mapImage && (
-                    <Image
+                    <AppImage
                     src={mapImage.imageUrl}
                     alt={mapImage.description}
                     width={mapImage.width}
@@ -147,4 +148,3 @@ export default function ContactPage() {
     </main>
   );
 }
-    

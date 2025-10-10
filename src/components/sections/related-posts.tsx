@@ -1,8 +1,10 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { blogPosts } from '@/lib/blog-data';
+import { AppImage } from '../ui/app-image';
 
 type Post = typeof blogPosts[0];
 
@@ -21,7 +23,7 @@ export function RelatedPosts({ posts }: { posts: Post[] }) {
                 {post.image && (
                     <Link href={`/blog/${post.slug}`}>
                         <div className="relative h-64 w-full">
-                            <Image
+                            <AppImage
                             src={post.image.imageUrl}
                             alt={post.image.description}
                             width={post.image.width}
@@ -50,4 +52,3 @@ export function RelatedPosts({ posts }: { posts: Post[] }) {
     </section>
   );
 }
-    

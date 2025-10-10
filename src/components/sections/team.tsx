@@ -1,10 +1,8 @@
 
 'use client';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { Facebook, Linkedin, Twitter } from 'lucide-react';
+import { Facebook, Linkedin, Twitter, User } from 'lucide-react';
 import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
 import { motion } from 'framer-motion';
 import { SlideIn } from '../animations/slide-in';
@@ -13,37 +11,31 @@ const teamMembers = [
   {
     name: 'Laitman Harry',
     title: 'Head of Corporate Solutions',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-4'),
     slug: 'laitman-harry',
   },
   {
     name: 'Nada Geomorgant',
     title: 'Lead, Contract Management',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-2'),
     slug: 'nada-geomorgant',
   },
   {
     name: 'Desy Willy',
     title: 'Director of Compliance',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-3'),
     slug: 'desy-willy',
   },
   {
     name: 'Hernando Jully',
     title: 'Senior Legal Researcher',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-5'),
     slug: 'hernando-jully',
   },
    {
     name: 'Lydia Dary',
     title: 'Document Review Specialist',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-6'),
     slug: 'lydia-dary',
   },
   {
     name: 'Smilly Ilani',
     title: 'Founder & CEO',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-1'),
     slug: 'smilly-ilani',
   },
 ];
@@ -69,17 +61,8 @@ export function Team() {
               transition={{ duration: 0.3 }}
             >
               <Card className="group overflow-hidden text-center h-full">
-                  <div className="relative h-96 w-full overflow-hidden">
-                      {member.image && (
-                        <Image
-                          src={member.image.imageUrl}
-                          alt={member.image.description}
-                          width={member.image.width}
-                          height={member.image.height}
-                          className="object-cover w-full h-full"
-                          data-ai-hint={member.image.imageHint}
-                        />
-                      )}
+                  <div className="relative h-96 w-full overflow-hidden bg-secondary flex items-center justify-center">
+                    <User className="h-24 w-24 text-primary/10" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute bottom-4 right-4 flex gap-2">
                           <Link href="#" className="p-2 bg-background/80 rounded-full text-primary hover:bg-accent hover:text-white transition-colors">

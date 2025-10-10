@@ -1,8 +1,10 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ArrowRight } from 'lucide-react';
+import { AppImage } from '../ui/app-image';
 
 type Post = typeof blogPosts[0];
 
@@ -20,7 +22,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
             <div className="lg:col-span-2">
                  {post.image && (
                     <div className="relative h-[25rem] w-full mb-12">
-                        <Image
+                        <AppImage
                             src={post.image.imageUrl}
                             alt={post.image.description}
                             width={post.image.width}
@@ -38,7 +40,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
                         <div className="group">
                              {image1 && (
                                 <div className="relative h-72 w-full mb-6">
-                                    <Image
+                                    <AppImage
                                         src={image1.imageUrl}
                                         alt={image1.description}
                                         width={image1.width}
@@ -54,7 +56,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
                         <div className="group">
                              {image2 && (
                                 <div className="relative h-72 w-full mb-6">
-                                    <Image
+                                    <AppImage
                                         src={image2.imageUrl}
                                         alt={image2.description}
                                         width={image2.width}
@@ -81,7 +83,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
                             <Link href={`/blog/${recPost.slug}`} className="group flex items-start gap-4">
                                 {recPost.image && (
                                     <div className="relative h-20 w-20 flex-shrink-0">
-                                        <Image
+                                        <AppImage
                                             src={recPost.image.imageUrl}
                                             alt={recPost.image.description}
                                             width={recPost.image.width}
@@ -106,4 +108,3 @@ export function BlogDetailContent({ post }: { post: Post }) {
     </section>
   );
 }
-    

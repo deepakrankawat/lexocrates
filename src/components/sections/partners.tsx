@@ -5,6 +5,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
 import { motion } from 'framer-motion';
 import { SlideIn } from '../animations/slide-in';
+import { AppImage } from '../ui/app-image';
 
 const partners = [
   {
@@ -57,7 +58,7 @@ export function Partners() {
                 className="flex justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 >
-                    <Image
+                    <AppImage
                     src={partner.logo.imageUrl}
                     alt={`${partner.name} logo`}
                     width={140}

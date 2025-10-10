@@ -1,12 +1,9 @@
 
-import { Smile, Briefcase, Award } from 'lucide-react';
+import { Smile, Briefcase, Award, TrendingUp } from 'lucide-react';
 import { SlideIn } from '@/components/animations/slide-in';
 import { Counter } from '@/components/animations/counter';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import Image from 'next/image';
 
 export function Experience() {
-  const image = PlaceHolderImages.find(img => img.id === 'hero-about');
   return (
     <section id="experience" className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,17 +42,8 @@ export function Experience() {
               </div>
             </div>
           </SlideIn>
-           <SlideIn direction="left" className="relative h-96 lg:h-[32rem]">
-            {image && (
-                <Image
-                  src={image.imageUrl}
-                  alt={image.description}
-                  width={image.width}
-                  height={image.height}
-                  className="object-cover w-full h-full"
-                  data-ai-hint={image.imageHint}
-                />
-              )}
+           <SlideIn direction="left" className="relative h-96 lg:h-[32rem] bg-secondary flex items-center justify-center">
+            <TrendingUp className="h-48 w-48 text-accent/80" strokeWidth={0.5} />
           </SlideIn>
         </div>
       </div>

@@ -7,6 +7,7 @@ import { Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { SlideIn } from '@/components/animations/slide-in';
+import { AppImage } from '../ui/app-image';
 
 
 const testimonials = [
@@ -60,7 +61,7 @@ export function Testimonials() {
                       </blockquote>
                       <footer className="flex items-center gap-4">
                           {testimonial.avatar && (
-                              <Image
+                              <AppImage
                                   src={testimonial.avatar.imageUrl}
                                   alt={`Portrait of ${testimonial.name}`}
                                   width={56}

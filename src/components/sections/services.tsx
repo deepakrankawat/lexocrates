@@ -2,13 +2,13 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { servicesList } from '@/lib/services-data';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { StaggerFadeIn } from '../animations/stagger-fade-in';
 import { SlideIn } from '../animations/slide-in';
+import { AppImage } from '../ui/app-image';
 
 export function Services() {
   const [activeService, setActiveService] = useState(servicesList[0]);
@@ -66,7 +66,7 @@ export function Services() {
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0"
                   >
-                    <Image
+                    <AppImage
                     src={activeService.image.imageUrl}
                     alt={activeService.image.description}
                     width={activeService.image.width}
@@ -83,5 +83,3 @@ export function Services() {
     </section>
   );
 }
-
-    

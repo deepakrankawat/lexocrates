@@ -8,6 +8,7 @@ import { blogPosts } from '@/lib/blog-data';
 import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
 import { motion } from 'framer-motion';
 import { SlideIn } from '../animations/slide-in';
+import { AppImage } from '../ui/app-image';
 
 const featuredPosts = blogPosts.slice(0, 3);
 
@@ -32,7 +33,7 @@ export function Blog() {
                  <Link href={`/blog/${post.slug}`}>
                     {post.image && (
                         <div className="relative h-64 w-full overflow-hidden">
-                            <Image
+                            <AppImage
                             src={post.image.imageUrl}
                             alt={post.image.description}
                             width={post.image.width}
@@ -61,5 +62,3 @@ export function Blog() {
     </section>
   );
 }
-
-    

@@ -1,10 +1,10 @@
 
-import { Team } from '@/components/sections/team';
 import { Cta } from '@/components/sections/cta';
 import { Testimonials } from '@/components/sections/testimonials';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { User } from 'lucide-react';
 
 const teamMembers = [
   {
@@ -77,18 +77,9 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-1">
-                  {lawyer.image && (
-                    <div className="relative h-[25rem] w-full overflow-hidden">
-                      <Image
-                        src={lawyer.image.imageUrl}
-                        alt={lawyer.image.description}
-                        width={lawyer.image.width}
-                        height={lawyer.image.height}
-                        className="object-cover w-full h-full"
-                        data-ai-hint={lawyer.image.imageHint}
-                      />
-                    </div>
-                  )}
+                  <div className="relative h-[25rem] w-full overflow-hidden bg-secondary flex items-center justify-center">
+                    <User className="h-36 w-36 text-primary/10" />
+                  </div>
                 </div>
                 <div className="md:col-span-2 space-y-6 text-foreground/80">
                     <h2 className="font-headline text-4xl font-bold text-primary">About {lawyer.name}</h2>
