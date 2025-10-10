@@ -27,7 +27,7 @@ export function About() {
             </div>
           </SlideIn>
           <SlideIn direction="left" className="relative h-[30rem] w-full bg-secondary flex items-center justify-center">
-            <Landmark className="h-48 w-48 text-primary/10" />
+            <Landmark className="h-48 w-48 text-accent/20" />
           </SlideIn>
         </div>
       </div>

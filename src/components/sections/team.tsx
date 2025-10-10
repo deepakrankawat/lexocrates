@@ -69,7 +69,7 @@ export function Team() {
             >
               <Card className="group overflow-hidden text-center h-full">
                   <div className="relative h-96 w-full overflow-hidden bg-secondary flex items-center justify-center">
-                      <User className="h-32 w-32 text-primary/20" />
+                      <User className="h-32 w-32 text-accent/20" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute bottom-4 right-4 flex gap-2">
                           <Link href="#" className="p-2 bg-background/80 rounded-full text-primary hover:bg-accent hover:text-white transition-colors">

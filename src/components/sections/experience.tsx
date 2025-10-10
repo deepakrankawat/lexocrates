@@ -43,7 +43,7 @@ export function Experience() {
             </div>
           </SlideIn>
            <SlideIn direction="left" className="relative h-96 lg:h-[32rem] bg-secondary flex items-center justify-center">
-            <TrendingUp className="h-48 w-48 text-primary/10" />
+            <TrendingUp className="h-48 w-48 text-accent/20" />
           </SlideIn>
         </div>
       </div>

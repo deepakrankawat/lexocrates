@@ -7,7 +7,7 @@ export function Welcome() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-96 w-96 justify-self-center overflow-hidden bg-secondary flex items-center justify-center">
-            <User className="h-48 w-48 text-primary/10" />
+            <User className="h-48 w-48 text-accent/20" />
           </div>
           <div>
             <p className="font-body font-bold text-accent uppercase tracking-wider">A Message from Our Founder</p>

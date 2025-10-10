@@ -79,7 +79,7 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-1">
                     <div className="relative h-[25rem] w-full overflow-hidden bg-secondary flex items-center justify-center">
-                      <User className="h-48 w-48 text-primary/20" />
+                      <User className="h-48 w-48 text-accent/20" />
                     </div>
                 </div>
                 <div className="md:col-span-2 space-y-6 text-foreground/80">

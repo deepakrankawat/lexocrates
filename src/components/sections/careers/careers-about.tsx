@@ -8,7 +8,7 @@ export function CareersAbout() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="left" className="relative h-[30rem] w-full bg-secondary flex items-center justify-center">
-            <Building2 className="h-48 w-48 text-primary/10" />
+            <Building2 className="h-48 w-48 text-accent/20" />
           </SlideIn>
           <SlideIn direction="right">
             <div className="flex flex-col">
