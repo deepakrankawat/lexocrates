@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
@@ -114,6 +114,15 @@ export default function ContactPage() {
                   <div>
                       <h3 className="text-lg font-bold text-primary group-hover:text-accent">Support</h3>
                       <p className="text-foreground/80 group-hover:text-accent">support@lexocrates.com</p>
+                  </div>
+              </Link>
+              <Link href="#" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full">
+                      <Linkedin className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">LinkedIn</h3>
+                      <p className="text-foreground/80 group-hover:text-accent">Follow us on LinkedIn</p>
                   </div>
               </Link>
                 <div className="relative h-80 w-full overflow-hidden mt-8">
