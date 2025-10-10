@@ -9,6 +9,62 @@
       "height": 720
     },
     {
+      "id": "hero-home",
+      "description": "Modern architectural building",
+      "imageUrl": "https://picsum.photos/seed/home-hero/1920/1080",
+      "imageHint": "modern architecture",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "hero-about",
+      "description": "Library with books",
+      "imageUrl": "https://picsum.photos/seed/about-hero/1920/1080",
+      "imageHint": "library books",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "hero-services",
+      "description": "Abstract office interior",
+      "imageUrl": "https://picsum.photos/seed/services-hero/1920/1080",
+      "imageHint": "office interior",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "hero-team",
+      "description": "People in a collaborative meeting",
+      "imageUrl": "https://picsum.photos/seed/team-hero/1920/1080",
+      "imageHint": "team meeting",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "hero-careers",
+      "description": "Person working on a laptop",
+      "imageUrl": "https://picsum.photos/seed/careers-hero/1920/1080",
+      "imageHint": "working laptop",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "hero-blog",
+      "description": "A person writing in a notebook",
+      "imageUrl": "https://picsum.photos/seed/blog-hero/1920/1080",
+      "imageHint": "writing notebook",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "hero-contact",
+      "description": "An old-fashioned telephone",
+      "imageUrl": "https://picsum.photos/seed/contact-hero/1920/1080",
+      "imageHint": "vintage telephone",
+      "width": 1920,
+      "height": 1080
+    },
+    {
       "id": "about-us-lady-justice",
       "description": "Statue of Lady Justice with scales",
       "imageUrl": "https://images.unsplash.com/photo-1590099543482-3b3d3083a474?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsYWR5JTIwanVzdGljZXxlbnwwfHx8fDE3NTk3NTIyNDd8MA&ixlib=rb-4.1.0&q=80&w=1080",

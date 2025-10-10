@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function BlogHero() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-blog');
 
   return (
     <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32">

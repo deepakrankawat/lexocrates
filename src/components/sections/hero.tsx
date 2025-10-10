@@ -4,20 +4,23 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FadeIn } from '@/components/animations/fade-in';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Image from 'next/image';
 
 export function Hero() {
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
   return (
     <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
-      >
-        <source src="https://storage.googleapis.com/proudcity/austin/uploads/2019/02/Austin-Gov-Headers-026.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {heroImage && (
+        <Image
+          src={heroImage.imageUrl}
+          alt={heroImage.description}
+          fill
+          className="object-cover"
+          priority
+          data-ai-hint={heroImage.imageHint}
+        />
+      )}
       <div className="absolute inset-0 bg-primary/70 z-10" />
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-primary-foreground">
         <FadeIn delay={0.2} duration={0.8}>

@@ -14,7 +14,7 @@ import { Cta } from "@/components/sections/cta";
 import Link from "next/link";
 
 export default function ContactPage() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
   const mapImage = PlaceHolderImages.find(img => img.id === 'contact-map');
 
   return (
