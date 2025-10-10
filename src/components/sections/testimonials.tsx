@@ -18,7 +18,7 @@ const testimonials = [
 ];
 
 export function Testimonials() {
-
+  const testimonialImage = PlaceHolderImages.find(img => img.id === 'service-detail-1');
   return (
     <section className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +67,16 @@ export function Testimonials() {
               ))}
           </SlideIn>
           <SlideIn direction="left" className="relative h-96 w-full bg-secondary">
-            {/* Image Removed */}
+            {testimonialImage && (
+                <Image
+                    src={testimonialImage.imageUrl}
+                    alt={testimonialImage.description}
+                    width={testimonialImage.width}
+                    height={testimonialImage.height}
+                    className="object-cover w-full h-full"
+                    data-ai-hint={testimonialImage.imageHint}
+                />
+            )}
           </SlideIn>
         </div>
       </div>

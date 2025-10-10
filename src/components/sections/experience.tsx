@@ -2,8 +2,11 @@
 import { Smile, Briefcase, Award } from 'lucide-react';
 import { SlideIn } from '@/components/animations/slide-in';
 import { Counter } from '@/components/animations/counter';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Image from 'next/image';
 
 export function Experience() {
+  const experienceImage = PlaceHolderImages.find(img => img.id === 'service-detail-2');
 
   return (
     <section id="experience" className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
@@ -44,7 +47,16 @@ export function Experience() {
             </div>
           </SlideIn>
            <SlideIn direction="left" className="relative h-96 lg:h-[32rem] bg-secondary">
-            {/* Image Removed */}
+            {experienceImage && (
+                <Image
+                    src={experienceImage.imageUrl}
+                    alt={experienceImage.description}
+                    width={experienceImage.width}
+                    height={experienceImage.height}
+                    className="object-cover w-full h-full"
+                    data-ai-hint={experienceImage.imageHint}
+                />
+            )}
           </SlideIn>
         </div>
       </div>

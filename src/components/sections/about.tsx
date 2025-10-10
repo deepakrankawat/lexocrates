@@ -2,8 +2,11 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SlideIn } from '@/components/animations/slide-in';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Image from 'next/image';
 
 export function About() {
+  const aboutImage = PlaceHolderImages.find(img => img.id === 'gavel-book');
 
   return (
     <section id="about" className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
@@ -27,7 +30,16 @@ export function About() {
             </div>
           </SlideIn>
           <SlideIn direction="left" className="relative h-[30rem] w-full bg-secondary">
-            {/* Image Removed */}
+            {aboutImage && (
+              <Image
+                src={aboutImage.imageUrl}
+                alt={aboutImage.description}
+                width={aboutImage.width}
+                height={aboutImage.height}
+                className="object-cover w-full h-full"
+                data-ai-hint={aboutImage.imageHint}
+              />
+            )}
           </SlideIn>
         </div>
       </div>
