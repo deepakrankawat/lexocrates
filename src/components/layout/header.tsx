@@ -38,6 +38,13 @@ export function Header() {
     'bg-primary shadow-md text-primary-foreground'
   );
 
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === href;
+    }
+    return pathname.startsWith(href);
+  };
+
   return (
     <header className={headerClasses}>
       <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -46,8 +53,18 @@ export function Header() {
         </Link>
         <nav className="hidden md:flex md:items-center md:gap-8">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-bold transition-colors hover:text-primary-foreground/80">
+            <Link 
+              key={link.href} 
+              href={link.href} 
+              className={cn(
+                "relative text-sm font-bold transition-colors hover:text-primary-foreground/80",
+                !isActive(link.href) && "text-primary-foreground/60"
+              )}
+            >
               {link.label}
+              {isActive(link.href) && (
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-0.5 w-6 bg-accent rounded-full" />
+              )}
             </Link>
           ))}
         </nav>
@@ -70,7 +87,15 @@ export function Header() {
               <div className="mt-8 flex h-full flex-col">
                 <nav className="flex flex-col gap-6">
                   {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary-foreground hover:text-accent">
+                    <Link 
+                      key={link.href} 
+                      href={link.href} 
+                      onClick={() => setIsOpen(false)} 
+                      className={cn(
+                        "text-lg font-bold text-primary-foreground hover:text-accent",
+                        isActive(link.href) ? "text-accent" : "text-primary-foreground"
+                      )}
+                    >
                       {link.label}
                     </Link>
                   ))}
