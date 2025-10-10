@@ -1,10 +1,9 @@
 
 'use client';
-import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Facebook, Linkedin, Twitter } from 'lucide-react';
+import { Facebook, Linkedin, Twitter, User } from 'lucide-react';
 import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
 import { motion } from 'framer-motion';
 import { SlideIn } from '../animations/slide-in';
@@ -69,17 +68,8 @@ export function Team() {
               transition={{ duration: 0.3 }}
             >
               <Card className="group overflow-hidden text-center h-full">
-                  <div className="relative h-96 w-full overflow-hidden">
-                      {member.image && (
-                          <Image
-                          src={member.image.imageUrl}
-                          alt={`Portrait of ${member.name}`}
-                          width={member.image.width}
-                          height={member.image.height}
-                          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint={member.image.imageHint}
-                          />
-                      )}
+                  <div className="relative h-96 w-full overflow-hidden bg-secondary flex items-center justify-center">
+                      <User className="h-32 w-32 text-primary/20" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute bottom-4 right-4 flex gap-2">
                           <Link href="#" className="p-2 bg-background/80 rounded-full text-primary hover:bg-accent hover:text-white transition-colors">
@@ -107,5 +97,3 @@ export function Team() {
     </section>
   );
 }
-
-    
