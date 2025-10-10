@@ -62,7 +62,7 @@ export function CareersPositions() {
                   </div>
                   <div className="mt-auto pt-6">
                     <Button asChild className="w-full">
-                       <Link href="#application-form">Apply Now</Link>
+                       <Link href="/contact">Contact Us</Link>
                     </Button>
                   </div>
                 </CardContent>
