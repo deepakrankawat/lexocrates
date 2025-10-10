@@ -1,24 +1,13 @@
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+
+import { BookOpen } from 'lucide-react';
 
 export function AboutIntro() {
-  const aboutImage = PlaceHolderImages.find(img => img.id === 'about-us-lady-justice');
-
   return (
     <section id="about-intro" className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative h-[30rem] w-full">
-            {aboutImage && (
-                <Image
-                    src={aboutImage.imageUrl}
-                    alt={aboutImage.description}
-                    width={aboutImage.width}
-                    height={aboutImage.height}
-                    className="object-cover w-full h-full"
-                    data-ai-hint={aboutImage.imageHint}
-                />
-            )}
+          <div className="relative h-[30rem] w-full bg-secondary flex items-center justify-center">
+            <BookOpen className="h-48 w-48 text-accent/20" />
           </div>
           <div className="flex flex-col">
             <p className="font-body font-bold text-accent uppercase tracking-wider">Our Story</p>
@@ -39,4 +28,3 @@ export function AboutIntro() {
     </section>
   );
 }
-    

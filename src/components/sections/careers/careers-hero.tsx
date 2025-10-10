@@ -4,7 +4,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FadeIn } from '@/components/animations/fade-in';
 
 export function CareersHero() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-careers');
 
   return (
     <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32">

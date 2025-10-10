@@ -5,7 +5,7 @@ import { servicesList } from '@/lib/services-data';
 type Service = typeof servicesList[0];
 
 export function ServiceDetailHero({ service }: { service: Service }) {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-services');
 
   return (
     <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32">

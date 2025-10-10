@@ -5,7 +5,7 @@ import { blogPosts } from '@/lib/blog-data';
 type Post = typeof blogPosts[0];
 
 export function BlogDetailHero({ post }: { post: Post }) {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-blog');
 
   return (
     <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32">

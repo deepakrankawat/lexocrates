@@ -3,7 +3,6 @@ import { CareersHero } from '@/components/sections/careers/careers-hero';
 import { CareersAbout } from '@/components/sections/careers/careers-about';
 import { CareersPositions } from '@/components/sections/careers/careers-positions';
 import { CareersBenefits } from '@/components/sections/careers/careers-benefits';
-import { CareersForm } from '@/components/sections/careers/careers-form';
 import { Cta } from '@/components/sections/cta';
 
 export default function CareersPage() {
@@ -13,7 +12,6 @@ export default function CareersPage() {
       <CareersAbout />
       <CareersPositions />
       <CareersBenefits />
-      <CareersForm />
       <Cta />
     </main>
   );

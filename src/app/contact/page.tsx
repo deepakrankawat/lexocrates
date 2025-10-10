@@ -1,18 +1,20 @@
+
 'use client';
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Cta } from "@/components/sections/cta";
+import Link from "next/link";
 
 export default function ContactPage() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background-lady-justice');
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
   const mapImage = PlaceHolderImages.find(img => img.id === 'contact-map');
 
   return (
@@ -69,33 +71,60 @@ export default function ContactPage() {
                 </form>
             </div>
             <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                    <div className="bg-accent/10 p-3 rounded-full">
-                        <MapPin className="h-6 w-6 text-accent" />
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-bold text-primary">Our Office</h3>
-                        <p className="text-foreground/80">7889 Mechanic Rd. Miami, FL 33125</p>
-                    </div>
-                </div>
-                 <div className="flex items-start gap-4">
-                    <div className="bg-accent/10 p-3 rounded-full">
-                        <Phone className="h-6 w-6 text-accent" />
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-bold text-primary">Phone</h3>
-                        <p className="text-foreground/80">+22 7272 8282</p>
-                    </div>
-                </div>
-                 <div className="flex items-start gap-4">
-                    <div className="bg-accent/10 p-3 rounded-full">
-                        <Mail className="h-6 w-6 text-accent" />
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-bold text-primary">Email</h3>
-                        <p className="text-foreground/80">contact@lexocrates.com</p>
-                    </div>
-                </div>
+              <Link href="https://www.google.com/maps/search/?api=1&query=7889+Mechanic+Rd.+Miami,+FL+33125" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full">
+                      <MapPin className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Our Office</h3>
+                      <p className="text-foreground/80 group-hover:text-accent">7889 Mechanic Rd. Miami, FL 33125</p>
+                  </div>
+              </Link>
+               <Link href="tel:+2272728282" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full">
+                      <Phone className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Phone</h3>
+                      <p className="text-foreground/80 group-hover:text-accent">+22 7272 8282</p>
+                  </div>
+              </Link>
+               <Link href="mailto:contact@lexocrates.com" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full">
+                      <Mail className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Email</h3>
+                      <p className="text-foreground/80 group-hover:text-accent">contact@lexocrates.com</p>
+                  </div>
+              </Link>
+              <Link href="mailto:careers@lexocrates.com" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full">
+                      <Mail className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Careers</h3>
+                      <p className="text-foreground/80 group-hover:text-accent">careers@lexocrates.com</p>
+                  </div>
+              </Link>
+              <Link href="mailto:support@lexocrates.com" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full">
+                      <Mail className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Support</h3>
+                      <p className="text-foreground/80 group-hover:text-accent">support@lexocrates.com</p>
+                  </div>
+              </Link>
+              <Link href="#" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full">
+                      <Linkedin className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">LinkedIn</h3>
+                      <p className="text-foreground/80 group-hover:text-accent">Follow us on LinkedIn</p>
+                  </div>
+              </Link>
                 <div className="relative h-80 w-full overflow-hidden mt-8">
                 {mapImage && (
                     <Image
