@@ -1,14 +1,25 @@
 
 import { SlideIn } from '@/components/animations/slide-in';
-import { Building2 } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Image from 'next/image';
 
 export function CareersAbout() {
+  const image = PlaceHolderImages.find(img => img.id === 'hero-careers');
   return (
     <section className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <SlideIn direction="left" className="relative h-[30rem] w-full bg-secondary flex items-center justify-center">
-            <Building2 className="h-48 w-48 text-accent/20" />
+          <SlideIn direction="left" className="relative h-[30rem] w-full">
+            {image && (
+              <Image
+                src={image.imageUrl}
+                alt={image.description}
+                width={image.width}
+                height={image.height}
+                className="object-cover w-full h-full"
+                data-ai-hint={image.imageHint}
+              />
+            )}
           </SlideIn>
           <SlideIn direction="right">
             <div className="flex flex-col">

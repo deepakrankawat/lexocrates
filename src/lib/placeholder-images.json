@@ -1,89 +1,65 @@
 {
   "placeholderImages": [
     {
-      "id": "hero-background-lady-justice",
-      "description": "Statue of Lady Justice",
-      "imageUrl": "https://images.unsplash.com/photo-1643393671476-c4de72162a53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsYWR5JTIwanVzdGljZXxlbnwwfHx8fDE3NTk3NTIyNDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "lady justice",
-      "width": 1080,
-      "height": 720
-    },
-    {
       "id": "hero-home",
-      "description": "Modern architectural building",
-      "imageUrl": "https://picsum.photos/seed/home-hero/1920/1080",
-      "imageHint": "modern architecture",
+      "description": "Lady Justice statue in front of a building",
+      "imageUrl": "/images/hero-home.jpg",
+      "imageHint": "lady justice",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-about",
-      "description": "Library with books",
-      "imageUrl": "https://picsum.photos/seed/about-hero/1920/1080",
-      "imageHint": "library books",
+      "description": "A gavel and law book on a wooden desk",
+      "imageUrl": "/images/hero-about.jpg",
+      "imageHint": "gavel law book",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-services",
-      "description": "Abstract office interior",
-      "imageUrl": "https://picsum.photos/seed/services-hero/1920/1080",
-      "imageHint": "office interior",
+      "description": "A modern office building with glass windows",
+      "imageUrl": "/images/hero-services.jpg",
+      "imageHint": "office building",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-team",
-      "description": "People in a collaborative meeting",
-      "imageUrl": "https://picsum.photos/seed/team-hero/1920/1080",
+      "description": "A group of diverse professionals in a meeting",
+      "imageUrl": "/images/hero-team.jpg",
       "imageHint": "team meeting",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-careers",
-      "description": "Person working on a laptop",
-      "imageUrl": "https://picsum.photos/seed/careers-hero/1920/1080",
-      "imageHint": "working laptop",
+      "description": "A person working on a laptop in a modern office",
+      "imageUrl": "/images/hero-careers.jpg",
+      "imageHint": "working office",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-blog",
-      "description": "A person writing in a notebook",
-      "imageUrl": "https://picsum.photos/seed/blog-hero/1920/1080",
+      "description": "A person writing in a notebook on a desk with a laptop",
+      "imageUrl": "/images/hero-blog.jpg",
       "imageHint": "writing notebook",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-contact",
-      "description": "An old-fashioned telephone",
-      "imageUrl": "https://picsum.photos/seed/contact-hero/1920/1080",
+      "description": "Close-up of an old-fashioned rotary telephone",
+      "imageUrl": "/images/hero-contact.jpg",
       "imageHint": "vintage telephone",
       "width": 1920,
       "height": 1080
     },
     {
-      "id": "about-us-lady-justice",
-      "description": "Statue of Lady Justice with scales",
-      "imageUrl": "https://images.unsplash.com/photo-1590099543482-3b3d3083a474?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsYWR5JTIwanVzdGljZXxlbnwwfHx8fDE3NTk3NTIyNDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "lady justice",
-      "width": 1080,
-      "height": 1350
-    },
-    {
-      "id": "gavel-book",
-      "description": "Gavel and law book",
-      "imageUrl": "https://images.unsplash.com/photo-1599758685995-946503abc966?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxnYXZlbCUyMGxhdyUyMGJvb2t8ZW58MHx8fHwxNzU5NzUyMjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "gavel law book",
-      "width": 1080,
-      "height": 720
-    },
-    {
       "id": "partner-logo-1",
       "description": "Logo for a fictional company called 'Daerazo'",
-      "imageUrl": "https://picsum.photos/seed/daerazo/150/50",
+      "imageUrl": "/images/logoipsum-265.svg",
       "imageHint": "company logo",
       "width": 150,
       "height": 50
@@ -91,7 +67,7 @@
     {
       "id": "partner-logo-2",
       "description": "Logo for a fictional company called 'Miguxian'",
-      "imageUrl": "https://images.unsplash.com/photo-1680530033206-881e0a7e44b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTk3NzUxMjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/logoipsum-262.svg",
       "imageHint": "tech logo",
       "width": 150,
       "height": 50
@@ -99,7 +75,7 @@
     {
       "id": "partner-logo-3",
       "description": "Logo for a fictional company called 'Jeninayln'",
-      "imageUrl": "https://images.unsplash.com/photo-1731012189558-c2d035998542?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc1OTczODIyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/logoipsum-289.svg",
       "imageHint": "corporate logo",
       "width": 150,
       "height": 50
@@ -107,7 +83,7 @@
     {
       "id": "partner-logo-4",
       "description": "Logo for a fictional company called 'Superanzo'",
-      "imageUrl": "https://picsum.photos/seed/superanzo/150/50",
+      "imageUrl": "/images/logoipsum-297.svg",
       "imageHint": "modern logo",
       "width": 150,
       "height": 50
@@ -115,119 +91,119 @@
     {
       "id": "lawyer-1",
       "description": "Professional portrait of a female lawyer",
-      "imageUrl": "https://images.unsplash.com/photo-1573496358961-3c82861ab8f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NTk3NjIyNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/lawyer-1.jpg",
       "imageHint": "professional woman",
-      "width": 1080,
-      "height": 1350
+      "width": 600,
+      "height": 800
     },
     {
       "id": "lawyer-2",
       "description": "Professional portrait of a female judge",
-      "imageUrl": "https://picsum.photos/seed/lawyer2/1080/1350",
+      "imageUrl": "/images/lawyer-2.jpg",
       "imageHint": "female judge",
-      "width": 1080,
-      "height": 1350
+      "width": 600,
+      "height": 800
     },
     {
       "id": "lawyer-3",
       "description": "Professional portrait of a female lawyer in a suit",
-      "imageUrl": "https://picsum.photos/seed/lawyer3/1080/1620",
+      "imageUrl": "/images/lawyer-3.jpg",
       "imageHint": "female lawyer",
-      "width": 1080,
-      "height": 1620
+      "width": 600,
+      "height": 800
     },
     {
       "id": "lawyer-4",
       "description": "Professional portrait of a male lawyer",
-      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzYwNDk3NzUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/lawyer-4.jpg",
       "imageHint": "male lawyer",
-      "width": 1080,
-      "height": 1350
+      "width": 600,
+      "height": 800
     },
     {
       "id": "lawyer-5",
       "description": "Portrait of a man in a suit",
-      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTk2NzcyNjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/lawyer-5.jpg",
       "imageHint": "man suit",
-      "width": 1080,
-      "height": 720
+      "width": 600,
+      "height": 800
     },
     {
       "id": "lawyer-6",
       "description": "Portrait of a woman with glasses",
-      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8fDE3NjA0OTc5NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/lawyer-6.jpg",
       "imageHint": "professional woman",
-      "width": 1080,
-      "height": 1080
+      "width": 600,
+      "height": 800
     },
     {
       "id": "client-avatar-1",
       "description": "Avatar of client Johnatan G.",
-      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTk2NzcyNjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/client-avatar-1.jpg",
       "imageHint": "man portrait",
-      "width": 1080,
-      "height": 720
+      "width": 100,
+      "height": 100
     },
     {
       "id": "blog-image-1",
       "description": "Image for a blog post about corporate mergers",
-      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb3Jwb3JhdGUlMjBtZWV0aW5nfGVufDB8fHx8MTc1OTY2NjQxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/blog-1.jpg",
       "imageHint": "corporate meeting",
-      "width": 1080,
-      "height": 720
+      "width": 800,
+      "height": 600
     },
     {
       "id": "blog-image-2",
       "description": "Image for a blog post about family law",
-      "imageUrl": "https://images.unsplash.com/photo-1752652013282-2e007020cba6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmFtaWx5JTIwY29uY2VwdHxlbnwwfHx8fDE3NTk3NTI0MDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/blog-2.jpg",
       "imageHint": "family concept",
-      "width": 1080,
-      "height": 720
+      "width": 800,
+      "height": 600
     },
     {
       "id": "blog-image-3",
       "description": "Image for a blog post about AI and IP law",
-      "imageUrl": "https://images.unsplash.com/photo-1716637644831-e046c73be197?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1OTcyMjIzMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/blog-3.jpg",
       "imageHint": "artificial intelligence",
-      "width": 1080,
-      "height": 720
+      "width": 800,
+      "height": 600
     },
     {
       "id": "blog-image-4",
       "description": "Image for a blog post about real estate law",
-      "imageUrl": "https://images.unsplash.com/photo-1565402170291-8491f14678db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxyZWFsJTIwZXN0YXRlfGVufDB8fHx8fDE3NTk2NTE0OTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/blog-4.jpg",
       "imageHint": "real estate",
-      "width": 1080,
-      "height": 720
+      "width": 800,
+      "height": 600
     },
     {
       "id": "service-detail-1",
-      "description": "Close-up of Lady Justice statue",
-      "imageUrl": "https://images.unsplash.com/photo-1622987182830-3546866bebf2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxsYWR5JTIwanVzdGljZXxlbnwwfHx8fDE3NTk3NTIyNDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "lady justice",
-      "width": 1080,
-      "height": 1619
+      "description": "A professional legal setting",
+      "imageUrl": "/images/service-detail-1.jpg",
+      "imageHint": "legal office",
+      "width": 600,
+      "height": 800
     },
     {
       "id": "service-detail-2",
-      "description": "Small statue of Lady Justice on a desk",
-      "imageUrl": "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsYXclMjBzdGF0dWV8ZW58MHx8fHwxNzU5NzUyMjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "law statue",
-      "width": 1080,
-      "height": 1350
+      "description": "Law books on a shelf",
+      "imageUrl": "/images/service-detail-2.jpg",
+      "imageHint": "law books",
+      "width": 600,
+      "height": 800
     },
     {
       "id": "contact-map",
       "description": "A map showing a location in a city.",
-      "imageUrl": "https://images.unsplash.com/photo-1579524020961-ce8e8431ab44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXB8ZW58MHx8fHwxNzYwMTg0MTI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/map.jpg",
       "imageHint": "city map",
-      "width": 1080,
-      "height": 1350
+      "width": 800,
+      "height": 600
     },
     {
       "id": "service-corporate-law",
       "description": "Modern office building",
-      "imageUrl": "https://picsum.photos/seed/corporate/600/800",
+      "imageUrl": "/images/service-corporate.jpg",
       "imageHint": "corporate office",
       "width": 600,
       "height": 800
@@ -235,7 +211,7 @@
     {
       "id": "service-family-law",
       "description": "A happy family",
-      "imageUrl": "https://picsum.photos/seed/family/600/800",
+      "imageUrl": "/images/service-family.jpg",
       "imageHint": "happy family",
       "width": 600,
       "height": 800
@@ -243,7 +219,7 @@
     {
       "id": "service-real-estate-law",
       "description": "A modern house",
-      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NTk3NjkyMzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service-real-estate.jpg",
       "imageHint": "modern house",
       "width": 600,
       "height": 800
@@ -251,7 +227,7 @@
     {
       "id": "service-ip-law",
       "description": "A lightbulb representing ideas",
-      "imageUrl": "https://picsum.photos/seed/idea/600/800",
+      "imageUrl": "/images/service-ip.jpg",
       "imageHint": "idea lightbulb",
       "width": 600,
       "height": 800
@@ -259,7 +235,7 @@
     {
       "id": "service-criminal-defense",
       "description": "A courtroom",
-      "imageUrl": "https://images.unsplash.com/photo-1711003596883-63fa072778e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb3VydHJvb20lMjBnYXZlbHxlbnwwfHx8fDE3NTk3NjI4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service-criminal.jpg",
       "imageHint": "courtroom gavel",
       "width": 600,
       "height": 800
@@ -267,7 +243,7 @@
     {
       "id": "service-immigration-law",
       "description": "A passport and a flag",
-      "imageUrl": "https://picsum.photos/seed/passport/600/800",
+      "imageUrl": "/images/service-immigration.jpg",
       "imageHint": "passport flag",
       "width": 600,
       "height": 800
