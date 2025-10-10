@@ -1,24 +1,13 @@
 
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import Image from 'next/image';
+import { User } from 'lucide-react';
 
 export function Welcome() {
-  const founderImage = PlaceHolderImages.find(img => img.id === 'lawyer-1');
   return (
     <section className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-96 w-96 justify-self-center overflow-hidden bg-secondary flex items-center justify-center">
-            {founderImage && (
-              <Image
-                src={founderImage.imageUrl}
-                alt={founderImage.description}
-                width={founderImage.width}
-                height={founderImage.height}
-                className="object-cover w-full h-full"
-                data-ai-hint={founderImage.imageHint}
-              />
-            )}
+            <User className="h-48 w-48 text-primary/10" />
           </div>
           <div>
             <p className="font-body font-bold text-accent uppercase tracking-wider">A Message from Our Founder</p>

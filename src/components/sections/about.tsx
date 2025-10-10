@@ -2,12 +2,9 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SlideIn } from '@/components/animations/slide-in';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import Image from 'next/image';
+import { Landmark } from 'lucide-react';
 
 export function About() {
-  const aboutImage = PlaceHolderImages.find(img => img.id === 'gavel-book');
-
   return (
     <section id="about" className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,17 +26,8 @@ export function About() {
               </div>
             </div>
           </SlideIn>
-          <SlideIn direction="left" className="relative h-[30rem] w-full bg-secondary">
-            {aboutImage && (
-              <Image
-                src={aboutImage.imageUrl}
-                alt={aboutImage.description}
-                width={aboutImage.width}
-                height={aboutImage.height}
-                className="object-cover w-full h-full"
-                data-ai-hint={aboutImage.imageHint}
-              />
-            )}
+          <SlideIn direction="left" className="relative h-[30rem] w-full bg-secondary flex items-center justify-center">
+            <Landmark className="h-48 w-48 text-primary/10" />
           </SlideIn>
         </div>
       </div>

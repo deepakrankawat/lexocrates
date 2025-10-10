@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Quote } from 'lucide-react';
+import { Quote, MessageSquareQuote } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SlideIn } from '@/components/animations/slide-in';
 import { FadeIn } from '@/components/animations/fade-in';
@@ -18,7 +18,6 @@ const testimonials = [
 ];
 
 export function Testimonials() {
-  const testimonialImage = PlaceHolderImages.find(img => img.id === 'service-detail-1');
   return (
     <section className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,17 +65,8 @@ export function Testimonials() {
                 </div>
               ))}
           </SlideIn>
-          <SlideIn direction="left" className="relative h-96 w-full bg-secondary">
-            {testimonialImage && (
-                <Image
-                    src={testimonialImage.imageUrl}
-                    alt={testimonialImage.description}
-                    width={testimonialImage.width}
-                    height={testimonialImage.height}
-                    className="object-cover w-full h-full"
-                    data-ai-hint={testimonialImage.imageHint}
-                />
-            )}
+          <SlideIn direction="left" className="relative h-96 w-full bg-secondary flex items-center justify-center">
+            <MessageSquareQuote className="h-48 w-48 text-primary/10" />
           </SlideIn>
         </div>
       </div>
