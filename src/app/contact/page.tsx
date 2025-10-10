@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from "@/components/ui/button";
@@ -94,6 +95,24 @@ export default function ContactPage() {
                     <div>
                         <h3 className="text-lg font-bold text-primary">Email</h3>
                         <p className="text-foreground/80">contact@lexocrates.com</p>
+                    </div>
+                </div>
+                <div className="flex items-start gap-4">
+                    <div className="bg-accent/10 p-3 rounded-full">
+                        <Mail className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-bold text-primary">Careers</h3>
+                        <p className="text-foreground/80">careers@lexocrates.com</p>
+                    </div>
+                </div>
+                <div className="flex items-start gap-4">
+                    <div className="bg-accent/10 p-3 rounded-full">
+                        <Mail className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-bold text-primary">Support</h3>
+                        <p className="text-foreground/80">support@lexocrates.com</p>
                     </div>
                 </div>
                 <div className="relative h-80 w-full overflow-hidden mt-8">
