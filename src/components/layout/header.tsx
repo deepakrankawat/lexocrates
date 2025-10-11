@@ -24,7 +24,6 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +35,7 @@ export function Header() {
 
   const headerClasses = cn(
     'fixed top-0 z-50 w-full transition-all duration-300',
-    (isScrolled || !isHomePage) 
+    isScrolled 
       ? 'bg-primary shadow-md text-primary-foreground' 
       : 'bg-transparent text-white'
   );
@@ -62,10 +61,10 @@ export function Header() {
               className={cn(
                 "relative text-sm font-bold transition-colors hover:text-white/80",
                 !isActive(link.href) && "text-white/80",
-                (isScrolled || !isHomePage) && "hover:text-primary-foreground/80",
-                (isScrolled || !isHomePage) && !isActive(link.href) && "text-primary-foreground/60",
+                isScrolled && "hover:text-primary-foreground/80",
+                isScrolled && !isActive(link.href) && "text-primary-foreground/60",
                 isActive(link.href) && "text-white",
-                isActive(link.href) && (isScrolled || !isHomePage) && "text-primary-foreground",
+                isActive(link.href) && isScrolled && "text-primary-foreground",
               )}
             >
               {link.label}
