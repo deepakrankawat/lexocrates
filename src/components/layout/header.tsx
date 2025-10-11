@@ -24,6 +24,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +36,9 @@ export function Header() {
 
   const headerClasses = cn(
     'fixed top-0 z-50 w-full transition-all duration-300',
-    'bg-primary shadow-md text-primary-foreground'
+    (isScrolled || !isHomePage) 
+      ? 'bg-primary shadow-md text-primary-foreground' 
+      : 'bg-transparent text-white'
   );
 
   const isActive = (href: string) => {
@@ -57,8 +60,12 @@ export function Header() {
               key={link.href} 
               href={link.href} 
               className={cn(
-                "relative text-sm font-bold transition-colors hover:text-primary-foreground/80",
-                !isActive(link.href) && "text-primary-foreground/60"
+                "relative text-sm font-bold transition-colors hover:text-white/80",
+                !isActive(link.href) && "text-white/80",
+                (isScrolled || !isHomePage) && "hover:text-primary-foreground/80",
+                (isScrolled || !isHomePage) && !isActive(link.href) && "text-primary-foreground/60",
+                isActive(link.href) && "text-white",
+                isActive(link.href) && (isScrolled || !isHomePage) && "text-primary-foreground",
               )}
             >
               {link.label}
@@ -70,7 +77,7 @@ export function Header() {
         </nav>
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-transparent" onClick={() => setIsOpen(true)}>
+            <Button variant="ghost" size="icon" className="text-white hover:bg-transparent" onClick={() => setIsOpen(true)}>
               <Menu className="h-6 w-6" />
               <span className="sr-only">Open menu</span>
             </Button>
