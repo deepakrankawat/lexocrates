@@ -20,23 +20,6 @@ export const blogPosts = [
     `,
   },
   {
-    id: 2,
-    slug: 'mastering-contract-lifecycle-management',
-    title: 'Mastering Contract Lifecycle Management (CLM)',
-    excerpt: 'Best practices for streamlining your contract processes from start to finish...',
-    image: PlaceHolderImages.find(img => img.id === 'blog-image-2'),
-    date: 'Sep 25, 2024',
-    category: 'Contract Management',
-    author: 'Yashvardhan Singh',
-    fullContent: `
-      <p>Effective Contract Lifecycle Management (CLM) is critical for mitigating risk and maximizing value. However, many organizations struggle with fragmented processes, poor visibility, and compliance challenges. Outsourcing your CLM to a specialist like Lexocrates can transform your contracting process into a streamlined, strategic function.</p>
-      <p>The first step is to establish a centralized contract repository. A single source of truth for all your agreements provides unparalleled visibility, making it easy to track key dates, obligations, and renewal opportunities. Our team helps you digitize and organize your contracts, implementing robust version control and access management to ensure security and integrity.</p>
-      <h4 class="font-headline text-2xl font-bold text-primary mt-8 mb-4">Automating and Standardizing Workflows</h4>
-      <p>Standardizing your contract templates and automating workflows are key to improving efficiency. We work with you to create pre-approved templates for common agreements, reducing drafting time and ensuring consistency. Automated approval workflows eliminate bottlenecks, ensuring that contracts move smoothly through the review process to execution.</p>
-      <p>Post-execution management is where many CLM initiatives fall short. We provide ongoing support to monitor obligations, track compliance, and analyze performance data. By identifying trends and areas for improvement, we help you continuously optimize your contracting process and drive better business outcomes.</p>
-    `,
-  },
-  {
     id: 3,
     slug: 'why-india-is-a-leader-in-legal-process-outsourcing',
     title: 'Why India is a Leader in Legal Process Outsourcing',
@@ -58,29 +41,6 @@ export const blogPosts = [
         <li><strong>Access to Talent:</strong> India’s robust legal education system produces thousands of skilled law graduates annually, offering high-quality legal minds at competitive rates.</li>
       </ul>
       <p class="mt-4">As global legal teams increasingly seek leaner operations and high-quality support, the Indian LPO sector is poised to be a crucial partner in delivering value-driven legal solutions. For firms aiming to enhance productivity and profitability, India remains a premier destination for legal outsourcing.</p>
-    `,
-  },
-  {
-    id: 4,
-    slug: 'why-outsourcing-to-india-makes-sense',
-    title: 'Why Outsourcing to India Makes Strategic Sense: Professionalism, Talent & Time Zone Edge',
-    excerpt: 'India has established itself as a global outsourcing hub across industries—from IT and finance to customer service and legal processes...',
-    image: PlaceHolderImages.find(img => img.id === 'blog-image-4'),
-    date: 'Oct 15, 2024',
-    category: 'LPO Industry',
-    author: 'Yashvardhan Singh',
-    fullContent: `
-      <p>India has established itself as a global outsourcing hub across industries—from IT and finance to customer service and legal processes. What sets India apart is not just cost savings, but a powerful combination of professionalism, domain expertise, and operational advantages that global companies find hard to ignore.</p>
-      <h4 class="font-headline text-2xl font-bold text-primary mt-8 mb-4">1. Professionalism and Quality Delivery</h4>
-      <p>Gone are the days when outsourcing was synonymous with compromise. Indian firms today operate with high levels of professionalism, driven by international exposure, certifications like ISO and GDPR compliance, and a deep understanding of global business standards. Whether you’re outsourcing legal work, accounting, customer support, or digital marketing, Indian firms provide well-structured service level agreements (SLAs), consistent communication, and strict quality control protocols.</p>
-      <p>These firms invest heavily in training, process optimization, and upskilling to match or even exceed client expectations. Many professionals in India are educated in global curricula, fluent in English, and adept at using the latest tools and platforms like Salesforce, SAP, Clio, Relativity, and more.</p>
-      <h4 class="font-headline text-2xl font-bold text-primary mt-8 mb-4">2. Skilled Talent at Scale</h4>
-      <p>India produces millions of graduates every year, including over 70,000 lawyers, 1.5 million engineers, and thousands of management professionals. This vast and growing talent pool is a key reason why global companies—from startups to Fortune 500s—set up offshore operations or partner with Indian service providers. You get access to qualified professionals who are not only cost-effective but also capable of delivering complex, high-value work.</p>
-      <h4 class="font-headline text-2xl font-bold text-primary mt-8 mb-4">3. Time Zone Advantage</h4>
-      <p>India’s time zone (GMT+5:30) offers a significant operational benefit for businesses based in North America, Europe, and Australia. This geographic offset enables a 24-hour work cycle. Projects handed over at the end of the day in New York or London can be worked on overnight in India and be ready the next morning—drastically reducing turnaround times.</p>
-      <p>For legal firms, this means case summaries, research, or contract reviews can be delivered overnight. For software firms, it means faster deployment and round-the-clock debugging.</p>
-      <h4 class="font-headline text-2xl font-bold text-primary mt-8 mb-4">Conclusion</h4>
-      <p>Outsourcing to India isn’t just a cost-saving decision anymore—it’s a strategic move for efficiency, speed, and global competitiveness. With world-class professionalism, access to skilled talent, and the natural time zone advantage, Indian firms offer a winning formula for businesses looking to scale smartly and sustainably.</p>
     `,
   },
 ];
