@@ -1,5 +1,5 @@
 
-import { Smile, Briefcase, Award, TrendingUp } from 'lucide-react';
+import { Briefcase, Award, TrendingUp, Calendar, Users } from 'lucide-react';
 import { SlideIn } from '@/components/animations/slide-in';
 import { Counter } from '@/components/animations/counter';
 
@@ -17,27 +17,20 @@ export function Experience() {
               <p className="mt-6 text-foreground/80">
                 Our firm's foundation is built on years of dedicated service and a deep understanding of global legal standards. We leverage this experience to deliver efficiency and excellence for our clients.
               </p>
-              <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div className="text-center">
-                      <Smile className="h-12 w-12 mx-auto text-accent" />
+                      <Calendar className="h-12 w-12 mx-auto text-accent" />
                       <p className="mt-2 text-4xl font-bold text-primary">
-                        <Counter from={0} to={200} />+
+                        <Counter from={0} to={15} />+
                       </p>
-                      <p className="text-foreground/80">Global Clients</p>
+                      <p className="text-foreground/80">Years Experience</p>
                   </div>
                   <div className="text-center">
-                      <Briefcase className="h-12 w-12 mx-auto text-accent" />
+                      <Users className="h-12 w-12 mx-auto text-accent" />
                       <p className="mt-2 text-4xl font-bold text-primary">
-                         <Counter from={0} to={5000} />+
+                         <Counter from={0} to={50} />+
                       </p>
-                      <p className="text-foreground/80">Contracts Managed</p>
-                  </div>
-                  <div className="text-center">
-                      <Award className="h-12 w-12 mx-auto text-accent" />
-                      <p className="mt-2 text-4xl font-bold text-primary">
-                         <Counter from={0} to={99} />%
-                      </p>
-                      <p className="text-foreground/80">Client Satisfaction</p>
+                      <p className="text-foreground/80">Legal Experts</p>
                   </div>
               </div>
             </div>
