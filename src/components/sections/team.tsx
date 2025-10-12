@@ -2,7 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Facebook, Linkedin, Twitter, User } from 'lucide-react';
+import { User } from 'lucide-react';
 import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
 import { motion } from 'framer-motion';
 import { SlideIn } from '../animations/slide-in';
@@ -64,17 +64,6 @@ export function Team() {
                   <div className="relative h-96 w-full overflow-hidden bg-secondary flex items-center justify-center">
                     <User className="h-24 w-24 text-primary/10" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      <div className="absolute bottom-4 right-4 flex gap-2">
-                          <Link href="#" className="p-2 bg-background/80 rounded-full text-primary hover:bg-accent hover:text-white transition-colors">
-                              <Facebook className="h-4 w-4" />
-                          </Link>
-                          <Link href="#" className="p-2 bg-background/80 rounded-full text-primary hover:bg-accent hover:text-white transition-colors">
-                              <Twitter className="h-4 w-4" />
-                          </Link>
-                          <Link href="#" className="p-2 bg-background/80 rounded-full text-primary hover:bg-accent hover:text-white transition-colors">
-                              <Linkedin className="h-4 w-4" />
-                          </Link>
-                      </div>
                   </div>
                   <CardContent className="p-6">
                       <Link href={`/lawyer/${member.slug}`}>

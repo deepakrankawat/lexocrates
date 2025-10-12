@@ -36,7 +36,7 @@ const partners = [
 
 export function Partners() {
   return (
-    <section className="bg-secondary text-foreground py-20 sm:py-28 overflow-hidden">
+    <section className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
             <SlideIn direction="right">

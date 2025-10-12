@@ -9,7 +9,6 @@ import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
-import { Testimonials } from "@/components/sections/testimonials";
 import { Cta } from "@/components/sections/cta";
 import Link from "next/link";
 import { AppImage } from "@/components/ui/app-image";
@@ -81,15 +80,6 @@ export default function ContactPage() {
                       <p className="text-foreground/80 group-hover:text-accent">7889 Mechanic Rd. Miami, FL 33125</p>
                   </div>
               </Link>
-               <Link href="tel:+2272728282" className="flex items-start gap-4 group">
-                  <div className="bg-accent/10 p-3 rounded-full">
-                      <Phone className="h-6 w-6 text-accent" />
-                  </div>
-                  <div>
-                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Phone</h3>
-                      <p className="text-foreground/80 group-hover:text-accent">+22 7272 8282</p>
-                  </div>
-              </Link>
                <Link href="mailto:contact@lexocrates.com" className="flex items-start gap-4 group">
                   <div className="bg-accent/10 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-accent" />
@@ -143,7 +133,6 @@ export default function ContactPage() {
         </div>
       </section>
       <Faq />
-      <Testimonials />
       <Cta />
     </main>
   );
