@@ -104,7 +104,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                       <h3 className="text-lg font-bold text-primary group-hover:text-accent">HR</h3>
-                      <p className="text-foreground/80 group-hover:text-accent">HR@lexocrates.com</p>
+                      <p className="text-foreground/80 group-hovertext-accent">HR@lexocrates.com</p>
                   </div>
               </Link>
               <Link href="#" className="flex items-start gap-4 group">
