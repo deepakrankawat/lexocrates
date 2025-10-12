@@ -22,7 +22,7 @@ export function Services() {
             We Specialize In The Following Areas
           </h2>
         </SlideIn>
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-1 gap-12 items-start">
           <StaggerFadeIn className="flex flex-col gap-4">
             {servicesList.map((service) => (
               <Link 
@@ -55,29 +55,6 @@ export function Services() {
               </Link>
             ))}
           </StaggerFadeIn>
-          <div className="relative h-[35rem] w-full hidden lg:block">
-            <AnimatePresence>
-              {activeService.image && (
-                  <motion.div
-                    key={activeService.slug}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="absolute inset-0"
-                  >
-                    <AppImage
-                    src={activeService.image.imageUrl}
-                    alt={activeService.image.description}
-                    width={activeService.image.width}
-                    height={activeService.image.height}
-                    className="object-cover w-full h-full"
-                    data-ai-hint={activeService.image.imageHint}
-                    />
-                  </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
         </div>
       </div>
     </section>
