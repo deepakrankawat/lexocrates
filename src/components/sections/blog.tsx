@@ -54,9 +54,6 @@ export function Blog() {
                         </div>
                         </div>
                         <h3 className="font-headline text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">{post.title}</h3>
-                        <div className="text-accent font-bold flex items-center">
-                            Read More <ArrowRight className="ml-2 h-4 w-4" />
-                        </div>
                     </div>
                 </Link>
             </motion.div>
