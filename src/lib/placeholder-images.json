@@ -3,7 +3,7 @@
     {
       "id": "hero-home",
       "description": "Lady Justice statue in front of a building",
-      "imageUrl": "/images/hero-home.jpg",
+      "imageUrl": "https://picsum.photos/seed/1/1920/1080",
       "imageHint": "lady justice",
       "width": 1920,
       "height": 1080
@@ -11,7 +11,7 @@
     {
       "id": "hero-about",
       "description": "A gavel and law book on a wooden desk",
-      "imageUrl": "/images/hero-about.jpg",
+      "imageUrl": "https://picsum.photos/seed/2/1920/1080",
       "imageHint": "gavel law book",
       "width": 1920,
       "height": 1080
@@ -19,7 +19,7 @@
     {
       "id": "hero-services",
       "description": "A modern office building with glass windows",
-      "imageUrl": "/images/hero-services.jpg",
+      "imageUrl": "https://picsum.photos/seed/3/1920/1080",
       "imageHint": "office building",
       "width": 1920,
       "height": 1080
@@ -27,7 +27,7 @@
     {
       "id": "hero-team",
       "description": "A group of diverse professionals in a meeting",
-      "imageUrl": "/images/hero-team.jpg",
+      "imageUrl": "https://picsum.photos/seed/4/1920/1080",
       "imageHint": "team meeting",
       "width": 1920,
       "height": 1080
@@ -35,7 +35,7 @@
     {
       "id": "hero-careers",
       "description": "A person working on a laptop in a modern office",
-      "imageUrl": "/images/hero-careers.jpg",
+      "imageUrl": "https://picsum.photos/seed/5/1920/1080",
       "imageHint": "working office",
       "width": 1920,
       "height": 1080
@@ -43,7 +43,7 @@
     {
       "id": "hero-blog",
       "description": "A person writing in a notebook on a desk with a laptop",
-      "imageUrl": "/images/hero-blog.jpg",
+      "imageUrl": "https://picsum.photos/seed/6/1920/1080",
       "imageHint": "writing notebook",
       "width": 1920,
       "height": 1080
@@ -51,7 +51,7 @@
     {
       "id": "hero-contact",
       "description": "Close-up of an old-fashioned rotary telephone",
-      "imageUrl": "/images/hero-contact.jpg",
+      "imageUrl": "https://picsum.photos/seed/7/1920/1080",
       "imageHint": "vintage telephone",
       "width": 1920,
       "height": 1080
@@ -59,7 +59,7 @@
     {
       "id": "partner-logo-1",
       "description": "Logo for a fictional company called 'Daerazo'",
-      "imageUrl": "/images/logoipsum-265.svg",
+      "imageUrl": "https://picsum.photos/seed/8/150/50",
       "imageHint": "company logo",
       "width": 150,
       "height": 50
@@ -67,7 +67,7 @@
     {
       "id": "partner-logo-2",
       "description": "Logo for a fictional company called 'Miguxian'",
-      "imageUrl": "/images/logoipsum-262.svg",
+      "imageUrl": "https://picsum.photos/seed/9/150/50",
       "imageHint": "tech logo",
       "width": 150,
       "height": 50
@@ -75,7 +75,7 @@
     {
       "id": "partner-logo-3",
       "description": "Logo for a fictional company called 'Jeninayln'",
-      "imageUrl": "/images/logoipsum-289.svg",
+      "imageUrl": "https://picsum.photos/seed/10/150/50",
       "imageHint": "corporate logo",
       "width": 150,
       "height": 50
@@ -83,7 +83,7 @@
     {
       "id": "partner-logo-4",
       "description": "Logo for a fictional company called 'Superanzo'",
-      "imageUrl": "/images/logoipsum-297.svg",
+      "imageUrl": "https://picsum.photos/seed/11/150/50",
       "imageHint": "modern logo",
       "width": 150,
       "height": 50
@@ -91,7 +91,7 @@
     {
       "id": "lawyer-1",
       "description": "Professional portrait of a female lawyer",
-      "imageUrl": "/images/lawyer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/12/600/800",
       "imageHint": "professional woman",
       "width": 600,
       "height": 800
@@ -99,7 +99,7 @@
     {
       "id": "lawyer-2",
       "description": "Professional portrait of a female judge",
-      "imageUrl": "/images/lawyer-2.jpg",
+      "imageUrl": "https://picsum.photos/seed/13/600/800",
       "imageHint": "female judge",
       "width": 600,
       "height": 800
@@ -107,7 +107,7 @@
     {
       "id": "lawyer-3",
       "description": "Professional portrait of a female lawyer in a suit",
-      "imageUrl": "/images/lawyer-3.jpg",
+      "imageUrl": "https://picsum.photos/seed/14/600/800",
       "imageHint": "female lawyer",
       "width": 600,
       "height": 800
@@ -115,7 +115,7 @@
     {
       "id": "lawyer-4",
       "description": "Professional portrait of a male lawyer",
-      "imageUrl": "/images/lawyer-4.jpg",
+      "imageUrl": "https://picsum.photos/seed/15/600/800",
       "imageHint": "male lawyer",
       "width": 600,
       "height": 800
@@ -123,7 +123,7 @@
     {
       "id": "lawyer-5",
       "description": "Portrait of a man in a suit",
-      "imageUrl": "/images/lawyer-5.jpg",
+      "imageUrl": "https://picsum.photos/seed/16/600/800",
       "imageHint": "man suit",
       "width": 600,
       "height": 800
@@ -131,7 +131,7 @@
     {
       "id": "lawyer-6",
       "description": "Portrait of a woman with glasses",
-      "imageUrl": "/images/lawyer-6.jpg",
+      "imageUrl": "https://picsum.photos/seed/17/600/800",
       "imageHint": "professional woman",
       "width": 600,
       "height": 800
@@ -139,7 +139,7 @@
     {
       "id": "client-avatar-1",
       "description": "Avatar of client Johnatan G.",
-      "imageUrl": "/images/client-avatar-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/18/100/100",
       "imageHint": "man portrait",
       "width": 100,
       "height": 100
@@ -147,7 +147,7 @@
     {
       "id": "blog-image-1",
       "description": "Image for a blog post about corporate mergers",
-      "imageUrl": "/images/blog-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/19/800/600",
       "imageHint": "corporate meeting",
       "width": 800,
       "height": 600
@@ -155,7 +155,7 @@
     {
       "id": "blog-image-2",
       "description": "Image for a blog post about family law",
-      "imageUrl": "/images/blog-2.jpg",
+      "imageUrl": "https://picsum.photos/seed/20/800/600",
       "imageHint": "family concept",
       "width": 800,
       "height": 600
@@ -163,7 +163,7 @@
     {
       "id": "blog-image-3",
       "description": "Image for a blog post about AI and IP law",
-      "imageUrl": "/images/blog-3.jpg",
+      "imageUrl": "https://picsum.photos/seed/21/800/600",
       "imageHint": "artificial intelligence",
       "width": 800,
       "height": 600
@@ -171,7 +171,7 @@
     {
       "id": "blog-image-4",
       "description": "Image for a blog post about real estate law",
-      "imageUrl": "/images/blog-4.jpg",
+      "imageUrl": "https://picsum.photos/seed/22/800/600",
       "imageHint": "real estate",
       "width": 800,
       "height": 600
@@ -179,7 +179,7 @@
     {
       "id": "service-detail-1",
       "description": "A professional legal setting",
-      "imageUrl": "/images/service-detail-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/23/600/800",
       "imageHint": "legal office",
       "width": 600,
       "height": 800
@@ -187,7 +187,7 @@
     {
       "id": "service-detail-2",
       "description": "Law books on a shelf",
-      "imageUrl": "/images/service-detail-2.jpg",
+      "imageUrl": "https://picsum.photos/seed/24/600/800",
       "imageHint": "law books",
       "width": 600,
       "height": 800
@@ -195,7 +195,7 @@
     {
       "id": "contact-map",
       "description": "A map showing a location in a city.",
-      "imageUrl": "/images/map.jpg",
+      "imageUrl": "https://picsum.photos/seed/25/800/600",
       "imageHint": "city map",
       "width": 800,
       "height": 600
@@ -203,7 +203,7 @@
     {
       "id": "service-corporate-law",
       "description": "Modern office building",
-      "imageUrl": "/images/service-corporate.jpg",
+      "imageUrl": "https://picsum.photos/seed/26/600/800",
       "imageHint": "corporate office",
       "width": 600,
       "height": 800
@@ -211,7 +211,7 @@
     {
       "id": "service-family-law",
       "description": "A happy family",
-      "imageUrl": "/images/service-family.jpg",
+      "imageUrl": "https://picsum.photos/seed/27/600/800",
       "imageHint": "happy family",
       "width": 600,
       "height": 800
@@ -219,7 +219,7 @@
     {
       "id": "service-real-estate-law",
       "description": "A modern house",
-      "imageUrl": "/images/service-real-estate.jpg",
+      "imageUrl": "https://picsum.photos/seed/28/600/800",
       "imageHint": "modern house",
       "width": 600,
       "height": 800
@@ -227,7 +227,7 @@
     {
       "id": "service-ip-law",
       "description": "A lightbulb representing ideas",
-      "imageUrl": "/images/service-ip.jpg",
+      "imageUrl": "https://picsum.photos/seed/29/600/800",
       "imageHint": "idea lightbulb",
       "width": 600,
       "height": 800
@@ -235,7 +235,7 @@
     {
       "id": "service-criminal-defense",
       "description": "A courtroom",
-      "imageUrl": "/images/service-criminal.jpg",
+      "imageUrl": "https://picsum.photos/seed/30/600/800",
       "imageHint": "courtroom gavel",
       "width": 600,
       "height": 800
@@ -243,7 +243,7 @@
     {
       "id": "service-immigration-law",
       "description": "A passport and a flag",
-      "imageUrl": "/images/service-immigration.jpg",
+      "imageUrl": "https://picsum.photos/seed/31/600/800",
       "imageHint": "passport flag",
       "width": 600,
       "height": 800
