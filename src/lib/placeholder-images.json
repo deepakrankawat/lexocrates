@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-home",
-      "description": "Lady Justice statue in front of a building",
-      "imageUrl": "https://picsum.photos/seed/1/1920/1080",
-      "imageHint": "lady justice",
+      "description": "A law library with books on shelves",
+      "imageUrl": "https://picsum.photos/seed/100/1920/1080",
+      "imageHint": "law library",
       "width": 1920,
       "height": 1080
     },
