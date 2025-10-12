@@ -29,6 +29,10 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+    
+    // Set initial state after mount
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
