@@ -3,7 +3,6 @@
 import { ArrowRight, User, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
 import { blogPosts } from '@/lib/blog-data';
 import { AppImage } from '../ui/app-image';
 import { motion } from 'framer-motion';
