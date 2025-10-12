@@ -5,7 +5,6 @@ import { CareersPositions } from '@/components/sections/careers/careers-position
 import { CareersBenefits } from '@/components/sections/careers/careers-benefits';
 import { Cta } from '@/components/sections/cta';
 import { CareersValues } from '@/components/sections/careers/careers-values';
-import { EmployeeTestimonials } from '@/components/sections/careers/employee-testimonials';
 
 export default function CareersPage() {
   return (
@@ -15,7 +14,6 @@ export default function CareersPage() {
       <CareersValues />
       <CareersPositions />
       <CareersBenefits />
-      <EmployeeTestimonials />
       <Cta />
     </main>
   );
