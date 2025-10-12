@@ -19,7 +19,7 @@ export function BlogList() {
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <Link href={`/blog/${post.slug}`} className="block relative h-96 w-full overflow-hidden">
+              <Link href={`/blog/${post.slug}`} className="block relative h-96 w-full overflow-hidden border-0">
                 {post.image && (
                   <AppImage
                     src={post.image.imageUrl}

@@ -22,7 +22,7 @@ export function Blog() {
               Latest News and Analysis from Lexocrates
             </h2>
         </SlideIn>
-        <StaggerFadeIn className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {featuredPosts.map((post) => (
             <motion.div 
               key={post.id}
@@ -30,7 +30,7 @@ export function Blog() {
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
-                 <Link href={`/blog/${post.slug}`} className="block relative h-96 w-full overflow-hidden">
+                 <Link href={`/blog/${post.slug}`} className="block relative h-96 w-full overflow-hidden border-0">
                     {post.image && (
                         <AppImage
                         src={post.image.imageUrl}
@@ -61,7 +61,7 @@ export function Blog() {
                 </Link>
             </motion.div>
           ))}
-        </StaggerFadeIn>
+        </div>
       </div>
     </section>
   );
