@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
@@ -16,6 +16,8 @@ import { AppImage } from "@/components/ui/app-image";
 
 export default function ContactPage() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
+  const jaipurAddress = "B-1402 Mangalam The Grand Residency, Near Teoler School, Sirsi Road, Jaipur, Rajasthan, India. Pin 302041";
+  const jaipurMapQuery = "B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan, 302041";
 
   return (
     <main className="bg-background">
@@ -71,15 +73,6 @@ export default function ContactPage() {
                 </form>
             </div>
             <div className="space-y-8">
-              <Link href="https://www.google.com/maps/search/?api=1&query=7889+Mechanic+Rd.+Miami,+FL+33125" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
-                  <div className="bg-accent/10 p-3 rounded-full">
-                      <MapPin className="h-6 w-6 text-accent" />
-                  </div>
-                  <div>
-                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Our Office</h3>
-                      <p className="text-foreground/80 group-hover:text-accent">7889 Mechanic Rd. Miami, FL 33125</p>
-                  </div>
-              </Link>
                <Link href="mailto:Support@lexocrates.com" className="flex items-start gap-4 group">
                   <div className="bg-accent/10 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-accent" />
@@ -116,22 +109,68 @@ export default function ContactPage() {
                       <p className="text-foreground/80 group-hover:text-accent">Follow us on LinkedIn</p>
                   </div>
               </Link>
-                <div className="relative h-80 w-full overflow-hidden mt-8">
-                  <iframe
-                    src="https://maps.google.com/maps?q=7889%20Mechanic%20Rd.%20Miami,%20FL%2033125&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={false}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Office Location"
-                  ></iframe>
-                </div>
             </div>
           </div>
         </div>
       </section>
+
+      <section id="headquarters" className="py-20 sm:py-28 bg-secondary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="font-body font-bold text-accent uppercase tracking-wider">Our Main Office</p>
+            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">Jaipur Headquarters</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <Link href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(jaipurMapQuery)}`} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full">
+                      <MapPin className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Address</h3>
+                      <p className="text-foreground/80 group-hover:text-accent">{jaipurAddress}</p>
+                  </div>
+              </Link>
+              <div>
+                <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4">
+                  <div className="bg-accent/10 p-3 rounded-full"><Clock className="h-6 w-6 text-accent" /></div>
+                  Office Hours
+                </h3>
+                <div className="ml-16 text-foreground/80 space-y-2">
+                    <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM IST</p>
+                    <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM IST</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                </div>
+              </div>
+              <div>
+                  <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4">
+                    <div className="bg-accent/10 p-3 rounded-full"><MapPin className="h-6 w-6 text-accent" /></div>
+                    Getting Here
+                  </h3>
+                  <div className="ml-16 text-foreground/80 space-y-4">
+                      <div className="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-accent"><path d="M19 12H5"/><path d="M16 19l-7-7 7-7"/></svg> <strong>By Metro:</strong> Chandpole Metro Station (10 min walk)</div>
+                      <div className="flex items-center gap-3"><Train className="h-5 w-5 text-accent" /> <strong>By Train:</strong> Jaipur Junction Railway Station (15 min drive)</div>
+                      <div className="flex items-center gap-3"><Bus className="h-5 w-5 text-accent" /> <strong>By Bus:</strong> Sirsi Road Bus Stop (5 min walk)</div>
+                      <div className="flex items-center gap-3"><Car className="h-5 w-5 text-accent" /> <strong>By Car:</strong> Parking available in building</div>
+                  </div>
+              </div>
+            </div>
+            <div className="relative h-96 md:h-full w-full overflow-hidden">
+              <iframe
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(jaipurMapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Office Location"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Faq />
       <Cta />
     </main>
