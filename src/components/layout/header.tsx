@@ -57,7 +57,7 @@ export function Header() {
         <Link href="/" className="flex items-center">
           <div className="flex flex-col items-start">
             <Logo className="w-36 md:w-44" />
-            <p className={cn("text-xs -mt-2 transition-colors", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
+            <p className={cn("text-xs -mt-2 transition-colors hidden md:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
               Precision in Law, Rooted in Philosophy
             </p>
           </div>
