@@ -1,14 +1,14 @@
 
 'use client';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, User } from 'lucide-react';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog-data';
-import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
 import { motion } from 'framer-motion';
 import { SlideIn } from '../animations/slide-in';
 import { AppImage } from '../ui/app-image';
+import { Card, CardContent } from '../ui/card';
+import { Badge } from '../ui/badge';
 
 const featuredPosts = blogPosts.slice(0, 3);
 
@@ -26,36 +26,49 @@ export function Blog() {
           {featuredPosts.map((post) => (
             <motion.div 
               key={post.id}
-              className="group"
+              className="group h-full"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
-                 <Link href={`/blog/${post.slug}`} className="block relative h-96 w-full overflow-hidden border-0">
-                    {post.image && (
-                        <AppImage
+              <Card className="overflow-hidden h-full flex flex-col">
+                {post.image && (
+                  <Link href={`/blog/${post.slug}`}>
+                    <div className="relative h-64 w-full overflow-hidden">
+                      <AppImage
                         src={post.image.imageUrl}
                         alt={post.image.description}
-                        width={post.image.width}
-                        height={post.image.height}
+                        fill
                         className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                         data-ai-hint={post.image.imageHint}
-                        />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <div className="absolute bottom-0 left-0 p-6 text-white">
-                        <div className="flex items-center gap-4 text-sm text-white/80 mb-2">
-                        <div className="flex items-center gap-1">
-                            <User className="h-4 w-4" />
-                            <span>{post.author}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                            <Calendar className="h-4 w-4" />
-                            <span>{post.date}</span>
-                        </div>
-                        </div>
-                        <h3 className="font-headline text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">{post.title}</h3>
+                      />
                     </div>
-                </Link>
+                  </Link>
+                )}
+                <CardContent className="p-6 flex flex-col flex-grow">
+                  <Badge variant="secondary" className="bg-accent/10 text-accent font-bold uppercase w-fit mb-3">{post.category}</Badge>
+                  <Link href={`/blog/${post.slug}`}>
+                    <h3 className="font-headline text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{post.title}</h3>
+                  </Link>
+                  <div className="flex items-center gap-4 text-sm text-foreground/60 mb-4">
+                      <div className="flex items-center gap-1">
+                          <User className="h-4 w-4" />
+                          <span>{post.author}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                          <Calendar className="h-4 w-4" />
+                          <span>{post.date}</span>
+                      </div>
+                  </div>
+                  <p className="text-foreground/80 mb-4 flex-grow text-sm">{post.excerpt}</p>
+                   <div className="mt-auto">
+                    <Button asChild variant="link" className="p-0 h-auto text-accent">
+                        <Link href={`/blog/${post.slug}`}>
+                        Read More <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
