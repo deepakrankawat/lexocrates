@@ -16,9 +16,12 @@ export function Welcome() {
             </h2>
             <div className="mt-6 space-y-4 text-foreground/80">
                 <p className="italic text-lg">
-                    “Welcome to Lexocrates. We built this firm on the principle of partnership—working as an extension of your team to achieve shared goals. Our commitment is to deliver excellence in every task, enabling you to thrive.”
+                    “As a public interest litigator, I have spent my career championing causes that shape communities and protect the rights of individuals. From challenging unlawful toll collections to advocating for fair water distribution, my work in the Supreme Court of India has been guided by the belief that the law must serve justice above all.”
                 </p>
-                <p className="font-bold text-primary">- Smilly Ilani, Founder & CEO</p>
+                 <p className="italic text-lg">
+                    “Lexocrates Legal Services was founded on that same principle. Our mission is clear: to be a seamless extension of your legal team.”
+                </p>
+                <p className="font-bold text-primary">- Yashvardhan Singh, Founder & CEO</p>
             </div>
           </div>
         </div>
