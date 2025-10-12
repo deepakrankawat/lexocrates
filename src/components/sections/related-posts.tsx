@@ -10,7 +10,7 @@ type Post = typeof blogPosts[0];
 
 export function RelatedPosts({ posts }: { posts: Post[] }) {
   return (
-    <section id="related-posts" className="bg-background text-foreground py-20 sm:py-28">
+    <section id="related-posts" className="bg-secondary text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
