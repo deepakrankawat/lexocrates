@@ -2,7 +2,6 @@ import { ServicesHero } from '@/components/sections/services-hero';
 import { Services } from '@/components/sections/services';
 import { Experience } from '@/components/sections/experience';
 import { Cta } from '@/components/sections/cta';
-import { Testimonials } from '@/components/sections/testimonials';
 
 export default function ServicesPage() {
   return (
@@ -11,7 +10,6 @@ export default function ServicesPage() {
       <Services />
       <Experience />
       <Cta />
-      <Testimonials />
     </main>
   );
 }

@@ -1,6 +1,5 @@
 
 import { Cta } from '@/components/sections/cta';
-import { Testimonials } from '@/components/sections/testimonials';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -102,7 +101,6 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
       </section>
       
       <Cta />
-      <Testimonials />
     </main>
   );
 }

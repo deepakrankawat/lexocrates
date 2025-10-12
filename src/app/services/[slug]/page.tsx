@@ -3,7 +3,6 @@ import { ServiceDetailContent } from '@/components/sections/service-detail-conte
 import { LegalProcess } from '@/components/sections/legal-process';
 import { Team } from '@/components/sections/team';
 import { Cta } from '@/components/sections/cta';
-import { Testimonials } from '@/components/sections/testimonials';
 import { servicesList } from '@/lib/services-data';
 import { notFound } from 'next/navigation';
 import { Experience } from '@/components/sections/experience';
@@ -25,7 +24,6 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       <Team />
       <Experience />
       <Cta />
-      <Testimonials />
     </main>
   );
 }

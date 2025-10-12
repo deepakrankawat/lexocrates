@@ -4,7 +4,6 @@ import { VisionMission } from '@/components/sections/vision-mission';
 import { Partners } from '@/components/sections/partners';
 import { Welcome } from '@/components/sections/welcome';
 import { Cta } from '@/components/sections/cta';
-import { Testimonials } from '@/components/sections/testimonials';
 
 
 export default function AboutPage() {
@@ -16,7 +15,6 @@ export default function AboutPage() {
       <Welcome />
       <Cta />
       <VisionMission />
-      <Testimonials />
     </main>
   );
 }

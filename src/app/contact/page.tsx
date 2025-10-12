@@ -9,7 +9,6 @@ import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
-import { Testimonials } from "@/components/sections/testimonials";
 import { Cta } from "@/components/sections/cta";
 import Link from "next/link";
 import { AppImage } from "@/components/ui/app-image";
@@ -143,7 +142,6 @@ export default function ContactPage() {
         </div>
       </section>
       <Faq />
-      <Testimonials />
       <Cta />
     </main>
   );
