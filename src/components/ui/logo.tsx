@@ -10,13 +10,14 @@ type LogoProps = {
 
 export function Logo({ className }: LogoProps) {
   return (
-    <Image
-      src="/logo.svg"
-      alt="Northman Law Logo"
-      width={180}
-      height={38}
-      className={cn('w-auto', className)}
-      priority
-    />
+    <div className={cn("relative h-10 w-44", className)}>
+        <Image
+        src="/logo.svg"
+        alt="Northman Law Logo"
+        fill
+        className="object-contain"
+        priority
+        />
+    </div>
   );
 }
