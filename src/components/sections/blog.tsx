@@ -2,7 +2,7 @@
 'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar, User } from 'lucide-react';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog-data';
 import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
@@ -45,7 +45,16 @@ export function Blog() {
                     )}
                 </Link>
               <div className="p-6 bg-background">
-                <p className="text-sm text-foreground/60 mb-2">{post.date}</p>
+                <div className="flex items-center gap-4 text-sm text-foreground/60 mb-2">
+                  <div className="flex items-center gap-1">
+                    <User className="h-4 w-4" />
+                    <span>{post.author}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    <span>{post.date}</span>
+                  </div>
+                </div>
                 <Link href={`/blog/${post.slug}`}>
                     <h3 className="font-headline text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{post.title}</h3>
                 </Link>

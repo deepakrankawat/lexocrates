@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, User, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
@@ -31,7 +31,16 @@ export function BlogList() {
                     </Link>
                 )}
               <CardContent className="p-6">
-                <p className="text-sm text-foreground/60 mb-2">{post.date}</p>
+                <div className="flex items-center gap-4 text-sm text-foreground/60 mb-2">
+                  <div className="flex items-center gap-1">
+                    <User className="h-4 w-4" />
+                    <span>{post.author}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    <span>{post.date}</span>
+                  </div>
+                </div>
                 <Link href={`/blog/${post.slug}`}>
                     <h3 className="font-headline text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{post.title}</h3>
                 </Link>
