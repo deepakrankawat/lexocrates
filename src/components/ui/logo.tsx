@@ -7,13 +7,24 @@ type LogoProps = {
 
 export function Logo({ className }: LogoProps) {
   return (
-    <Image
-      src="/logo-light.svg"
-      alt="Lexocrates Logo"
-      width={140}
-      height={38}
+    <svg
+      width="140"
+      height="38"
+      viewBox="0 0 140 38"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       className={cn('w-auto', className)}
-      priority
-    />
+    >
+      <text
+        x="0"
+        y="28"
+        fontFamily="Playfair Display, serif"
+        fontSize="24"
+        fontWeight="bold"
+        fill="currentColor"
+      >
+        Lexocrates
+      </text>
+    </svg>
   );
 }
