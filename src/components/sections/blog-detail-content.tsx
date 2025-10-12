@@ -21,7 +21,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
             {/* Main content */}
             <div className="lg:col-span-2">
                  {post.image && (
-                    <div className="relative h-[25rem] w-full mb-12">
+                    <div className="h-[25rem] w-full mb-12">
                         <AppImage
                             src={post.image.imageUrl}
                             alt={post.image.description}
