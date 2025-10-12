@@ -62,9 +62,9 @@ export function Footer() {
               <div>
                 <h3 className="font-headline font-bold text-lg text-primary-foreground">Contact Info</h3>
                 <ul className="mt-6 space-y-4 text-sm text-primary-foreground/80">
-                  <li><p>7889 Mechanic Rd. Miami, FL 33125</p></li>
-                  <li><p>contact@lexocrates.com</p></li>
-                  <li><p>Mon - Fri: 9:00 am - 6:00 pm EST</p></li>
+                  <li><p>B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan</p></li>
+                  <li><p>Support@lexocrates.com</p></li>
+                  <li><p>Mon - Sat: 9:00 am - 6:00 pm IST</p></li>
                 </ul>
               </div>
             </div>
