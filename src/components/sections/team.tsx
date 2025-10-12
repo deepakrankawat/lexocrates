@@ -9,34 +9,24 @@ import { SlideIn } from '../animations/slide-in';
 
 const teamMembers = [
   {
-    name: 'Laitman Harry',
-    title: 'Head of Corporate Solutions',
-    slug: 'laitman-harry',
+    name: 'Rajesh Kumar',
+    title: 'Chief Executive Officer',
+    slug: 'rajesh-kumar',
   },
   {
-    name: 'Nada Geomorgant',
-    title: 'Lead, Contract Management',
-    slug: 'nada-geomorgant',
+    name: 'Priya Sharma',
+    title: 'Chief Operating Officer',
+    slug: 'priya-sharma',
   },
   {
-    name: 'Desy Willy',
-    title: 'Director of Compliance',
-    slug: 'desy-willy',
+    name: 'Arun Patel',
+    title: 'Head of Legal Services',
+    slug: 'arun-patel',
   },
   {
-    name: 'Hernando Jully',
-    title: 'Senior Legal Researcher',
-    slug: 'hernando-jully',
-  },
-   {
-    name: 'Lydia Dary',
-    title: 'Document Review Specialist',
-    slug: 'lydia-dary',
-  },
-  {
-    name: 'Smilly Ilani',
-    title: 'Founder & CEO',
-    slug: 'smilly-ilani',
+    name: 'Meera Reddy',
+    title: 'Head of Technology',
+    slug: 'meera-reddy',
   },
 ];
 
@@ -47,13 +37,13 @@ export function Team() {
         <SlideIn className="text-center mb-16">
             <p className="font-body font-bold text-accent uppercase tracking-wider">Our Experts</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
-                Meet Our Leadership Team
+                Our Leadership Team
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-foreground/80">
-              Our leaders are highly skilled, dedicated professionals committed to delivering excellence in legal outsourcing.
+              Experienced professionals leading our mission
             </p>
         </SlideIn>
-        <StaggerFadeIn className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerFadeIn className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {teamMembers.map((member) => (
             <motion.div
               key={member.name}
