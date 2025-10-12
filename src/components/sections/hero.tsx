@@ -21,7 +21,7 @@ export function Hero() {
           data-ai-hint={heroImage.imageHint}
         />
       )}
-      <div className="absolute inset-0 bg-primary/70 z-10" />
+      <div className="absolute inset-0 bg-primary/50 z-10" />
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-primary-foreground">
         <FadeIn delay={0.2} duration={0.8}>
             <p className="font-body font-bold text-accent uppercase tracking-wider">
