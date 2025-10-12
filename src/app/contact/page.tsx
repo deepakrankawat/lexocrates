@@ -80,31 +80,31 @@ export default function ContactPage() {
                       <p className="text-foreground/80 group-hover:text-accent">7889 Mechanic Rd. Miami, FL 33125</p>
                   </div>
               </Link>
-               <Link href="mailto:contact@lexocrates.com" className="flex items-start gap-4 group">
-                  <div className="bg-accent/10 p-3 rounded-full">
-                      <Mail className="h-6 w-6 text-accent" />
-                  </div>
-                  <div>
-                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Email</h3>
-                      <p className="text-foreground/80 group-hover:text-accent">contact@lexocrates.com</p>
-                  </div>
-              </Link>
-              <Link href="mailto:careers@lexocrates.com" className="flex items-start gap-4 group">
-                  <div className="bg-accent/10 p-3 rounded-full">
-                      <Mail className="h-6 w-6 text-accent" />
-                  </div>
-                  <div>
-                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Careers</h3>
-                      <p className="text-foreground/80 group-hover:text-accent">careers@lexocrates.com</p>
-                  </div>
-              </Link>
-              <Link href="mailto:support@lexocrates.com" className="flex items-start gap-4 group">
+               <Link href="mailto:Support@lexocrates.com" className="flex items-start gap-4 group">
                   <div className="bg-accent/10 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-accent" />
                   </div>
                   <div>
                       <h3 className="text-lg font-bold text-primary group-hover:text-accent">Support</h3>
-                      <p className="text-foreground/80 group-hover:text-accent">support@lexocrates.com</p>
+                      <p className="text-foreground/80 group-hover:text-accent">Support@lexocrates.com</p>
+                  </div>
+              </Link>
+              <Link href="mailto:Sales@Lexocrates.com" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full">
+                      <Mail className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Sales</h3>
+                      <p className="text-foreground/80 group-hover:text-accent">Sales@Lexocrates.com</p>
+                  </div>
+              </Link>
+              <Link href="mailto:HR@lexocrates.com" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full">
+                      <Mail className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">HR</h3>
+                      <p className="text-foreground/80 group-hover:text-accent">HR@lexocrates.com</p>
                   </div>
               </Link>
               <Link href="#" className="flex items-start gap-4 group">
