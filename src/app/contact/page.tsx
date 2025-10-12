@@ -16,7 +16,6 @@ import { AppImage } from "@/components/ui/app-image";
 
 export default function ContactPage() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
-  const mapImage = PlaceHolderImages.find(img => img.id === 'contact-map');
 
   return (
     <main className="bg-background">
@@ -118,16 +117,16 @@ export default function ContactPage() {
                   </div>
               </Link>
                 <div className="relative h-80 w-full overflow-hidden mt-8">
-                {mapImage && (
-                    <AppImage
-                    src={mapImage.imageUrl}
-                    alt={mapImage.description}
-                    width={mapImage.width}
-                    height={mapImage.height}
-                    className="object-cover w-full h-full"
-                    data-ai-hint={mapImage.imageHint}
-                    />
-                )}
+                  <iframe
+                    src="https://maps.google.com/maps?q=7889%20Mechanic%20Rd.%20Miami,%20FL%2033125&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Office Location"
+                  ></iframe>
                 </div>
             </div>
           </div>
