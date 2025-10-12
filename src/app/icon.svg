@@ -1,0 +1,13 @@
+<svg width="240" height="85" viewBox="0 0 240 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo-text {
+      fill: currentColor;
+    }
+    @media (prefers-color-scheme: dark) {
+      .logo-text {
+        fill: white;
+      }
+    }
+  </style>
+  <text x="30" y="28" font-family="Playfair Display, serif" font-size="24" font-weight="bold" class="logo-text">Lexocrates</text>
+</svg>
