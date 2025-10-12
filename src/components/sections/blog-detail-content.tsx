@@ -21,13 +21,13 @@ export function BlogDetailContent({ post }: { post: Post }) {
             {/* Main content */}
             <div className="lg:col-span-2">
                  {post.image && (
-                    <div className="h-[25rem] w-full mb-12">
+                    <div className="w-full mb-12">
                         <AppImage
                             src={post.image.imageUrl}
                             alt={post.image.description}
                             width={post.image.width}
                             height={post.image.height}
-                            className="object-cover w-full h-full"
+                            className="object-cover w-full h-auto max-h-[30rem]"
                             data-ai-hint={post.image.imageHint}
                         />
                     </div>
