@@ -95,9 +95,6 @@ export function Header() {
                     <Logo className="text-primary-foreground" />
                   </Link>
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
-                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-primary-foreground">
-                  <X className="h-6 w-6" />
-                </Button>
               </SheetHeader>
               <div className="mt-8 flex h-full flex-col">
                 <nav className="flex flex-col gap-6">
