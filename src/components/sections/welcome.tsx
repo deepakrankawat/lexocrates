@@ -16,12 +16,9 @@ export function Welcome() {
             </h2>
             <div className="mt-6 space-y-4 text-foreground/80">
                 <p className="italic text-lg">
-                    “As a public interest litigator, I have spent my career championing causes that shape communities and protect the rights of individuals. From challenging unlawful toll collections to advocating for fair water distribution, my work in the Supreme Court of India has been guided by the belief that the law must serve justice above all.”
+                    As a public interest litigator, I have spent my career championing causes that shape communities and protect the rights of individuals. From challenging unlawful toll collections to advocating for fair water distribution, my work in the Supreme Court of India has been guided by the belief that the law must serve justice above all. Lexocrates Legal Services was founded on that same principle. In an increasingly interconnected world, legal professionals must focus on what they do best—strategic counsel and client advocacy—while trusting capable partners to handle the complex, time-intensive processes that run in the background. Our team is trained in US, UK, and Canadian legal systems, equipped with advanced legal technology, and committed to the highest standards of confidentiality and precision. Whether assisting a law firm in New York with litigation support, aiding a London corporate in contract management, or helping a Canadian practice with compliance documentation, our mission is clear: to be a seamless extension of your legal team. I invite you to explore how Lexocrates can bring value, efficiency, and integrity to your practice.
                 </p>
-                 <p className="italic text-lg">
-                    “Lexocrates Legal Services was founded on that same principle. Our mission is clear: to be a seamless extension of your legal team.”
-                </p>
-                <p className="font-bold text-primary">- Yashvardhan Singh, Founder & CEO</p>
+                <p className="font-bold text-primary">— Yashvardhan Singh<br/>Founder & CEO, Lexocrates Legal Services</p>
             </div>
           </div>
         </div>
