@@ -114,7 +114,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section id="headquarters" className="py-20 sm:py-28 bg-secondary">
+      <section id="headquarters" className="py-20 sm:py-28 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="font-body font-bold text-accent uppercase tracking-wider">Our Main Office</p>
