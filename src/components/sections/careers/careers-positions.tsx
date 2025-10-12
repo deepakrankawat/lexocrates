@@ -49,8 +49,9 @@ export function CareersPositions() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
+              className="h-full"
             >
-              <Card className="h-full bg-background">
+              <Card className="h-full bg-background flex flex-col">
                 <CardHeader>
                   <CardTitle className="text-primary group-hover:text-accent transition-colors">{position.title}</CardTitle>
                 </CardHeader>
