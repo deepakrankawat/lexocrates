@@ -1,12 +1,8 @@
-<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary-foreground">
-    <path d="M12.4805 4.17188L12.4805 13.9102L6.15234 13.9102L6.15234 4.17188L0.0117188 4.17188L0.0117188 34L6.15234 34L6.15234 20.3555L12.4805 20.3555L12.4805 34L18.6211 34L18.6211 4.17188L12.4805 4.17188Z" fill="currentColor"/>
-    <path d="M34.8203 4.17188L26.3438 34L19.9219 34L28.3984 4.17188L34.8203 4.17188Z" fill="currentColor"/>
-    <path d="M36.1016 4.17188L36.1016 34H42.2422L42.2422 10.7422L48.2422 10.7422L48.2422 34H54.3828L54.3828 4.17188L36.1016 4.17188Z" fill="currentColor"/>
-    <path d="M60.1836 4.17188L60.1836 34H66.3242L66.3242 4.17188H60.1836Z" fill="currentColor"/>
-    <path d="M83.4258 4.17188L83.4258 13.9102L77.0977 13.9102L77.0977 4.17188L70.957 4.17188L70.957 34L77.0977 34L77.0977 20.3555L83.4258 20.3555L83.4258 34L89.5664 34L89.5664 4.17188L83.4258 4.17188Z" fill="currentColor"/>
-    <path d="M106.18 4.17188L106.18 34L112.32 34L112.32 17.5117L117.859 34L123.633 34L123.633 4.17188L117.492 4.17188L117.492 20.6602L111.953 4.17188L106.18 4.17188Z" fill="currentColor"/>
-    <path d="M141.441 4.17188L132.965 34L126.543 34L135.02 4.17188L141.441 4.17188Z" fill="currentColor"/>
-    <path d="M149.254 34L159.223 34C165.551 34 168.832 30.2969 168.832 24.3945C168.832 18.4922 165.551 14.7891 159.223 14.7891L149.254 14.7891L149.254 34ZM155.395 20.4492L155.395 27.9062L157.859 27.9062C159.699 27.9062 160.703 26.6602 160.703 24.3945C160.703 22.1289 159.699 20.8828 157.859 20.8828L155.395 20.4492Z" fill="currentColor"/>
-    <path d="M174.605 4.17188L174.605 34H180.746V4.17188H174.605Z" fill="currentColor"/>
-    <text x="0" y="50" font-family="Inter, sans-serif" font-size="6" font-weight="normal" fill="currentColor">Precision in Law, Rooted in Philosophy</text>
+<svg width="240" height="65" viewBox="0 0 240 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="50%" y="30" dominant-baseline="middle" text-anchor="middle" font-family="Playfair Display, serif" font-size="28" font-weight="bold" fill="currentColor">
+    Lexocrates
+  </text>
+  <text x="50%" y="55" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="currentColor" letter-spacing="0.05em">
+    Precision in Law, Rooted in Philosophy
+  </text>
 </svg>
