@@ -33,44 +33,6 @@ export function BlogDetailContent({ post }: { post: Post }) {
                     </div>
                 )}
                 <div className="prose prose-lg max-w-none text-foreground/80" dangerouslySetInnerHTML={{ __html: post.fullContent }} />
-                
-                <div className="mt-16">
-                    <h3 className="font-headline text-3xl font-bold text-primary mb-8">Related Case Studies</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="group">
-                             {image1 && (
-                                <div className="relative h-72 w-full mb-6">
-                                    <AppImage
-                                        src={image1.imageUrl}
-                                        alt={image1.description}
-                                        width={image1.width}
-                                        height={image1.height}
-                                        className="object-cover w-full h-full"
-                                        data-ai-hint={image1.imageHint}
-                                    />
-                                </div>
-                            )}
-                            <h4 className="font-headline text-xl font-bold text-primary mb-2 group-hover:text-accent">Streamlining Contract Management for a Tech Giant</h4>
-                            <p className="text-foreground/80">Discover how we reduced contract cycle times by 40% for a Fortune 500 company.</p>
-                        </div>
-                        <div className="group">
-                             {image2 && (
-                                <div className="relative h-72 w-full mb-6">
-                                    <AppImage
-                                        src={image2.imageUrl}
-                                        alt={image2.description}
-                                        width={image2.width}
-                                        height={image2.height}
-                                        className="object-cover w-full h-full"
-                                        data-ai-hint={image2.imageHint}
-                                    />
-                                </div>
-                            )}
-                            <h4 className="font-headline text-xl font-bold text-primary mb-2 group-hover:text-accent">Global Compliance for a Financial Services Firm</h4>
-                            <p className="text-foreground/80">Learn how we built a scalable compliance framework across 20+ jurisdictions.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             {/* Sidebar */}
