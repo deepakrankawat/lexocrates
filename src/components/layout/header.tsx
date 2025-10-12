@@ -54,8 +54,8 @@ export function Header() {
   return (
     <header className={headerClasses}>
       <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
-          <Logo className="h-10 w-auto" />
+        <Link href="/" className="flex items-center w-36 md:w-44">
+          <Logo />
         </Link>
         <nav className="hidden md:flex md:items-center md:gap-8">
           {navLinks.map((link) => (
@@ -86,8 +86,8 @@ export function Header() {
             </Button>
             <SheetContent side="right" className="w-full bg-primary">
               <SheetHeader className="flex flex-row items-center justify-between">
-                 <Link href="/" onClick={() => setIsOpen(false)}>
-                    <Logo className="h-10 w-auto text-primary-foreground" />
+                 <Link href="/" onClick={() => setIsOpen(false)} className="w-36">
+                    <Logo className="text-primary-foreground" />
                   </Link>
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-primary-foreground">
