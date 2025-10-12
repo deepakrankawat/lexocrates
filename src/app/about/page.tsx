@@ -4,6 +4,7 @@ import { VisionMission } from '@/components/sections/vision-mission';
 import { Partners } from '@/components/sections/partners';
 import { Welcome } from '@/components/sections/welcome';
 import { Cta } from '@/components/sections/cta';
+import { Certifications } from '@/components/sections/certifications';
 
 
 export default function AboutPage() {
@@ -12,6 +13,7 @@ export default function AboutPage() {
       <AboutHero />
       <AboutIntro />
       <Partners />
+      <Certifications />
       <Welcome />
       <Cta />
       <VisionMission />
