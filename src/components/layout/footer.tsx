@@ -25,7 +25,7 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center gap-2">
-                <Logo className="h-12 w-auto text-background" />
+                <Logo className="h-14 w-auto text-background" />
               </Link>
               <p className="mt-6 max-w-sm text-primary-foreground/80">
                 Subscribe to our newsletter for the latest insights on legal outsourcing and industry trends.
@@ -63,7 +63,6 @@ export function Footer() {
                 <h3 className="font-headline font-bold text-lg text-primary-foreground">Contact Info</h3>
                 <ul className="mt-6 space-y-4 text-sm text-primary-foreground/80">
                   <li><p>7889 Mechanic Rd. Miami, FL 33125</p></li>
-                  <li><p>+22 7272 8282</p></li>
                   <li><p>contact@lexocrates.com</p></li>
                   <li><p>Mon - Fri: 9:00 am - 6:00 pm EST</p></li>
                 </ul>
