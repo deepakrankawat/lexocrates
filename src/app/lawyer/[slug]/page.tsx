@@ -7,40 +7,28 @@ import { User } from 'lucide-react';
 
 const teamMembers = [
   {
-    name: 'Laitman Harry',
-    title: 'Head of Corporate Solutions',
+    name: 'Rajesh Kumar',
+    title: 'Chief Executive Officer',
+    slug: 'rajesh-kumar',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-4'),
-    slug: 'laitman-harry',
   },
   {
-    name: 'Nada Geomorgant',
-    title: 'Lead, Contract Management',
+    name: 'Priya Sharma',
+    title: 'Chief Operating Officer',
+    slug: 'priya-sharma',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-2'),
-    slug: 'nada-geomorgant',
   },
   {
-    name: 'Desy Willy',
-    title: 'Director of Compliance',
+    name: 'Arun Patel',
+    title: 'Head of Legal Services',
+    slug: 'arun-patel',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-3'),
-    slug: 'desy-willy',
   },
   {
-    name: 'Hernando Jully',
-    title: 'Senior Legal Researcher',
+    name: 'Meera Reddy',
+    title: 'Head of Technology',
+    slug: 'meera-reddy',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-5'),
-    slug: 'hernando-jully',
-  },
-  {
-    name: 'Lydia Dary',
-    title: 'Document Review Specialist',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-6'),
-    slug: 'lydia-dary',
-  },
-  {
-    name: 'Smilly Ilani',
-    title: 'Founder & CEO',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-1'),
-    slug: 'smilly-ilani',
   },
 ];
 
@@ -103,4 +91,10 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
       <Cta />
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return teamMembers.map((member) => ({
+    slug: member.slug,
+  }));
 }
