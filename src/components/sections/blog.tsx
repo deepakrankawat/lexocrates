@@ -30,40 +30,35 @@ export function Blog() {
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
-                 <Link href={`/blog/${post.slug}`}>
+                 <Link href={`/blog/${post.slug}`} className="block relative h-96 w-full overflow-hidden">
                     {post.image && (
-                        <div className="relative h-64 w-full overflow-hidden">
-                            <AppImage
-                            src={post.image.imageUrl}
-                            alt={post.image.description}
-                            width={post.image.width}
-                            height={post.image.height}
-                            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                            data-ai-hint={post.image.imageHint}
-                            />
-                        </div>
+                        <AppImage
+                        src={post.image.imageUrl}
+                        alt={post.image.description}
+                        width={post.image.width}
+                        height={post.image.height}
+                        className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={post.image.imageHint}
+                        />
                     )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <div className="absolute bottom-0 left-0 p-6 text-white">
+                        <div className="flex items-center gap-4 text-sm text-white/80 mb-2">
+                        <div className="flex items-center gap-1">
+                            <User className="h-4 w-4" />
+                            <span>{post.author}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                            <Calendar className="h-4 w-4" />
+                            <span>{post.date}</span>
+                        </div>
+                        </div>
+                        <h3 className="font-headline text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">{post.title}</h3>
+                        <div className="text-accent font-bold flex items-center">
+                            Read More <ArrowRight className="ml-2 h-4 w-4" />
+                        </div>
+                    </div>
                 </Link>
-              <div className="p-6 bg-background">
-                <div className="flex items-center gap-4 text-sm text-foreground/60 mb-2">
-                  <div className="flex items-center gap-1">
-                    <User className="h-4 w-4" />
-                    <span>{post.author}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
-                    <span>{post.date}</span>
-                  </div>
-                </div>
-                <Link href={`/blog/${post.slug}`}>
-                    <h3 className="font-headline text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{post.title}</h3>
-                </Link>
-                <Button variant="link" asChild className="p-0 text-accent font-bold">
-                    <Link href={`/blog/${post.slug}`}>
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                </Button>
-              </div>
             </motion.div>
           ))}
         </StaggerFadeIn>
