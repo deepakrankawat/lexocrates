@@ -144,7 +144,7 @@ export default function ContactPage() {
               </div>
               <div>
                   <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4">
-                    <div className="bg-accent/10 p-3 rounded-full"><MapPin className="h-6 w-6 text-accent" /></div>
+                    <div className="bg-accent/10 p-3 rounded-full"><Car className="h-6 w-6 text-accent" /></div>
                     Getting Here
                   </h3>
                   <div className="ml-16 text-foreground/80 space-y-4">
