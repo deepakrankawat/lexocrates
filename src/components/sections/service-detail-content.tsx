@@ -15,39 +15,13 @@ export function ServiceDetailContent({ service }: { service: Service }) {
   return (
     <section className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="grid grid-cols-2 gap-6">
-            <div className="relative h-96">
-                {image1 && (
-                    <AppImage
-                        src={image1.imageUrl}
-                        alt={image1.description}
-                        width={image1.width}
-                        height={image1.height}
-                        className="object-cover w-full h-full"
-                        data-ai-hint={image1.imageHint}
-                    />
-                )}
-            </div>
-            <div className="relative h-96 mt-12">
-                {image2 && (
-                    <AppImage
-                        src={image2.imageUrl}
-                        alt={image2.description}
-                        width={image2.width}
-                        height={image2.height}
-                        className="object-cover w-full h-full"
-                        data-ai-hint={image2.imageHint}
-                    />
-                )}
-            </div>
-          </div>
-          <div>
+        <div className="grid grid-cols-1 gap-12 items-center">
+          <div className="text-center">
             <p className="font-body font-bold text-accent uppercase tracking-wider">{service.name}</p>
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
               Expert Solutions for {service.name}
             </h2>
-            <div className="mt-8 space-y-6 text-foreground/80">
+            <div className="mt-8 space-y-6 text-foreground/80 max-w-3xl mx-auto">
               <p>
                 {service.longDescription}
               </p>
