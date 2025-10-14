@@ -50,12 +50,11 @@ export function Team() {
               whileHover={{ y: -5, scale: 1.03, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
               transition={{ duration: 0.3 }}
             >
-              <Card className="group overflow-hidden text-center h-full">
-                  <div className="relative h-96 w-full overflow-hidden bg-secondary flex items-center justify-center">
-                    <User className="h-24 w-24 text-primary/10" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  </div>
-                  <CardContent className="p-6">
+              <Card className="group overflow-hidden text-center h-full bg-secondary">
+                  <CardContent className="p-6 flex flex-col items-center">
+                      <div className="p-4 bg-accent/10 rounded-full mb-4">
+                          <User className="h-10 w-10 text-accent" />
+                      </div>
                       <Link href={`/lawyer/${member.slug}`}>
                           <h3 className="font-headline text-2xl font-bold text-primary group-hover:text-accent transition-colors">{member.name}</h3>
                       </Link>

@@ -1,9 +1,11 @@
 
+
 import { Cta } from '@/components/sections/cta';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { User } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const teamMembers = [
   {
@@ -64,9 +66,15 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-1">
-                  <div className="relative h-[25rem] w-full overflow-hidden bg-secondary flex items-center justify-center">
-                    <User className="h-36 w-36 text-primary/10" />
-                  </div>
+                    <Card className="group overflow-hidden text-center h-full bg-secondary">
+                        <CardContent className="p-6 flex flex-col items-center">
+                            <div className="p-4 bg-accent/10 rounded-full mb-4">
+                                <User className="h-16 w-16 text-accent" />
+                            </div>
+                            <h3 className="font-headline text-2xl font-bold text-primary">{lawyer.name}</h3>
+                            <p className="text-accent font-bold mt-1">{lawyer.title}</p>
+                        </CardContent>
+                    </Card>
                 </div>
                 <div className="md:col-span-2 space-y-6 text-foreground/80">
                     <h2 className="font-headline text-4xl font-bold text-primary">About {lawyer.name}</h2>
