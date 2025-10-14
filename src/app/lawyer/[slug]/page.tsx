@@ -44,16 +44,6 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
   return (
     <main className="bg-background">
       <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32">
-          {lawyer.image && (
-              <Image
-                  src={lawyer.image.imageUrl}
-                  alt={lawyer.image.description}
-                  fill
-                  className="object-cover opacity-10"
-                  priority
-                  data-ai-hint={lawyer.image.imageHint}
-              />
-          )}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
               <h1 className="font-headline text-5xl md:text-6xl font-bold">{lawyer.name}</h1>
