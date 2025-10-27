@@ -1,8 +1,11 @@
 
+'use client';
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Landmark, University } from 'lucide-react';
 import { SlideIn } from '@/components/animations/slide-in';
+import { LottiePlayer } from '@/components/animations/lottie-player';
+import LawBalanceAnimation from '../../../public/lottie/law-balance.json';
 
 export function About() {
   return (
@@ -27,8 +30,8 @@ export function About() {
             </div>
           </SlideIn>
           <SlideIn direction="left" className="relative h-96 lg:h-[32rem] flex items-center justify-center">
-            <div className="relative h-96 w-96 justify-self-center bg-secondary flex items-center justify-center">
-              <University className="h-48 w-48 text-accent/80" />
+            <div className="relative h-96 w-96 justify-self-center">
+              <LottiePlayer animationData={LawBalanceAnimation} />
             </div>
           </SlideIn>
         </div>
