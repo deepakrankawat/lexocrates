@@ -5,32 +5,32 @@ import { FadeIn } from '../animations/fade-in';
 
 export function VisionMission() {
   return (
-    <section className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-20 sm:py-28">
+    <section className="bg-secondary text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="bg-transparent border-primary-foreground/20 text-center shadow-none">
+            <Card className="bg-background text-center">
               <CardHeader className="items-center">
-                <div className="p-4 bg-background/10 text-primary-foreground rounded-full mb-4">
+                <div className="p-4 bg-accent/10 text-accent rounded-full mb-4">
                   <Eye className="h-8 w-8" />
                 </div>
-                <CardTitle className="font-headline text-4xl font-bold text-primary-foreground">Our Vision</CardTitle>
+                <CardTitle className="font-headline text-4xl font-bold text-primary">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-primary-foreground/80">
+                <p className="text-foreground/80">
                   To be the world&apos;s leading legal outsourcing partner, recognized for our unwavering commitment to quality, innovation, and client success.
                 </p>
               </CardContent>
             </Card>
-            <Card className="bg-transparent border-primary-foreground/20 text-center shadow-none">
+            <Card className="bg-background text-center">
               <CardHeader className="items-center">
-                <div className="p-4 bg-background/10 text-primary-foreground rounded-full mb-4">
+                <div className="p-4 bg-accent/10 text-accent rounded-full mb-4">
                   <Target className="h-8 w-8" />
                 </div>
-                <CardTitle className="font-headline text-4xl font-bold text-primary-foreground">Our Mission</CardTitle>
+                <CardTitle className="font-headline text-4xl font-bold text-primary">Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-primary-foreground/80">
+                <p className="text-foreground/80">
                 To empower our clients by providing superior legal support services that enhance efficiency, reduce costs, and allow them to focus on their core strategic objectives.
                 </p>
               </CardContent>
