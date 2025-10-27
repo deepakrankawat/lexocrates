@@ -1,5 +1,5 @@
 
-import { User } from 'lucide-react';
+import { User, UserRound } from 'lucide-react';
 
 export function Welcome() {
   return (
@@ -7,7 +7,7 @@ export function Welcome() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-96 w-96 justify-self-center bg-secondary flex items-center justify-center">
-            <User className="h-48 w-48 text-accent/80" strokeWidth={0.5} />
+            <UserRound className="h-48 w-48 text-accent/80" />
           </div>
           <div>
             <p className="font-body font-bold text-accent uppercase tracking-wider">A Message from Our Founder</p>

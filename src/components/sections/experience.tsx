@@ -1,5 +1,5 @@
 
-import { Briefcase, Award, TrendingUp, Calendar, Users } from 'lucide-react';
+import { Briefcase, Award, TrendingUp, Calendar, Users, AreaChart } from 'lucide-react';
 import { SlideIn } from '@/components/animations/slide-in';
 import { Counter } from '@/components/animations/counter';
 
@@ -35,8 +35,10 @@ export function Experience() {
               </div>
             </div>
           </SlideIn>
-           <SlideIn direction="left" className="relative h-96 lg:h-[32rem] bg-secondary flex items-center justify-center">
-            <TrendingUp className="h-48 w-48 text-accent/80" strokeWidth={0.5} />
+           <SlideIn direction="left" className="relative h-96 lg:h-[32rem] flex items-center justify-center">
+            <div className="relative h-96 w-96 justify-self-center bg-secondary flex items-center justify-center">
+              <AreaChart className="h-48 w-48 text-accent/80" />
+            </div>
           </SlideIn>
         </div>
       </div>

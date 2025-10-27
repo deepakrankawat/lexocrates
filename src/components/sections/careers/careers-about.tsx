@@ -1,6 +1,6 @@
 
 import { SlideIn } from '@/components/animations/slide-in';
-import { Building2 } from 'lucide-react';
+import { Building, Building2 } from 'lucide-react';
 
 export function CareersAbout() {
   return (
@@ -9,7 +9,7 @@ export function CareersAbout() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="left" className="lg:order-last">
             <div className="relative h-[30rem] w-full bg-secondary flex items-center justify-center">
-              <Building2 className="h-48 w-48 text-accent/80" strokeWidth={0.5} />
+              <Building className="h-48 w-48 text-accent/80" />
             </div>
           </SlideIn>
           <SlideIn direction="right">
