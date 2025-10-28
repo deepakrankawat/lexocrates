@@ -2,11 +2,12 @@
 
 'use client';
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car, LifeBuoy } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car, LifeBuoy, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
@@ -15,11 +16,18 @@ import Link from "next/link";
 import { AppImage } from "@/components/ui/app-image";
 
 export default function ContactPage() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
   const image1 = PlaceHolderImages.find(img => img.id === 'service-detail-1');
   const image2 = PlaceHolderImages.find(img => img.id === 'service-detail-2');
   const jaipurAddress = "B-1402 Mangalam The Grand Residency, Near Teoler School, Sirsi Road, Jaipur, Rajasthan, India. Pin 302041";
   const jaipurMapQuery = "B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan, 302041";
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
 
   return (
     <main className="bg-background">
@@ -50,29 +58,37 @@ export default function ContactPage() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-secondary p-8">
-                <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                    <Label htmlFor="first-name">First Name*</Label>
-                    <Input id="first-name" placeholder="John" />
+                {isSubmitted ? (
+                  <div className="flex flex-col items-center justify-center h-full text-center">
+                    <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
+                    <h3 className="font-headline text-2xl font-bold text-primary mb-2">Form Submitted!</h3>
+                    <p className="text-foreground/80">Thank you for your message. We will get back to you shortly.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                        <Label htmlFor="first-name">First Name*</Label>
+                        <Input id="first-name" placeholder="John" required/>
+                        </div>
+                        <div className="space-y-2">
+                        <Label htmlFor="last-name">Last Name*</Label>
+                        <Input id="last-name" placeholder="Doe" required/>
+                        </div>
                     </div>
                     <div className="space-y-2">
-                    <Label htmlFor="last-name">Last Name*</Label>
-                    <Input id="last-name" placeholder="Doe" />
+                        <Label htmlFor="email">Your Email*</Label>
+                        <Input id="email" type="email" placeholder="john.doe@example.com" required/>
                     </div>
-                </div>
-                <div className="space-y-2">
-                    <Label htmlFor="email">Your Email*</Label>
-                    <Input id="email" type="email" placeholder="john.doe@example.com" />
-                </div>
-                <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="How can we help you?" rows={5} />
-                </div>
-                <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                    Send Message
-                </Button>
-                </form>
+                    <div className="space-y-2">
+                        <Label htmlFor="message">Message</Label>
+                        <Textarea id="message" placeholder="How can we help you?" rows={5} />
+                    </div>
+                    <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                        Send Message
+                    </Button>
+                  </form>
+                )}
             </div>
             <div className="space-y-8">
                <Link href="mailto:Support@lexocrates.com" className="flex items-start gap-4 group">
@@ -207,3 +223,5 @@ export default function ContactPage() {
     </main>
   );
 }
+
+    
