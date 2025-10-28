@@ -16,6 +16,8 @@ import { AppImage } from "@/components/ui/app-image";
 
 export default function ContactPage() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
+  const image1 = PlaceHolderImages.find(img => img.id === 'service-detail-1');
+  const image2 = PlaceHolderImages.find(img => img.id === 'service-detail-2');
   const jaipurAddress = "B-1402 Mangalam The Grand Residency, Near Teoler School, Sirsi Road, Jaipur, Rajasthan, India. Pin 302041";
   const jaipurMapQuery = "B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan, 302041";
 
@@ -111,6 +113,35 @@ export default function ContactPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-secondary pb-20 sm:pb-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-8">
+                {image1 && (
+                    <div className="relative h-96">
+                        <AppImage
+                            src={image1.imageUrl}
+                            alt={image1.description}
+                            fill
+                            className="object-cover"
+                            data-ai-hint={image1.imageHint}
+                        />
+                    </div>
+                )}
+                {image2 && (
+                    <div className="relative h-96">
+                        <AppImage
+                            src={image2.imageUrl}
+                            alt={image2.description}
+                            fill
+                            className="object-cover"
+                            data-ai-hint={image2.imageHint}
+                        />
+                    </div>
+                )}
+            </div>
         </div>
       </section>
 
