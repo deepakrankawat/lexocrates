@@ -4,7 +4,7 @@ import { WritingBlogPostLottie } from '@/components/animations/writing-blog-post
 
 export function BlogHero() {
   return (
-    <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32">
+    <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <WritingBlogPostLottie />
         </div>
