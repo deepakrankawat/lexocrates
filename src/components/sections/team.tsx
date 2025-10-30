@@ -36,7 +36,7 @@ export function Team() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-16">
             <p className="font-body font-bold text-accent uppercase tracking-wider">Our Experts</p>
-            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
+            <h2 className="mt-4 font-headline text-3xl md:text-5xl font-bold leading-tight text-primary">
                 Our Leadership Team
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-foreground/80">
@@ -56,9 +56,9 @@ export function Team() {
                           <User className="h-10 w-10 text-accent" />
                       </div>
                       <Link href={`/lawyer/${member.slug}`}>
-                          <h3 className="font-headline text-2xl font-bold text-primary group-hover:text-accent transition-colors">{member.name}</h3>
+                          <h3 className="font-headline text-xl md:text-2xl font-bold text-primary group-hover:text-accent transition-colors">{member.name}</h3>
                       </Link>
-                      <p className="text-accent font-bold mt-1">{member.title}</p>
+                      <p className="text-accent font-bold mt-1 text-sm md:text-base">{member.title}</p>
                   </CardContent>
               </Card>
             </motion.div>

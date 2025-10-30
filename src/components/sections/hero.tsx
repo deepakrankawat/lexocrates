@@ -29,12 +29,12 @@ export function Hero() {
             </p>
         </FadeIn>
         <FadeIn delay={0.4} duration={0.8}>
-            <h1 className="mt-4 font-headline text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="mt-4 font-headline text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
                 Empowering Global Legal Excellence
             </h1>
         </FadeIn>
         <FadeIn delay={0.6} duration={0.8}>
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-primary-foreground/80">
+            <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-primary-foreground/80">
                 Lexocrates provides end-to-end legal outsourcing solutions, enabling your firm to focus on strategy while we handle precision legal work.
             </p>
         </FadeIn>
