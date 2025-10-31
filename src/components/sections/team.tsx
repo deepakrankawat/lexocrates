@@ -56,9 +56,9 @@ export function Team() {
                           <User className="h-10 w-10 text-accent" />
                       </div>
                       <Link href={`/lawyer/${member.slug}`}>
-                          <h3 className="font-headline text-xl md:text-2xl font-bold text-primary group-hover:text-accent transition-colors">{member.name}</h3>
+                          <h3 className="font-headline text-xl font-bold text-primary group-hover:text-accent transition-colors">{member.name}</h3>
                       </Link>
-                      <p className="text-accent font-bold mt-1 text-sm md:text-base">{member.title}</p>
+                      <p className="text-accent font-bold mt-1 text-sm">{member.title}</p>
                   </CardContent>
               </Card>
             </motion.div>
@@ -68,3 +68,5 @@ export function Team() {
     </section>
   );
 }
+
+    
