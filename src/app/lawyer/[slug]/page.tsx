@@ -43,11 +43,12 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
 
   return (
     <main className="bg-background">
-      <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32">
+      <section className="relative text-white pt-36 pb-20 sm:pt-48 sm:pb-32">
+        <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
               <h1 className="font-headline text-5xl md:text-6xl font-bold">{lawyer.name}</h1>
-              <p className="mt-4 text-lg text-primary-foreground/80">{lawyer.title}</p>
+              <p className="mt-4 text-lg text-white/80">{lawyer.title}</p>
           </div>
         </div>
       </section>
