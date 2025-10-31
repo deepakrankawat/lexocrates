@@ -8,14 +8,14 @@ export function AboutIntro() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="left" className="lg:order-last">
-            <div className="relative h-[30rem] w-full bg-secondary flex items-center justify-center">
-              <BookMarked className="h-48 w-48 text-accent/80" />
+            <div className="relative h-80 lg:h-[30rem] w-full bg-secondary flex items-center justify-center">
+              <BookMarked className="h-32 w-32 sm:h-48 sm:w-48 text-accent/80" />
             </div>
           </SlideIn>
           <SlideIn direction="right">
             <div className="flex flex-col">
               <p className="font-body font-bold text-accent uppercase tracking-wider">Our Story</p>
-              <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
+              <h2 className="mt-4 font-headline text-3xl md:text-5xl font-bold text-primary leading-tight">
                 From Jaipur to Canada: A Commitment to Legal Excellence
               </h2>
               <div className="mt-8 text-foreground/80 space-y-6">
