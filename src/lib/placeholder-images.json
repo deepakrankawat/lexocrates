@@ -147,7 +147,7 @@
     {
       "id": "blog-image-1",
       "description": "Image for a blog post about corporate mergers",
-      "imageUrl": "https://images.unsplash.com/photo-1551135049-8a33b5883817?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3Jwb3JhdGUlMjBtZWV0aW5nfGVufDB8fHx8MTc2MTIzNzEwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/blog-1.jpg",
       "imageHint": "corporate meeting",
       "width": 800,
       "height": 600
@@ -155,7 +155,7 @@
     {
       "id": "blog-image-2",
       "description": "Image for a blog post about family law",
-      "imageUrl": "https://images.unsplash.com/photo-1612102965333-2f07b77f4cda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmYW1pbHklMjBjb25jZXB0fGVufDB8fHx8MTc2MTI5NTk1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/blog-2.jpg",
       "imageHint": "family concept",
       "width": 800,
       "height": 600
@@ -163,7 +163,7 @@
     {
       "id": "blog-image-3",
       "description": "Image for a blog post about AI and IP law",
-      "imageUrl": "https://images.unsplash.com/photo-1694903110330-cc64b7e1d21d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc2MTI5MzI2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/blog-3.jpg",
       "imageHint": "artificial intelligence",
       "width": 800,
       "height": 600
@@ -171,7 +171,7 @@
     {
       "id": "blog-image-4",
       "description": "Image for a blog post about real estate law",
-      "imageUrl": "https://images.unsplash.com/photo-1558036117-15d82a90b9b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHx8fDE3NjEyODQ1OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/blog-4.jpg",
       "imageHint": "real estate",
       "width": 800,
       "height": 600
@@ -243,7 +243,7 @@
     {
       "id": "service-immigration-law",
       "description": "A passport and a flag",
-      "imageUrl": "https://images.unsplash.com/photo-1612364461060-38075479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwYXNzcG9ydCUyMGZsYWd8ZW58MHx8fHwxNzYxMjk1OTU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1612364461060-38075479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwYXNzcG9ydCUyMGZsYWd8ZW58MHx8fHwxNzYxMjk1OTU1fDA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "passport flag",
       "width": 600,
       "height": 800

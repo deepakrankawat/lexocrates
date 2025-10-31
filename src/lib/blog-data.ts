@@ -20,6 +20,21 @@ export const blogPosts = [
     `,
   },
   {
+    id: 2,
+    slug: 'navigating-compliance-in-the-digital-age',
+    title: 'Navigating Compliance in the Digital Age',
+    excerpt: 'Learn how to stay ahead of evolving regulatory landscapes and ensure your business remains compliant...',
+    image: PlaceHolderImages.find(img => img.id === 'blog-image-2'),
+    date: 'Sep 25, 2024',
+    category: 'Compliance',
+    author: 'Priya Sharma',
+    fullContent: `
+      <p>In an era of rapid digital transformation, regulatory compliance has become more complex than ever. From data privacy laws like GDPR to industry-specific regulations, businesses must navigate a challenging and ever-changing landscape. This post explores strategies for building a robust compliance framework that not only mitigates risk but also fosters trust with your customers.</p>
+      <h4 class="font-headline text-2xl font-bold text-primary mt-8 mb-4">Proactive Compliance is Key</h4>
+      <p>A proactive approach to compliance involves continuous monitoring of regulatory changes, conducting regular risk assessments, and integrating compliance into your business processes from the ground up. At Lexocrates, we help clients develop and implement proactive compliance programs that are tailored to their unique needs and risk profiles.</p>
+    `,
+  },
+  {
     id: 3,
     slug: 'why-india-is-a-leader-in-legal-process-outsourcing',
     title: 'Why India is a Leader in Legal Process Outsourcing',
@@ -41,6 +56,21 @@ export const blogPosts = [
         <li><strong>Access to Talent:</strong> India’s robust legal education system produces thousands of skilled law graduates annually, offering high-quality legal minds at competitive rates.</li>
       </ul>
       <p class="mt-4">As global legal teams increasingly seek leaner operations and high-quality support, the Indian LPO sector is poised to be a crucial partner in delivering value-driven legal solutions. For firms aiming to enhance productivity and profitability, India remains a premier destination for legal outsourcing.</p>
+    `,
+  },
+  {
+    id: 4,
+    slug: 'leveraging-technology-in-contract-management',
+    title: 'Leveraging Technology in Contract Management',
+    excerpt: 'Discover how technology can streamline your contract lifecycle, from creation to renewal...',
+    image: PlaceHolderImages.find(img => img.id === 'blog-image-4'),
+    date: 'Sep 15, 2024',
+    category: 'Legal Tech',
+    author: 'Meera Reddy',
+    fullContent: `
+      <p>Effective contract management is crucial for any business, but manual processes are often inefficient and prone to error. Technology offers a powerful solution, enabling you to automate and streamline the entire contract lifecycle. This post explores the benefits of using contract management software and how it can transform your legal operations.</p>
+      <h4 class="font-headline text-2xl font-bold text-primary mt-8 mb-4">The Power of Automation</h4>
+      <p>From automated reminders for key dates to centralized repositories for all your agreements, contract management technology brings a new level of efficiency and control. At Lexocrates, we leverage cutting-edge tools to provide our clients with a clear and comprehensive view of their contractual obligations, helping them mitigate risk and seize opportunities.</p>
     `,
   },
 ];
