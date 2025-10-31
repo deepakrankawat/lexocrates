@@ -147,7 +147,7 @@
     {
       "id": "blog-image-1",
       "description": "Image for a blog post about corporate mergers",
-      "imageUrl": "/images/blog/blog1.jpg",
+      "imageUrl": "/blog/blog1.jpg",
       "imageHint": "corporate meeting",
       "width": 800,
       "height": 600
@@ -155,7 +155,7 @@
     {
       "id": "blog-image-2",
       "description": "Image for a blog post about family law",
-      "imageUrl": "/images/blog/blog2.png",
+      "imageUrl": "/blog/blog2.png",
       "imageHint": "family concept",
       "width": 800,
       "height": 600
