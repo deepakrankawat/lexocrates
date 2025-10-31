@@ -155,7 +155,7 @@
     {
       "id": "blog-image-2",
       "description": "Image for a blog post about family law",
-      "imageUrl": "/images/blog/blog2.jpg",
+      "imageUrl": "/images/blog/blog2.png",
       "imageHint": "family concept",
       "width": 800,
       "height": 600
@@ -235,7 +235,7 @@
     {
       "id": "service-criminal-defense",
       "description": "A courtroom",
-      "imageUrl": "https://images.unsplash.com/photo-1562668457-bf6637adfd01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3VydHJvb20lMjBnYXZlbHxlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1562668457-bf6637adfd01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3VydHJvb20lMjBnYXZlbHxlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "courtroom gavel",
       "width": 600,
       "height": 800
