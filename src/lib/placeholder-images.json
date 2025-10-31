@@ -147,7 +147,7 @@
     {
       "id": "blog-image-1",
       "description": "Image for a blog post about corporate mergers",
-      "imageUrl": "/images/blog/blog-1.jpg",
+      "imageUrl": "/images/blog/blog1.jpg",
       "imageHint": "corporate meeting",
       "width": 800,
       "height": 600
@@ -155,7 +155,7 @@
     {
       "id": "blog-image-2",
       "description": "Image for a blog post about family law",
-      "imageUrl": "/images/blog/blog-2.jpg",
+      "imageUrl": "/images/blog/blog2.jpg",
       "imageHint": "family concept",
       "width": 800,
       "height": 600
@@ -211,7 +211,7 @@
     {
       "id": "service-family-law",
       "description": "A happy family",
-      "imageUrl": "https://images.unsplash.com/photo-1588979355313-6711a095465f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseXxlbnwwfHx8fDE3NjEyNTgzNTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1588979355313-6711a095479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseXxlbnwwfHx8fDE3NjEyNTgzNTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "happy family",
       "width": 600,
       "height": 800
