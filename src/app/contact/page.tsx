@@ -13,6 +13,7 @@ import { Faq } from "@/components/sections/faq";
 import { Cta } from "@/components/sections/cta";
 import Link from "next/link";
 import { AppImage } from "@/components/ui/app-image";
+import { TrackInquiry } from "@/components/sections/track-inquiry";
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -132,34 +133,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-secondary pb-20 sm:pb-28">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-8">
-                {image1 && (
-                    <div className="relative h-96">
-                        <AppImage
-                            src={image1.imageUrl}
-                            alt={image1.description}
-                            fill
-                            className="object-cover"
-                            data-ai-hint={image1.imageHint}
-                        />
-                    </div>
-                )}
-                {image2 && (
-                    <div className="relative h-96">
-                        <AppImage
-                            src={image2.imageUrl}
-                            alt={image2.description}
-                            fill
-                            className="object-cover"
-                            data-ai-hint={image2.imageHint}
-                        />
-                    </div>
-                )}
-            </div>
-        </div>
-      </section>
+      <TrackInquiry />
 
       <section id="headquarters" className="py-20 sm:py-28 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
