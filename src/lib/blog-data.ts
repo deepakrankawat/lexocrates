@@ -1,3 +1,4 @@
+
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const blogPosts = [
@@ -5,7 +6,7 @@ export const blogPosts = [
     id: 1,
     title: 'The Growing Indian LPO Market and Benefits of Legal Outsourcing',
     slug: 'the-growing-indian-lpo-market-and-benefits-of-legal-outsourcing',
-    author: 'Lexocrates Team',
+    author: 'Yashvardhan Singh',
     date: 'October 30, 2024',
     category: 'Legal Outsourcing',
     image: PlaceHolderImages.find(img => img.id === 'blog-image-1'),
@@ -28,7 +29,7 @@ export const blogPosts = [
     id: 2,
     title: 'Why Outsourcing to India Makes Strategic Sense: Professionalism, Talent & Time Zone Edge',
     slug: 'why-outsourcing-to-india-makes-strategic-sense',
-    author: 'Lexocrates Team',
+    author: 'Yashvardhan Singh',
     date: 'November 05, 2024',
     category: 'Outsourcing',
     image: PlaceHolderImages.find(img => img.id === 'blog-image-2'),
