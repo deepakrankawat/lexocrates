@@ -56,7 +56,7 @@ export function Header() {
       <div className="container mx-auto flex h-28 md:h-32 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center">
           <div className="flex flex-col items-start">
-            <Logo className="w-40 md:w-56" />
+            <Logo className="w-48 md:w-64" />
             <p className={cn("text-sm -mt-2 transition-colors hidden md:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
               Precision in Law, Rooted in Philosophy
             </p>
@@ -91,7 +91,7 @@ export function Header() {
             </Button>
             <SheetContent side="right" className="w-full bg-primary">
               <SheetHeader className="flex flex-row items-center justify-between">
-                 <Link href="/" onClick={() => setIsOpen(false)} className="w-40">
+                 <Link href="/" onClick={() => setIsOpen(false)} className="w-48">
                     <Logo className="text-primary-foreground" />
                   </Link>
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
