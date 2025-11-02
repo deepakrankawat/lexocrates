@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState } from "react";
@@ -13,7 +14,7 @@ import { Faq } from "@/components/sections/faq";
 import { Cta } from "@/components/sections/cta";
 import Link from "next/link";
 import { AppImage } from "@/components/ui/app-image";
-import { TrackInquiry } from "@/components/sections/track-inquiry";
+import { ContactProcess } from "@/components/sections/contact-process";
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -133,7 +134,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <TrackInquiry />
+      <ContactProcess />
 
       <section id="headquarters" className="py-20 sm:py-28 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
