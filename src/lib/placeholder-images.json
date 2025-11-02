@@ -3,7 +3,7 @@
     {
       "id": "hero-home",
       "description": "A law library with books on shelves",
-      "imageUrl": "/images/hero-home.jpg",
+      "imageUrl": "/images/blog/hero-home.jpg",
       "imageHint": "law library",
       "width": 1920,
       "height": 1080
@@ -83,7 +83,7 @@
     {
       "id": "partner-logo-4",
       "description": "Logo for a fictional company called 'Superanzo'",
-      "imageUrl": "https://images.unsplash.com/photo-1610801653372-eeda4cbcd298?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb2Rlcm4lMjBsb2dvfGVufDB8fHx8MTc2MTIwNDI3MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1610801653372-eeda4cbcd298?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb2Rlcm4lMjBsb2dvfGVufDB8fHx8MTc2MTIwNDI3MXww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "modern logo",
       "width": 150,
       "height": 50
@@ -107,7 +107,7 @@
     {
       "id": "lawyer-3",
       "description": "Professional portrait of a female lawyer in a suit",
-      "imageUrl": "https://images.unsplash.com/photo-1726618069974-c1d5d27f612b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmZW1hbGUlMjBsYXd5ZXJ8ZW58MHx8fHwxNzYxMjU2MTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1726618069974-c1d5d27f612b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmZW1hbGUlMjBsYXd5ZXJ8ZW58MHx8fHwxNzYxMjU2MTIxfDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "female lawyer",
       "width": 600,
       "height": 800
@@ -115,7 +115,7 @@
     {
       "id": "lawyer-4",
       "description": "Professional portrait of a male lawyer",
-      "imageUrl": "https://images.unsplash.com/photo-1658250646172-227c363047af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFsZSUyMGxhd3llcnxlbnwwfHx8fDE3NjEyNTYxMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1658250646172-227c363047af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFsZSUyMGxhd3llcnxlbnwwfHx8fDE3NjEyNTYxMjF8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "male lawyer",
       "width": 600,
       "height": 800
@@ -123,7 +123,7 @@
     {
       "id": "lawyer-5",
       "description": "Portrait of a man in a suit",
-      "imageUrl": "https://images.unsplash.com/photo-1546572797-e8c933a75a1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYW4lMjBzdWl0fGVufDB8fHx8MTc2MTI3NDgxOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1546572797-e8c933a75a1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYW4lMjBzdWl0fGVufDB8fHx8MTc2MTI3NDgxOXww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "man suit",
       "width": 600,
       "height": 800
@@ -131,7 +131,7 @@
     {
       "id": "lawyer-6",
       "description": "Portrait of a woman with glasses",
-      "imageUrl": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NjEyMjE2MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NjEyMjE2MTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "professional woman",
       "width": 600,
       "height": 800
@@ -139,7 +139,7 @@
     {
       "id": "client-avatar-1",
       "description": "Avatar of client Johnatan G.",
-      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEyNTU5NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEyNTU5NTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "man portrait",
       "width": 100,
       "height": 100
@@ -147,7 +147,7 @@
     {
       "id": "blog-image-1",
       "description": "Image for a blog post about corporate mergers",
-      "imageUrl": "/blog/blog1.jpg",
+      "imageUrl": "/images/blog/blog1.jpg",
       "imageHint": "corporate meeting",
       "width": 800,
       "height": 600
@@ -155,7 +155,7 @@
     {
       "id": "blog-image-2",
       "description": "Image for a blog post about family law",
-      "imageUrl": "/blog/blog2.png",
+      "imageUrl": "/images/blog/blog2.png",
       "imageHint": "family concept",
       "width": 800,
       "height": 600
@@ -179,7 +179,7 @@
     {
       "id": "service-detail-1",
       "description": "A professional legal setting",
-      "imageUrl": "https://images.unsplash.com/photo-1589307904488-7d60ff29c975?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsZWdhbCUyMG9mZmljZXxlbnwwfHx8fDE3NjEyMDY2Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1589307904488-7d60ff29c975?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsZWdhbCUyMG9mZmljZXxlbnwwfHx8fDE3NjEyMDY2Nzh8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "legal office",
       "width": 600,
       "height": 800
@@ -187,7 +187,7 @@
     {
       "id": "service-detail-2",
       "description": "Law books on a shelf",
-      "imageUrl": "https://images.unsplash.com/photo-1619771699034-fec6b1aabde3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsYXclMjBib29rc3xlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1619771699034-fec6b1aabde3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsYXclMjBib29rc3xlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "law books",
       "width": 600,
       "height": 800
@@ -195,7 +195,7 @@
     {
       "id": "contact-map",
       "description": "A map showing a location in a city.",
-      "imageUrl": "https://images.unsplash.com/photo-1619468129361-605ebea04b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaXR5JTIwbWFwfGVufDB8fHx8MTc2MTE3NDExMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1619468129361-605ebea04b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaXR5JTIwbWFwfGVufDB8fHx8MTc2MTE3NDExMXww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "city map",
       "width": 800,
       "height": 600
@@ -211,7 +211,7 @@
     {
       "id": "service-family-law",
       "description": "A happy family",
-      "imageUrl": "https://images.unsplash.com/photo-1588979355313-6711a095479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseXxlbnwwfHx8fDE3NjEyNTgzNTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1588979355313-6711a095479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseXxlbnwwfHx8fDE3NjEyNTgzNTB8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "happy family",
       "width": 600,
       "height": 800
@@ -219,7 +219,7 @@
     {
       "id": "service-real-estate-law",
       "description": "A modern house",
-      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NjEyNzg5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NjEyNzg5NTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "modern house",
       "width": 600,
       "height": 800
@@ -227,7 +227,7 @@
     {
       "id": "service-ip-law",
       "description": "A lightbulb representing ideas",
-      "imageUrl": "https://images.unsplash.com/photo-1641733326251-e6acef18d3f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpZGVhJTIwbGlnaHRidWxifGVufDB8fHx8MTc2MTI1NjM0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1641733326251-e6acef18d3f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpZGVhJTIwbGlnaHRidWxifGVufDB8fHx8MTc2MTI1NjM0N3ww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "idea lightbulb",
       "width": 600,
       "height": 800
