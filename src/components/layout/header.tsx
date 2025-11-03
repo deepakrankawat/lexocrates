@@ -53,11 +53,11 @@ export function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className="container mx-auto flex h-28 md:h-32 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-24 md:h-28 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center">
           <div className="flex flex-col items-start">
-            <Logo className="w-64 md:w-[320px]" />
-            <p className={cn("text-sm -mt-2 transition-colors hidden md:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
+            <Logo className="w-48 md:w-64" />
+            <p className={cn("text-xs -mt-1 transition-colors hidden md:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
               Precision in Law, Rooted in Philosophy
             </p>
           </div>
@@ -86,7 +86,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <Button variant="ghost" size="icon" className="text-white hover:bg-transparent" onClick={() => setIsOpen(true)}>
-              <Menu className="h-12 w-12" />
+              <Menu className="h-8 w-8" />
               <span className="sr-only">Open menu</span>
             </Button>
             <SheetContent side="right" className="w-full bg-primary">
