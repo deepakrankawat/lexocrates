@@ -21,8 +21,10 @@ export default {
         'xs': '2px',
       },
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Orbitron', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

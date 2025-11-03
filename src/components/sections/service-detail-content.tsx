@@ -23,8 +23,8 @@ export function ServiceDetailContent({ service }: { service: Service }) {
                     <ServiceIcon className="h-12 w-12 text-accent" />
                 </div>
             </div>
-            <p className="font-body font-bold text-accent uppercase tracking-wider">{service.name}</p>
-            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
+            <p className="font-lato font-bold text-accent uppercase tracking-wider">{service.name}</p>
+            <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary leading-tight">
               Expert Solutions for {service.name}
             </h2>
             <div className="mt-8 space-y-6 text-foreground/80 max-w-3xl mx-auto">
@@ -33,7 +33,7 @@ export function ServiceDetailContent({ service }: { service: Service }) {
               </p>
             </div>
             <div className="mt-10">
-                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-montserrat font-bold">
                     <Link href="/contact">Schedule a Consultation</Link>
                 </Button>
             </div>

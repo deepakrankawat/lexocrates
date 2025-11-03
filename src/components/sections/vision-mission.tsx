@@ -14,7 +14,7 @@ export function VisionMission() {
                 <div className="p-4 bg-accent/10 text-accent rounded-full mb-4">
                   <Eye className="h-8 w-8" />
                 </div>
-                <CardTitle className="font-headline text-3xl sm:text-4xl font-bold text-primary">Our Vision</CardTitle>
+                <CardTitle className="font-roboto text-3xl sm:text-4xl font-medium text-primary">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-foreground/80">
@@ -27,7 +27,7 @@ export function VisionMission() {
                 <div className="p-4 bg-accent/10 text-accent rounded-full mb-4">
                   <Target className="h-8 w-8" />
                 </div>
-                <CardTitle className="font-headline text-3xl sm:text-4xl font-bold text-primary">Our Mission</CardTitle>
+                <CardTitle className="font-roboto text-3xl sm:text-4xl font-medium text-primary">Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-foreground/80">

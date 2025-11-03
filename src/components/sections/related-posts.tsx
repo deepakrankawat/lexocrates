@@ -13,7 +13,7 @@ export function RelatedPosts({ posts }: { posts: Post[] }) {
     <section id="related-posts" className="bg-secondary text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
+            <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold leading-tight text-primary">
               Related Articles
             </h2>
         </div>
@@ -22,10 +22,10 @@ export function RelatedPosts({ posts }: { posts: Post[] }) {
             <Card key={post.id} className="overflow-hidden group bg-card shadow-sm rounded-none flex flex-col">
               <CardContent className="p-6 flex flex-col flex-grow">
                 <Link href={`/blog/${post.slug}`}>
-                    <h3 className="font-headline text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{post.title}</h3>
+                    <h4 className="font-opensans text-xl font-semibold text-primary mb-3 group-hover:text-accent transition-colors">{post.title}</h4>
                 </Link>
                 <p className="text-foreground/80 mb-4 flex-grow">{post.excerpt}</p>
-                <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 mt-auto">
+                <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 mt-auto font-lato font-bold">
                     <Link href={`/blog/${post.slug}`}>
                     Read Now
                     </Link>

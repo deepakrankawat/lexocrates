@@ -33,8 +33,8 @@ export function Faq() {
     <section className="bg-secondary text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-16">
-          <p className="font-body font-bold text-accent uppercase tracking-wider">FAQs</p>
-          <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">
+          <p className="font-lato font-bold text-accent uppercase tracking-wider">FAQs</p>
+          <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">
             Frequently Asked Questions
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-foreground/80">
@@ -46,7 +46,7 @@ export function Faq() {
             <StaggerFadeIn>
                 {faqs.map((faq, index) => (
                     <AccordionItem key={index} value={`item-${index}`} className="bg-background px-6">
-                        <AccordionTrigger className="text-left font-headline text-xl text-primary hover:no-underline">{faq.question}</AccordionTrigger>
+                        <AccordionTrigger className="text-left font-roboto text-xl text-primary hover:no-underline">{faq.question}</AccordionTrigger>
                         <AccordionContent className="text-foreground/80">
                         {faq.answer}
                         </AccordionContent>

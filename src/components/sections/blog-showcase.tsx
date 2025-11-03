@@ -13,15 +13,15 @@ export function BlogShowcase() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="right">
             <div className="flex flex-col">
-              <p className="font-body font-bold text-accent uppercase tracking-wider">Stay Informed</p>
-              <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
+              <p className="font-lato font-bold text-accent uppercase tracking-wider">Stay Informed</p>
+              <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary leading-tight">
                 Insights from Our Legal Experts
               </h2>
               <p className="mt-6 text-foreground/80">
                   Our blog is your resource for the latest trends, analysis, and best practices in legal process outsourcing. We share our expertise to help you navigate the evolving legal landscape and optimize your operations for success.
               </p>
               <div className="mt-10">
-                  <Button asChild size="lg">
+                  <Button asChild size="lg" className="font-montserrat font-bold">
                       <Link href="/contact">Get in Touch</Link>
                   </Button>
               </div>

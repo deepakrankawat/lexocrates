@@ -35,8 +35,8 @@ export function Team() {
     <section id="team" className="bg-background text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-16">
-            <p className="font-body font-bold text-accent uppercase tracking-wider">Our Experts</p>
-            <h2 className="mt-4 font-headline text-3xl md:text-5xl font-bold leading-tight text-primary">
+            <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Experts</p>
+            <h2 className="mt-4 font-lato text-3xl md:text-5xl font-bold leading-tight text-primary">
                 Our Leadership Team
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-foreground/80">
@@ -56,7 +56,7 @@ export function Team() {
                           <User className="h-10 w-10 text-accent" />
                       </div>
                       <Link href={`/lawyer/${member.slug}`}>
-                          <h3 className="font-headline text-xl font-bold text-primary group-hover:text-accent transition-colors">{member.name}</h3>
+                          <h4 className="font-opensans text-xl font-semibold text-primary group-hover:text-accent transition-colors">{member.name}</h4>
                       </Link>
                       <p className="text-accent font-bold mt-1 text-sm">{member.title}</p>
                   </CardContent>

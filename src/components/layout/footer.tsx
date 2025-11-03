@@ -18,7 +18,7 @@ export function Footer() {
   const footerServices = servicesList.slice(0, 4);
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground font-lato">
       <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
           <div className="lg:col-span-1">
@@ -30,13 +30,13 @@ export function Footer() {
             </p>
             <form className="mt-6 flex flex-col sm:flex-row gap-2">
               <Input type="email" placeholder="Enter your email" className="bg-transparent border-primary-foreground/30 placeholder:text-primary-foreground/60 focus:border-accent" />
-              <Button type="submit" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">Subscribe</Button>
+              <Button type="submit" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 font-lato font-bold">Subscribe</Button>
             </form>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:col-span-2">
             <div>
-              <h3 className="font-headline font-bold text-lg text-primary-foreground">Services</h3>
+              <h3 className="font-roboto font-medium text-lg text-primary-foreground">Services</h3>
               <ul className="mt-6 space-y-4 text-sm">
                 {footerServices.map(service => (
                   <li key={service.slug}>
@@ -48,7 +48,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="font-headline font-bold text-lg text-primary-foreground">Company</h3>
+              <h3 className="font-roboto font-medium text-lg text-primary-foreground">Company</h3>
               <ul className="mt-6 space-y-4 text-sm">
                 <li><Link href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
                 <li><Link href="/lawyer" className="text-primary-foreground/80 hover:text-accent transition-colors">Our Team</Link></li>
@@ -58,7 +58,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="font-headline font-bold text-lg text-primary-foreground">Contact Info</h3>
+              <h3 className="font-roboto font-medium text-lg text-primary-foreground">Contact Info</h3>
               <ul className="mt-6 space-y-4 text-sm text-primary-foreground/80">
                 <li><p>B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan</p></li>
                 <li><p className="break-all">Support@lexocrates.com</p></li>
@@ -69,7 +69,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-primary-foreground/20 pt-8 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
-          <p className="text-sm text-primary-foreground/60">
+          <p className="text-sm text-primary-foreground/60 font-roboto">
             Copyright &copy; {new Date().getFullYear()} Lexocrates. All Rights Reserved.
           </p>
           <div className="mt-4 sm:mt-0 flex space-x-4">

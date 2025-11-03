@@ -56,19 +56,19 @@ export function Header() {
       <div className="container mx-auto flex h-28 md:h-32 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center">
           <div className="flex flex-col items-start">
-            <Logo className="w-48 md:w-64" />
+            <Logo className="w-64 md:w-[320px]" />
             <p className={cn("text-sm -mt-2 transition-colors hidden md:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
               Precision in Law, Rooted in Philosophy
             </p>
           </div>
         </Link>
-        <nav className="hidden md:flex md:items-center md:gap-8">
+        <nav className="hidden md:flex md:items-center md:gap-8 font-roboto text-base font-medium">
           {navLinks.map((link) => (
             <Link 
               key={link.href} 
               href={link.href} 
               className={cn(
-                "relative text-base font-bold transition-colors hover:text-white/80",
+                "relative transition-colors hover:text-white/80",
                 !isActive(link.href) && "text-white/80",
                 isScrolled && "hover:text-primary-foreground/80",
                 isScrolled && !isActive(link.href) && "text-primary-foreground/60",
@@ -97,14 +97,14 @@ export function Header() {
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
               </SheetHeader>
               <div className="mt-8 flex h-full flex-col">
-                <nav className="flex flex-col gap-6">
+                <nav className="flex flex-col gap-6 font-roboto text-xl font-medium">
                   {navLinks.map((link) => (
                     <Link 
                       key={link.href} 
                       href={link.href} 
                       onClick={() => setIsOpen(false)} 
                       className={cn(
-                        "text-xl font-bold text-primary-foreground hover:text-accent",
+                        "hover:text-accent",
                         isActive(link.href) ? "text-accent" : "text-primary-foreground"
                       )}
                     >

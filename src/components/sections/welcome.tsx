@@ -10,8 +10,8 @@ export function Welcome() {
             <UserRound className="h-32 w-32 sm:h-48 sm:w-48 text-accent/80" />
           </div>
           <div>
-            <p className="font-body font-bold text-accent uppercase tracking-wider">A Message from Our Founder</p>
-            <h2 className="mt-4 font-headline text-3xl md:text-5xl font-bold text-primary leading-tight">
+            <p className="font-lato font-bold text-accent uppercase tracking-wider">A Message from Our Founder</p>
+            <h2 className="mt-4 font-lato text-3xl md:text-5xl font-bold text-primary leading-tight">
               A Commitment to Partnership and Excellence
             </h2>
             <div className="mt-6 space-y-4 text-foreground/80">

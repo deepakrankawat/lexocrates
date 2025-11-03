@@ -24,12 +24,12 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/50 z-10" />
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-white">
         <FadeIn delay={0.2} duration={0.8}>
-            <p className="font-body font-bold text-accent uppercase tracking-wider">
+            <p className="font-lato font-bold text-accent uppercase tracking-wider">
                 Legal Process Outsourcing
             </p>
         </FadeIn>
         <FadeIn delay={0.4} duration={0.8}>
-            <h1 className="mt-4 font-headline text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="mt-4 font-montserrat text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
                 Empowering Global Legal Excellence
             </h1>
         </FadeIn>
@@ -40,7 +40,7 @@ export function Hero() {
         </FadeIn>
         <FadeIn delay={0.8} duration={0.8}>
             <div className="mt-10">
-                <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 font-montserrat font-bold">
                     <Link href="/services">
                     Explore Services
                     </Link>

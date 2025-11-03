@@ -33,8 +33,8 @@ export function CareersValues() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <SlideIn>
                     <div className="text-center mb-16">
-                        <p className="font-body font-bold text-accent uppercase tracking-wider">Our Core Values</p>
-                        <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">
+                        <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Core Values</p>
+                        <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">
                             The Principles That Guide Us
                         </h2>
                     </div>
@@ -47,7 +47,7 @@ export function CareersValues() {
                                     <value.icon className="h-10 w-10 text-accent" />
                                 </div>
                             </div>
-                            <h3 className="font-headline text-2xl font-bold text-primary">{value.title}</h3>
+                            <h3 className="font-roboto text-2xl font-medium text-primary">{value.title}</h3>
                             <p className="text-foreground/80 mt-2">{value.description}</p>
                         </div>
                     ))}

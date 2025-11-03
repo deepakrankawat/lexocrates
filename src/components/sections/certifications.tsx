@@ -19,8 +19,8 @@ export function Certifications() {
     <section className="bg-secondary text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-16">
-          <p className="font-body font-bold text-accent uppercase tracking-wider">Certifications & Accreditations</p>
-          <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">
+          <p className="font-lato font-bold text-accent uppercase tracking-wider">Certifications & Accreditations</p>
+          <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">
             Quality standards we maintain
           </h2>
         </SlideIn>
@@ -32,7 +32,7 @@ export function Certifications() {
                         <div className="p-4 bg-primary text-primary-foreground rounded-full mb-4">
                             <cert.icon className="h-8 w-8" />
                         </div>
-                        <CardTitle className="font-headline text-3xl font-bold text-primary">{cert.title}</CardTitle>
+                        <CardTitle className="font-roboto text-3xl font-medium text-primary">{cert.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
                         <p className="text-foreground/80">

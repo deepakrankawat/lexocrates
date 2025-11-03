@@ -35,8 +35,8 @@ export function CareersPositions() {
     <section className="bg-secondary text-foreground py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-16">
-          <p className="font-body font-bold text-accent uppercase tracking-wider">Open Positions</p>
-          <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">
+          <p className="font-lato font-bold text-accent uppercase tracking-wider">Open Positions</p>
+          <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">
             Find Your Next Opportunity
           </h2>
         </SlideIn>
@@ -53,7 +53,7 @@ export function CareersPositions() {
             >
               <Card className="h-full bg-background flex flex-col">
                 <CardHeader>
-                  <CardTitle className="text-primary group-hover:text-accent transition-colors">{position.title}</CardTitle>
+                  <CardTitle className="text-primary group-hover:text-accent transition-colors font-opensans font-semibold text-2xl">{position.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col flex-grow">
                   <p className="text-sm text-accent font-bold">{position.department}</p>
@@ -62,7 +62,7 @@ export function CareersPositions() {
                     <p>{position.location}</p>
                   </div>
                   <div className="mt-auto pt-6">
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full font-montserrat font-bold">
                        <Link href="/contact">Contact Us</Link>
                     </Button>
                   </div>

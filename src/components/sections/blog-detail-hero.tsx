@@ -23,8 +23,8 @@ export function BlogDetailHero({ post }: { post: Post }) {
         )}
         <div className="absolute inset-0 bg-black/50" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-        <p className="font-body font-bold text-accent uppercase tracking-wider">{post.category}</p>
-        <h1 className="mt-4 font-headline text-5xl md:text-6xl font-bold">{post.title}</h1>
+        <p className="font-lato font-bold text-accent uppercase tracking-wider">{post.category}</p>
+        <h1 className="mt-4 font-montserrat text-5xl md:text-6xl font-bold">{post.title}</h1>
         <div className="mt-6 flex justify-center items-center gap-6 text-lg text-white/80">
             <div className="flex items-center gap-2">
                 <User className="h-5 w-5" />

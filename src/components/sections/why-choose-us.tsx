@@ -33,8 +33,8 @@ export function WhyChooseUs() {
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <SlideIn direction="right">
                         <div className="flex flex-col">
-                            <p className="font-body font-bold text-accent uppercase tracking-wider">Why Choose Lexocrates</p>
-                            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
+                            <p className="font-lato font-bold text-accent uppercase tracking-wider">Why Choose Lexocrates</p>
+                            <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary leading-tight">
                                 Experience the Lexocrates Advantage
                             </h2>
                             <p className="mt-6 text-foreground/80">
@@ -46,7 +46,7 @@ export function WhyChooseUs() {
                         {features.map((feature) => (
                             <div key={feature.title} className="flex flex-col gap-4">
                                 <feature.icon className="h-10 w-10 text-accent" />
-                                <h3 className="font-headline text-2xl font-bold text-primary">{feature.title}</h3>
+                                <h3 className="font-roboto text-2xl font-medium text-primary">{feature.title}</h3>
                                 <p className="text-foreground/80">{feature.description}</p>
                             </div>
                         ))}

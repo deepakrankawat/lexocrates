@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { useState } from "react";
@@ -45,7 +44,7 @@ export default function ContactPage() {
         )}
         <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-            <h1 className="font-headline text-5xl md:text-6xl font-bold">Contact Us</h1>
+            <h1 className="font-montserrat text-5xl md:text-6xl font-bold">Contact Us</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
                 We're here to help. Reach out to us for any inquiries or to schedule a consultation with our expert team.
             </p>
@@ -55,15 +54,15 @@ export default function ContactPage() {
       <section id="contact-form" className="py-20 sm:py-28 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="font-body font-bold text-accent uppercase tracking-wider">Get In Touch</p>
-            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">Send Us a Message</h2>
+            <p className="font-lato font-bold text-accent uppercase tracking-wider">Get In Touch</p>
+            <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">Send Us a Message</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-secondary p-4 sm:p-8">
                 {isSubmitted ? (
                   <div className="flex flex-col items-center justify-center h-full text-center">
                     <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
-                    <h3 className="font-headline text-2xl font-bold text-primary mb-2">Form Submitted!</h3>
+                    <h3 className="font-roboto text-2xl font-medium text-primary mb-2">Form Submitted!</h3>
                     <p className="text-foreground/80">Thank you for your message. We will get back to you shortly.</p>
                   </div>
                 ) : (
@@ -86,7 +85,7 @@ export default function ContactPage() {
                         <Label htmlFor="message">Message</Label>
                         <Textarea id="message" placeholder="How can we help you?" rows={5} />
                     </div>
-                    <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                    <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-bold">
                         Send Message
                     </Button>
                   </form>
@@ -98,8 +97,8 @@ export default function ContactPage() {
                       <Headset className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Support</h3>
-                      <p className="text-foreground/80 group-hover:text-accent break-all">Support@lexocrates.com</p>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Support</h3>
+                      <p className="text-foreground/80 group-hover:text-accent break-all font-lato">Support@lexocrates.com</p>
                   </div>
               </Link>
               <Link href="mailto:Sales@Lexocrates.com" className="flex items-start gap-4 group">
@@ -107,8 +106,8 @@ export default function ContactPage() {
                       <Mail className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Sales</h3>
-                      <p className="text-foreground/80 group-hover:text-accent break-all">Sales@Lexocrates.com</p>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Sales</h3>
+                      <p className="text-foreground/80 group-hover:text-accent break-all font-lato">Sales@Lexocrates.com</p>
                   </div>
               </Link>
               <Link href="mailto:HR@lexocrates.com" className="flex items-start gap-4 group">
@@ -116,8 +115,8 @@ export default function ContactPage() {
                       <Mail className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">HR</h3>
-                      <p className="text-foreground/80 group-hover:text-accent break-all">HR@lexocrates.com</p>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">HR</h3>
+                      <p className="text-foreground/80 group-hover:text-accent break-all font-lato">HR@lexocrates.com</p>
                   </div>
               </Link>
               <Link href="#" className="flex items-start gap-4 group">
@@ -125,8 +124,8 @@ export default function ContactPage() {
                       <Linkedin className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">LinkedIn</h3>
-                      <p className="text-foreground/80 group-hover:text-accent">Follow us on LinkedIn</p>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">LinkedIn</h3>
+                      <p className="text-foreground/80 group-hover:text-accent font-lato">Follow us on LinkedIn</p>
                   </div>
               </Link>
             </div>
@@ -139,8 +138,8 @@ export default function ContactPage() {
       <section id="headquarters" className="py-20 sm:py-28 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="font-body font-bold text-accent uppercase tracking-wider">Our Main Office</p>
-            <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">Jaipur Headquarters</h2>
+            <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Main Office</p>
+            <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">Jaipur Headquarters</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-8">
@@ -149,27 +148,27 @@ export default function ContactPage() {
                       <MapPin className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                      <h3 className="text-lg font-bold text-primary group-hover:text-accent">Address</h3>
-                      <p className="text-foreground/80 group-hover:text-accent">{jaipurAddress}</p>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Address</h3>
+                      <p className="text-foreground/80 group-hover:text-accent font-lato">{jaipurAddress}</p>
                   </div>
               </Link>
               <div>
-                <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4">
+                <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4 font-roboto">
                   <div className="bg-accent/10 p-3 rounded-full flex-shrink-0"><Clock className="h-6 w-6 text-accent" /></div>
                   Office Hours
                 </h3>
-                <div className="ml-0 sm:ml-16 text-foreground/80 space-y-2">
+                <div className="ml-0 sm:ml-16 text-foreground/80 space-y-2 font-lato">
                     <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM IST</p>
                     <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM IST</p>
                     <p><strong>Sunday:</strong> Closed</p>
                 </div>
               </div>
               <div>
-                  <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4">
+                  <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4 font-roboto">
                     <div className="bg-accent/10 p-3 rounded-full flex-shrink-0"><Car className="h-6 w-6 text-accent" /></div>
                     Getting Here
                   </h3>
-                  <div className="ml-0 sm:ml-16 text-foreground/80 space-y-4">
+                  <div className="ml-0 sm:ml-16 text-foreground/80 space-y-4 font-lato">
                       <div className="flex items-start sm:items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-accent flex-shrink-0"><path d="M19 12H5"/><path d="M16 19l-7-7 7-7"/></svg> <strong>By Metro:</strong> Chandpole Metro Station (10 min walk)</div>
                       <div className="flex items-start sm:items-center gap-3"><Train className="h-5 w-5 text-accent flex-shrink-0" /> <strong>By Train:</strong> Jaipur Junction Railway Station (15 min drive)</div>
                       <div className="flex items-start sm:items-center gap-3"><Bus className="h-5 w-5 text-accent flex-shrink-0" /> <strong>By Bus:</strong> Sirsi Road Bus Stop (5 min walk)</div>

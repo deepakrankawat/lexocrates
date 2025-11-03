@@ -17,8 +17,8 @@ export function Services() {
     <section id="services" className="bg-white text-foreground py-20 sm:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-16">
-          <p className="font-body font-bold text-accent uppercase tracking-wider">Our Services</p>
-          <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
+          <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Services</p>
+          <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold leading-tight text-primary">
             We Specialize In The Following Areas
           </h2>
         </SlideIn>
@@ -44,7 +44,7 @@ export function Services() {
                     <service.icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-headline text-xl font-bold text-primary">{service.name}</h3>
+                    <h3 className="font-roboto text-xl font-medium text-primary">{service.name}</h3>
                     <p className="text-foreground/80 text-sm mt-1">{service.description}</p>
                   </div>
                 </div>

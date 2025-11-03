@@ -10,8 +10,8 @@ export function Experience() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="right">
             <div className="flex flex-col">
-              <p className="font-body font-bold text-accent uppercase tracking-wider">Our Track Record</p>
-              <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold leading-tight text-primary">
+              <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Track Record</p>
+              <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold leading-tight text-primary">
                 Decades of Expertise, Measurable Results
               </h2>
               <p className="mt-6 text-foreground/80">
