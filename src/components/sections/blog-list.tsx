@@ -22,19 +22,6 @@ export function BlogList() {
               transition={{ duration: 0.3 }}
             >
               <Card className="overflow-hidden h-full flex flex-col">
-                {post.image && (
-                  <Link href={`/blog/${post.slug}`}>
-                    <div className="relative h-64 w-full overflow-hidden">
-                      <AppImage
-                        src={post.image.imageUrl}
-                        alt={post.image.description}
-                        fill
-                        className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={post.image.imageHint}
-                      />
-                    </div>
-                  </Link>
-                )}
                 <CardContent className="p-6 flex flex-col flex-grow">
                   <Badge variant="secondary" className="bg-accent/10 text-accent font-bold uppercase w-fit mb-3">{post.category}</Badge>
                   <Link href={`/blog/${post.slug}`}>

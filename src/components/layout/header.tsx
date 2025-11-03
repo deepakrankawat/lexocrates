@@ -53,11 +53,11 @@ export function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-28 md:h-32 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center">
           <div className="flex flex-col items-start">
-            <Logo className="w-36 md:w-44" />
-            <p className={cn("text-xs -mt-2 transition-colors hidden md:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
+            <Logo className="w-48 md:w-64" />
+            <p className={cn("text-sm -mt-2 transition-colors hidden md:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
               Precision in Law, Rooted in Philosophy
             </p>
           </div>
@@ -68,7 +68,7 @@ export function Header() {
               key={link.href} 
               href={link.href} 
               className={cn(
-                "relative text-sm font-bold transition-colors hover:text-white/80",
+                "relative text-base font-bold transition-colors hover:text-white/80",
                 !isActive(link.href) && "text-white/80",
                 isScrolled && "hover:text-primary-foreground/80",
                 isScrolled && !isActive(link.href) && "text-primary-foreground/60",
@@ -86,12 +86,12 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <Button variant="ghost" size="icon" className="text-white hover:bg-transparent" onClick={() => setIsOpen(true)}>
-              <Menu className="h-8 w-8" />
+              <Menu className="h-12 w-12" />
               <span className="sr-only">Open menu</span>
             </Button>
             <SheetContent side="right" className="w-full bg-primary">
               <SheetHeader className="flex flex-row items-center justify-between">
-                 <Link href="/" onClick={() => setIsOpen(false)} className="w-36">
+                 <Link href="/" onClick={() => setIsOpen(false)} className="w-48">
                     <Logo className="text-primary-foreground" />
                   </Link>
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
@@ -104,7 +104,7 @@ export function Header() {
                       href={link.href} 
                       onClick={() => setIsOpen(false)} 
                       className={cn(
-                        "text-lg font-bold text-primary-foreground hover:text-accent",
+                        "text-xl font-bold text-primary-foreground hover:text-accent",
                         isActive(link.href) ? "text-accent" : "text-primary-foreground"
                       )}
                     >

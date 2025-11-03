@@ -2,39 +2,51 @@
 
 'use client';
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car, LifeBuoy, CheckCircle, Headset } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
 import { Cta } from "@/components/sections/cta";
 import Link from "next/link";
 import { AppImage } from "@/components/ui/app-image";
+import { ContactProcess } from "@/components/sections/contact-process";
 
 export default function ContactPage() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
+  const image1 = PlaceHolderImages.find(img => img.id === 'service-detail-1');
+  const image2 = PlaceHolderImages.find(img => img.id === 'service-detail-2');
   const jaipurAddress = "B-1402 Mangalam The Grand Residency, Near Teoler School, Sirsi Road, Jaipur, Rajasthan, India. Pin 302041";
   const jaipurMapQuery = "B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan, 302041";
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
   return (
     <main className="bg-background">
-      <section className="relative bg-primary text-primary-foreground pt-36 pb-20 sm:pt-48 sm:pb-32">
+      <section className="relative text-white pt-36 pb-20 sm:pt-48 sm:pb-32">
         {heroImage && (
             <Image
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
                 fill
-                className="object-cover opacity-10"
+                className="object-cover"
                 priority
                 data-ai-hint={heroImage.imageHint}
             />
         )}
+        <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
             <h1 className="font-headline text-5xl md:text-6xl font-bold">Contact Us</h1>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
                 We're here to help. Reach out to us for any inquiries or to schedule a consultation with our expert team.
             </p>
         </div>
@@ -47,61 +59,69 @@ export default function ContactPage() {
             <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">Send Us a Message</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-secondary p-8">
-                <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                    <Label htmlFor="first-name">First Name*</Label>
-                    <Input id="first-name" placeholder="John" />
+            <div className="bg-secondary p-4 sm:p-8">
+                {isSubmitted ? (
+                  <div className="flex flex-col items-center justify-center h-full text-center">
+                    <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
+                    <h3 className="font-headline text-2xl font-bold text-primary mb-2">Form Submitted!</h3>
+                    <p className="text-foreground/80">Thank you for your message. We will get back to you shortly.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                        <Label htmlFor="first-name">First Name*</Label>
+                        <Input id="first-name" placeholder="John" required/>
+                        </div>
+                        <div className="space-y-2">
+                        <Label htmlFor="last-name">Last Name*</Label>
+                        <Input id="last-name" placeholder="Doe" required/>
+                        </div>
                     </div>
                     <div className="space-y-2">
-                    <Label htmlFor="last-name">Last Name*</Label>
-                    <Input id="last-name" placeholder="Doe" />
+                        <Label htmlFor="email">Your Email*</Label>
+                        <Input id="email" type="email" placeholder="john.doe@example.com" required/>
                     </div>
-                </div>
-                <div className="space-y-2">
-                    <Label htmlFor="email">Your Email*</Label>
-                    <Input id="email" type="email" placeholder="john.doe@example.com" />
-                </div>
-                <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="How can we help you?" rows={5} />
-                </div>
-                <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                    Send Message
-                </Button>
-                </form>
+                    <div className="space-y-2">
+                        <Label htmlFor="message">Message</Label>
+                        <Textarea id="message" placeholder="How can we help you?" rows={5} />
+                    </div>
+                    <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                        Send Message
+                    </Button>
+                  </form>
+                )}
             </div>
             <div className="space-y-8">
                <Link href="mailto:Support@lexocrates.com" className="flex items-start gap-4 group">
-                  <div className="bg-accent/10 p-3 rounded-full">
-                      <Mail className="h-6 w-6 text-accent" />
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
+                      <Headset className="h-6 w-6 text-accent" />
                   </div>
                   <div>
                       <h3 className="text-lg font-bold text-primary group-hover:text-accent">Support</h3>
-                      <p className="text-foreground/80 group-hover:text-accent">Support@lexocrates.com</p>
+                      <p className="text-foreground/80 group-hover:text-accent break-all">Support@lexocrates.com</p>
                   </div>
               </Link>
               <Link href="mailto:Sales@Lexocrates.com" className="flex items-start gap-4 group">
-                  <div className="bg-accent/10 p-3 rounded-full">
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
                       <Mail className="h-6 w-6 text-accent" />
                   </div>
                   <div>
                       <h3 className="text-lg font-bold text-primary group-hover:text-accent">Sales</h3>
-                      <p className="text-foreground/80 group-hover:text-accent">Sales@Lexocrates.com</p>
+                      <p className="text-foreground/80 group-hover:text-accent break-all">Sales@Lexocrates.com</p>
                   </div>
               </Link>
               <Link href="mailto:HR@lexocrates.com" className="flex items-start gap-4 group">
-                  <div className="bg-accent/10 p-3 rounded-full">
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
                       <Mail className="h-6 w-6 text-accent" />
                   </div>
                   <div>
                       <h3 className="text-lg font-bold text-primary group-hover:text-accent">HR</h3>
-                      <p className="text-foreground/80 group-hovertext-accent">HR@lexocrates.com</p>
+                      <p className="text-foreground/80 group-hover:text-accent break-all">HR@lexocrates.com</p>
                   </div>
               </Link>
               <Link href="#" className="flex items-start gap-4 group">
-                  <div className="bg-accent/10 p-3 rounded-full">
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
                       <Linkedin className="h-6 w-6 text-accent" />
                   </div>
                   <div>
@@ -114,6 +134,8 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <ContactProcess />
+
       <section id="headquarters" className="py-20 sm:py-28 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -123,7 +145,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-8">
               <Link href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(jaipurMapQuery)}`} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
-                  <div className="bg-accent/10 p-3 rounded-full">
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
                       <MapPin className="h-6 w-6 text-accent" />
                   </div>
                   <div>
@@ -133,10 +155,10 @@ export default function ContactPage() {
               </Link>
               <div>
                 <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4">
-                  <div className="bg-accent/10 p-3 rounded-full"><Clock className="h-6 w-6 text-accent" /></div>
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0"><Clock className="h-6 w-6 text-accent" /></div>
                   Office Hours
                 </h3>
-                <div className="ml-16 text-foreground/80 space-y-2">
+                <div className="ml-0 sm:ml-16 text-foreground/80 space-y-2">
                     <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM IST</p>
                     <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM IST</p>
                     <p><strong>Sunday:</strong> Closed</p>
@@ -144,14 +166,14 @@ export default function ContactPage() {
               </div>
               <div>
                   <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4">
-                    <div className="bg-accent/10 p-3 rounded-full"><MapPin className="h-6 w-6 text-accent" /></div>
+                    <div className="bg-accent/10 p-3 rounded-full flex-shrink-0"><Car className="h-6 w-6 text-accent" /></div>
                     Getting Here
                   </h3>
-                  <div className="ml-16 text-foreground/80 space-y-4">
-                      <div className="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-accent"><path d="M19 12H5"/><path d="M16 19l-7-7 7-7"/></svg> <strong>By Metro:</strong> Chandpole Metro Station (10 min walk)</div>
-                      <div className="flex items-center gap-3"><Train className="h-5 w-5 text-accent" /> <strong>By Train:</strong> Jaipur Junction Railway Station (15 min drive)</div>
-                      <div className="flex items-center gap-3"><Bus className="h-5 w-5 text-accent" /> <strong>By Bus:</strong> Sirsi Road Bus Stop (5 min walk)</div>
-                      <div className="flex items-center gap-3"><Car className="h-5 w-5 text-accent" /> <strong>By Car:</strong> Parking available in building</div>
+                  <div className="ml-0 sm:ml-16 text-foreground/80 space-y-4">
+                      <div className="flex items-start sm:items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-accent flex-shrink-0"><path d="M19 12H5"/><path d="M16 19l-7-7 7-7"/></svg> <strong>By Metro:</strong> Chandpole Metro Station (10 min walk)</div>
+                      <div className="flex items-start sm:items-center gap-3"><Train className="h-5 w-5 text-accent flex-shrink-0" /> <strong>By Train:</strong> Jaipur Junction Railway Station (15 min drive)</div>
+                      <div className="flex items-start sm:items-center gap-3"><Bus className="h-5 w-5 text-accent flex-shrink-0" /> <strong>By Bus:</strong> Sirsi Road Bus Stop (5 min walk)</div>
+                      <div className="flex items-start sm:items-center gap-3"><Car className="h-5 w-5 text-accent flex-shrink-0" /> <strong>By Car:</strong> Parking available in building</div>
                   </div>
               </div>
             </div>
@@ -176,3 +198,6 @@ export default function ContactPage() {
     </main>
   );
 }
+    
+
+    

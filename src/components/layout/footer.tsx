@@ -28,13 +28,13 @@ export function Footer() {
             <p className="mt-6 max-w-sm text-primary-foreground/80">
               Subscribe to our newsletter for the latest insights on legal outsourcing and industry trends.
             </p>
-            <form className="mt-6 flex gap-2">
+            <form className="mt-6 flex flex-col sm:flex-row gap-2">
               <Input type="email" placeholder="Enter your email" className="bg-transparent border-primary-foreground/30 placeholder:text-primary-foreground/60 focus:border-accent" />
               <Button type="submit" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">Subscribe</Button>
             </form>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-2">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:col-span-2">
             <div>
               <h3 className="font-headline font-bold text-lg text-primary-foreground">Services</h3>
               <ul className="mt-6 space-y-4 text-sm">
@@ -61,14 +61,14 @@ export function Footer() {
               <h3 className="font-headline font-bold text-lg text-primary-foreground">Contact Info</h3>
               <ul className="mt-6 space-y-4 text-sm text-primary-foreground/80">
                 <li><p>B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan</p></li>
-                <li><p>Support@lexocrates.com</p></li>
+                <li><p className="break-all">Support@lexocrates.com</p></li>
                 <li><p>Mon - Sat: 9:00 am - 6:00 pm IST</p></li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-primary-foreground/20 pt-8 flex flex-col sm:flex-row justify-between items-center">
+        <div className="mt-12 border-t border-primary-foreground/20 pt-8 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
           <p className="text-sm text-primary-foreground/60">
             Copyright &copy; {new Date().getFullYear()} Lexocrates. All Rights Reserved.
           </p>
@@ -85,3 +85,5 @@ export function Footer() {
     </footer>
   );
 }
+
+    

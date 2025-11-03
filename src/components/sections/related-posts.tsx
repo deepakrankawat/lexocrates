@@ -20,19 +20,6 @@ export function RelatedPosts({ posts }: { posts: Post[] }) {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <Card key={post.id} className="overflow-hidden group bg-card shadow-sm rounded-none flex flex-col">
-                {post.image && (
-                    <Link href={`/blog/${post.slug}`}>
-                        <div className="relative h-64 w-full">
-                            <AppImage
-                            src={post.image.imageUrl}
-                            alt={post.image.description}
-                            fill
-                            className="object-cover w-full h-full"
-                            data-ai-hint={post.image.imageHint}
-                            />
-                        </div>
-                    </Link>
-                )}
               <CardContent className="p-6 flex flex-col flex-grow">
                 <Link href={`/blog/${post.slug}`}>
                     <h3 className="font-headline text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{post.title}</h3>

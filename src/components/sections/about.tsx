@@ -1,8 +1,11 @@
 
+'use client';
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Landmark } from 'lucide-react';
 import { SlideIn } from '@/components/animations/slide-in';
+import { LawBalanceLottie } from '@/components/animations/law-balance-animation';
+import { Scale } from 'lucide-react';
 
 export function About() {
   return (
@@ -11,9 +14,9 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           <SlideIn direction="right">
-            <div className="flex flex-col">
+            <div className="flex flex-col text-center lg:text-left">
               <p className="font-body font-bold text-accent uppercase tracking-wider">About Lexocrates</p>
-              <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary leading-tight">
+              <h2 className="mt-4 font-headline text-3xl md:text-5xl font-bold text-primary leading-tight">
                 Your Trusted Partner in Legal Process Outsourcing
               </h2>
               <p className="mt-6 text-foreground/80">
@@ -26,8 +29,10 @@ export function About() {
               </div>
             </div>
           </SlideIn>
-          <SlideIn direction="left" className="relative h-96 lg:h-[32rem] bg-secondary flex items-center justify-center">
-            <Landmark className="h-48 w-48 text-accent/80" strokeWidth={0.5} />
+          <SlideIn direction="left" className="relative h-80 lg:h-[32rem] flex items-center justify-center">
+            <div className="relative h-80 w-80 justify-self-center bg-secondary flex items-center justify-center">
+              <Scale className="h-48 w-48 text-accent/80" />
+            </div>
           </SlideIn>
         </div>
       </div>

@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -21,7 +22,7 @@ export default {
       },
       fontFamily: {
         body: ['Inter', 'sans-serif'],
-        headline: ['Playfair Display', 'serif'],
+        headline: ['Orbitron', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
