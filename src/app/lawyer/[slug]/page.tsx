@@ -43,7 +43,7 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
 
   return (
     <main className="bg-background">
-      <section className="relative text-white pt-36 pb-20 sm:pt-48 sm:pb-32">
+      <section className="relative text-white pt-36 pb-16 sm:pt-48 sm:pb-24">
         <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
@@ -53,7 +53,7 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
         </div>
       </section>
 
-      <section className="py-20 sm:py-28">
+      <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-1">

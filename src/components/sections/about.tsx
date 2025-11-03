@@ -9,7 +9,7 @@ import { Scale } from 'lucide-react';
 
 export function About() {
   return (
-    <section id="about" className="bg-background text-foreground py-20 sm:py-28 overflow-hidden">
+    <section id="about" className="bg-background text-foreground py-16 sm:py-24 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           

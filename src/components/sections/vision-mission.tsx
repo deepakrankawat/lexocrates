@@ -5,7 +5,7 @@ import { FadeIn } from '../animations/fade-in';
 
 export function VisionMission() {
   return (
-    <section className="bg-secondary text-foreground py-20 sm:py-28">
+    <section className="bg-secondary text-foreground py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

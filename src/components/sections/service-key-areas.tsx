@@ -10,7 +10,7 @@ export function ServiceKeyAreas({ service }: { service: Service }) {
   }
 
   return (
-    <section className="bg-secondary py-20 sm:py-28">
+    <section className="bg-secondary py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-lato text-3xl md:text-4xl font-bold text-primary">

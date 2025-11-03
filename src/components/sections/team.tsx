@@ -32,7 +32,7 @@ const teamMembers = [
 
 export function Team() {
   return (
-    <section id="team" className="bg-background text-foreground py-20 sm:py-28">
+    <section id="team" className="bg-background text-foreground py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-16">
             <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Experts</p>

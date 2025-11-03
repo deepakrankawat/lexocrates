@@ -28,7 +28,7 @@ const features = [
 
 export function WhyChooseUs() {
     return (
-        <section className="bg-white text-foreground py-20 sm:py-28 overflow-hidden">
+        <section className="bg-white text-foreground py-16 sm:py-24 overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <SlideIn direction="right">
