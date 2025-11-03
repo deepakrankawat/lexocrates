@@ -7,7 +7,7 @@ import { LawBalanceLottie } from '../animations/law-balance-animation';
 
 export function Cta() {
   return (
-    <section className="bg-secondary py-12 sm:py-20 text-foreground">
+    <section className="bg-secondary py-12 sm:py-16 text-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center text-center md:text-left bg-background p-12 gap-8">

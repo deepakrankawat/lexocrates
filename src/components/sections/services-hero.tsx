@@ -6,7 +6,7 @@ export function ServicesHero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-services');
 
   return (
-    <section className="relative text-white pt-32 pb-12 sm:pt-40 sm:pb-20">
+    <section className="relative text-white pt-32 pb-12 sm:pt-36 sm:pb-16">
         {heroImage && (
             <Image
                 src={heroImage.imageUrl}

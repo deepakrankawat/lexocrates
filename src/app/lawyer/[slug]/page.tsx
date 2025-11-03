@@ -53,7 +53,7 @@ export default function LawyerDetailPage({ params }: { params: { slug: string } 
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-1">

@@ -31,7 +31,7 @@ export default function ContactPage() {
 
   return (
     <main className="bg-background">
-      <section className="relative text-white pt-32 pb-12 sm:pt-40 sm:pb-20">
+      <section className="relative text-white pt-32 pb-12 sm:pt-36 sm:pb-16">
         {heroImage && (
             <Image
                 src={heroImage.imageUrl}
@@ -51,7 +51,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section id="contact-form" className="py-12 sm:py-20 bg-background">
+      <section id="contact-form" className="py-12 sm:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="font-lato font-bold text-accent uppercase tracking-wider">Get In Touch</p>
@@ -135,7 +135,7 @@ export default function ContactPage() {
 
       <ContactProcess />
 
-      <section id="headquarters" className="py-12 sm:py-20 bg-background">
+      <section id="headquarters" className="py-12 sm:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Main Office</p>

@@ -11,7 +11,7 @@ import { Badge } from '../ui/badge';
 
 export function BlogList() {
   return (
-    <section id="blog" className="bg-background text-foreground py-12 sm:py-20">
+    <section id="blog" className="bg-background text-foreground py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
