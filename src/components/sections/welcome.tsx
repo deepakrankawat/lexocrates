@@ -3,7 +3,7 @@ import { User, UserRound } from 'lucide-react';
 
 export function Welcome() {
   return (
-    <section className="bg-background text-foreground py-16 sm:py-24">
+    <section className="bg-background text-foreground py-12 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-80 w-80 sm:h-96 sm:w-96 justify-self-center bg-secondary flex items-center justify-center">
@@ -26,3 +26,5 @@ export function Welcome() {
     </section>
   );
 }
+
+    

@@ -12,9 +12,9 @@ const processSteps = [
 
 export function LegalProcess() {
   return (
-    <section className="bg-secondary text-foreground py-16 sm:py-24">
+    <section className="bg-secondary text-foreground py-12 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
             <p className="font-lato font-bold text-accent uppercase tracking-wider">How We Work</p>
             <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
                 Our Engagement Process
@@ -39,3 +39,5 @@ export function LegalProcess() {
     </section>
   );
 }
+
+    

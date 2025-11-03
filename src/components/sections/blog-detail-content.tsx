@@ -15,7 +15,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
   const image2 = PlaceHolderImages.find(img => img.id === 'service-detail-2');
 
   return (
-    <section className="bg-background text-foreground py-16 sm:py-24">
+    <section className="bg-background text-foreground py-12 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main content */}
@@ -46,3 +46,5 @@ export function BlogDetailContent({ post }: { post: Post }) {
     </section>
   );
 }
+
+    

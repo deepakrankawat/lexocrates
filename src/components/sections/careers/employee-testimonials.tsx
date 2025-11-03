@@ -31,9 +31,9 @@ const testimonials = [
 
 export function EmployeeTestimonials() {
   return (
-    <section className="bg-secondary text-foreground py-20 sm:py-28">
+    <section className="bg-secondary text-foreground py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SlideIn className="text-center mb-16">
+        <SlideIn className="text-center mb-12">
           <p className="font-body font-bold text-accent uppercase tracking-wider">From Our Team</p>
           <h2 className="mt-4 font-headline text-4xl md:text-5xl font-bold text-primary">
             Why Our Team Loves Working Here
@@ -83,3 +83,5 @@ export function EmployeeTestimonials() {
     </section>
   );
 }
+
+    

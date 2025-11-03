@@ -14,7 +14,7 @@ export function ServiceDetailContent({ service }: { service: Service }) {
   const ServiceIcon = service.icon;
 
   return (
-    <section className="bg-background text-foreground py-16 sm:py-24">
+    <section className="bg-background text-foreground py-12 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 items-center">
           <div className="text-center">
@@ -43,3 +43,5 @@ export function ServiceDetailContent({ service }: { service: Service }) {
     </section>
   );
 }
+
+    
