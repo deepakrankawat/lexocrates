@@ -24,7 +24,7 @@ export function ServiceDetailContent({ service }: { service: Service }) {
                 </div>
             </div>
             <p className="font-lato font-bold text-accent uppercase tracking-wider">{service.name}</p>
-            <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary leading-tight">
+            <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary leading-tight">
               Expert Solutions for {service.name}
             </h2>
             <div className="mt-8 space-y-6 text-foreground/80 max-w-3xl mx-auto">

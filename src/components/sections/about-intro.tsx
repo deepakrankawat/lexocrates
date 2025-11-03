@@ -15,7 +15,7 @@ export function AboutIntro() {
           <SlideIn direction="right">
             <div className="flex flex-col">
               <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Story</p>
-              <h2 className="mt-4 font-lato text-3xl md:text-5xl font-bold text-primary leading-tight">
+              <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary leading-tight">
                 From Jaipur to Canada: A Commitment to Legal Excellence
               </h2>
               <div className="mt-8 text-foreground/80 space-y-6">

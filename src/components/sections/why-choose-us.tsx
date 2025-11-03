@@ -34,7 +34,7 @@ export function WhyChooseUs() {
                     <SlideIn direction="right">
                         <div className="flex flex-col">
                             <p className="font-lato font-bold text-accent uppercase tracking-wider">Why Choose Lexocrates</p>
-                            <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary leading-tight">
+                            <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary leading-tight">
                                 Experience the Lexocrates Advantage
                             </h2>
                             <p className="mt-6 text-foreground/80">

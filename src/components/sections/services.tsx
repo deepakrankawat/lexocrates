@@ -18,7 +18,7 @@ export function Services() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-16">
           <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Services</p>
-          <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold leading-tight text-primary">
+          <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold leading-tight text-primary">
             We Specialize In The Following Areas
           </h2>
         </SlideIn>

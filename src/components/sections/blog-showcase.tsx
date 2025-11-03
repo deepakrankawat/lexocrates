@@ -14,7 +14,7 @@ export function BlogShowcase() {
           <SlideIn direction="right">
             <div className="flex flex-col">
               <p className="font-lato font-bold text-accent uppercase tracking-wider">Stay Informed</p>
-              <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary leading-tight">
+              <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary leading-tight">
                 Insights from Our Legal Experts
               </h2>
               <p className="mt-6 text-foreground/80">

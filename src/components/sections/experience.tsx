@@ -11,7 +11,7 @@ export function Experience() {
           <SlideIn direction="right">
             <div className="flex flex-col">
               <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Track Record</p>
-              <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold leading-tight text-primary">
+              <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold leading-tight text-primary">
                 Decades of Expertise, Measurable Results
               </h2>
               <p className="mt-6 text-foreground/80">

@@ -11,7 +11,7 @@ export function Welcome() {
           </div>
           <div>
             <p className="font-lato font-bold text-accent uppercase tracking-wider">A Message from Our Founder</p>
-            <h2 className="mt-4 font-lato text-3xl md:text-5xl font-bold text-primary leading-tight">
+            <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary leading-tight">
               A Commitment to Partnership and Excellence
             </h2>
             <div className="mt-6 space-y-4 text-foreground/80">

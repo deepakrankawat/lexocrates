@@ -12,7 +12,7 @@ export function Cta() {
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center text-center md:text-left bg-background p-12 gap-8">
               <div>
-                <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">
+                <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
                   Ready to Optimize Your Legal Workflow?
                 </h2>
                 <p className="mt-4 max-w-2xl text-foreground/80">

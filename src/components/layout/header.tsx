@@ -53,16 +53,16 @@ export function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className="container mx-auto flex h-24 md:h-28 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center">
           <div className="flex flex-col items-start">
-            <Logo className="w-48 md:w-56" />
-            <p className={cn("text-xs -mt-1 transition-colors hidden md:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
+            <Logo className="w-48" />
+            <p className={cn("text-xs -mt-1 transition-colors hidden sm:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
               Precision in Law, Rooted in Philosophy
             </p>
           </div>
         </Link>
-        <nav className="hidden md:flex md:items-center md:gap-8 font-roboto text-base font-medium">
+        <nav className="hidden lg:flex lg:items-center lg:gap-8 font-roboto text-base font-medium">
           {navLinks.map((link) => (
             <Link 
               key={link.href} 
@@ -83,7 +83,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <Button variant="ghost" size="icon" className="text-white hover:bg-transparent" onClick={() => setIsOpen(true)}>
               <Menu className="h-8 w-8" />

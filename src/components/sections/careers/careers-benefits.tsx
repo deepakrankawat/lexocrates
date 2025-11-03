@@ -34,7 +34,7 @@ export function CareersBenefits() {
                 <SlideIn>
                     <div className="text-center mb-16">
                         <p className="font-lato font-bold text-accent uppercase tracking-wider">Perks & Benefits</p>
-                        <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">
+                        <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
                             Why Work With Us
                         </h2>
                     </div>

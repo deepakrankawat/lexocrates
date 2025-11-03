@@ -15,7 +15,7 @@ export function CareersAbout() {
           <SlideIn direction="right">
             <div className="flex flex-col">
               <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Culture</p>
-              <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary leading-tight">
+              <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary leading-tight">
                 Innovation, Collaboration, and Excellence
               </h2>
               <div className="mt-6 text-foreground/80 space-y-6">

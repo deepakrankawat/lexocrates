@@ -34,7 +34,7 @@ export function CareersValues() {
                 <SlideIn>
                     <div className="text-center mb-16">
                         <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Core Values</p>
-                        <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">
+                        <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
                             The Principles That Guide Us
                         </h2>
                     </div>

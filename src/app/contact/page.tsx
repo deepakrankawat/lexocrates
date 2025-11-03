@@ -44,7 +44,7 @@ export default function ContactPage() {
         )}
         <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-            <h1 className="font-montserrat text-5xl md:text-6xl font-bold">Contact Us</h1>
+            <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold">Contact Us</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
                 We're here to help. Reach out to us for any inquiries or to schedule a consultation with our expert team.
             </p>
@@ -169,10 +169,10 @@ export default function ContactPage() {
                     Getting Here
                   </h3>
                   <div className="ml-0 sm:ml-16 text-foreground/80 space-y-4 font-lato">
-                      <div className="flex items-start sm:items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-accent flex-shrink-0"><path d="M19 12H5"/><path d="M16 19l-7-7 7-7"/></svg> <strong>By Metro:</strong> Chandpole Metro Station (10 min walk)</div>
-                      <div className="flex items-start sm:items-center gap-3"><Train className="h-5 w-5 text-accent flex-shrink-0" /> <strong>By Train:</strong> Jaipur Junction Railway Station (15 min drive)</div>
-                      <div className="flex items-start sm:items-center gap-3"><Bus className="h-5 w-5 text-accent flex-shrink-0" /> <strong>By Bus:</strong> Sirsi Road Bus Stop (5 min walk)</div>
-                      <div className="flex items-start sm:items-center gap-3"><Car className="h-5 w-5 text-accent flex-shrink-0" /> <strong>By Car:</strong> Parking available in building</div>
+                      <div className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-accent flex-shrink-0 mt-1 sm:mt-0"><path d="M19 12H5"/><path d="M16 19l-7-7 7-7"/></svg> <strong>By Metro:</strong> Chandpole Metro Station (10 min walk)</div>
+                      <div className="flex items-start gap-3"><Train className="h-5 w-5 text-accent flex-shrink-0 mt-1 sm:mt-0" /> <strong>By Train:</strong> Jaipur Junction Railway Station (15 min drive)</div>
+                      <div className="flex items-start gap-3"><Bus className="h-5 w-5 text-accent flex-shrink-0 mt-1 sm:mt-0" /> <strong>By Bus:</strong> Sirsi Road Bus Stop (5 min walk)</div>
+                      <div className="flex items-start gap-3"><Car className="h-5 w-5 text-accent flex-shrink-0 mt-1 sm:mt-0" /> <strong>By Car:</strong> Parking available in building</div>
                   </div>
               </div>
             </div>
