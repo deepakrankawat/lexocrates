@@ -29,7 +29,7 @@ export function Hero() {
             </p>
         </FadeIn>
         <FadeIn delay={0.4} duration={0.8}>
-            <h1 className="mt-4 font-montserrat text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="mt-4 font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
                 Empowering Global Legal Excellence
             </h1>
         </FadeIn>

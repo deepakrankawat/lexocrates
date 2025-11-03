@@ -56,7 +56,7 @@ export function Header() {
       <div className="container mx-auto flex h-24 md:h-28 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center">
           <div className="flex flex-col items-start">
-            <Logo className="w-48 md:w-64" />
+            <Logo className="w-48 md:w-56" />
             <p className={cn("text-xs -mt-1 transition-colors hidden md:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
               Precision in Law, Rooted in Philosophy
             </p>
