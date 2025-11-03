@@ -89,7 +89,7 @@ export function Header() {
               <Menu className="h-8 w-8" />
               <span className="sr-only">Open menu</span>
             </Button>
-            <SheetContent side="right" className="w-full bg-primary">
+            <SheetContent side="right" className="w-full bg-primary border-l-0">
               <SheetHeader className="flex flex-row items-center justify-between">
                  <Link href="/" onClick={() => setIsOpen(false)} className="w-48">
                     <Logo className="text-primary-foreground" />
