@@ -85,4 +85,21 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  .prose {
+    h2, h3 {
+      @apply font-bold text-primary;
+    }
+    p, li {
+      @apply text-foreground/80;
+    }
+    p {
+        @apply my-4;
+    }
+    ul {
+        @apply my-6;
+    }
+    li {
+        @apply my-2;
+    }
+  }
 }
