@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { useState } from "react";
@@ -7,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car, LifeBuoy, CheckCircle, Headset, User } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car, LifeBuoy, CheckCircle, Headset, User, AlertCircle } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
@@ -15,19 +14,51 @@ import { Cta } from "@/components/sections/cta";
 import Link from "next/link";
 import { AppImage } from "@/components/ui/app-image";
 import { ContactProcess } from "@/components/sections/contact-process";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function ContactPage() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [status, setStatus] = useState<'success' | 'error' | 'idle'>('idle');
+  const [loading, setLoading] = useState(false);
 
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
-  const image1 = PlaceHolderImages.find(img => img.id === 'service-detail-1');
-  const image2 = PlaceHolderImages.find(img => img.id === 'service-detail-2');
   const jaipurAddress = "B-1402 Mangalam The Grand Residency, Near Teoler School, Sirsi Road, Jaipur, Rajasthan, India. Pin 302041";
   const jaipurMapQuery = "B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan, 302041";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setLoading(true);
+    setStatus('idle');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: `${formData.get('first-name')} ${formData.get('last-name')}`,
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus('success');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus('error');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -60,36 +91,49 @@ export default function ContactPage() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-secondary p-4 sm:p-8">
-                {isSubmitted ? (
-                  <div className="flex flex-col items-center justify-center h-full text-center">
-                    <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
-                    <h3 className="font-roboto text-2xl font-medium text-primary mb-2">Form Submitted!</h3>
-                    <p className="text-foreground/80">Thank you for your message. We will get back to you shortly.</p>
-                  </div>
+                {status === 'success' ? (
+                  <Alert className="border-green-500 text-green-700">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <AlertTitle>Form Submitted!</AlertTitle>
+                    <AlertDescription>
+                      Thank you for your message. We will get back to you shortly.
+                    </AlertDescription>
+                  </Alert>
                 ) : (
+                  <>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
                         <Label htmlFor="first-name">First Name*</Label>
-                        <Input id="first-name" placeholder="John" required/>
+                        <Input id="first-name" name="first-name" placeholder="John" required/>
                         </div>
                         <div className="space-y-2">
                         <Label htmlFor="last-name">Last Name*</Label>
-                        <Input id="last-name" placeholder="Doe" required/>
+                        <Input id="last-name" name="last-name" placeholder="Doe" required/>
                         </div>
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="email">Your Email*</Label>
-                        <Input id="email" type="email" placeholder="john.doe@example.com" required/>
+                        <Input id="email" name="email" type="email" placeholder="john.doe@example.com" required/>
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="message">Message</Label>
-                        <Textarea id="message" placeholder="How can we help you?" rows={5} />
+                        <Textarea id="message" name="message" placeholder="How can we help you?" rows={5} />
                     </div>
-                    <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-bold">
-                        Send Message
+                    <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-bold" disabled={loading}>
+                        {loading ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
+                  {status === 'error' && (
+                    <Alert variant="destructive" className="mt-4">
+                      <AlertCircle className="h-4 w-4" />
+                      <AlertTitle>Error</AlertTitle>
+                      <AlertDescription>
+                        Something went wrong. Please try again later.
+                      </AlertDescription>
+                    </Alert>
+                  )}
+                  </>
                 )}
             </div>
             <div className="space-y-8">
@@ -198,8 +242,6 @@ export default function ContactPage() {
     </main>
   );
 }
-    
-
     
 
     
