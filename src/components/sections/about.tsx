@@ -4,10 +4,11 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SlideIn } from '@/components/animations/slide-in';
-import { LawBalanceLottie } from '@/components/animations/law-balance-animation';
-import { Scale } from 'lucide-react';
+import { AppImage } from '@/components/ui/app-image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function About() {
+  const aboutImage = PlaceHolderImages.find(img => img.id === 'service-detail-1');
   return (
     <section id="about" className="bg-background text-foreground py-12 sm:py-16 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,14 +31,20 @@ export function About() {
             </div>
           </SlideIn>
           <SlideIn direction="left" className="relative h-80 lg:h-[32rem] flex items-center justify-center">
-            <div className="relative h-80 w-80 justify-self-center bg-secondary flex items-center justify-center">
-              <Scale className="h-48 w-48 text-accent/80" />
-            </div>
+            {aboutImage && (
+                <AppImage
+                    src={aboutImage.imageUrl}
+                    alt={aboutImage.description}
+                    width={aboutImage.width}
+                    height={aboutImage.height}
+                    className="object-cover h-full w-full"
+                    wrapperClassName="h-full w-full"
+                    data-ai-hint={aboutImage.imageHint}
+                />
+            )}
           </SlideIn>
         </div>
       </div>
     </section>
   );
 }
-
-    
