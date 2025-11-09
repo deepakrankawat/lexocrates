@@ -7,7 +7,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
 import { Cta } from "@/components/sections/cta";
 import Link from "next/link";
-import { AdvancedContactForm } from "@/components/forms/AdvancedContactForm";
+import { SimpleContactForm } from "@/components/forms/SimpleContactForm";
 
 export default function ContactPage() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
@@ -39,7 +39,7 @@ export default function ContactPage() {
       <section id="contact-form" className="py-12 sm:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-             <AdvancedContactForm />
+             <SimpleContactForm />
           </div>
         </div>
       </section>
