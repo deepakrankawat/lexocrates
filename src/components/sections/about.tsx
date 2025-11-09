@@ -4,7 +4,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SlideIn } from '@/components/animations/slide-in';
-import { Scale } from 'lucide-react';
+import { LawBalanceLottie } from '../animations/law-balance-animation';
 
 export function About() {
   return (
@@ -29,8 +29,8 @@ export function About() {
             </div>
           </SlideIn>
           <SlideIn direction="left" className="relative h-80 lg:h-[32rem] flex items-center justify-center">
-             <div className="relative h-64 w-64 justify-self-center">
-                <Scale className="h-48 w-48 text-accent/80" />
+             <div className="relative h-96 w-96 justify-self-center">
+                <LawBalanceLottie />
             </div>
           </SlideIn>
         </div>
