@@ -1,12 +1,9 @@
 
-import { Calendar, Users } from 'lucide-react';
+import { Calendar, Users, TrendingUp } from 'lucide-react';
 import { SlideIn } from '@/components/animations/slide-in';
 import { Counter } from '@/components/animations/counter';
-import { AppImage } from '../ui/app-image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Experience() {
-  const image = PlaceHolderImages.find(img => img.id === 'blog-image-3');
   return (
     <section id="experience" className="bg-background text-foreground py-12 sm:py-16 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,16 +37,9 @@ export function Experience() {
           </SlideIn>
            <SlideIn direction="left" className="relative h-96 lg:h-[32rem] flex items-center justify-center">
             <div className="relative h-full w-full justify-self-center bg-secondary flex items-center justify-center">
-              {image && (
-                <AppImage
-                  src={image.imageUrl}
-                  alt={image.description}
-                  data-ai-hint={image.imageHint}
-                  width={800}
-                  height={600}
-                  className="w-full h-full object-cover"
-                />
-              )}
+                <div className="relative h-64 w-64 justify-self-center">
+                    <TrendingUp className="h-48 w-48 text-accent/80" />
+                </div>
             </div>
           </SlideIn>
         </div>

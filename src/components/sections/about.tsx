@@ -4,11 +4,9 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SlideIn } from '@/components/animations/slide-in';
-import { AppImage } from '@/components/ui/app-image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Scale } from 'lucide-react';
 
 export function About() {
-  const aboutImage = PlaceHolderImages.find(img => img.id === 'service-detail-1');
   return (
     <section id="about" className="bg-background text-foreground py-12 sm:py-16 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,17 +29,9 @@ export function About() {
             </div>
           </SlideIn>
           <SlideIn direction="left" className="relative h-80 lg:h-[32rem] flex items-center justify-center">
-            {aboutImage && (
-                <AppImage
-                    src={aboutImage.imageUrl}
-                    alt={aboutImage.description}
-                    width={aboutImage.width}
-                    height={aboutImage.height}
-                    className="object-cover h-full w-full"
-                    wrapperClassName="h-full w-full"
-                    data-ai-hint={aboutImage.imageHint}
-                />
-            )}
+             <div className="relative h-64 w-64 justify-self-center">
+                <Scale className="h-48 w-48 text-accent/80" />
+            </div>
           </SlideIn>
         </div>
       </div>
