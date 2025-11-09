@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { Faq } from "@/components/sections/faq";
