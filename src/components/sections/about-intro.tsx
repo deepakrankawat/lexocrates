@@ -13,16 +13,7 @@ export function AboutIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="left" className="lg:order-last">
             <div className="relative h-80 lg:h-[30rem] w-full bg-secondary flex items-center justify-center">
-              {image && (
-                <AppImage
-                  src={image.imageUrl}
-                  alt={image.description}
-                  data-ai-hint={image.imageHint}
-                  width={600}
-                  height={800}
-                  className="w-full h-full object-cover"
-                />
-              )}
+              <BookOpen className="h-48 w-48 text-accent/80" />
             </div>
           </SlideIn>
           <SlideIn direction="right">
