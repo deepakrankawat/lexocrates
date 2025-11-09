@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car, LifeBuoy, CheckCircle, Headset } from "lucide-react";
@@ -63,7 +64,7 @@ export default function ContactPage() {
               </Link>
               <Link href="mailto:Support@lexocrates.com" className="flex items-start gap-4 group">
                   <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
-                      <Mail className="h-6 w-6 text-accent" />
+                      <Headset className="h-6 w-6 text-accent" />
                   </div>
                   <div>
                       <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Support</h3>
