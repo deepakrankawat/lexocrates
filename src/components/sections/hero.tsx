@@ -4,11 +4,25 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FadeIn } from '@/components/animations/fade-in';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
+    const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-primary">
-      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-white">
+    <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+        {heroImage && (
+            <Image
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                fill
+                className="object-cover"
+                priority
+                data-ai-hint={heroImage.imageHint}
+            />
+        )}
+        <div className="absolute inset-0 bg-black/50" />
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-white">
         <FadeIn delay={0.2} duration={0.8}>
             <p className="font-lato font-bold text-accent uppercase tracking-wider">
                 Legal Process Outsourcing
