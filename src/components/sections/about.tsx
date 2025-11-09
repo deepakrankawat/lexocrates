@@ -4,19 +4,11 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SlideIn } from '@/components/animations/slide-in';
-<<<<<<< HEAD
 import { AppImage } from '@/components/ui/app-image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function About() {
   const aboutImage = PlaceHolderImages.find(img => img.id === 'service-detail-1');
-=======
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { AppImage } from '../ui/app-image';
-
-export function About() {
-  const image = PlaceHolderImages.find(img => img.id === 'service-detail-1');
->>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1
   return (
     <section id="about" className="bg-background text-foreground py-12 sm:py-16 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +31,6 @@ export function About() {
             </div>
           </SlideIn>
           <SlideIn direction="left" className="relative h-80 lg:h-[32rem] flex items-center justify-center">
-<<<<<<< HEAD
             {aboutImage && (
                 <AppImage
                     src={aboutImage.imageUrl}
@@ -51,20 +42,6 @@ export function About() {
                     data-ai-hint={aboutImage.imageHint}
                 />
             )}
-=======
-            <div className="relative h-full w-full justify-self-center bg-secondary flex items-center justify-center">
-              {image && (
-                <AppImage
-                  src={image.imageUrl}
-                  alt={image.description}
-                  data-ai-hint={image.imageHint}
-                  width={600}
-                  height={800}
-                  className="w-full h-full object-cover"
-                />
-              )}
-            </div>
->>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1
           </SlideIn>
         </div>
       </div>
