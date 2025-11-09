@@ -66,8 +66,26 @@ export default function ContactPage() {
                       <Mail className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Email</h3>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Support</h3>
                       <p className="text-foreground/80 group-hover:text-accent font-lato">Support@lexocrates.com</p>
+                  </div>
+              </Link>
+               <Link href="mailto:Sales@Lexocrates.com" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
+                      <Mail className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Sales</h3>
+                      <p className="text-foreground/80 group-hover:text-accent font-lato">Sales@Lexocrates.com</p>
+                  </div>
+              </Link>
+               <Link href="mailto:HR@lexocrates.com" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
+                      <Mail className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">HR</h3>
+                      <p className="text-foreground/80 group-hover:text-accent font-lato">HR@lexocrates.com</p>
                   </div>
               </Link>
               <Link href="#" className="flex items-start gap-4 group">
