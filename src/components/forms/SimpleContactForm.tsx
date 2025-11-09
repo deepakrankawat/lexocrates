@@ -15,6 +15,9 @@ import { Loader2, CheckCircle } from 'lucide-react';
 const formSchema = z.object({
   fullName: z.string().min(2, { message: 'Full name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
+  phone: z.string().optional(),
+  company: z.string().optional(),
+  subject: z.string().min(3, { message: 'Subject must be at least 3 characters.' }),
   message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
@@ -38,7 +41,9 @@ export function SimpleContactForm() {
     
     const formData = new FormData();
     Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value);
+        if (value) {
+            formData.append(key, value);
+        }
     });
 
     try {
@@ -97,7 +102,7 @@ export function SimpleContactForm() {
             <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">Send Us a Message</h2>
         </div>
         
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormField name="fullName">
                 <Label htmlFor="fullName">Full Name</Label>
                 <Input id="fullName" placeholder="John Doe" {...register('fullName')} />
@@ -106,10 +111,26 @@ export function SimpleContactForm() {
                 <Label htmlFor="email">Email Address</Label>
                 <Input id="email" type="email" placeholder="john.doe@example.com" {...register('email')} />
             </FormField>
-            <FormField name="message">
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Your message..." {...register('message')} rows={6} />
+            <FormField name="phone">
+                <Label htmlFor="phone">Phone Number (Optional)</Label>
+                <Input id="phone" placeholder="+1 (555) 123-4567" {...register('phone')} />
             </FormField>
+            <FormField name="company">
+                <Label htmlFor="company">Company Name (Optional)</Label>
+                <Input id="company" placeholder="Acme Inc." {...register('company')} />
+            </FormField>
+            <div className="md:col-span-2">
+                <FormField name="subject">
+                    <Label htmlFor="subject">Subject</Label>
+                    <Input id="subject" placeholder="Inquiry about..." {...register('subject')} />
+                </FormField>
+            </div>
+            <div className="md:col-span-2">
+                <FormField name="message">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea id="message" placeholder="Your message..." {...register('message')} rows={6} />
+                </FormField>
+            </div>
         </div>
 
         <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-bold" disabled={isLoading}>

@@ -8,9 +8,12 @@ export async function POST(request: Request) {
     
     const fullName = formData.get('fullName') as string;
     const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string | null;
+    const company = formData.get('company') as string | null;
+    const subject = formData.get('subject') as string;
     const message = formData.get('message') as string;
     
-    if (!fullName || !email || !message) {
+    if (!fullName || !email || !subject || !message) {
       return NextResponse.json({ success: false, message: 'Missing required fields.' }, { status: 400 });
     }
 
@@ -22,16 +25,46 @@ export async function POST(request: Request) {
       },
     });
     
-    const emailBody = `<h1>New Contact Form Submission</h1>
-<p><strong>Full Name:</strong> ${fullName}</p>
-<p><strong>Email:</strong> ${email}</p>
-<p><strong>Message:</strong></p><p>${message}</p>`;
+    const emailBody = `
+      <h1 style="color: #0c2b56;">New Contact Form Submission</h1>
+      <p>You have received a new message from your website's contact form.</p>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <tr style="background-color: #f2f2f2;">
+          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Full Name</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">${fullName}</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Email</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">${email}</td>
+        </tr>
+        ${phone ? `
+        <tr style="background-color: #f2f2f2;">
+          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Phone</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">${phone}</td>
+        </tr>
+        ` : ''}
+        ${company ? `
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Company</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">${company}</td>
+        </tr>
+        ` : ''}
+        <tr style="background-color: #f2f2f2;">
+          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Subject</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">${subject}</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Message</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">${message}</td>
+        </tr>
+      </table>
+    `;
 
     // Main email to business
     await transporter.sendMail({
       from: `"${fullName}" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
-      subject: `New Inquiry from ${fullName}`,
+      subject: `New Inquiry: ${subject}`,
       html: emailBody,
     });
 
