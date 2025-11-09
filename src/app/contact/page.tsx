@@ -2,7 +2,7 @@
 
 'use client';
 
-import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car, LifeBuoy, CheckCircle, Headset } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car, LifeBuoy, CheckCircle, Headset, User } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
@@ -82,7 +82,7 @@ export default function ContactPage() {
               </Link>
                <Link href="mailto:HR@lexocrates.com" className="flex items-start gap-4 group">
                   <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
-                      <Mail className="h-6 w-6 text-accent" />
+                      <User className="h-6 w-6 text-accent" />
                   </div>
                   <div>
                       <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">HR</h3>
