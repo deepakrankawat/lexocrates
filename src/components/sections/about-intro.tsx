@@ -1,15 +1,28 @@
 
-import { BookOpen, BookMarked } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import { SlideIn } from '../animations/slide-in';
+import { AppImage } from '../ui/app-image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function AboutIntro() {
+  const image = PlaceHolderImages.find(img => img.id === 'service-detail-2');
+
   return (
     <section id="about-intro" className="bg-background text-foreground py-12 sm:py-16 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="left" className="lg:order-last">
             <div className="relative h-80 lg:h-[30rem] w-full bg-secondary flex items-center justify-center">
-              <BookMarked className="h-32 w-32 sm:h-48 sm:w-48 text-accent/80" />
+              {image && (
+                <AppImage
+                  src={image.imageUrl}
+                  alt={image.description}
+                  data-ai-hint={image.imageHint}
+                  width={600}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
           </SlideIn>
           <SlideIn direction="right">
@@ -36,5 +49,3 @@ export function AboutIntro() {
     </section>
   );
 }
-
-    

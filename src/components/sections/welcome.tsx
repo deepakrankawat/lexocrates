@@ -1,13 +1,25 @@
 
-import { User, UserRound } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { AppImage } from '../ui/app-image';
 
 export function Welcome() {
+  const image = PlaceHolderImages.find(img => img.id === 'lawyer-5');
+
   return (
     <section className="bg-background text-foreground py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-80 w-80 sm:h-96 sm:w-96 justify-self-center bg-secondary flex items-center justify-center">
-            <UserRound className="h-32 w-32 sm:h-48 sm:w-48 text-accent/80" />
+            {image && (
+              <AppImage
+                src={image.imageUrl}
+                alt={image.description}
+                data-ai-hint={image.imageHint}
+                width={600}
+                height={800}
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
           <div>
             <p className="font-lato font-bold text-accent uppercase tracking-wider">A Message from Our Founder</p>
@@ -26,5 +38,3 @@ export function Welcome() {
     </section>
   );
 }
-
-    

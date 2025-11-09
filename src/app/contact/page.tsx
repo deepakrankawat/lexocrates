@@ -1,18 +1,78 @@
 'use client';
 
+<<<<<<< HEAD
 import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car, LifeBuoy, CheckCircle, Headset } from "lucide-react";
+=======
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Mail, Phone, MapPin, Linkedin, Clock, Train, Bus, Car, LifeBuoy, CheckCircle, Headset, User, AlertCircle } from "lucide-react";
+>>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1
 import Image from "next/image";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Faq } from "@/components/sections/faq";
 import { Cta } from "@/components/sections/cta";
 import Link from "next/link";
+<<<<<<< HEAD
 import { AdvancedContactForm } from "@/components/forms/AdvancedContactForm";
 
 export default function ContactPage() {
+=======
+import { AppImage } from "@/components/ui/app-image";
+import { ContactProcess } from "@/components/sections/contact-process";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+
+export default function ContactPage() {
+  const [status, setStatus] = useState<'success' | 'error' | 'idle'>('idle');
+  const [loading, setLoading] = useState(false);
+
+>>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-contact');
   const jaipurAddress = "B-1402 Mangalam The Grand Residency, Near Teoler School, Sirsi Road, Jaipur, Rajasthan, India. Pin 302041";
   const jaipurMapQuery = "B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan, 302041";
 
+<<<<<<< HEAD
+=======
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus('idle');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: `${formData.get('first-name')} ${formData.get('last-name')}`,
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus('success');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus('error');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+>>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1
   return (
     <main className="bg-background">
       <section className="relative text-white pt-32 pb-12 sm:pt-36 sm:pb-16">
@@ -37,8 +97,100 @@ export default function ContactPage() {
 
       <section id="contact-form" className="py-12 sm:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+<<<<<<< HEAD
           <div className="max-w-4xl mx-auto">
              <AdvancedContactForm />
+=======
+          <div className="text-center mb-12">
+            <p className="font-lato font-bold text-accent uppercase tracking-wider">Get In Touch</p>
+            <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">Send Us a Message</h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-secondary p-4 sm:p-8">
+                {status === 'success' ? (
+                  <Alert className="border-green-500 text-green-700">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <AlertTitle>Form Submitted!</AlertTitle>
+                    <AlertDescription>
+                      Thank you for your message. We will get back to you shortly.
+                    </AlertDescription>
+                  </Alert>
+                ) : (
+                  <>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                        <Label htmlFor="first-name">First Name*</Label>
+                        <Input id="first-name" name="first-name" placeholder="John" required/>
+                        </div>
+                        <div className="space-y-2">
+                        <Label htmlFor="last-name">Last Name*</Label>
+                        <Input id="last-name" name="last-name" placeholder="Doe" required/>
+                        </div>
+                    </div>
+                    <div className="space-y-2">
+                        <Label htmlFor="email">Your Email*</Label>
+                        <Input id="email" name="email" type="email" placeholder="john.doe@example.com" required/>
+                    </div>
+                    <div className="space-y-2">
+                        <Label htmlFor="message">Message</Label>
+                        <Textarea id="message" name="message" placeholder="How can we help you?" rows={5} />
+                    </div>
+                    <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-bold" disabled={loading}>
+                        {loading ? 'Sending...' : 'Send Message'}
+                    </Button>
+                  </form>
+                  {status === 'error' && (
+                    <Alert variant="destructive" className="mt-4">
+                      <AlertCircle className="h-4 w-4" />
+                      <AlertTitle>Error</AlertTitle>
+                      <AlertDescription>
+                        Something went wrong. Please try again later.
+                      </AlertDescription>
+                    </Alert>
+                  )}
+                  </>
+                )}
+            </div>
+            <div className="space-y-8">
+               <Link href="mailto:Support@lexocrates.com" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
+                      <Headset className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Support</h3>
+                      <p className="text-foreground/80 group-hover:text-accent break-all font-lato">Support@lexocrates.com</p>
+                  </div>
+              </Link>
+              <Link href="mailto:Sales@Lexocrates.com" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
+                      <Mail className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Sales</h3>
+                      <p className="text-foreground/80 group-hover:text-accent break-all font-lato">Sales@Lexocrates.com</p>
+                  </div>
+              </Link>
+              <Link href="mailto:HR@lexocrates.com" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
+                      <User className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">HR</h3>
+                      <p className="text-foreground/80 group-hover:text-accent break-all font-lato">HR@lexocrates.com</p>
+                  </div>
+              </Link>
+              <Link href="#" className="flex items-start gap-4 group">
+                  <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
+                      <Linkedin className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">LinkedIn</h3>
+                      <p className="text-foreground/80 group-hover:text-accent font-lato">Follow us on LinkedIn</p>
+                  </div>
+              </Link>
+            </div>
+>>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1
           </div>
         </div>
       </section>
@@ -103,4 +255,11 @@ export default function ContactPage() {
       <Cta />
     </main>
   );
+<<<<<<< HEAD
 }
+=======
+}
+    
+
+    
+>>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1

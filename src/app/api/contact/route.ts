@@ -1,8 +1,13 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
+<<<<<<< HEAD
     const formData = await request.formData();
     
     const queryType = formData.get('queryType') as string;
@@ -16,12 +21,19 @@ export async function POST(request: Request) {
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
+=======
+    const { name, email, message } = await request.json();
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+>>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
 
+<<<<<<< HEAD
     const getRecipientEmail = () => {
       switch (queryType) {
         case 'HR':
@@ -128,3 +140,28 @@ ${emailBody}
     return NextResponse.json({ success: false, message: `Failed to send email: ${errorMessage}` }, { status: 500 });
   }
 }
+=======
+    const mailOptions = {
+      from: email,
+      to: process.env.EMAIL_USER,
+      subject: `New Message from ${name}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ success: false }, { status: 500 });
+  }
+}
+
+    
+>>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1

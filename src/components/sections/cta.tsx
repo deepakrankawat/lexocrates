@@ -9,7 +9,11 @@ export function Cta() {
     <section className="bg-secondary py-12 sm:py-16 text-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
+<<<<<<< HEAD
           <div className="grid grid-cols-1 items-center justify-center text-center md:text-left bg-background p-12 gap-8">
+=======
+          <div className="grid grid-cols-1 md:grid-cols-1 items-center justify-center text-center md:text-left bg-background p-12 gap-8">
+>>>>>>> 6f76f247f64bd3ad8604e8351438b371dea4b2a1
               <div>
                 <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
                   Ready to Optimize Your Legal Workflow?

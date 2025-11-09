@@ -1,15 +1,27 @@
 
 import { SlideIn } from '@/components/animations/slide-in';
-import { Building, Building2 } from 'lucide-react';
+import { AppImage } from '@/components/ui/app-image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function CareersAbout() {
+  const image = PlaceHolderImages.find(img => img.id === 'service-corporate-law');
+
   return (
     <section className="bg-background text-foreground py-12 sm:py-16 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="left" className="lg:order-last">
             <div className="relative h-[30rem] w-full bg-secondary flex items-center justify-center">
-              <Building className="h-48 w-48 text-accent/80" />
+              {image && (
+                <AppImage
+                  src={image.imageUrl}
+                  alt={image.description}
+                  data-ai-hint={image.imageHint}
+                  width={600}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
           </SlideIn>
           <SlideIn direction="right">
@@ -33,5 +45,3 @@ export function CareersAbout() {
     </section>
   );
 }
-
-    
