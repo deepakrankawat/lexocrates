@@ -1,20 +1,13 @@
 
 'use client';
 import Link from 'next/link';
-import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 import { Button } from '@/components/ui/button';
 import { servicesList } from '@/lib/services-data';
 import { Input } from '@/components/ui/input';
 
 export function Footer() {
-  const socialLinks = [
-    { icon: Facebook, href: '#', name: 'Facebook' },
-    { icon: Twitter, href: '#', name: 'Twitter' },
-    { icon: Linkedin, href: '#', name: 'LinkedIn' },
-    { icon: Instagram, href: '#', name: 'Instagram' },
-  ];
-
   const footerServices = servicesList.slice(0, 4);
 
   return (
@@ -63,6 +56,14 @@ export function Footer() {
                 <li><p>B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan</p></li>
                 <li><p className="break-all">Support@lexocrates.com</p></li>
                 <li><p>Mon - Sat: 9:00 am - 6:00 pm IST</p></li>
+                 <li className="flex items-center gap-2">
+                  <Link href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                    <Linkedin className="h-5 w-5" />
+                  </Link>
+                  <Link href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                    Follow us on LinkedIn
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -72,18 +73,8 @@ export function Footer() {
           <p className="text-sm text-primary-foreground/60 font-roboto">
             Copyright &copy; {new Date().getFullYear()} Lexocrates. All Rights Reserved.
           </p>
-          <div className="mt-4 sm:mt-0 flex space-x-4">
-            {socialLinks.map((social) => (
-              <Link key={social.name} href={social.href} className="text-primary-foreground/80 hover:text-accent transition-colors">
-                <social.icon className="h-5 w-5" />
-                <span className="sr-only">{social.name}</span>
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
   );
 }
-
-    
