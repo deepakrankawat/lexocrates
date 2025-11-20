@@ -34,8 +34,9 @@ const teamMembers = [
   },
 ];
 
-export default function LawyerDetailPage({ params }: { params: { slug: string } }) {
-  const lawyer = teamMembers.find(member => member.slug === params.slug);
+export default async function LawyerDetailPage({ params }: { params: { slug: string } }) {
+  const awaitedParams = await params;
+  const lawyer = teamMembers.find(member => member.slug === awaitedParams.slug);
 
   if (!lawyer) {
     notFound();

@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { LayoutProvider } from '@/components/layout/layout-provider';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://lexocrates.com'),
   title: 'Lexocrates | Expert Legal Process Outsourcing',
   description:
     'Lexocrates provides high-quality, cost-effective legal process outsourcing (LPO) services to law firms and corporations in the US, UK, and Canada. Specializing in contract management, legal research, and compliance.',

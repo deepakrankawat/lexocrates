@@ -8,8 +8,9 @@ import { notFound } from 'next/navigation';
 import { Experience } from '@/components/sections/experience';
 import { ServiceKeyAreas } from '@/components/sections/service-key-areas';
 
-export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
-  const service = servicesList.find(s => s.slug === params.slug);
+export default async function ServiceDetailPage({ params }: { params: { slug: string } }) {
+  const awaitedParams = await params;
+  const service = servicesList.find(s => s.slug === awaitedParams.slug);
 
   if (!service) {
     notFound();

@@ -5,9 +5,10 @@ import { BlogDetailContent } from '@/components/sections/blog-detail-content';
 import { Cta } from '@/components/sections/cta';
 import { RelatedPosts } from '@/components/sections/related-posts';
 
-export default function BlogDetailPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
-  const related = blogPosts.filter((p) => p.slug !== params.slug).slice(0, 3);
+export default async function BlogDetailPage({ params }: { params: { slug: string } }) {
+  const awaitedParams = await params;
+  const post = blogPosts.find((p) => p.slug === awaitedParams.slug);
+  const related = blogPosts.filter((p) => p.slug !== awaitedParams.slug).slice(0, 3);
 
   if (!post) {
     notFound();
