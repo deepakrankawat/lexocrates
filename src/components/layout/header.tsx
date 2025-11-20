@@ -30,7 +30,6 @@ export function Header() {
       setIsScrolled(window.scrollY > 20);
     };
     
-    // Set initial state after mount
     handleScroll();
 
     window.addEventListener('scroll', handleScroll);
@@ -40,8 +39,16 @@ export function Header() {
   const headerClasses = cn(
     'fixed top-0 z-50 w-full transition-all duration-300',
     isScrolled 
-      ? 'bg-primary shadow-md text-primary-foreground' 
+      ? 'bg-primary shadow-md' 
       : 'bg-transparent text-white'
+  );
+  
+  const navLinkClasses = (href: string) => cn(
+    "relative transition-colors hover:text-white/80",
+    !isActive(href) && "text-white/80",
+    isScrolled && "text-primary-foreground/80 hover:text-primary-foreground",
+    isActive(href) && "text-white",
+    isActive(href) && isScrolled && "text-primary-foreground",
   );
 
   const isActive = (href: string) => {
@@ -67,14 +74,7 @@ export function Header() {
             <Link 
               key={link.href} 
               href={link.href} 
-              className={cn(
-                "relative transition-colors hover:text-white/80",
-                !isActive(link.href) && "text-white/80",
-                isScrolled && "hover:text-primary-foreground/80",
-                isScrolled && !isActive(link.href) && "text-primary-foreground/60",
-                isActive(link.href) && "text-white",
-                isActive(link.href) && isScrolled && "text-primary-foreground",
-              )}
+              className={navLinkClasses(link.href)}
             >
               {link.label}
               {isActive(link.href) && (

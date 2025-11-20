@@ -1,35 +1,69 @@
-
-'use client';
-
+import type { Metadata } from 'next';
 import './globals.css';
-import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
-import { PageTransition } from '@/components/animations/page-transition';
-import { usePathname } from 'next/navigation';
+import { LayoutProvider } from '@/components/layout/layout-provider';
+
+export const metadata: Metadata = {
+  title: 'Lexocrates | Expert Legal Process Outsourcing',
+  description:
+    'Lexocrates provides high-quality, cost-effective legal process outsourcing (LPO) services to law firms and corporations in the US, UK, and Canada. Specializing in contract management, legal research, and compliance.',
+  keywords: [
+    'Legal Process Outsourcing',
+    'LPO',
+    'Legal Outsourcing India',
+    'Contract Management',
+    'Legal Research',
+    'Document Review',
+    'Compliance Services',
+  ],
+  openGraph: {
+    title: 'Lexocrates | Expert Legal Process Outsourcing',
+    description:
+      'Empowering legal teams with efficient, reliable, and secure outsourcing solutions from India.',
+    url: 'https://www.lexocrates.com',
+    siteName: 'Lexocrates',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Lexocrates Logo and tagline',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lexocrates | Expert Legal Process Outsourcing',
+    description:
+      'Cost-effective and expert legal support for firms in the US, UK, and Canada.',
+    images: ['/images/og-image.png'],
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-
   return (
     <html lang="en" className="!scroll-smooth">
       <head>
-        <title>Lexocrates</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="font-opensans antialiased bg-gray-100">
-        <Header />
-        <PageTransition key={pathname}>
-            <div className="bg-white shadow-2xl">
-                {children}
-            </div>
-        </PageTransition>
+        <LayoutProvider>{children}</LayoutProvider>
         <Footer />
         <Toaster />
       </body>
