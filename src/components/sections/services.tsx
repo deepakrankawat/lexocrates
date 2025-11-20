@@ -8,7 +8,6 @@ import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { StaggerFadeIn } from '../animations/stagger-fade-in';
 import { SlideIn } from '../animations/slide-in';
-import { AppImage } from '../ui/app-image';
 import { Button } from '../ui/button';
 import { Card, CardContent } from '../ui/card';
 
@@ -24,7 +23,9 @@ export function Services() {
             We Specialize In The Following Areas
           </h2>
         </SlideIn>
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+
+        {/* Desktop View: Interactive two-column layout */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start">
           <StaggerFadeIn className="flex flex-col gap-4">
             {servicesList.map((service) => (
               <div
@@ -90,6 +91,35 @@ export function Services() {
               </motion.div>
             </AnimatePresence>
           </div>
+        </div>
+
+        {/* Mobile & Tablet View: Card-based grid */}
+        <div className="grid lg:hidden grid-cols-1 md:grid-cols-2 gap-8">
+            {servicesList.map((service) => (
+                <motion.div
+                    key={service.slug}
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                    className="h-full"
+                >
+                    <Card className="h-full flex flex-col group overflow-hidden">
+                        <CardContent className="p-6 flex flex-col flex-grow">
+                            <div className="flex items-center gap-4 mb-4">
+                                <div className="p-3 bg-accent/10 text-accent rounded-full">
+                                    <service.icon className="h-8 w-8" />
+                                </div>
+                                <h3 className="font-roboto text-xl font-bold text-primary">{service.name}</h3>
+                            </div>
+                            <p className="text-foreground/80 mb-6 text-sm flex-grow">{service.description}</p>
+                            <Button asChild size="sm" className="w-full mt-auto font-montserrat font-bold group">
+                                <Link href={`/services/${service.slug}`}>
+                                    Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                </Link>
+                            </Button>
+                        </CardContent>
+                    </Card>
+                </motion.div>
+            ))}
         </div>
       </div>
     </section>
