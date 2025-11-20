@@ -74,7 +74,7 @@ export function Footer() {
             Copyright &copy; {new Date().getFullYear()} Lexocrates. All Rights Reserved.
           </p>
           <p className="text-xs text-primary-foreground/50 max-w-3xl">
-            By using this website, you agree to our <Link href="#" className="underline hover:text-accent">Terms & Conditions</Link> and acknowledge our <Link href="#" className="underline hover:text-accent">Privacy Policy</Link> and <Link href="#" className="underline hover:text-accent">Cookies Policy</Link>. We use cookies to enhance user experience and analyze site usage.
+            By using this website, you agree to our <Link href="/terms-and-conditions" className="underline hover:text-accent">Terms &amp; Conditions</Link> and acknowledge our <Link href="/privacy-policy" className="underline hover:text-accent">Privacy Policy</Link> and <Link href="/cookies-policy" className="underline hover:text-accent">Cookies Policy</Link>. We use cookies to enhance user experience and analyze site usage.
           </p>
         </div>
       </div>
