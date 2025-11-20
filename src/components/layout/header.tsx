@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
 
@@ -92,6 +92,12 @@ export function Header() {
                     <Logo className="text-primary-foreground" />
                   </Link>
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                 <SheetClose asChild>
+                    <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+                      <X className="h-8 w-8" />
+                      <span className="sr-only">Close menu</span>
+                    </Button>
+                  </SheetClose>
               </SheetHeader>
               <div className="mt-8 flex h-full flex-col">
                 <nav className="flex flex-col gap-6 font-roboto text-xl font-medium">
