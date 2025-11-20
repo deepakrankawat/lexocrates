@@ -69,9 +69,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-primary-foreground/20 pt-8 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+        <div className="mt-12 border-t border-primary-foreground/20 pt-8 flex flex-col items-center gap-4 text-center">
           <p className="text-sm text-primary-foreground/60 font-roboto">
             Copyright &copy; {new Date().getFullYear()} Lexocrates. All Rights Reserved.
+          </p>
+          <p className="text-xs text-primary-foreground/50 max-w-3xl">
+            By using this website, you agree to our <Link href="#" className="underline hover:text-accent">Terms & Conditions</Link> and acknowledge our <Link href="#" className="underline hover:text-accent">Privacy Policy</Link> and <Link href="#" className="underline hover:text-accent">Cookies Policy</Link>. We use cookies to enhance user experience and analyze site usage.
           </p>
         </div>
       </div>
