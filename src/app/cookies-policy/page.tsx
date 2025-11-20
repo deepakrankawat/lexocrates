@@ -1,15 +1,30 @@
 
 import { Cta } from '@/components/sections/cta';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Cookie } from 'lucide-react';
+import Image from 'next/image';
 
 export default function CookiesPolicyPage() {
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-services');
+
   return (
     <main className="bg-background">
-      <section className="bg-secondary pt-32 pb-12 sm:pt-36 sm:pb-16 text-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative text-white pt-32 pb-12 sm:pt-36 sm:pb-16">
+        {heroImage && (
+            <Image
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                fill
+                className="object-cover"
+                priority
+                data-ai-hint={heroImage.imageHint}
+            />
+        )}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
             <Cookie className="h-16 w-16 mx-auto text-accent mb-4" />
-            <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold text-primary">Cookies Policy</h1>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
+            <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold">Cookies Policy</h1>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
                 Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
         </div>
