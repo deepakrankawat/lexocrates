@@ -1,4 +1,3 @@
-
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -21,10 +20,10 @@ export default {
         'xs': '2px',
       },
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        lato: ['Lato', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
-        opensans: ['Open Sans', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        lato: ['var(--font-lato)', 'sans-serif'],
+        roboto: ['var(--font-roboto)', 'sans-serif'],
+        opensans: ['var(--font-opensans)', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

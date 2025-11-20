@@ -3,9 +3,34 @@ import './globals.css';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { LayoutProvider } from '@/components/layout/layout-provider';
+import { Lato, Montserrat, Open_Sans, Roboto } from 'next/font/google';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  weight: ['700'],
+});
+
+const lato = Lato({
+  subsets: ['latin'],
+  variable: '--font-lato',
+  weight: ['400', '700'],
+});
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  weight: ['400', '500', '700'],
+});
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  variable: '--font-opensans',
+  weight: ['400', '600'],
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lexocrates.com'),
+  metadataBase: new URL('https://lexocrates.vercel.app'),
   title: 'Lexocrates | Expert Legal Process Outsourcing',
   description:
     'Lexocrates provides high-quality, cost-effective legal process outsourcing (LPO) services to law firms and corporations in the US, UK, and Canada. Specializing in contract management, legal research, and compliance.',
@@ -51,19 +76,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-opensans antialiased bg-gray-100">
+      <body
+        className={`${montserrat.variable} ${lato.variable} ${roboto.variable} ${openSans.variable} font-opensans antialiased bg-gray-100`}
+      >
         <LayoutProvider>{children}</LayoutProvider>
         <Footer />
         <Toaster />

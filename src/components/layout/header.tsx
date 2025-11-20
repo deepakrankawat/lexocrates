@@ -40,15 +40,12 @@ export function Header() {
     'fixed top-0 z-50 w-full transition-all duration-300',
     isScrolled 
       ? 'bg-primary shadow-md' 
-      : 'bg-transparent text-white'
+      : 'bg-transparent'
   );
   
   const navLinkClasses = (href: string) => cn(
-    "relative transition-colors hover:text-white/80",
-    !isActive(href) && "text-white/80",
-    isScrolled && "text-primary-foreground/80 hover:text-primary-foreground",
-    isActive(href) && "text-white",
-    isActive(href) && isScrolled && "text-primary-foreground",
+    "relative transition-colors text-white/80 hover:text-white",
+    isActive(href) && "text-white font-semibold",
   );
 
   const isActive = (href: string) => {
@@ -64,7 +61,7 @@ export function Header() {
         <Link href="/" className="flex items-center">
           <div className="flex flex-col items-start">
             <Logo className="w-48" />
-            <p className={cn("text-xs -mt-1 transition-colors hidden sm:block", isScrolled ? "text-primary-foreground/80" : "text-white/80")}>
+            <p className="text-xs -mt-1 text-white/80 transition-colors hidden sm:block">
               Precision in Law, Rooted in Philosophy
             </p>
           </div>
@@ -85,7 +82,7 @@ export function Header() {
         </nav>
         <div className="lg:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <Button variant="ghost" size="icon" className="text-white hover:bg-transparent" onClick={() => setIsOpen(true)}>
+            <Button variant="ghost" size="icon" className="text-white hover:bg-transparent hover:text-white/80" onClick={() => setIsOpen(true)}>
               <Menu className="h-8 w-8" />
               <span className="sr-only">Open menu</span>
             </Button>
