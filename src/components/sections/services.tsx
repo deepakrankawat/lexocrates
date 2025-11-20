@@ -15,7 +15,7 @@ export function Services() {
   const [activeService, setActiveService] = useState(servicesList[0]);
 
   return (
-    <section id="services" className="bg-white text-foreground py-12 sm:py-16 overflow-hidden">
+    <section id="services" className="bg-white text-foreground py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-12">
           <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Services</p>
@@ -26,7 +26,7 @@ export function Services() {
 
         {/* Desktop View: Interactive two-column layout */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start">
-          <StaggerFadeIn className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
             {servicesList.map((service) => (
               <div
                 key={service.slug}
@@ -36,7 +36,6 @@ export function Services() {
                     ? 'bg-background border-accent shadow-md'
                     : 'border-transparent hover:bg-background/50'
                 )}
-                onClick={() => setActiveService(service)}
                 onMouseEnter={() => setActiveService(service)}
               >
                 <div className={cn(
@@ -51,7 +50,7 @@ export function Services() {
                 </div>
               </div>
             ))}
-          </StaggerFadeIn>
+          </div>
           <div className="lg:sticky lg:top-28">
             <AnimatePresence mode="wait">
               <motion.div
