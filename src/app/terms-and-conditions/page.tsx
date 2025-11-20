@@ -5,7 +5,7 @@ import { FileText } from 'lucide-react';
 import Image from 'next/image';
 
 export default function TermsAndConditionsPage() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-services');
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
 
   return (
     <main className="bg-background">
