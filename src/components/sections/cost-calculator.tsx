@@ -15,7 +15,7 @@ export function CostCalculator() {
   const usUkCost = hours * US_UK_RATE;
   const indiaCost = hours * INDIA_RATE;
   const savings = usUkCost - indiaCost;
-  const savingsPercentage = Math.round((savings / usUkCost) * 100);
+  const savingsPercentage = usUkCost > 0 ? Math.round((savings / usUkCost) * 100) : 0;
 
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -39,9 +39,9 @@ export function CostCalculator() {
             </p>
           </div>
         
-          <Card className="max-w-4xl mx-auto bg-background p-6 md:p-8">
+          <Card className="max-w-4xl mx-auto bg-background p-6 sm:p-8">
             <CardHeader className="text-center p-0 mb-8">
-              <CardTitle className="font-roboto text-2xl font-medium text-primary">
+              <CardTitle className="font-roboto text-xl sm:text-2xl font-medium text-primary">
                 Monthly Billable Hours: <span className="font-bold text-accent">{hours}</span>
               </CardTitle>
             </CardHeader>
@@ -52,37 +52,38 @@ export function CostCalculator() {
                 step={10}
                 onValueChange={(value) => setHours(value[0])}
                 className="mb-12"
+                aria-label="Monthly Billable Hours"
               />
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-center">
                 <Card className="bg-secondary">
                   <CardHeader className="items-center pb-2">
-                    <DollarSign className="h-8 w-8 text-primary" />
-                    <CardTitle className="text-lg font-medium text-primary">US / UK Rate</CardTitle>
+                    <DollarSign className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
+                    <CardTitle className="text-base sm:text-lg font-medium text-primary">US / UK Rate</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-3xl font-bold text-primary">{formatCurrency(usUkCost)}</p>
-                    <p className="text-sm text-foreground/70">(@ {formatCurrency(US_UK_RATE)}/hr)</p>
+                    <p className="text-2xl sm:text-3xl font-bold text-primary">{formatCurrency(usUkCost)}</p>
+                    <p className="text-xs sm:text-sm text-foreground/70">(@ {formatCurrency(US_UK_RATE)}/hr)</p>
                   </CardContent>
                 </Card>
                 <Card className="bg-primary text-primary-foreground">
                   <CardHeader className="items-center pb-2">
-                    <DollarSign className="h-8 w-8 text-accent" />
-                    <CardTitle className="text-lg font-medium">Lexocrates Rate</CardTitle>
+                    <DollarSign className="h-7 w-7 sm:h-8 sm:w-8 text-accent" />
+                    <CardTitle className="text-base sm:text-lg font-medium">Lexocrates Rate</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-3xl font-bold">{formatCurrency(indiaCost)}</p>
-                    <p className="text-sm text-primary-foreground/70">(@ {formatCurrency(INDIA_RATE)}/hr)</p>
+                    <p className="text-2xl sm:text-3xl font-bold">{formatCurrency(indiaCost)}</p>
+                    <p className="text-xs sm:text-sm text-primary-foreground/70">(@ {formatCurrency(INDIA_RATE)}/hr)</p>
                   </CardContent>
                 </Card>
                 <Card className="bg-accent text-accent-foreground">
                   <CardHeader className="items-center pb-2">
-                    <BarChart className="h-8 w-8" />
-                    <CardTitle className="text-lg font-medium">Potential Savings</CardTitle>
+                    <BarChart className="h-7 w-7 sm:h-8 sm:w-8" />
+                    <CardTitle className="text-base sm:text-lg font-medium">Potential Savings</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-3xl font-bold">{savingsPercentage}%</p>
-                    <p className="text-sm text-accent-foreground/80">({formatCurrency(savings)} saved)</p>
+                    <p className="text-2xl sm:text-3xl font-bold">{savingsPercentage}%</p>
+                    <p className="text-xs sm:text-sm text-accent-foreground/80">({formatCurrency(savings)} saved)</p>
                   </CardContent>
                 </Card>
               </div>
