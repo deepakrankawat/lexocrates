@@ -10,7 +10,7 @@ export default function CookiesPolicyPage() {
             <Cookie className="h-16 w-16 mx-auto text-accent mb-4" />
             <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold text-primary">Cookies Policy</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-                Last Updated: {new Date().toLocaleDate_US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
         </div>
       </section>
