@@ -7,10 +7,10 @@ import { FadeIn } from '@/components/animations/fade-in';
 import { AppImage } from '../ui/app-image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { motion } from 'framer-motion';
-import { Scale, FileText, Briefcase } from 'lucide-react';
+import { Landmark, Scale, FileText, Briefcase } from 'lucide-react';
 
 export function Hero() {
-  const image = PlaceHolderImages.find(img => img.id === 'lawyer-1');
+  const image = PlaceHolderImages.find(img => img.imageHint.includes('monument')) || PlaceHolderImages.find(img => img.id === 'hero-about');
 
   const floatingIcons = [
     { icon: Scale, className: 'top-10 left-10 h-8 w-8' },
