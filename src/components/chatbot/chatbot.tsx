@@ -108,8 +108,8 @@ export function Chatbot() {
                 </Button>
               </CardHeader>
               <CardContent className="flex-grow p-0">
-                <ScrollArea className="h-full" ref={scrollAreaRef}>
-                  <div className="p-4 space-y-4">
+                <ScrollArea className="h-full">
+                   <div className="p-4 space-y-4" ref={scrollAreaRef}>
                     {messages.length === 0 && (
                        <div className="flex flex-col items-center justify-center h-full text-center text-foreground/60 p-8">
                          <MessageSquare className="h-12 w-12 mb-4" />
