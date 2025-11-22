@@ -97,7 +97,7 @@ export function Chatbot() {
             transition={{ duration: 0.3, ease: 'easeOut' }}
             className="fixed bottom-24 right-4 sm:right-6 md:right-8 z-50"
           >
-            <Card className="w-[calc(100vw-32px)] sm:w-96 h-[60vh] flex flex-col shadow-2xl">
+            <Card className="w-[calc(100vw-32px)] sm:w-96 h-[500px] max-h-[70vh] flex flex-col shadow-2xl">
               <CardHeader className="flex flex-row items-center justify-between p-4 border-b">
                 <CardTitle className="text-lg font-semibold text-primary flex items-center gap-2">
                   <Bot />
