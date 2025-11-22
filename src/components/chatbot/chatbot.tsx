@@ -59,7 +59,6 @@ export function Chatbot() {
       const decoder = new TextDecoder();
       let done = false;
 
-      // Add an empty model message to the list
       setMessages((prev) => [...prev, { role: 'model', content: "" }]);
 
       while (!done) {
@@ -67,7 +66,6 @@ export function Chatbot() {
         done = readerDone;
         const chunk = decoder.decode(value, { stream: true });
         
-        // Append the chunk to the last message
         setMessages(prev => {
           const newMessages = [...prev];
           newMessages[newMessages.length - 1].content += chunk;
@@ -107,7 +105,7 @@ export function Chatbot() {
                   <X className="h-5 w-5" />
                 </Button>
               </CardHeader>
-              <CardContent className="flex-grow p-0">
+              <CardContent className="flex-grow p-0 overflow-hidden">
                 <ScrollArea className="h-full">
                    <div className="p-4 space-y-4" ref={scrollAreaRef}>
                     {messages.length === 0 && (
