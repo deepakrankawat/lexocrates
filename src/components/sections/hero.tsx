@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -10,7 +9,7 @@ import { motion } from 'framer-motion';
 import { Landmark, Scale, FileText, Briefcase } from 'lucide-react';
 
 export function Hero() {
-  const image = PlaceHolderImages.find(img => img.imageHint.includes('monument')) || PlaceHolderImages.find(img => img.id === 'hero-about');
+  const image = PlaceHolderImages.find(img => img.id === 'hero-legal');
 
   const floatingIcons = [
     { icon: Scale, className: 'top-10 left-10 h-8 w-8' },
@@ -18,6 +17,7 @@ export function Hero() {
     { icon: Briefcase, className: 'top-1/2 -left-4 h-7 w-7' },
     { icon: FileText, className: 'bottom-1/4 left-1/4 h-5 w-5' },
     { icon: Scale, className: 'top-1/4 right-1/4 h-6 w-6' },
+    { icon: Landmark, className: 'bottom-10 right-1/2 h-9 w-9' },
   ];
 
   return (

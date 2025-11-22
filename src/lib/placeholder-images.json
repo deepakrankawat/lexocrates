@@ -9,6 +9,14 @@
       "height": 1080
     },
     {
+      "id": "hero-legal",
+      "description": "Legal scales and gavel",
+      "imageUrl": "/images/legal.png",
+      "imageHint": "legal gavel",
+      "width": 600,
+      "height": 800
+    },
+    {
       "id": "hero-about",
       "description": "A gavel and law book on a wooden desk",
       "imageUrl": "/images/hero-about.jpg",
@@ -211,7 +219,7 @@
     {
       "id": "service-family-law",
       "description": "A happy family",
-      "imageUrl": "https://images.unsplash.com/photo-1588979355313-6711a095479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseXxlbnwwfHx8fDE3NjEyNTgzNTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1588979355313-6711a095479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseXxlbnwwfHx8fDE3NjEyNTgzNTB8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "happy family",
       "width": 600,
       "height": 800
@@ -219,7 +227,7 @@
     {
       "id": "service-real-estate-law",
       "description": "A modern house",
-      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NjEyNzg5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NjEyNzg5NTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "modern house",
       "width": 600,
       "height": 800
@@ -227,7 +235,7 @@
     {
       "id": "service-ip-law",
       "description": "A lightbulb representing ideas",
-      "imageUrl": "https://images.unsplash.com/photo-1641733326251-e6acef18d3f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpZGVhJTIwbGlnaHRidWxifGVufDB8fHx8MTc2MTI1NjM0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1641733326251-e6acef18d3f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpZGVhJTIwbGlnaHRidWxifGVufDB8fHx8MTc2MTI1NjM0N3ww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "idea lightbulb",
       "width": 600,
       "height": 800
@@ -235,7 +243,7 @@
     {
       "id": "service-criminal-defense",
       "description": "A courtroom",
-      "imageUrl": "https://images.unsplash.com/photo-1562668457-bf6637adfd01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3VydHJvb20lMjBnYXZlbHxlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1562668457-bf6637adfd01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3VydHJvb20lMjBnYXZlbHxlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "courtroom gavel",
       "width": 600,
       "height": 800
