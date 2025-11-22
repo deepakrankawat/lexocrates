@@ -36,7 +36,7 @@ export function Hero() {
           data-ai-hint={heroImage.imageHint}
         />
       )}
-      <div className="absolute inset-0 bg-primary/80 z-0" />
+      <div className="absolute inset-0 bg-black/50 z-0" />
 
       {/* Floating Icons Background */}
       <div className="absolute inset-0 z-10">
