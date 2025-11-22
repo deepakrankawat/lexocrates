@@ -7,6 +7,8 @@ import { FadeIn } from '@/components/animations/fade-in';
 import { motion } from 'framer-motion';
 import { Scale, FileText, Briefcase, Landmark } from 'lucide-react';
 import React from 'react';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const icons = [
   { icon: Scale, size: 'w-16 h-16', top: '10%', left: '15%' },
@@ -20,11 +22,24 @@ const icons = [
 ];
 
 export function Hero() {
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
+  
   return (
     <section className="relative bg-primary text-primary-foreground min-h-screen flex items-center overflow-hidden pt-24">
-      
+      {heroImage && (
+        <Image
+          src={heroImage.imageUrl}
+          alt={heroImage.description}
+          fill
+          className="object-cover"
+          priority
+          data-ai-hint={heroImage.imageHint}
+        />
+      )}
+      <div className="absolute inset-0 bg-primary/80 z-0" />
+
       {/* Floating Icons Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-10">
         {icons.map((item, index) => (
           <motion.div
             key={index}
@@ -55,7 +70,7 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-1 gap-12 items-center">
             <div className="text-center">
                 <FadeIn delay={0.2} duration={0.8}>
@@ -64,12 +79,12 @@ export function Hero() {
                     </p>
                 </FadeIn>
                 <FadeIn delay={0.4} duration={0.8}>
-                    <h1 className="mt-4 font-montserrat text-4xl sm:text-5xl font-bold leading-tight">
+                    <h1 className="mt-4 font-montserrat text-4xl sm:text-5xl font-bold leading-tight text-white">
                         Empowering Global Legal Excellence
                     </h1>
                 </FadeIn>
                 <FadeIn delay={0.6} duration={0.8}>
-                    <p className="mt-6 max-w-xl mx-auto text-base sm:text-lg text-primary-foreground/80">
+                    <p className="mt-6 max-w-xl mx-auto text-base sm:text-lg text-white/80">
                         Lexocrates provides end-to-end legal outsourcing solutions, enabling your firm to focus on strategy while we handle precision legal work.
                     </p>
                 </FadeIn>
