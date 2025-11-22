@@ -5,11 +5,57 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FadeIn } from '@/components/animations/fade-in';
 import { motion } from 'framer-motion';
+import { Scale, FileText, Briefcase, Landmark } from 'lucide-react';
+import React from 'react';
+
+const icons = [
+  { icon: Scale, size: 'w-16 h-16', top: '10%', left: '15%' },
+  { icon: FileText, size: 'w-12 h-12', top: '20%', left: '80%' },
+  { icon: Briefcase, size: 'w-20 h-20', top: '70%', left: '10%' },
+  { icon: Landmark, size: 'w-14 h-14', top: '80%', left: '90%' },
+  { icon: Scale, size: 'w-8 h-8', top: '50%', left: '50%' },
+  { icon: FileText, size: 'w-10 h-10', top: '5%', left: '40%' },
+  { icon: Landmark, size: 'w-16 h-16', top: '40%', left: '20%' },
+  { icon: Briefcase, size: 'w-12 h-12', top: '90%', left: '60%' },
+];
 
 export function Hero() {
   return (
     <section className="relative bg-primary text-primary-foreground min-h-screen flex items-center overflow-hidden pt-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      
+      {/* Floating Icons Background */}
+      <div className="absolute inset-0 z-0">
+        {icons.map((item, index) => (
+          <motion.div
+            key={index}
+            className="absolute text-accent/10"
+            style={{ top: item.top, left: item.left }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 2,
+              delay: index * 0.2,
+            }}
+          >
+            <motion.div
+              animate={{
+                y: [0, -10, 0, 10, 0],
+                x: [0, 5, 0, -5, 0],
+              }}
+              transition={{
+                duration: 5 + Math.random() * 5,
+                repeat: Infinity,
+                repeatType: 'reverse',
+                ease: 'easeInOut',
+              }}
+            >
+              <item.icon className={item.size} />
+            </motion.div>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-1 gap-12 items-center">
             <div className="text-center">
                 <FadeIn delay={0.2} duration={0.8}>
