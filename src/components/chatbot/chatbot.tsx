@@ -34,7 +34,8 @@ export function Chatbot() {
     if (!input || isLoading) return;
 
     const userMessage: Message = { role: 'user', content: input };
-    setMessages((prev) => [...prev, userMessage]);
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
     setIsLoading(true);
     setInput('');
 
@@ -58,18 +59,18 @@ export function Chatbot() {
       const decoder = new TextDecoder();
       let done = false;
 
-      let fullResponse = "";
+      // Add an empty model message to the list
       setMessages((prev) => [...prev, { role: 'model', content: "" }]);
 
       while (!done) {
         const { value, done: readerDone } = await reader.read();
         done = readerDone;
         const chunk = decoder.decode(value, { stream: true });
-        fullResponse += chunk;
         
+        // Append the chunk to the last message
         setMessages(prev => {
           const newMessages = [...prev];
-          newMessages[newMessages.length - 1] = { role: 'model', content: fullResponse };
+          newMessages[newMessages.length - 1].content += chunk;
           return newMessages;
         });
       }
@@ -146,7 +147,7 @@ export function Chatbot() {
                         )}
                       </div>
                     ))}
-                    {isLoading && (
+                    {isLoading && messages[messages.length-1]?.role !== 'model' && (
                        <div className="flex items-start gap-3 justify-start">
                           <div className="bg-primary text-primary-foreground p-2 rounded-full">
                             <Bot className="h-5 w-5" />
