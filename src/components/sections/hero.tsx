@@ -139,15 +139,6 @@ export function Hero() {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center py-6 relative">
-              <svg className="absolute top-1/2 left-0 w-full h-px -translate-y-1/2" preserveAspectRatio="none">
-                <motion.path 
-                  d="M0 0.5 H1000" 
-                  stroke="hsl(var(--accent))" 
-                  strokeWidth="1"
-                  strokeDasharray="2 2"
-                  variants={lineVariants}
-                />
-              </svg>
                 {stats.map((stat, index) => (
                     <motion.div 
                         key={index} 
