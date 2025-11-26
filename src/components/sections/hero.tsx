@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -71,6 +72,11 @@ export function Hero() {
             <FadeIn delay={0.2} duration={0.8}>
                 <p className="font-lato font-bold text-accent uppercase tracking-wider">
                     Legal Process Outsourcing
+                </p>
+            </FadeIn>
+             <FadeIn delay={0.3} duration={0.8}>
+                <p className="font-lato font-bold text-accent uppercase tracking-widest mt-4">
+                    EST. 2009
                 </p>
             </FadeIn>
             <FadeIn delay={0.4} duration={0.8}>
