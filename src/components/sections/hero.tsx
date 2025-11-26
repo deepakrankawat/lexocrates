@@ -22,7 +22,7 @@ export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
   
   return (
-    <section className="relative bg-primary text-primary-foreground h-[85vh] flex items-center overflow-hidden pt-24">
+    <section className="relative bg-primary text-primary-foreground h-[90vh] sm:h-[85vh] flex items-center overflow-hidden pt-24">
       {heroImage && (
         <Image
           src={heroImage.imageUrl}
@@ -36,7 +36,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/60 z-0" />
 
       {/* Floating Icons Background */}
-      <div className="absolute inset-0 z-10">
+      <div className="absolute inset-0 z-10 hidden sm:block">
         {icons.map((item, index) => (
           <motion.div
             key={index}
@@ -90,13 +90,13 @@ export function Hero() {
                 </p>
             </FadeIn>
             <FadeIn delay={0.8} duration={0.8}>
-                <div className="mt-10 flex justify-center gap-4">
-                    <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 font-montserrat font-bold">
+                <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 font-montserrat font-bold">
                         <Link href="/services">
                         Explore Services
                         </Link>
                     </Button>
-                    <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-primary font-montserrat font-bold">
+                    <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-transparent text-white border-white hover:bg-white hover:text-primary font-montserrat font-bold">
                         <Link href="/contact">
                             Request Consultation
                         </Link>
