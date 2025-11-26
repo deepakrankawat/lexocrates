@@ -18,6 +18,29 @@ const icons = [
   { icon: Landmark, size: 'w-14 h-14', top: '80%', left: '90%' },
 ];
 
+const stats = [
+    { icon: Calendar, value: 15, suffix: '+', label: 'Years Experience' },
+    { icon: Users, value: 50, suffix: '+', label: 'Legal Experts' },
+    { icon: Award, value: 98, suffix: '%', label: 'Client Satisfaction' },
+];
+
+const lineVariants = {
+  hidden: { pathLength: 0 },
+  visible: { 
+    pathLength: 1,
+    transition: { duration: 1, ease: "easeInOut" }
+  },
+};
+
+const statVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5 }
+  },
+};
+
 export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
   
@@ -107,33 +130,40 @@ export function Hero() {
       </div>
 
       {/* Bottom Stats Bar for Desktop */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm hidden sm:block">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center py-6">
-                <div className="text-white">
-                    <Calendar className="h-8 w-8 mx-auto mb-2 text-accent" />
-                    <p className="text-3xl font-bold">
-                        <Counter from={0} to={15} />+
-                    </p>
-                    <p className="text-sm uppercase tracking-wider text-white/80">Years Experience</p>
-                </div>
-                <div className="text-white">
-                    <Users className="h-8 w-8 mx-auto mb-2 text-accent" />
-                    <p className="text-3xl font-bold">
-                        <Counter from={0} to={50} />+
-                    </p>
-                    <p className="text-sm uppercase tracking-wider text-white/80">Legal Experts</p>
-                </div>
-                <div className="text-white">
-                    <Award className="h-8 w-8 mx-auto mb-2 text-accent" />
-                    <p className="text-3xl font-bold">
-                        <Counter from={0} to={98} />%
-                    </p>
-                    <p className="text-sm uppercase tracking-wider text-white/80">Client Satisfaction</p>
-                </div>
+      <motion.div 
+        className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm hidden sm:block"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.8 }}
+        transition={{ staggerChildren: 0.3 }}
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center py-6 relative">
+              <svg className="absolute top-1/2 left-0 w-full h-px -translate-y-1/2" preserveAspectRatio="none">
+                <motion.path 
+                  d="M0 0.5 H1000" 
+                  stroke="hsl(var(--accent))" 
+                  strokeWidth="1"
+                  strokeDasharray="2 2"
+                  variants={lineVariants}
+                />
+              </svg>
+                {stats.map((stat, index) => (
+                    <motion.div 
+                        key={index} 
+                        className="text-white relative bg-black/30 px-2"
+                        variants={statVariants}
+                    >
+                        <stat.icon className="h-8 w-8 mx-auto mb-2 text-accent" />
+                        <p className="text-3xl font-bold">
+                            <Counter from={0} to={stat.value} duration={1.5} />{stat.suffix}
+                        </p>
+                        <p className="text-sm uppercase tracking-wider text-white/80">{stat.label}</p>
+                    </motion.div>
+                ))}
             </div>
         </div>
-      </div>
+      </motion.div>
 
     </section>
   );
