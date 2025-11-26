@@ -35,7 +35,7 @@ export function Hero() {
       )}
       <div className="absolute inset-0 bg-black/60 z-0" />
 
-      {/* Floating Icons Background */}
+      {/* Floating Icons Background for Desktop */}
       <div className="absolute inset-0 z-10 hidden sm:block">
         {icons.map((item, index) => (
           <motion.div
@@ -106,8 +106,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom Stats Bar */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm">
+      {/* Bottom Stats Bar for Desktop */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm hidden sm:block">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center py-6">
                 <div className="text-white">
