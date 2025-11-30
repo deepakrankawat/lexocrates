@@ -1,4 +1,3 @@
-
 'use client';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
@@ -9,24 +8,24 @@ import { SlideIn } from '../animations/slide-in';
 
 const teamMembers = [
   {
-    name: 'Rajesh Kumar',
+    name: 'Yashvardhan Singh',
     title: 'Chief Executive Officer',
-    slug: 'rajesh-kumar',
+    slug: 'yashvardhan-singh',
   },
   {
-    name: 'Priya Sharma',
+    name: 'Geetanjali',
     title: 'Chief Operating Officer',
-    slug: 'priya-sharma',
+    slug: 'geetanjali',
   },
   {
-    name: 'Arun Patel',
+    name: 'Hameer Singh',
     title: 'Head of Legal Services',
-    slug: 'arun-patel',
+    slug: 'hameer-singh',
   },
   {
-    name: 'Meera Reddy',
+    name: 'Sam Panwar',
     title: 'Head of Technology',
-    slug: 'meera-reddy',
+    slug: 'sam-panwar',
   },
 ];
 
@@ -68,5 +67,3 @@ export function Team() {
     </section>
   );
 }
-
-    

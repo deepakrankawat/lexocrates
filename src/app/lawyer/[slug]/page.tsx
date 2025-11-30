@@ -1,5 +1,3 @@
-
-
 import { Cta } from '@/components/sections/cta';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
@@ -9,27 +7,27 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const teamMembers = [
   {
-    name: 'Rajesh Kumar',
+    name: 'Yashvardhan Singh',
     title: 'Chief Executive Officer',
-    slug: 'rajesh-kumar',
+    slug: 'yashvardhan-singh',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-4'),
   },
   {
-    name: 'Priya Sharma',
+    name: 'Geetanjali',
     title: 'Chief Operating Officer',
-    slug: 'priya-sharma',
+    slug: 'geetanjali',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-2'),
   },
   {
-    name: 'Arun Patel',
+    name: 'Hameer Singh',
     title: 'Head of Legal Services',
-    slug: 'arun-patel',
+    slug: 'hameer-singh',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-3'),
   },
   {
-    name: 'Meera Reddy',
+    name: 'Sam Panwar',
     title: 'Head of Technology',
-    slug: 'meera-reddy',
+    slug: 'sam-panwar',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-5'),
   },
 ];
@@ -98,5 +96,3 @@ export function generateStaticParams() {
     slug: member.slug,
   }));
 }
-
-    

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { ShieldCheck } from "lucide-react";
@@ -21,8 +20,9 @@ export function Certifications() {
         <SlideIn className="text-center mb-12">
           <p className="font-lato font-bold text-accent uppercase tracking-wider">Certifications & Accreditations</p>
           <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
-            Quality standards we maintain
+            Quality standards we aspire to maintain
           </h2>
+          <p className="mt-2 text-foreground/80">ISO 27001 (In process of accreditations)</p>
         </SlideIn>
         <div className="max-w-md mx-auto">
             <StaggerFadeIn>
@@ -47,5 +47,3 @@ export function Certifications() {
     </section>
   );
 }
-
-    

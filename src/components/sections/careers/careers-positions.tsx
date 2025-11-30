@@ -1,4 +1,3 @@
-
 'use client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,7 +10,7 @@ const openPositions = [
   {
     title: 'Senior Legal Researcher',
     department: 'Legal Research & Analysis',
-    location: 'Remote',
+    location: 'Miami, FL',
   },
   {
     title: 'Contract Management Specialist',
@@ -21,7 +20,7 @@ const openPositions = [
   {
     title: 'Compliance Analyst (GDPR)',
     department: 'Regulatory Compliance',
-    location: 'Remote',
+    location: 'Miami, FL',
   },
   {
     title: 'E-Discovery Project Manager',
@@ -75,5 +74,3 @@ export function CareersPositions() {
     </section>
   );
 }
-
-    
