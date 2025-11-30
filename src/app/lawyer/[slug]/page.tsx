@@ -33,6 +33,33 @@ const teamMembers = [
   },
 ];
 
+const yashvardhanSinghExpertise = [
+    'Sets the company’s strategic vision and direction',
+    'Leads business development and key client relationships',
+    'Drives company growth and market expansion',
+    'Represents the company in the legal and business communities',
+    'Ensures financial performance and operational excellence',
+    'Champions the company’s mission and ethical values',
+];
+
+const geetanjaliExpertise = [
+    'Manages day-to-day operations and service delivery',
+    'Implements operational policies and procedures',
+    'Ensures quality control and client satisfaction',
+    'Oversees resource allocation and workflow management',
+    'Drives process optimization and efficiency improvements',
+    'Manages cross-functional teams to achieve business goals',
+];
+
+const hameerSinghExpertise = [
+    'Manages and supervises the legal services teams',
+    'Ensures the quality and accuracy of all legal work',
+    'Serves as the primary point of contact for complex legal matters',
+    'Develops and implements training programs for legal staff',
+    'Stays abreast of changes in international law and regulations',
+    'Oversees compliance with legal best practices',
+];
+
 const samPanwarExpertise = [
     'Leads all technology initiatives at Lexocrates',
     'Oversees product development and technical strategy',
@@ -42,6 +69,13 @@ const samPanwarExpertise = [
     'Manages the engineering team and tech infrastructure',
 ];
 
+const expertiseMap: { [key: string]: string[] } = {
+    'yashvardhan-singh': yashvardhanSinghExpertise,
+    'geetanjali': geetanjaliExpertise,
+    'hameer-singh': hameerSinghExpertise,
+    'sam-panwar': samPanwarExpertise,
+};
+
 export default async function LawyerDetailPage({ params }: { params: { slug: string } }) {
   const awaitedParams = await params;
   const lawyer = teamMembers.find(member => member.slug === awaitedParams.slug);
@@ -50,7 +84,7 @@ export default async function LawyerDetailPage({ params }: { params: { slug: str
     notFound();
   }
 
-  const isSamPanwar = lawyer.slug === 'sam-panwar';
+  const expertise = expertiseMap[lawyer.slug];
 
   return (
     <main className="bg-background">
@@ -83,11 +117,11 @@ export default async function LawyerDetailPage({ params }: { params: { slug: str
                     <p>An accomplished professional, {lawyer.name} has been a cornerstone of Lexocrates since its inception. With a sharp mind and a passion for excellence, {lawyer.name} specializes in {lawyer.title.replace('Head of ', '')}.</p>
                     <p>Clients appreciate a results-driven approach, combined with a deep sense of partnership and a commitment to achieving the best possible outcomes. When not leading the team, {lawyer.name} is an avid reader and a community volunteer.</p>
                     
-                    {isSamPanwar && (
+                    {expertise && expertise.length > 0 && (
                         <>
                             <h3 className="font-roboto text-2xl sm:text-3xl font-medium text-primary pt-8">Expertise &amp; Responsibilities</h3>
                             <ul className="space-y-3">
-                                {samPanwarExpertise.map((item, index) => (
+                                {expertise.map((item, index) => (
                                     <li key={index} className="flex items-start gap-3">
                                         <div className="flex-shrink-0 mt-1">
                                             <Check className="h-5 w-5 text-accent" />
