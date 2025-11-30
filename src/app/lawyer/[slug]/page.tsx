@@ -98,22 +98,6 @@ export default async function LawyerDetailPage({ params }: { params: { slug: str
                             </ul>
                         </>
                     )}
-
-                    {!isSamPanwar && (
-                        <>
-                            <h3 className="font-roboto text-2xl sm:text-3xl font-medium text-primary pt-8">Education &amp; Certifications</h3>
-                            <ul className="list-disc list-inside space-y-2">
-                                <li>Juris Doctor, University of Law, 2010</li>
-                                <li>Certified Legal Project Manager (CLPM)</li>
-                                <li>Bachelor of Arts in Business Administration, State University, 2007</li>
-                            </ul>
-                            <h3 className="font-roboto text-2xl sm:text-3xl font-medium text-primary pt-8">Professional Admissions</h3>
-                            <ul className="list-disc list-inside space-y-2">
-                                <li>State Bar, 2011</li>
-                                <li>International Association for Contract &amp; Commercial Management (IACCM)</li>
-                            </ul>
-                        </>
-                    )}
                 </div>
             </div>
         </div>
