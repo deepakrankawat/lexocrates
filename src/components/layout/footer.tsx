@@ -4,11 +4,9 @@ import Link from 'next/link';
 import { Linkedin } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 import { Button } from '@/components/ui/button';
-import { servicesList } from '@/lib/services-data';
 import { Input } from '@/components/ui/input';
 
 export function Footer() {
-  const footerServices = servicesList.slice(0, 4);
 
   return (
     <footer className="bg-primary text-primary-foreground font-lato">
@@ -27,19 +25,7 @@ export function Footer() {
             </form>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:col-span-2">
-            <div>
-              <h3 className="font-roboto font-medium text-lg text-primary-foreground">Services</h3>
-              <ul className="mt-6 space-y-4 text-sm">
-                {footerServices.map(service => (
-                  <li key={service.slug}>
-                    <Link href={`/services/${service.slug}`} className="text-primary-foreground/80 hover:text-accent transition-colors">
-                      {service.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:col-span-2">
             <div>
               <h3 className="font-roboto font-medium text-lg text-primary-foreground">Company</h3>
               <ul className="mt-6 space-y-4 text-sm">
