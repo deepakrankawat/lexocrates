@@ -11,22 +11,8 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Counter } from '../animations/counter';
 
-const stats = [
-  { icon: Calendar, value: 15, suffix: '+', label: 'Years Experience' },
-];
-
-const statVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
 export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
-  const StatIcon = stats[0].icon;
 
   return (
     <section className="relative bg-primary text-primary-foreground h-screen flex items-center justify-center overflow-hidden">
@@ -86,29 +72,6 @@ export function Hero() {
               </Button>
             </div>
           </FadeIn>
-        </div>
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 text-center py-6">
-            <motion.div
-              className="text-white relative bg-black/30 px-2"
-              variants={statVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.8 }}
-            >
-              <StatIcon className="h-8 w-8 mx-auto mb-2 text-accent" />
-              <p className="text-3xl font-bold">
-                <Counter from={0} to={stats[0].value} duration={1.5} />
-                {stats[0].suffix}
-              </p>
-              <p className="text-sm uppercase tracking-wider text-white/80">
-                {stats[0].label}
-              </p>
-            </motion.div>
-          </div>
         </div>
       </div>
     </section>
