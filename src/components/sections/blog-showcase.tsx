@@ -4,7 +4,10 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SlideIn } from '@/components/animations/slide-in';
-import { WritingBlogPostLottie } from '@/components/animations/writing-blog-post-animation';
+import dynamic from 'next/dynamic';
+
+const WritingBlogPostLottie = dynamic(() => import('@/components/animations/writing-blog-post-animation').then(mod => mod.WritingBlogPostLottie), { ssr: false });
+
 
 export function BlogShowcase() {
   return (
@@ -37,5 +40,3 @@ export function BlogShowcase() {
     </section>
   );
 }
-
-    

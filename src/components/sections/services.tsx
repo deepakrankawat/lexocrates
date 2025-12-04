@@ -1,6 +1,4 @@
-'use client';
 
-import { SlideIn } from '../animations/slide-in';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 
@@ -8,7 +6,7 @@ export function Services() {
   return (
     <section id="services" className="bg-white text-foreground py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SlideIn className="text-center">
+        <div className="text-center">
           <p className="font-lato font-bold text-accent uppercase tracking-wider">
             Our Services
           </p>
@@ -23,7 +21,7 @@ export function Services() {
               <Link href="/services">Explore All Services</Link>
             </Button>
           </div>
-        </SlideIn>
+        </div>
       </div>
     </section>
   );

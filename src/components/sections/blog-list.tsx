@@ -4,7 +4,6 @@ import { ArrowRight, User, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { blogPosts } from '@/lib/blog-data';
-import { AppImage } from '../ui/app-image';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
@@ -54,5 +53,3 @@ export function BlogList() {
     </section>
   );
 }
-
-    
