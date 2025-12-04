@@ -15,14 +15,6 @@ const stats = [
   { icon: Calendar, value: 15, suffix: '+', label: 'Years Experience' },
 ];
 
-const lineVariants = {
-  hidden: { pathLength: 0 },
-  visible: {
-    pathLength: 1,
-    transition: { duration: 1, ease: 'easeInOut' },
-  },
-};
-
 const statVariants = {
   hidden: { opacity: 0, y: 10 },
   visible: {
@@ -37,20 +29,20 @@ export function Hero() {
   const StatIcon = stats[0].icon;
 
   return (
-    <section className="relative bg-primary text-primary-foreground h-screen flex items-center overflow-hidden pt-24">
+    <section className="relative bg-primary text-primary-foreground h-screen flex items-center justify-center overflow-hidden">
       {heroImage && (
         <Image
           src={heroImage.imageUrl}
           alt={heroImage.description}
           fill
-          className="object-cover sm:object-center object-center"
+          className="object-cover object-center"
           priority
           data-ai-hint={heroImage.imageHint}
         />
       )}
-      <div className="absolute inset-0 bg-black/60 z-0" />
+      <div className="absolute inset-0 bg-black/60" />
 
-      <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <FadeIn delay={0.2} duration={0.8}>
             <p className="font-lato font-bold text-accent uppercase tracking-wider">
@@ -97,7 +89,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm hidden sm:block">
+      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 text-center py-6">
             <motion.div
@@ -116,29 +108,6 @@ export function Hero() {
                 {stats[0].label}
               </p>
             </motion.div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm sm:hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex justify-center items-center text-center">
-             <motion.div
-                className="text-white relative bg-black/30 px-2"
-                variants={statVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.8 }}
-              >
-                <StatIcon className="h-8 w-8 mx-auto mb-2 text-accent" />
-                <p className="text-3xl font-bold">
-                  <Counter from={0} to={stats[0].value} duration={1.5} />
-                  {stats[0].suffix}
-                </p>
-                <p className="text-sm uppercase tracking-wider text-white/80">
-                  {stats[0].label}
-                </p>
-              </motion.div>
           </div>
         </div>
       </div>
