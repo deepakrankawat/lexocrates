@@ -11,8 +11,10 @@ export function LawyerHero() {
             <Image
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
-                fill
-                className="object-cover"
+                width={heroImage.width}
+                height={heroImage.height}
+                sizes="100vw"
+                className="object-cover absolute inset-0 w-full h-full"
                 priority
                 data-ai-hint={heroImage.imageHint}
             />
