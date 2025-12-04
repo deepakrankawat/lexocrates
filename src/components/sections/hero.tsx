@@ -1,16 +1,19 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FadeIn } from '@/components/animations/fade-in';
 import { motion } from 'framer-motion';
-import { Calendar } from 'lucide-react';
+import { Calendar, Users, Award } from 'lucide-react';
 import React from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Counter } from '../animations/counter';
 
-const stats = [{ icon: Calendar, value: 15, suffix: '+', label: 'Years Experience' }];
+const stats = [
+  { icon: Calendar, value: 15, suffix: '+', label: 'Years Experience' },
+];
 
 const lineVariants = {
   hidden: { pathLength: 0 },
@@ -31,6 +34,7 @@ const statVariants = {
 
 export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
+  const StatIcon = stats[0].icon;
 
   return (
     <section className="relative bg-primary text-primary-foreground h-screen flex items-center overflow-hidden pt-24">
@@ -39,7 +43,7 @@ export function Hero() {
           src={heroImage.imageUrl}
           alt={heroImage.description}
           fill
-          className="object-cover object-center sm:object-top"
+          className="object-cover sm:object-center object-center"
           priority
           data-ai-hint={heroImage.imageHint}
         />
@@ -93,35 +97,51 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom Stats Bar for Desktop */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm hidden sm:block"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.8 }}
-        transition={{ staggerChildren: 0.3 }}
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center py-6 relative">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-white relative bg-black/30 px-2 sm:col-start-2"
-                variants={statVariants}
-              >
-                <stat.icon className="h-8 w-8 mx-auto mb-2 text-accent" />
-                <p className="text-3xl font-bold">
-                  <Counter from={0} to={stat.value} duration={1.5} />
-                  {stat.suffix}
-                </p>
-                <p className="text-sm uppercase tracking-wider text-white/80">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
+      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm hidden sm:block">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 text-center py-6">
+            <motion.div
+              className="text-white relative bg-black/30 px-2"
+              variants={statVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.8 }}
+            >
+              <StatIcon className="h-8 w-8 mx-auto mb-2 text-accent" />
+              <p className="text-3xl font-bold">
+                <Counter from={0} to={stats[0].value} duration={1.5} />
+                {stats[0].suffix}
+              </p>
+              <p className="text-sm uppercase tracking-wider text-white/80">
+                {stats[0].label}
+              </p>
+            </motion.div>
           </div>
         </div>
-      </motion.div>
+      </div>
+      
+      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm sm:hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex justify-center items-center text-center">
+             <motion.div
+                className="text-white relative bg-black/30 px-2"
+                variants={statVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.8 }}
+              >
+                <StatIcon className="h-8 w-8 mx-auto mb-2 text-accent" />
+                <p className="text-3xl font-bold">
+                  <Counter from={0} to={stats[0].value} duration={1.5} />
+                  {stats[0].suffix}
+                </p>
+                <p className="text-sm uppercase tracking-wider text-white/80">
+                  {stats[0].label}
+                </p>
+              </motion.div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
