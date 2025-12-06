@@ -40,7 +40,7 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-            <div>
+            <div className="text-center sm:text-left">
               <h3 className="font-roboto font-medium text-lg text-primary-foreground">Company</h3>
               <ul className="mt-6 space-y-4 text-sm">
                 <li><Link href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
