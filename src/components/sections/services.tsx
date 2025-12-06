@@ -24,7 +24,7 @@ export function Services() {
             Lexocrates offers a comprehensive suite of legal outsourcing solutions designed to enhance efficiency, reduce overhead, and allow your team to focus on high-value strategic work. From contract management to complex legal research, our expert team serves as a seamless extension of your practice.
           </p>
         </SlideIn>
-        <StaggerFadeIn className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerFadeIn className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesList.map(service => {
             const ServiceIcon = service.icon;
             return (
