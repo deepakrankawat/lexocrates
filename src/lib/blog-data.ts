@@ -54,15 +54,15 @@ export const blogPosts = [
     id: 3,
     title: 'Data Security in LPO: A Non-Negotiable Priority',
     slug: 'data-security-in-lpo-a-non-negotiable-priority',
-    author: 'Priya Sharma',
+    author: 'Yashvardhan Singh',
     date: 'November 12, 2024',
     category: 'Security',
     excerpt: 'In the legal industry, confidentiality is paramount. When outsourcing legal processes, ensuring the security of sensitive data is not just a best practice—it\'s a fundamental requirement.',
     fullContent: `
-      <p>In the legal industry, confidentiality is paramount. When outsourcing legal processes, ensuring the security of sensitive data is not just a best practice—it's a fundamental requirement. At Lexocrates, we have built our infrastructure and protocols around a security-first mindset to guarantee the protection of our clients' most sensitive information.</p>
+      <p>In the legal industry, confidentiality is paramount. When outsourcing legal processes, ensuring the security of sensitive data is not just a best practice—it\'s a fundamental requirement. At Lexocrates, we have built our infrastructure and protocols around a security-first mindset to guarantee the protection of our clients\' most sensitive information.</p>
       
       <h3>Our Commitment to Data Security</h3>
-      <p>We understand that our clients in the US, UK, and Canada operate under stringent data protection regulations. That's why we've implemented a multi-layered security framework that includes:</p>
+      <p>We understand that our clients in the US, UK, and Canada operate under stringent data protection regulations. That\'s why we\'ve implemented a multi-layered security framework that includes:</p>
       <ul class="list-disc list-inside">
         <li><strong>ISO 27001 Certification:</strong> Our operations are compliant with this international standard for information security management, ensuring that our security practices are independently audited and verified.</li>
         <li><strong>Secure Infrastructure:</strong> We utilize state-of-the-art physical and network security measures, including encrypted data storage, secure VPN access, and restricted access to our facilities.</li>
@@ -74,7 +74,7 @@ export const blogPosts = [
       <p>Partnering with a security-conscious LPO provider like Lexocrates means you can leverage the benefits of outsourcing without exposing your firm or your clients to unnecessary risk. It allows you to maintain compliance with regulations like GDPR, HIPAA, and CCPA while focusing on your core legal work.</p>
 
       <h3>Conclusion</h3>
-      <p>In today's digital world, a data breach can have devastating consequences. Choosing an LPO partner that prioritizes data security is essential for protecting your reputation, your clients, and your business. At Lexocrates, security isn't just a feature—it's the foundation of our partnership with you.</p>
+      <p>In today\'s digital world, a data breach can have devastating consequences. Choosing an LPO partner that prioritizes data security is essential for protecting your reputation, your clients, and your business. At Lexocrates, security isn\'t just a feature—it\'s the foundation of our partnership with you.</p>
     `
   }
 ];

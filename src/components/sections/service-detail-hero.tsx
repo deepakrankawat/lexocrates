@@ -14,8 +14,9 @@ export function ServiceDetailHero({ service }: { service: Service }) {
             <Image
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
-                fill
-                className="object-cover"
+                width={heroImage.width}
+                height={heroImage.height}
+                className="object-cover absolute inset-0 w-full h-full"
                 priority
                 data-ai-hint={heroImage.imageHint}
             />
@@ -30,6 +31,3 @@ export function ServiceDetailHero({ service }: { service: Service }) {
     </section>
   );
 }
-    
-
-    

@@ -1,7 +1,5 @@
-
 'use client';
 
-import { SlideIn } from '../animations/slide-in';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { servicesList } from '@/lib/services-data';
@@ -13,7 +11,7 @@ export function Services() {
   return (
     <section id="services" className="bg-secondary text-foreground py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SlideIn className="text-center mb-12">
+        <SlideIn className="text-center">
           <p className="font-lato font-bold text-accent uppercase tracking-wider">
             Our Services
           </p>
@@ -23,34 +21,12 @@ export function Services() {
           <p className="mt-6 max-w-3xl mx-auto text-foreground/80">
             Lexocrates offers a comprehensive suite of legal outsourcing solutions designed to enhance efficiency, reduce overhead, and allow your team to focus on high-value strategic work. From contract management to complex legal research, our expert team serves as a seamless extension of your practice.
           </p>
+          <div className="mt-10">
+            <Button asChild size="lg" className="font-montserrat font-bold">
+              <Link href="/services">Explore All Services</Link>
+            </Button>
+          </div>
         </SlideIn>
-        <StaggerFadeIn className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesList.map(service => {
-            const ServiceIcon = service.icon;
-            return (
-              <Card key={service.slug} className="bg-background group flex flex-col">
-                <CardHeader className="items-start">
-                  <div className="p-3 bg-primary text-primary-foreground rounded-full mb-2">
-                      <ServiceIcon className="h-7 w-7" />
-                  </div>
-                  <CardTitle className="font-roboto text-2xl font-medium text-primary group-hover:text-accent transition-colors">
-                    <Link href={`/services/${service.slug}`}>{service.name}</Link>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="flex flex-col flex-grow">
-                  <p className="text-foreground/80 flex-grow">{service.description}</p>
-                  <div className="mt-6">
-                     <Button asChild variant="link" className="p-0 h-auto text-accent font-lato font-bold">
-                        <Link href={`/services/${service.slug}`}>
-                            Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </StaggerFadeIn>
       </div>
     </section>
   );

@@ -1,10 +1,7 @@
-'use client';
+
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { User } from 'lucide-react';
-import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
-import { motion } from 'framer-motion';
-import { SlideIn } from '../animations/slide-in';
 
 const teamMembers = [
   {
@@ -33,7 +30,7 @@ export function Team() {
   return (
     <section id="team" className="bg-background text-foreground py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SlideIn className="text-center mb-12">
+        <div className="text-center mb-12">
             <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Experts</p>
             <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold leading-tight text-primary">
                 Our Leadership Team
@@ -41,15 +38,10 @@ export function Team() {
             <p className="mt-4 max-w-2xl mx-auto text-foreground/80">
               Experienced professionals leading our mission
             </p>
-        </SlideIn>
-        <StaggerFadeIn className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        </div>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {teamMembers.map((member) => (
-            <motion.div
-              key={member.name}
-              whileHover={{ y: -5, scale: 1.03, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
-              transition={{ duration: 0.3 }}
-            >
-              <Card className="group overflow-hidden text-center h-full bg-secondary">
+              <Card key={member.name} className="group overflow-hidden text-center h-full bg-secondary">
                   <CardContent className="p-6 flex flex-col items-center">
                       <div className="p-4 bg-accent/10 rounded-full mb-4">
                           <User className="h-10 w-10 text-accent" />
@@ -60,9 +52,8 @@ export function Team() {
                       <p className="text-accent font-bold mt-1 text-sm">{member.title}</p>
                   </CardContent>
               </Card>
-            </motion.div>
           ))}
-        </StaggerFadeIn>
+        </div>
       </div>
     </section>
   );

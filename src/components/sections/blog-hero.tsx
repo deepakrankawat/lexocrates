@@ -1,5 +1,4 @@
 
-'use client';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -12,8 +11,9 @@ export function BlogHero() {
             <Image
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
-                fill
-                className="object-cover"
+                width={heroImage.width}
+                height={heroImage.height}
+                className="object-cover absolute inset-0 w-full h-full"
                 priority
                 data-ai-hint={heroImage.imageHint}
             />
@@ -28,6 +28,3 @@ export function BlogHero() {
     </section>
   );
 }
-    
-
-    
