@@ -10,25 +10,6 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Counter } from '../animations/counter';
 
-const stats = [{ icon: Calendar, value: 15, suffix: '+', label: 'Years Experience' }];
-
-const lineVariants = {
-  hidden: { pathLength: 0 },
-  visible: {
-    pathLength: 1,
-    transition: { duration: 1, ease: 'easeInOut' },
-  },
-};
-
-const statVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
 export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
 
@@ -39,14 +20,14 @@ export function Hero() {
           src={heroImage.imageUrl}
           alt={heroImage.description}
           fill
-          className="object-cover object-center sm:object-top"
+          className="object-cover object-top"
           priority
           data-ai-hint={heroImage.imageHint}
         />
       )}
       <div className="absolute inset-0 bg-black/60 z-0" />
 
-      <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <FadeIn delay={0.2} duration={0.8}>
             <p className="font-lato font-bold text-accent uppercase tracking-wider">
@@ -70,6 +51,9 @@ export function Hero() {
               legal work.
             </p>
           </FadeIn>
+          <FadeIn delay={0.7} duration={0.8}>
+            <p className="mt-4 text-lg text-accent font-semibold">15+ Years Experience</p>
+          </FadeIn>
           <FadeIn delay={0.8} duration={0.8}>
             <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
               <Button
@@ -92,36 +76,6 @@ export function Hero() {
           </FadeIn>
         </div>
       </div>
-
-      {/* Bottom Stats Bar for Desktop */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm hidden sm:block"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.8 }}
-        transition={{ staggerChildren: 0.3 }}
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center py-6 relative">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-white relative bg-black/30 px-2 sm:col-start-2"
-                variants={statVariants}
-              >
-                <stat.icon className="h-8 w-8 mx-auto mb-2 text-accent" />
-                <p className="text-3xl font-bold">
-                  <Counter from={0} to={stat.value} duration={1.5} />
-                  {stat.suffix}
-                </p>
-                <p className="text-sm uppercase tracking-wider text-white/80">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }
