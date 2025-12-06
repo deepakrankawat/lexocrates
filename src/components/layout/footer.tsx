@@ -5,9 +5,10 @@ import { Linkedin } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { servicesList } from '@/lib/services-data';
 
 export function Footer() {
-  const footerServices = servicesList.slice(0, 4);
+  const footerServices = servicesList;
 
   return (
     <footer className="bg-primary text-primary-foreground font-lato">

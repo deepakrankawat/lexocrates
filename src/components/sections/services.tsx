@@ -6,6 +6,7 @@ import { servicesList } from '@/lib/services-data';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import { StaggerFadeIn } from '../animations/stagger-fade-in';
+import { SlideIn } from '../animations/slide-in';
 
 export function Services() {
   return (

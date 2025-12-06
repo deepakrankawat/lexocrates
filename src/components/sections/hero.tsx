@@ -1,29 +1,12 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Counter } from '../animations/counter';
-
-const stats = [{ icon: Calendar, value: 15, suffix: '+', label: 'Years Experience' }];
-
-const lineVariants = {
-  hidden: { pathLength: 0 },
-  visible: {
-    pathLength: 1,
-    transition: { duration: 1, ease: 'easeInOut' },
-  },
-};
-
-const statVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
+import { FadeIn } from '../animations/fade-in';
+import { Calendar } from 'lucide-react';
 
 export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
@@ -35,7 +18,7 @@ export function Hero() {
           src={heroImage.imageUrl}
           alt={heroImage.description}
           fill
-          className="object-cover object-center sm:object-top"
+          className="object-cover object-top"
           priority
           data-ai-hint={heroImage.imageHint}
         />
@@ -44,13 +27,9 @@ export function Hero() {
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
+          <FadeIn delay={0.2} duration={0.8}>
             <p className="font-lato font-bold text-accent uppercase tracking-wider">
               Legal Process Outsourcing
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.3} duration={0.8}>
-            <p className="font-lato font-bold text-accent uppercase tracking-widest mt-4">
-              EST. 2009
             </p>
           </FadeIn>
           <FadeIn delay={0.4} duration={0.8}>
@@ -61,6 +40,11 @@ export function Hero() {
               Lexocrates provides end-to-end legal outsourcing solutions,
               enabling your firm to focus on strategy while we handle precision
               legal work.
+            </p>
+          </FadeIn>
+           <FadeIn delay={0.6} duration={0.8}>
+            <p className="font-lato font-bold text-accent uppercase tracking-widest mt-4">
+              15+ Years Experience
             </p>
           </FadeIn>
           <FadeIn delay={0.8} duration={0.8}>
@@ -82,6 +66,7 @@ export function Hero() {
                 <Link href="/contact">Request Consultation</Link>
               </Button>
             </div>
+          </FadeIn>
         </div>
       </div>
     </section>
