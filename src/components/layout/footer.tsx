@@ -27,7 +27,7 @@ export function Footer() {
             </form>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:col-span-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:col-span-2">
             <div>
               <h3 className="font-roboto font-medium text-lg text-primary-foreground">Services</h3>
               <ul className="mt-6 space-y-4 text-sm">
