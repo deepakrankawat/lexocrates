@@ -5,7 +5,6 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { LayoutProvider } from '@/components/layout/layout-provider';
 import { Lato, Montserrat, Open_Sans, Roboto } from 'next/font/google';
-import { Chatbot } from '@/components/chatbot/chatbot';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -84,7 +83,6 @@ export default function RootLayout({
         <LayoutProvider>{children}</LayoutProvider>
         <Footer />
         <Toaster />
-        <Chatbot />
       </body>
     </html>
   );
