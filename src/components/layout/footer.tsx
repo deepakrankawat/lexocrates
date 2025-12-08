@@ -13,22 +13,24 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground font-lato">
       <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 text-center sm:grid-cols-2 sm:text-left md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           
-          <div className="flex flex-col items-center sm:items-start">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <Logo className="h-14 w-auto text-background" />
-            </Link>
-            <p className="max-w-xs text-primary-foreground/80">
+          <div className="text-center sm:text-left">
+            <div className="flex justify-center sm:justify-start mb-6">
+                <Link href="/" className="flex items-center gap-2">
+                <Logo className="h-14 w-auto text-background" />
+                </Link>
+            </div>
+            <p className="max-w-xs mx-auto sm:mx-0 text-primary-foreground/80">
               Subscribe to our newsletter for the latest insights on legal outsourcing.
             </p>
-            <form className="mt-6 flex w-full max-w-xs flex-col sm:flex-row gap-2">
+            <form className="mt-6 flex w-full max-w-xs mx-auto sm:mx-0 flex-col sm:flex-row gap-2">
               <Input type="email" placeholder="Enter your email" className="bg-transparent border-primary-foreground/30 placeholder:text-primary-foreground/60 focus:border-accent" />
               <Button type="submit" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 font-lato font-bold">Subscribe</Button>
             </form>
           </div>
 
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="font-roboto font-medium text-lg text-primary-foreground">Services</h3>
             <ul className="mt-6 space-y-4 text-sm">
               {footerServices.slice(0, 5).map(service => (
@@ -41,7 +43,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="font-roboto font-medium text-lg text-primary-foreground">Company</h3>
             <ul className="mt-6 space-y-4 text-sm">
               <li><Link href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
@@ -52,7 +54,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="font-roboto font-medium text-lg text-primary-foreground">Contact Info</h3>
             <ul className="mt-6 space-y-4 text-sm text-primary-foreground/80">
               <li><p>B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan</p></li>
