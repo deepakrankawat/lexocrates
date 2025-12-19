@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -14,7 +14,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible';
 
 
 // Data for navigation links, now with submenus
@@ -76,7 +77,6 @@ const navLinks = [
 ];
 
 
-// Mobile navigation component with accordion for submenus
 function MobileNav({ closeSheet }: { closeSheet: () => void }) {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
@@ -92,40 +92,41 @@ function MobileNav({ closeSheet }: { closeSheet: () => void }) {
               </AccordionTrigger>
               <AccordionContent className="pl-4">
                 <div className="flex flex-col gap-4 mt-2">
-                  {link.submenu.map((sublink) => 
-                    sublink.submenu ? (
-                       <Accordion key={sublink.href} type="multiple" className="w-full">
-                          <AccordionItem value={sublink.label} className="border-b-0">
-                            <AccordionTrigger className="py-2 text-base hover:no-underline">
-                              {sublink.label}
-                            </AccordionTrigger>
-                            <AccordionContent className="pl-4">
+                  {link.submenu.map((sublink) => (
+                    <Collapsible key={sublink.href}>
+                      <div className="flex flex-col gap-4">
+                        {sublink.submenu ? (
+                          <>
+                            <CollapsibleTrigger className='flex items-center justify-between text-base text-primary-foreground/80 hover:text-accent'>
+                              {sublink.label} <ChevronRight className="h-4 w-4" />
+                            </CollapsibleTrigger>
+                            <CollapsibleContent className="pl-4">
                               <div className="flex flex-col gap-4 mt-2">
                                 {sublink.submenu.map(nestedLink => (
-                                    <Link
-                                      key={nestedLink.href}
-                                      href={nestedLink.href}
-                                      onClick={closeSheet}
-                                      className="text-base text-primary-foreground/80 hover:text-accent"
-                                    >
-                                      {nestedLink.label}
-                                    </Link>
+                                  <Link
+                                    key={nestedLink.href}
+                                    href={nestedLink.href}
+                                    onClick={closeSheet}
+                                    className="text-sm text-primary-foreground/70 hover:text-accent"
+                                  >
+                                    {nestedLink.label}
+                                  </Link>
                                 ))}
                               </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                       </Accordion>
-                    ) : (
-                      <Link
-                        key={sublink.href}
-                        href={sublink.href}
-                        onClick={closeSheet}
-                        className="text-base text-primary-foreground/80 hover:text-accent"
-                      >
-                        {sublink.label}
-                      </Link>
-                    )
-                  )}
+                            </CollapsibleContent>
+                          </>
+                        ) : (
+                          <Link
+                            href={sublink.href}
+                            onClick={closeSheet}
+                            className="text-base text-primary-foreground/80 hover:text-accent"
+                          >
+                            {sublink.label}
+                          </Link>
+                        )}
+                      </div>
+                    </Collapsible>
+                  ))}
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -202,21 +203,22 @@ export function Header() {
               >
                 {link.label}
                 {link.submenu && <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />}
-                {isActive(link.href) && (
-                  <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-0.5 w-6 bg-accent rounded-full" />
-                )}
+                <span className={cn(
+                  "absolute -bottom-2 left-0 h-0.5 w-full bg-accent rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out",
+                  isActive(link.href) ? "scale-x-100" : ""
+                )} />
               </Link>
 
               {/* Desktop Submenu */}
               {link.submenu && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto transform translate-y-2 group-hover:translate-y-0">
                   <div className="bg-white text-primary shadow-lg rounded-md w-56">
                     <ul className="py-2">
                       {link.submenu.map((sublink) => (
                         <li key={sublink.href} className="relative group/sub">
                            <Link href={sublink.href} className="flex items-center justify-between px-4 py-2 hover:bg-secondary">
                             {sublink.label}
-                            {sublink.submenu && <ChevronDown className="h-4 w-4 -rotate-90" />}
+                            {sublink.submenu && <ChevronRight className="h-4 w-4" />}
                           </Link>
                           
                           {/* Nested Submenu */}
@@ -275,5 +277,3 @@ export function Header() {
     </header>
   );
 }
-
-    
