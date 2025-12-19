@@ -4,21 +4,150 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
+
+// Data for navigation links, now with submenus
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/lawyer', label: 'Team' },
-  { href: '/careers', label: 'Careers' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
+  { 
+    href: '/about', 
+    label: 'About',
+    submenu: [
+      { href: '/about#our-story', label: 'Our Story' },
+      { href: '/about#vision-mission', label: 'Vision & Mission' },
+      { href: '/lawyer', label: 'Our Team' },
+    ]
+  },
+  { 
+    href: '/services', 
+    label: 'Services',
+    submenu: [
+      { href: '/services/contract-management', label: 'Contract Management' },
+      { href: '/services/legal-research', label: 'Legal Research' },
+      { 
+        href: '/services/corporate-solutions', 
+        label: 'Corporate Solutions',
+        // Nested submenu example
+        submenu: [
+            { href: '/services/corporate-solutions#entity-management', label: 'Entity Management' },
+            { href: '/services/corporate-solutions#commercial-contracts', label: 'Commercial Contracts' },
+        ]
+      },
+       { href: '/services/regulatory-compliance', label: 'Regulatory Compliance' },
+    ]
+  },
+  { 
+    href: '/lawyer', 
+    label: 'Team',
+    submenu: [
+      { href: '/lawyer/yashvardhan-singh', label: 'Yashvardhan Singh' },
+      { href: '/lawyer/geetanjali', label: 'Geetanjali' },
+      { href: '/lawyer/hameer-singh', label: 'Hameer Singh' },
+      { href: '/lawyer/sam-panwar', label: 'Sam Panwar' },
+    ]
+  },
+  { 
+    href: '/careers', 
+    label: 'Careers',
+    submenu: [
+      { href: '/careers#open-positions', label: 'Open Positions' },
+      { href: '/careers#our-culture', label: 'Our Culture'},
+    ]
+  },
+  { 
+    href: '/blog', 
+    label: 'Blog'
+  },
+  { 
+    href: '/contact', 
+    label: 'Contact'
+  },
 ];
+
+
+// Mobile navigation component with accordion for submenus
+function MobileNav({ closeSheet }: { closeSheet: () => void }) {
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href;
+
+  return (
+    <nav className="flex flex-col gap-2 font-roboto text-lg font-medium text-primary-foreground">
+      <Accordion type="multiple" className="w-full">
+        {navLinks.map((link) => 
+          link.submenu ? (
+            <AccordionItem key={link.href} value={link.label} className="border-b border-primary-foreground/20">
+              <AccordionTrigger className="py-4 hover:no-underline text-left">
+                {link.label}
+              </AccordionTrigger>
+              <AccordionContent className="pl-4">
+                <div className="flex flex-col gap-4 mt-2">
+                  {link.submenu.map((sublink) => 
+                    sublink.submenu ? (
+                       <Accordion key={sublink.href} type="multiple" className="w-full">
+                          <AccordionItem value={sublink.label} className="border-b-0">
+                            <AccordionTrigger className="py-2 text-base hover:no-underline">
+                              {sublink.label}
+                            </AccordionTrigger>
+                            <AccordionContent className="pl-4">
+                              <div className="flex flex-col gap-4 mt-2">
+                                {sublink.submenu.map(nestedLink => (
+                                    <Link
+                                      key={nestedLink.href}
+                                      href={nestedLink.href}
+                                      onClick={closeSheet}
+                                      className="text-base text-primary-foreground/80 hover:text-accent"
+                                    >
+                                      {nestedLink.label}
+                                    </Link>
+                                ))}
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
+                       </Accordion>
+                    ) : (
+                      <Link
+                        key={sublink.href}
+                        href={sublink.href}
+                        onClick={closeSheet}
+                        className="text-base text-primary-foreground/80 hover:text-accent"
+                      >
+                        {sublink.label}
+                      </Link>
+                    )
+                  )}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          ) : (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={closeSheet}
+              className={cn(
+                "py-4 border-b border-primary-foreground/20 hover:text-accent",
+                isActive(link.href) ? "text-accent" : ""
+              )}
+            >
+              {link.label}
+            </Link>
+          )
+        )}
+      </Accordion>
+    </nav>
+  );
+}
+
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,16 +171,9 @@ export function Header() {
       ? 'bg-primary shadow-md' 
       : 'bg-transparent'
   );
-  
-  const navLinkClasses = (href: string) => cn(
-    "relative transition-colors text-white/80 hover:text-white",
-    isActive(href) && "text-white font-semibold",
-  );
 
   const isActive = (href: string) => {
-    if (href === '/') {
-      return pathname === href;
-    }
+    if (href === '/') return pathname === href;
     return pathname.startsWith(href);
   };
 
@@ -66,27 +188,71 @@ export function Header() {
             </p>
           </div>
         </Link>
+        
+        {/* Desktop Navigation */}
         <nav className="hidden lg:flex lg:items-center lg:gap-8 font-roboto text-base font-medium">
           {navLinks.map((link) => (
-            <Link 
-              key={link.href} 
-              href={link.href} 
-              className={navLinkClasses(link.href)}
-            >
-              {link.label}
-              {isActive(link.href) && (
-                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-0.5 w-6 bg-accent rounded-full" />
+            <div key={link.href} className="group relative">
+              <Link 
+                href={link.href} 
+                className={cn(
+                  "flex items-center gap-1 relative transition-colors text-white/80 hover:text-white",
+                  isActive(link.href) && "text-white font-semibold",
+                )}
+              >
+                {link.label}
+                {link.submenu && <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />}
+                {isActive(link.href) && (
+                  <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-0.5 w-6 bg-accent rounded-full" />
+                )}
+              </Link>
+
+              {/* Desktop Submenu */}
+              {link.submenu && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
+                  <div className="bg-white text-primary shadow-lg rounded-md w-56">
+                    <ul className="py-2">
+                      {link.submenu.map((sublink) => (
+                        <li key={sublink.href} className="relative group/sub">
+                           <Link href={sublink.href} className="flex items-center justify-between px-4 py-2 hover:bg-secondary">
+                            {sublink.label}
+                            {sublink.submenu && <ChevronDown className="h-4 w-4 -rotate-90" />}
+                          </Link>
+                          
+                          {/* Nested Submenu */}
+                          {sublink.submenu && (
+                              <div className="absolute top-0 left-full ml-1 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-300 pointer-events-none group-hover/sub:pointer-events-auto">
+                                <div className="bg-white text-primary shadow-lg rounded-md w-56">
+                                  <ul className="py-2">
+                                    {sublink.submenu.map(nestedLink => (
+                                        <li key={nestedLink.href}>
+                                          <Link href={nestedLink.href} className="block px-4 py-2 hover:bg-secondary">
+                                            {nestedLink.label}
+                                          </Link>
+                                        </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              </div>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               )}
-            </Link>
+            </div>
           ))}
         </nav>
+        
+        {/* Mobile Navigation Trigger */}
         <div className="lg:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <Button variant="ghost" size="icon" className="text-white hover:bg-transparent hover:text-white/80" onClick={() => setIsOpen(true)}>
               <Menu className="h-8 w-8" />
               <span className="sr-only">Open menu</span>
             </Button>
-            <SheetContent side="right" className="w-full bg-primary border-l-0">
+            <SheetContent side="right" className="w-full bg-primary border-l-0 overflow-y-auto">
               <SheetHeader className="flex flex-row items-center justify-between">
                  <Link href="/" onClick={() => setIsOpen(false)} className="w-48">
                     <Logo className="text-primary-foreground" />
@@ -99,22 +265,8 @@ export function Header() {
                     </Button>
                   </SheetClose>
               </SheetHeader>
-              <div className="mt-8 flex h-full flex-col">
-                <nav className="flex flex-col gap-6 font-roboto text-xl font-medium">
-                  {navLinks.map((link) => (
-                    <Link 
-                      key={link.href} 
-                      href={link.href} 
-                      onClick={() => setIsOpen(false)} 
-                      className={cn(
-                        "hover:text-accent",
-                        isActive(link.href) ? "text-accent" : "text-primary-foreground"
-                      )}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </nav>
+              <div className="mt-8">
+                <MobileNav closeSheet={() => setIsOpen(false)} />
               </div>
             </SheetContent>
           </Sheet>
@@ -123,3 +275,5 @@ export function Header() {
     </header>
   );
 }
+
+    
