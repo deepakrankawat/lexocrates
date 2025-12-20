@@ -184,7 +184,7 @@ export function Header() {
         <Link href="/" className="flex items-center">
           <div className="flex flex-col items-start">
             <Logo className="w-64" />
-            <p className="text-xs -mt-1 text-white/80 transition-colors hidden sm:block">
+            <p className="text-xs text-white/80 transition-colors hidden sm:block">
               Precision in Law, Rooted in Philosophy
             </p>
           </div>
