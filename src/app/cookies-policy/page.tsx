@@ -23,7 +23,7 @@ export default function CookiesPolicyPage() {
             />
         )}
         <div className="absolute inset-0 bg-black/50" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
             <Cookie className="h-16 w-16 mx-auto text-accent mb-4" />
             <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold">Cookies Policy</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
@@ -33,7 +33,7 @@ export default function CookiesPolicyPage() {
       </section>
 
       <section className="py-12 sm:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-4xl mx-auto text-foreground/80">
             <h2>1. What Are Cookies?</h2>
             <p>Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work, or work more efficiently, as well as to provide information to the owners of the site.</p>

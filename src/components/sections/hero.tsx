@@ -25,7 +25,7 @@ export function Hero() {
       )}
       <div className="absolute inset-0 bg-black/60" />
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <FadeIn delay={0.2} duration={0.8}>
             <p className="font-lato font-bold text-accent uppercase tracking-wider">

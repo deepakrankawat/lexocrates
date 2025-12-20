@@ -23,7 +23,7 @@ export default function TermsAndConditionsPage() {
             />
         )}
         <div className="absolute inset-0 bg-black/50" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
             <FileText className="h-16 w-16 mx-auto text-accent mb-4" />
             <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold">Terms & Conditions</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
@@ -33,7 +33,7 @@ export default function TermsAndConditionsPage() {
       </section>
 
       <section className="py-12 sm:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-4xl mx-auto text-foreground/80">
             <h2>1. Introduction</h2>
             <p>Welcome to Lexocrates ("Company", "we", "our", "us"). These Terms and Conditions govern your use of our website located at https://lexocrates.vercel.app/ (the "Website"). By accessing or using our Website, you agree to be bound by these Terms and Conditions. If you disagree with any part of the terms, then you may not access the Website.</p>

@@ -8,7 +8,7 @@ export function Welcome() {
 
   return (
     <section className="bg-background text-foreground py-12 sm:py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-80 w-80 sm:h-96 sm:w-96 justify-self-center bg-secondary flex items-center justify-center">
             <User className="h-48 w-48 text-accent/80" />

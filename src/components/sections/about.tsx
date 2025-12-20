@@ -11,7 +11,7 @@ export function About() {
   const image = PlaceHolderImages.find(img => img.id === 'service-detail-1');
   return (
     <section id="about" className="bg-background text-foreground py-12 sm:py-16 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           <SlideIn direction="right">

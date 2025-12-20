@@ -15,7 +15,7 @@ const featuredPosts = blogPosts.slice(0, 3);
 export function Blog() {
   return (
     <section id="blog" className="bg-background text-foreground py-12 sm:py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-12">
             <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Insights</p>
             <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold leading-tight text-primary">

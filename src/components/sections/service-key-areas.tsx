@@ -11,7 +11,7 @@ export function ServiceKeyAreas({ service }: { service: Service }) {
 
   return (
     <section className="bg-secondary py-12 sm:py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-lato text-3xl md:text-4xl font-bold text-primary">
             Key Areas of {service.name}
@@ -34,5 +34,3 @@ export function ServiceKeyAreas({ service }: { service: Service }) {
     </section>
   );
 }
-
-    

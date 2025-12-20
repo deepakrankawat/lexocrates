@@ -22,7 +22,7 @@ export function ServiceDetailHero({ service }: { service: Service }) {
             />
         )}
         <div className="absolute inset-0 bg-black/50" />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
         <h1 className="font-montserrat text-5xl md:text-6xl font-bold">{service.name}</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
             In-depth information about our specialized {service.name.toLowerCase()} services, tailored to your unique requirements.

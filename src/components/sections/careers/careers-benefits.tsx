@@ -1,3 +1,4 @@
+
 'use client';
 import { GraduationCap, Laptop, Clock } from 'lucide-react';
 import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
@@ -26,7 +27,7 @@ const benefits = [
 export function CareersBenefits() {
   return (
     <section className="bg-background text-foreground py-12 sm:py-16 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn>
           <div className="text-center mb-12">
             <p className="font-lato font-bold text-accent uppercase tracking-wider">

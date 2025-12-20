@@ -19,7 +19,7 @@ export function BlogHero() {
             />
         )}
         <div className="absolute inset-0 bg-black/50" />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
         <h1 className="font-montserrat text-5xl md:text-6xl font-bold">The Lexocrates Blog</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
             Insights on legal outsourcing, industry trends, and best practices for optimizing your legal operations.

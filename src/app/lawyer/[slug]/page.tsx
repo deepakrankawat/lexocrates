@@ -90,7 +90,7 @@ export default async function LawyerDetailPage({ params }: { params: { slug: str
     <main className="bg-background">
       <section className="relative text-white pt-36 pb-16 sm:pt-48 sm:pb-24">
         <div className="absolute inset-0 bg-black/50" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
               <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold">{lawyer.name}</h1>
               <p className="mt-4 text-lg text-white/80">{lawyer.title}</p>
@@ -99,7 +99,7 @@ export default async function LawyerDetailPage({ params }: { params: { slug: str
       </section>
 
       <section className="py-12 sm:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-1">
                     <Card className="group overflow-hidden text-center h-full bg-secondary">

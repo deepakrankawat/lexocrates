@@ -16,7 +16,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
 
   return (
     <section className="bg-background text-foreground py-12 sm:py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main content */}
             <div className="lg:col-span-2">
@@ -46,5 +46,3 @@ export function BlogDetailContent({ post }: { post: Post }) {
     </section>
   );
 }
-
-    
