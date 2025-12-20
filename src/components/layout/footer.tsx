@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { Linkedin } from 'lucide-react';
@@ -17,7 +18,7 @@ export function Footer() {
           <div className="text-center sm:text-left">
             <div className="flex justify-center sm:justify-start mb-6">
                 <Link href="/" className="flex items-center gap-2">
-                <Logo className="h-16 w-auto text-background" />
+                <Logo className="h-20 w-auto text-background" />
                 </Link>
             </div>
             <p className="max-w-xs mx-auto sm:mx-0 text-primary-foreground/80">
