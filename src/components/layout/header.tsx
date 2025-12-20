@@ -180,10 +180,10 @@ export function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className="flex h-28 items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="flex h-36 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center">
           <div className="flex flex-col items-center">
-            <Logo className="w-72" />
+            <Logo className="w-96" />
             <p className="text-xs text-white/80 transition-colors hidden sm:block">
               Precision in Law, Rooted in Philosophy
             </p>
