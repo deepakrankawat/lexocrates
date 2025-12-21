@@ -13,8 +13,8 @@ export function Logo({ className }: LogoProps) {
     <Image
       src="/images/logo-light.svg"
       alt="Lexocrates Logo"
-      width={240}
-      height={65}
+      width={220}
+      height={60}
       className={cn("h-auto w-full object-contain", className)}
       priority
     />
