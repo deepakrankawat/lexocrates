@@ -28,6 +28,11 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
         <div className="text-center">
           <FadeIn delay={0.2} duration={0.8}>
+            <p className="font-lato font-bold text-white/80 tracking-wider mb-2">
+                Precision in Law, Rooted in Philosophy
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.3} duration={0.8}>
             <p className="font-lato font-bold text-accent uppercase tracking-wider">
               Legal Process Outsourcing
             </p>
