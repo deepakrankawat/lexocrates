@@ -179,7 +179,7 @@ export function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className="mx-auto flex h-40 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-44 fhd:h-48 qhd:h-52 uhd:h-56">
+      <div className="mx-auto flex h-24 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-28 fhd:h-32 qhd:h-36 uhd:h-40">
         <Link href="/" className="flex flex-col justify-center items-center">
           <Logo className="w-auto h-28 laptop:h-32 fhd:h-36 qhd:h-40 uhd:h-40" />
         </Link>
