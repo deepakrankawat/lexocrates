@@ -16,6 +16,12 @@ export default {
       },
     },
     extend: {
+      screens: {
+        'laptop': '1366px',
+        'fhd': '1920px',
+        'qhd': '2560px',
+        'uhd': '3840px',
+      },
       backdropBlur: {
         'xs': '2px',
       },

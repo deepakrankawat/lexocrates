@@ -7,7 +7,7 @@ import { FadeIn } from '@/components/animations/fade-in';
 export function Cta() {
   return (
     <section className="bg-secondary py-12 sm:py-16 text-foreground">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
         <FadeIn>
           <div className="grid grid-cols-1 items-center justify-center text-center md:text-left bg-background p-12 gap-8">
               <div>

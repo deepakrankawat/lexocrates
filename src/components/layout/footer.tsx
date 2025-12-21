@@ -12,13 +12,13 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground font-lato">
-      <div className="mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full px-4 py-16 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           
           <div className="text-center sm:text-left">
             <div className="flex justify-center sm:justify-start mb-6">
                 <Link href="/" className="flex items-center gap-2">
-                <Logo className="h-32 w-auto text-background" />
+                <Logo className="h-14 w-auto text-background fhd:h-16 qhd:h-18 uhd:h-20" />
                 </Link>
             </div>
             <p className="max-w-xs mx-auto sm:mx-0 text-primary-foreground/80">

@@ -29,7 +29,7 @@ const teamMembers = [
 export function Team() {
   return (
     <section id="team" className="bg-background text-foreground py-12 sm:py-16">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
         <div className="text-center mb-12">
             <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Experts</p>
             <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold leading-tight text-primary">

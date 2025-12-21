@@ -28,7 +28,7 @@ export default function ContactPage() {
             />
         )}
         <div className="absolute inset-0 bg-black/50" />
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] relative text-center">
             <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold">Contact Us</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
                 We're here to help. Reach out to us for any inquiries or to schedule a consultation with our expert team.
@@ -37,7 +37,7 @@ export default function ContactPage() {
       </section>
 
       <section id="contact-form" className="py-12 sm:py-16 bg-background">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
           <div className="max-w-4xl mx-auto">
              <SimpleContactForm />
           </div>
@@ -45,7 +45,7 @@ export default function ContactPage() {
       </section>
 
       <section id="headquarters" className="py-12 sm:py-16 bg-secondary">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
           <div className="text-center mb-12">
             <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Main Office</p>
             <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">Jaipur Headquarters</h2>

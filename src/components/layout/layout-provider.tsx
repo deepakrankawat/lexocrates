@@ -12,7 +12,7 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
     <>
       <Header />
       <PageTransition key={pathname}>
-        <div className="bg-white shadow-2xl">{children}</div>
+        <div>{children}</div>
       </PageTransition>
     </>
   );
