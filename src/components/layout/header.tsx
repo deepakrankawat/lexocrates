@@ -180,10 +180,10 @@ export function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className="mx-auto flex h-24 items-center justify-between px-4 sm:px-6 lg:px-8 w-full max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-28 fhd:h-32 qhd:h-36">
+      <div className="mx-auto flex h-32 items-center justify-between px-4 sm:px-6 lg:px-8 w-full max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-36 fhd:h-40 qhd:h-44">
         <Link href="/" className="flex flex-col justify-center items-center">
           <Logo className="w-auto h-20 laptop:h-24 fhd:h-28 qhd:h-32 uhd:h-32" />
-          <p className="text-xs text-white/80 transition-colors hidden sm:block -mt-6">
+          <p className="text-xs text-white/80 transition-colors hidden sm:block -mt-8">
             Precision in Law, Rooted in Philosophy
           </p>
         </Link>
