@@ -12,7 +12,7 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground font-lato">
-      <div className="mx-auto w-full px-4 py-16 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
+      <div className="mx-auto px-4 py-16 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           
           <div className="text-center sm:text-left">
