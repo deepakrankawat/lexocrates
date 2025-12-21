@@ -18,7 +18,7 @@ export function Footer() {
           <div className="text-center sm:text-left">
             <div className="flex justify-center sm:justify-start mb-6">
                 <Link href="/" className="flex items-center gap-2">
-                <Logo className="h-14 w-auto text-background fhd:h-16 qhd:h-18 uhd:h-20" />
+                <Logo className="h-16 w-auto text-background laptop:h-20 fhd:h-22 qhd:h-24 uhd:h-24" />
                 </Link>
             </div>
             <p className="max-w-xs mx-auto sm:mx-0 text-primary-foreground/80">
