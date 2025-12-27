@@ -11,22 +11,22 @@ const openPositions = [
   {
     title: 'Senior Legal Researcher',
     department: 'Legal Research & Analysis',
-    location: 'Miami, FL',
+    location: 'Jaipur, India',
   },
   {
     title: 'Contract Management Specialist',
     department: 'Contract Lifecycle Management',
-    location: 'Miami, FL',
+    location: 'Jaipur, India',
   },
   {
     title: 'Compliance Analyst (GDPR)',
     department: 'Regulatory Compliance',
-    location: 'Miami, FL',
+    location: 'Jaipur, India',
   },
   {
     title: 'E-Discovery Project Manager',
     department: 'Document Review',
-    location: 'Miami, FL',
+    location: 'Jaipur, India',
   },
 ];
 
@@ -58,7 +58,6 @@ export function CareersPositions() {
                 <CardContent className="flex flex-col flex-grow">
                   <p className="text-sm text-accent font-bold">{position.department}</p>
                   <div className="flex items-center text-foreground/70 mt-2">
-                    <MapPin className="h-4 w-4 mr-2" />
                     <p>{position.location}</p>
                   </div>
                   <div className="mt-auto pt-6">
