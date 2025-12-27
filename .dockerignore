@@ -1,0 +1,23 @@
+# Exclude local modules and build files
+node_modules
+.next
+out
+build
+
+# Exclude git and environment files
+.git
+.gitignore
+.dockerignore
+.env*
+!.env.production
+
+# Exclude documentation and logs
+README.md
+docs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Exclude system files
+.DS_Store
+Thumbs.db
