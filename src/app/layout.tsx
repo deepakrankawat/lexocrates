@@ -5,6 +5,9 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { LayoutProvider } from '@/components/layout/layout-provider';
 import { Lato, Montserrat, Open_Sans, Roboto } from 'next/font/google';
+import { Hero } from '@/components/sections/hero';
+import { About } from '@/components/sections/about';
+import { Cta } from '@/components/sections/cta';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -80,7 +83,12 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${lato.variable} ${roboto.variable} ${openSans.variable} font-opensans antialiased bg-background`}
       >
-        <LayoutProvider>{children}</LayoutProvider>
+        <LayoutProvider>
+          <Hero />
+          <About />
+          {children}
+          <Cta />
+        </LayoutProvider>
         <Footer />
         <Toaster />
       </body>
