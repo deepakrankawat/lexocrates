@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import { blogPosts } from '@/lib/blog-data';
 import { BlogDetailHero } from '@/components/sections/blog-detail-hero';
@@ -17,9 +18,10 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
   return (
     <main className="bg-background">
       <BlogDetailHero post={post} />
-      <BlogDetailContent post={post} />
-      <RelatedPosts posts={related} />
-      <Cta />
+      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
+        <BlogDetailContent post={post} />
+        <RelatedPosts posts={related} />
+      </div>
     </main>
   );
 }

@@ -1,4 +1,5 @@
 
+
 import { SlideIn } from '@/components/animations/slide-in';
 import { AppImage } from '@/components/ui/app-image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -8,7 +9,6 @@ export function CareersAbout() {
 
   return (
     <section className="bg-background text-foreground py-12 sm:py-16 overflow-hidden">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="left" className="lg:order-last">
             <div className="relative h-[30rem] w-full bg-secondary flex items-center justify-center">
@@ -41,7 +41,6 @@ export function CareersAbout() {
             </div>
           </SlideIn>
         </div>
-      </div>
     </section>
   );
 }

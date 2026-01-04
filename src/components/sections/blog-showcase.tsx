@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -12,7 +13,6 @@ const WritingBlogPostLottie = dynamic(() => import('@/components/animations/writ
 export function BlogShowcase() {
   return (
     <section id="blog-showcase" className="bg-secondary text-foreground py-12 sm:py-16 overflow-hidden">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="right">
             <div className="flex flex-col">
@@ -36,7 +36,6 @@ export function BlogShowcase() {
             </div>
           </SlideIn>
         </div>
-      </div>
     </section>
   );
 }

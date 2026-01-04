@@ -84,8 +84,6 @@ export default function RootLayout({
         className={`${montserrat.variable} ${lato.variable} ${roboto.variable} ${openSans.variable} font-opensans antialiased bg-background`}
       >
         <LayoutProvider>
-          <Hero />
-          <About />
           {children}
           <Cta />
         </LayoutProvider>

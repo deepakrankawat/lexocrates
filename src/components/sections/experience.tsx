@@ -1,4 +1,5 @@
 
+
 import { Calendar, Users, TrendingUp } from 'lucide-react';
 import { SlideIn } from '@/components/animations/slide-in';
 import { Counter } from '@/components/animations/counter';
@@ -6,7 +7,6 @@ import { Counter } from '@/components/animations/counter';
 export function Experience() {
   return (
     <section id="experience" className="bg-background text-foreground py-12 sm:py-16 overflow-hidden">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="right">
             <div className="flex flex-col">
@@ -43,7 +43,6 @@ export function Experience() {
             </div>
           </SlideIn>
         </div>
-      </div>
     </section>
   );
 }

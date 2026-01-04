@@ -1,3 +1,4 @@
+
 import { ServiceDetailHero } from '@/components/sections/service-detail-hero';
 import { ServiceDetailContent } from '@/components/sections/service-detail-content';
 import { LegalProcess } from '@/components/sections/legal-process';
@@ -19,12 +20,13 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
   return (
     <main className="bg-background">
       <ServiceDetailHero service={service} />
-      <ServiceDetailContent service={service} />
-      <ServiceKeyAreas service={service} />
-      <LegalProcess />
-      <Team />
-      <Experience />
-      <Cta />
+      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
+        <ServiceDetailContent service={service} />
+        <ServiceKeyAreas service={service} />
+        <LegalProcess />
+        <Team />
+        <Experience />
+      </div>
     </main>
   );
 }

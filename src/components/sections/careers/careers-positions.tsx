@@ -1,4 +1,5 @@
 
+
 'use client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,29 +12,24 @@ const openPositions = [
   {
     title: 'Senior Legal Researcher',
     department: 'Legal Research & Analysis',
-    location: 'Jaipur, India',
   },
   {
     title: 'Contract Management Specialist',
     department: 'Contract Lifecycle Management',
-    location: 'Jaipur, India',
   },
   {
     title: 'Compliance Analyst (GDPR)',
     department: 'Regulatory Compliance',
-    location: 'Jaipur, India',
   },
   {
     title: 'E-Discovery Project Manager',
     department: 'Document Review',
-    location: 'Jaipur, India',
   },
 ];
 
 export function CareersPositions() {
   return (
     <section className="bg-secondary text-foreground py-12 sm:py-16">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-12">
           <p className="font-lato font-bold text-accent uppercase tracking-wider">Open Positions</p>
           <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
@@ -57,9 +53,6 @@ export function CareersPositions() {
                 </CardHeader>
                 <CardContent className="flex flex-col flex-grow">
                   <p className="text-sm text-accent font-bold">{position.department}</p>
-                  <div className="flex items-center text-foreground/70 mt-2">
-                    <p>{position.location}</p>
-                  </div>
                   <div className="mt-auto pt-6">
                     <Button asChild className="w-full font-montserrat font-bold">
                        <Link href="/contact">Contact Us</Link>
@@ -70,7 +63,6 @@ export function CareersPositions() {
             </motion.div>
           ))}
         </div>
-      </div>
     </section>
   );
 }

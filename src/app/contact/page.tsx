@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { Faq } from "@/components/sections/faq";
@@ -36,40 +37,37 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section id="contact-form" className="py-12 sm:py-16 bg-background">
-        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
-          <div className="max-w-4xl mx-auto">
-             <SimpleContactForm />
-          </div>
-        </div>
-      </section>
-
-      <section id="headquarters" className="py-12 sm:py-16 bg-secondary">
-        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
-          <div className="text-center mb-12">
-            <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Main Office</p>
-            <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">Jaipur Headquarters</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <ContactDetails />
-            <div className="relative h-96 md:h-full w-full overflow-hidden rounded-lg">
-              <iframe
-                src={`https://maps.google.com/maps?q=${encodeURIComponent(jaipurMapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Office Location"
-              ></iframe>
+      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
+          <section id="contact-form" className="py-12 sm:py-16 bg-background">
+            <div className="max-w-4xl mx-auto">
+              <SimpleContactForm />
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <Faq />
-      <Cta />
+          <section id="headquarters" className="py-12 sm:py-16 bg-secondary">
+              <div className="text-center mb-12">
+                <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Main Office</p>
+                <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">Jaipur Headquarters</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <ContactDetails />
+                <div className="relative h-96 md:h-full w-full overflow-hidden rounded-lg">
+                  <iframe
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(jaipurMapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Office Location"
+                  ></iframe>
+                </div>
+              </div>
+          </section>
+
+          <Faq />
+      </div>
     </main>
   );
 }

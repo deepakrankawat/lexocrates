@@ -1,4 +1,5 @@
 
+
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
@@ -15,7 +16,6 @@ export function ServiceDetailContent({ service }: { service: Service }) {
 
   return (
     <section className="bg-background text-foreground py-12 sm:py-16">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 items-center">
           <div className="text-center">
             <div className="flex justify-center mb-6">
@@ -39,7 +39,6 @@ export function ServiceDetailContent({ service }: { service: Service }) {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }
