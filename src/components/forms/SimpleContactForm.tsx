@@ -32,6 +32,7 @@ export function SimpleContactForm() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
   });
@@ -56,18 +57,19 @@ export function SimpleContactForm() {
 
       if (response.ok && result.success) {
         setIsSubmitted(true);
+        reset();
       } else {
         toast({
           variant: 'destructive',
           title: 'Submission Failed',
-          description: result.message || 'An unknown error occurred.',
+          description: result.message || 'An unknown error occurred. Please try again.',
         });
       }
     } catch (error) {
       toast({
         variant: 'destructive',
         title: 'Submission Error',
-        description: 'Could not connect to the server. Please try again.',
+        description: 'Could not connect to the server. Please check your internet connection and try again.',
       });
     } finally {
       setIsLoading(false);
