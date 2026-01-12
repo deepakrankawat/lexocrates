@@ -1,4 +1,5 @@
 
+
 import { Eye, Target } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FadeIn } from '../animations/fade-in';
@@ -6,7 +7,6 @@ import { FadeIn } from '../animations/fade-in';
 export function VisionMission() {
   return (
     <section className="bg-secondary text-foreground py-12 sm:py-16">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="bg-background text-center">
@@ -37,7 +37,6 @@ export function VisionMission() {
             </Card>
           </div>
         </FadeIn>
-      </div>
     </section>
   );
 }

@@ -1,10 +1,11 @@
-import { Hero } from '@/components/sections/hero';
+
+
 import { Services } from '@/components/sections/services';
+import { WhyChooseUs } from '@/components/sections/why-choose-us';
 import { Team } from '@/components/sections/team';
 import { Blog } from '@/components/sections/blog';
-import { Cta } from '@/components/sections/cta';
+import { Hero } from '@/components/sections/hero';
 import { About } from '@/components/sections/about';
-import { WhyChooseUs } from '@/components/sections/why-choose-us';
 
 export default function HomePage() {
   return (
@@ -15,7 +16,6 @@ export default function HomePage() {
       <WhyChooseUs />
       <Team />
       <Blog />
-      <Cta />
     </main>
   );
 }

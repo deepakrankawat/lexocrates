@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { ShieldCheck } from "lucide-react";
@@ -17,7 +18,6 @@ const certifications = [
 export function Certifications() {
   return (
     <section className="bg-secondary text-foreground py-12 sm:py-16">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <SlideIn className="text-center mb-12">
           <p className="font-lato font-bold text-accent uppercase tracking-wider">Certifications & Accreditations</p>
           <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
@@ -44,7 +44,6 @@ export function Certifications() {
                 ))}
             </StaggerFadeIn>
         </div>
-      </div>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -31,7 +32,6 @@ const faqs = [
 export function Faq() {
   return (
     <section className="bg-secondary text-foreground py-12 sm:py-16">
-      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
         <SlideIn className="text-center mb-12">
           <p className="font-lato font-bold text-accent uppercase tracking-wider">FAQs</p>
           <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
@@ -55,7 +55,6 @@ export function Faq() {
             </StaggerFadeIn>
           </Accordion>
         </div>
-      </div>
     </section>
   );
 }

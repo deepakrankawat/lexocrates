@@ -1,4 +1,5 @@
 
+
 'use client';
 import { ArrowRight, User, Calendar } from 'lucide-react';
 import Link from 'next/link';
@@ -11,7 +12,6 @@ import { Badge } from '../ui/badge';
 export function BlogList() {
   return (
     <section id="blog" className="bg-background text-foreground py-12 sm:py-16">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
             <motion.div 
@@ -49,7 +49,6 @@ export function BlogList() {
             </motion.div>
           ))}
         </div>
-      </div>
     </section>
   );
 }

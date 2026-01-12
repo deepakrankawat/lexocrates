@@ -1,4 +1,5 @@
 
+
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { AppImage } from '../ui/app-image';
 import { User } from 'lucide-react';
@@ -8,7 +9,6 @@ export function Welcome() {
 
   return (
     <section className="bg-background text-foreground py-12 sm:py-16">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-80 w-80 sm:h-96 sm:w-96 justify-self-center bg-secondary flex items-center justify-center">
             <User className="h-48 w-48 text-accent/80" />
@@ -26,7 +26,6 @@ export function Welcome() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }

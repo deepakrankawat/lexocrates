@@ -1,4 +1,5 @@
 
+
 'use client';
 import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
 import { SlideIn } from '@/components/animations/slide-in';
@@ -30,29 +31,27 @@ const values = [
 export function CareersValues() {
     return (
         <section className="bg-secondary text-foreground py-12 sm:py-16">
-            <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                <SlideIn>
-                    <div className="text-center mb-12">
-                        <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Core Values</p>
-                        <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
-                            The Principles That Guide Us
-                        </h2>
-                    </div>
-                </SlideIn>
-                <StaggerFadeIn className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {values.map((value) => (
-                        <div key={value.title} className="text-center p-6 bg-background">
-                            <div className="flex justify-center mb-4">
-                                <div className="p-4 bg-accent/10 rounded-full">
-                                    <value.icon className="h-10 w-10 text-accent" />
-                                </div>
+            <SlideIn>
+                <div className="text-center mb-12">
+                    <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Core Values</p>
+                    <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
+                        The Principles That Guide Us
+                    </h2>
+                </div>
+            </SlideIn>
+            <StaggerFadeIn className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {values.map((value) => (
+                    <div key={value.title} className="text-center p-6 bg-background">
+                        <div className="flex justify-center mb-4">
+                            <div className="p-4 bg-accent/10 rounded-full">
+                                <value.icon className="h-10 w-10 text-accent" />
                             </div>
-                            <h3 className="font-roboto text-2xl font-medium text-primary">{value.title}</h3>
-                            <p className="text-foreground/80 mt-2">{value.description}</p>
                         </div>
-                    ))}
-                </StaggerFadeIn>
-            </div>
+                        <h3 className="font-roboto text-2xl font-medium text-primary">{value.title}</h3>
+                        <p className="text-foreground/80 mt-2">{value.description}</p>
+                    </div>
+                ))}
+            </StaggerFadeIn>
         </section>
     );
 }
