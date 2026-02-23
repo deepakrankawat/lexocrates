@@ -84,7 +84,7 @@ export function Hero() {
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
                 fill
-                className="object-cover blur-sm"
+                className="object-cover object-right blur-sm"
                 priority
                 data-ai-hint={heroImage.imageHint}
             />
