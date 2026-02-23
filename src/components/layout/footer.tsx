@@ -10,9 +10,9 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground font-lato">
       <div className="mx-auto px-4 py-16 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 text-center sm:text-left md:grid-cols-2 lg:grid-cols-4">
           
-          <div className="text-center sm:text-left">
+          <div>
             <div className="flex justify-center sm:justify-start mb-6">
                 <Link href="/" className="flex items-center gap-2">
                 <Logo className="h-20 w-auto text-background laptop:h-24 fhd:h-28 qhd:h-32 uhd:h-32" />
@@ -20,7 +20,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="text-center sm:text-left">
+          <div>
             <h3 className="font-roboto font-medium text-lg text-primary-foreground">Services</h3>
             <ul className="mt-6 space-y-4 text-sm">
               {footerServices.slice(0, 5).map(service => (
@@ -33,7 +33,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="text-center sm:text-left pl-14">
+          <div>
             <h3 className="font-roboto font-medium text-lg text-primary-foreground">Company</h3>
             <ul className="mt-6 space-y-4 text-sm">
               <li><Link href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
@@ -44,7 +44,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="text-center sm:text-left">
+          <div>
             <h3 className="font-roboto font-medium text-lg text-primary-foreground">Contact Info</h3>
             <ul className="mt-6 space-y-4 text-sm text-primary-foreground/80">
               <li><p>B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan</p></li>
