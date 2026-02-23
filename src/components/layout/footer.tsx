@@ -1,10 +1,7 @@
-
 'use client';
 import Link from 'next/link';
 import { Linkedin } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { servicesList } from '@/lib/services-data';
 
 export function Footer() {
@@ -21,13 +18,6 @@ export function Footer() {
                 <Logo className="h-20 w-auto text-background laptop:h-24 fhd:h-28 qhd:h-32 uhd:h-32" />
                 </Link>
             </div>
-            <p className="max-w-xs mx-auto sm:mx-0 text-primary-foreground/80">
-              Subscribe to our newsletter for the latest insights on legal outsourcing.
-            </p>
-            <form className="mt-6 flex w-full max-w-xs mx-auto sm:mx-0 flex-col sm:flex-row gap-2">
-              <Input type="email" placeholder="Enter your email" className="bg-transparent border-primary-foreground/30 placeholder:text-primary-foreground/60 focus:border-accent" />
-              <Button type="submit" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 font-lato font-bold">Subscribe</Button>
-            </form>
           </div>
 
           <div className="text-center sm:text-left">
