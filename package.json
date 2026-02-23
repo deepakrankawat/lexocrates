@@ -4,13 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 9002",
-<<<<<<< HEAD
-    "build": "cross-env NODE_ENV=production next build",
-=======
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
     "build": "next build",
->>>>>>> 8b31f7a9f26e90712fd8444b232cb805e4a76c23
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
