@@ -11,13 +11,13 @@ export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
 
   return (
-    <section className="relative bg-primary text-primary-foreground h-screen flex items-center justify-center overflow-hidden pl-10">
+    <section className="relative bg-primary text-primary-foreground h-screen flex items-center justify-center overflow-hidden">
       {heroImage && (
         <Image
           src={heroImage.imageUrl}
           alt={heroImage.description}
           fill
-          className="object-cover sm:object-top object-center"
+          className="object-cover sm:object-top object-right"
           priority
           data-ai-hint={heroImage.imageHint}
         />
