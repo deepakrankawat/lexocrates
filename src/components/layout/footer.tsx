@@ -54,7 +54,7 @@ export function Footer() {
                 <Link href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </Link>
-                <Link href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link href="https://www.linkedin.com/company/lexocrates-legal-services-pvt-ltd/posts/?feedView=all" className="text-primary-foreground/80 hover:text-accent transition-colors">
                   Follow us on LinkedIn
                 </Link>
               </li>

@@ -8,12 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible';
 
 
@@ -81,69 +75,68 @@ function MobileNav({ closeSheet }: { closeSheet: () => void }) {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <nav className="flex flex-col gap-2 font-roboto text-lg font-medium text-primary-foreground">
-      <Accordion type="multiple" className="w-full">
-        {navLinks.map((link) => 
-          link.submenu ? (
-            <AccordionItem key={link.href} value={link.label} className="border-b border-primary-foreground/20">
-              <AccordionTrigger className="py-4 hover:no-underline text-left">
-                {link.label}
-              </AccordionTrigger>
-              <AccordionContent className="pl-4">
-                <div className="flex flex-col gap-4 mt-2">
-                  {link.submenu.map((sublink) => (
-                    <Collapsible key={sublink.href}>
-                      <div className="flex flex-col gap-4">
-                        {sublink.submenu ? (
-                          <>
-                            <CollapsibleTrigger className='flex items-center justify-between text-base text-primary-foreground/80 hover:text-accent'>
-                              {sublink.label} <ChevronRight className="h-4 w-4" />
-                            </CollapsibleTrigger>
-                            <CollapsibleContent className="pl-4">
-                              <div className="flex flex-col gap-4 mt-2">
-                                {sublink.submenu.map(nestedLink => (
-                                  <Link
-                                    key={nestedLink.href}
-                                    href={nestedLink.href}
-                                    onClick={closeSheet}
-                                    className="text-sm text-primary-foreground/70 hover:text-accent"
-                                  >
-                                    {nestedLink.label}
-                                  </Link>
-                                ))}
-                              </div>
-                            </CollapsibleContent>
-                          </>
-                        ) : (
-                          <Link
-                            href={sublink.href}
-                            onClick={closeSheet}
-                            className="text-base text-primary-foreground/80 hover:text-accent"
-                          >
-                            {sublink.label}
-                          </Link>
-                        )}
-                      </div>
-                    </Collapsible>
-                  ))}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          ) : (
+    <nav className="flex flex-col text-lg font-medium text-primary-foreground font-roboto">
+      {navLinks.map((link) => (
+        <div key={link.href} className="border-b border-primary-foreground/20">
+          {!link.submenu ? (
             <Link
-              key={link.href}
               href={link.href}
               onClick={closeSheet}
               className={cn(
-                "py-4 border-b border-primary-foreground/20 hover:text-accent",
+                "block w-full py-4 text-left hover:text-accent",
                 isActive(link.href) ? "text-accent" : ""
               )}
             >
               {link.label}
             </Link>
-          )
-        )}
-      </Accordion>
+          ) : (
+            <Collapsible key={link.href} className="w-full">
+              <CollapsibleTrigger className="flex w-full items-center justify-between py-4 text-left hover:text-accent [&[data-state=open]>svg]:rotate-180">
+                <span>{link.label}</span>
+                <ChevronDown className="h-4 w-4 transition-transform duration-200" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="pl-4 pb-2">
+                <div className="flex flex-col gap-4 mt-2">
+                  {link.submenu.map((sublink) => (
+                    <div key={sublink.href}>
+                      {!sublink.submenu ? (
+                        <Link
+                          href={sublink.href}
+                          onClick={closeSheet}
+                          className="block text-base text-primary-foreground/80 hover:text-accent"
+                        >
+                          {sublink.label}
+                        </Link>
+                      ) : (
+                        <Collapsible key={sublink.href}>
+                          <CollapsibleTrigger className="flex w-full items-center justify-between text-left text-base text-primary-foreground/80 hover:text-accent [&[data-state=open]>svg]:rotate-90">
+                            <span>{sublink.label}</span>
+                            <ChevronRight className="h-4 w-4 transition-transform" />
+                          </CollapsibleTrigger>
+                          <CollapsibleContent className="pl-4">
+                            <div className="flex flex-col gap-4 mt-2">
+                              {sublink.submenu.map((nestedLink) => (
+                                <Link
+                                  key={nestedLink.href}
+                                  href={nestedLink.href}
+                                  onClick={closeSheet}
+                                  className="block text-sm text-primary-foreground/70 hover:text-accent"
+                                >
+                                  {nestedLink.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </CollapsibleContent>
+                        </Collapsible>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
+          )}
+        </div>
+      ))}
     </nav>
   );
 }

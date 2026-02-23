@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { Mail, Headset, User, Linkedin, MapPin, Clock, Train, Bus, Car } from 'lucide-react';
 
 export function ContactDetails() {
-  const jaipurAddress = "B-1402 Mangalam The Grand Residency, Near Teoler School, Sirsi Road, Jaipur, Rajasthan, India. Pin 302041";
-  const jaipurMapQuery = "B-1402 Mangalam The Grand Residency, Sirsi Road, Jaipur, Rajasthan, 302041";
+  const jaipurAddress = "Floor 1 , E-block, E-103 , Ganpati Enclave Jaipur Rajasthan, India. Pin 302041";
+  const jaipurMapQuery = "Floor 1 , E-block, E-103 , Ganpati Enclave Jaipur Rajasthan, India. Pin 302041";
 
   return (
     <div className="space-y-8">
@@ -46,7 +46,7 @@ export function ContactDetails() {
               <p className="text-foreground/80 group-hover:text-accent font-lato">HR@lexocrates.com</p>
           </div>
       </Link>
-      <Link href="#" className="flex items-start gap-4 group">
+      <Link href="https://www.linkedin.com/company/lexocrates-legal-services-pvt-ltd/posts/?feedView=all" className="flex items-start gap-4 group">
           <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
               <Linkedin className="h-6 w-6 text-accent" />
           </div>
