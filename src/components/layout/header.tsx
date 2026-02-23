@@ -240,7 +240,7 @@ export function Header() {
         <div className="lg:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <Button variant="ghost" size="icon" className="text-white hover:bg-transparent hover:text-white/80" onClick={() => setIsOpen(true)}>
-              <Menu className="h-8 w-8" />
+              <Menu className="h-9 w-9" />
               <span className="sr-only">Open menu</span>
             </Button>
             <SheetContent side="right" className="w-full bg-primary border-l-0 overflow-y-auto">
@@ -251,7 +251,7 @@ export function Header() {
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
                  <SheetClose asChild>
                     <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
-                      <X className="h-8 w-8" />
+                      <X className="h-9 w-9" />
                       <span className="sr-only">Close menu</span>
                     </Button>
                   </SheetClose>
