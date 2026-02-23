@@ -78,8 +78,19 @@ export function Hero() {
       </section>
 
       {/* Mobile Hero */}
-      <section className="md:hidden bg-primary text-primary-foreground py-20 pt-32 text-center">
-        <div className="mx-auto w-full px-4">
+      <section className="relative md:hidden bg-primary text-primary-foreground py-20 pt-32 text-center overflow-hidden">
+        {heroImage && (
+            <Image
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                fill
+                className="object-cover blur-sm"
+                priority
+                data-ai-hint={heroImage.imageHint}
+            />
+        )}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative mx-auto w-full px-4">
              <FadeIn delay={0.2} duration={0.8}>
                 <p className="font-lato font-bold text-white/80 tracking-wider mb-2">
                     Precision in Law, Rooted in Philosophy
