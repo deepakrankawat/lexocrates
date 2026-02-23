@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -12,13 +11,13 @@ export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
 
   return (
-    <section className="relative bg-primary text-primary-foreground h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative bg-primary text-primary-foreground h-screen flex items-center justify-center overflow-hidden pl-10">
       {heroImage && (
         <Image
           src={heroImage.imageUrl}
           alt={heroImage.description}
           fill
-          className="object-cover object-center sm:object-top"
+          className="object-cover sm:object-top object-center"
           priority
           data-ai-hint={heroImage.imageHint}
         />
