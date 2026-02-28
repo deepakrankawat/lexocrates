@@ -1,4 +1,3 @@
-
 'use client';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -6,20 +5,27 @@ import { FadeIn } from '@/components/animations/fade-in';
 
 export function Cta() {
   return (
-    <section className="bg-secondary py-12 sm:py-16 text-foreground">
-      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
+    <section className="bg-background py-24 sm:py-32 text-foreground">
+      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1800px]">
         <FadeIn>
-          <div className="grid grid-cols-1 items-center justify-center text-center md:text-left bg-background p-12 gap-8">
-              <div>
-                <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
-                  Ready to Optimize Your Legal Workflow?
-                </h2>
-                <p className="mt-4 max-w-2xl text-foreground/80">
-                  Let's discuss how Lexocrates can help you achieve your business goals. Schedule a free, no-obligation consultation with our expert team today.
-                </p>
-                <Button asChild size="lg" variant="secondary" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90 font-montserrat font-bold">
-                  <Link href="/contact">Request a Consultation</Link>
-                </Button>
+          <div className="relative rounded-[3rem] bg-primary overflow-hidden p-12 sm:p-24 text-center lg:text-left shadow-2xl shadow-primary/20">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-[100px] -mr-48 -mt-48" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] -ml-32 -mb-32" />
+              
+              <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h2 className="font-lato text-4xl sm:text-6xl font-black text-white leading-tight mb-8 tracking-tight">
+                    Ready to Optimize <br /> Your Legal Workflow?
+                  </h2>
+                  <p className="text-xl text-white/70 font-medium leading-relaxed max-w-2xl">
+                    Partner with Lexocrates and experience a seamless integration of global expertise and cutting-edge efficiency. Your success is our mission.
+                  </p>
+                </div>
+                <div className="flex justify-center lg:justify-end">
+                  <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xl px-12 py-10 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95">
+                    <Link href="/contact">Request a Consultation</Link>
+                  </Button>
+                </div>
               </div>
           </div>
         </FadeIn>

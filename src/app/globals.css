@@ -32,7 +32,7 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0rem;
+    --radius: 1rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -90,16 +90,16 @@ body {
       @apply font-bold text-primary;
     }
     p, li {
-      @apply text-foreground/80;
+      @apply text-foreground/80 leading-relaxed;
     }
     p {
-        @apply my-4;
-    }
-    ul {
         @apply my-6;
     }
+    ul {
+        @apply my-8;
+    }
     li {
-        @apply my-2;
+        @apply my-3;
     }
   }
 }

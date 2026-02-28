@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -11,7 +10,6 @@ import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible';
 
-// Main navigation links (excluding Contact for specialized rendering)
 const navLinks = [
   { href: '/', label: 'Home' },
   { 
@@ -68,19 +66,18 @@ function MobileNav({ closeSheet }: { closeSheet: () => void }) {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
 
-  // Include Contact in mobile nav
   const mobileLinks = [...navLinks, { href: '/contact', label: 'Contact' }];
 
   return (
-    <nav className="flex flex-col text-lg font-medium text-primary-foreground font-roboto">
+    <nav className="flex flex-col gap-2 text-xl font-semibold text-primary-foreground font-roboto p-4">
       {mobileLinks.map((link) => (
-        <div key={link.href} className="border-b border-primary-foreground/20">
+        <div key={link.href} className="border-b border-primary-foreground/10 last:border-0">
           {!link.submenu ? (
             <Link
               href={link.href}
               onClick={closeSheet}
               className={cn(
-                "block w-full py-4 text-left hover:text-accent",
+                "block w-full py-5 text-left hover:text-accent transition-colors",
                 isActive(link.href) ? "text-accent" : ""
               )}
             >
@@ -88,11 +85,11 @@ function MobileNav({ closeSheet }: { closeSheet: () => void }) {
             </Link>
           ) : (
             <Collapsible key={link.href} className="w-full">
-              <CollapsibleTrigger className="flex w-full items-center justify-between py-4 text-left hover:text-accent [&[data-state=open]>svg]:rotate-180">
+              <CollapsibleTrigger className="flex w-full items-center justify-between py-5 text-left hover:text-accent [&[data-state=open]>svg]:rotate-180 transition-colors">
                 <span>{link.label}</span>
-                <ChevronDown className="h-4 w-4 transition-transform duration-200" />
+                <ChevronDown className="h-5 w-5 transition-transform duration-300" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="pl-4 pb-2">
+              <CollapsibleContent className="pl-4 pb-4">
                 <div className="flex flex-col gap-4 mt-2">
                   {link.submenu.map((sublink) => (
                     <div key={sublink.href}>
@@ -100,24 +97,24 @@ function MobileNav({ closeSheet }: { closeSheet: () => void }) {
                         <Link
                           href={sublink.href}
                           onClick={closeSheet}
-                          className="block text-base text-primary-foreground/80 hover:text-accent"
+                          className="block text-lg font-medium text-primary-foreground/80 hover:text-accent transition-colors"
                         >
                           {sublink.label}
                         </Link>
                       ) : (
                         <Collapsible key={sublink.href}>
-                          <CollapsibleTrigger className="flex w-full items-center justify-between text-left text-base text-primary-foreground/80 hover:text-accent [&[data-state=open]>svg]:rotate-90">
+                          <CollapsibleTrigger className="flex w-full items-center justify-between text-left text-lg font-medium text-primary-foreground/80 hover:text-accent [&[data-state=open]>svg]:rotate-90 transition-colors">
                             <span>{sublink.label}</span>
-                            <ChevronRight className="h-4 w-4 transition-transform" />
+                            <ChevronRight className="h-5 w-5 transition-transform duration-300" />
                           </CollapsibleTrigger>
                           <CollapsibleContent className="pl-4">
-                            <div className="flex flex-col gap-4 mt-2">
+                            <div className="flex flex-col gap-4 mt-2 border-l border-white/10 pl-4">
                               {sublink.submenu.map((nestedLink) => (
                                 <Link
                                   key={nestedLink.href}
                                   href={nestedLink.href}
                                   onClick={closeSheet}
-                                  className="block text-sm text-primary-foreground/70 hover:text-accent"
+                                  className="block text-base text-primary-foreground/70 hover:text-accent transition-colors"
                                 >
                                   {nestedLink.label}
                                 </Link>
@@ -155,10 +152,10 @@ export function Header() {
   }, []);
 
   const headerClasses = cn(
-    'fixed top-0 z-50 w-full transition-all duration-300',
+    'fixed top-0 z-50 w-full transition-all duration-500',
     isScrolled 
-      ? 'bg-primary shadow-md' 
-      : 'bg-transparent'
+      ? 'bg-primary/95 backdrop-blur-md py-2 shadow-2xl' 
+      : 'bg-transparent py-4'
   );
 
   const isActive = (href: string) => {
@@ -168,55 +165,51 @@ export function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className="mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-24 fhd:h-28 qhd:h-28 uhd:h-28">
+      <div className="mx-auto flex h-16 items-center justify-between px-6 sm:px-8 lg:px-12 max-w-[1800px] transition-all duration-500">
         
-        {/* Logo Section */}
         <div className="w-1/4 flex items-center">
-          <Link href="/" className="flex flex-col justify-center items-center">
-            <Logo className="w-auto h-14 laptop:h-20 fhd:h-24 qhd:h-24 uhd:h-24" />
+          <Link href="/" className="group flex flex-col justify-center items-center transition-transform duration-300 hover:scale-105">
+            <Logo className="w-auto h-12 laptop:h-14 fhd:h-16 transition-all" />
           </Link>
         </div>
         
-        {/* Desktop Navigation (Centered) */}
         <div className="hidden lg:flex flex-1 justify-center items-center">
-          <nav className="flex items-center gap-8 font-roboto text-xl font-medium">
+          <nav className="flex items-center gap-10 font-roboto text-lg font-semibold tracking-wide">
             {navLinks.map((link) => (
               <div key={link.href} className="group relative">
                 <Link 
                   href={link.href} 
                   className={cn(
-                    "flex items-center gap-1 relative transition-colors text-white/80 hover:text-white whitespace-nowrap",
-                    isActive(link.href) && "text-white font-semibold",
+                    "flex items-center gap-1 relative transition-all duration-300 text-white/70 hover:text-white whitespace-nowrap py-2",
+                    isActive(link.href) && "text-white",
                   )}
                 >
                   {link.label}
-                  {link.submenu && <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />}
+                  {link.submenu && <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />}
                   <span className={cn(
-                    "absolute -bottom-2 left-0 h-0.5 w-full bg-accent rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out",
-                    isActive(link.href) ? "scale-x-100" : ""
+                    "absolute -bottom-1 left-0 h-0.5 bg-accent rounded-full transition-all duration-500 ease-out",
+                    isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
                   )} />
                 </Link>
 
-                {/* Desktop Submenu */}
                 {link.submenu && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto transform translate-y-2 group-hover:translate-y-0">
-                    <div className="bg-white text-primary shadow-lg rounded-md w-56">
-                      <ul className="py-2">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto transform translate-y-4 group-hover:translate-y-0">
+                    <div className="bg-white text-primary shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl w-64 border border-black/5 overflow-hidden">
+                      <ul className="py-3">
                         {link.submenu.map((sublink) => (
                           <li key={sublink.href} className="relative group/sub">
-                            <Link href={sublink.href} className="flex items-center justify-between px-4 py-2 hover:bg-secondary text-base">
+                            <Link href={sublink.href} className="flex items-center justify-between px-6 py-3 hover:bg-secondary text-base font-medium transition-colors">
                               {sublink.label}
                               {sublink.submenu && <ChevronRight className="h-4 w-4" />}
                             </Link>
                             
-                            {/* Nested Submenu */}
                             {sublink.submenu && (
-                                <div className="absolute top-0 left-full ml-1 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-300 pointer-events-none group-hover/sub:pointer-events-auto">
-                                  <div className="bg-white text-primary shadow-lg rounded-md w-56">
-                                    <ul className="py-2">
+                                <div className="absolute top-0 left-full ml-1 opacity-0 group-hover/sub:opacity-100 transition-all duration-300 pointer-events-none group-hover/sub:pointer-events-auto transform -translate-x-2 group-hover/sub:translate-x-0">
+                                  <div className="bg-white text-primary shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl w-64 border border-black/5 overflow-hidden">
+                                    <ul className="py-3">
                                       {sublink.submenu.map(nestedLink => (
                                           <li key={nestedLink.href}>
-                                            <Link href={nestedLink.href} className="block px-4 py-2 hover:bg-secondary text-sm">
+                                            <Link href={nestedLink.href} className="block px-6 py-3 hover:bg-secondary text-sm font-medium transition-colors">
                                               {nestedLink.label}
                                             </Link>
                                           </li>
@@ -236,33 +229,31 @@ export function Header() {
           </nav>
         </div>
 
-        {/* Action Section (Right) */}
-        <div className="w-1/4 flex items-center justify-end gap-4">
-          <Button asChild className="hidden lg:flex bg-accent hover:bg-accent/90 text-white font-montserrat font-bold px-6">
+        <div className="w-1/4 flex items-center justify-end gap-6">
+          <Button asChild className="hidden lg:flex bg-accent hover:bg-accent/90 text-white font-montserrat font-extrabold px-8 py-6 rounded-full shadow-lg shadow-accent/20 transition-all duration-300 hover:scale-105 active:scale-95">
             <Link href="/contact">Contact Us</Link>
           </Button>
           
-          {/* Mobile Navigation Trigger */}
           <div className="lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-transparent hover:text-white/80" onClick={() => setIsOpen(true)}>
-                <Menu className="h-9 w-9" />
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white rounded-full h-12 w-12" onClick={() => setIsOpen(true)}>
+                <Menu className="h-8 w-8" />
                 <span className="sr-only">Open menu</span>
               </Button>
-              <SheetContent side="right" className="w-full bg-primary border-l-0 overflow-y-auto">
-                <SheetHeader className="flex flex-row items-center justify-between">
-                   <Link href="/" onClick={() => setIsOpen(false)} className="w-40">
-                      <Logo className="text-primary-foreground" />
+              <SheetContent side="right" className="w-full bg-primary border-0 p-0 overflow-y-auto">
+                <SheetHeader className="p-6 flex flex-row items-center justify-between border-b border-white/10">
+                   <Link href="/" onClick={() => setIsOpen(false)} className="w-40 transition-transform duration-300 hover:scale-105">
+                      <Logo className="text-primary-foreground h-10 w-auto" />
                     </Link>
                    <SheetTitle className="sr-only">Main Menu</SheetTitle>
                    <SheetClose asChild>
-                      <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
-                        <X className="h-9 w-9" />
+                      <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10 rounded-full h-12 w-12">
+                        <X className="h-8 w-8" />
                         <span className="sr-only">Close menu</span>
                       </Button>
                     </SheetClose>
                 </SheetHeader>
-                <div className="mt-8">
+                <div className="mt-4">
                   <MobileNav closeSheet={() => setIsOpen(false)} />
                 </div>
               </SheetContent>
