@@ -172,9 +172,9 @@ export function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className="mx-auto flex h-24 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-28 fhd:h-32 qhd:h-36 uhd:h-40">
+      <div className="mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-24 fhd:h-28 qhd:h-32 uhd:h-32">
         <Link href="/" className="flex flex-col justify-center items-center">
-          <Logo className="w-auto h-28 laptop:h-32 fhd:h-36 qhd:h-40 uhd:h-40" />
+          <Logo className="w-auto h-22 laptop:h-26 fhd:h-30 qhd:h-34 uhd:h-34" />
         </Link>
         
         {/* Desktop Navigation */}
@@ -245,7 +245,7 @@ export function Header() {
             </Button>
             <SheetContent side="right" className="w-full bg-primary border-l-0 overflow-y-auto">
               <SheetHeader className="flex flex-row items-center justify-between">
-                 <Link href="/" onClick={() => setIsOpen(false)} className="w-48">
+                 <Link href="/" onClick={() => setIsOpen(false)} className="w-40">
                     <Logo className="text-primary-foreground" />
                   </Link>
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
