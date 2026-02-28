@@ -67,7 +67,7 @@ export function Header() {
 
         {/* Right Action Button & Mobile Menu Trigger */}
         <div className="flex items-center gap-6">
-          <Button asChild className="hidden lg:flex bg-accent hover:bg-primary hover:text-white text-white font-montserrat font-black text-xs uppercase tracking-[0.2em] px-8 py-6 rounded-full shadow-lg shadow-accent/20 transition-all duration-500 hover:scale-105 active:scale-95">
+          <Button asChild className="hidden lg:flex bg-primary hover:bg-accent text-white font-montserrat font-black text-xs uppercase tracking-[0.2em] px-8 py-6 rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95">
             <Link href="/contact">Get Started</Link>
           </Button>
           
@@ -99,7 +99,7 @@ export function Header() {
                     {link.label}
                   </Link>
                 ))}
-                <Button asChild className="mt-8 bg-accent text-white font-black text-lg py-8 rounded-2xl" onClick={() => setIsOpen(false)}>
+                <Button asChild className="mt-8 bg-primary text-white font-black text-lg py-8 rounded-2xl" onClick={() => setIsOpen(false)}>
                   <Link href="/contact">Get Started</Link>
                 </Button>
               </nav>
