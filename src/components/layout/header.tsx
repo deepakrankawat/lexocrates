@@ -34,7 +34,7 @@ export function Header() {
 
   return (
     <header className={cn(
-      'fixed top-0 z-50 w-full transition-all duration-500 bg-primary border-b border-white/10 shadow-xl',
+      'fixed top-0 z-50 w-full transition-all duration-500 bg-white border-b border-black/5 shadow-sm',
       isScrolled ? 'py-3' : 'py-5'
     )}>
       <div className="mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-24 max-w-[1800px]">
@@ -55,7 +55,7 @@ export function Header() {
                   href={link.href} 
                   className={cn(
                     "text-xs xl:text-sm font-black uppercase tracking-[0.2em] transition-all duration-300 py-2",
-                    isActive(link.href) ? "text-accent" : "text-white/80 hover:text-white"
+                    isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                   )}
                 >
                   {link.label}
@@ -67,20 +67,20 @@ export function Header() {
 
         {/* Right Action Button & Mobile Menu Trigger */}
         <div className="flex items-center gap-6">
-          <Button asChild className="hidden lg:flex bg-accent hover:bg-white hover:text-primary text-white font-montserrat font-black text-xs uppercase tracking-[0.2em] px-8 py-6 rounded-full shadow-lg shadow-accent/20 transition-all duration-500 hover:scale-105 active:scale-95">
+          <Button asChild className="hidden lg:flex bg-accent hover:bg-primary hover:text-white text-white font-montserrat font-black text-xs uppercase tracking-[0.2em] px-8 py-6 rounded-full shadow-lg shadow-accent/20 transition-all duration-500 hover:scale-105 active:scale-95">
             <Link href="/contact">Get Started</Link>
           </Button>
           
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <Button variant="ghost" size="icon" className="lg:hidden text-white hover:bg-white/10 rounded-full h-12 w-12" onClick={() => setIsOpen(true)}>
+            <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 rounded-full h-12 w-12" onClick={() => setIsOpen(true)}>
               <Menu className="h-8 w-8" />
               <span className="sr-only">Open menu</span>
             </Button>
-            <SheetContent side="right" className="w-full bg-primary border-0 p-0">
-              <SheetHeader className="p-8 flex flex-row items-center justify-between border-b border-white/5">
+            <SheetContent side="right" className="w-full bg-white border-0 p-0">
+              <SheetHeader className="p-8 flex flex-row items-center justify-between border-b border-black/5">
                 <Logo className="h-10 w-auto" />
                 <SheetClose asChild>
-                  <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 rounded-full h-12 w-12">
+                  <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 rounded-full h-12 w-12">
                     <X className="h-8 w-8" />
                   </Button>
                 </SheetClose>
@@ -93,7 +93,7 @@ export function Header() {
                     onClick={() => setIsOpen(false)}
                     className={cn(
                       "text-3xl font-black tracking-tighter transition-colors uppercase",
-                      isActive(link.href) ? "text-accent" : "text-white/70 hover:text-white"
+                      isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                     )}
                   >
                     {link.label}

@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -15,7 +16,7 @@ export function Logo({ className }: LogoProps) {
         alt="Lexocrates Logo"
         width={240}
         height={70}
-        className="h-full w-auto object-contain"
+        className="h-full w-auto object-contain brightness-0"
         priority
       />
     </div>
