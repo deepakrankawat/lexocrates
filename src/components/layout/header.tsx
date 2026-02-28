@@ -11,8 +11,7 @@ import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible';
 
-
-// Data for navigation links, now with submenus
+// Main navigation links (excluding Contact for specialized rendering)
 const navLinks = [
   { href: '/', label: 'Home' },
   { 
@@ -33,7 +32,6 @@ const navLinks = [
       { 
         href: '/services/corporate-solutions', 
         label: 'Corporate Solutions',
-        // Nested submenu example
         submenu: [
             { href: '/services/corporate-solutions#entity-management', label: 'Entity Management' },
             { href: '/services/corporate-solutions#commercial-contracts', label: 'Commercial Contracts' },
@@ -64,20 +62,18 @@ const navLinks = [
     href: '/blog', 
     label: 'Blog'
   },
-  { 
-    href: '/contact', 
-    label: 'Contact'
-  },
 ];
-
 
 function MobileNav({ closeSheet }: { closeSheet: () => void }) {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
 
+  // Include Contact in mobile nav
+  const mobileLinks = [...navLinks, { href: '/contact', label: 'Contact' }];
+
   return (
     <nav className="flex flex-col text-lg font-medium text-primary-foreground font-roboto">
-      {navLinks.map((link) => (
+      {mobileLinks.map((link) => (
         <div key={link.href} className="border-b border-primary-foreground/20">
           {!link.submenu ? (
             <Link
@@ -142,7 +138,6 @@ function MobileNav({ closeSheet }: { closeSheet: () => void }) {
   );
 }
 
-
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -173,20 +168,24 @@ export function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-20 fhd:h-24 qhd:h-24 uhd:h-24">
-        <Link href="/" className="flex flex-col justify-center items-center">
-          <Logo className="w-auto h-12 laptop:h-16 fhd:h-20 qhd:h-20 uhd:h-20" />
-        </Link>
+      <div className="mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-24 fhd:h-28 qhd:h-28 uhd:h-28">
         
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center">
+        {/* Logo Section */}
+        <div className="w-1/4 flex items-center">
+          <Link href="/" className="flex flex-col justify-center items-center">
+            <Logo className="w-auto h-14 laptop:h-20 fhd:h-24 qhd:h-24 uhd:h-24" />
+          </Link>
+        </div>
+        
+        {/* Desktop Navigation (Centered) */}
+        <div className="hidden lg:flex flex-1 justify-center items-center">
           <nav className="flex items-center gap-8 font-roboto text-xl font-medium">
             {navLinks.map((link) => (
               <div key={link.href} className="group relative">
                 <Link 
                   href={link.href} 
                   className={cn(
-                    "flex items-center gap-1 relative transition-colors text-white/80 hover:text-white",
+                    "flex items-center gap-1 relative transition-colors text-white/80 hover:text-white whitespace-nowrap",
                     isActive(link.href) && "text-white font-semibold",
                   )}
                 >
@@ -236,32 +235,39 @@ export function Header() {
             ))}
           </nav>
         </div>
-        
-        {/* Mobile Navigation Trigger */}
-        <div className="lg:hidden">
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <Button variant="ghost" size="icon" className="text-white hover:bg-transparent hover:text-white/80" onClick={() => setIsOpen(true)}>
-              <Menu className="h-9 w-9" />
-              <span className="sr-only">Open menu</span>
-            </Button>
-            <SheetContent side="right" className="w-full bg-primary border-l-0 overflow-y-auto">
-              <SheetHeader className="flex flex-row items-center justify-between">
-                 <Link href="/" onClick={() => setIsOpen(false)} className="w-40">
-                    <Logo className="text-primary-foreground" />
-                  </Link>
-                 <SheetTitle className="sr-only">Main Menu</SheetTitle>
-                 <SheetClose asChild>
-                    <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
-                      <X className="h-9 w-9" />
-                      <span className="sr-only">Close menu</span>
-                    </Button>
-                  </SheetClose>
-              </SheetHeader>
-              <div className="mt-8">
-                <MobileNav closeSheet={() => setIsOpen(false)} />
-              </div>
-            </SheetContent>
-          </Sheet>
+
+        {/* Action Section (Right) */}
+        <div className="w-1/4 flex items-center justify-end gap-4">
+          <Button asChild className="hidden lg:flex bg-accent hover:bg-accent/90 text-white font-montserrat font-bold px-6">
+            <Link href="/contact">Contact Us</Link>
+          </Button>
+          
+          {/* Mobile Navigation Trigger */}
+          <div className="lg:hidden">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <Button variant="ghost" size="icon" className="text-white hover:bg-transparent hover:text-white/80" onClick={() => setIsOpen(true)}>
+                <Menu className="h-9 w-9" />
+                <span className="sr-only">Open menu</span>
+              </Button>
+              <SheetContent side="right" className="w-full bg-primary border-l-0 overflow-y-auto">
+                <SheetHeader className="flex flex-row items-center justify-between">
+                   <Link href="/" onClick={() => setIsOpen(false)} className="w-40">
+                      <Logo className="text-primary-foreground" />
+                    </Link>
+                   <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                   <SheetClose asChild>
+                      <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+                        <X className="h-9 w-9" />
+                        <span className="sr-only">Close menu</span>
+                      </Button>
+                    </SheetClose>
+                </SheetHeader>
+                <div className="mt-8">
+                  <MobileNav closeSheet={() => setIsOpen(false)} />
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
