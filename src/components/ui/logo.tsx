@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -10,13 +9,15 @@ type LogoProps = {
 
 export function Logo({ className }: LogoProps) {
   return (
-    <Image
-      src="/images/logo-light.svg"
-      alt="Lexocrates Logo"
-      width={240}
-      height={70}
-      className={cn("h-auto w-full object-contain", className)}
-      priority
-    />
+    <div className={cn("relative", className)}>
+      <Image
+        src="/images/logo-light.svg"
+        alt="Lexocrates Logo"
+        width={240}
+        height={70}
+        className="h-full w-auto object-contain"
+        priority
+      />
+    </div>
   );
 }

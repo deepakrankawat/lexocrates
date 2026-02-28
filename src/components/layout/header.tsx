@@ -38,12 +38,14 @@ export function Header() {
     )}>
       <div className="mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-24 max-w-[1800px]">
         
+        {/* Logo Section */}
         <div className="flex-shrink-0">
           <Link href="/" className="group block transition-transform duration-300 hover:scale-105">
             <Logo className="w-auto h-10 sm:h-12 fhd:h-14" />
           </Link>
         </div>
         
+        {/* Centered Navigation */}
         <nav className="hidden lg:flex flex-grow justify-center">
           <ul className="flex items-center gap-10">
             {navLinks.map((link) => (
@@ -62,6 +64,7 @@ export function Header() {
           </ul>
         </nav>
 
+        {/* Right Action Button & Mobile Menu Trigger */}
         <div className="flex items-center gap-6">
           <Button asChild className="hidden lg:flex bg-accent hover:bg-white hover:text-primary text-white font-montserrat font-black text-xs uppercase tracking-widest px-10 py-7 rounded-full shadow-2xl shadow-accent/20 transition-all duration-500 hover:scale-105">
             <Link href="/contact">Get Started</Link>
