@@ -179,7 +179,7 @@ export function Header() {
         
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center">
-          <nav className="flex items-center gap-8 font-roboto text-2xl font-medium">
+          <nav className="flex items-center gap-8 font-roboto text-lg font-medium">
             {navLinks.map((link) => (
               <div key={link.href} className="group relative">
                 <Link 
@@ -204,7 +204,7 @@ export function Header() {
                       <ul className="py-2">
                         {link.submenu.map((sublink) => (
                           <li key={sublink.href} className="relative group/sub">
-                            <Link href={sublink.href} className="flex items-center justify-between px-4 py-2 hover:bg-secondary">
+                            <Link href={sublink.href} className="flex items-center justify-between px-4 py-2 hover:bg-secondary text-base">
                               {sublink.label}
                               {sublink.submenu && <ChevronRight className="h-4 w-4" />}
                             </Link>
@@ -216,7 +216,7 @@ export function Header() {
                                     <ul className="py-2">
                                       {sublink.submenu.map(nestedLink => (
                                           <li key={nestedLink.href}>
-                                            <Link href={nestedLink.href} className="block px-4 py-2 hover:bg-secondary">
+                                            <Link href={nestedLink.href} className="block px-4 py-2 hover:bg-secondary text-sm">
                                               {nestedLink.label}
                                             </Link>
                                           </li>
