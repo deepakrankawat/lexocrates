@@ -1,6 +1,3 @@
-
-
-import { Cta } from '@/components/sections/cta';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
@@ -24,7 +21,7 @@ export default function PrivacyPolicyPage() {
             />
         )}
         <div className="absolute inset-0 bg-black/50" />
-        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] relative text-center">
+        <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] relative text-center">
             <ShieldCheck className="h-16 w-16 mx-auto text-accent mb-4" />
             <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold">Privacy Policy</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
@@ -33,8 +30,8 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
 
-      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
-        <section className="py-12 sm:py-16">
+      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px]">
+        <section className="py-12 sm:py-24">
           <div className="prose prose-lg max-w-4xl mx-auto text-foreground/80">
             <h2>1. Introduction</h2>
             <p>Lexocrates ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://lexocrates.vercel.app/. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
@@ -77,7 +74,6 @@ export default function PrivacyPolicyPage() {
           </div>
         </section>
       </div>
-
     </main>
   );
 }
