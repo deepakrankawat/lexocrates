@@ -19,8 +19,8 @@ export function Hero() {
         <div className="absolute inset-0 opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
 
-        {/* Large Architectural SVG Graphic */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] opacity-[0.07] pointer-events-none">
+        {/* Large Architectural SVG Graphic - Scaled for FHD */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] fhd:w-[140%] fhd:h-[140%] opacity-[0.07] pointer-events-none">
           <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
             <circle cx="500" cy="500" r="300" stroke="currentColor" strokeWidth="0.5" />
             <circle cx="500" cy="500" r="400" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10 10" />
@@ -37,9 +37,11 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px] py-32 text-center lg:text-left">
-        <div className="max-w-6xl fhd:max-w-7xl mx-auto lg:mx-0">
+        <div className="max-w-6xl fhd:max-w-[1400px] mx-auto lg:mx-0">
+          
+          {/* Component: Badge */}
           <FadeIn delay={0.2} duration={0.8}>
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-12 shadow-2xl">
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-12 fhd:mb-16 shadow-2xl">
               <span className="h-2.5 w-2.5 rounded-full bg-accent animate-ping" />
               <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-[10px] sm:text-xs fhd:text-sm">
                 Global Legal Process Outsourcing
@@ -47,26 +49,29 @@ export function Hero() {
             </div>
           </FadeIn>
           
+          {/* Component: Headline */}
           <SlideIn direction="up" delay={0.4} duration={0.8}>
-            <h1 className="font-montserrat text-5xl sm:text-7xl lg:text-[7rem] fhd:text-[10rem] font-black leading-[0.85] text-white mb-14 tracking-tighter">
+            <h1 className="font-montserrat text-5xl sm:text-7xl lg:text-[7.5rem] fhd:text-[10rem] font-black leading-[0.85] text-white mb-14 fhd:mb-20 tracking-tighter">
               Strategic <br />
               <span className="text-accent">Legal</span> <br />
               Operations
             </h1>
           </SlideIn>
 
+          {/* Component: Description */}
           <FadeIn delay={0.6} duration={0.8}>
-            <p className="max-w-3xl fhd:max-w-5xl text-xl sm:text-2xl lg:text-3xl fhd:text-4xl text-white/70 font-medium leading-relaxed mb-16 mx-auto lg:mx-0 border-l-4 border-accent/20 pl-8">
+            <p className="max-w-3xl fhd:max-w-5xl text-xl sm:text-2xl lg:text-3xl fhd:text-4xl text-white/70 font-medium leading-relaxed mb-16 fhd:mb-24 mx-auto lg:mx-0 border-l-4 border-accent/20 pl-8">
               Driving efficiency for the world&apos;s leading law firms and corporate legal departments. We provide the expertise and technology to transform your legal workflow.
             </p>
           </FadeIn>
 
+          {/* Component: Actions */}
           <FadeIn delay={0.8} duration={0.8}>
-            <div className="flex flex-col sm:flex-row items-center gap-8 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row items-center gap-8 fhd:gap-12 justify-center lg:justify-start">
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xl fhd:text-2xl px-14 py-10 fhd:px-20 fhd:py-12 rounded-full shadow-[0_20px_50px_rgba(206,166,48,0.2)] transition-all duration-500 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xl fhd:text-2xl px-14 py-10 fhd:px-20 fhd:py-14 rounded-full shadow-[0_20px_50px_rgba(206,166,48,0.2)] transition-all duration-500 hover:scale-105 active:scale-95"
               >
                 <Link href="/services">View Solutions</Link>
               </Button>
@@ -74,7 +79,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto bg-white/5 backdrop-blur-md text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-xl fhd:text-2xl px-14 py-10 fhd:px-20 fhd:py-12 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto bg-white/5 backdrop-blur-md text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-xl fhd:text-2xl px-14 py-10 fhd:px-20 fhd:py-14 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
               >
                 <Link href="/contact">Schedule Strategy Call</Link>
               </Button>
@@ -93,7 +98,7 @@ export function Hero() {
       </div>
 
       <div className="absolute bottom-10 right-1/2 translate-x-1/2 hidden lg:block opacity-10">
-        <div className="w-px h-32 bg-gradient-to-b from-accent via-accent to-transparent" />
+        <div className="w-px h-32 fhd:h-48 bg-gradient-to-b from-accent via-accent to-transparent" />
       </div>
     </section>
   );
