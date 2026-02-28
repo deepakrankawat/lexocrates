@@ -9,11 +9,11 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
       <PageTransition key={pathname}>
-        <div>{children}</div>
+        <div className="flex-grow">{children}</div>
       </PageTransition>
-    </>
+    </div>
   );
 }
