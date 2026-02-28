@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -172,9 +173,9 @@ export function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className="mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-24 fhd:h-28 qhd:h-32 uhd:h-32">
+      <div className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px] laptop:h-20 fhd:h-24 qhd:h-24 uhd:h-24">
         <Link href="/" className="flex flex-col justify-center items-center">
-          <Logo className="w-auto h-22 laptop:h-26 fhd:h-30 qhd:h-34 uhd:h-34" />
+          <Logo className="w-auto h-12 laptop:h-16 fhd:h-20 qhd:h-20 uhd:h-20" />
         </Link>
         
         {/* Desktop Navigation */}
