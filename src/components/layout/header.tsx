@@ -179,7 +179,7 @@ export function Header() {
         
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center">
-          <nav className="flex items-center gap-8 font-roboto text-lg font-medium">
+          <nav className="flex items-center gap-8 font-roboto text-xl font-medium">
             {navLinks.map((link) => (
               <div key={link.href} className="group relative">
                 <Link 
