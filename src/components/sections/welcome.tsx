@@ -56,10 +56,13 @@ export function Welcome() {
                       <Quote className="absolute -top-12 -left-12 h-24 w-24 text-accent/10 -z-10" />
                       <div className="space-y-10 text-xl sm:text-2xl text-foreground/70 font-medium leading-relaxed italic border-l-4 border-accent/10 pl-10">
                           <p>
-                              &quot;As a public interest litigator, I have spent my career championing causes that shape communities and protect the rights of individuals. My work in the Supreme Court of India has been guided by the belief that the law must serve justice above all.&quot;
+                              &quot;As a public interest litigator, I have spent my career championing causes that shape communities and protect the rights of individuals. From challenging unlawful toll collections to advocating for fair water distribution, my work in the Supreme Court of India has been guided by the belief that the law must serve justice above all.&quot;
                           </p>
                           <p>
-                              &quot;Lexocrates Legal Services was founded on that same principle. In an increasingly interconnected world, legal professionals must focus on strategic counsel while trusting capable partners to handle complex processes.&quot;
+                              &quot;Lexocrates Legal Services was founded on that same principle. In an increasingly interconnected world, legal professionals must focus on what they do best—strategic counsel and client advocacy—while trusting capable partners to handle the complex, time-intensive processes that run in the background.&quot;
+                          </p>
+                          <p>
+                              &quot;Our team is trained in US, UK, and Canadian legal systems, equipped with advanced legal technology, and committed to the highest standards of confidentiality and precision. Whether assisting a law firm in New York with litigation support, aiding a London corporate in contract management, or helping a Canadian practice with compliance documentation, our mission is clear: to be a seamless extension of your legal team. I invite you to explore how Lexocrates can bring value, efficiency, and integrity to your practice.&quot;
                           </p>
                       </div>
                   </div>
