@@ -74,7 +74,7 @@ export function Hero() {
             </div>
           </FadeIn>
           
-          {/* Component: Headline with Clamp Typography */}
+          {/* Component: Headline with Clamp Typography optimized for FHD */}
           <SlideIn direction="up" delay={0.4} duration={0.8}>
             <h1 className="font-montserrat text-[3.5rem] sm:text-[5rem] lg:text-[6.5rem] fhd:text-[clamp(6rem,8.5vw,10.5rem)] font-black leading-[0.9] text-white mb-10 fhd:mb-16 tracking-tighter">
               Strategic <br />
