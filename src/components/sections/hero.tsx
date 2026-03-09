@@ -64,7 +64,6 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-20 fhd:px-20 max-w-[1920px] py-12 text-center lg:text-left">
         <div className="max-w-7xl mx-auto lg:mx-0">
           
-          {/* Component: Badge */}
           <FadeIn delay={0.2} duration={0.8}>
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-8 fhd:mb-12 shadow-2xl">
               <span className="h-2.5 w-2.5 rounded-full bg-accent animate-ping" />
@@ -74,7 +73,6 @@ export function Hero() {
             </div>
           </FadeIn>
           
-          {/* Component: Headline with Clamp Typography optimized for FHD */}
           <SlideIn direction="up" delay={0.4} duration={0.8}>
             <h1 className="font-montserrat text-[3.5rem] sm:text-[5rem] lg:text-[6.5rem] fhd:text-[clamp(6rem,8.5vw,10.5rem)] font-black leading-[0.9] text-white mb-10 fhd:mb-16 tracking-tighter">
               Strategic <br />
@@ -83,20 +81,18 @@ export function Hero() {
             </h1>
           </SlideIn>
 
-          {/* Component: Description */}
           <FadeIn delay={0.6} duration={0.8}>
             <p className="max-w-3xl fhd:max-w-5xl text-lg sm:text-xl lg:text-2xl fhd:text-[1.75rem] text-white/70 font-medium leading-relaxed mb-12 fhd:mb-20 mx-auto lg:mx-0 border-l-4 border-accent/20 pl-8">
               Driving efficiency for the world&apos;s leading law firms and corporate legal departments. We provide the expertise and technology to transform your legal workflow.
             </p>
           </FadeIn>
 
-          {/* Component: Actions */}
           <FadeIn delay={0.8} duration={0.8}>
             <div className="flex flex-col sm:flex-row items-center gap-6 fhd:gap-10 justify-center lg:justify-start">
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-xl px-12 py-8 fhd:px-16 fhd:py-10 rounded-full shadow-[0_20px_50px_rgba(206,166,48,0.2)] transition-all duration-500 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-xl px-12 py-6 fhd:px-14 fhd:py-8 rounded-full shadow-[0_20px_50px_rgba(206,166,48,0.2)] transition-all duration-500 hover:scale-105 active:scale-95"
               >
                 <Link href="/services">View Solutions</Link>
               </Button>
@@ -104,7 +100,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto bg-white/5 backdrop-blur-md text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-xl px-12 py-8 fhd:px-16 fhd:py-10 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto bg-white/5 backdrop-blur-md text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-xl px-12 py-6 fhd:px-14 fhd:py-8 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
               >
                 <Link href="/contact">Schedule Strategy Call</Link>
               </Button>
@@ -113,7 +109,6 @@ export function Hero() {
         </div>
       </div>
       
-      {/* Bottom status bar - Balanced for FHD */}
       <div className="absolute bottom-10 left-6 lg:left-20 fhd:left-20 hidden md:flex items-center gap-6 opacity-30">
         <div className="flex flex-col gap-1">
           <div className="w-12 h-0.5 bg-accent" />
