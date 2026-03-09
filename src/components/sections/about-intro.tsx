@@ -29,7 +29,7 @@ export function AboutIntro() {
                 </motion.div>
               </div>
 
-              {/* Central Core Globe Icon - Interactive Layer */}
+              {/* Central Core Globe Icon - Connection Visualization */}
               <div className="relative z-10 flex flex-col items-center gap-10 text-center p-12">
                 <div className="relative">
                   {/* Glowing Aura */}
@@ -40,74 +40,78 @@ export function AboutIntro() {
                     transition={{ type: "spring", stiffness: 300 }}
                     className="relative p-12 fhd:p-16 bg-white rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.1)] border border-primary/10 backdrop-blur-3xl"
                   >
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 fhd:w-36 fhd:h-36 text-accent">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 fhd:w-36 fhd:h-36 text-primary">
                       {/* Detailed Globe Wireframe */}
-                      <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-                      <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-                      <ellipse cx="50" cy="50" rx="15" ry="45" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                      <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1" opacity="0.1" />
+                      <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" strokeWidth="1" opacity="0.1" />
+                      <ellipse cx="50" cy="50" rx="15" ry="45" stroke="currentColor" strokeWidth="1" opacity="0.1" />
                       
-                      {/* Animated Connection Lines (Arcs) */}
+                      {/* THE STRATEGIC BRIDGE: Jaipur to Canada Animation */}
+                      {/* Jaipur Node (East) */}
+                      <motion.circle
+                        cx="75"
+                        cy="60"
+                        r="2"
+                        fill="var(--accent)"
+                        animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
+                      <text x="78" y="65" fill="var(--accent)" fontSize="3" fontWeight="bold" className="opacity-50">Jaipur</text>
+
+                      {/* Canada Node (West) */}
+                      <motion.circle
+                        cx="25"
+                        cy="35"
+                        r="2"
+                        fill="var(--accent)"
+                        animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                      />
+                      <text x="5" y="30" fill="var(--accent)" fontSize="3" fontWeight="bold" className="opacity-50">Canada</text>
+
+                      {/* Animated Connection Arc */}
                       <motion.path
-                        d="M25 25 Q 50 10 75 25"
-                        stroke="currentColor"
-                        strokeWidth="1.2"
+                        d="M75 60 Q 50 10 25 35"
+                        stroke="var(--accent)"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
                         fill="none"
                         initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 0.6 }}
-                        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-                      />
-                      <motion.path
-                        d="M25 75 Q 50 90 75 75"
-                        stroke="currentColor"
-                        strokeWidth="1.2"
-                        fill="none"
-                        initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 0.6 }}
-                        transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0.5 }}
-                      />
-                      <motion.path
-                        d="M5 50 Q 50 50 95 50"
-                        stroke="currentColor"
-                        strokeWidth="0.8"
-                        fill="none"
-                        strokeDasharray="2 2"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.5 }}
+                        animate={{ pathLength: 1, opacity: 0.8 }}
+                        transition={{ 
+                          duration: 3, 
+                          repeat: Infinity, 
+                          ease: "easeInOut",
+                          repeatDelay: 1
+                        }}
                       />
 
-                      {/* Pulsing Strategic Nodes */}
-                      {[
-                        { x: 50, y: 5 }, { x: 50, y: 95 }, { x: 5, y: 50 }, { x: 95, y: 50 },
-                        { x: 25, y: 25 }, { x: 75, y: 25 }, { x: 25, y: 75 }, { x: 75, y: 75 }
-                      ].map((node, i) => (
-                        <g key={i}>
-                          <motion.circle
-                            cx={node.x}
-                            cy={node.y}
-                            r="2.5"
-                            fill="currentColor"
-                            animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.8, 1] }}
-                            transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
-                          />
-                          <motion.circle
-                            cx={node.x}
-                            cy={node.y}
-                            r="5"
-                            stroke="currentColor"
-                            strokeWidth="1"
-                            fill="none"
-                            animate={{ scale: [1, 2.8, 1], opacity: [0.6, 0, 0.6] }}
-                            transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
-                          />
-                        </g>
-                      ))}
+                      {/* Moving Signal Particle on the Arc */}
+                      <motion.circle
+                        r="1.2"
+                        fill="white"
+                        className="shadow-sm"
+                      >
+                        <animateMotion 
+                          path="M75 60 Q 50 10 25 35" 
+                          dur="3s" 
+                          repeatCount="indefinite"
+                          keyTimes="0;1"
+                          calcMode="spline"
+                          keySplines="0.42 0 0.58 1"
+                        />
+                      </motion.circle>
+
+                      {/* Global Grid Accents */}
+                      <path d="M50 5V95" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
+                      <path d="M5 50H95" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
                     </svg>
                   </motion.div>
                 </div>
                 
                 <div className="space-y-4">
                   <p className="font-lato font-black text-primary uppercase tracking-[0.5em] text-[10px] fhd:text-xs">
-                    Global Legal Infrastructure
+                    Strategic Global Bridge
                   </p>
                   <div className="h-1 w-16 bg-accent mx-auto rounded-full shadow-lg shadow-accent/20" />
                 </div>
