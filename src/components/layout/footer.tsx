@@ -1,4 +1,3 @@
-
 'use client';
 import Link from 'next/link';
 import { Linkedin } from 'lucide-react';
@@ -53,7 +52,7 @@ export function Footer() {
             <ul className="space-y-6 text-sm text-primary-foreground/80">
               <li className="flex flex-col gap-1">
                 <span className="text-accent font-bold uppercase text-[10px]">Headquarters</span>
-                <p className="font-medium">B-1402 Mangalam The Grand Residency, Jaipur, India</p>
+                <p className="font-medium">Floor 1, E-103, Ganpati Enclave, Jaipur, India. Pin 302041</p>
               </li>
               <li className="flex flex-col gap-1">
                 <span className="text-accent font-bold uppercase text-[10px]">Email Support</span>
