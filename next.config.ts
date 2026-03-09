@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+  transpilePackages: ['three', 'react-globe.gl', 'globe.gl', 'three-globe'],
   typescript: {
     ignoreBuildErrors: true,
   },

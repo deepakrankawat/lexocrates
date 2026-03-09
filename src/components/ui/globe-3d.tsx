@@ -2,9 +2,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import dynamic from 'next/dynamic';
-
-const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
+import Globe from 'react-globe.gl';
 
 export function Globe3D() {
   const globeRef = useRef<any>();
@@ -34,28 +32,27 @@ export function Globe3D() {
 
   useEffect(() => {
     if (globeRef.current) {
-      // Auto-rotation
+      // Auto-rotation config
       globeRef.current.controls().autoRotate = true;
       globeRef.current.controls().autoRotateSpeed = 0.5;
+      globeRef.current.controls().enableZoom = false;
       
       // Focus on the path area with a smooth zoom effect
-      // Initial state is slightly zoomed out
       globeRef.current.pointOfView({ lat: 35, lng: 0, altitude: 2.8 }, 0);
       
-      // Delay the zoom to ensure the component is fully mounted and visible
       const timer = setTimeout(() => {
-        globeRef.current.pointOfView({ lat: 35, lng: 0, altitude: 2.0 }, 3500);
-      }, 800);
+        globeRef.current.pointOfView({ lat: 35, lng: 0, altitude: 2.0 }, 3000);
+      }, 500);
 
       return () => clearTimeout(timer);
     }
-  }, [globeRef.current]);
+  }, []);
 
   const arcsData = [
     {
-      startLat: 26.9124,
+      startLat: 26.9124, // Jaipur
       startLng: 75.7873,
-      endLat: 43.65107,
+      endLat: 43.65107, // Canada (Toronto proxy)
       endLng: -79.347015,
       color: ['#b8860b', '#b8860b']
     }
@@ -75,10 +72,10 @@ export function Globe3D() {
         bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
         arcsData={arcsData}
         arcColor="color"
-        arcDashLength={0.4}
-        arcDashGap={3}
+        arcDashLength={0.5}
+        arcDashGap={2}
         arcDashAnimateTime={2000}
-        arcStroke={0.6}
+        arcStroke={1}
         ringsData={ringsData}
         ringColor={() => '#b8860b'}
         ringMaxRadius={2.5}

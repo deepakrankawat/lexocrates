@@ -5,9 +5,10 @@ import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
+// Dynamically import the Globe3D component to ensure it only renders on the client
 const Globe3D = dynamic(() => import('@/components/ui/globe-3d').then(mod => mod.Globe3D), { 
   ssr: false,
-  loading: () => <div className="animate-pulse bg-primary/5 rounded-[4rem] w-full h-full" />
+  loading: () => <div className="animate-pulse bg-primary/5 rounded-[4rem] w-full h-full flex items-center justify-center text-primary/20 font-lato font-bold uppercase tracking-widest text-xs">Initializing Global Map...</div>
 });
 
 export function AboutIntro() {
