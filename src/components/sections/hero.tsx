@@ -4,11 +4,12 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FadeIn } from '../animations/fade-in';
 import { SlideIn } from '../animations/slide-in';
+import { motion } from 'framer-motion';
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary pt-20">
-      {/* Sophisticated Architectural Background Graphic Optimized for FHD */}
+      {/* Sophisticated Architectural & Global Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Base Mesh Gradients */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(184,134,11,0.12)_0%,transparent_50%)]" />
@@ -18,18 +19,43 @@ export function Hero() {
         <div className="absolute inset-0 opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
 
-        {/* Large Architectural SVG Graphic - Proportional Scaling */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] fhd:w-[130%] fhd:h-[130%] opacity-[0.07] pointer-events-none transition-transform duration-1000">
-          <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
-            <circle cx="500" cy="500" r="300" stroke="currentColor" strokeWidth="0.5" />
-            <circle cx="500" cy="500" r="400" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10 10" />
-            <path d="M500 0V1000M0 500H1000" stroke="currentColor" strokeWidth="0.5" />
-            <path d="M150 150L850 850M850 150L150 850" stroke="currentColor" strokeWidth="0.5" />
-            <rect x="250" y="250" width="500" height="500" stroke="currentColor" strokeWidth="0.5" transform="rotate(45 500 500)" />
-            <path d="M500 200L800 500L500 800L200 500Z" stroke="currentColor" strokeWidth="0.5" />
-          </svg>
+        {/* Global Earth Visualization - Optimized for FHD */}
+        <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[60%] h-[120%] opacity-20 pointer-events-none hidden lg:block">
+          <motion.div 
+            initial={{ rotate: 0, opacity: 0 }}
+            animate={{ rotate: 360, opacity: 1 }}
+            transition={{ 
+              rotate: { duration: 120, repeat: Infinity, ease: "linear" },
+              opacity: { duration: 2, delay: 0.5 }
+            }}
+            className="w-full h-full flex items-center justify-center"
+          >
+            <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-accent">
+              <circle cx="500" cy="500" r="450" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10 20" />
+              <ellipse cx="500" cy="500" rx="450" ry="150" stroke="currentColor" strokeWidth="0.5" />
+              <ellipse cx="500" cy="500" rx="150" ry="450" stroke="currentColor" strokeWidth="0.5" />
+              <ellipse cx="500" cy="500" rx="450" ry="300" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
+              <ellipse cx="500" cy="500" rx="300" ry="450" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
+              
+              {/* Pulsing Nodes on the Globe */}
+              {[
+                { x: 500, y: 50 }, { x: 500, y: 950 }, { x: 50, y: 500 }, { x: 950, y: 500 },
+                { x: 200, y: 200 }, { x: 800, y: 200 }, { x: 200, y: 800 }, { x: 800, y: 800 }
+              ].map((pos, i) => (
+                <motion.circle
+                  key={i}
+                  cx={pos.x}
+                  cy={pos.y}
+                  r="4"
+                  fill="currentColor"
+                  animate={{ opacity: [0.2, 1, 0.2], scale: [1, 1.5, 1] }}
+                  transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
+                />
+              ))}
+            </svg>
+          </motion.div>
         </div>
-             
+
         {/* Decorative Blurred Accents */}
         <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-accent/10 rounded-full blur-[180px] -mr-96 -mt-96 animate-pulse duration-[10000ms]" />
         <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[140px] -ml-48 -mb-48" />
