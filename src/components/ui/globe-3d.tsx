@@ -9,6 +9,9 @@ export function Globe3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 600, height: 600 });
 
+  // Use theme accent color (Gold)
+  const THEME_ACCENT = '#ceab30';
+
   useEffect(() => {
     if (containerRef.current) {
       setDimensions({
@@ -54,7 +57,7 @@ export function Globe3D() {
       startLng: 75.7873,
       endLat: 43.65107, // Canada (Toronto proxy)
       endLng: -79.347015,
-      color: ['#b8860b', '#b8860b']
+      color: [THEME_ACCENT, THEME_ACCENT]
     }
   ];
 
@@ -70,6 +73,8 @@ export function Globe3D() {
         backgroundColor="rgba(0,0,0,0)"
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
         bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+        atmosphereColor={THEME_ACCENT}
+        atmosphereDaylightAlpha={0.1}
         arcsData={arcsData}
         arcColor="color"
         arcDashLength={0.5}
@@ -77,7 +82,7 @@ export function Globe3D() {
         arcDashAnimateTime={2000}
         arcStroke={1}
         ringsData={ringsData}
-        ringColor={() => '#b8860b'}
+        ringColor={() => THEME_ACCENT}
         ringMaxRadius={2.5}
         ringPropagationSpeed={2.5}
         ringRepeatPeriod={800}
