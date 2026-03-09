@@ -50,10 +50,11 @@ export function Globe3D() {
       globeRef.current.controls().enableZoom = false;
       
       // Focus on the path area with a smooth zoom effect
+      // Increased altitude (2.8) to prevent cropping of the atmosphere/glow
       globeRef.current.pointOfView({ lat: 35, lng: 0, altitude: 2.8 }, 0);
       
       const timer = setTimeout(() => {
-        globeRef.current.pointOfView({ lat: 35, lng: 0, altitude: 2.0 }, 3000);
+        globeRef.current.pointOfView({ lat: 35, lng: 0, altitude: 2.5 }, 3000);
       }, 500);
 
       return () => clearTimeout(timer);
@@ -76,7 +77,7 @@ export function Globe3D() {
   ];
 
   return (
-    <div ref={containerRef} className="w-full h-full flex items-center justify-center bg-transparent overflow-hidden">
+    <div ref={containerRef} className="w-full h-full flex items-center justify-center bg-transparent overflow-visible">
       <Globe
         ref={globeRef}
         backgroundColor="rgba(0,0,0,0)"
