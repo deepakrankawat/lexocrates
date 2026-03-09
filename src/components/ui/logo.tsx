@@ -6,9 +6,10 @@ import { cn } from '@/lib/utils';
 
 type LogoProps = {
   className?: string;
+  variant?: 'light' | 'dark';
 };
 
-export function Logo({ className }: LogoProps) {
+export function Logo({ className, variant = 'dark' }: LogoProps) {
   return (
     <div className={cn("relative", className)}>
       <Image
@@ -16,7 +17,10 @@ export function Logo({ className }: LogoProps) {
         alt="Lexocrates Logo"
         width={320}
         height={100}
-        className="h-full w-auto object-contain brightness-0"
+        className={cn(
+          "h-full w-auto object-contain transition-all duration-300",
+          variant === 'dark' ? "brightness-0" : ""
+        )}
         priority
       />
     </div>

@@ -42,7 +42,7 @@ export function Header() {
         {/* Logo Section */}
         <div className="flex-shrink-0">
           <Link href="/" className="group block transition-transform duration-300 hover:scale-105">
-            <Logo className="w-auto h-12 sm:h-16 fhd:h-20" />
+            <Logo variant="dark" className="w-auto h-12 sm:h-16 fhd:h-20" />
           </Link>
         </div>
         
@@ -78,7 +78,7 @@ export function Header() {
             </Button>
             <SheetContent side="right" className="w-full bg-white border-0 p-0">
               <SheetHeader className="p-8 flex flex-row items-center justify-between border-b border-black/5">
-                <Logo className="h-12 w-auto" />
+                <Logo variant="dark" className="h-12 w-auto" />
                 <SheetClose asChild>
                   <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 rounded-full h-12 w-12">
                     <X className="h-8 w-8" />
