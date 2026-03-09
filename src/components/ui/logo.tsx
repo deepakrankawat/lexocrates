@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -15,8 +14,8 @@ export function Logo({ className, variant = 'dark' }: LogoProps) {
       <Image
         src="/images/logo-light.svg"
         alt="Lexocrates Logo"
-        width={320}
-        height={100}
+        width={500}
+        height={150}
         className={cn(
           "h-full w-auto object-contain transition-all duration-300",
           variant === 'dark' ? "brightness-0" : ""

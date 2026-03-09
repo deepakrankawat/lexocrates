@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -35,14 +34,14 @@ export function Header() {
   return (
     <header className={cn(
       'fixed top-0 z-50 w-full transition-all duration-500 bg-white border-b border-black/5 shadow-sm',
-      isScrolled ? 'py-3' : 'py-6'
+      isScrolled ? 'py-2 sm:py-3' : 'py-6 lg:py-8'
     )}>
       <div className="mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-20 fhd:px-20 max-w-[1920px]">
         
         {/* Logo Section */}
         <div className="flex-shrink-0">
           <Link href="/" className="group block transition-transform duration-300 hover:scale-105">
-            <Logo variant="dark" className="w-auto h-12 sm:h-16 fhd:h-20" />
+            <Logo variant="dark" className="w-auto h-14 sm:h-18 lg:h-20 fhd:h-24" />
           </Link>
         </div>
         
@@ -78,7 +77,7 @@ export function Header() {
             </Button>
             <SheetContent side="right" className="w-full bg-white border-0 p-0">
               <SheetHeader className="p-8 flex flex-row items-center justify-between border-b border-black/5">
-                <Logo variant="dark" className="h-12 w-auto" />
+                <Logo variant="dark" className="h-14 w-auto" />
                 <SheetClose asChild>
                   <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 rounded-full h-12 w-12">
                     <X className="h-8 w-8" />

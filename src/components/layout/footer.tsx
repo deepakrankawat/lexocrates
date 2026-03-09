@@ -15,7 +15,7 @@ export function Footer() {
           <div>
             <div className="flex justify-center sm:justify-start mb-8">
                 <Link href="/" className="flex items-center gap-2 group">
-                  <Logo variant="light" className="h-16 w-auto transition-transform duration-300 group-hover:scale-105" />
+                  <Logo variant="light" className="h-20 w-auto transition-transform duration-300 group-hover:scale-105" />
                 </Link>
             </div>
             <p className="text-primary-foreground/60 leading-relaxed text-sm max-w-xs mx-auto sm:mx-0">
