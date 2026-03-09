@@ -96,7 +96,7 @@ export function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-2xl px-12 py-8 fhd:px-16 fhd:py-12 rounded-full shadow-[0_20px_50px_rgba(206,166,48,0.2)] transition-all duration-500 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-xl px-12 py-8 fhd:px-16 fhd:py-10 rounded-full shadow-[0_20px_50px_rgba(206,166,48,0.2)] transition-all duration-500 hover:scale-105 active:scale-95"
               >
                 <Link href="/services">View Solutions</Link>
               </Button>
@@ -104,7 +104,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto bg-white/5 backdrop-blur-md text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-2xl px-12 py-8 fhd:px-16 fhd:py-12 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto bg-white/5 backdrop-blur-md text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-xl px-12 py-8 fhd:px-16 fhd:py-10 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
               >
                 <Link href="/contact">Schedule Strategy Call</Link>
               </Button>
