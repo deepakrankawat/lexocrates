@@ -8,11 +8,20 @@ export function Globe3D() {
   const globeRef = useRef<any>();
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 600, height: 600 });
+  const [countries, setCountries] = useState({ features: [] });
 
-  // Use theme accent color (Gold)
-  const THEME_ACCENT = '#ceab30';
+  // Project Style Palette
+  const GOLDEN_SURFACE = '#ceab30';
+  const DARK_BLUE_WATER = '#06162e';
+  const WHITE_ANIMATION = '#ffffff';
 
   useEffect(() => {
+    // Fetch geojson for land surface hexagonal mesh
+    fetch('https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
+      .then(res => res.json())
+      .then(setCountries)
+      .catch(err => console.error('Failed to load globe surface data:', err));
+
     if (containerRef.current) {
       setDimensions({
         width: containerRef.current.clientWidth,
@@ -57,7 +66,7 @@ export function Globe3D() {
       startLng: 75.7873,
       endLat: 43.65107, // Canada (Toronto proxy)
       endLng: -79.347015,
-      color: [THEME_ACCENT, THEME_ACCENT]
+      color: [WHITE_ANIMATION, WHITE_ANIMATION]
     }
   ];
 
@@ -71,9 +80,13 @@ export function Globe3D() {
       <Globe
         ref={globeRef}
         backgroundColor="rgba(0,0,0,0)"
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
-        bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-        atmosphereColor={THEME_ACCENT}
+        globeColor={DARK_BLUE_WATER}
+        hexPolygonsData={countries.features}
+        hexPolygonColor={() => GOLDEN_SURFACE}
+        hexPolygonResolution={3}
+        hexPolygonMargin={0.3}
+        showAtmosphere={true}
+        atmosphereColor={GOLDEN_SURFACE}
         atmosphereDaylightAlpha={0.1}
         arcsData={arcsData}
         arcColor="color"
@@ -82,7 +95,7 @@ export function Globe3D() {
         arcDashAnimateTime={2000}
         arcStroke={1}
         ringsData={ringsData}
-        ringColor={() => THEME_ACCENT}
+        ringColor={() => WHITE_ANIMATION}
         ringMaxRadius={2.5}
         ringPropagationSpeed={2.5}
         ringRepeatPeriod={800}
