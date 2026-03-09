@@ -14,8 +14,8 @@ export function Logo({ className }: LogoProps) {
       <Image
         src="/images/logo-light.svg"
         alt="Lexocrates Logo"
-        width={240}
-        height={70}
+        width={320}
+        height={100}
         className="h-full w-auto object-contain brightness-0"
         priority
       />
