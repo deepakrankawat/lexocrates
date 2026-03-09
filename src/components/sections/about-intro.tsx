@@ -1,7 +1,14 @@
+
 'use client';
 
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+const Globe3D = dynamic(() => import('@/components/ui/globe-3d').then(mod => mod.Globe3D), { 
+  ssr: false,
+  loading: () => <div className="animate-pulse bg-primary/5 rounded-[4rem] w-full h-full" />
+});
 
 export function AboutIntro() {
   return (
@@ -12,108 +19,32 @@ export function AboutIntro() {
           <SlideIn direction="left" className="lg:order-last relative">
             <div className="relative h-[500px] lg:h-[600px] fhd:h-[800px] w-full bg-primary/[0.03] rounded-[4rem] overflow-hidden flex items-center justify-center shadow-[inset_0_0_100px_rgba(0,0,0,0.02)] border border-primary/5 group">
               
-              {/* Dynamic Global Architectural Visualization */}
-              <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+              {/* Dynamic 3D Globe Visualization */}
+              <div className="absolute inset-0 z-10">
+                <Globe3D />
+              </div>
+
+              {/* Decorative Background Grid */}
+              <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.05]">
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
-                  className="w-[110%] h-[110%] opacity-[0.12]"
+                  className="w-[110%] h-[110%]"
                 >
                   <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary">
                     <circle cx="500" cy="500" r="480" stroke="currentColor" strokeWidth="0.8" strokeDasharray="20 40" />
-                    <circle cx="500" cy="500" r="380" stroke="currentColor" strokeWidth="0.8" strokeDasharray="10 20" />
                     <ellipse cx="500" cy="500" rx="480" ry="120" stroke="currentColor" strokeWidth="0.8" />
                     <ellipse cx="500" cy="500" rx="120" ry="480" stroke="currentColor" strokeWidth="0.8" />
-                    <path d="M500 20V980M20 500H980" stroke="currentColor" strokeWidth="0.5" />
                   </svg>
                 </motion.div>
               </div>
-
-              {/* Central Core Globe Icon - Connection Visualization */}
-              <div className="relative z-10 flex flex-col items-center gap-10 text-center p-12">
-                <div className="relative">
-                  {/* Glowing Aura */}
-                  <div className="absolute inset-0 bg-accent/25 blur-[120px] rounded-full scale-150 animate-pulse duration-[4000ms]" />
-                  
-                  <motion.div 
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="relative p-12 fhd:p-16 bg-white rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.1)] border border-primary/10 backdrop-blur-3xl"
-                  >
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 fhd:w-36 fhd:h-36 text-primary">
-                      {/* Detailed Globe Wireframe */}
-                      <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1" opacity="0.1" />
-                      <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" strokeWidth="1" opacity="0.1" />
-                      <ellipse cx="50" cy="50" rx="15" ry="45" stroke="currentColor" strokeWidth="1" opacity="0.1" />
-                      
-                      {/* THE STRATEGIC BRIDGE: Jaipur to Canada Animation */}
-                      {/* Jaipur Node (East) */}
-                      <motion.circle
-                        cx="75"
-                        cy="60"
-                        r="2"
-                        fill="var(--accent)"
-                        animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      />
-                      <text x="78" y="65" fill="var(--accent)" fontSize="3" fontWeight="bold" className="opacity-50">Jaipur</text>
-
-                      {/* Canada Node (West) */}
-                      <motion.circle
-                        cx="25"
-                        cy="35"
-                        r="2"
-                        fill="var(--accent)"
-                        animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                      />
-                      <text x="5" y="30" fill="var(--accent)" fontSize="3" fontWeight="bold" className="opacity-50">Canada</text>
-
-                      {/* Animated Connection Arc */}
-                      <motion.path
-                        d="M75 60 Q 50 10 25 35"
-                        stroke="var(--accent)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        fill="none"
-                        initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 0.8 }}
-                        transition={{ 
-                          duration: 3, 
-                          repeat: Infinity, 
-                          ease: "easeInOut",
-                          repeatDelay: 1
-                        }}
-                      />
-
-                      {/* Moving Signal Particle on the Arc */}
-                      <motion.circle
-                        r="1.2"
-                        fill="white"
-                        className="shadow-sm"
-                      >
-                        <animateMotion 
-                          path="M75 60 Q 50 10 25 35" 
-                          dur="3s" 
-                          repeatCount="indefinite"
-                          keyTimes="0;1"
-                          calcMode="spline"
-                          keySplines="0.42 0 0.58 1"
-                        />
-                      </motion.circle>
-
-                      {/* Global Grid Accents */}
-                      <path d="M50 5V95" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
-                      <path d="M5 50H95" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
-                    </svg>
-                  </motion.div>
-                </div>
-                
-                <div className="space-y-4">
+              
+              <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20">
+                <div className="flex flex-col items-center gap-4 text-center">
                   <p className="font-lato font-black text-primary uppercase tracking-[0.5em] text-[10px] fhd:text-xs">
                     Strategic Global Bridge
                   </p>
-                  <div className="h-1 w-16 bg-accent mx-auto rounded-full shadow-lg shadow-accent/20" />
+                  <div className="h-1 w-16 bg-accent rounded-full shadow-lg shadow-accent/20" />
                 </div>
               </div>
             </div>
