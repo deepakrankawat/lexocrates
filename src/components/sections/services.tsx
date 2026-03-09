@@ -10,9 +10,9 @@ import { SlideIn } from '../animations/slide-in';
 
 export function Services() {
   return (
-    <section id="services" className="bg-secondary/30 text-foreground py-24 sm:py-32">
+    <section id="services" className="bg-secondary/30 text-foreground py-16 sm:py-24">
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1800px]">
-        <SlideIn className="text-center mb-20 max-w-4xl mx-auto">
+        <SlideIn className="text-center mb-16 max-w-4xl mx-auto">
           <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-sm">
             Our Expertise
           </p>
@@ -52,7 +52,7 @@ export function Services() {
           })}
         </StaggerFadeIn>
         
-        <div className="mt-20 text-center">
+        <div className="mt-16 text-center">
             <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 font-montserrat font-black text-lg px-12 py-8 rounded-full shadow-2xl shadow-primary/20 transition-all duration-300 hover:scale-105 active:scale-95">
               <Link href="/services">Explore All Services</Link>
             </Button>

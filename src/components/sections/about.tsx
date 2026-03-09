@@ -9,7 +9,7 @@ import { AppImage } from '../ui/app-image';
 export function About() {
   const image = PlaceHolderImages.find(img => img.id === 'service-detail-1');
   return (
-    <section id="about" className="bg-background text-foreground py-24 sm:py-40 overflow-hidden">
+    <section id="about" className="bg-background text-foreground py-16 sm:py-24 overflow-hidden">
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1800px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
           

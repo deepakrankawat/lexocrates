@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Quote } from 'lucide-react';
@@ -6,7 +5,7 @@ import { SlideIn } from '../animations/slide-in';
 
 export function Welcome() {
   return (
-    <section className="bg-background text-foreground py-24 sm:py-40 overflow-hidden">
+    <section className="bg-background text-foreground py-16 sm:py-24 overflow-hidden">
         <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1200px]">
           <div className="flex flex-col items-center text-center">
             

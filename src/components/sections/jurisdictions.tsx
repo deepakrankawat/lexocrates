@@ -1,4 +1,3 @@
-
 'use client';
 
 import { SlideIn } from '../animations/slide-in';
@@ -28,7 +27,7 @@ const regions = [
 
 export function Jurisdictions() {
   return (
-    <section className="py-24 sm:py-32 bg-background overflow-hidden">
+    <section className="py-16 sm:py-24 bg-background overflow-hidden">
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <SlideIn direction="left">

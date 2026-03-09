@@ -1,4 +1,3 @@
-
 import { ShieldCheck, Scale, Users, Award } from "lucide-react";
 import { StaggerFadeIn } from "../animations/stagger-fade-in";
 import { SlideIn } from "../animations/slide-in";
@@ -28,7 +27,7 @@ const features = [
 
 export function WhyChooseUs() {
     return (
-        <section className="bg-white text-foreground py-12 sm:py-16 overflow-hidden">
+        <section className="bg-white text-foreground py-12 sm:py-20 overflow-hidden">
             <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-full laptop:max-w-[1200px] fhd:max-w-[1400px] qhd:max-w-[1600px] uhd:max-w-[1800px]">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <SlideIn direction="right">

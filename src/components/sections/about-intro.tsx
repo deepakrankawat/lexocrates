@@ -1,4 +1,3 @@
-
 'use client';
 
 import { SlideIn } from '../animations/slide-in';
@@ -13,7 +12,7 @@ const Globe3D = dynamic(() => import('@/components/ui/globe-3d').then(mod => mod
 
 export function AboutIntro() {
   return (
-    <section id="about-intro" className="bg-background text-foreground py-24 sm:py-32 fhd:py-48 overflow-hidden">
+    <section id="about-intro" className="bg-background text-foreground py-16 sm:py-24 fhd:py-32 overflow-hidden">
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1920px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 fhd:gap-40 items-center">
           

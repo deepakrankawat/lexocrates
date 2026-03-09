@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Faq } from "@/components/sections/faq";
@@ -49,13 +48,13 @@ export default function ContactPage() {
       </section>
 
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px]">
-          <section id="contact-form" className="py-24 sm:py-32 bg-background">
+          <section id="contact-form" className="py-16 sm:py-24 bg-background">
             <div className="max-w-4xl mx-auto">
               <SimpleContactForm />
             </div>
           </section>
 
-          <section id="headquarters" className="py-24 sm:py-32 bg-secondary rounded-[3rem] px-8 sm:px-16 overflow-hidden">
+          <section id="headquarters" className="py-16 sm:py-24 bg-secondary rounded-[3rem] px-8 sm:px-16 overflow-hidden">
               <div className="text-center mb-16">
                 <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-xs">Our Main Office</p>
                 <h2 className="mt-4 font-lato text-4xl md:text-5xl font-black text-primary">Jaipur Headquarters</h2>
