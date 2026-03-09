@@ -36,13 +36,10 @@ export function Welcome() {
                     </div>
                 </div>
 
-                <div className="mt-16 pt-12 border-t border-black/5 flex flex-col sm:flex-row sm:items-center justify-center gap-8">
-                    <div className="text-center sm:text-left">
-                        <p className="font-montserrat font-black text-primary text-3xl tracking-tight">Yashvardhan Singh</p>
-                        <p className="text-accent font-black uppercase tracking-widest text-[11px] mt-2">Founder & CEO, Lexocrates Legal Services</p>
-                    </div>
-                    <div className="hidden sm:block h-16 w-px bg-black/5" />
-                    <div className="opacity-30">
+                <div className="mt-16 pt-12 border-t border-black/5 flex flex-col items-center text-center">
+                    <p className="font-montserrat font-black text-primary text-3xl tracking-tight">Yashvardhan Singh</p>
+                    <p className="text-accent font-black uppercase tracking-widest text-[11px] mt-2">Founder & CEO, Lexocrates Legal Services</p>
+                    <div className="mt-8 opacity-30">
                         <svg className="w-48 h-12 text-primary" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 40C30 20 60 50 90 30C120 10 150 40 190 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                         </svg>
