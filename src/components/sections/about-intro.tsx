@@ -42,25 +42,64 @@ export function AboutIntro() {
                   >
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 fhd:w-36 fhd:h-36 text-accent">
                       {/* Detailed Globe Wireframe */}
-                      <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="0.5" />
-                      <path d="M50 5A45 45 0 0 0 50 95" stroke="currentColor" strokeWidth="0.5" />
-                      <path d="M50 5A45 45 0 0 1 50 95" stroke="currentColor" strokeWidth="0.5" />
-                      <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" strokeWidth="0.5" />
+                      <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
+                      <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
+                      <ellipse cx="50" cy="50" rx="15" ry="45" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
                       
+                      {/* Animated Connection Lines (Arcs) */}
+                      <motion.path
+                        d="M25 25 Q 50 10 75 25"
+                        stroke="currentColor"
+                        strokeWidth="0.5"
+                        fill="none"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 0.4 }}
+                        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                      />
+                      <motion.path
+                        d="M25 75 Q 50 90 75 75"
+                        stroke="currentColor"
+                        strokeWidth="0.5"
+                        fill="none"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 0.4 }}
+                        transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0.5 }}
+                      />
+                      <motion.path
+                        d="M5 50 Q 50 50 95 50"
+                        stroke="currentColor"
+                        strokeWidth="0.3"
+                        fill="none"
+                        strokeDasharray="2 2"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.3 }}
+                      />
+
                       {/* Pulsing Strategic Nodes */}
                       {[
                         { x: 50, y: 5 }, { x: 50, y: 95 }, { x: 5, y: 50 }, { x: 95, y: 50 },
                         { x: 25, y: 25 }, { x: 75, y: 25 }, { x: 25, y: 75 }, { x: 75, y: 75 }
                       ].map((node, i) => (
-                        <motion.circle
-                          key={i}
-                          cx={node.x}
-                          cy={node.y}
-                          r="1.5"
-                          fill="currentColor"
-                          animate={{ opacity: [0.3, 1, 0.3], scale: [1, 1.8, 1] }}
-                          transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
-                        />
+                        <g key={i}>
+                          <motion.circle
+                            cx={node.x}
+                            cy={node.y}
+                            r="2"
+                            fill="currentColor"
+                            animate={{ opacity: [0.3, 1, 0.3], scale: [1, 1.8, 1] }}
+                            transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
+                          />
+                          <motion.circle
+                            cx={node.x}
+                            cy={node.y}
+                            r="4"
+                            stroke="currentColor"
+                            strokeWidth="0.5"
+                            fill="none"
+                            animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
+                            transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
+                          />
+                        </g>
                       ))}
                     </svg>
                   </motion.div>
