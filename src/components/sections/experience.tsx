@@ -1,6 +1,10 @@
-import { Calendar, Users, TrendingUp } from 'lucide-react';
+
+'use client';
+
+import { Calendar, Users } from 'lucide-react';
 import { SlideIn } from '@/components/animations/slide-in';
 import { Counter } from '@/components/animations/counter';
+import { motion } from 'framer-motion';
 
 export function Experience() {
   return (
@@ -8,35 +12,110 @@ export function Experience() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="right">
             <div className="flex flex-col">
-              <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Track Record</p>
-              <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold leading-tight text-primary">
-                Decades of Expertise, Measurable Results
+              <div className="inline-flex items-center gap-4 mb-6">
+                <div className="w-12 h-px bg-accent/30" />
+                <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs">Our Track Record</p>
+              </div>
+              <h2 className="font-lato text-4xl sm:text-5xl font-black leading-tight text-primary tracking-tighter mb-8">
+                Decades of Expertise, <br />
+                <span className="text-accent">Measurable</span> Results
               </h2>
-              <p className="mt-6 text-foreground/80">
+              <p className="text-xl text-foreground/70 leading-relaxed font-medium mb-12">
                 Our firm's foundation is built on years of dedicated service and a deep understanding of global legal standards. We leverage this experience to deliver efficiency and excellence for our clients.
               </p>
-              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div className="text-center">
-                      <Calendar className="h-12 w-12 mx-auto text-accent" />
-                      <p className="mt-2 text-4xl font-bold text-primary">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className="text-center p-8 bg-secondary/50 rounded-[2.5rem] border border-black/5 hover:border-accent/30 transition-all duration-500 shadow-sm">
+                      <Calendar className="h-10 w-10 mx-auto text-accent mb-6" />
+                      <p className="text-5xl font-black text-primary tracking-tighter">
                         <Counter from={0} to={15} />+
                       </p>
-                      <p className="text-foreground/80">Years Experience</p>
+                      <p className="text-accent font-black uppercase tracking-[0.2em] text-[10px] mt-4">Years Experience</p>
                   </div>
-                  <div className="text-center">
-                      <Users className="h-12 w-12 mx-auto text-accent" />
-                      <p className="mt-2 text-4xl font-bold text-primary">
+                  <div className="text-center p-8 bg-secondary/50 rounded-[2.5rem] border border-black/5 hover:border-accent/30 transition-all duration-500 shadow-sm">
+                      <Users className="h-10 w-10 mx-auto text-accent mb-6" />
+                      <p className="text-5xl font-black text-primary tracking-tighter">
                          <Counter from={0} to={50} />+
                       </p>
-                      <p className="text-foreground/80">Legal Experts</p>
+                      <p className="text-accent font-black uppercase tracking-[0.2em] text-[10px] mt-4">Legal Experts</p>
                   </div>
               </div>
             </div>
           </SlideIn>
-           <SlideIn direction="left" className="relative h-96 lg:h-[32rem] flex items-center justify-center">
-            <div className="relative h-full w-full justify-self-center bg-secondary flex items-center justify-center">
-                <div className="relative h-64 w-64 justify-self-center">
-                    <TrendingUp className="h-48 w-48 text-accent/80" />
+
+           <SlideIn direction="left" className="relative h-[400px] lg:h-[550px] flex items-center justify-center">
+            <div className="relative h-full w-full rounded-[4rem] bg-primary overflow-hidden flex items-center justify-center p-12 shadow-2xl">
+                {/* Decorative Background grid */}
+                <div className="absolute inset-0 opacity-[0.05]" 
+                     style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+                
+                {/* Visual Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/10 blur-[100px] rounded-full" />
+
+                <div className="relative w-full h-full flex items-center justify-center">
+                    <svg viewBox="0 0 400 200" className="w-full h-full overflow-visible">
+                        <defs>
+                            <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stopColor="#ceab30" stopOpacity="0.4" />
+                                <stop offset="100%" stopColor="#ceab30" stopOpacity="0" />
+                            </linearGradient>
+                        </defs>
+
+                        {/* Animated Area Fill */}
+                        <motion.path
+                            d="M0 180 L50 160 L100 170 L150 120 L200 130 L250 80 L300 90 L350 40 L400 50 V180 H0 Z"
+                            fill="url(#chartGradient)"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1, delay: 0.5 }}
+                        />
+                        
+                        {/* The Animated Line */}
+                        <motion.path
+                            d="M0 180 L50 160 L100 170 L150 120 L200 130 L250 80 L300 90 L350 40 L400 50"
+                            fill="none"
+                            stroke="#ceab30"
+                            strokeWidth="5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            initial={{ pathLength: 0 }}
+                            whileInView={{ pathLength: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 2.5, ease: "easeInOut" }}
+                        />
+
+                        {/* Pulsing end point */}
+                        <motion.circle
+                            cx="400"
+                            cy="50"
+                            r="8"
+                            fill="#ceab30"
+                            initial={{ scale: 0 }}
+                            animate={{ scale: [1, 1.4, 1] }}
+                            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        />
+
+                        {/* Data Points */}
+                        {[
+                          {x: 50, y: 160}, {x: 150, y: 120}, {x: 250, y: 80}, {x: 350, y: 40}
+                        ].map((p, i) => (
+                          <motion.circle
+                            key={i}
+                            cx={p.x}
+                            cy={p.y}
+                            r="4"
+                            fill="#fff"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 0.2 }}
+                            transition={{ delay: 1 + (i * 0.3) }}
+                          />
+                        ))}
+                    </svg>
+                </div>
+                
+                {/* Floating label */}
+                <div className="absolute bottom-10 left-10 flex items-center gap-3">
+                  <div className="w-10 h-0.5 bg-accent" />
+                  <p className="text-white/40 font-lato font-bold text-[10px] uppercase tracking-[0.3em]">Growth Metrics</p>
                 </div>
             </div>
           </SlideIn>
