@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -74,7 +75,7 @@ export function Hero() {
           </FadeIn>
           
           <SlideIn direction="up" delay={0.4} duration={0.8}>
-            <h1 className="font-montserrat text-[3.5rem] sm:text-[5rem] lg:text-[6.5rem] fhd:text-[clamp(6rem,8.5vw,10.5rem)] font-black leading-[0.9] text-white mb-10 fhd:mb-16 tracking-tighter">
+            <h1 className="font-montserrat text-[3.5rem] sm:text-[5rem] lg:text-[6.5rem] fhd:text-[clamp(5rem,7vw,8rem)] font-black leading-[0.9] text-white mb-10 fhd:mb-16 tracking-tighter">
               Strategic <br />
               <span className="text-accent">Legal</span> <br />
               Operations
@@ -82,17 +83,17 @@ export function Hero() {
           </SlideIn>
 
           <FadeIn delay={0.6} duration={0.8}>
-            <p className="max-w-3xl fhd:max-w-5xl text-lg sm:text-xl lg:text-2xl fhd:text-[1.75rem] text-white/70 font-medium leading-relaxed mb-12 fhd:mb-20 mx-auto lg:mx-0 border-l-4 border-accent/20 pl-8">
+            <p className="max-w-3xl fhd:max-w-4xl text-lg sm:text-xl lg:text-2xl fhd:text-xl text-white/70 font-medium leading-relaxed mb-12 fhd:mb-20 mx-auto lg:mx-0 border-l-4 border-accent/20 pl-8">
               Driving efficiency for the world&apos;s leading law firms and corporate legal departments. We provide the expertise and technology to transform your legal workflow.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.8} duration={0.8}>
-            <div className="flex flex-col sm:flex-row items-center gap-6 fhd:gap-10 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row items-center gap-6 fhd:gap-8 justify-center lg:justify-start">
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-xl px-12 py-6 fhd:px-14 fhd:py-8 rounded-full shadow-[0_20px_50px_rgba(206,166,48,0.2)] transition-all duration-500 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-lg px-12 py-6 fhd:px-14 fhd:py-7 rounded-full shadow-[0_20px_50px_rgba(206,166,48,0.2)] transition-all duration-500 hover:scale-105 active:scale-95"
               >
                 <Link href="/services">View Solutions</Link>
               </Button>
@@ -100,7 +101,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto bg-white/5 backdrop-blur-md text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-xl px-12 py-6 fhd:px-14 fhd:py-8 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto bg-white/5 backdrop-blur-md text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-lg fhd:text-lg px-12 py-6 fhd:px-14 fhd:py-7 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
               >
                 <Link href="/contact">Schedule Strategy Call</Link>
               </Button>
