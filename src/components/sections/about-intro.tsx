@@ -18,7 +18,7 @@ export function AboutIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 fhd:gap-40 items-center">
           
           <SlideIn direction="left" className="lg:order-last relative">
-            <div className="relative h-[500px] lg:h-[600px] fhd:h-[800px] w-full flex items-center justify-center group overflow-hidden">
+            <div className="relative h-[400px] lg:h-[450px] fhd:h-[550px] w-full flex items-center justify-center group overflow-hidden">
               
               {/* Dynamic 3D Globe Visualization */}
               <div className="absolute inset-0 z-10">
