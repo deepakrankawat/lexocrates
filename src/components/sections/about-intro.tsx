@@ -39,15 +39,6 @@ export function AboutIntro() {
                   </svg>
                 </motion.div>
               </div>
-              
-              <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20">
-                <div className="flex flex-col items-center gap-4 text-center">
-                  <p className="font-lato font-black text-primary uppercase tracking-[0.5em] text-[10px] fhd:text-xs">
-                    Strategic Global Bridge
-                  </p>
-                  <div className="h-1 w-16 bg-accent rounded-full shadow-lg shadow-accent/20" />
-                </div>
-              </div>
             </div>
           </SlideIn>
           
