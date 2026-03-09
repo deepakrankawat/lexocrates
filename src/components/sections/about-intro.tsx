@@ -10,21 +10,21 @@ export function AboutIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 fhd:gap-40 items-center">
           
           <SlideIn direction="left" className="lg:order-last relative">
-            <div className="relative h-[500px] lg:h-[600px] fhd:h-[800px] w-full bg-secondary/20 rounded-[4rem] overflow-hidden flex items-center justify-center shadow-[inset_0_0_100px_rgba(0,0,0,0.02)] border border-black/5 group">
+            <div className="relative h-[500px] lg:h-[600px] fhd:h-[800px] w-full bg-primary/[0.03] rounded-[4rem] overflow-hidden flex items-center justify-center shadow-[inset_0_0_100px_rgba(0,0,0,0.02)] border border-primary/5 group">
               
               {/* Dynamic Global Architectural Visualization */}
               <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
-                  className="w-[110%] h-[110%] opacity-[0.07]"
+                  className="w-[110%] h-[110%] opacity-[0.12]"
                 >
                   <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary">
-                    <circle cx="500" cy="500" r="480" stroke="currentColor" strokeWidth="0.5" strokeDasharray="20 40" />
-                    <circle cx="500" cy="500" r="380" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10 20" />
-                    <ellipse cx="500" cy="500" rx="480" ry="120" stroke="currentColor" strokeWidth="0.5" />
-                    <ellipse cx="500" cy="500" rx="120" ry="480" stroke="currentColor" strokeWidth="0.5" />
-                    <path d="M500 20V980M20 500H980" stroke="currentColor" strokeWidth="0.2" />
+                    <circle cx="500" cy="500" r="480" stroke="currentColor" strokeWidth="0.8" strokeDasharray="20 40" />
+                    <circle cx="500" cy="500" r="380" stroke="currentColor" strokeWidth="0.8" strokeDasharray="10 20" />
+                    <ellipse cx="500" cy="500" rx="480" ry="120" stroke="currentColor" strokeWidth="0.8" />
+                    <ellipse cx="500" cy="500" rx="120" ry="480" stroke="currentColor" strokeWidth="0.8" />
+                    <path d="M500 20V980M20 500H980" stroke="currentColor" strokeWidth="0.5" />
                   </svg>
                 </motion.div>
               </div>
@@ -33,46 +33,46 @@ export function AboutIntro() {
               <div className="relative z-10 flex flex-col items-center gap-10 text-center p-12">
                 <div className="relative">
                   {/* Glowing Aura */}
-                  <div className="absolute inset-0 bg-accent/20 blur-[120px] rounded-full scale-150 animate-pulse duration-[4000ms]" />
+                  <div className="absolute inset-0 bg-accent/25 blur-[120px] rounded-full scale-150 animate-pulse duration-[4000ms]" />
                   
                   <motion.div 
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="relative p-12 fhd:p-16 bg-white rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-black/5 backdrop-blur-3xl"
+                    className="relative p-12 fhd:p-16 bg-white rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.1)] border border-primary/10 backdrop-blur-3xl"
                   >
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 fhd:w-36 fhd:h-36 text-accent">
                       {/* Detailed Globe Wireframe */}
-                      <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
-                      <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
-                      <ellipse cx="50" cy="50" rx="15" ry="45" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
+                      <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                      <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                      <ellipse cx="50" cy="50" rx="15" ry="45" stroke="currentColor" strokeWidth="1" opacity="0.3" />
                       
                       {/* Animated Connection Lines (Arcs) */}
                       <motion.path
                         d="M25 25 Q 50 10 75 25"
                         stroke="currentColor"
-                        strokeWidth="0.5"
+                        strokeWidth="1.2"
                         fill="none"
                         initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 0.4 }}
+                        animate={{ pathLength: 1, opacity: 0.6 }}
                         transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
                       />
                       <motion.path
                         d="M25 75 Q 50 90 75 75"
                         stroke="currentColor"
-                        strokeWidth="0.5"
+                        strokeWidth="1.2"
                         fill="none"
                         initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 0.4 }}
+                        animate={{ pathLength: 1, opacity: 0.6 }}
                         transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0.5 }}
                       />
                       <motion.path
                         d="M5 50 Q 50 50 95 50"
                         stroke="currentColor"
-                        strokeWidth="0.3"
+                        strokeWidth="0.8"
                         fill="none"
                         strokeDasharray="2 2"
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.3 }}
+                        animate={{ opacity: 0.5 }}
                       />
 
                       {/* Pulsing Strategic Nodes */}
@@ -84,19 +84,19 @@ export function AboutIntro() {
                           <motion.circle
                             cx={node.x}
                             cy={node.y}
-                            r="2"
+                            r="2.5"
                             fill="currentColor"
-                            animate={{ opacity: [0.3, 1, 0.3], scale: [1, 1.8, 1] }}
+                            animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.8, 1] }}
                             transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
                           />
                           <motion.circle
                             cx={node.x}
                             cy={node.y}
-                            r="4"
+                            r="5"
                             stroke="currentColor"
-                            strokeWidth="0.5"
+                            strokeWidth="1"
                             fill="none"
-                            animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
+                            animate={{ scale: [1, 2.8, 1], opacity: [0.6, 0, 0.6] }}
                             transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
                           />
                         </g>
