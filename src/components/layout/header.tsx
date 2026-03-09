@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -53,7 +54,7 @@ export function Header() {
                 <Link 
                   href={link.href} 
                   className={cn(
-                    "text-xs xl:text-sm font-black uppercase tracking-[0.2em] transition-all duration-300 py-2",
+                    "text-sm xl:text-base font-black uppercase tracking-[0.2em] transition-all duration-300 py-2",
                     isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                   )}
                 >
