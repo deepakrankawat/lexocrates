@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic';
 // Dynamically import the Globe3D component to ensure it only renders on the client
 const Globe3D = dynamic(() => import('@/components/ui/globe-3d').then(mod => mod.Globe3D), { 
   ssr: false,
-  loading: () => <div className="animate-pulse bg-primary/5 rounded-[4rem] w-full h-full flex items-center justify-center text-primary/20 font-lato font-bold uppercase tracking-widest text-xs">Initializing Global Map...</div>
+  loading: () => <div className="w-full h-full flex items-center justify-center text-primary/20 font-lato font-bold uppercase tracking-widest text-xs">Initializing Global Map...</div>
 });
 
 export function AboutIntro() {
@@ -18,7 +18,7 @@ export function AboutIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 fhd:gap-40 items-center">
           
           <SlideIn direction="left" className="lg:order-last relative">
-            <div className="relative h-[500px] lg:h-[600px] fhd:h-[800px] w-full bg-primary/[0.03] rounded-[4rem] overflow-hidden flex items-center justify-center shadow-[inset_0_0_100px_rgba(0,0,0,0.02)] border border-primary/5 group">
+            <div className="relative h-[500px] lg:h-[600px] fhd:h-[800px] w-full flex items-center justify-center group overflow-hidden">
               
               {/* Dynamic 3D Globe Visualization */}
               <div className="absolute inset-0 z-10">
