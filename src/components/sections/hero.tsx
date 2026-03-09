@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -20,7 +19,7 @@ export function Hero() {
         <div className="absolute inset-0 opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
 
-        {/* Global Earth Visualization - Optimized for FHD */}
+        {/* Global Earth Visualization - White wireframe for high-end feel */}
         <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[60%] h-[120%] opacity-20 pointer-events-none hidden lg:block">
           <motion.div 
             initial={{ rotate: 0, opacity: 0 }}
@@ -31,7 +30,7 @@ export function Hero() {
             }}
             className="w-full h-full flex items-center justify-center"
           >
-            <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-accent">
+            <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
               <circle cx="500" cy="500" r="450" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10 20" />
               <ellipse cx="500" cy="500" rx="450" ry="150" stroke="currentColor" strokeWidth="0.5" />
               <ellipse cx="500" cy="500" rx="150" ry="450" stroke="currentColor" strokeWidth="0.5" />
