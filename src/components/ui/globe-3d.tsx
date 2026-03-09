@@ -13,7 +13,7 @@ export function Globe3D() {
   // Project Style Palette
   const GOLDEN_SURFACE = '#ceab30';
   const DARK_BLUE_WATER = '#06162e';
-  const WHITE_ANIMATION = '#ffffff';
+  const GREEN_ANIMATION = '#22c55e';
 
   useEffect(() => {
     // Fetch geojson for land surface hexagonal mesh
@@ -66,7 +66,7 @@ export function Globe3D() {
       startLng: 75.7873,
       endLat: 43.65107, // Canada (Toronto proxy)
       endLng: -79.347015,
-      color: [WHITE_ANIMATION, WHITE_ANIMATION]
+      color: [GREEN_ANIMATION, GREEN_ANIMATION]
     }
   ];
 
@@ -95,7 +95,7 @@ export function Globe3D() {
         arcDashAnimateTime={2000}
         arcStroke={1}
         ringsData={ringsData}
-        ringColor={() => WHITE_ANIMATION}
+        ringColor={() => GREEN_ANIMATION}
         ringMaxRadius={2.5}
         ringPropagationSpeed={2.5}
         ringRepeatPeriod={800}
