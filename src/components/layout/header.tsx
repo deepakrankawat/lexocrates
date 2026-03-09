@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -37,7 +36,7 @@ export function Header() {
       'fixed top-0 z-50 w-full transition-all duration-500 bg-white border-b border-black/5 shadow-sm',
       isScrolled ? 'py-3' : 'py-5'
     )}>
-      <div className="mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-24 max-w-[1800px]">
+      <div className="mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-20 fhd:px-20 max-w-[1920px]">
         
         {/* Logo Section */}
         <div className="flex-shrink-0">

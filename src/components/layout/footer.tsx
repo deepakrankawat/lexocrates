@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground font-lato">
-      <div className="mx-auto px-6 py-24 sm:px-12 lg:px-24 max-w-[1800px]">
+      <div className="mx-auto px-6 py-20 sm:px-12 lg:px-20 fhd:px-20 max-w-[1920px]">
         <div className="grid grid-cols-1 gap-16 text-center sm:text-left md:grid-cols-2 lg:grid-cols-4">
           
           <div>
