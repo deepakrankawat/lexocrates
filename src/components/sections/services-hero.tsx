@@ -17,6 +17,7 @@ export function ServicesHero() {
             <path d="M500 0V1000" stroke="currentColor" strokeWidth="0.5" />
             <circle cx="500" cy="500" r="400" stroke="currentColor" strokeWidth="0.5" />
             <rect x="200" y="200" width="600" height="600" stroke="currentColor" strokeWidth="0.5" />
+            <rect x="350" y="350" width="300" height="300" stroke="currentColor" strokeWidth="0.5" />
           </svg>
         </div>
       </div>

@@ -13,9 +13,9 @@ export function BlogHero() {
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] opacity-[0.05] pointer-events-none">
           <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
-            <path d="M500 0V1000M0 500H1000" stroke="currentColor" strokeWidth="0.5" />
-            <circle cx="500" cy="500" r="350" stroke="currentColor" strokeWidth="0.5" />
-            <path d="M150 150L850 850M850 150L150 850" stroke="currentColor" strokeWidth="0.5" />
+            <path d="M300 200V800M700 200V800M500 200V800" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10 10" />
+            <rect x="300" y="300" width="400" height="400" stroke="currentColor" strokeWidth="0.5" />
+            <path d="M300 400H700M300 500H700M300 600H700" stroke="currentColor" strokeWidth="0.5" />
           </svg>
         </div>
       </div>

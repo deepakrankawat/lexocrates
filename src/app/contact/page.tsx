@@ -19,8 +19,10 @@ export default function ContactPage() {
                style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] opacity-[0.05] pointer-events-none">
             <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
-              <circle cx="500" cy="500" r="300" stroke="currentColor" strokeWidth="0.5" />
-              <path d="M500 0V1000M0 500H1000" stroke="currentColor" strokeWidth="0.5" />
+              <circle cx="500" cy="500" r="100" stroke="currentColor" strokeWidth="0.5" />
+              <circle cx="500" cy="500" r="200" stroke="currentColor" strokeWidth="0.5" />
+              <circle cx="500" cy="500" r="300" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10 10" />
+              <path d="M500 0V1000M0 500H1000" stroke="currentColor" strokeWidth="0.1" />
             </svg>
           </div>
         </div>

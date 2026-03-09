@@ -13,9 +13,9 @@ export function CareersHero() {
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] opacity-[0.05] pointer-events-none">
           <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
-            <rect x="200" y="200" width="600" height="600" stroke="currentColor" strokeWidth="0.5" />
-            <path d="M0 0L1000 1000M1000 0L0 1000" stroke="currentColor" strokeWidth="0.5" />
-            <circle cx="500" cy="500" r="450" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
+            <path d="M0 0L500 500L1000 0M0 1000L500 500L1000 1000" stroke="currentColor" strokeWidth="0.5" />
+            <path d="M200 200L500 500L800 200M200 800L500 500L800 800" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="0" y1="500" x2="1000" y2="500" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
           </svg>
         </div>
       </div>

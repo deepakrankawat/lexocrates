@@ -13,9 +13,12 @@ export function LawyerHero() {
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] opacity-[0.05] pointer-events-none">
           <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
-            <circle cx="500" cy="500" r="250" stroke="currentColor" strokeWidth="0.5" />
-            <path d="M500 100V900M100 500H900" stroke="currentColor" strokeWidth="0.5" />
-            <rect x="300" y="300" width="400" height="400" stroke="currentColor" strokeWidth="0.5" transform="rotate(15 500 500)" />
+            <circle cx="300" cy="300" r="10" fill="currentColor" />
+            <circle cx="700" cy="300" r="10" fill="currentColor" />
+            <circle cx="500" cy="500" r="15" fill="currentColor" />
+            <circle cx="300" cy="700" r="10" fill="currentColor" />
+            <circle cx="700" cy="700" r="10" fill="currentColor" />
+            <path d="M300 300L500 500L700 300M300 700L500 500L700 700M300 300V700M700 300V700" stroke="currentColor" strokeWidth="0.5" />
           </svg>
         </div>
       </div>
