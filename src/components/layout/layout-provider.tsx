@@ -13,8 +13,8 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col min-h-screen">
       <Header />
       <PageTransition key={pathname}>
-        {/* Adjusted padding-top to perfectly clear the header without excess blank space */}
-        <main className="flex-grow pt-[64px] sm:pt-[72px] lg:pt-[88px]">
+        {/* Adjusted padding-top to perfectly clear the larger header without gaps */}
+        <main className="flex-grow pt-[68px] sm:pt-[92px] lg:pt-[108px] bg-background">
           {children}
         </main>
       </PageTransition>

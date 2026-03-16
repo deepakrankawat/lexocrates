@@ -10,7 +10,7 @@ import { LegalWorkflowAiAnimation } from '../animations/legal-workflow-ai-animat
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-20">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-primary py-10 lg:py-16">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Deep Background Gradients */}
