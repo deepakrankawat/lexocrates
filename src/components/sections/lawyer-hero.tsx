@@ -1,4 +1,3 @@
-
 'use client';
 
 import { FadeIn } from '../animations/fade-in';
@@ -37,7 +36,7 @@ export function LawyerHero() {
           </SlideIn>
           <FadeIn delay={0.6}>
             <p className="text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
-              Meet the experienced professionals driving innovation and operational excellence across borders.
+              Meet the collective of experienced professionals driving innovation and operational excellence across borders. Our leadership team bridges the gap between traditional legal mastery and modern technical strategy to ensure your firm's competitive edge in a global market.
             </p>
           </FadeIn>
         </div>

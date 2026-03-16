@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -55,7 +54,7 @@ export function Hero() {
                   Excellence in Legal Process Outsourcing
                 </h2>
                 <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8">
-                  Partnering with the world&apos;s leading law firms and corporate legal departments to drive operational efficiency. We integrate elite Indian expertise with advanced AI technology to transform your global legal workflow.
+                  Partnering with the world&apos;s leading law firms and corporate legal departments to drive operational efficiency. We integrate elite Indian expertise with advanced AI technology to transform your global legal workflow—delivering multi-jurisdictional support across the US, UK, and Canada with uncompromising accuracy.
                 </p>
               </div>
             </FadeIn>

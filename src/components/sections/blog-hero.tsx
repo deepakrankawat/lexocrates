@@ -1,4 +1,3 @@
-
 'use client';
 
 import { FadeIn } from '../animations/fade-in';
@@ -34,7 +33,7 @@ export function BlogHero() {
           </SlideIn>
           <FadeIn delay={0.6}>
             <p className="text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
-              In-depth analysis and perspectives on the evolving landscape of global legal process outsourcing.
+              In-depth analysis and perspectives on the evolving landscape of global legal process outsourcing. Explore our latest thoughts on LPO trends, data security, and the future of AI-driven legal operations, authored by the leading minds at Lexocrates.
             </p>
           </FadeIn>
         </div>

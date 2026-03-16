@@ -1,4 +1,3 @@
-
 'use client';
 
 import { FadeIn } from '../animations/fade-in';
@@ -35,7 +34,7 @@ export function AboutHero() {
           </SlideIn>
           <FadeIn delay={0.6}>
             <p className="text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
-              Empowering global law firms through precision, ethics, and intellectual excellence since our inception.
+              Empowering global law firms through precision, ethics, and intellectual excellence. Founded on the Socratic principle of deep inquiry, we bridge the gap between complex legal needs and cost-effective, tech-driven delivery—acting as a seamless extension of your professional practice.
             </p>
           </FadeIn>
         </div>

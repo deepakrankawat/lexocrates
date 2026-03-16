@@ -1,4 +1,3 @@
-
 'use client';
 
 import { FadeIn } from '@/components/animations/fade-in';
@@ -34,7 +33,7 @@ export function CareersHero() {
           </SlideIn>
           <FadeIn delay={0.6}>
             <p className="text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
-              We are looking for brilliant legal minds to redefine how legal services are delivered globally.
+              We are looking for brilliant legal minds to redefine how legal services are delivered globally. At Lexocrates, you'll join a culture of innovation, continuous learning, and collaborative excellence, working on complex multi-jurisdictional challenges alongside elite global professionals.
             </p>
           </FadeIn>
         </div>

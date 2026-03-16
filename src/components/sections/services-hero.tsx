@@ -1,4 +1,3 @@
-
 'use client';
 
 import { FadeIn } from '../animations/fade-in';
@@ -36,7 +35,7 @@ export function ServicesHero() {
           </SlideIn>
           <FadeIn delay={0.6}>
             <p className="text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
-              Transforming legal workflows with advanced technology and elite Indian legal expertise.
+              Transforming legal workflows with advanced technology and elite Indian legal expertise. From detailed litigation support to comprehensive contract management, our services are designed to scale your firm's productivity across multiple jurisdictions including the US, UK, and Canada.
             </p>
           </FadeIn>
         </div>
