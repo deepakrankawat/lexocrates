@@ -1,101 +1,101 @@
 
-import { Briefcase, Users, Home, Brain, Shield, Landmark, FileText, Search } from 'lucide-react';
+import { Briefcase, Users, Scale, ShieldCheck, FileText, Search, Gavel } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const servicesList = [
   { 
-    name: 'Contract Lifecycle Management', 
-    slug: 'contract-management', 
-    icon: FileText, 
-    description: "End-to-end support for contract drafting, review, and management.",
-    longDescription: "We manage the entire lifecycle of your contracts, from drafting and negotiation to execution and renewal. Our team ensures your agreements are robust, compliant, and aligned with your business objectives, minimizing risk and maximizing value.",
+    name: 'Legal Research & Writing', 
+    slug: 'legal-research-writing', 
+    icon: Search, 
+    description: "In-depth legal research and high-quality writing services to support complex cases.",
+    longDescription: "Our Legal Research & Writing service provides the intellectual backbone for your cases. We conduct thorough multi-jurisdictional research on case law, statutes, and regulations, delivering precise memorandums and briefs that stand up to the highest scrutiny.",
     keyAreas: [
-      "Contract Drafting & Review",
-      "Negotiation Support",
-      "Obligation Tracking",
-      "Renewal Management",
-      "Template Standardization",
-      "Repository Management"
+      "Case Law Research",
+      "Statutory Analysis",
+      "Memorandum Drafting",
+      "Appellate Brief Writing",
+      "Motion for Summary Judgment Drafting",
+      "Jurisdictional Surveys"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-corporate-law')
   },
   { 
-    name: 'Legal Research & Analysis', 
-    slug: 'legal-research', 
-    icon: Search, 
-    description: "In-depth legal research and analysis to support your cases and decisions.",
-    longDescription: "Our legal research services provide the critical information you need to build strong cases and make informed decisions. We conduct thorough research on case law, statutes, and regulations, delivering concise and actionable analysis.",
+    name: 'Litigation Support Services', 
+    slug: 'litigation-support', 
+    icon: Gavel, 
+    description: "Comprehensive support for all stages of litigation, from discovery to trial preparation.",
+    longDescription: "We empower trial lawyers by handling the heavy lifting of litigation preparation. Our team assists with case organizing, witness preparation materials, and exhibit management, ensuring your trial team is focused on winning.",
     keyAreas: [
-      "Case Law Research",
-      "Statutory & Regulatory Analysis",
-      "Multi-jurisdictional Surveys",
-      "Legislative Monitoring",
-      "Memorandum Drafting",
-      "Precedent Analysis"
+      "Trial Exhibit Preparation",
+      "Witness Interview Summaries",
+      "Deposition Summarization",
+      "Case Chronology Development",
+      "Pleading Drafting",
+      "Discovery Request Responses"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-family-law')
   },
   { 
-    name: 'Regulatory Compliance', 
-    slug: 'regulatory-compliance', 
-    icon: Landmark, 
-    description: "Ensuring your business adheres to all relevant laws and regulations.",
-    longDescription: "Navigating the complex web of regulations is a challenge for any business. We provide comprehensive compliance support, helping you identify applicable laws, develop policies, and implement procedures to ensure full adherence.",
+    name: 'Contract Review & Management', 
+    slug: 'contract-review-management', 
+    icon: FileText, 
+    description: "End-to-end management of contracts, from initial drafting to final execution and tracking.",
+    longDescription: "Our Contract Review & Management service streamlines your agreement workflows. We manage the entire lifecycle of your contracts, ensuring robust protection, compliance, and template standardization for global operations.",
     keyAreas: [
-      "Compliance Program Development",
-      "Regulatory Gap Analysis",
-      "Policy Drafting & Implementation",
-      "Compliance Audits & Monitoring",
-      "Risk Assessments",
-      "Training & Education"
+      "Contract Drafting & Redlining",
+      "Obligation & Deadline Tracking",
+      "Template Standardization",
+      "Lease Abstracting",
+      "Vendor Agreement Management",
+      "Contract Lifecycle Audit"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-real-estate-law')
   },
   { 
-    name: 'Document Review', 
-    slug: 'document-review', 
-    icon: FileText, 
-    description: "Efficient and accurate review of legal documents for litigation and due diligence.",
-    longDescription: "Our document review services leverage advanced technology and expert reviewers to deliver fast and accurate results for litigation, due diligence, and internal investigations. We help you find the critical information you need, when you need it.",
+    name: 'Document Review (eDiscovery)', 
+    slug: 'document-review-ediscovery', 
+    icon: Search, 
+    description: "Efficient and accurate review of legal documents using advanced eDiscovery technologies.",
+    longDescription: "We provide high-speed, high-accuracy document review services for complex litigation and internal investigations. Leveraging industry-leading eDiscovery tools, we help you identify critical evidence while managing privilege and sensitivity.",
     keyAreas: [
-      "E-Discovery & Litigation Support",
-      "Due Diligence for M&A",
-      "Internal Investigations",
+      "First-Pass Review",
       "Privilege & Redaction Logs",
-      "First-Pass & Second-Level Review",
-      "Technology-Assisted Review (TAR)"
+      "Quality Assurance Audits",
+      "Second-Level Quality Review",
+      "Technology Assisted Review (TAR)",
+      "Production Review"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-ip-law')
   },
   { 
-    name: 'Corporate Legal Solutions', 
-    slug: 'corporate-solutions', 
-    icon: Briefcase,
-    description: "Comprehensive support for your in-house legal department.",
-    longDescription: "We act as an extension of your in-house legal team, providing flexible and scalable support for a wide range of corporate legal tasks. From entity management to routine commercial contracts, we help you manage your workload more effectively.",
+    name: 'Compliance & Regulatory Support', 
+    slug: 'compliance-regulatory', 
+    icon: ShieldCheck, 
+    description: "Ensuring your business stays compliant with the latest global laws and regulations.",
+    longDescription: "Navigating international regulations requires constant vigilance. We provide comprehensive compliance support, helping you develop policies, monitor regulatory changes, and implement gap-reduction strategies to protect your reputation.",
     keyAreas: [
-      "Corporate Secretarial Services",
-      "Entity Management",
-      "Commercial Contract Support",
-      "Compliance Administration",
-      "Legal Operations Consulting",
-      "Special Projects Support"
+      "GDPR & Data Privacy Compliance",
+      "Regulatory Gap Analysis",
+      "Policy & Procedure Drafting",
+      "Compliance Monitoring & Audits",
+      "AML & KYC Documentation",
+      "Corporate Governance Support"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-criminal-defense')
   },
   { 
-    name: 'Intellectual Property Support', 
-    slug: 'ip-support', 
-    icon: Brain, 
-    description: "Administrative and paralegal support for your IP portfolio.",
-    longDescription: "We provide comprehensive support for managing your intellectual property assets. Our services include docketing, patent proofreading, trademark renewals, and other administrative tasks to help you protect and maintain your valuable IP portfolio.",
+    name: 'Paralegal & Virtual Assistant Services', 
+    slug: 'paralegal-assistant', 
+    icon: Users, 
+    description: "Dedicated paralegal support to streamline your legal operations and administrative tasks.",
+    longDescription: "Our Paralegal & Virtual Legal Assistant services act as an immediate extension of your team. We handle the administrative and procedural complexities of a modern law office, allowing senior partners to focus on client strategy and high-value work.",
     keyAreas: [
-      "Patent & Trademark Docketing",
-      "Annuity & Renewal Management",
-      "Patent Proofreading",
-      "Prior Art Searches",
-      "IP-related Data Verification",
-      "Portfolio Management Support"
+      "Administrative Filing & Scheduling",
+      "Legal Billing & Invoicing Support",
+      "Client Communication Management",
+      "Document Formatting & Proofreading",
+      "Database & CRM Management",
+      "Conflict Check Coordination"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-immigration-law')
   },
