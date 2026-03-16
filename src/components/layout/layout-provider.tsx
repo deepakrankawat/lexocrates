@@ -12,7 +12,7 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col min-h-screen">
       <Header />
       <PageTransition key={pathname}>
-        <main className="flex-grow pt-[85px] sm:pt-[105px] lg:pt-[115px]">
+        <main className="flex-grow pt-[72px] sm:pt-[88px] lg:pt-[104px]">
           {children}
         </main>
       </PageTransition>

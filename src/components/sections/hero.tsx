@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,7 @@ import { motion } from 'framer-motion';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[80vh] lg:min-h-[calc(100vh-110px)] flex items-center justify-center overflow-hidden bg-primary py-16 sm:py-24 lg:py-0">
+    <section className="relative min-h-[80vh] lg:min-h-[calc(100vh-104px)] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-0">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Deep Background Gradients */}
@@ -49,7 +48,7 @@ export function Hero() {
         <div className="max-w-7xl mx-auto lg:mx-0">
           
           <FadeIn delay={0.2} duration={0.8}>
-            <div className="inline-flex items-center gap-4 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-10 shadow-xl">
+            <div className="inline-flex items-center gap-4 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-8 shadow-xl">
               <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               </span>
@@ -60,7 +59,7 @@ export function Hero() {
           </FadeIn>
           
           <SlideIn direction="up" delay={0.4} duration={0.8}>
-            <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-[ clamp(4rem,5vw,7rem) ] font-black leading-[0.95] text-white mb-8 lg:mb-10 tracking-tighter">
+            <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-[ clamp(4rem,5vw,7rem) ] font-black leading-[0.95] text-white mb-6 lg:mb-8 tracking-tighter">
               Strategic <br />
               <span className="text-accent">Legal</span> <br className="hidden sm:block" />
               Operations
@@ -68,7 +67,7 @@ export function Hero() {
           </SlideIn>
 
           <FadeIn delay={0.6} duration={0.8}>
-            <div className="space-y-6 mb-10 lg:mb-14">
+            <div className="space-y-4 mb-8 lg:mb-12">
               <h2 className="text-lg sm:text-xl lg:text-2xl text-white font-montserrat font-bold tracking-tight border-l-4 border-accent pl-5 lg:pl-8">
                 Excellence in Legal Process Outsourcing
               </h2>
@@ -101,17 +100,17 @@ export function Hero() {
       </div>
       
       {/* Refined Decorative Scroll Indicator Component */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-4 opacity-60">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 opacity-80">
         <p className="text-white font-lato font-black text-[10px] uppercase tracking-[0.6em]">Explore</p>
         <motion.div 
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-0.5 h-12 bg-gradient-to-b from-accent to-transparent" 
+          className="w-1 h-10 bg-gradient-to-b from-accent to-transparent" 
         />
       </div>
 
       {/* Modern Badge-style Decoration */}
-      <div className="absolute bottom-8 left-6 lg:left-20 hidden md:flex items-center gap-6 opacity-30 group cursor-default">
+      <div className="absolute bottom-6 left-6 lg:left-20 hidden md:flex items-center gap-6 opacity-30 group cursor-default">
         <div className="flex flex-col gap-1">
           <div className="w-12 h-1 bg-accent transition-all duration-500 group-hover:w-16" />
           <div className="w-8 h-1 bg-accent/40" />
