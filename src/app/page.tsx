@@ -4,13 +4,11 @@ import { Team } from '@/components/sections/team';
 import { Blog } from '@/components/sections/blog';
 import { Hero } from '@/components/sections/hero';
 import { About } from '@/components/sections/about';
-import { PartnerLogos } from '@/components/sections/partner-logos';
 
 export default function HomePage() {
   return (
     <main className="bg-white">
       <Hero />
-      <PartnerLogos />
       <About />
       <Services />
       <WhyChooseUs />
