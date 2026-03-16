@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -100,12 +101,12 @@ export function Hero() {
       </div>
       
       {/* Refined Decorative Scroll Indicator Component */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-4 opacity-30">
-        <p className="text-white font-lato font-black text-[8px] uppercase tracking-[0.6em]">Explore</p>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-4 opacity-60">
+        <p className="text-white font-lato font-black text-[10px] uppercase tracking-[0.6em]">Explore</p>
         <motion.div 
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-12 bg-gradient-to-b from-accent to-transparent" 
+          className="w-0.5 h-12 bg-gradient-to-b from-accent to-transparent" 
         />
       </div>
 
