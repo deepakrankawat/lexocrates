@@ -26,14 +26,14 @@ const openPositions = [
 
 export function CareersPositions() {
   return (
-    <section className="bg-secondary text-foreground py-12 sm:py-16">
+    <section className="bg-secondary/30 text-foreground py-12 sm:py-20 rounded-[3rem] my-12">
         <SlideIn className="text-center mb-12">
-          <p className="font-lato font-bold text-accent uppercase tracking-wider">Open Positions</p>
-          <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
+          <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-[10px]">Open Positions</p>
+          <h2 className="font-lato text-3xl md:text-4xl font-black text-primary tracking-tight">
             Find Your Next Opportunity
           </h2>
         </SlideIn>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 sm:px-12">
           {openPositions.map((position, index) => (
             <motion.div
               key={index}
@@ -41,18 +41,20 @@ export function CareersPositions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
+              whileHover={{ y: -8 }}
               className="h-full"
             >
-              <Card className="h-full bg-background flex flex-col border-none shadow-sm rounded-[2rem] overflow-hidden">
+              <Card className="h-full bg-background flex flex-col border border-black/5 shadow-sm hover:shadow-2xl hover:border-accent/30 transition-all duration-500 rounded-[2.5rem] overflow-hidden group">
                 <CardHeader className="p-8 pb-4">
-                  <CardTitle className="text-primary group-hover:text-accent transition-colors font-montserrat font-black text-2xl tracking-tight">{position.title}</CardTitle>
+                  <CardTitle className="text-primary group-hover:text-accent transition-colors duration-300 font-montserrat font-black text-2xl tracking-tight leading-tight">
+                    {position.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col flex-grow p-8 pt-0">
-                  <p className="text-[10px] text-accent font-black uppercase tracking-[0.2em] mb-8">{position.department}</p>
+                  <p className="text-[10px] text-accent font-black uppercase tracking-[0.2em] mb-10">{position.department}</p>
                   <div className="mt-auto">
                     <Button asChild className="w-full bg-primary hover:bg-accent text-white font-montserrat font-black text-[11px] uppercase tracking-[0.2em] py-7 rounded-full shadow-xl shadow-primary/10 transition-all duration-500 hover:scale-105 active:scale-95">
-                       <Link href="/contact">Contact Us</Link>
+                       <Link href="/contact">Apply Now</Link>
                     </Button>
                   </div>
                 </CardContent>
