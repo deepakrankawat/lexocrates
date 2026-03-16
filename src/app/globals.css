@@ -27,7 +27,7 @@ body {
     --border: 240 6% 85%;
     --input: 240 6% 90%;
     --ring: 43 74% 49%;
-    --radius: 1.5rem;
+    --radius: 1rem;
   }
 }
 
@@ -36,14 +36,21 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground selection:bg-accent/30 selection:text-primary;
+    @apply bg-background text-foreground selection:bg-accent/30 selection:text-primary overflow-x-hidden;
   }
   .prose {
     h2, h3 {
       @apply font-black text-primary tracking-tight;
     }
     p, li {
-      @apply text-foreground/70 leading-relaxed text-lg;
+      @apply text-foreground/70 leading-relaxed text-base lg:text-lg;
     }
+  }
+}
+
+/* UI Scaling Optimizations */
+@layer utilities {
+  .container-balanced {
+    @apply mx-auto w-full px-6 sm:px-12 lg:px-20 max-w-[1440px] fhd:max-w-[1600px] qhd:max-w-[1800px];
   }
 }
