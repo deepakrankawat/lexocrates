@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[80vh] lg:min-h-[calc(100vh-104px)] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-0">
+    <section className="relative min-h-[75vh] lg:min-h-[calc(100vh-88px)] flex items-start lg:items-center justify-center overflow-hidden bg-primary pt-16 lg:pt-0 pb-12 lg:pb-0">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Deep Background Gradients */}
@@ -99,7 +99,7 @@ export function Hero() {
         </div>
       </div>
       
-      {/* Refined Decorative Scroll Indicator Component */}
+      {/* Scroll Indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 opacity-80">
         <p className="text-white font-lato font-black text-[10px] uppercase tracking-[0.6em]">Explore</p>
         <motion.div 
@@ -109,7 +109,7 @@ export function Hero() {
         />
       </div>
 
-      {/* Modern Badge-style Decoration */}
+      {/* Decorative Badge */}
       <div className="absolute bottom-6 left-6 lg:left-20 hidden md:flex items-center gap-6 opacity-30 group cursor-default">
         <div className="flex flex-col gap-1">
           <div className="w-12 h-1 bg-accent transition-all duration-500 group-hover:w-16" />

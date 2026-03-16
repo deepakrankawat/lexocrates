@@ -12,7 +12,8 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col min-h-screen">
       <Header />
       <PageTransition key={pathname}>
-        <main className="flex-grow pt-[72px] sm:pt-[88px] lg:pt-[104px]">
+        {/* Adjusted padding-top to perfectly clear the header without excess blank space */}
+        <main className="flex-grow pt-[64px] sm:pt-[72px] lg:pt-[88px]">
           {children}
         </main>
       </PageTransition>
