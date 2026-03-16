@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -5,10 +6,11 @@ import Link from 'next/link';
 import { FadeIn } from '../animations/fade-in';
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
+import { LegalWorkflowAiAnimation } from '../animations/legal-workflow-ai-animation';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[75vh] lg:min-h-[calc(100vh-88px)] flex items-start lg:items-center justify-center overflow-hidden bg-primary pt-16 lg:pt-0 pb-12 lg:pb-0">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-20">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Deep Background Gradients */}
@@ -19,88 +21,78 @@ export function Hero() {
         <div className="absolute inset-0 opacity-[0.04] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
-        {/* Minimalist Global Sphere Visualization */}
-        <div className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[50%] h-[100%] opacity-20 pointer-events-none hidden xl:block">
-          <motion.div 
-            initial={{ rotate: 0, opacity: 0 }}
-            animate={{ rotate: 360, opacity: 1 }}
-            transition={{ 
-              rotate: { duration: 180, repeat: Infinity, ease: "linear" },
-              opacity: { duration: 2, delay: 0.5 }
-            }}
-            className="w-full h-full flex items-center justify-center"
-          >
-            <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white/40">
-              <circle cx="500" cy="500" r="480" stroke="currentColor" strokeWidth="0.5" strokeDasharray="20 40" />
-              <ellipse cx="500" cy="500" rx="480" ry="160" stroke="currentColor" strokeWidth="0.5" />
-              <ellipse cx="500" cy="500" rx="160" ry="480" stroke="currentColor" strokeWidth="0.5" />
-              <circle cx="500" cy="500" r="240" stroke="currentColor" strokeWidth="0.2" strokeDasharray="5 10" />
-            </svg>
-          </motion.div>
-        </div>
-
         {/* Atmospheric Blurred Glows */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[150px] -mr-64 -mt-64 animate-pulse duration-[10000ms]" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] -ml-32 -mb-32" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1920px] text-center lg:text-left">
-        <div className="max-w-7xl mx-auto lg:mx-0">
+      <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1920px]">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
-          <FadeIn delay={0.2} duration={0.8}>
-            <div className="inline-flex items-center gap-4 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-8 shadow-xl">
-              <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-              </span>
-              <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-[9px] sm:text-xs">
-                Where Confidentiality, Precision, and Speed Converge
-              </p>
+          <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
+            <FadeIn delay={0.2} duration={0.8}>
+              <div className="inline-flex items-center gap-4 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-8 shadow-xl">
+                <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                </span>
+                <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-[9px] sm:text-xs">
+                  Where Confidentiality, Precision, and Speed Converge
+                </p>
+              </div>
+            </FadeIn>
+            
+            <SlideIn direction="up" delay={0.4} duration={0.8}>
+              <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] text-white mb-6 lg:mb-8 tracking-tighter">
+                Strategic <br />
+                <span className="text-accent">Legal</span> <br className="hidden sm:block" />
+                Operations
+              </h1>
+            </SlideIn>
+
+            <FadeIn delay={0.6} duration={0.8}>
+              <div className="space-y-4 mb-8 lg:mb-12">
+                <h2 className="text-lg sm:text-xl lg:text-2xl text-white font-montserrat font-bold tracking-tight border-l-4 border-accent pl-5 lg:pl-8">
+                  Excellence in Legal Process Outsourcing
+                </h2>
+                <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8">
+                  Partnering with the world&apos;s leading law firms and corporate legal departments to drive operational efficiency. We integrate elite Indian expertise with advanced AI technology to transform your global legal workflow.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.8} duration={0.8}>
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8">
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-sm lg:text-base px-10 py-7 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95"
+                >
+                  <Link href="/services">Explore Solutions</Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-sm lg:text-base px-10 py-7 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
+                >
+                  <Link href="/contact">Schedule Strategy Call</Link>
+                </Button>
+              </div>
+            </FadeIn>
+          </div>
+
+          <SlideIn direction="left" delay={0.6} className="hidden lg:block relative">
+            <LegalWorkflowAiAnimation />
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 px-6 py-3 bg-white/5 border border-white/10 backdrop-blur-2xl rounded-2xl">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <p className="text-[10px] font-black text-white/60 uppercase tracking-[0.3em]">AI-Driven Precision Workflow Active</p>
             </div>
-          </FadeIn>
-          
-          <SlideIn direction="up" delay={0.4} duration={0.8}>
-            <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-[ clamp(4rem,5vw,7rem) ] font-black leading-[0.95] text-white mb-6 lg:mb-8 tracking-tighter">
-              Strategic <br />
-              <span className="text-accent">Legal</span> <br className="hidden sm:block" />
-              Operations
-            </h1>
           </SlideIn>
-
-          <FadeIn delay={0.6} duration={0.8}>
-            <div className="space-y-4 mb-8 lg:mb-12">
-              <h2 className="text-lg sm:text-xl lg:text-2xl text-white font-montserrat font-bold tracking-tight border-l-4 border-accent pl-5 lg:pl-8">
-                Excellence in Legal Process Outsourcing
-              </h2>
-              <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8">
-                Partnering with the world&apos;s leading law firms and corporate legal departments to drive operational efficiency. We integrate elite Indian expertise with advanced technology to transform your global legal workflow.
-              </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.8} duration={0.8}>
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8">
-              <Button
-                asChild
-                size="lg"
-                className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-sm lg:text-base px-10 py-7 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95"
-              >
-                <Link href="/services">Explore Solutions</Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-sm lg:text-base px-10 py-7 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
-              >
-                <Link href="/contact">Schedule Strategy Call</Link>
-              </Button>
-            </div>
-          </FadeIn>
         </div>
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 opacity-80">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2">
         <p className="text-white font-lato font-black text-[10px] uppercase tracking-[0.6em]">Explore</p>
         <motion.div 
           animate={{ y: [0, 8, 0] }}
