@@ -1,6 +1,6 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
-import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { LayoutProvider } from '@/components/layout/layout-provider';
 import { Lato, Montserrat, Open_Sans, Roboto } from 'next/font/google';
@@ -56,12 +56,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${lato.variable} ${roboto.variable} ${openSans.variable} font-opensans antialiased bg-background`}
       >
         <LayoutProvider>
-          <div className="flex flex-col min-h-screen">
-            <main className="flex-grow">
-              {children}
-            </main>
-            <Footer />
-          </div>
+          {children}
         </LayoutProvider>
         <Toaster />
       </body>

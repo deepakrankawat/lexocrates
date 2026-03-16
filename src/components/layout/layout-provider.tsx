@@ -4,6 +4,7 @@
 import { PageTransition } from '@/components/animations/page-transition';
 import { usePathname } from 'next/navigation';
 import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 
 export function LayoutProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -12,8 +13,11 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col min-h-screen">
       <Header />
       <PageTransition key={pathname}>
-        <div className="flex-grow">{children}</div>
+        <main className="flex-grow pt-[60px] lg:pt-[68px]">
+          {children}
+        </main>
       </PageTransition>
+      <Footer />
     </div>
   );
 }

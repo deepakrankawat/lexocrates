@@ -1,3 +1,6 @@
+
+'use client';
+
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { User } from 'lucide-react';
@@ -48,7 +51,7 @@ export function Team() {
                       <div className="p-6 bg-accent/10 rounded-full mb-8 group-hover:bg-accent transition-colors duration-500">
                           <User className="h-12 w-12 text-accent group-hover:text-white transition-colors duration-500" />
                       </div>
-                      <Link href={`/lawyer/${member.slug}`} className="group/link">
+                      <Link href={`/team/${member.slug}`} className="group/link">
                           <h4 className="font-opensans text-2xl font-bold text-primary group-hover/link:text-accent transition-colors duration-300 mb-2">
                             {member.name}
                           </h4>
