@@ -10,12 +10,12 @@ type LogoProps = {
 
 export function Logo({ className, variant = 'dark' }: LogoProps) {
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("relative flex items-center justify-center", className)}>
       <Image
         src="/images/logo-light.svg"
         alt="Lexocrates Logo"
-        width={500}
-        height={150}
+        width={600}
+        height={180}
         className={cn(
           "h-full w-auto object-contain transition-all duration-300",
           variant === 'dark' ? "brightness-0" : ""
