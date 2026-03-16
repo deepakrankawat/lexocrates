@@ -25,23 +25,25 @@ export function ContactProcess() {
           </p>
       </SlideIn>
       
-      <StaggerFadeIn className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
-          {/* Connector Line for Desktop */}
-          <div className="absolute top-12 left-0 right-0 h-0.5 bg-white/10 -z-10 hidden lg:block" />
-          
-          {processSteps.map((step, index) => (
-            <div key={index} className="relative flex flex-col items-center text-center group/step">
-              <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full bg-accent text-accent-foreground ring-8 ring-primary/50 group-hover/step:scale-110 transition-transform duration-500">
-                <step.icon className="h-10 w-10" />
-                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white text-primary font-black flex items-center justify-center text-xs shadow-lg">
-                  0{index + 1}
+      <div className="relative">
+        {/* Connector Line for Desktop - Moved outside StaggerFadeIn to avoid grid alignment issues */}
+        <div className="absolute top-12 left-0 right-0 h-0.5 bg-white/10 -z-10 hidden lg:block" />
+        
+        <StaggerFadeIn className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {processSteps.map((step, index) => (
+              <div key={index} className="relative flex flex-col items-center text-center group/step">
+                <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full bg-accent text-accent-foreground ring-8 ring-primary/50 group-hover/step:scale-110 transition-transform duration-500">
+                  <step.icon className="h-10 w-10" />
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white text-primary font-black flex items-center justify-center text-xs shadow-lg">
+                    0{index + 1}
+                  </div>
                 </div>
+                <h3 className="mt-8 font-roboto text-xl font-black text-white">{step.title}</h3>
+                <p className="mt-4 text-white/60 font-medium leading-relaxed">{step.description}</p>
               </div>
-              <h3 className="mt-8 font-roboto text-xl font-black text-white">{step.title}</h3>
-              <p className="mt-4 text-white/60 font-medium leading-relaxed">{step.description}</p>
-            </div>
-          ))}
-      </StaggerFadeIn>
+            ))}
+        </StaggerFadeIn>
+      </div>
     </div>
   );
 }

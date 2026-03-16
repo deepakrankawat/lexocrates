@@ -1,3 +1,4 @@
+
 'use client';
 
 import { PageTransition } from '@/components/animations/page-transition';
@@ -12,7 +13,7 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col min-h-screen">
       <Header />
       <PageTransition key={pathname}>
-        <main className="flex-grow pt-[80px] sm:pt-[100px] lg:pt-[110px]">
+        <main className="flex-grow pt-[100px] sm:pt-[120px] lg:pt-[130px]">
           {children}
         </main>
       </PageTransition>
