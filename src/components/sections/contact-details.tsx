@@ -2,80 +2,87 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, Headset, User, Linkedin, MapPin, Clock, Train, Bus, Car } from 'lucide-react';
+import { Mail, Headset, User, Linkedin, MapPin, Clock, Train, Bus, Car, ArrowRight } from 'lucide-react';
 
 export function ContactDetails() {
-  const jaipurAddress = "Floor 1 , E-block, E-103 , Ganpati Enclave Jaipur Rajasthan, India. Pin 302041";
-  const jaipurMapQuery = "Floor 1 , E-block, E-103 , Ganpati Enclave Jaipur Rajasthan, India. Pin 302041";
+  const jaipurAddress = "Floor 1, E-block, E-103, Ganpati Enclave, Sirsi Road, Jaipur, India. 302041";
+  const jaipurMapQuery = "Floor 1, E-block, E-103, Ganpati Enclave, Sirsi Road, Jaipur, India. 302041";
+
+  const departments = [
+    { name: "Global Support", email: "Support@lexocrates.com", icon: Headset },
+    { name: "Strategic Sales", email: "Sales@Lexocrates.com", icon: Mail },
+    { name: "Careers & HR", email: "HR@lexocrates.com", icon: User }
+  ];
 
   return (
-    <div className="space-y-8">
-      <Link href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(jaipurMapQuery)}`} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
-          <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
-              <MapPin className="h-6 w-6 text-accent" />
-          </div>
-          <div>
-              <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Address</h3>
-              <p className="text-foreground/80 group-hover:text-accent font-lato">{jaipurAddress}</p>
-          </div>
-      </Link>
-      <Link href="mailto:Support@lexocrates.com" className="flex items-start gap-4 group">
-          <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
-              <Headset className="h-6 w-6 text-accent" />
-          </div>
-          <div>
-              <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Support</h3>
-              <p className="text-foreground/80 group-hover:text-accent font-lato">Support@lexocrates.com</p>
-          </div>
-      </Link>
-       <Link href="mailto:Sales@Lexocrates.com" className="flex items-start gap-4 group">
-          <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
-              <Mail className="h-6 w-6 text-accent" />
-          </div>
-          <div>
-              <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">Sales</h3>
-              <p className="text-foreground/80 group-hover:text-accent font-lato">Sales@Lexocrates.com</p>
-          </div>
-      </Link>
-       <Link href="mailto:HR@lexocrates.com" className="flex items-start gap-4 group">
-          <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
-              <User className="h-6 w-6 text-accent" />
-          </div>
-          <div>
-              <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">HR</h3>
-              <p className="text-foreground/80 group-hover:text-accent font-lato">HR@lexocrates.com</p>
-          </div>
-      </Link>
-      <Link href="https://www.linkedin.com/company/lexocrates-legal-services-pvt-ltd/posts/?feedView=all" className="flex items-start gap-4 group">
-          <div className="bg-accent/10 p-3 rounded-full flex-shrink-0">
-              <Linkedin className="h-6 w-6 text-accent" />
-          </div>
-          <div>
-              <h3 className="text-lg font-bold text-primary group-hover:text-accent font-roboto">LinkedIn</h3>
-              <p className="text-foreground/80 group-hover:text-accent font-lato">Follow us on LinkedIn</p>
-          </div>
-      </Link>
-      <div>
-        <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4 font-roboto">
-          <div className="bg-accent/10 p-3 rounded-full flex-shrink-0"><Clock className="h-6 w-6 text-accent" /></div>
-          Office Hours
-        </h3>
-        <div className="ml-0 sm:ml-16 text-foreground/80 space-y-2 font-lato">
-            <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM IST</p>
-            <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM IST</p>
-            <p><strong>Sunday:</strong> Closed</p>
-        </div>
+    <div className="space-y-10">
+      <div className="grid gap-6">
+        {departments.map((dept, i) => (
+          <Link 
+            key={i} 
+            href={`mailto:${dept.email}`} 
+            className="flex items-center gap-6 p-6 bg-secondary/30 rounded-3xl border border-black/5 hover:bg-white hover:shadow-xl hover:border-accent/50 transition-all duration-500 group"
+          >
+            <div className="bg-accent/10 p-4 rounded-2xl group-hover:bg-accent transition-colors duration-500">
+                <dept.icon className="h-7 w-7 text-accent group-hover:text-white transition-colors duration-500" />
+            </div>
+            <div className="flex-grow">
+                <h3 className="text-[10px] font-black text-accent uppercase tracking-[0.2em] mb-1">{dept.name}</h3>
+                <p className="text-lg font-bold text-primary">{dept.email}</p>
+            </div>
+            <ArrowRight className="h-5 w-5 text-accent opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500" />
+          </Link>
+        ))}
       </div>
-      <div>
-          <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-4 font-roboto">
-            <div className="bg-accent/10 p-3 rounded-full flex-shrink-0"><Car className="h-6 w-6 text-accent" /></div>
-            Getting Here
-          </h3>
-          <div className="ml-0 sm:ml-16 text-foreground/80 space-y-4 font-lato">
-              <div className="flex items-start gap-3"><Train className="h-5 w-5 text-accent flex-shrink-0 mt-1 sm:mt-0" /> <strong>By Train:</strong> Jaipur Junction Railway Station (15 min drive)</div>
-              <div className="flex items-start gap-3"><Bus className="h-5 w-5 text-accent flex-shrink-0 mt-1 sm:mt-0" /> <strong>By Bus:</strong> Sirsi Road Bus Stop (5 min walk)</div>
-              <div className="flex items-start gap-3"><Car className="h-5 w-5 text-accent flex-shrink-0 mt-1 sm:mt-0" /> <strong>By Car:</strong> Parking available in building</div>
+
+      <div className="grid sm:grid-cols-2 gap-8 pt-6 border-t border-black/5">
+        <div>
+          <h4 className="flex items-center gap-3 text-sm font-black text-primary uppercase tracking-widest mb-6">
+            <Clock className="h-5 w-5 text-accent" />
+            Office Hours
+          </h4>
+          <div className="space-y-3 text-foreground/70 font-medium text-sm">
+              <div className="flex justify-between border-b border-black/5 pb-2">
+                <span>Mon - Fri</span>
+                <span className="text-primary font-bold">9:00 - 18:00 IST</span>
+              </div>
+              <div className="flex justify-between border-b border-black/5 pb-2">
+                <span>Saturday</span>
+                <span className="text-primary font-bold">9:00 - 13:00 IST</span>
+              </div>
+              <div className="flex justify-between text-destructive/70">
+                <span>Sunday</span>
+                <span className="font-bold">Closed</span>
+              </div>
           </div>
+        </div>
+
+        <div>
+            <h4 className="flex items-center gap-3 text-sm font-black text-primary uppercase tracking-widest mb-6">
+              <Car className="h-5 w-5 text-accent" />
+              Getting Here
+            </h4>
+            <div className="space-y-4 text-foreground/70 font-medium text-sm">
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Train className="h-4 w-4 text-accent" />
+                  </div>
+                  <p>15 min from Jaipur Junction</p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Bus className="h-4 w-4 text-accent" />
+                  </div>
+                  <p>5 min walk from Sirsi Stop</p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Linkedin className="h-4 w-4 text-accent" />
+                  </div>
+                  <Link href="https://www.linkedin.com/company/lexocrates-legal-services-pvt-ltd/" className="hover:text-accent transition-colors">Follow Our Updates</Link>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   );
