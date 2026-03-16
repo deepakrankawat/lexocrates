@@ -5,7 +5,7 @@ import { SlideIn } from '../animations/slide-in';
 
 export function ServicesHero() {
   return (
-    <section className="relative min-h-[60vh] fhd:min-h-[70vh] flex items-center justify-center overflow-hidden bg-primary pt-20">
+    <section className="relative min-h-[50vh] fhd:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-10 pb-16 lg:pt-14">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
         <div className="absolute inset-0 opacity-[0.03]" 
@@ -24,12 +24,12 @@ export function ServicesHero() {
       <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px] text-center">
         <div className="max-w-4xl mx-auto">
           <FadeIn delay={0.2}>
-            <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm mb-8">
+            <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm mb-6 lg:mb-8">
               What We Deliver
             </p>
           </FadeIn>
           <SlideIn direction="up" delay={0.4}>
-            <h1 className="font-montserrat text-5xl sm:text-7xl fhd:text-8xl font-black leading-tight text-white mb-8 tracking-tighter">
+            <h1 className="font-montserrat text-5xl sm:text-7xl fhd:text-8xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
               Strategic <span className="text-accent">Solutions</span>
             </h1>
           </SlideIn>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Faq } from "@/components/sections/faq";
@@ -14,7 +13,7 @@ export default function ContactPage() {
   return (
     <main className="bg-background">
       {/* Refined Contact Hero */}
-      <section className="relative min-h-[50vh] fhd:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-32">
+      <section className="relative min-h-[50vh] fhd:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-10 pb-16 lg:pt-14">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
           <div className="absolute inset-0 opacity-[0.03]" 

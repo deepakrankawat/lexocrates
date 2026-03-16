@@ -9,7 +9,7 @@ import { LegalWorkflowAiAnimation } from '../animations/legal-workflow-ai-animat
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-primary py-10 lg:py-16">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary py-6 lg:py-10">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Deep Background Gradients */}
@@ -26,7 +26,7 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1920px]">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
             <FadeIn delay={0.2} duration={0.8}>
@@ -49,7 +49,7 @@ export function Hero() {
             </SlideIn>
 
             <FadeIn delay={0.6} duration={0.8}>
-              <div className="space-y-4 mb-8 lg:mb-12">
+              <div className="space-y-4 mb-8 lg:mb-10">
                 <h2 className="text-lg sm:text-xl lg:text-2xl text-white font-montserrat font-bold tracking-tight border-l-4 border-accent pl-5 lg:pl-8">
                   Excellence in Legal Process Outsourcing
                 </h2>
