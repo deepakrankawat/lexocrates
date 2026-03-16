@@ -34,71 +34,75 @@ export function Header() {
 
   return (
     <header className={cn(
-      'fixed top-0 z-50 w-full transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-black/5',
-      isScrolled ? 'py-2' : 'py-3'
+      'fixed top-0 z-50 w-full transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-black/5',
+      isScrolled ? 'py-4 shadow-md' : 'py-6'
     )}>
       <div className="mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-20 max-w-[1920px]">
         
         <div className="flex-shrink-0">
           <Link href="/" className="group block transition-transform duration-300 hover:scale-105">
-            <Logo variant="dark" className="w-auto h-8 sm:h-10 lg:h-11" />
+            <Logo variant="dark" className="w-auto h-10 sm:h-12 lg:h-14" />
           </Link>
         </div>
         
         <nav className="hidden lg:flex flex-grow justify-center">
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-10">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link 
                   href={link.href} 
                   className={cn(
-                    "text-[10px] xl:text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 py-1",
+                    "text-xs xl:text-sm font-black uppercase tracking-[0.25em] transition-all duration-300 py-2 relative group",
                     isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                   )}
                 >
                   {link.label}
+                  <span className={cn(
+                    "absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 origin-left",
+                    isActive(link.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  )} />
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
 
-        <div className="flex items-center gap-4">
-          <Button asChild className="hidden lg:flex h-9 bg-primary hover:bg-accent text-white font-montserrat font-black text-[9px] uppercase tracking-[0.2em] px-6 rounded-full shadow-lg shadow-primary/10 transition-all duration-300 hover:scale-105">
+        <div className="flex items-center gap-6">
+          <Button asChild className="hidden lg:flex h-12 bg-primary hover:bg-accent text-white font-montserrat font-black text-xs uppercase tracking-[0.2em] px-8 rounded-full shadow-xl shadow-primary/20 transition-all duration-300 hover:scale-105 active:scale-95">
             <Link href="/contact">Get Started</Link>
           </Button>
           
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 rounded-full h-9 w-9">
-                <Menu className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 rounded-full h-12 w-12">
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full bg-white border-0 p-0">
-              <SheetHeader className="p-6 flex flex-row items-center justify-between border-b border-black/5">
-                <Logo variant="dark" className="h-8 w-auto" />
+              <SheetHeader className="p-8 flex flex-row items-center justify-between border-b border-black/5">
+                <Logo variant="dark" className="h-10 w-auto" />
                 <SheetClose asChild>
-                  <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 rounded-full h-9 w-9">
-                    <X className="h-5 w-5" />
+                  <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 rounded-full h-12 w-12">
+                    <X className="h-6 w-6" />
                   </Button>
                 </SheetClose>
               </SheetHeader>
-              <nav className="flex flex-col p-6 gap-6">
+              <nav className="flex flex-col p-8 gap-8">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "text-xl font-black tracking-tighter transition-colors uppercase",
+                      "text-2xl font-black tracking-tighter transition-colors uppercase",
                       isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                     )}
                   >
                     {link.label}
                   </Link>
                 ))}
-                <Button asChild className="mt-4 bg-primary text-white font-black text-sm py-5 rounded-xl" onClick={() => setIsOpen(false)}>
+                <Button asChild className="mt-6 bg-primary text-white font-black text-lg py-7 rounded-2xl shadow-xl shadow-primary/10" onClick={() => setIsOpen(false)}>
                   <Link href="/contact">Get Started</Link>
                 </Button>
               </nav>
