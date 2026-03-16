@@ -44,19 +44,19 @@ export function Team() {
             </p>
         </SlideIn>
         
-        <StaggerFadeIn className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerFadeIn className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" childClassName="h-full">
           {teamMembers.map((member) => (
-              <Card key={member.name} className="group relative overflow-hidden bg-secondary/30 border-black/5 hover:border-accent/50 hover:shadow-2xl transition-all duration-500 rounded-3xl">
-                  <CardContent className="p-10 flex flex-col items-center text-center">
+              <Card key={member.name} className="group relative h-full flex flex-col overflow-hidden bg-secondary/30 border-black/5 hover:border-accent/50 hover:shadow-2xl transition-all duration-500 rounded-3xl">
+                  <CardContent className="p-10 flex flex-col items-center text-center h-full">
                       <div className="p-6 bg-accent/10 rounded-full mb-8 group-hover:bg-accent transition-colors duration-500">
                           <User className="h-12 w-12 text-accent group-hover:text-white transition-colors duration-500" />
                       </div>
-                      <Link href={`/team/${member.slug}`} className="group/link">
-                          <h4 className="font-opensans text-2xl font-bold text-primary group-hover/link:text-accent transition-colors duration-300 mb-2">
+                      <Link href={`/team/${member.slug}`} className="group/link mb-2">
+                          <h4 className="font-opensans text-2xl font-bold text-primary group-hover/link:text-accent transition-colors duration-300">
                             {member.name}
                           </h4>
                       </Link>
-                      <p className="text-accent font-extrabold uppercase tracking-widest text-xs">
+                      <p className="text-accent font-extrabold uppercase tracking-widest text-xs mt-auto">
                         {member.title}
                       </p>
                   </CardContent>
