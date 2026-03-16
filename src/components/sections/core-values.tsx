@@ -33,14 +33,14 @@ export function CoreValues() {
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24">
         <SlideIn className="text-center mb-16">
           <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-sm">Our Foundation</p>
-          <h2 className="font-lato text-4xl sm:text-6xl font-black text-primary leading-tight tracking-tight">
+          <h2 className="font-lato text-4xl sm:text-6xl font-black text-primary leading-tight tracking-tight mb-8">
             The Principles That <br /><span className="text-accent">Define Us</span>
           </h2>
         </SlideIn>
 
-        <StaggerFadeIn className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <StaggerFadeIn className="grid gap-8 md:grid-cols-2 lg:grid-cols-4" childClassName="h-full">
           {values.map((value, index) => (
-            <div key={index} className="bg-background p-10 rounded-3xl border border-black/5 hover:border-accent/50 transition-all duration-500 shadow-sm hover:shadow-xl group">
+            <div key={index} className="h-full bg-background p-10 rounded-3xl border border-black/5 hover:border-accent/50 transition-all duration-500 shadow-sm hover:shadow-xl group flex flex-col">
               <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent transition-colors duration-500">
                 <value.icon className="w-8 h-8 text-accent group-hover:text-white transition-colors duration-500" />
               </div>
