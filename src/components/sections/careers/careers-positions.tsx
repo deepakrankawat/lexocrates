@@ -1,9 +1,6 @@
-
-
 'use client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SlideIn } from '@/components/animations/slide-in';
 import Link from 'next/link';
@@ -47,14 +44,14 @@ export function CareersPositions() {
               whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
               className="h-full"
             >
-              <Card className="h-full bg-background flex flex-col">
-                <CardHeader>
-                  <CardTitle className="text-primary group-hover:text-accent transition-colors font-opensans font-semibold text-2xl">{position.title}</CardTitle>
+              <Card className="h-full bg-background flex flex-col border-none shadow-sm rounded-[2rem] overflow-hidden">
+                <CardHeader className="p-8 pb-4">
+                  <CardTitle className="text-primary group-hover:text-accent transition-colors font-montserrat font-black text-2xl tracking-tight">{position.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex flex-col flex-grow">
-                  <p className="text-sm text-accent font-bold">{position.department}</p>
-                  <div className="mt-auto pt-6">
-                    <Button asChild className="w-full font-montserrat font-bold">
+                <CardContent className="flex flex-col flex-grow p-8 pt-0">
+                  <p className="text-[10px] text-accent font-black uppercase tracking-[0.2em] mb-8">{position.department}</p>
+                  <div className="mt-auto">
+                    <Button asChild className="w-full bg-primary hover:bg-accent text-white font-montserrat font-black text-[11px] uppercase tracking-[0.2em] py-7 rounded-full shadow-xl shadow-primary/10 transition-all duration-500 hover:scale-105 active:scale-95">
                        <Link href="/contact">Contact Us</Link>
                     </Button>
                   </div>
