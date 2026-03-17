@@ -6,6 +6,7 @@ import { FadeIn } from '../animations/fade-in';
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
 import { LegalWorkflowAiAnimation } from '../animations/legal-workflow-ai-animation';
+import { Scale } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -19,6 +20,19 @@ export function Hero() {
         {/* Refined Technical Grid */}
         <div className="absolute inset-0 opacity-[0.04] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+
+        {/* Floating Legal Symbols SVGs */}
+        <div className="absolute top-1/4 right-1/4 opacity-[0.03] pointer-events-none select-none hidden lg:block">
+          <motion.div
+            animate={{ 
+              y: [0, -20, 0],
+              rotate: [0, 5, 0]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Scale size={400} strokeWidth={0.5} color="white" />
+          </motion.div>
+        </div>
 
         {/* Atmospheric Blurred Glows */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[150px] -mr-64 -mt-64 animate-pulse duration-[10000ms]" />
@@ -64,9 +78,16 @@ export function Hero() {
                 <Button
                   asChild
                   size="lg"
-                  className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-sm lg:text-base px-10 py-7 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95"
+                  className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-sm lg:text-base px-10 py-7 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden group/cta"
                 >
-                  <Link href="/services">Explore Solutions</Link>
+                  <Link href="/services" className="relative">
+                    <span>Explore Solutions</span>
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 translate-x-[-200%]"
+                      animate={{ translateX: ["-200%", "200%"] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 2 }}
+                    />
+                  </Link>
                 </Button>
                 <Button
                   asChild
@@ -81,7 +102,21 @@ export function Hero() {
           </div>
 
           <SlideIn direction="left" delay={0.6} className="hidden lg:block relative">
-            <LegalWorkflowAiAnimation />
+            <div className="relative">
+              <LegalWorkflowAiAnimation />
+              {/* Floating SVG Quill Ornament */}
+              <motion.div 
+                className="absolute -top-10 -right-10 opacity-20"
+                animate={{ rotate: [0, 5, -5, 0], y: [0, 10, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="0.5">
+                  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+                  <line x1="16" y1="8" x2="2" y2="22" />
+                  <line x1="17.5" y1="15" x2="9" y2="15" />
+                </svg>
+              </motion.div>
+            </div>
             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 px-6 py-3 bg-white/5 border border-white/10 backdrop-blur-2xl rounded-2xl">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               <p className="text-[10px] font-black text-white/60 uppercase tracking-[0.3em]">AI-Driven Precision Workflow Active</p>
