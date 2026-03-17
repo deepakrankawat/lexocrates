@@ -22,18 +22,19 @@ export function BlogHero() {
       <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px] text-center">
         <div className="max-w-4xl mx-auto">
           <FadeIn delay={0.2}>
-            <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm mb-6 lg:mb-8">
-              Insights & Expertise
-            </p>
+            <div className="inline-flex items-center gap-4 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-8">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-[10px]">Intellectual Capital</p>
+            </div>
           </FadeIn>
           <SlideIn direction="up" delay={0.4}>
             <h1 className="font-montserrat text-5xl sm:text-7xl fhd:text-8xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
-              The <span className="text-accent">Knowledge</span> Base
+              Legal <span className="text-accent">Perspectives</span>
             </h1>
           </SlideIn>
           <FadeIn delay={0.6}>
-            <p className="text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
-              In-depth analysis and perspectives on the evolving landscape of global legal process outsourcing. Explore our latest thoughts on LPO trends, data security, and the future of AI-driven legal operations, authored by the leading minds at Lexocrates.
+            <p className="text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed max-w-3xl mx-auto">
+              In-depth analysis on the evolving landscape of global legal process outsourcing. Explore our latest thoughts on LPO trends, data security, and AI-driven legal operations.
             </p>
           </FadeIn>
         </div>

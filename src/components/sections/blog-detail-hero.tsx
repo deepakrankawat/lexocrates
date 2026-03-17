@@ -1,41 +1,59 @@
+'use client';
 
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { blogPosts } from '@/lib/blog-data';
-import { User, Calendar } from 'lucide-react';
+import { User, Calendar, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
+import { FadeIn } from '../animations/fade-in';
+import { SlideIn } from '../animations/slide-in';
 
 type Post = typeof blogPosts[0];
 
 export function BlogDetailHero({ post }: { post: Post }) {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-blog');
-
   return (
-    <section className="relative text-white pt-32 pb-12 sm:pt-36 sm:pb-16">
-        {heroImage && (
-            <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                width={heroImage.width}
-                height={heroImage.height}
-                sizes="100vw"
-                className="object-cover absolute inset-0 w-full h-full"
-                priority
-                data-ai-hint={heroImage.imageHint}
-            />
-        )}
-        <div className="absolute inset-0 bg-black/50" />
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-        <p className="font-lato font-bold text-accent uppercase tracking-wider">{post.category}</p>
-        <h1 className="mt-4 font-montserrat text-5xl md:text-6xl font-bold">{post.title}</h1>
-        <div className="mt-6 flex justify-center items-center gap-6 text-lg text-white/80">
-            <div className="flex items-center gap-2">
-                <User className="h-5 w-5" />
-                <span>{post.author}</span>
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-10 pb-16 lg:pt-14">
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(184,134,11,0.15)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 opacity-[0.03]" 
+             style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px]">
+        <div className="max-w-4xl mx-auto text-center">
+          <FadeIn delay={0.2}>
+            <Link 
+              href="/blog" 
+              className="inline-flex items-center gap-2 text-accent font-black uppercase tracking-widest text-xs mb-12 hover:text-white transition-colors group"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Insights
+            </Link>
+          </FadeIn>
+          
+          <SlideIn direction="up" delay={0.4}>
+            <div className="inline-flex items-center gap-4 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-8">
+              <span className="w-2 h-2 rounded-full bg-accent" />
+              <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-[10px]">{post.category}</p>
             </div>
-            <div className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
-                <span>{post.date}</span>
+            <h1 className="font-montserrat text-4xl sm:text-6xl fhd:text-7xl font-black leading-tight text-white mb-10 tracking-tighter">
+              {post.title}
+            </h1>
+          </SlideIn>
+
+          <FadeIn delay={0.6}>
+            <div className="flex flex-wrap justify-center items-center gap-10 text-white/50 font-bold uppercase tracking-widest text-[11px]">
+                <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+                        <User className="h-4 w-4 text-accent" />
+                    </div>
+                    <span>By {post.author}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+                        <Calendar className="h-4 w-4 text-accent" />
+                    </div>
+                    <span>{post.date}</span>
+                </div>
             </div>
+          </FadeIn>
         </div>
       </div>
     </section>
