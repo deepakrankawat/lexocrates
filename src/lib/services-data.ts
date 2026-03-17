@@ -1,12 +1,11 @@
 
-import { Briefcase, Users, Scale, ShieldCheck, FileText, Search, Gavel } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const servicesList = [
   { 
     name: 'Legal Research & Writing', 
     slug: 'legal-research-writing', 
-    icon: Search, 
+    iconName: 'Search', 
     description: "In-depth legal research and high-quality writing services to support complex cases.",
     longDescription: "Our Legal Research & Writing service provides the intellectual backbone for your cases. We conduct thorough multi-jurisdictional research on case law, statutes, and regulations, delivering precise memorandums and briefs that stand up to the highest scrutiny.",
     keyAreas: [
@@ -22,7 +21,7 @@ export const servicesList = [
   { 
     name: 'Litigation Support Services', 
     slug: 'litigation-support', 
-    icon: Gavel, 
+    iconName: 'Gavel', 
     description: "Comprehensive support for all stages of litigation, from discovery to trial preparation.",
     longDescription: "We empower trial lawyers by handling the heavy lifting of litigation preparation. Our team assists with case organizing, witness preparation materials, and exhibit management, ensuring your trial team is focused on winning.",
     keyAreas: [
@@ -38,7 +37,7 @@ export const servicesList = [
   { 
     name: 'Contract Review & Management', 
     slug: 'contract-review-management', 
-    icon: FileText, 
+    iconName: 'FileText', 
     description: "End-to-end management of contracts, from initial drafting to final execution and tracking.",
     longDescription: "Our Contract Review & Management service streamlines your agreement workflows. We manage the entire lifecycle of your contracts, ensuring robust protection, compliance, and template standardization for global operations.",
     keyAreas: [
@@ -54,7 +53,7 @@ export const servicesList = [
   { 
     name: 'Document Review (eDiscovery)', 
     slug: 'document-review-ediscovery', 
-    icon: Search, 
+    iconName: 'Search', 
     description: "Efficient and accurate review of legal documents using advanced eDiscovery technologies.",
     longDescription: "We provide high-speed, high-accuracy document review services for complex litigation and internal investigations. Leveraging industry-leading eDiscovery tools, we help you identify critical evidence while managing privilege and sensitivity.",
     keyAreas: [
@@ -70,7 +69,7 @@ export const servicesList = [
   { 
     name: 'Compliance & Regulatory Support', 
     slug: 'compliance-regulatory', 
-    icon: ShieldCheck, 
+    iconName: 'ShieldCheck', 
     description: "Ensuring your business stays compliant with the latest global laws and regulations.",
     longDescription: "Navigating international regulations requires constant vigilance. We provide comprehensive compliance support, helping you develop policies, monitor regulatory changes, and implement gap-reduction strategies to protect your reputation.",
     keyAreas: [
@@ -86,7 +85,7 @@ export const servicesList = [
   { 
     name: 'Paralegal & Virtual Assistant Services', 
     slug: 'paralegal-assistant', 
-    icon: Users, 
+    iconName: 'Users', 
     description: "Dedicated paralegal support to streamline your legal operations and administrative tasks.",
     longDescription: "Our Paralegal & Virtual Legal Assistant services act as an immediate extension of your team. We handle the administrative and procedural complexities of a modern law office, allowing senior partners to focus on client strategy and high-value work.",
     keyAreas: [

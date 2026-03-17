@@ -1,23 +1,31 @@
+
 'use client';
 
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Search, Gavel, FileText, ShieldCheck, Users, LucideIcon } from 'lucide-react';
 import { SlideIn } from '../animations/slide-in';
 import { FadeIn } from '../animations/fade-in';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { LucideIcon } from 'lucide-react';
 
 interface Service {
   name: string;
   slug: string;
-  icon: LucideIcon;
+  iconName: string;
   longDescription: string;
   keyAreas: string[];
 }
 
+const iconMap: Record<string, LucideIcon> = {
+  Search,
+  Gavel,
+  FileText,
+  ShieldCheck,
+  Users,
+};
+
 export function ServiceFeatureItem({ service, index, showLink = true }: { service: Service, index: number, showLink?: boolean }) {
-  const ServiceIcon = service.icon;
+  const ServiceIcon = iconMap[service.iconName] || Search;
   const isEven = index % 2 === 0;
 
   return (

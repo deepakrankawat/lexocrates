@@ -1,18 +1,25 @@
 
+'use client';
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { servicesList } from '@/lib/services-data';
-import { AppImage } from '../ui/app-image';
+import { Search, Gavel, FileText, ShieldCheck, Users, LucideIcon } from 'lucide-react';
 
 type Service = typeof servicesList[0];
 
+const iconMap: Record<string, LucideIcon> = {
+  Search,
+  Gavel,
+  FileText,
+  ShieldCheck,
+  Users,
+};
+
 export function ServiceDetailContent({ service }: { service: Service }) {
-  const image1 = PlaceHolderImages.find(img => img.id === 'service-detail-1');
-  const image2 = PlaceHolderImages.find(img => img.id === 'service-detail-2');
-  const ServiceIcon = service.icon;
+  const ServiceIcon = iconMap[service.iconName] || Search;
 
   return (
     <section className="bg-background text-foreground py-12 sm:py-16">
