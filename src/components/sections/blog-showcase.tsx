@@ -1,14 +1,10 @@
 
-
 'use client';
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SlideIn } from '@/components/animations/slide-in';
-import dynamic from 'next/dynamic';
-
-const WritingBlogPostLottie = dynamic(() => import('@/components/animations/writing-blog-post-animation').then(mod => mod.WritingBlogPostLottie), { ssr: false });
-
+import { WritingBlogPostLottie } from '@/components/animations/writing-blog-post-animation';
 
 export function BlogShowcase() {
   return (
