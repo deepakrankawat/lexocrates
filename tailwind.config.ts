@@ -105,10 +105,19 @@ export default {
             height: '0',
           },
         },
+        'pulse-glow': {
+          '0%, 100%': {
+            boxShadow: '0 0 0 0 rgba(184, 134, 11, 0)',
+          },
+          '50%': {
+            boxShadow: '0 0 20px 4px rgba(184, 134, 11, 0.4)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-glow': 'pulse-glow 3s infinite ease-in-out',
       },
     },
   },
