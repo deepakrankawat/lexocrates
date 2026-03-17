@@ -1,63 +1,94 @@
 'use client';
 
+import { servicesList } from '@/lib/services-data';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { SlideIn } from '../animations/slide-in';
+import { FadeIn } from '../animations/fade-in';
 import { Button } from '../ui/button';
 import Link from 'next/link';
-import { servicesList } from '@/lib/services-data';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight } from 'lucide-react';
-import { StaggerFadeIn } from '../animations/stagger-fade-in';
-import { SlideIn } from '../animations/slide-in';
+import { cn } from '@/lib/utils';
 
 export function Services() {
   return (
-    <section id="services" className="bg-secondary/30 text-foreground py-16 sm:py-24">
+    <section id="services" className="bg-background text-foreground py-16 sm:py-24">
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1800px]">
-        <SlideIn className="text-center mb-16 max-w-4xl mx-auto">
+        <SlideIn className="text-center mb-24 max-w-4xl mx-auto">
           <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-sm">
-            Our Expertise
+            Solutions Spotlight
           </p>
           <h2 className="font-lato text-4xl sm:text-6xl font-black leading-tight text-primary mb-8 tracking-tight">
-            Comprehensive Legal Solutions
+            Detailed Service <br /><span className="text-accent">Architecture</span>
           </h2>
-          <p className="text-xl text-foreground/70 font-medium leading-relaxed">
-            Lexocrates offers a suite of legal outsourcing solutions designed to enhance efficiency, reduce overhead, and allow your team to focus on high-value strategic work.
+          <p className="text-xl text-foreground/60 font-medium leading-relaxed">
+            A deep dive into how Lexocrates transforms traditional legal tasks into high-performance operational workflows.
           </p>
         </SlideIn>
 
-        <StaggerFadeIn className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          {servicesList.map((service) => {
+        <div className="space-y-32">
+          {servicesList.map((service, index) => {
             const ServiceIcon = service.icon;
+            const isEven = index % 2 === 0;
+
             return (
-                <Card key={service.slug} className="group relative bg-background border-black/5 hover:border-accent/50 shadow-sm hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden flex flex-col p-2">
-                    <CardHeader className="flex-row items-center gap-6 p-8">
-                        <div className="p-4 bg-accent/5 rounded-2xl group-hover:bg-accent transition-colors duration-500">
-                        <ServiceIcon className="h-8 w-8 text-accent group-hover:text-white transition-colors duration-500" />
-                        </div>
-                        <CardTitle className="font-roboto text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-500 leading-tight">
-                          {service.name}
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex flex-col flex-grow p-8 pt-0">
-                        <p className="text-foreground/60 text-lg leading-relaxed flex-grow">
-                          {service.description}
-                        </p>
-                        <Button asChild variant="link" className="p-0 h-auto text-accent font-bold text-lg justify-start mt-8 transition-transform group-hover:translate-x-2">
-                            <Link href={`/services/${service.slug}`} className="flex items-center gap-2">
-                                Learn More <ArrowRight className="h-5 w-5" />
-                            </Link>
-                        </Button>
-                    </CardContent>
-                </Card>
+              <div key={service.slug} className={cn(
+                "flex flex-col lg:flex-row gap-16 lg:gap-24 items-center",
+                !isEven && "lg:flex-row-reverse"
+              )}>
+                {/* Visual Representation */}
+                <SlideIn direction={isEven ? "left" : "right"} className="w-full lg:w-1/2">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 bg-accent/5 rounded-[3rem] blur-2xl group-hover:bg-accent/10 transition-all duration-700" />
+                    <div className="relative aspect-video lg:aspect-[4/3] rounded-[2.5rem] bg-secondary border border-black/5 overflow-hidden shadow-2xl flex items-center justify-center p-12">
+                       <div className="absolute top-0 right-0 p-10 opacity-[0.03]">
+                          <ServiceIcon className="w-64 h-64 text-primary" />
+                       </div>
+                       <div className="relative z-10 text-center">
+                          <div className="w-24 h-24 rounded-3xl bg-accent/10 flex items-center justify-center mx-auto mb-8 group-hover:bg-accent transition-colors duration-500">
+                             <ServiceIcon className="w-12 h-12 text-accent group-hover:text-white transition-colors duration-500" />
+                          </div>
+                          <h3 className="font-montserrat font-black text-3xl text-primary mb-4 tracking-tight">{service.name}</h3>
+                          <div className="w-12 h-1 bg-accent mx-auto" />
+                       </div>
+                    </div>
+                  </div>
+                </SlideIn>
+
+                {/* Content Description */}
+                <SlideIn direction={isEven ? "right" : "left"} className="w-full lg:w-1/2">
+                  <div className="space-y-8">
+                    <div>
+                      <h3 className="font-lato text-3xl font-black text-primary mb-6 flex items-center gap-4">
+                        <span className="text-accent/20 font-montserrat text-5xl">0{index + 1}</span>
+                        {service.name}
+                      </h3>
+                      <p className="text-lg text-foreground/70 leading-relaxed font-medium">
+                        {service.longDescription}
+                      </p>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-4 pt-6 border-t border-black/5">
+                       {service.keyAreas.map((area, i) => (
+                         <FadeIn key={i} delay={0.1 * i} className="flex items-center gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
+                            <span className="text-sm font-bold text-primary/80 tracking-tight">{area}</span>
+                         </FadeIn>
+                       ))}
+                    </div>
+
+                    <div className="pt-8 flex items-center gap-6">
+                      <Button asChild size="lg" className="bg-primary text-white hover:bg-accent font-montserrat font-black text-sm uppercase tracking-[0.2em] px-10 py-7 rounded-full transition-all duration-300">
+                        <Link href={`/services/${service.slug}`}>Full Case Study</Link>
+                      </Button>
+                      <Button asChild variant="ghost" className="text-accent font-black uppercase tracking-widest text-xs hover:bg-transparent hover:translate-x-2 transition-all">
+                         <Link href="/contact" className="flex items-center gap-2">Request Quote <ArrowRight className="w-4 h-4" /></Link>
+                      </Button>
+                    </div>
+                  </div>
+                </SlideIn>
+              </div>
             );
           })}
-        </StaggerFadeIn>
-        
-        <div className="mt-16 text-center">
-            <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 font-montserrat font-black text-lg px-12 py-8 rounded-full shadow-2xl shadow-primary/20 transition-all duration-300 hover:scale-105 active:scale-95">
-              <Link href="/services">Explore All Services</Link>
-            </Button>
         </div>
-
       </div>
     </section>
   );

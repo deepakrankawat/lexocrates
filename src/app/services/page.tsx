@@ -2,8 +2,9 @@ import { ServicesHero } from '@/components/sections/services-hero';
 import { Services } from '@/components/sections/services';
 import { Experience } from '@/components/sections/experience';
 import { WhyChooseUs } from '@/components/sections/why-choose-us';
-import { LegalProcess } from '@/components/sections/legal-process';
+import { WorkflowSupport } from '@/components/sections/workflow-support';
 import { CostCalculator } from '@/components/sections/cost-calculator';
+import { Cta } from '@/components/sections/cta';
 
 export default function ServicesPage() {
   return (
@@ -11,11 +12,12 @@ export default function ServicesPage() {
       <ServicesHero />
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px]">
         <Services />
+        <WorkflowSupport />
         <CostCalculator />
-        <LegalProcess />
         <WhyChooseUs />
         <Experience />
       </div>
+      <Cta />
     </main>
   );
 }
