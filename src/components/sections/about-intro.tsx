@@ -11,7 +11,7 @@ export function AboutIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 fhd:gap-40 items-center">
           
           <SlideIn direction="left" className="lg:order-last relative">
-            <div className="relative h-[500px] lg:h-[650px] fhd:h-[800px] w-full flex items-center justify-center group">
+            <div className="relative h-[600px] lg:h-[900px] fhd:h-[1100px] w-full flex items-center justify-center group">
               
               {/* High-Performance Flat Map Visualization - Increased Scale */}
               <div className="absolute inset-0 z-10 w-full h-full">
