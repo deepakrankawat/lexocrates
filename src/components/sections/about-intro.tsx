@@ -2,7 +2,7 @@
 
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
-import { Globe3D } from '@/components/ui/globe-3d';
+import { FlatMap } from '@/components/ui/flat-map';
 
 export function AboutIntro() {
   return (
@@ -13,9 +13,9 @@ export function AboutIntro() {
           <SlideIn direction="left" className="lg:order-last relative">
             <div className="relative h-[400px] lg:h-[450px] fhd:h-[550px] w-full flex items-center justify-center group">
               
-              {/* Dynamic 3D Globe Visualization - Now handles its own client-side lifecycle */}
+              {/* High-Performance Flat Map Visualization */}
               <div className="absolute inset-0 z-10">
-                <Globe3D />
+                <FlatMap />
               </div>
 
               {/* Decorative Background Grid */}
