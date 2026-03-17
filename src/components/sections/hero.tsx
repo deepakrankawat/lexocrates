@@ -10,7 +10,7 @@ import { Scale } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary py-6 lg:py-10">
+    <section className="relative min-h-[85vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-10">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Deep Background Gradients */}
@@ -21,8 +21,8 @@ export function Hero() {
         <div className="absolute inset-0 opacity-[0.04] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
-        {/* Floating Legal Symbols SVGs */}
-        <div className="absolute top-1/4 right-1/4 opacity-[0.03] pointer-events-none select-none hidden lg:block">
+        {/* Floating Legal Symbols SVGs - Improved Visibility and Scaling */}
+        <div className="absolute top-1/4 right-1/4 opacity-[0.05] pointer-events-none select-none hidden md:block">
           <motion.div
             animate={{ 
               y: [0, -20, 0],
@@ -35,8 +35,8 @@ export function Hero() {
         </div>
 
         {/* Atmospheric Blurred Glows */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[150px] -mr-64 -mt-64 animate-pulse duration-[10000ms]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] -ml-32 -mb-32" />
+        <div className="absolute top-0 right-0 w-[400px] sm:w-[800px] h-[400px] sm:h-[800px] bg-accent/10 rounded-full blur-[100px] sm:blur-[150px] -mr-32 sm:-mr-64 -mt-32 sm:-mt-64 animate-pulse duration-[10000ms]" />
+        <div className="absolute bottom-0 left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-accent/5 rounded-full blur-[80px] sm:blur-[120px] -ml-16 sm:-ml-32 -mb-16 sm:-mb-32" />
       </div>
 
       <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1920px]">
@@ -44,18 +44,18 @@ export function Hero() {
           
           <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
             <FadeIn delay={0.2} duration={0.8}>
-              <div className="inline-flex items-center gap-4 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-8 shadow-xl">
+              <div className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-8 shadow-xl">
                 <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                 </span>
-                <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-[9px] sm:text-xs">
-                  Where Confidentiality, Precision, and Speed Converge
+                <p className="font-lato font-black text-accent uppercase tracking-[0.2em] sm:tracking-[0.4em] text-[8px] sm:text-xs">
+                  Confidentiality • Precision • Speed
                 </p>
               </div>
             </FadeIn>
             
             <SlideIn direction="up" delay={0.4} duration={0.8}>
-              <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] text-white mb-6 lg:mb-8 tracking-tighter">
+              <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.1] sm:leading-[0.95] text-white mb-6 lg:mb-8 tracking-tighter">
                 Strategic <br />
                 <span className="text-accent">Legal</span> <br className="hidden sm:block" />
                 Operations
@@ -64,11 +64,11 @@ export function Hero() {
 
             <FadeIn delay={0.6} duration={0.8}>
               <div className="space-y-4 mb-8 lg:mb-10">
-                <h2 className="text-lg sm:text-xl lg:text-2xl text-white font-montserrat font-bold tracking-tight border-l-4 border-accent pl-5 lg:pl-8">
+                <h2 className="text-base sm:text-xl lg:text-2xl text-white font-montserrat font-bold tracking-tight border-l-4 border-accent pl-4 sm:pl-8">
                   Excellence in Legal Process Outsourcing
                 </h2>
                 <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8">
-                  Partnering with the world&apos;s leading law firms and corporate legal departments to drive operational efficiency. We integrate elite Indian expertise with advanced AI technology to transform your global legal workflow—delivering multi-jurisdictional support across the US, UK, and Canada with uncompromising accuracy.
+                  Partnering with the world&apos;s leading law firms to drive operational efficiency. We integrate elite Indian expertise with advanced AI technology to transform your global legal workflow across the US, UK, and Canada.
                 </p>
               </div>
             </FadeIn>
@@ -78,7 +78,7 @@ export function Hero() {
                 <Button
                   asChild
                   size="lg"
-                  className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-sm lg:text-base px-10 py-7 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden group/cta"
+                  className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm lg:text-base px-8 sm:px-10 py-6 sm:py-7 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden group/cta"
                 >
                   <Link href="/services" className="relative">
                     <span>Explore Solutions</span>
@@ -93,9 +93,9 @@ export function Hero() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-sm lg:text-base px-10 py-7 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
+                  className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm lg:text-base px-8 sm:px-10 py-6 sm:py-7 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
                 >
-                  <Link href="/contact">Schedule Strategy Call</Link>
+                  <Link href="/contact">Strategy Call</Link>
                 </Button>
               </div>
             </FadeIn>
@@ -119,7 +119,7 @@ export function Hero() {
             </div>
             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 px-6 py-3 bg-white/5 border border-white/10 backdrop-blur-2xl rounded-2xl">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <p className="text-[10px] font-black text-white/60 uppercase tracking-[0.3em]">AI-Driven Precision Workflow Active</p>
+              <p className="text-[10px] font-black text-white/60 uppercase tracking-[0.3em]">AI-Driven Precision Active</p>
             </div>
           </SlideIn>
         </div>
@@ -133,15 +133,6 @@ export function Hero() {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="w-1 h-10 bg-gradient-to-b from-accent to-transparent" 
         />
-      </div>
-
-      {/* Decorative Badge */}
-      <div className="absolute bottom-6 left-6 lg:left-20 hidden md:flex items-center gap-6 opacity-30 group cursor-default">
-        <div className="flex flex-col gap-1">
-          <div className="w-12 h-1 bg-accent transition-all duration-500 group-hover:w-16" />
-          <div className="w-8 h-1 bg-accent/40" />
-        </div>
-        <p className="text-white font-montserrat font-black text-[10px] uppercase tracking-[0.4em]">Excellence. Innovation. Trust.</p>
       </div>
     </section>
   );

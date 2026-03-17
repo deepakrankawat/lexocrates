@@ -8,12 +8,12 @@ export function AboutIntro() {
   return (
     <section id="about-intro" className="bg-background text-foreground py-16 sm:py-24 fhd:py-32 overflow-hidden">
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1920px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 fhd:gap-40 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 fhd:gap-40 items-center">
           
           <SlideIn direction="left" className="lg:order-last relative">
-            <div className="relative h-[600px] lg:h-[900px] fhd:h-[1100px] w-full flex items-center justify-center group">
+            <div className="relative h-[350px] sm:h-[600px] lg:h-[800px] fhd:h-[1000px] w-full flex items-center justify-center group">
               
-              {/* High-Performance Flat Map Visualization - Increased Scale */}
+              {/* High-Performance Flat Map Visualization */}
               <div className="absolute inset-0 z-10 w-full h-full">
                 <FlatMap />
               </div>
@@ -41,19 +41,19 @@ export function AboutIntro() {
                 <div className="w-12 h-px bg-accent/30" />
                 <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm">Our Global Reach</p>
               </div>
-              <h2 className="font-lato text-4xl sm:text-5xl fhd:text-7xl font-black text-primary leading-[1.1] tracking-tighter mb-10">
+              <h2 className="font-lato text-3xl sm:text-5xl fhd:text-7xl font-black text-primary leading-[1.1] tracking-tighter mb-8 sm:mb-10">
                 From Jaipur to Canada: <br />
                 <span className="text-accent/80">Connecting Legal Excellence</span>
               </h2>
-              <div className="text-xl fhd:text-2xl text-foreground/70 space-y-10 font-medium leading-relaxed border-l-4 border-accent/10 pl-10 fhd:pl-12">
+              <div className="text-lg sm:text-xl fhd:text-2xl text-foreground/70 space-y-6 sm:space-y-10 font-medium leading-relaxed border-l-4 border-accent/10 pl-6 sm:pl-10 fhd:pl-12">
                 <p>
                   Founded in Jaipur, India, Lexocrates is a specialized Legal Process Outsourcing (LPO) firm serving law firms and corporations across Canada, the US, and the UK.
                 </p>
                 <p>
-                  Our India-based lawyers are trained in international legal systems, offering round-the-clock delivery, strict confidentiality, and deep jurisdictional expertise. The name blends Lex (law) with Socrates (philosophy), symbolizing our commitment to ethics and intellect.
+                  Our India-based lawyers are trained in international legal systems, offering round-the-clock delivery, strict confidentiality, and deep jurisdictional expertise. The name blends Lex (law) with Socrates (philosophy).
                 </p>
                 <p>
-                  Today, we stand as a trusted partner for global entities seeking intelligent, ethical, and cost-efficient legal services. Our success is built on the foundation of integrity and intellectual excellence.
+                  Today, we stand as a trusted partner for global entities seeking intelligent, ethical, and cost-efficient legal services. Our success is built on integrity and intellectual excellence.
                 </p>
               </div>
             </div>

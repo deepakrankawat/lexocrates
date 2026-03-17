@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Calendar, Users } from 'lucide-react';
@@ -20,36 +19,36 @@ export function Experience() {
                 Decades of Expertise, <br />
                 <span className="text-accent">Measurable</span> Results
               </h2>
-              <p className="text-xl text-foreground/70 leading-relaxed font-medium mb-12">
+              <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed font-medium mb-12">
                 Our firm's foundation is built on years of dedicated service and a deep understanding of global legal standards. We leverage this experience to deliver efficiency and excellence for our clients.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div className="text-center p-8 bg-secondary/50 rounded-[2.5rem] border border-black/5 hover:border-accent/30 transition-all duration-500 shadow-sm">
-                      <Calendar className="h-10 w-10 mx-auto text-accent mb-6" />
-                      <p className="text-5xl font-black text-primary tracking-tighter">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                  <div className="text-center p-6 sm:p-8 bg-secondary/50 rounded-[2rem] sm:rounded-[2.5rem] border border-black/5 hover:border-accent/30 transition-all duration-500 shadow-sm">
+                      <Calendar className="h-8 w-8 sm:h-10 sm:w-10 mx-auto text-accent mb-4 sm:mb-6" />
+                      <p className="text-4xl sm:text-5xl font-black text-primary tracking-tighter">
                         <Counter from={0} to={15} />+
                       </p>
-                      <p className="text-accent font-black uppercase tracking-[0.2em] text-[10px] mt-4">Years Experience</p>
+                      <p className="text-accent font-black uppercase tracking-[0.2em] text-[9px] sm:text-[10px] mt-3 sm:mt-4">Years Experience</p>
                   </div>
-                  <div className="text-center p-8 bg-secondary/50 rounded-[2.5rem] border border-black/5 hover:border-accent/30 transition-all duration-500 shadow-sm">
-                      <Users className="h-10 w-10 mx-auto text-accent mb-6" />
-                      <p className="text-5xl font-black text-primary tracking-tighter">
+                  <div className="text-center p-6 sm:p-8 bg-secondary/50 rounded-[2rem] sm:rounded-[2.5rem] border border-black/5 hover:border-accent/30 transition-all duration-500 shadow-sm">
+                      <Users className="h-8 w-8 sm:h-10 sm:w-10 mx-auto text-accent mb-4 sm:mb-6" />
+                      <p className="text-4xl sm:text-5xl font-black text-primary tracking-tighter">
                          <Counter from={0} to={50} />+
                       </p>
-                      <p className="text-accent font-black uppercase tracking-[0.2em] text-[10px] mt-4">Legal Experts</p>
+                      <p className="text-accent font-black uppercase tracking-[0.2em] text-[9px] sm:text-[10px] mt-3 sm:mt-4">Legal Experts</p>
                   </div>
               </div>
             </div>
           </SlideIn>
 
-           <SlideIn direction="left" className="relative h-[400px] lg:h-[550px] flex items-center justify-center">
-            <div className="relative h-full w-full rounded-[4rem] bg-primary overflow-hidden flex items-center justify-center p-12 shadow-2xl">
+           <SlideIn direction="left" className="relative h-[300px] sm:h-[450px] lg:h-[550px] flex items-center justify-center">
+            <div className="relative h-full w-full rounded-[2.5rem] sm:rounded-[4rem] bg-primary overflow-hidden flex items-center justify-center p-8 sm:p-12 shadow-2xl">
                 {/* Decorative Background grid */}
                 <div className="absolute inset-0 opacity-[0.05]" 
                      style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
                 
                 {/* Visual Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/10 blur-[100px] rounded-full" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/10 blur-[60px] sm:blur-[100px] rounded-full" />
 
                 <div className="relative w-full h-full flex items-center justify-center">
                     <svg viewBox="0 0 400 200" className="w-full h-full overflow-visible">
@@ -93,29 +92,13 @@ export function Experience() {
                             animate={{ scale: [1, 1.4, 1] }}
                             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                         />
-
-                        {/* Data Points */}
-                        {[
-                          {x: 50, y: 160}, {x: 150, y: 120}, {x: 250, y: 80}, {x: 350, y: 40}
-                        ].map((p, i) => (
-                          <motion.circle
-                            key={i}
-                            cx={p.x}
-                            cy={p.y}
-                            r="4"
-                            fill="#fff"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 0.2 }}
-                            transition={{ delay: 1 + (i * 0.3) }}
-                          />
-                        ))}
                     </svg>
                 </div>
                 
                 {/* Floating label */}
-                <div className="absolute bottom-10 left-10 flex items-center gap-3">
-                  <div className="w-10 h-0.5 bg-accent" />
-                  <p className="text-white/40 font-lato font-bold text-[10px] uppercase tracking-[0.3em]">Growth Metrics</p>
+                <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 flex items-center gap-3">
+                  <div className="w-8 sm:w-10 h-0.5 bg-accent" />
+                  <p className="text-white/40 font-lato font-bold text-[8px] sm:text-[10px] uppercase tracking-[0.3em]">Growth Metrics</p>
                 </div>
             </div>
           </SlideIn>
