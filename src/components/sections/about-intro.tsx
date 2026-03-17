@@ -2,13 +2,7 @@
 
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
-
-// Dynamically import the Globe3D component to ensure it only renders on the client
-const Globe3D = dynamic(() => import('@/components/ui/globe-3d').then(mod => mod.Globe3D), { 
-  ssr: false,
-  loading: () => <div className="w-full h-full flex items-center justify-center text-primary/20 font-lato font-bold uppercase tracking-widest text-xs">Initializing Global Map...</div>
-});
+import { Globe3D } from '@/components/ui/globe-3d';
 
 export function AboutIntro() {
   return (
@@ -19,7 +13,7 @@ export function AboutIntro() {
           <SlideIn direction="left" className="lg:order-last relative">
             <div className="relative h-[400px] lg:h-[450px] fhd:h-[550px] w-full flex items-center justify-center group">
               
-              {/* Dynamic 3D Globe Visualization */}
+              {/* Dynamic 3D Globe Visualization - Now handles its own client-side lifecycle */}
               <div className="absolute inset-0 z-10">
                 <Globe3D />
               </div>

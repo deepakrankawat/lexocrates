@@ -1,14 +1,13 @@
-
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Globe from 'react-globe.gl';
 
 export function Globe3D() {
   const globeRef = useRef<any>();
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 600, height: 600 });
   const [countries, setCountries] = useState({ features: [] });
+  const [GlobeComponent, setGlobeComponent] = useState<any>(null);
 
   // Project Style Palette
   const GOLDEN_SURFACE = '#ceab30';
@@ -16,6 +15,11 @@ export function Globe3D() {
   const GREEN_ANIMATION = '#22c55e';
 
   useEffect(() => {
+    // Dynamically import react-globe.gl only on the client to avoid ChunkLoadErrors during SSR
+    import('react-globe.gl').then((mod) => {
+      setGlobeComponent(() => mod.default);
+    });
+
     // Fetch geojson for land surface hexagonal mesh
     fetch('https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
       .then(res => res.json())
@@ -50,7 +54,6 @@ export function Globe3D() {
       globeRef.current.controls().enableZoom = false;
       
       // Focus on the path area with a smooth zoom effect
-      // Increased altitude (2.8) to prevent cropping of the atmosphere/glow
       globeRef.current.pointOfView({ lat: 35, lng: 0, altitude: 2.8 }, 0);
       
       const timer = setTimeout(() => {
@@ -59,7 +62,7 @@ export function Globe3D() {
 
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [GlobeComponent]);
 
   const arcsData = [
     {
@@ -76,9 +79,17 @@ export function Globe3D() {
     { lat: 43.65107, lng: -79.347015, label: 'Canada' }
   ];
 
+  if (!GlobeComponent) {
+    return (
+      <div className="w-full h-full flex items-center justify-center text-primary/20 font-lato font-bold uppercase tracking-widest text-xs">
+        Initializing Global Map...
+      </div>
+    );
+  }
+
   return (
     <div ref={containerRef} className="w-full h-full flex items-center justify-center bg-transparent overflow-visible">
-      <Globe
+      <GlobeComponent
         ref={globeRef}
         backgroundColor="rgba(0,0,0,0)"
         globeColor={DARK_BLUE_WATER}
