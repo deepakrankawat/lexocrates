@@ -69,7 +69,7 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <Button asChild className="hidden lg:flex h-12 bg-primary hover:bg-accent text-white font-montserrat font-black text-[11px] uppercase tracking-[0.2em] px-8 rounded-full shadow-lg shadow-primary/10 transition-all duration-300 hover:scale-105 active:scale-95">
-            <Link href="/contact">Get Started</Link>
+            <Link href="/contact">Contact Us</Link>
           </Button>
           
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -103,7 +103,7 @@ export function Header() {
                   </Link>
                 ))}
                 <Button asChild className="mt-4 bg-primary text-white font-black text-base py-6 rounded-xl shadow-lg shadow-primary/10" onClick={() => setIsOpen(false)}>
-                  <Link href="/contact">Get Started</Link>
+                  <Link href="/contact">Contact Us</Link>
                 </Button>
               </nav>
             </SheetContent>
