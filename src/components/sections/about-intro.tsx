@@ -11,10 +11,10 @@ export function AboutIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 fhd:gap-40 items-center">
           
           <SlideIn direction="left" className="lg:order-last relative">
-            <div className="relative h-[400px] lg:h-[450px] fhd:h-[550px] w-full flex items-center justify-center group">
+            <div className="relative h-[500px] lg:h-[650px] fhd:h-[800px] w-full flex items-center justify-center group">
               
-              {/* High-Performance Flat Map Visualization */}
-              <div className="absolute inset-0 z-10">
+              {/* High-Performance Flat Map Visualization - Increased Scale */}
+              <div className="absolute inset-0 z-10 w-full h-full">
                 <FlatMap />
               </div>
 
@@ -23,7 +23,7 @@ export function AboutIntro() {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
-                  className="w-[110%] h-[110%]"
+                  className="w-[120%] h-[120%]"
                 >
                   <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary">
                     <circle cx="500" cy="500" r="480" stroke="currentColor" strokeWidth="0.8" strokeDasharray="20 40" />

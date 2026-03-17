@@ -22,12 +22,13 @@ export function FlatMap() {
   ];
 
   return (
-    <div className="w-full h-full flex items-center justify-center p-4">
+    <div className="w-full h-full flex items-center justify-center">
       <svg
         viewBox="0 0 1000 500"
-        className="w-full h-auto drop-shadow-2xl"
+        className="w-full h-full drop-shadow-2xl"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
       >
         {/* Technical Grid Background */}
         <defs>
@@ -54,17 +55,17 @@ export function FlatMap() {
             <motion.path
               d={d}
               stroke={accentColor}
-              strokeWidth="1"
+              strokeWidth="1.5"
               strokeDasharray="2 6"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.2 }}
+              animate={{ opacity: 0.25 }}
               transition={{ duration: 1, delay: i * 0.3 }}
             />
             {/* High-speed pulse animation */}
             <motion.path
               d={d}
               stroke={accentColor}
-              strokeWidth="2"
+              strokeWidth="2.5"
               strokeLinecap="round"
               initial={{ pathLength: 0.05, pathOffset: 0, opacity: 0 }}
               animate={{ 
@@ -88,37 +89,37 @@ export function FlatMap() {
             <motion.circle
               cx={loc.x}
               cy={loc.y}
-              r={loc.isHub ? "16" : "10"}
+              r={loc.isHub ? "20" : "12"}
               fill={accentColor}
               initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: [1, 2, 1], opacity: [0.15, 0, 0.15] }}
+              animate={{ scale: [1, 2.5, 1], opacity: [0.2, 0, 0.2] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
             />
             {/* Core point */}
             <circle
               cx={loc.x}
               cy={loc.y}
-              r={loc.isHub ? "5" : "3"}
+              r={loc.isHub ? "6" : "4"}
               fill={loc.isHub ? accentColor : "white"}
               stroke={accentColor}
-              strokeWidth="1"
+              strokeWidth="1.5"
             />
             {/* Technical Label */}
-            <g transform={`translate(${loc.x}, ${loc.y + (loc.isHub ? 25 : 20)})`}>
+            <g transform={`translate(${loc.x}, ${loc.y + (loc.isHub ? 32 : 25)})`}>
               <rect
-                x="-40"
-                y="-8"
-                width="80"
-                height="16"
-                rx="4"
+                x="-50"
+                y="-10"
+                width="100"
+                height="20"
+                rx="6"
                 fill={primaryColor}
-                fillOpacity="0.05"
+                fillOpacity="0.08"
               />
               <text
                 textAnchor="middle"
-                className="text-[8px] font-black uppercase tracking-[0.2em] fill-primary/60"
+                className="font-black uppercase tracking-[0.25em] fill-primary/80"
                 dominantBaseline="middle"
-                style={{ fontSize: '9px' }}
+                style={{ fontSize: '10px' }}
               >
                 {loc.name}
               </text>
