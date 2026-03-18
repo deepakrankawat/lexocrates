@@ -7,7 +7,7 @@ import { FadeIn } from '../animations/fade-in';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { AppImage } from '../ui/app-image';
+import { motion } from 'framer-motion';
 
 interface Service {
   name: string;
@@ -15,11 +15,6 @@ interface Service {
   iconName: string;
   longDescription: string;
   keyAreas: string[];
-  image?: {
-    imageUrl: string;
-    description: string;
-    imageHint: string;
-  };
 }
 
 const iconMap: Record<string, LucideIcon> = {
@@ -39,34 +34,49 @@ export function ServiceFeatureItem({ service, index, showLink = true }: { servic
       "flex flex-col lg:flex-row gap-12 lg:gap-24 items-center",
       !isEven && "lg:flex-row-reverse"
     )}>
-      {/* Visual Representation with Image */}
+      {/* Visual Representation with Technical Blueprint Style */}
       <SlideIn direction={isEven ? "left" : "right"} className="w-full lg:w-1/2">
         <div className="relative group">
-          <div className="absolute -inset-4 bg-accent/5 rounded-[2rem] sm:rounded-[3rem] blur-2xl group-hover:bg-accent/10 transition-all duration-700" />
-          <div className="relative aspect-video lg:aspect-[4/3] rounded-[2.5rem] bg-secondary border border-black/5 overflow-hidden shadow-2xl">
-             {service.image ? (
-                <AppImage
-                    src={service.image.imageUrl}
-                    alt={service.image.description}
-                    data-ai-hint={service.image.imageHint}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+          <div className="absolute -inset-4 bg-accent/5 rounded-[3rem] blur-2xl group-hover:bg-accent/10 transition-all duration-700" />
+          <div className="relative aspect-video lg:aspect-[4/3] rounded-[3rem] bg-primary overflow-hidden shadow-2xl border border-white/10">
+             
+             {/* Technical Grid Background */}
+             <div className="absolute inset-0 opacity-[0.05]" 
+                  style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+             
+             {/* Animated Concentric Circles */}
+             <div className="absolute inset-0 flex items-center justify-center opacity-[0.03]">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                  className="w-[120%] h-[120%] border border-white rounded-full border-dashed"
                 />
-             ) : (
-                <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
-                    <ServiceIcon className="w-32 h-32 text-primary/10" />
+             </div>
+
+             {/* Sophisticated Icon Presentation */}
+             <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative">
+                    <motion.div
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      className="p-12 sm:p-16 rounded-full bg-accent/10 backdrop-blur-3xl border border-accent/20 flex items-center justify-center shadow-[0_0_50px_rgba(184,134,11,0.2)]"
+                    >
+                        <ServiceIcon className="w-16 h-16 sm:w-24 sm:h-24 text-accent" />
+                    </motion.div>
+                    
+                    {/* Floating Tech Ornaments */}
+                    <div className="absolute -top-4 -right-4 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                    </div>
                 </div>
-             )}
+             </div>
              
-             {/* Sophisticated Overlay */}
-             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80" />
-             
-             <div className="absolute bottom-8 left-8 right-8 z-10">
-                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-accent/90 backdrop-blur-md flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-500 shadow-xl">
-                   <ServiceIcon className="w-7 h-7 sm:w-10 sm:h-10 text-white" />
+             <div className="absolute bottom-10 left-10 right-10 z-10">
+                <div className="inline-flex items-center gap-4 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                  <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[8px]">Strategic Protocol 0{index + 1}</p>
                 </div>
-                <h3 className="font-montserrat font-black text-2xl sm:text-3xl text-white tracking-tight mb-2">{service.name}</h3>
-                <div className="w-12 h-1 bg-accent" />
+                <h3 className="font-montserrat font-black text-2xl sm:text-3xl text-white tracking-tight">{service.name}</h3>
              </div>
           </div>
         </div>
