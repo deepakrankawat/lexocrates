@@ -1,3 +1,4 @@
+
 # Lexocrates - Legal Process Outsourcing Website
 
 ## Project Overview
@@ -14,6 +15,7 @@ This project is a modern, fully-responsive corporate website for **Lexocrates**,
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **AI Features**: [Genkit](https://firebase.google.com/docs/genkit) for generative AI capabilities.
 - **Contact Form Backend**: [Nodemailer](https://nodemailer.com/) via Next.js API Routes.
+- **Analytics**: Google Analytics 4 (GA4).
 
 ## System Requirements
 
@@ -105,6 +107,7 @@ The project requires the following environment variables to be set in a `.env.lo
 | `GEMINI_API_KEY` | Your API key for the Google AI (Gemini) service, used by Genkit. | `AIzaSy...`                      |
 | `EMAIL_USER`  | The Gmail account username used by Nodemailer to send emails. | `your-email@gmail.com`           |
 | `EMAIL_PASS`  | An [App Password](https://support.google.com/accounts/answer/185833) for the `EMAIL_USER` Gmail account. | `your-app-password`              |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics Measurement ID. | `G-XXXXXXXXXX` |
 
 
 **`.env.local.example`:**
@@ -116,6 +119,9 @@ GEMINI_API_KEY=
 # Use a Gmail account and generate an App Password
 EMAIL_USER=
 EMAIL_PASS=
+
+# Google Analytics Measurement ID
+NEXT_PUBLIC_GA_ID=
 ```
 
 ## Available Scripts

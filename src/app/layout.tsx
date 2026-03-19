@@ -4,6 +4,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { LayoutProvider } from '@/components/layout/layout-provider';
 import { Lato, Montserrat, Open_Sans, Roboto } from 'next/font/google';
+import Script from 'next/script';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -50,11 +51,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en" className="!scroll-smooth">
       <body
         className={`${montserrat.variable} ${lato.variable} ${roboto.variable} ${openSans.variable} font-opensans antialiased bg-background`}
       >
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '${gaId}');
+              `}
+            </Script>
+          </>
+        )}
         <LayoutProvider>
           {children}
         </LayoutProvider>
