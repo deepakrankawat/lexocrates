@@ -3,50 +3,69 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SlideIn } from '@/components/animations/slide-in';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { AppImage } from '../ui/app-image';
+import { FadeIn } from '@/components/animations/fade-in';
+import { ShieldCheck, Scale, Zap } from 'lucide-react';
 
 export function About() {
-  const image = PlaceHolderImages.find(img => img.id === 'service-detail-1');
   return (
-    <section id="about" className="bg-background text-foreground py-16 sm:py-24 overflow-hidden">
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1800px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
-          
-          <SlideIn direction="right">
-            <div className="flex flex-col text-left">
-              <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-sm">
+    <section id="about" className="bg-background text-foreground py-24 sm:py-32 overflow-hidden border-y border-black/5 relative">
+      {/* Subtle Background Accent */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      
+      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] relative z-10">
+        <div className="text-center max-w-4xl mx-auto">
+          <FadeIn delay={0.2}>
+            <div className="inline-flex items-center gap-4 px-5 py-2.5 rounded-full bg-accent/5 border border-accent/10 backdrop-blur-2xl mb-10 shadow-sm">
+              <span className="flex h-2 w-2 rounded-full bg-accent relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+              </span>
+              <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-[10px] sm:text-xs">
                 The Lexocrates Advantage
               </p>
-              <h2 className="font-lato text-4xl sm:text-6xl font-black text-primary leading-[1.1] mb-8 tracking-tight">
-                Your Strategic Partner <br /> in Legal Growth
-              </h2>
-              <p className="text-xl text-foreground/70 leading-relaxed font-medium mb-12">
-                  Lexocrates was founded to bridge the gap between high-quality legal services and cost-effective operational management. We empower law firms and corporate legal departments to achieve more by handling their essential legal tasks with precision and expertise.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                  <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 font-montserrat font-black text-lg px-12 py-8 rounded-full shadow-xl shadow-primary/20 transition-all duration-300 hover:scale-105">
-                      <Link href="/about">Discover Our Story</Link>
-                  </Button>
-              </div>
             </div>
+          </FadeIn>
+          
+          <SlideIn direction="up" delay={0.4}>
+            <h2 className="font-lato text-4xl sm:text-6xl lg:text-7xl font-black text-primary leading-[1.1] mb-10 tracking-tighter">
+              Your Strategic Partner <br /> in <span className="text-accent">Legal Growth</span>
+            </h2>
           </SlideIn>
 
-          <SlideIn direction="left" className="relative">
-             <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.1)] group">
-                {image && (
-                    <AppImage
-                        src={image.imageUrl}
-                        alt={image.description}
-                        data-ai-hint={image.imageHint}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-            </div>
-            <div className="absolute -bottom-10 -right-10 hidden md:block w-48 h-48 bg-accent rounded-3xl -z-10 animate-pulse" />
-          </SlideIn>
+          <FadeIn delay={0.6}>
+            <p className="text-xl sm:text-2xl text-foreground/60 leading-relaxed font-medium mb-16 max-w-3xl mx-auto border-l-4 sm:border-l-0 border-accent/20 pl-8 sm:pl-0 text-left sm:text-center">
+                Lexocrates was founded to bridge the gap between high-quality legal services and cost-effective operational management. We empower law firms and corporate legal departments to achieve more by handling their essential legal tasks with precision and expertise.
+            </p>
+          </FadeIn>
+
+          <div className="space-y-12">
+            <SlideIn direction="up" delay={0.8}>
+                <Button asChild size="xl" className="w-full sm:w-auto bg-primary text-white hover:bg-primary/95 font-montserrat font-black text-xs uppercase tracking-[0.3em] px-14 rounded-full shadow-2xl shadow-primary/10 transition-all duration-500 hover:scale-105 active:scale-95">
+                    <Link href="/about">Discover Our Story</Link>
+                </Button>
+            </SlideIn>
+
+            <FadeIn delay={1.0} className="flex flex-wrap justify-center items-center gap-12 sm:gap-20 opacity-40 grayscale group hover:grayscale-0 transition-all duration-700">
+                <div className="flex flex-col items-center gap-3">
+                    <div className="p-3 bg-accent/10 rounded-xl">
+                        <ShieldCheck className="w-7 h-7 text-primary" />
+                    </div>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Secure Protocol</span>
+                </div>
+                <div className="flex flex-col items-center gap-3">
+                    <div className="p-3 bg-accent/10 rounded-xl">
+                        <Scale className="w-7 h-7 text-primary" />
+                    </div>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Absolute Precision</span>
+                </div>
+                <div className="flex flex-col items-center gap-3">
+                    <div className="p-3 bg-accent/10 rounded-xl">
+                        <Zap className="w-7 h-7 text-primary" />
+                    </div>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Rapid Integration</span>
+                </div>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>
