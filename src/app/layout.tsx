@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -10,24 +9,28 @@ const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
   weight: ['400', '700', '900'],
+  display: 'swap',
 });
 
 const lato = Lato({
   subsets: ['latin'],
   variable: '--font-lato',
   weight: ['400', '700', '900'],
+  display: 'swap',
 });
 
 const roboto = Roboto({
   subsets: ['latin'],
   variable: '--font-roboto',
   weight: ['400', '500', '700'],
+  display: 'swap',
 });
 
 const openSans = Open_Sans({
   subsets: ['latin'],
   variable: '--font-opensans',
   weight: ['400', '600', '700'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {

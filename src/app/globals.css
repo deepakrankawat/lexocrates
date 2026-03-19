@@ -37,6 +37,8 @@ body {
   }
   body {
     @apply bg-background text-foreground selection:bg-accent/30 selection:text-primary overflow-x-hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   .prose {
     h2, h3 {
@@ -48,9 +50,28 @@ body {
   }
 }
 
-/* UI Scaling Optimizations */
+/* UI Scaling & Performance Optimizations */
 @layer utilities {
   .container-balanced {
     @apply mx-auto w-full px-6 sm:px-12 lg:px-20 max-w-[1440px] fhd:max-w-[1600px] qhd:max-w-[1800px];
   }
+  
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+}
+
+/* Scrollbar refinement */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full hover:bg-primary/40 transition-colors;
 }

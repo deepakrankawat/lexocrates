@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[85vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-10">
       {/* High-End Architectural Background */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Deep Background Gradients */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(184,134,11,0.15)_0%,transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
@@ -21,14 +21,15 @@ export function Hero() {
         <div className="absolute inset-0 opacity-[0.04] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
-        {/* Floating Legal Symbols SVGs - Improved Visibility and Scaling */}
-        <div className="absolute top-1/4 right-1/4 opacity-[0.05] pointer-events-none select-none hidden md:block">
+        {/* Floating Legal Symbols SVGs */}
+        <div className="absolute top-1/4 right-1/4 opacity-[0.05] hidden md:block">
           <motion.div
+            className="gpu-accelerated"
             animate={{ 
               y: [0, -20, 0],
               rotate: [0, 5, 0]
             }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
           >
             <Scale size={400} strokeWidth={0.5} color="white" />
           </motion.div>
@@ -36,14 +37,13 @@ export function Hero() {
 
         {/* Atmospheric Blurred Glows */}
         <div className="absolute top-0 right-0 w-[400px] sm:w-[800px] h-[400px] sm:h-[800px] bg-accent/10 rounded-full blur-[100px] sm:blur-[150px] -mr-32 sm:-mr-64 -mt-32 sm:-mt-64 animate-pulse duration-[10000ms]" />
-        <div className="absolute bottom-0 left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-accent/5 rounded-full blur-[80px] sm:blur-[120px] -ml-16 sm:-ml-32 -mb-16 sm:-mb-32" />
       </div>
 
       <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1920px]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
-            <FadeIn delay={0.2} duration={0.8}>
+            <FadeIn delay={0.1} duration={0.6}>
               <div className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-8 shadow-xl">
                 <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
@@ -54,7 +54,7 @@ export function Hero() {
               </div>
             </FadeIn>
             
-            <SlideIn direction="up" delay={0.4} duration={0.8}>
+            <SlideIn direction="up" delay={0.2} duration={0.7}>
               <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.1] sm:leading-[0.95] text-white mb-6 lg:mb-8 tracking-tighter">
                 Strategic <br />
                 <span className="text-accent">Legal</span> <br className="hidden sm:block" />
@@ -62,7 +62,7 @@ export function Hero() {
               </h1>
             </SlideIn>
 
-            <FadeIn delay={0.6} duration={0.8}>
+            <FadeIn delay={0.3} duration={0.7}>
               <div className="space-y-4 mb-8 lg:mb-10">
                 <h2 className="text-base sm:text-xl lg:text-2xl text-white font-montserrat font-bold tracking-tight border-l-4 border-accent pl-4 sm:pl-8">
                   Excellence in Legal Process Outsourcing
@@ -73,7 +73,7 @@ export function Hero() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.8} duration={0.8}>
+            <FadeIn delay={0.4} duration={0.7}>
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8">
                 <Button
                   asChild
@@ -101,12 +101,12 @@ export function Hero() {
             </FadeIn>
           </div>
 
-          <SlideIn direction="left" delay={0.6} className="hidden lg:block relative">
-            <div className="relative">
+          <SlideIn direction="left" delay={0.5} className="hidden lg:block relative">
+            <div className="relative gpu-accelerated">
               <LegalWorkflowAiAnimation />
               {/* Floating SVG Quill Ornament */}
               <motion.div 
-                className="absolute -top-10 -right-10 opacity-20"
+                className="absolute -top-10 -right-10 opacity-20 pointer-events-none"
                 animate={{ rotate: [0, 5, -5, 0], y: [0, 10, 0] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -117,22 +117,8 @@ export function Hero() {
                 </svg>
               </motion.div>
             </div>
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 px-6 py-3 bg-white/5 border border-white/10 backdrop-blur-2xl rounded-2xl">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <p className="text-[10px] font-black text-white/60 uppercase tracking-[0.3em]">AI-Driven Precision Active</p>
-            </div>
           </SlideIn>
         </div>
-      </div>
-      
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2">
-        <p className="text-white font-lato font-black text-[10px] uppercase tracking-[0.6em]">Explore</p>
-        <motion.div 
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-1 h-10 bg-gradient-to-b from-accent to-transparent" 
-        />
       </div>
     </section>
   );

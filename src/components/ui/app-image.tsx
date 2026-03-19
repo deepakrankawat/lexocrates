@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image, { type ImageProps } from 'next/image';
@@ -15,6 +14,7 @@ export function AppImage({
   src,
   className,
   wrapperClassName,
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
   ...props
 }: AppImageProps) {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,20 +22,21 @@ export function AppImage({
   return (
     <div
       className={cn(
-        'relative overflow-hidden',
+        'relative overflow-hidden bg-muted',
         isLoading ? 'animate-pulse' : '',
         wrapperClassName
       )}
     >
       <Image
         className={cn(
-          'transition-[scale,filter] duration-700',
-          isLoading ? 'scale-[1.02] blur-xl grayscale' : 'scale-100 blur-0 grayscale-0',
+          'transition-[scale,filter,opacity] duration-700 ease-in-out',
+          isLoading ? 'scale-[1.02] blur-xl opacity-0' : 'scale-100 blur-0 opacity-100',
           className
         )}
         src={src}
         alt={alt}
-        placeholder={shimmerPlaceholder(props.width as number, props.height as number)}
+        sizes={sizes}
+        placeholder={shimmerPlaceholder(props.width as number || 700, props.height as number || 475)}
         onLoad={() => setIsLoading(false)}
         {...props}
       />
