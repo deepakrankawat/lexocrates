@@ -46,7 +46,7 @@ export function CareersValues() {
                         </p>
                     </SlideIn>
 
-                    <StaggerFadeIn className="grid sm:grid-cols-2 gap-6">
+                    <StaggerFadeIn className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {values.map((value, index) => (
                             <Card key={index} className="bg-secondary/30 border-black/5 rounded-[2.5rem] p-10 hover:bg-white hover:shadow-xl transition-all duration-500 group">
                                 <CardContent className="p-0">

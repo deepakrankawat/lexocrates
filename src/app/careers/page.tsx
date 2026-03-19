@@ -8,7 +8,7 @@ export default function CareersPage() {
   return (
     <main className="bg-background">
       <CareersHero />
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px]">
+      <div className="container-balanced">
         <CareersAbout />
         <CareersValues />
         <CareersPositions />

@@ -22,9 +22,12 @@ export function CareersHero() {
       <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px] text-center">
         <div className="max-w-4xl mx-auto">
           <FadeIn delay={0.2}>
-            <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm mb-6 lg:mb-8">
-              Join the Team
-            </p>
+            <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-[10px] sm:text-xs">
+                Global Talent Network
+              </p>
+            </div>
           </FadeIn>
           <SlideIn direction="up" delay={0.4}>
             <h1 className="font-montserrat text-5xl sm:text-7xl fhd:text-8xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
@@ -32,8 +35,8 @@ export function CareersHero() {
             </h1>
           </SlideIn>
           <FadeIn delay={0.6}>
-            <p className="text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
-              We are looking for brilliant legal minds to redefine how legal services are delivered globally. At Lexocrates, you'll join a culture of innovation, continuous learning, and collaborative excellence, working on complex multi-jurisdictional challenges alongside elite global professionals.
+            <p className="text-lg sm:text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed max-w-3xl mx-auto">
+              We are looking for brilliant legal minds to redefine global legal delivery. Join a culture of innovation and collaborative excellence.
             </p>
           </FadeIn>
         </div>

@@ -28,7 +28,7 @@ const benefits = [
   },
   {
     icon: Clock,
-    title: 'Balanced High-Performance',
+    title: 'Balanced Performance',
     description: 'Flexible schedules that respect intellectual recovery and professional focus.',
   },
   {
@@ -49,7 +49,7 @@ export function CareersBenefits() {
                 <h2 className="font-lato text-4xl sm:text-5xl font-black text-primary tracking-tight">
                     Why Elite Minds <span className="text-accent">Join Us</span>
                 </h2>
-                <p className="mt-6 text-xl text-foreground/60 font-medium max-w-2xl mx-auto">
+                <p className="mt-6 text-xl text-foreground/60 font-medium max-w-2xl mx-auto text-center">
                     We provide the resources, technology, and mentorship required to excel in the global legal arena.
                 </p>
             </SlideIn>

@@ -36,14 +36,14 @@ export function CareersPositions() {
             Strategic <span className="text-accent">Talent Portal</span>
           </h2>
           <p className="text-xl text-foreground/60 max-w-3xl mx-auto font-medium leading-relaxed">
-            While we are currently at full operational capacity, we are always looking to connect with the world&apos;s most brilliant legal minds.
+            While we are currently at full operational capacity, we are always looking to connect with the world's most brilliant legal minds.
           </p>
         </SlideIn>
         
         <div className="grid lg:grid-cols-3 gap-10 items-stretch">
             <div className="lg:col-span-2">
                 <SlideIn direction="left" className="h-full">
-                    <Card className="bg-primary text-white border-none rounded-[3rem] overflow-hidden shadow-2xl h-full flex flex-col justify-center p-12 sm:p-20 relative group">
+                    <Card className="bg-primary text-white border-none rounded-[3rem] overflow-hidden shadow-2xl h-full flex flex-col justify-center p-10 sm:p-20 relative group">
                         <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -mr-48 -mt-48 transition-all duration-700 group-hover:scale-110" />
                         
                         <div className="relative z-10">
@@ -65,10 +65,10 @@ export function CareersPositions() {
                 </SlideIn>
             </div>
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
                 {portalFeatures.map((feature, index) => (
                     <SlideIn key={index} direction="right" delay={0.2 * index} className="h-full">
-                        <Card className="bg-secondary/30 border-black/5 rounded-[2.5rem] p-10 hover:bg-white hover:shadow-xl transition-all duration-500 group h-full flex flex-col justify-center">
+                        <Card className="bg-secondary/30 border-black/5 rounded-[2.5rem] p-8 hover:bg-white hover:shadow-xl transition-all duration-500 group h-full flex flex-col justify-center">
                             <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-500">
                                 <feature.icon className="w-7 h-7 text-accent group-hover:text-white transition-colors duration-500" />
                             </div>
