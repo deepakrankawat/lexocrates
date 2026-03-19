@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -10,7 +9,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, CheckCircle } from 'lucide-react';
+import { Loader2, CheckCircle, SendHorizonal } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const formSchema = z.object({
   fullName: z.string().min(2, { message: 'Full name must be at least 2 characters.' }),
@@ -78,66 +78,120 @@ export function SimpleContactForm() {
   
   if (isSubmitted) {
     return (
-        <div className="flex flex-col items-center justify-center h-full text-center bg-secondary p-8 md:p-12 rounded-lg shadow-lg">
-            <CheckCircle className="h-20 w-20 text-green-500 mb-6" />
-            <h2 className="font-roboto text-3xl font-medium text-primary mb-3">Form Submitted Successfully!</h2>
-            <p className="text-foreground/80 max-w-md mx-auto">
-                Thank you for your message. A confirmation email has been sent to you. We will get back to you shortly.
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="flex flex-col items-center justify-center h-full text-center bg-white p-12 rounded-[3rem] shadow-2xl border border-black/5"
+        >
+            <div className="bg-green-100 p-6 rounded-full mb-8">
+              <CheckCircle className="h-16 w-16 text-green-600" />
+            </div>
+            <h2 className="font-montserrat text-3xl font-black text-primary mb-4 tracking-tight">Message Received</h2>
+            <p className="text-foreground/60 max-w-md mx-auto font-medium leading-relaxed">
+                Thank you for reaching out. Our strategic response team has been notified and will contact you within 24 business hours.
             </p>
-        </div>
+            <Button onClick={() => setIsSubmitted(false)} variant="link" className="mt-8 text-accent font-black uppercase tracking-[0.3em] text-[10px]">
+              Send Another Message
+            </Button>
+        </motion.div>
     );
   }
 
-  const FormField = ({ name, children }: { name: keyof FormValues, children: React.ReactNode }) => (
-    <div className="space-y-2">
-        {children}
-        {errors[name] && (
-            <p className="text-sm font-medium text-destructive">{errors[name]?.message}</p>
-        )}
-    </div>
-  );
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-secondary p-8 rounded-lg shadow-lg">
-        <div className="text-center mb-8">
-            <p className="font-lato font-bold text-accent uppercase tracking-wider">Get In Touch</p>
-            <h2 className="mt-4 font-lato text-4xl md:text-5xl font-bold text-primary">Send Us a Message</h2>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FormField name="fullName">
-                <Label htmlFor="fullName">Full Name</Label>
-                <Input id="fullName" placeholder="John Doe" {...register('fullName')} />
-            </FormField>
-            <FormField name="email">
-                <Label htmlFor="email">Email Address</Label>
-                <Input id="email" type="email" placeholder="john.doe@example.com" {...register('email')} />
-            </FormField>
-            <FormField name="phone">
-                <Label htmlFor="phone">Phone Number (Optional)</Label>
-                <Input id="phone" placeholder="+1 (555) 123-4567" {...register('phone')} />
-            </FormField>
-            <FormField name="company">
-                <Label htmlFor="company">Company Name (Optional)</Label>
-                <Input id="company" placeholder="Acme Inc." {...register('company')} />
-            </FormField>
-            <div className="md:col-span-2">
-                <FormField name="subject">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="Inquiry about..." {...register('subject')} />
-                </FormField>
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-3">
+                <Label htmlFor="fullName" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Full Name</Label>
+                <Input 
+                  id="fullName" 
+                  placeholder="John Doe" 
+                  {...register('fullName')} 
+                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-medium placeholder:text-black/20"
+                />
+                {errors.fullName && <p className="text-[9px] font-black text-destructive ml-4 uppercase tracking-widest">{errors.fullName.message}</p>}
             </div>
-            <div className="md:col-span-2">
-                <FormField name="message">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="Your message..." {...register('message')} rows={6} />
-                </FormField>
+
+            <div className="space-y-3">
+                <Label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Email Address</Label>
+                <Input 
+                  id="email" 
+                  type="email" 
+                  placeholder="john@example.com" 
+                  {...register('email')} 
+                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-medium placeholder:text-black/20"
+                />
+                {errors.email && <p className="text-[9px] font-black text-destructive ml-4 uppercase tracking-widest">{errors.email.message}</p>}
+            </div>
+
+            <div className="space-y-3">
+                <Label htmlFor="phone" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Phone Number</Label>
+                <Input 
+                  id="phone" 
+                  placeholder="+1 (555) 000-0000" 
+                  {...register('phone')} 
+                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-medium placeholder:text-black/20"
+                />
+            </div>
+
+            <div className="space-y-3">
+                <Label htmlFor="company" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Company</Label>
+                <Input 
+                  id="company" 
+                  placeholder="Lex Corp" 
+                  {...register('company')} 
+                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-medium placeholder:text-black/20"
+                />
+            </div>
+
+            <div className="md:col-span-2 space-y-3">
+                <Label htmlFor="subject" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Subject</Label>
+                <Input 
+                  id="subject" 
+                  placeholder="How can we help?" 
+                  {...register('subject')} 
+                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-medium placeholder:text-black/20"
+                />
+                {errors.subject && <p className="text-[9px] font-black text-destructive ml-4 uppercase tracking-widest">{errors.subject.message}</p>}
+            </div>
+
+            <div className="md:col-span-2 space-y-3">
+                <Label htmlFor="message" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Message</Label>
+                <Textarea 
+                  id="message" 
+                  placeholder="Describe your legal process requirements..." 
+                  {...register('message')} 
+                  rows={6} 
+                  className="rounded-3xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all p-6 font-medium resize-none placeholder:text-black/20"
+                />
+                {errors.message && <p className="text-[9px] font-black text-destructive ml-4 uppercase tracking-widest">{errors.message.message}</p>}
             </div>
         </div>
 
-        <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-bold" disabled={isLoading}>
-            {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...</> : 'Send Message'}
-        </Button>
+        <div className="relative group pt-4">
+          <Button 
+            type="submit" 
+            size="xl" 
+            className="w-full bg-primary hover:bg-primary/95 text-white font-montserrat font-black text-xs uppercase tracking-[0.4em] rounded-full shadow-2xl shadow-primary/20 transition-all duration-500 hover:scale-[1.02] active:scale-95 overflow-hidden group/btn" 
+            disabled={isLoading}
+          >
+              <div className="relative z-10 flex items-center justify-center gap-4">
+                {isLoading ? (
+                  <Loader2 className="h-5 w-5 animate-spin text-accent" />
+                ) : (
+                  <SendHorizonal className="h-5 w-5 text-accent group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                )}
+                <span>{isLoading ? 'Processing...' : 'Send Message'}</span>
+              </div>
+              
+              {/* Shimmer Effect */}
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-200%]"
+                animate={{ translateX: ["-200%", "200%"] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
+              />
+          </Button>
+          <div className="absolute -inset-1 border border-accent/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        </div>
     </form>
   );
 }
