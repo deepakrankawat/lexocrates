@@ -1,57 +1,66 @@
-
-
 'use client';
+
 import { StaggerFadeIn } from '@/components/animations/stagger-fade-in';
 import { SlideIn } from '@/components/animations/slide-in';
-import { Heart, Users, Lightbulb, TrendingUp } from 'lucide-react';
+import { Heart, Users, Lightbulb, TrendingUp, Scale, ShieldCheck } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const values = [
     {
-        icon: Users,
-        title: 'Client-Centric',
-        description: 'Our clients are at the heart of everything we do. We succeed when they succeed.'
+        icon: Scale,
+        title: 'Jurisdictional Rigor',
+        description: 'We respect the unique complexities of every legal system we support.'
     },
     {
         icon: Lightbulb,
-        title: 'Innovation',
-        description: 'We constantly seek better ways to deliver legal services through technology and process improvement.'
+        title: 'Technical Innovation',
+        description: 'We use AI not to replace thought, but to empower strategic legal precision.'
     },
     {
-        icon: Heart,
-        title: 'Integrity',
-        description: 'We uphold the highest standards of professional ethics and confidentiality.'
+        icon: ShieldCheck,
+        title: 'Ethical Stewardship',
+        description: 'Confidentiality is not just a policy; it is the foundation of our trust.'
     },
     {
-        icon: TrendingUp,
-        title: 'Excellence',
-        description: 'We are committed to delivering the highest quality work and exceeding expectations.'
+        icon: Users,
+        title: 'Seamless Integration',
+        description: 'We act as a high-fidelity extension of our clients\' internal legal teams.'
     }
 ];
 
 export function CareersValues() {
     return (
-        <section className="bg-secondary text-foreground py-12 sm:py-16">
-            <SlideIn>
-                <div className="text-center mb-12">
-                    <p className="font-lato font-bold text-accent uppercase tracking-wider">Our Core Values</p>
-                    <h2 className="mt-4 font-lato text-3xl md:text-4xl font-bold text-primary">
-                        The Principles That Guide Us
-                    </h2>
-                </div>
-            </SlideIn>
-            <StaggerFadeIn className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {values.map((value) => (
-                    <div key={value.title} className="text-center p-6 bg-background">
-                        <div className="flex justify-center mb-4">
-                            <div className="p-4 bg-accent/10 rounded-full">
-                                <value.icon className="h-10 w-10 text-accent" />
-                            </div>
+        <section id="careers-values" className="py-20 sm:py-32 overflow-hidden">
+            <div className="mx-auto w-full px-6">
+                <div className="grid lg:grid-cols-2 gap-20 items-center">
+                    <SlideIn direction="left">
+                        <div className="inline-flex items-center gap-4 mb-6">
+                            <div className="w-12 h-px bg-accent/30" />
+                            <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs">Our Protocol</p>
                         </div>
-                        <h3 className="font-roboto text-2xl font-medium text-primary">{value.title}</h3>
-                        <p className="text-foreground/80 mt-2">{value.description}</p>
-                    </div>
-                ))}
-            </StaggerFadeIn>
+                        <h2 className="font-lato text-4xl sm:text-6xl font-black text-primary leading-tight tracking-tight mb-8">
+                            The Principles That <br /><span className="text-accent">Govern Us</span>
+                        </h2>
+                        <p className="text-xl text-foreground/70 leading-relaxed font-medium mb-12">
+                            Lexocrates is more than an LPO; it is an intellectual partnership built on a fusion of Socratic philosophy and modern engineering.
+                        </p>
+                    </SlideIn>
+
+                    <StaggerFadeIn className="grid sm:grid-cols-2 gap-6">
+                        {values.map((value, index) => (
+                            <Card key={index} className="bg-secondary/30 border-black/5 rounded-[2.5rem] p-10 hover:bg-white hover:shadow-xl transition-all duration-500 group">
+                                <CardContent className="p-0">
+                                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-500">
+                                        <value.icon className="w-6 h-6 text-accent group-hover:text-white transition-colors duration-500" />
+                                    </div>
+                                    <h3 className="font-roboto text-lg font-black text-primary mb-3">{value.title}</h3>
+                                    <p className="text-foreground/60 font-medium text-xs leading-relaxed">{value.description}</p>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </StaggerFadeIn>
+                </div>
+            </div>
         </section>
     );
 }
