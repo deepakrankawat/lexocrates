@@ -87,12 +87,12 @@ export function SimpleContactForm() {
               <CheckCircle className="h-16 w-16 text-green-600" />
             </div>
             <h2 className="font-montserrat text-3xl font-black text-primary mb-4 tracking-tight">Message Received</h2>
-            <p className="text-foreground/60 max-w-md mx-auto font-medium leading-relaxed">
+            <p className="text-foreground/60 max-w-md mx-auto font-black leading-relaxed">
                 Thank you for reaching out. Our strategic response team has been notified and will contact you within 24 business hours.
             </p>
-            <Button onClick={() => setIsSubmitted(false)} variant="link" className="mt-8 text-accent font-black uppercase tracking-[0.3em] text-[10px]">
+            <button onClick={() => setIsSubmitted(false)} className="mt-8 text-accent font-black uppercase tracking-[0.3em] text-[10px] hover:underline transition-all">
               Send Another Message
-            </Button>
+            </button>
         </motion.div>
     );
   }
@@ -101,67 +101,67 @@ export function SimpleContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-3">
-                <Label htmlFor="fullName" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Full Name</Label>
+                <Label htmlFor="fullName" className="text-[11px] font-black uppercase tracking-[0.25em] text-primary/80 ml-4">Full Name</Label>
                 <Input 
                   id="fullName" 
                   placeholder="John Doe" 
                   {...register('fullName')} 
-                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-medium placeholder:text-black/20"
+                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-bold text-primary placeholder:text-black/30"
                 />
                 {errors.fullName && <p className="text-[9px] font-black text-destructive ml-4 uppercase tracking-widest">{errors.fullName.message}</p>}
             </div>
 
             <div className="space-y-3">
-                <Label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Email Address</Label>
+                <Label htmlFor="email" className="text-[11px] font-black uppercase tracking-[0.25em] text-primary/80 ml-4">Email Address</Label>
                 <Input 
                   id="email" 
                   type="email" 
                   placeholder="john@example.com" 
                   {...register('email')} 
-                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-medium placeholder:text-black/20"
+                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-bold text-primary placeholder:text-black/30"
                 />
                 {errors.email && <p className="text-[9px] font-black text-destructive ml-4 uppercase tracking-widest">{errors.email.message}</p>}
             </div>
 
             <div className="space-y-3">
-                <Label htmlFor="phone" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Phone Number</Label>
+                <Label htmlFor="phone" className="text-[11px] font-black uppercase tracking-[0.25em] text-primary/80 ml-4">Phone Number</Label>
                 <Input 
                   id="phone" 
                   placeholder="+1 (555) 000-0000" 
                   {...register('phone')} 
-                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-medium placeholder:text-black/20"
+                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-bold text-primary placeholder:text-black/30"
                 />
             </div>
 
             <div className="space-y-3">
-                <Label htmlFor="company" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Company</Label>
+                <Label htmlFor="company" className="text-[11px] font-black uppercase tracking-[0.25em] text-primary/80 ml-4">Company</Label>
                 <Input 
                   id="company" 
                   placeholder="Lex Corp" 
                   {...register('company')} 
-                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-medium placeholder:text-black/20"
+                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-bold text-primary placeholder:text-black/30"
                 />
             </div>
 
             <div className="md:col-span-2 space-y-3">
-                <Label htmlFor="subject" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Subject</Label>
+                <Label htmlFor="subject" className="text-[11px] font-black uppercase tracking-[0.25em] text-primary/80 ml-4">Subject</Label>
                 <Input 
                   id="subject" 
                   placeholder="How can we help?" 
                   {...register('subject')} 
-                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-medium placeholder:text-black/20"
+                  className="h-14 rounded-2xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all px-6 font-bold text-primary placeholder:text-black/30"
                 />
                 {errors.subject && <p className="text-[9px] font-black text-destructive ml-4 uppercase tracking-widest">{errors.subject.message}</p>}
             </div>
 
             <div className="md:col-span-2 space-y-3">
-                <Label htmlFor="message" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 ml-4">Message</Label>
+                <Label htmlFor="message" className="text-[11px] font-black uppercase tracking-[0.25em] text-primary/80 ml-4">Message</Label>
                 <Textarea 
                   id="message" 
                   placeholder="Describe your legal process requirements..." 
                   {...register('message')} 
                   rows={6} 
-                  className="rounded-3xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all p-6 font-medium resize-none placeholder:text-black/20"
+                  className="rounded-3xl bg-white border-black/5 focus:border-accent/50 focus:ring-accent/20 transition-all p-6 font-bold text-primary resize-none placeholder:text-black/30"
                 />
                 {errors.message && <p className="text-[9px] font-black text-destructive ml-4 uppercase tracking-widest">{errors.message.message}</p>}
             </div>
@@ -183,7 +183,6 @@ export function SimpleContactForm() {
                 <span>{isLoading ? 'Processing...' : 'Send Message'}</span>
               </div>
               
-              {/* Shimmer Effect */}
               <motion.div 
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-200%]"
                 animate={{ translateX: ["-200%", "200%"] }}
