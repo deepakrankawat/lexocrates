@@ -12,15 +12,10 @@ export function Hero() {
     <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-24">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {/* Deep Background Gradients */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(184,134,11,0.15)_0%,transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
-        
-        {/* Refined Technical Grid */}
         <div className="absolute inset-0 opacity-[0.04] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-
-        {/* Floating Legal Symbols SVGs */}
         <div className="absolute top-1/4 right-1/4 opacity-[0.05] hidden md:block">
           <motion.div
             className="gpu-accelerated"
@@ -33,12 +28,9 @@ export function Hero() {
             <Scale size={400} strokeWidth={0.5} color="white" />
           </motion.div>
         </div>
-
-        {/* Atmospheric Blurred Glows */}
-        <div className="absolute top-0 right-0 w-[300px] sm:w-[800px] h-[300px] sm:h-[800px] bg-accent/10 rounded-full blur-[80px] sm:blur-[150px] -mr-32 sm:-mr-64 -mt-32 sm:-mt-64 animate-pulse duration-[10000ms]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1920px]">
+      <div className="relative z-10 mx-auto w-full px-5 sm:px-10 lg:px-20 max-w-[1920px]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
@@ -47,7 +39,6 @@ export function Hero() {
                 <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                 </span>
-                <span className="sr-only">Status: Active</span>
                 <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[8px] sm:text-xs">
                   Confidentiality • Precision • Speed
                 </p>
@@ -58,7 +49,7 @@ export function Hero() {
                 Operations
               </h1>
               <div className="space-y-4 mb-10">
-                <h2 className="text-sm sm:text-xl lg:text-2xl text-white font-montserrat font-bold tracking-tight border-l-4 border-accent pl-4 sm:pl-8 inline-block lg:block">
+                <h2 className="text-sm sm:text-xl font-montserrat font-bold tracking-tight border-l-4 border-accent pl-4 sm:pl-8 inline-block lg:block">
                   Excellence in Legal Process Outsourcing
                 </h2>
                 <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8">
@@ -69,7 +60,7 @@ export function Hero() {
                 <Button
                   asChild
                   size="xl"
-                  className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden"
+                  className="w-full sm:w-auto h-14 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105"
                 >
                   <Link href="/services">Explore Solutions</Link>
                 </Button>
@@ -77,7 +68,7 @@ export function Hero() {
                   asChild
                   size="xl"
                   variant="outline"
-                  className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
+                  className="w-full sm:w-auto h-14 bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full transition-all duration-500 hover:scale-105"
                 >
                   <Link href="/contact">Strategy Call</Link>
                 </Button>
