@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { User } from 'lucide-react';
 import { SlideIn } from '../animations/slide-in';
-import { StaggerFadeIn } from '../animations/stagger-fade-in';
 
 const teamMembers = [
   {
@@ -34,7 +33,7 @@ export function Team() {
   return (
     <section id="team" className="bg-background text-foreground py-16 sm:py-24">
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1800px]">
-        <SlideIn className="text-center mb-16">
+        <SlideIn className="text-center mb-16" direction="up">
             <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-sm">Our Leadership</p>
             <h2 className="font-lato text-4xl sm:text-6xl font-black leading-tight text-primary mb-6 tracking-tight">
                 Global Visionary Team
@@ -44,7 +43,7 @@ export function Team() {
             </p>
         </SlideIn>
         
-        <StaggerFadeIn className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" childClassName="h-full">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {teamMembers.map((member) => (
               <Card key={member.name} className="group relative h-full flex flex-col overflow-hidden bg-secondary/30 border-black/5 hover:border-accent/50 hover:shadow-2xl transition-all duration-500 rounded-3xl">
                   <CardContent className="p-10 flex flex-col items-center text-center h-full">
@@ -62,7 +61,7 @@ export function Team() {
                   </CardContent>
               </Card>
           ))}
-        </StaggerFadeIn>
+        </div>
       </div>
     </section>
   );

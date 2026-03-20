@@ -1,8 +1,8 @@
+
 'use client';
 
 import { CheckCircle2, ArrowRight, Search, Gavel, FileText, ShieldCheck, Users, LucideIcon } from 'lucide-react';
 import { SlideIn } from '../animations/slide-in';
-import { FadeIn } from '../animations/fade-in';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -34,7 +34,7 @@ export function ServiceFeatureItem({ service, index, showLink = true }: { servic
       !isEven && "lg:flex-row-reverse"
     )}>
       {/* Visual Representation with Technical Blueprint Style */}
-      <SlideIn direction={isEven ? "left" : "right"} className="w-full lg:w-1/2">
+      <div className="w-full lg:w-1/2">
         <div className="relative group">
           <div className="absolute -inset-4 bg-accent/5 rounded-[2rem] sm:rounded-[3rem] blur-2xl group-hover:bg-accent/10 transition-all duration-700" />
           <div className="relative aspect-video lg:aspect-[4/3] rounded-[2rem] sm:rounded-[3rem] bg-primary overflow-hidden shadow-2xl border border-white/10">
@@ -43,7 +43,7 @@ export function ServiceFeatureItem({ service, index, showLink = true }: { servic
              <div className="absolute inset-0 opacity-[0.05]" 
                   style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
              
-             {/* Animated Concentric Circles */}
+             {/* Animated Concentric Circles - Kept for professional flair */}
              <div className="absolute inset-0 flex items-center justify-center opacity-[0.03]">
                 <motion.div
                   animate={{ rotate: 360 }}
@@ -55,13 +55,9 @@ export function ServiceFeatureItem({ service, index, showLink = true }: { servic
              {/* Sophisticated Icon Presentation */}
              <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative">
-                    <motion.div
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      className="p-8 sm:p-16 rounded-full bg-accent/10 backdrop-blur-3xl border border-accent/20 flex items-center justify-center shadow-[0_0_50px_rgba(184,134,11,0.2)]"
-                    >
+                    <div className="p-8 sm:p-16 rounded-full bg-accent/10 backdrop-blur-3xl border border-accent/20 flex items-center justify-center shadow-[0_0_50px_rgba(184,134,11,0.2)]">
                         <ServiceIcon className="w-12 h-12 sm:w-24 sm:h-24 text-accent" />
-                    </motion.div>
+                    </div>
                 </div>
              </div>
              
@@ -74,10 +70,10 @@ export function ServiceFeatureItem({ service, index, showLink = true }: { servic
              </div>
           </div>
         </div>
-      </SlideIn>
+      </div>
 
       {/* Content Description */}
-      <SlideIn direction={isEven ? "right" : "left"} className="w-full lg:w-1/2">
+      <div className="w-full lg:w-1/2">
         <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
           <div>
             <div className="hidden lg:inline-flex items-center gap-4 mb-4">
@@ -94,12 +90,12 @@ export function ServiceFeatureItem({ service, index, showLink = true }: { servic
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-black/5">
              {service.keyAreas.map((area, i) => (
-               <FadeIn key={i} delay={0.1 * i} className="flex items-center gap-3 justify-center lg:justify-start">
+               <div key={i} className="flex items-center gap-3 justify-center lg:justify-start">
                   <div className="p-1 bg-accent/10 rounded-full">
                     <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-accent" />
                   </div>
                   <span className="text-xs sm:text-sm font-bold text-primary/80 tracking-tight">{area}</span>
-               </FadeIn>
+               </div>
              ))}
           </div>
 
@@ -114,7 +110,7 @@ export function ServiceFeatureItem({ service, index, showLink = true }: { servic
             </Button>
           </div>
         </div>
-      </SlideIn>
+      </div>
     </div>
   );
 }

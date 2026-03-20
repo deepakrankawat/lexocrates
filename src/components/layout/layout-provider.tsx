@@ -1,6 +1,6 @@
+
 "use client"
 
-import { PageTransition } from '@/components/animations/page-transition';
 import { usePathname } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -11,11 +11,9 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <PageTransition key={pathname}>
-        <main className="flex-grow pt-[64px] sm:pt-[96px] lg:pt-[128px] bg-background">
-          {children}
-        </main>
-      </PageTransition>
+      <main className="flex-grow pt-[64px] sm:pt-[96px] lg:pt-[128px] bg-background">
+        {children}
+      </main>
       <Footer />
     </div>
   );
