@@ -2,21 +2,26 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { FadeIn } from '../animations/fade-in';
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
 import { LegalWorkflowAiAnimation } from '../animations/legal-workflow-ai-animation';
-import { Scale } from 'lucide-react';
+import { Scale, ArrowRight } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-24">
+    <section className="relative min-h-[85vh] lg:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-24">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(184,134,11,0.15)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
+        {/* Desktop Gradients */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(184,134,11,0.15)_0%,transparent_50%)] hidden lg:block" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(184,134,11,0.1)_0%,transparent_50%)] hidden lg:block" />
+        
+        {/* Mobile-Specific Center Glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(184,134,11,0.15)_0%,transparent_60%)] lg:hidden" />
+        
         <div className="absolute inset-0 opacity-[0.04] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        
         <div className="absolute top-1/4 right-1/4 opacity-[0.05] hidden md:block">
           <motion.div
             className="gpu-accelerated"
@@ -48,29 +53,35 @@ export function Hero() {
               </SlideIn>
 
               <SlideIn direction="up" delay={0.2}>
-                <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] text-white mb-6 tracking-tighter">
+                <h1 className="font-montserrat text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] text-white mb-6 tracking-tighter">
                   Strategic <br />
                   <span className="text-accent">Legal</span> <br className="hidden sm:block" />
                   Operations
                 </h1>
               </SlideIn>
 
-              <SlideIn direction="up" delay={0.3} className="space-y-4 mb-10 w-full">
-                <h2 className="text-sm sm:text-xl font-montserrat font-bold tracking-tight border-l-4 border-accent pl-4 sm:pl-8 inline-block lg:block text-white">
-                  Excellence in Legal Process Outsourcing
+              <SlideIn direction="up" delay={0.3} className="space-y-6 lg:space-y-4 mb-10 w-full flex flex-col items-center lg:items-start">
+                {/* Mobile-Only Vertical Accent */}
+                <div className="h-12 w-0.5 bg-gradient-to-b from-accent to-transparent lg:hidden mb-2" />
+                
+                <h2 className="text-sm sm:text-xl font-montserrat font-bold tracking-tight border-l-0 lg:border-l-4 border-accent lg:pl-8 inline-block lg:block text-white uppercase lg:normal-case tracking-[0.2em] lg:tracking-tight">
+                  Excellence in Legal Outsourcing
                 </h2>
-                <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8 mx-auto lg:mx-0">
+                
+                <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8 mx-auto lg:mx-0 px-4 lg:px-0">
                   Partnering with the world&apos;s leading law firms to drive operational efficiency. We integrate elite Indian expertise with advanced AI technology to transform your global legal workflow.
                 </p>
               </SlideIn>
 
-              <SlideIn direction="up" delay={0.4} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8 w-full sm:w-auto">
+              <SlideIn direction="up" delay={0.4} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8 w-full sm:w-auto px-6 lg:px-0">
                 <Button
                   asChild
                   size="xl"
                   className="w-full sm:w-auto h-14 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105"
                 >
-                  <Link href="/services">Explore Solutions</Link>
+                  <Link href="/services" className="flex items-center justify-center gap-2">
+                    Explore Solutions <ArrowRight className="w-4 h-4 lg:hidden" />
+                  </Link>
                 </Button>
                 <Button
                   asChild
@@ -84,7 +95,9 @@ export function Hero() {
             </div>
           </div>
 
-          <SlideIn direction="up" delay={0.5} className="relative mt-8 lg:mt-0">
+          <SlideIn direction="up" delay={0.5} className="relative mt-8 lg:mt-0 px-4">
+            {/* Visual focus element for mobile */}
+            <div className="absolute inset-0 bg-accent/5 blur-[80px] rounded-full lg:hidden" />
             <LegalWorkflowAiAnimation />
           </SlideIn>
         </div>
