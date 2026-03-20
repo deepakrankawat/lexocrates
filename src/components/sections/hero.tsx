@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FadeIn } from '../animations/fade-in';
+import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
 import { LegalWorkflowAiAnimation } from '../animations/legal-workflow-ai-animation';
 import { Scale } from 'lucide-react';
@@ -34,29 +35,36 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
-            <FadeIn delay={0.1}>
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-8 shadow-xl">
-                <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                </span>
-                <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[8px] sm:text-xs">
-                  Confidentiality • Precision • Speed
-                </p>
-              </div>
-              <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] text-white mb-6 tracking-tighter">
-                Strategic <br />
-                <span className="text-accent">Legal</span> <br className="hidden sm:block" />
-                Operations
-              </h1>
-              <div className="space-y-4 mb-10">
+            <div className="flex flex-col items-center lg:items-start">
+              <SlideIn direction="up" delay={0.1}>
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-8 shadow-xl">
+                  <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                  </span>
+                  <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[8px] sm:text-xs">
+                    Confidentiality • Precision • Speed
+                  </p>
+                </div>
+              </SlideIn>
+
+              <SlideIn direction="up" delay={0.2}>
+                <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] text-white mb-6 tracking-tighter">
+                  Strategic <br />
+                  <span className="text-accent">Legal</span> <br className="hidden sm:block" />
+                  Operations
+                </h1>
+              </SlideIn>
+
+              <SlideIn direction="up" delay={0.3} className="space-y-4 mb-10 w-full">
                 <h2 className="text-sm sm:text-xl font-montserrat font-bold tracking-tight border-l-4 border-accent pl-4 sm:pl-8 inline-block lg:block text-white">
                   Excellence in Legal Process Outsourcing
                 </h2>
-                <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8">
+                <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8 mx-auto lg:mx-0">
                   Partnering with the world&apos;s leading law firms to drive operational efficiency. We integrate elite Indian expertise with advanced AI technology to transform your global legal workflow.
                 </p>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8">
+              </SlideIn>
+
+              <SlideIn direction="up" delay={0.4} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8 w-full sm:w-auto">
                 <Button
                   asChild
                   size="xl"
@@ -72,13 +80,13 @@ export function Hero() {
                 >
                   <Link href="/contact">Strategy Call</Link>
                 </Button>
-              </div>
-            </FadeIn>
+              </SlideIn>
+            </div>
           </div>
 
-          <div className="hidden lg:block relative">
+          <SlideIn direction="up" delay={0.5} className="relative mt-8 lg:mt-0">
             <LegalWorkflowAiAnimation />
-          </div>
+          </SlideIn>
         </div>
       </div>
     </section>
