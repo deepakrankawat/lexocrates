@@ -1,4 +1,3 @@
-
 "use client"
 
 import { usePathname } from 'next/navigation';
@@ -11,7 +10,7 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow pt-[64px] sm:pt-[96px] lg:pt-[128px] bg-background">
+      <main className="flex-grow pt-[56px] sm:pt-[72px] lg:pt-[104px] bg-background">
         {children}
       </main>
       <Footer />

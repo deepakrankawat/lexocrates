@@ -26,7 +26,7 @@ export function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -36,24 +36,24 @@ export function Header() {
   return (
     <header className={cn(
       'fixed top-0 z-50 w-full transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-black/5',
-      isScrolled ? 'py-1 shadow-md' : 'py-2'
+      isScrolled ? 'py-1 shadow-md' : 'py-2 lg:py-4'
     )}>
-      <div className="mx-auto flex items-center justify-between px-4 sm:px-12 lg:px-20 max-w-[1920px]">
+      <div className="mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-20 max-w-[1920px]">
         
         <div className="flex-shrink-0">
           <Link href="/" className="group block transition-transform duration-300 hover:scale-105">
-            <Logo variant="dark" className="w-auto h-12 sm:h-20 lg:h-28" />
+            <Logo variant="dark" className="w-auto h-10 sm:h-14 lg:h-20" />
           </Link>
         </div>
         
         <nav className="hidden lg:flex flex-grow justify-center">
-          <ul className="flex items-center gap-8 xl:gap-12">
+          <ul className="flex items-center gap-6 xl:gap-12">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link 
                   href={link.href} 
                   className={cn(
-                    "text-[11px] xl:text-[13px] font-black uppercase tracking-[0.3em] transition-all duration-300 py-2 relative group",
+                    "text-[10px] xl:text-[12px] font-black uppercase tracking-[0.3em] transition-all duration-300 py-2 relative group",
                     isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                   )}
                 >
@@ -98,12 +98,12 @@ export function Header() {
           
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 rounded-full h-10 w-10 sm:h-12 sm:w-12">
-                <Menu className="h-6 w-6 sm:h-7 sm:w-7" />
+              <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 rounded-full h-10 w-10">
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full bg-white border-0 p-0">
+            <SheetContent side="right" className="w-full bg-white border-0 p-0 flex flex-col">
               <SheetHeader className="p-6 flex flex-row items-center justify-between border-b border-black/5">
                 <Logo variant="dark" className="h-10 w-auto" />
                 <SheetClose asChild>
@@ -112,27 +112,29 @@ export function Header() {
                   </Button>
                 </SheetClose>
               </SheetHeader>
-              <nav className="flex flex-col p-8 gap-6">
+              <nav className="flex flex-col p-8 gap-8 flex-grow">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "text-xl font-black tracking-tighter transition-colors uppercase",
+                      "text-2xl font-black tracking-tighter transition-colors uppercase",
                       isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                     )}
                   >
                     {link.label}
                   </Link>
                 ))}
-                <Button asChild className="mt-4 bg-primary text-white font-black text-base py-6 rounded-xl shadow-lg shadow-primary/10" onClick={() => setIsOpen(false)}>
+              </nav>
+              <div className="p-8 border-t border-black/5 bg-secondary/20">
+                <Button asChild className="w-full bg-primary text-white font-black text-base py-7 rounded-2xl shadow-lg shadow-primary/10" onClick={() => setIsOpen(false)}>
                   <Link href="/contact" className="flex items-center justify-center gap-3">
                     <Scale className="w-5 h-5 text-accent" />
                     Contact Us
                   </Link>
                 </Button>
-              </nav>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
