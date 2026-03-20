@@ -33,20 +33,59 @@ const openSans = Open_Sans({
   display: 'swap',
 });
 
+const baseUrl = 'https://lexocrates.vercel.app';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lexocrates.vercel.app'),
-  title: 'Lexocrates | Expert Legal Process Outsourcing',
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: 'Lexocrates | Expert Legal Process Outsourcing (LPO)',
+    template: '%s | Lexocrates',
+  },
   description:
-    'Lexocrates provides high-quality, cost-effective legal process outsourcing (LPO) services to law firms and corporations in the US, UK, and Canada.',
+    'Lexocrates provides elite, cost-effective legal process outsourcing (LPO) services including legal research, contract management, and document review for global law firms in the US, UK, and Canada.',
   keywords: [
     'Legal Process Outsourcing',
-    'LPO',
-    'Legal Outsourcing India',
-    'Contract Management',
-    'Legal Research',
-    'Document Review',
-    'Compliance Services',
+    'LPO India',
+    'Legal Research Services',
+    'Contract Management Outsourcing',
+    'Document Review India',
+    'eDiscovery Services',
+    'Law Firm Support Services',
   ],
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: baseUrl,
+    siteName: 'Lexocrates',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Lexocrates - Elite Legal Process Outsourcing',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lexocrates | Expert Legal Process Outsourcing',
+    description: 'Transforming legal workflows with elite Indian expertise and advanced technology.',
+    images: ['/images/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -56,8 +95,37 @@ export default function RootLayout({
 }>) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
+  // JSON-LD Organization Schema
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Lexocrates Legal Services',
+    url: baseUrl,
+    logo: `${baseUrl}/images/logo-dark.svg`,
+    description: 'Elite Legal Process Outsourcing firm serving law firms in Canada, US, and UK.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Floor 1, E-block, E-103, Ganpati Enclave, Sirsi Road',
+      addressLocality: 'Jaipur',
+      addressRegion: 'Rajasthan',
+      postalCode: '302041',
+      addressCountry: 'IN',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: 'Support@lexocrates.com',
+    },
+  };
+
   return (
     <html lang="en" className="!scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${montserrat.variable} ${lato.variable} ${roboto.variable} ${openSans.variable} font-opensans antialiased bg-background`}
       >

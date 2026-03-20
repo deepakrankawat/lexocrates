@@ -47,6 +47,7 @@ export function Hero() {
                 <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                 </span>
+                <span className="sr-only">Status: Active</span>
                 <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[8px] sm:text-xs">
                   Confidentiality • Precision • Speed
                 </p>
