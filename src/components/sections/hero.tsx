@@ -49,7 +49,7 @@ export function Hero() {
                 Operations
               </h1>
               <div className="space-y-4 mb-10">
-                <h2 className="text-sm sm:text-xl font-montserrat font-bold tracking-tight border-l-4 border-accent pl-4 sm:pl-8 inline-block lg:block">
+                <h2 className="text-sm sm:text-xl font-montserrat font-bold tracking-tight border-l-4 border-accent pl-4 sm:pl-8 inline-block lg:block text-white">
                   Excellence in Legal Process Outsourcing
                 </h2>
                 <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8">
