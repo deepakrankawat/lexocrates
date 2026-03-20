@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -11,7 +10,7 @@ import { Scale } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary py-8 lg:py-12">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-primary py-8 lg:py-12">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Deep Background Gradients */}
@@ -37,26 +36,26 @@ export function Hero() {
         </div>
 
         {/* Atmospheric Blurred Glows */}
-        <div className="absolute top-0 right-0 w-[400px] sm:w-[800px] h-[400px] sm:h-[800px] bg-accent/10 rounded-full blur-[100px] sm:blur-[150px] -mr-32 sm:-mr-64 -mt-32 sm:-mt-64 animate-pulse duration-[10000ms]" />
+        <div className="absolute top-0 right-0 w-[300px] sm:w-[800px] h-[300px] sm:h-[800px] bg-accent/10 rounded-full blur-[80px] sm:blur-[150px] -mr-32 sm:-mr-64 -mt-32 sm:-mt-64 animate-pulse duration-[10000ms]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1920px]">
+      <div className="relative z-10 mx-auto w-full px-4 sm:px-12 lg:px-24 fhd:px-32 max-w-[1920px]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
             <FadeIn delay={0.1} duration={0.6}>
-              <div className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-8 shadow-xl">
+              <div className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-6 lg:mb-8 shadow-xl">
                 <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                 </span>
-                <p className="font-lato font-black text-accent uppercase tracking-[0.2em] sm:tracking-[0.4em] text-[8px] sm:text-xs">
+                <p className="font-lato font-black text-accent uppercase tracking-[0.2em] sm:tracking-[0.4em] text-[7px] sm:text-xs">
                   Confidentiality • Precision • Speed
                 </p>
               </div>
             </FadeIn>
             
             <SlideIn direction="up" delay={0.2} duration={0.7}>
-              <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.1] sm:leading-[0.95] text-white mb-6 lg:mb-8 tracking-tighter">
+              <h1 className="font-montserrat text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.1] sm:leading-[0.95] text-white mb-4 lg:mb-8 tracking-tighter">
                 Strategic <br />
                 <span className="text-accent">Legal</span> <br className="hidden sm:block" />
                 Operations
@@ -64,11 +63,11 @@ export function Hero() {
             </SlideIn>
 
             <FadeIn delay={0.3} duration={0.7}>
-              <div className="space-y-4 mb-8 lg:mb-10">
-                <h2 className="text-base sm:text-xl lg:text-2xl text-white font-montserrat font-bold tracking-tight border-l-4 border-accent pl-4 sm:pl-8">
+              <div className="space-y-3 sm:space-y-4 mb-6 lg:mb-10">
+                <h2 className="text-sm sm:text-xl lg:text-2xl text-white font-montserrat font-bold tracking-tight border-l-4 border-accent pl-3 sm:pl-8">
                   Excellence in Legal Process Outsourcing
                 </h2>
-                <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8">
+                <p className="max-w-2xl lg:max-w-3xl text-xs sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8 text-center lg:text-left">
                   Partnering with the world&apos;s leading law firms to drive operational efficiency. We integrate elite Indian expertise with advanced AI technology to transform your global legal workflow across the US, UK, and Canada.
                 </p>
               </div>
@@ -79,7 +78,7 @@ export function Hero() {
                 <Button
                   asChild
                   size="lg"
-                  className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm lg:text-base px-8 sm:px-10 py-6 sm:py-7 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden group/cta"
+                  className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-[10px] sm:text-sm lg:text-base px-6 sm:px-10 py-5 sm:py-7 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden group/cta"
                 >
                   <Link href="/services" className="relative">
                     <span>Explore Solutions</span>
@@ -94,7 +93,7 @@ export function Hero() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm lg:text-base px-8 sm:px-10 py-6 sm:py-7 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
+                  className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-[10px] sm:text-sm lg:text-base px-6 sm:px-10 py-5 sm:py-7 rounded-full transition-all duration-500 hover:scale-105 active:scale-95"
                 >
                   <Link href="/contact">Strategy Call</Link>
                 </Button>
@@ -105,18 +104,6 @@ export function Hero() {
           <SlideIn direction="left" delay={0.5} className="hidden lg:block relative">
             <div className="relative gpu-accelerated">
               <LegalWorkflowAiAnimation />
-              {/* Floating SVG Quill Ornament */}
-              <motion.div 
-                className="absolute -top-10 -right-10 opacity-20 pointer-events-none"
-                animate={{ rotate: [0, 5, -5, 0], y: [0, 10, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="0.5">
-                  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
-                  <line x1="16" y1="8" x2="2" y2="22" />
-                  <line x1="17.5" y1="15" x2="9" y2="15" />
-                </svg>
-              </motion.div>
             </div>
           </SlideIn>
         </div>

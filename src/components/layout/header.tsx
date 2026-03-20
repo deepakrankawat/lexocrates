@@ -38,11 +38,11 @@ export function Header() {
       'fixed top-0 z-50 w-full transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-black/5',
       isScrolled ? 'py-1 shadow-md' : 'py-2'
     )}>
-      <div className="mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-20 max-w-[1920px]">
+      <div className="mx-auto flex items-center justify-between px-4 sm:px-12 lg:px-20 max-w-[1920px]">
         
         <div className="flex-shrink-0">
           <Link href="/" className="group block transition-transform duration-300 hover:scale-105">
-            <Logo variant="dark" className="w-auto h-16 sm:h-24 lg:h-32" />
+            <Logo variant="dark" className="w-auto h-12 sm:h-20 lg:h-28" />
           </Link>
         </div>
         
@@ -98,14 +98,14 @@ export function Header() {
           
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 rounded-full h-12 w-12">
-                <Menu className="h-7 w-7" />
+              <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 rounded-full h-10 w-10 sm:h-12 sm:w-12">
+                <Menu className="h-6 w-6 sm:h-7 sm:w-7" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full bg-white border-0 p-0">
               <SheetHeader className="p-6 flex flex-row items-center justify-between border-b border-black/5">
-                <Logo variant="dark" className="h-12 w-auto" />
+                <Logo variant="dark" className="h-10 w-auto" />
                 <SheetClose asChild>
                   <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 rounded-full h-10 w-10">
                     <X className="h-6 w-6" />
