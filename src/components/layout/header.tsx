@@ -44,7 +44,7 @@ export function Header() {
           <Link href="/" className="group block transition-transform duration-300 hover:scale-105">
             <Logo variant="dark" className={cn(
               "w-auto transition-all duration-500",
-              isScrolled ? "h-10 sm:h-12" : "h-12 sm:h-16 lg:h-20"
+              isScrolled ? "h-14 lg:h-12" : "h-20 lg:h-20"
             )} />
           </Link>
         </div>
