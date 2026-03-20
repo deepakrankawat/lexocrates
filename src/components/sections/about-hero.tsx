@@ -1,3 +1,4 @@
+
 'use client';
 
 import { FadeIn } from '../animations/fade-in';
@@ -5,7 +6,7 @@ import { SlideIn } from '../animations/slide-in';
 
 export function AboutHero() {
   return (
-    <section className="relative min-h-[50vh] fhd:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-10 pb-16 lg:pt-14">
+    <section className="relative min-h-[40vh] fhd:min-h-[50vh] flex items-center justify-center overflow-hidden bg-primary py-8 lg:py-12">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
         <div className="absolute inset-0 opacity-[0.03]" 

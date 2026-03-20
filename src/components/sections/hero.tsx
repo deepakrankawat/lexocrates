@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -10,7 +11,7 @@ import { Scale } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-10">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary py-8 lg:py-12">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Deep Background Gradients */}
