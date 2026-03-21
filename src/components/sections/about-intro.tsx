@@ -1,7 +1,6 @@
 'use client';
 
 import { SlideIn } from '../animations/slide-in';
-import { motion } from 'framer-motion';
 import { GlobalNodeNetwork } from '@/components/ui/global-node-network';
 
 export function AboutIntro() {
@@ -11,41 +10,16 @@ export function AboutIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 fhd:gap-40 items-center">
           
           <SlideIn direction="left" className="lg:order-last relative">
-            <div className="relative h-[450px] sm:h-[600px] lg:h-[700px] fhd:h-[900px] w-full flex items-center justify-center group">
+            <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] fhd:h-[700px] w-full flex items-center justify-center group">
               
-              {/* Technical Node Visualization Area */}
-              <div className="relative w-full h-full bg-secondary/20 rounded-[2.5rem] sm:rounded-[4rem] border border-black/5 overflow-hidden shadow-2xl transition-all duration-700 group-hover:border-accent/20">
+              {/* Simplified Visual Container */}
+              <div className="relative w-full h-full bg-secondary/10 rounded-[3rem] border border-black/5 overflow-hidden shadow-sm transition-all duration-700">
                 <GlobalNodeNetwork />
               </div>
 
-              {/* Strategic Data Badges (Mobile Optimized Overlay) */}
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-10 sm:left-10 sm:right-10 z-20 flex flex-col sm:flex-row items-center justify-between gap-4 pointer-events-none">
-                <motion.div 
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className="bg-primary/95 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-2xl flex items-center gap-4"
-                >
-                  <div className="w-2 h-2 rounded-full bg-accent animate-ping" />
-                  <div className="text-left">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-accent">Active Node</p>
-                    <p className="text-xs font-bold text-white uppercase tracking-tighter">Jaipur Operations Center</p>
-                  </div>
-                </motion.div>
-
-                <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1 }}
-                  className="bg-white/95 backdrop-blur-xl border border-black/5 p-4 rounded-2xl shadow-2xl flex items-center gap-4"
-                >
-                  <div className="text-right">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-primary/40">Sync Status</p>
-                    <p className="text-xs font-bold text-primary uppercase tracking-tighter text-nowrap">Global Markets Unified</p>
-                  </div>
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                </motion.div>
-              </div>
+              {/* Minimalist Visual Accent */}
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/5 rounded-full blur-3xl" />
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
             </div>
           </SlideIn>
           
