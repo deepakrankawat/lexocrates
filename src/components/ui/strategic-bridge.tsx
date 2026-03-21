@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Landmark, Globe2, ShieldCheck, Cpu, Lock, RefreshCcw } from 'lucide-react';
+import { Landmark, Globe2, Lock, Cpu, RefreshCcw } from 'lucide-react';
 
 export function StrategicBridge() {
   const protocols = [
@@ -13,11 +13,7 @@ export function StrategicBridge() {
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden">
-      {/* 
-        ARCHITECTURAL BACKGROUND 
-        Layer 1: Subtle Grid
-        Layer 2: Technical Crosshairs
-      */}
+      {/* Architectural Blueprint Grid */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <svg viewBox="0 0 1000 1000" className="w-full h-full text-primary" preserveAspectRatio="none">
           {[...Array(10)].map((_, i) => (
@@ -29,119 +25,113 @@ export function StrategicBridge() {
         </svg>
       </div>
 
-      {/* THE MAIN INTERFACE BRIDGE */}
-      <div className="relative z-10 w-full max-w-6xl flex items-center justify-between px-4 sm:px-12 lg:px-20">
+      {/* Main Bridge Architecture */}
+      <div className="relative z-10 w-full max-w-6xl flex flex-row items-center justify-between px-2 sm:px-8 lg:px-12">
         
-        {/* JAIPUR HUB (SOURCE) */}
-        <div className="flex flex-col items-center gap-4 sm:gap-6 relative group">
+        {/* Source: Intelligence Hub (Jaipur) */}
+        <div className="flex flex-col items-center gap-3 sm:gap-6 shrink-0 group">
           <motion.div 
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            className="relative p-6 sm:p-10 lg:p-14 rounded-[2.5rem] bg-primary text-white shadow-2xl border border-white/10 overflow-hidden"
+            className="relative p-4 sm:p-8 lg:p-14 rounded-[1.5rem] sm:rounded-[2.5rem] bg-primary text-white shadow-2xl border border-white/10 overflow-hidden"
           >
-            {/* Pulsing Status Ring */}
-            <div className="absolute inset-0 border-4 border-accent/20 rounded-[2.5rem] animate-pulse" />
-            <Globe2 className="w-10 h-10 sm:w-14 lg:w-16 text-accent" />
-            
-            <div className="absolute -bottom-1 -right-1 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-accent flex items-center justify-center border-2 sm:border-4 border-white">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white animate-ping" />
+            <div className="absolute inset-0 border-4 border-accent/20 rounded-[1.5rem] sm:rounded-[2.5rem] animate-pulse" />
+            <Globe2 className="w-8 h-8 sm:w-12 lg:w-16 text-accent" />
+            <div className="absolute -bottom-1 -right-1 w-4 h-4 sm:w-8 sm:h-8 rounded-full bg-accent flex items-center justify-center border-2 sm:border-4 border-white">
+              <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-white animate-ping" />
             </div>
           </motion.div>
           <div className="text-center">
-            <p className="font-lato font-black text-accent uppercase tracking-[0.2em] text-[8px] sm:text-[10px] mb-1">Intelligence Hub</p>
-            <h4 className="font-montserrat font-black text-primary text-xs sm:text-xl lg:text-2xl">Jaipur, India</h4>
+            <p className="font-lato font-black text-accent uppercase tracking-[0.2em] text-[7px] sm:text-[10px] mb-1">Intelligence Hub</p>
+            <h4 className="font-montserrat font-black text-primary text-[10px] sm:text-lg lg:text-2xl">Jaipur, India</h4>
           </div>
         </div>
 
-        {/* THE SYNCHRONICITY PATH */}
-        <div className="flex-grow relative h-32 sm:h-48 mx-4 sm:mx-12">
-          {/* Central Connecting Line */}
-          <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/10 via-accent/40 to-primary/10 -translate-y-1/2" />
+        {/* The Synchronicity Path (Central Connector) */}
+        <div className="flex-grow relative h-20 sm:h-48 mx-2 sm:mx-8 lg:mx-12">
+          {/* Static Background Connector */}
+          <div className="absolute top-1/2 left-0 right-0 h-[1px] sm:h-[2px] bg-gradient-to-r from-primary/10 via-accent/40 to-primary/10 -translate-y-1/2" />
           
-          {/* Protocol Visualization - Responsive Stack */}
-          <div className="absolute inset-0 flex items-center justify-around">
+          {/* Distributed Protocols */}
+          <div className="absolute inset-0 flex items-center justify-around px-1 sm:px-4">
             {protocols.map((protocol, i) => (
               <motion.div 
                 key={i}
-                initial={{ y: 15, opacity: 0 }}
+                initial={{ y: 10, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 + (i * 0.15) }}
+                transition={{ delay: 0.4 + (i * 0.1) }}
                 className="flex flex-col items-center group cursor-help"
               >
-                {/* Protocol Icon Card */}
-                <div className="relative p-2.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white shadow-xl border border-black/5 mb-2 group-hover:border-accent transition-all duration-500 hover:scale-110">
-                  <protocol.icon className="w-4 h-4 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-accent" />
-                  {/* Decorative corner accents */}
-                  <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-accent/20" />
-                  <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-accent/20" />
+                <div className="relative p-1.5 sm:p-4 lg:p-5 rounded-lg sm:rounded-2xl bg-white shadow-xl border border-black/5 mb-1 sm:mb-2 group-hover:border-accent transition-all duration-500 hover:scale-110">
+                  <protocol.icon className="w-3 h-3 sm:w-6 lg:w-8 text-accent" />
+                  <div className="absolute top-0 right-0 w-1 sm:w-2 h-1 sm:h-2 border-t border-r border-accent/20" />
+                  <div className="absolute bottom-0 left-0 w-1 sm:w-2 h-1 sm:h-2 border-b border-l border-accent/20" />
                 </div>
                 
-                {/* Desktop Labels */}
                 <div className="text-center hidden sm:block">
-                  <p className="text-[9px] font-black text-primary uppercase tracking-tight leading-none mb-0.5">{protocol.label}</p>
-                  <p className="text-[7px] font-medium text-foreground/40 uppercase tracking-widest">{protocol.sub}</p>
+                  <p className="text-[8px] lg:text-[10px] font-black text-primary uppercase tracking-tight leading-none mb-0.5">{protocol.label}</p>
+                  <p className="text-[6px] lg:text-[8px] font-medium text-foreground/40 uppercase tracking-widest">{protocol.sub}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* DYNAMIC DATA FLOW ANIMATION */}
+          {/* Dynamic Data Stream Animation */}
           <motion.div
-            className="absolute top-1/2 left-0 h-[3px] bg-accent shadow-[0_0_25px_rgba(184,134,11,1)] z-20 rounded-full"
+            className="absolute top-1/2 left-0 h-[2px] sm:h-[3px] bg-accent shadow-[0_0_20px_rgba(184,134,11,1)] z-20 rounded-full"
             initial={{ width: "0%", left: "0%" }}
             animate={{ 
-              width: ["0%", "20%", "0%"],
-              left: ["0%", "80%", "100%"]
+              width: ["0%", "25%", "0%"],
+              left: ["0%", "75%", "100%"]
             }}
             transition={{
-              duration: 2.5,
+              duration: 2.2,
               repeat: Infinity,
               ease: "easeInOut"
             }}
           />
 
-          {/* High-Speed Particles (Operational Continuity) */}
-          {[...Array(6)].map((_, i) => (
+          {/* Micro-Particles (Operational Continuity) */}
+          {[...Array(4)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute top-1/2 left-0"
               animate={{ 
                 left: "100%", 
-                opacity: [0, 1, 0],
-                y: [Math.sin(i) * 20, Math.cos(i) * -20, Math.sin(i) * 20] 
+                opacity: [0, 0.6, 0],
+                y: [Math.sin(i) * 15, Math.cos(i) * -15, Math.sin(i) * 15] 
               }}
               transition={{ 
-                duration: 1.5 + (i * 0.3), 
+                duration: 1.4 + (i * 0.2), 
                 repeat: Infinity, 
                 ease: "linear", 
-                delay: i * 0.25 
+                delay: i * 0.3 
               }}
             >
-              <div className="w-1 h-1 bg-accent/30 rounded-full blur-[1px]" />
+              <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-accent/30 rounded-full" />
             </motion.div>
           ))}
         </div>
 
-        {/* GLOBAL MARKETS HUB (DESTINATION) */}
-        <div className="flex flex-col items-center gap-4 sm:gap-6 relative">
+        {/* Destination: Global Markets */}
+        <div className="flex flex-col items-center gap-3 sm:gap-6 shrink-0 relative">
           <motion.div 
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            className="relative p-6 sm:p-10 lg:p-14 rounded-[2.5rem] bg-secondary border border-black/5 text-primary shadow-2xl hover:border-accent/50 transition-colors duration-700"
+            className="relative p-4 sm:p-8 lg:p-14 rounded-[1.5rem] sm:rounded-[2.5rem] bg-secondary border border-black/5 text-primary shadow-2xl hover:border-accent/50 transition-colors duration-700"
           >
-            <Landmark className="w-10 h-10 sm:w-14 lg:w-16 text-accent transition-transform duration-500 group-hover:scale-110" />
-            {/* Technical scanner effect */}
+            <Landmark className="w-8 h-8 sm:w-12 lg:w-16 text-accent transition-transform duration-500 group-hover:scale-110" />
             <motion.div 
               animate={{ top: ["0%", "100%", "0%"] }}
               transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-              className="absolute left-0 right-0 h-0.5 bg-accent/10 pointer-events-none" 
+              className="absolute left-0 right-0 h-0.5 bg-accent/5 pointer-events-none" 
             />
           </motion.div>
           <div className="text-center">
-            <p className="font-lato font-black text-accent uppercase tracking-[0.2em] text-[8px] sm:text-[10px] mb-1">Global Delivery</p>
-            <h4 className="font-montserrat font-black text-primary text-xs sm:text-xl lg:text-2xl">US • UK • Canada</h4>
+            <p className="font-lato font-black text-accent uppercase tracking-[0.2em] text-[7px] sm:text-[10px] mb-1">Global Delivery</p>
+            <h4 className="font-montserrat font-black text-primary text-[10px] sm:text-lg lg:text-2xl">US • UK • Canada</h4>
           </div>
         </div>
 
