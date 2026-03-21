@@ -81,6 +81,13 @@ export function Globe3D() {
     { lat: 40.7128, lng: -74.0060, label: 'USA' }
   ];
 
+  const labelsData = [
+    { lat: 26.9124, lng: 75.7873, text: 'JAIPUR HUB' },
+    { lat: 43.65107, lng: -79.347015, text: 'CANADA' },
+    { lat: 51.5074, lng: -0.1278, text: 'UK' },
+    { lat: 40.7128, lng: -74.0060, text: 'USA' }
+  ];
+
   if (!GlobeComponent) {
     return (
       <div className="w-full h-full flex items-center justify-center text-accent/20 font-montserrat font-black uppercase tracking-[0.4em] text-[10px]">
@@ -113,6 +120,14 @@ export function Globe3D() {
         ringMaxRadius={2.5}
         ringPropagationSpeed={3}
         ringRepeatPeriod={1000}
+        labelsData={labelsData}
+        labelLat={(d: any) => d.lat}
+        labelLng={(d: any) => d.lng}
+        labelText={(d: any) => d.text}
+        labelSize={1.6}
+        labelDotRadius={0.4}
+        labelColor={() => DATA_STREAM_GLOW}
+        labelResolution={2}
         width={dimensions.width}
         height={dimensions.height}
       />
