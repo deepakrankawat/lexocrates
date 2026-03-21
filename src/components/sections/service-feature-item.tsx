@@ -1,3 +1,4 @@
+
 'use client';
 
 import { CheckCircle2, ArrowRight, Search, Gavel, FileText, ShieldCheck, Users, LucideIcon } from 'lucide-react';
@@ -28,11 +29,11 @@ export function ServiceFeatureItem({ service, index, showLink = true }: { servic
 
   return (
     <div className={cn(
-      "flex flex-col lg:flex-row gap-10 lg:gap-24 items-center",
+      "flex flex-col lg:flex-row gap-12 lg:gap-24 items-start",
       !isEven && "lg:flex-row-reverse"
     )}>
       {/* Visual Representation with Technical Blueprint Style */}
-      <div className="w-full lg:w-1/2">
+      <div className="w-full lg:w-1/2 lg:sticky lg:top-32">
         <div className="relative group">
           <div className="absolute -inset-4 bg-accent/5 rounded-[2.5rem] lg:rounded-[3rem] blur-2xl group-hover:bg-accent/10 transition-all duration-700" />
           <div className="relative aspect-video lg:aspect-[4/3] rounded-[2.5rem] lg:rounded-[3rem] bg-primary overflow-hidden shadow-2xl border border-white/10">
@@ -63,39 +64,41 @@ export function ServiceFeatureItem({ service, index, showLink = true }: { servic
 
       {/* Content Description */}
       <div className="w-full lg:w-1/2">
-        <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+        <div className="space-y-8 sm:space-y-10 text-left">
           <div className="relative">
-            <div className="hidden lg:inline-flex items-center gap-4 mb-4">
-                <span className="text-accent/20 font-montserrat text-7xl font-black">0{index + 1}</span>
-                <div className="h-px w-12 bg-accent/30" />
+            <div className="hidden lg:inline-flex items-center gap-4 mb-6">
+                <span className="text-accent/20 font-montserrat text-8xl font-black leading-none">0{index + 1}</span>
+                <div className="h-px w-16 bg-accent/30" />
             </div>
-            <h3 className="font-lato text-2xl sm:text-3xl lg:text-4xl font-black text-primary mb-4 lg:mb-6">
+            <h3 className="font-lato text-3xl sm:text-4xl lg:text-5xl font-black text-primary mb-6 lg:mb-8 tracking-tighter">
               {service.name}
             </h3>
-            <p className="text-base sm:text-lg lg:text-xl text-foreground/70 leading-relaxed font-medium">
-              {service.longDescription}
-            </p>
+            <div className="prose prose-lg max-w-none text-foreground/70 space-y-6">
+              <p className="text-lg sm:text-xl font-medium leading-relaxed">
+                {service.longDescription}
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-6 lg:pt-8 border-t border-black/5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 lg:pt-10 border-t border-black/5">
              {service.keyAreas.map((area, i) => (
-               <div key={i} className="flex items-center gap-3 justify-center lg:justify-start">
-                  <div className="p-1 bg-accent/10 rounded-full">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-accent" />
+               <div key={i} className="flex items-start gap-3 p-4 bg-secondary/30 rounded-2xl group/area hover:bg-white hover:shadow-xl transition-all duration-500">
+                  <div className="p-1 bg-accent/10 rounded-full mt-0.5 group-hover/area:bg-accent transition-colors">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-accent group-hover/area:text-white transition-colors" />
                   </div>
                   <span className="text-sm font-bold text-primary/80 tracking-tight">{area}</span>
                </div>
              ))}
           </div>
 
-          <div className="pt-6 lg:pt-8 flex flex-col sm:flex-row items-center gap-4 lg:gap-8 justify-center lg:justify-start">
+          <div className="pt-8 lg:pt-10 flex flex-col sm:flex-row items-center gap-4 lg:gap-8">
             {showLink && (
               <Button asChild size="xl" className="w-full sm:w-auto h-14 bg-primary text-white hover:bg-accent font-montserrat font-black text-xs uppercase tracking-[0.3em] px-10 rounded-full shadow-xl transition-all duration-300">
-                <Link href={`/services/${service.slug}`}>Full Case Study</Link>
+                <Link href={`/services/${service.slug}`}>Deep Service Overview</Link>
               </Button>
             )}
             <Button asChild variant="ghost" className="w-full sm:w-auto h-12 text-accent font-black uppercase tracking-widest text-[11px] hover:bg-transparent hover:translate-x-2 transition-all">
-               <Link href="/contact" className="flex items-center justify-center gap-2">Request Quote <ArrowRight className="w-5 h-5" /></Link>
+               <Link href="/contact" className="flex items-center justify-center gap-2">Request Technical Quote <ArrowRight className="w-5 h-5" /></Link>
             </Button>
           </div>
         </div>

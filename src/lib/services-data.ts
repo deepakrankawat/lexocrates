@@ -6,15 +6,15 @@ export const servicesList = [
     name: 'Legal Research & Writing', 
     slug: 'legal-research-writing', 
     iconName: 'Search', 
-    description: "In-depth legal research and high-quality writing services to support complex cases.",
-    longDescription: "Our Legal Research & Writing service provides the intellectual backbone for your cases. We conduct thorough multi-jurisdictional research on case law, statutes, and regulations, delivering precise memorandums and briefs that stand up to the highest scrutiny.",
+    description: "Multi-jurisdictional case law synthesis and trial-ready briefing for complex global litigation.",
+    longDescription: "Our Legal Research & Writing department functions as the intellectual engine for elite law firms. We don't just find cases; we synthesize complex multi-jurisdictional precedents into high-fidelity legal strategies. Our team is trained in the specific procedural requirements of US, UK, and Canadian courts, utilizing the Socratic method to uncover hidden legal risks and opportunities. We specialize in preparing appellate-grade briefs, motions for summary judgment, and strategic memorandums that meet the highest standards of the Bluebook and ALWD guides. By integrating with your firm's Westlaw or LexisNexis environments, we provide seamless, overnight research support that allows your partners to walk into court with a distinct informational advantage.",
     keyAreas: [
-      "Case Law Research",
-      "Statutory Analysis",
-      "Memorandum Drafting",
-      "Appellate Brief Writing",
-      "Motion for Summary Judgment Drafting",
-      "Jurisdictional Surveys"
+      "Multi-State Case Law Synthesis (US)",
+      "UK Common Law Statutory Interpretation",
+      "Appellate-Grade Brief Drafting",
+      "Motion for Summary Judgment Prep",
+      "Inter-Jurisdictional Comparative Surveys",
+      "Regulatory Compliance Memorandums"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-corporate-law')
   },
@@ -22,47 +22,47 @@ export const servicesList = [
     name: 'Litigation Support Services', 
     slug: 'litigation-support', 
     iconName: 'Gavel', 
-    description: "Comprehensive support for all stages of litigation, from discovery to trial preparation.",
-    longDescription: "We empower trial lawyers by handling the heavy lifting of litigation preparation. Our team assists with case organizing, witness preparation materials, and exhibit management, ensuring your trial team is focused on winning.",
+    description: "End-to-end trial preparation and deposition analytics to maximize courtroom efficiency.",
+    longDescription: "We empower trial lawyers by managing the exhaustive operational complexities of high-stakes litigation. Our litigation support team acts as a direct extension of your trial room, handling everything from case chronology development to the preparation of comprehensive witness binders. We excel in deposition summarization—transforming thousands of pages of testimony into actionable intelligence highlights. Our 'Overnight Advantage' model ensures that while your team is resting in New York or London, our Jaipur-based experts are refining exhibit logs and drafting discovery responses, providing 24/7 productivity. We integrate with platforms like Clio and TrialPad to ensure that every exhibit is indexed and every deadline is tracked with zero-margin-for-error precision.",
     keyAreas: [
-      "Trial Exhibit Preparation",
-      "Witness Interview Summaries",
-      "Deposition Summarization",
-      "Case Chronology Development",
-      "Pleading Drafting",
-      "Discovery Request Responses"
+      "Deposition Analytics & Summarization",
+      "Trial Exhibit Management & Indexing",
+      "Case Chronology Construction",
+      "Discovery Request Response Drafting",
+      "Witness Interview Highlight Reels",
+      "Pleading Formatting & E-Filing Support"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-family-law')
   },
   { 
-    name: 'Contract Review & Management', 
+    name: 'Contract Lifecycle Management', 
     slug: 'contract-review-management', 
     iconName: 'FileText', 
-    description: "End-to-end management of contracts, from initial drafting to final execution and tracking.",
-    longDescription: "Our Contract Review & Management service streamlines your agreement workflows. We manage the entire lifecycle of your contracts, ensuring robust protection, compliance, and template standardization for global operations.",
+    description: "Strategic redlining and template standardization to mitigate risk across global portfolios.",
+    longDescription: "Our Contract Lifecycle Management (CLM) service transforms contract management from a bottleneck into a strategic asset. We handle the entire lifecycle—from initial drafting and rigorous redlining to obligation tracking and renewal audits. Our methodology relies on 'Playbook-First' integration, where we codify your firm's risk tolerance into a standardized review protocol. This ensures that every vendor agreement, employment contract, or M&A document is reviewed with absolute consistency across your global operations. We specialize in cross-border contract standardization, ensuring that your agreements remain enforceable and compliant across US, UK, and Canadian jurisdictions. By automating obligation alerts and conducting regular portfolio audits, we mitigate the hidden risks of missed renewals and non-compliance penalties.",
     keyAreas: [
-      "Contract Drafting & Redlining",
-      "Obligation & Deadline Tracking",
-      "Template Standardization",
-      "Lease Abstracting",
-      "Vendor Agreement Management",
-      "Contract Lifecycle Audit"
+      "Standardized Review Playbook Creation",
+      "Multi-Jurisdictional Redlining",
+      "Contract Obligation & Renewal Tracking",
+      "M&A Due Diligence Document Review",
+      "Template Library Optimization",
+      "Vendor Risk Assessment Audits"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-real-estate-law')
   },
   { 
-    name: 'Document Review (eDiscovery)', 
+    name: 'eDiscovery & Document Review', 
     slug: 'document-review-ediscovery', 
     iconName: 'Search', 
-    description: "Efficient and accurate review of legal documents using advanced eDiscovery technologies.",
-    longDescription: "We provide high-speed, high-accuracy document review services for complex litigation and internal investigations. Leveraging industry-leading eDiscovery tools, we help you identify critical evidence while managing privilege and sensitivity.",
+    description: "Surgical-precision data review using advanced AI and multi-tiered quality control protocols.",
+    longDescription: "In an era of petabyte-scale data, we provide the surgical precision required to identify the 'smoking gun' without the overhead of massive domestic review teams. Our eDiscovery department utilizes a multi-tiered Quality Control (QC) architecture—integrating Technology Assisted Review (TAR) and Predictive Coding with expert human oversight. Our reviewers are trained in the nuances of privilege, work-product doctrine, and data privacy (GDPR/CCPA), ensuring that your production sets are both comprehensive and secure. We operate within industry-leading platforms like Relativity and Everlaw, performing first-pass reviews, second-level quality checks, and complex redaction logging. Our goal is to dramatically reduce your firm's discovery spend while increasing the accuracy and defensibility of your document productions.",
     keyAreas: [
-      "First-Pass Review",
-      "Privilege & Redaction Logs",
-      "Quality Assurance Audits",
-      "Second-Level Quality Review",
-      "Technology Assisted Review (TAR)",
-      "Production Review"
+      "TAR & Predictive Coding Integration",
+      "First-Pass Relevance Review",
+      "Complex Privilege & Work-Product Logging",
+      "GDPR & Data Privacy Redactions",
+      "Chronological Data Extraction",
+      "Production Set Verification (QC)"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-ip-law')
   },
@@ -70,31 +70,31 @@ export const servicesList = [
     name: 'Compliance & Regulatory Support', 
     slug: 'compliance-regulatory', 
     iconName: 'ShieldCheck', 
-    description: "Ensuring your business stays compliant with the latest global laws and regulations.",
-    longDescription: "Navigating international regulations requires constant vigilance. We provide comprehensive compliance support, helping you develop policies, monitor regulatory changes, and implement gap-reduction strategies to protect your reputation.",
+    description: "Proactive global regulatory monitoring and gap remediation for corporate stewardship.",
+    longDescription: "Navigating the global regulatory labyrinth requires more than just reactive fixes; it requires proactive stewardship. Lexocrates provides a comprehensive compliance infrastructure designed to keep your firm ahead of evolving laws in the US (SEC/FINRA), UK (FCA), and Canada (OSFI). We conduct deep-dive regulatory gap analyses to identify vulnerabilities in your current protocols and draft high-fidelity compliance policies to remediate them. Our team provides ongoing monitoring of legislative changes, delivering executive summaries that translate complex legal shifts into actionable business strategy. Whether managing AML/KYC documentation for a financial institution or ensuring GDPR compliance for a global tech firm, we provide the ongoing vigilance required to protect your reputation and your bottom line.",
     keyAreas: [
-      "GDPR & Data Privacy Compliance",
-      "Regulatory Gap Analysis",
-      "Policy & Procedure Drafting",
-      "Compliance Monitoring & Audits",
-      "AML & KYC Documentation",
-      "Corporate Governance Support"
+      "Cross-Border Regulatory Monitoring",
+      "AML & KYC Document Verification",
+      "GDPR / CCPA Gap Remediation",
+      "Compliance Policy & Manual Drafting",
+      "Risk Register Maintenance",
+      "Internal Governance Audits"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-criminal-defense')
   },
   { 
-    name: 'Paralegal & Virtual Assistant Services', 
+    name: 'Paralegal & Virtual Operations', 
     slug: 'paralegal-assistant', 
     iconName: 'Users', 
-    description: "Dedicated paralegal support to streamline your legal operations and administrative tasks.",
-    longDescription: "Our Paralegal & Virtual Legal Assistant services act as an immediate extension of your team. We handle the administrative and procedural complexities of a modern law office, allowing senior partners to focus on client strategy and high-value work.",
+    description: "High-fidelity administrative integration to optimize senior counsel's billable performance.",
+    longDescription: "Our Paralegal & Virtual Legal Assistant services are designed to strip away the administrative friction that hinders senior legal counsel. We don't just 'assist'; we integrate into your firm's management software (Clio, MyCase, etc.) to handle the high-volume, high-precision tasks that keep a practice running. From managing complex master calendars and coordinating multi-jurisdictional conflict checks to proofreading appellate filings and coordinating with court clerks, we provide the operational stability your firm needs to scale. Our virtual assistants are trained in the specific professional ethics and confidentiality protocols of Western law firms, acting as a seamless, high-fidelity extension of your internal team. This allows your partners to focus exclusively on client advocacy and high-value strategic decision-making.",
     keyAreas: [
-      "Administrative Filing & Scheduling",
-      "Legal Billing & Invoicing Support",
-      "Client Communication Management",
-      "Document Formatting & Proofreading",
-      "Database & CRM Management",
-      "Conflict Check Coordination"
+      "Firm Management Software Integration",
+      "Multi-Jurisdictional Conflict Checks",
+      "Master Calendar & Docket Management",
+      "Legal Billing & Invoicing Analytics",
+      "Court Filing (E-Filing) Coordination",
+      "Proofreading & Bluebook Verification"
     ],
     image: PlaceHolderImages.find(img => img.id === 'service-immigration-law')
   },

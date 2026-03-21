@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -5,11 +6,11 @@ import Link from 'next/link';
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
 import { LegalWorkflowAiAnimation } from '../animations/legal-workflow-ai-animation';
-import { Scale, ArrowRight } from 'lucide-react';
+import { Scale, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] lg:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-24">
+    <section className="relative min-h-[90vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-24">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Desktop Gradients */}
@@ -47,7 +48,7 @@ export function Hero() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                   </span>
                   <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[8px] sm:text-xs">
-                    Confidentiality • Precision • Speed
+                    Jurisdictional Rigor • Global Delivery
                   </p>
                 </div>
               </SlideIn>
@@ -67,42 +68,54 @@ export function Hero() {
               </SlideIn>
 
               <SlideIn direction="up" delay={0.35} className="space-y-6 lg:space-y-4 mb-10 w-full flex flex-col items-center lg:items-start">
-                {/* Mobile-Only Vertical Accent */}
-                <div className="h-12 w-0.5 bg-gradient-to-b from-accent to-transparent lg:hidden mb-2" />
-                
                 <h2 className="text-sm sm:text-xl font-montserrat font-bold tracking-tight border-l-0 lg:border-l-4 border-accent lg:pl-8 inline-block lg:block text-white uppercase lg:normal-case tracking-[0.2em] lg:tracking-tight">
-                  Excellence in Legal Process Outsourcing
+                  Elite LPO Support for Global Law Firms
                 </h2>
                 
                 <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8 mx-auto lg:mx-0 px-4 lg:px-0">
-                  Partnering with the world&apos;s leading law firms to drive operational efficiency. We integrate elite Indian expertise with advanced AI technology to transform your global legal workflow.
+                  Partnering with the world&apos;s leading practices in the US, UK, and Canada. We integrate elite Indian expertise with advanced AI technology to transform high-stakes legal workflows into high-performance operational successes.
                 </p>
               </SlideIn>
 
-              <SlideIn direction="up" delay={0.45} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8 w-full sm:w-auto px-6 lg:px-0">
-                <Button
-                  asChild
-                  size="xl"
-                  className="w-full sm:w-auto h-14 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105"
-                >
-                  <Link href="/services" className="flex items-center justify-center gap-2">
-                    Explore Solutions <ArrowRight className="w-4 h-4 lg:hidden" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="xl"
-                  variant="outline"
-                  className="w-full sm:w-auto h-14 bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full transition-all duration-500 hover:scale-105"
-                >
-                  <Link href="/contact">Strategy Call</Link>
-                </Button>
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8 w-full sm:w-auto px-6 lg:px-0">
+                <SlideIn direction="up" delay={0.45}>
+                  <Button
+                    asChild
+                    size="xl"
+                    className="w-full sm:w-auto h-14 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105"
+                  >
+                    <Link href="/services" className="flex items-center justify-center gap-2">
+                      Explore Solutions <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </SlideIn>
+                <SlideIn direction="up" delay={0.5}>
+                  <Button
+                    asChild
+                    size="xl"
+                    variant="outline"
+                    className="w-full sm:w-auto h-14 bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full transition-all duration-500 hover:scale-105"
+                  >
+                    <Link href="/contact">Strategy Call</Link>
+                  </Button>
+                </SlideIn>
+              </div>
+
+              {/* Trust Indicators */}
+              <SlideIn direction="up" delay={0.6} className="mt-16 flex flex-wrap justify-center lg:justify-start gap-8 opacity-40 grayscale group hover:grayscale-0 transition-all duration-700 lg:ml-8">
+                <div className="flex items-center gap-3">
+                  <ShieldCheck className="w-5 h-5 text-accent" />
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">ISO 27001 Certified</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Zap className="w-5 h-5 text-accent" />
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">24/7 Global Sync</span>
+                </div>
               </SlideIn>
             </div>
           </div>
 
           <SlideIn direction="up" delay={0.55} className="relative mt-8 lg:mt-0 px-4">
-            {/* Visual focus element for mobile */}
             <div className="absolute inset-0 bg-accent/5 blur-[80px] rounded-full lg:hidden" />
             <LegalWorkflowAiAnimation />
           </SlideIn>
