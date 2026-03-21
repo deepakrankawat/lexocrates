@@ -1,9 +1,8 @@
-
 'use client';
 
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
-import { Globe3D } from '@/components/ui/globe-3d';
+import { GlobalNodeNetwork } from '@/components/ui/global-node-network';
 
 export function AboutIntro() {
   return (
@@ -14,28 +13,12 @@ export function AboutIntro() {
           <SlideIn direction="left" className="lg:order-last relative">
             <div className="relative h-[450px] sm:h-[600px] lg:h-[700px] fhd:h-[900px] w-full flex items-center justify-center group">
               
-              {/* Technical Blueprint Backdrop */}
-              <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-                <svg width="100%" height="100%">
-                  <defs>
-                    <pattern id="introGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-                      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#introGrid)" />
-                </svg>
+              {/* Technical Node Visualization Area */}
+              <div className="relative w-full h-full bg-secondary/20 rounded-[2.5rem] sm:rounded-[4rem] border border-black/5 overflow-hidden shadow-2xl transition-all duration-700 group-hover:border-accent/20">
+                <GlobalNodeNetwork />
               </div>
 
-              {/* Focus Rings */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] border border-accent/10 rounded-full animate-spin-slow opacity-20 pointer-events-none" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] border border-dashed border-accent/5 rounded-full animate-reverse-spin opacity-10 pointer-events-none" />
-
-              {/* 3D Global Visualization */}
-              <div className="relative z-10 w-full h-full">
-                <Globe3D />
-              </div>
-
-              {/* Strategic Data Badges */}
+              {/* Strategic Data Badges (Mobile Optimized Overlay) */}
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-10 sm:left-10 sm:right-10 z-20 flex flex-col sm:flex-row items-center justify-between gap-4 pointer-events-none">
                 <motion.div 
                   initial={{ opacity: 0, x: -20 }}
@@ -91,22 +74,6 @@ export function AboutIntro() {
           </SlideIn>
         </div>
       </div>
-      <style jsx global>{`
-        @keyframes spin-slow {
-          from { transform: translate(-50%, -50%) rotate(0deg); }
-          to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        @keyframes reverse-spin {
-          from { transform: translate(-50%, -50%) rotate(360deg); }
-          to { transform: translate(-50%, -50%) rotate(0deg); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
-        .animate-reverse-spin {
-          animation: reverse-spin 30s linear infinite;
-        }
-      `}</style>
     </section>
   );
 }
