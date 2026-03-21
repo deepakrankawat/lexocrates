@@ -2,7 +2,7 @@
 
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
-import { FlatMap } from '@/components/ui/flat-map';
+import { StrategicBridge } from '@/components/ui/strategic-bridge';
 
 export function AboutIntro() {
   return (
@@ -11,27 +11,16 @@ export function AboutIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 fhd:gap-40 items-center">
           
           <SlideIn direction="left" className="lg:order-last relative">
-            <div className="relative h-[350px] sm:h-[600px] lg:h-[800px] fhd:h-[1000px] w-full flex items-center justify-center group">
+            <div className="relative h-[350px] sm:h-[500px] lg:h-[600px] fhd:h-[800px] w-full flex items-center justify-center group">
               
-              {/* High-Performance Flat Map Visualization */}
+              {/* Abstract Connectivity Visualization */}
               <div className="absolute inset-0 z-10 w-full h-full">
-                <FlatMap />
+                <StrategicBridge />
               </div>
 
-              {/* Decorative Background Grid */}
-              <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.05]">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
-                  className="w-[120%] h-[120%]"
-                >
-                  <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary">
-                    <circle cx="500" cy="500" r="480" stroke="currentColor" strokeWidth="0.8" strokeDasharray="20 40" />
-                    <ellipse cx="500" cy="500" rx="480" ry="120" stroke="currentColor" strokeWidth="0.8" />
-                    <ellipse cx="500" cy="500" rx="120" ry="480" stroke="currentColor" strokeWidth="0.8" />
-                  </svg>
-                </motion.div>
-              </div>
+              {/* Decorative Pulsing Glows */}
+              <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-[100px] animate-pulse" />
+              <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-[100px] animate-pulse" />
             </div>
           </SlideIn>
           
@@ -39,21 +28,21 @@ export function AboutIntro() {
             <div className="flex flex-col">
               <div className="inline-flex items-center gap-4 mb-6">
                 <div className="w-12 h-px bg-accent/30" />
-                <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm">Our Global Reach</p>
+                <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm">Strategic Continuity</p>
               </div>
               <h2 className="font-lato text-3xl sm:text-5xl fhd:text-7xl font-black text-primary leading-[1.1] tracking-tighter mb-8 sm:mb-10">
-                From Jaipur to Canada: <br />
-                <span className="text-accent/80">Connecting Legal Excellence</span>
+                A Global Bridge <br />
+                <span className="text-accent/80">of Legal Intelligence</span>
               </h2>
               <div className="text-lg sm:text-xl fhd:text-2xl text-foreground/70 space-y-6 sm:space-y-10 font-medium leading-relaxed border-l-4 border-accent/10 pl-6 sm:pl-10 fhd:pl-12">
                 <p>
-                  Founded in Jaipur, India, Lexocrates is a specialized Legal Process Outsourcing (LPO) firm serving law firms and corporations across Canada, the US, and the UK.
+                  Founded in Jaipur, India, Lexocrates operates as a high-fidelity bridge between elite Indian legal talent and the rigorous demands of firms in Canada, the US, and the UK.
                 </p>
                 <p>
-                  Our India-based lawyers are trained in international legal systems, offering round-the-clock delivery, strict confidentiality, and deep jurisdictional expertise. The name blends Lex (law) with Socrates (philosophy).
+                  Our connectivity concept is built on seamless integration. We don't just "outsource"—we synchronize. Our India-based lawyers act as a direct extension of your internal team, providing 24/7 coverage through sophisticated data corridors and common-law mastery.
                 </p>
                 <p>
-                  Today, we stand as a trusted partner for global entities seeking intelligent, ethical, and cost-efficient legal services. Our success is built on integrity and intellectual excellence.
+                  By blending Socratic inquiry with modern operational precision, we ensure that the bridge between our operations and your practice is defined by absolute confidentiality, speed, and ethical stewardship.
                 </p>
               </div>
             </div>
