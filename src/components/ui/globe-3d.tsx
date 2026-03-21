@@ -124,10 +124,11 @@ export function Globe3D() {
         labelLat={(d: any) => d.lat}
         labelLng={(d: any) => d.lng}
         labelText={(d: any) => d.text}
-        labelSize={1.6}
-        labelDotRadius={0.4}
+        labelSize={2.5}
+        labelDotRadius={0.6}
         labelColor={() => DATA_STREAM_GLOW}
-        labelResolution={2}
+        labelResolution={3}
+        labelAltitude={0.01}
         width={dimensions.width}
         height={dimensions.height}
       />
