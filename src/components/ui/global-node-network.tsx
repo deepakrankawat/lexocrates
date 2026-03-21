@@ -135,17 +135,17 @@ export function GlobalNodeNetwork() {
               transition={{ type: "spring", delay: i * 0.1 }}
             />
 
-            {/* Hub Icon Placeholder (Handled by React Component elsewhere if needed, but here simple SVG) */}
+            {/* Hub Icon Placeholder */}
             <circle cx={node.x} cy={node.y} r={2} fill={accentColor} />
 
-            {/* Technical Label */}
-            <g transform={`translate(${node.x}, ${node.y + (node.isHub ? 60 : 50)})`}>
+            {/* Technical Label - Increased Size and better framing */}
+            <g transform={`translate(${node.x}, ${node.y + (node.isHub ? 80 : 70)})`}>
               <rect
-                x="-60"
-                y="-15"
-                width="120"
-                height="30"
-                rx="15"
+                x="-80"
+                y="-20"
+                width="160"
+                height="40"
+                rx="20"
                 fill={primaryColor}
                 fillOpacity="0.9"
                 className="backdrop-blur-xl"
@@ -154,15 +154,15 @@ export function GlobalNodeNetwork() {
                 textAnchor="middle"
                 className="font-montserrat font-black uppercase tracking-[0.2em] fill-white"
                 dominantBaseline="middle"
-                style={{ fontSize: '10px' }}
+                style={{ fontSize: '14px' }}
               >
                 {node.name}
               </text>
               {node.isHub && (
                 <motion.circle
-                  cx="50"
-                  cy="-15"
-                  r="4"
+                  cx="65"
+                  cy="-20"
+                  r="5"
                   fill="#22c55e"
                   animate={{ opacity: [1, 0.4, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -173,12 +173,12 @@ export function GlobalNodeNetwork() {
         ))}
       </svg>
 
-      {/* Connectivity Status Overlay */}
-      <div className="absolute top-10 left-10 z-20 flex items-center gap-4 bg-primary/95 border border-white/10 p-4 rounded-2xl shadow-2xl backdrop-blur-xl">
-        <div className="w-3 h-3 rounded-full bg-accent animate-ping" />
+      {/* Connectivity Status Overlay - Increased Sizes */}
+      <div className="absolute top-10 left-10 z-20 flex items-center gap-5 bg-primary/95 border border-white/10 p-5 rounded-2xl shadow-2xl backdrop-blur-xl">
+        <div className="w-4 h-4 rounded-full bg-accent animate-ping" />
         <div className="text-left">
-          <p className="text-[10px] font-black uppercase tracking-widest text-accent/60">System Status</p>
-          <p className="text-xs font-bold text-white uppercase tracking-tighter">Global Node Active</p>
+          <p className="text-[12px] font-black uppercase tracking-widest text-accent/60">System Status</p>
+          <p className="text-sm font-bold text-white uppercase tracking-tighter">Global Node Active</p>
         </div>
       </div>
     </div>
