@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -9,31 +10,22 @@ export function Globe3D() {
   const [countries, setCountries] = useState({ features: [] });
   const [GlobeComponent, setGlobeComponent] = useState<any>(null);
 
-  // Project Style Palette
-  const GOLDEN_SURFACE = '#ceab30';
-  const DARK_BLUE_WATER = '#06162e';
-  const GREEN_ANIMATION = '#22c55e';
+  // Project Style Palette (Deep Blue & Gold)
+  const GOLDEN_SURFACE = '#B8860B';
+  const DARK_BLUE_WATER = '#192A56';
+  const DATA_STREAM_GLOW = '#ceab30';
 
   useEffect(() => {
-    // Dynamically import react-globe.gl only on the client to avoid ChunkLoadErrors during SSR
     import('react-globe.gl').then((mod) => {
       setGlobeComponent(() => mod.default);
     });
 
-    // Fetch geojson for land surface hexagonal mesh
     fetch('https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
       .then(res => res.json())
       .then(setCountries)
       .catch(err => console.error('Failed to load globe surface data:', err));
 
-    if (containerRef.current) {
-      setDimensions({
-        width: containerRef.current.clientWidth,
-        height: containerRef.current.clientHeight,
-      });
-    }
-
-    const handleResize = () => {
+    const updateDimensions = () => {
       if (containerRef.current) {
         setDimensions({
           width: containerRef.current.clientWidth,
@@ -42,25 +34,19 @@ export function Globe3D() {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
   useEffect(() => {
     if (globeRef.current) {
-      // Auto-rotation config
       globeRef.current.controls().autoRotate = true;
-      globeRef.current.controls().autoRotateSpeed = 0.5;
+      globeRef.current.controls().autoRotateSpeed = 0.6;
       globeRef.current.controls().enableZoom = false;
       
-      // Focus on the path area with a smooth zoom effect
-      globeRef.current.pointOfView({ lat: 35, lng: 0, altitude: 2.8 }, 0);
-      
-      const timer = setTimeout(() => {
-        globeRef.current.pointOfView({ lat: 35, lng: 0, altitude: 2.5 }, 3000);
-      }, 500);
-
-      return () => clearTimeout(timer);
+      // Initial focus point
+      globeRef.current.pointOfView({ lat: 35, lng: 0, altitude: 2.5 }, 0);
     }
   }, [GlobeComponent]);
 
@@ -68,27 +54,43 @@ export function Globe3D() {
     {
       startLat: 26.9124, // Jaipur
       startLng: 75.7873,
-      endLat: 43.65107, // Canada (Toronto proxy)
+      endLat: 43.65107, // Toronto, Canada
       endLng: -79.347015,
-      color: [GREEN_ANIMATION, GREEN_ANIMATION]
+      color: [DATA_STREAM_GLOW, DATA_STREAM_GLOW]
+    },
+    {
+      startLat: 26.9124, // Jaipur
+      startLng: 75.7873,
+      endLat: 51.5074, // London, UK
+      endLng: -0.1278,
+      color: [DATA_STREAM_GLOW, DATA_STREAM_GLOW]
+    },
+    {
+      startLat: 26.9124, // Jaipur
+      startLng: 75.7873,
+      endLat: 40.7128, // New York, USA
+      endLng: -74.0060,
+      color: [DATA_STREAM_GLOW, DATA_STREAM_GLOW]
     }
   ];
 
   const ringsData = [
-    { lat: 26.9124, lng: 75.7873, label: 'Jaipur, India' },
-    { lat: 43.65107, lng: -79.347015, label: 'Canada' }
+    { lat: 26.9124, lng: 75.7873, label: 'Jaipur Hub' },
+    { lat: 43.65107, lng: -79.347015, label: 'Canada' },
+    { lat: 51.5074, lng: -0.1278, label: 'United Kingdom' },
+    { lat: 40.7128, lng: -74.0060, label: 'USA' }
   ];
 
   if (!GlobeComponent) {
     return (
-      <div className="w-full h-full flex items-center justify-center text-primary/20 font-lato font-bold uppercase tracking-widest text-xs">
-        Initializing Global Map...
+      <div className="w-full h-full flex items-center justify-center text-accent/20 font-montserrat font-black uppercase tracking-[0.4em] text-[10px]">
+        Establishing Global Node...
       </div>
     );
   }
 
   return (
-    <div ref={containerRef} className="w-full h-full flex items-center justify-center bg-transparent overflow-visible">
+    <div ref={containerRef} className="w-full h-full flex items-center justify-center bg-transparent overflow-visible pointer-events-none md:pointer-events-auto">
       <GlobeComponent
         ref={globeRef}
         backgroundColor="rgba(0,0,0,0)"
@@ -98,19 +100,19 @@ export function Globe3D() {
         hexPolygonResolution={3}
         hexPolygonMargin={0.3}
         showAtmosphere={true}
-        atmosphereColor={GOLDEN_SURFACE}
-        atmosphereDaylightAlpha={0.1}
+        atmosphereColor={DATA_STREAM_GLOW}
+        atmosphereDaylightAlpha={0.15}
         arcsData={arcsData}
         arcColor="color"
-        arcDashLength={0.5}
-        arcDashGap={2}
-        arcDashAnimateTime={2000}
-        arcStroke={1}
+        arcDashLength={0.4}
+        arcDashGap={1.5}
+        arcDashAnimateTime={1500}
+        arcStroke={1.5}
         ringsData={ringsData}
-        ringColor={() => GREEN_ANIMATION}
+        ringColor={() => DATA_STREAM_GLOW}
         ringMaxRadius={2.5}
-        ringPropagationSpeed={2.5}
-        ringRepeatPeriod={800}
+        ringPropagationSpeed={3}
+        ringRepeatPeriod={1000}
         width={dimensions.width}
         height={dimensions.height}
       />

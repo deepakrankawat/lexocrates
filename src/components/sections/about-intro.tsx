@@ -1,8 +1,9 @@
+
 'use client';
 
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
-import { StrategicBridge } from '@/components/ui/strategic-bridge';
+import { Globe3D } from '@/components/ui/globe-3d';
 
 export function AboutIntro() {
   return (
@@ -11,16 +12,57 @@ export function AboutIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 fhd:gap-40 items-center">
           
           <SlideIn direction="left" className="lg:order-last relative">
-            <div className="relative h-[350px] sm:h-[500px] lg:h-[600px] fhd:h-[800px] w-full flex items-center justify-center group">
+            <div className="relative h-[450px] sm:h-[600px] lg:h-[700px] fhd:h-[900px] w-full flex items-center justify-center group">
               
-              {/* Abstract Connectivity Visualization */}
-              <div className="absolute inset-0 z-10 w-full h-full">
-                <StrategicBridge />
+              {/* Technical Blueprint Backdrop */}
+              <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+                <svg width="100%" height="100%">
+                  <defs>
+                    <pattern id="introGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+                      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#introGrid)" />
+                </svg>
               </div>
 
-              {/* Decorative Pulsing Glows */}
-              <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-[100px] animate-pulse" />
-              <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-[100px] animate-pulse" />
+              {/* Focus Rings */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] border border-accent/10 rounded-full animate-spin-slow opacity-20 pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] border border-dashed border-accent/5 rounded-full animate-reverse-spin opacity-10 pointer-events-none" />
+
+              {/* 3D Global Visualization */}
+              <div className="relative z-10 w-full h-full">
+                <Globe3D />
+              </div>
+
+              {/* Strategic Data Badges */}
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-10 sm:left-10 sm:right-10 z-20 flex flex-col sm:flex-row items-center justify-between gap-4 pointer-events-none">
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.8 }}
+                  className="bg-primary/95 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-2xl flex items-center gap-4"
+                >
+                  <div className="w-2 h-2 rounded-full bg-accent animate-ping" />
+                  <div className="text-left">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-accent">Active Node</p>
+                    <p className="text-xs font-bold text-white uppercase tracking-tighter">Jaipur Operations Center</p>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1 }}
+                  className="bg-white/95 backdrop-blur-xl border border-black/5 p-4 rounded-2xl shadow-2xl flex items-center gap-4"
+                >
+                  <div className="text-right">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-primary/40">Sync Status</p>
+                    <p className="text-xs font-bold text-primary uppercase tracking-tighter text-nowrap">Global Markets Unified</p>
+                  </div>
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                </motion.div>
+              </div>
             </div>
           </SlideIn>
           
@@ -49,6 +91,22 @@ export function AboutIntro() {
           </SlideIn>
         </div>
       </div>
+      <style jsx global>{`
+        @keyframes spin-slow {
+          from { transform: translate(-50%, -50%) rotate(0deg); }
+          to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        @keyframes reverse-spin {
+          from { transform: translate(-50%, -50%) rotate(360deg); }
+          to { transform: translate(-50%, -50%) rotate(0deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+        .animate-reverse-spin {
+          animation: reverse-spin 30s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }
