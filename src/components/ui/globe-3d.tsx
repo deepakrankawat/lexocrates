@@ -50,6 +50,13 @@ export function Globe3D() {
     }
   }, [GlobeComponent]);
 
+  const locations = [
+    { lat: 26.9124, lng: 75.7873, name: 'JAIPUR HUB', isHub: true },
+    { lat: 43.65107, lng: -79.347015, name: 'CANADA', isHub: false },
+    { lat: 51.5074, lng: -0.1278, name: 'UK', isHub: false },
+    { lat: 40.7128, lng: -74.0060, name: 'USA', isHub: false }
+  ];
+
   const arcsData = [
     {
       startLat: 26.9124, // Jaipur
@@ -74,20 +81,6 @@ export function Globe3D() {
     }
   ];
 
-  const ringsData = [
-    { lat: 26.9124, lng: 75.7873, label: 'Jaipur Hub' },
-    { lat: 43.65107, lng: -79.347015, label: 'Canada' },
-    { lat: 51.5074, lng: -0.1278, label: 'United Kingdom' },
-    { lat: 40.7128, lng: -74.0060, label: 'USA' }
-  ];
-
-  const labelsData = [
-    { lat: 26.9124, lng: 75.7873, text: 'JAIPUR HUB' },
-    { lat: 43.65107, lng: -79.347015, text: 'CANADA' },
-    { lat: 51.5074, lng: -0.1278, text: 'UK' },
-    { lat: 40.7128, lng: -74.0060, text: 'USA' }
-  ];
-
   if (!GlobeComponent) {
     return (
       <div className="w-full h-full flex items-center justify-center text-accent/20 font-montserrat font-black uppercase tracking-[0.4em] text-[10px]">
@@ -109,26 +102,43 @@ export function Globe3D() {
         showAtmosphere={true}
         atmosphereColor={DATA_STREAM_GLOW}
         atmosphereDaylightAlpha={0.15}
+        
+        // Arcs Layer
         arcsData={arcsData}
         arcColor="color"
         arcDashLength={0.4}
         arcDashGap={1.5}
         arcDashAnimateTime={1500}
         arcStroke={1.5}
-        ringsData={ringsData}
+        
+        // Pulsing Rings Layer
+        ringsData={locations}
+        ringLat={(d: any) => d.lat}
+        ringLng={(d: any) => d.lng}
         ringColor={() => DATA_STREAM_GLOW}
-        ringMaxRadius={2.5}
+        ringMaxRadius={(d: any) => d.isHub ? 3.5 : 2.5}
         ringPropagationSpeed={3}
         ringRepeatPeriod={1000}
-        labelsData={labelsData}
+        
+        // Solid Points Layer
+        pointsData={locations}
+        pointLat={(d: any) => d.lat}
+        pointLng={(d: any) => d.lng}
+        pointColor={() => '#ffffff'}
+        pointRadius={(d: any) => d.isHub ? 0.8 : 0.5}
+        pointAltitude={0.01}
+        
+        // Labels Layer
+        labelsData={locations}
         labelLat={(d: any) => d.lat}
         labelLng={(d: any) => d.lng}
-        labelText={(d: any) => d.text}
-        labelSize={2.5}
-        labelDotRadius={0.6}
+        labelText={(d: any) => d.name}
+        labelSize={2.8}
+        labelDotRadius={0} // We use the points layer for the dots now
         labelColor={() => DATA_STREAM_GLOW}
         labelResolution={3}
-        labelAltitude={0.01}
+        labelAltitude={0.02}
+        
         width={dimensions.width}
         height={dimensions.height}
       />
