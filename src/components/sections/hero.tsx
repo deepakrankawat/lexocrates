@@ -60,12 +60,18 @@ export function Hero() {
                 </h1>
               </SlideIn>
 
-              <SlideIn direction="up" delay={0.3} className="space-y-6 lg:space-y-4 mb-10 w-full flex flex-col items-center lg:items-start">
+              <SlideIn direction="up" delay={0.25}>
+                <p className="text-accent font-montserrat font-bold text-base sm:text-xl lg:text-2xl mb-8 tracking-tight max-w-2xl mx-auto lg:mx-0">
+                  Where Confidentiality, Precision, and Speed Converge
+                </p>
+              </SlideIn>
+
+              <SlideIn direction="up" delay={0.35} className="space-y-6 lg:space-y-4 mb-10 w-full flex flex-col items-center lg:items-start">
                 {/* Mobile-Only Vertical Accent */}
                 <div className="h-12 w-0.5 bg-gradient-to-b from-accent to-transparent lg:hidden mb-2" />
                 
                 <h2 className="text-sm sm:text-xl font-montserrat font-bold tracking-tight border-l-0 lg:border-l-4 border-accent lg:pl-8 inline-block lg:block text-white uppercase lg:normal-case tracking-[0.2em] lg:tracking-tight">
-                  Excellence in Legal Outsourcing
+                  Excellence in Legal Process Outsourcing
                 </h2>
                 
                 <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8 mx-auto lg:mx-0 px-4 lg:px-0">
@@ -73,7 +79,7 @@ export function Hero() {
                 </p>
               </SlideIn>
 
-              <SlideIn direction="up" delay={0.4} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8 w-full sm:w-auto px-6 lg:px-0">
+              <SlideIn direction="up" delay={0.45} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8 w-full sm:w-auto px-6 lg:px-0">
                 <Button
                   asChild
                   size="xl"
@@ -95,7 +101,7 @@ export function Hero() {
             </div>
           </div>
 
-          <SlideIn direction="up" delay={0.5} className="relative mt-8 lg:mt-0 px-4">
+          <SlideIn direction="up" delay={0.55} className="relative mt-8 lg:mt-0 px-4">
             {/* Visual focus element for mobile */}
             <div className="absolute inset-0 bg-accent/5 blur-[80px] rounded-full lg:hidden" />
             <LegalWorkflowAiAnimation />
