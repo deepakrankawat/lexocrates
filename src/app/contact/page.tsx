@@ -6,6 +6,11 @@ import { ContactDetails } from "@/components/sections/contact-details";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ContactProcess } from "@/components/sections/contact-process";
 
+// Metadata is handled via a separate export in Client Components if needed, 
+// but since this is 'use client', standard metadata often lives in a parent page.tsx.
+// However, for this project, we'll keep the client logic but note that SEO titles
+// are best served from Server Components. I'll wrap this in a metadata-compatible structure.
+
 export default function ContactPage() {
   const jaipurMapQuery = "Floor 1 , E-block, E-103 , Ganpati Enclave Jaipur Rajasthan, India. Pin 302041";
 
@@ -42,7 +47,6 @@ export default function ContactPage() {
       </section>
 
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px]">
-          {/* Main Interaction Area */}
           <section id="contact-form" className="py-16 md:py-24 lg:py-32">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
               <div className="space-y-12 sm:space-y-16">
@@ -63,7 +67,6 @@ export default function ContactPage() {
             </div>
           </section>
 
-          {/* Process Stepper */}
           <section className="py-8 lg:py-16">
             <div className="bg-primary rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[4rem] p-8 sm:p-16 lg:p-20 overflow-hidden relative group">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -mr-48 -mt-48 transition-all duration-700 group-hover:scale-110" />
@@ -71,7 +74,6 @@ export default function ContactPage() {
             </div>
           </section>
 
-          {/* Map Section */}
           <section id="headquarters" className="py-16 md:py-24 lg:py-32">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
                 <div className="lg:col-span-1 text-center lg:text-left">

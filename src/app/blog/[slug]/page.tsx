@@ -17,6 +17,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -36,25 +39,37 @@ export default async function BlogDetailPage({ params }: Props) {
     notFound();
   }
 
-  // JSON-LD Blog Schema
+  // JSON-LD Combined Schema
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.excerpt,
-    author: {
-      '@type': 'Person',
-      name: post.author,
-    },
-    datePublished: new Date(post.date).toISOString(),
-    publisher: {
-      '@type': 'Organization',
-      name: 'Lexocrates',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://lexocrates.vercel.app/images/logo-dark.svg',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.excerpt,
+        author: {
+          '@type': 'Person',
+          name: post.author,
+        },
+        datePublished: new Date(post.date).toISOString(),
+        publisher: {
+          '@type': 'Organization',
+          name: 'Lexocrates',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://lexocrates.vercel.app/images/logo-dark.svg',
+          },
+        },
       },
-    },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lexocrates.vercel.app' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://lexocrates.vercel.app/blog' },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `https://lexocrates.vercel.app/blog/${post.slug}` },
+        ],
+      }
+    ]
   };
 
   return (

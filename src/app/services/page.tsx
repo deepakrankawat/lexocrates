@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { ServicesHero } from '@/components/sections/services-hero';
 import { Services } from '@/components/sections/services';
 import { Experience } from '@/components/sections/experience';
@@ -5,6 +6,14 @@ import { WhyChooseUs } from '@/components/sections/why-choose-us';
 import { WorkflowSupport } from '@/components/sections/workflow-support';
 import { CostCalculator } from '@/components/sections/cost-calculator';
 import { Cta } from '@/components/sections/cta';
+
+export const metadata: Metadata = {
+  title: 'Legal Outsourcing Services | LPO Solutions for Global Law Firms',
+  description: 'Explore our elite LPO services including legal research, litigation support, and contract management tailored for US, UK, and Canadian jurisdictions.',
+  alternates: {
+    canonical: '/services',
+  },
+};
 
 export default function ServicesPage() {
   return (
