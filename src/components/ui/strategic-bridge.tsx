@@ -2,140 +2,113 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Landmark, Globe2, Lock, Cpu, RefreshCcw } from 'lucide-react';
+import { Cpu, ShieldCheck, Zap, Globe2, Target, Lock } from 'lucide-react';
 
 export function StrategicBridge() {
-  const protocols = [
-    { icon: Lock, label: "Encrypted", sub: "Bank-Level" },
-    { icon: Cpu, label: "Precision", sub: "Common Law" },
-    { icon: RefreshCcw, label: "Sync", sub: "24/7 Flow" }
+  const features = [
+    { icon: Lock, title: "Security", desc: "Bank-Level Encryption" },
+    { icon: Target, title: "Precision", desc: "Common Law Accuracy" },
+    { icon: Zap, title: "Sync", desc: "24/7 Global Flow" }
   ];
 
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden">
-      {/* Architectural Blueprint Grid */}
+    <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
+      {/* Background Decorative Grid */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <svg viewBox="0 0 1000 1000" className="w-full h-full text-primary" preserveAspectRatio="none">
-          {[...Array(10)].map((_, i) => (
-            <React.Fragment key={i}>
-              <line x1="0" y1={i * 100} x2="1000" y2={i * 100} stroke="currentColor" strokeWidth="1" />
-              <line x1={i * 100} y1="0" x2={i * 100} y2="1000" stroke="currentColor" strokeWidth="1" />
-            </React.Fragment>
-          ))}
+        <svg width="100%" height="100%">
+          <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#smallGrid)" />
         </svg>
       </div>
 
-      {/* Main Bridge Architecture */}
-      <div className="relative z-10 w-full max-w-6xl flex flex-row items-center justify-between px-2 sm:px-8 lg:px-12">
+      <div className="relative z-10 w-full max-w-5xl grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         
-        {/* Source: Intelligence Hub (Jaipur) */}
-        <div className="flex flex-col items-center gap-3 sm:gap-6 shrink-0 group">
-          <motion.div 
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            className="relative p-4 sm:p-8 lg:p-14 rounded-[1.5rem] sm:rounded-[2.5rem] bg-primary text-white shadow-2xl border border-white/10 overflow-hidden"
-          >
-            <div className="absolute inset-0 border-4 border-accent/20 rounded-[1.5rem] sm:rounded-[2.5rem] animate-pulse" />
-            <Globe2 className="w-8 h-8 sm:w-12 lg:w-16 text-accent" />
-            <div className="absolute -bottom-1 -right-1 w-4 h-4 sm:w-8 sm:h-8 rounded-full bg-accent flex items-center justify-center border-2 sm:border-4 border-white">
-              <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-white animate-ping" />
-            </div>
-          </motion.div>
-          <div className="text-center">
-            <p className="font-lato font-black text-accent uppercase tracking-[0.2em] text-[7px] sm:text-[10px] mb-1">Intelligence Hub</p>
-            <h4 className="font-montserrat font-black text-primary text-[10px] sm:text-lg lg:text-2xl">Jaipur, India</h4>
+        {/* Visual Core */}
+        <div className="relative flex items-center justify-center">
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80">
+            {/* Animated Glow Rings */}
+            {[...Array(3)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute inset-0 border-2 border-accent/20 rounded-full"
+                animate={{ 
+                  scale: [1, 1.3, 1],
+                  opacity: [0.1, 0.3, 0.1],
+                  rotate: i % 2 === 0 ? 360 : -360
+                }}
+                transition={{ duration: 10 + i * 2, repeat: Infinity, ease: "linear" }}
+              />
+            ))}
+
+            {/* Central Hub Card */}
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <div className="relative p-8 sm:p-12 lg:p-16 bg-primary rounded-[3rem] shadow-2xl border border-white/10 group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <Cpu className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-accent mb-4 relative z-10 mx-auto" />
+                <div className="text-center relative z-10">
+                  <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[8px] sm:text-[10px] mb-1">Intelligence Hub</p>
+                  <h4 className="font-montserrat font-black text-white text-sm sm:text-xl lg:text-2xl tracking-tighter">Jaipur, India</h4>
+                </div>
+                
+                {/* Data flow particles animation */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent animate-slide-right" />
+              </div>
+            </motion.div>
+
+            {/* Satellite Node (US/UK/CA) */}
+            <motion.div 
+              className="absolute -top-4 -right-4 sm:-top-8 sm:-right-8 p-4 bg-white rounded-2xl shadow-xl border border-black/5"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <Globe2 className="w-6 h-6 text-primary" />
+            </motion.div>
           </div>
         </div>
 
-        {/* The Synchronicity Path (Central Connector) */}
-        <div className="flex-grow relative h-20 sm:h-48 mx-2 sm:mx-8 lg:mx-12">
-          {/* Static Background Connector */}
-          <div className="absolute top-1/2 left-0 right-0 h-[1px] sm:h-[2px] bg-gradient-to-r from-primary/10 via-accent/40 to-primary/10 -translate-y-1/2" />
-          
-          {/* Distributed Protocols */}
-          <div className="absolute inset-0 flex items-center justify-around px-1 sm:px-4">
-            {protocols.map((protocol, i) => (
-              <motion.div 
-                key={i}
-                initial={{ y: 10, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 + (i * 0.1) }}
-                className="flex flex-col items-center group cursor-help"
-              >
-                <div className="relative p-1.5 sm:p-4 lg:p-5 rounded-lg sm:rounded-2xl bg-white shadow-xl border border-black/5 mb-1 sm:mb-2 group-hover:border-accent transition-all duration-500 hover:scale-110">
-                  <protocol.icon className="w-3 h-3 sm:w-6 lg:w-8 text-accent" />
-                  <div className="absolute top-0 right-0 w-1 sm:w-2 h-1 sm:h-2 border-t border-r border-accent/20" />
-                  <div className="absolute bottom-0 left-0 w-1 sm:w-2 h-1 sm:h-2 border-b border-l border-accent/20" />
-                </div>
-                
-                <div className="text-center hidden sm:block">
-                  <p className="text-[8px] lg:text-[10px] font-black text-primary uppercase tracking-tight leading-none mb-0.5">{protocol.label}</p>
-                  <p className="text-[6px] lg:text-[8px] font-medium text-foreground/40 uppercase tracking-widest">{protocol.sub}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Dynamic Data Stream Animation */}
-          <motion.div
-            className="absolute top-1/2 left-0 h-[2px] sm:h-[3px] bg-accent shadow-[0_0_20px_rgba(184,134,11,1)] z-20 rounded-full"
-            initial={{ width: "0%", left: "0%" }}
-            animate={{ 
-              width: ["0%", "25%", "0%"],
-              left: ["0%", "75%", "100%"]
-            }}
-            transition={{
-              duration: 2.2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-
-          {/* Micro-Particles (Operational Continuity) */}
-          {[...Array(4)].map((_, i) => (
+        {/* Technical Features Column */}
+        <div className="flex flex-col gap-4 sm:gap-6">
+          {features.map((feature, i) => (
             <motion.div
               key={i}
-              className="absolute top-1/2 left-0"
-              animate={{ 
-                left: "100%", 
-                opacity: [0, 0.6, 0],
-                y: [Math.sin(i) * 15, Math.cos(i) * -15, Math.sin(i) * 15] 
-              }}
-              transition={{ 
-                duration: 1.4 + (i * 0.2), 
-                repeat: Infinity, 
-                ease: "linear", 
-                delay: i * 0.3 
-              }}
+              initial={{ x: 30, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: i * 0.15 }}
+              className="flex items-center gap-5 p-5 sm:p-6 bg-white/50 backdrop-blur-md rounded-[2rem] border border-black/5 hover:border-accent/30 hover:bg-white hover:shadow-2xl transition-all duration-500 group"
             >
-              <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-accent/30 rounded-full" />
+              <div className="p-3 sm:p-4 bg-accent/10 text-accent rounded-xl group-hover:bg-accent group-hover:text-white transition-colors">
+                <feature.icon className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+              <div>
+                <h5 className="font-montserrat font-black text-primary text-xs sm:text-sm uppercase tracking-widest">{feature.title}</h5>
+                <p className="font-lato font-medium text-foreground/60 text-[10px] sm:text-xs">{feature.desc}</p>
+              </div>
+              <motion.div 
+                className="ml-auto w-2 h-2 rounded-full bg-accent/20"
+                animate={{ opacity: [0.2, 1, 0.2] }}
+                transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+              />
             </motion.div>
           ))}
         </div>
 
-        {/* Destination: Global Markets */}
-        <div className="flex flex-col items-center gap-3 sm:gap-6 shrink-0 relative">
-          <motion.div 
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            className="relative p-4 sm:p-8 lg:p-14 rounded-[1.5rem] sm:rounded-[2.5rem] bg-secondary border border-black/5 text-primary shadow-2xl hover:border-accent/50 transition-colors duration-700"
-          >
-            <Landmark className="w-8 h-8 sm:w-12 lg:w-16 text-accent transition-transform duration-500 group-hover:scale-110" />
-            <motion.div 
-              animate={{ top: ["0%", "100%", "0%"] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-              className="absolute left-0 right-0 h-0.5 bg-accent/5 pointer-events-none" 
-            />
-          </motion.div>
-          <div className="text-center">
-            <p className="font-lato font-black text-accent uppercase tracking-[0.2em] text-[7px] sm:text-[10px] mb-1">Global Delivery</p>
-            <h4 className="font-montserrat font-black text-primary text-[10px] sm:text-lg lg:text-2xl">US • UK • Canada</h4>
-          </div>
-        </div>
-
       </div>
+
+      <style jsx global>{`
+        @keyframes slide-right {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .animate-slide-right {
+          animation: slide-right 3s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }
