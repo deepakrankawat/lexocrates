@@ -62,11 +62,11 @@ export function WorkflowSupport() {
 
         <div className="relative">
           {/* Connector Line */}
-          <div className="absolute top-1/2 left-0 w-full h-px bg-accent/20 hidden lg:block -translate-y-12" />
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-accent/20 hidden lg:block -translate-y-12" />
           
-          <StaggerFadeIn className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <StaggerFadeIn className="grid gap-8 md:grid-cols-2 lg:grid-cols-4" childClassName="h-full">
              {workflowSteps.map((step, index) => (
-               <div key={index} className="relative group">
+               <div key={index} className="relative group h-full">
                   <div className="bg-white p-10 rounded-[2.5rem] border border-black/5 hover:border-accent shadow-sm hover:shadow-2xl transition-all duration-500 h-full flex flex-col items-center text-center">
                     <div className="w-20 h-20 rounded-2xl bg-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent transition-colors duration-500">
                        <step.icon className="w-8 h-8 text-accent group-hover:text-white transition-colors duration-500" />
