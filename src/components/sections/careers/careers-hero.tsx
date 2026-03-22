@@ -1,13 +1,28 @@
+
 'use client';
 
 import { FadeIn } from '@/components/animations/fade-in';
 import { SlideIn } from '@/components/animations/slide-in';
+import { AppImage } from '@/components/ui/app-image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function CareersHero() {
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-careers');
+
   return (
     <section className="relative min-h-[50vh] fhd:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-10 pb-16 lg:pt-14">
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
+        {heroImage && (
+          <AppImage 
+            src={heroImage.imageUrl} 
+            alt={heroImage.description} 
+            fill 
+            priority
+            className="object-cover opacity-20 grayscale brightness-[0.3]"
+            data-ai-hint={heroImage.imageHint}
+          />
+        )}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(184,134,11,0.15)_0%,transparent_50%)]" />
         <div className="absolute inset-0 opacity-[0.03]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] opacity-[0.05] pointer-events-none">

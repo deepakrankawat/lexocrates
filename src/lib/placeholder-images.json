@@ -43,7 +43,7 @@
     {
       "id": "hero-careers",
       "description": "A person working on a laptop in a modern office",
-      "imageUrl": "/images/hero-careers.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JraW5nJTIwb2ZmaWNlfGVufDB8fHx8MTc2MTI3NDgxOXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "working office",
       "width": 1920,
       "height": 1080
@@ -99,7 +99,7 @@
     {
       "id": "lawyer-1",
       "description": "Professional portrait of a female lawyer",
-      "imageUrl": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NjEyMjE2MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NjEyMjE2MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional woman",
       "width": 600,
       "height": 800
@@ -115,7 +115,7 @@
     {
       "id": "lawyer-3",
       "description": "Professional portrait of a female lawyer in a suit",
-      "imageUrl": "https://images.unsplash.com/photo-1726618069974-c1d5d27f612b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmZW1hbGUlMjBsYXd5ZXJ8ZW58MHx8fHwxNzYxMjU2MTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1726618069974-c1d5d27f612b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBsYXd5ZXJ8ZW58MHx8fHwxNzYxMjU2MTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "female lawyer",
       "width": 600,
       "height": 800
@@ -131,7 +131,7 @@
     {
       "id": "lawyer-5",
       "description": "Portrait of a man in a suit",
-      "imageUrl": "https://images.unsplash.com/photo-1546572797-e8c933a75a1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYW4lMjBzdWl0fGVufDB8fHx8MTc2MTI3NDgxOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1546572797-e8c933a75a1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBzdWl0fGVufDB8fHx8MTc2MTI3NDgxOXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man suit",
       "width": 600,
       "height": 800
@@ -139,7 +139,7 @@
     {
       "id": "lawyer-6",
       "description": "Portrait of a woman with glasses",
-      "imageUrl": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NjEyMjE2MTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NjEyMjE2MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional woman",
       "width": 600,
       "height": 800
@@ -147,7 +147,7 @@
     {
       "id": "client-avatar-1",
       "description": "Avatar of client Johnatan G.",
-      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEyNTU5NTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEyNTU5NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man portrait",
       "width": 100,
       "height": 100
@@ -195,7 +195,7 @@
     {
       "id": "service-detail-2",
       "description": "Law books on a shelf",
-      "imageUrl": "https://images.unsplash.com/photo-1619771699034-fec6b1aabde3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsYXclMjBib29rc3xlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1619771699034-fec6b1aabde3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsYXclMjBib29rc3xlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "law books",
       "width": 600,
       "height": 800
@@ -203,7 +203,7 @@
     {
       "id": "contact-map",
       "description": "A map showing a location in a city.",
-      "imageUrl": "https://images.unsplash.com/photo-1619468129361-605ebea04b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaXR5JTIwbWFwfGVufDB8fHx8MTc2MTE3NDExMXww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1619468129361-605ebea04b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaXR5JTIwbWFwfGVufDB8fHx8MTc2MTE3NDExMXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "city map",
       "width": 800,
       "height": 600
@@ -211,7 +211,7 @@
     {
       "id": "service-corporate-law",
       "description": "Modern office building",
-      "imageUrl": "https://images.unsplash.com/photo-1686100510540-4c29a46de6e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3Jwb3JhdGUlMjBvZmZpY2V8ZW58MHx8fHwxNzYxMjIyMTE4fDA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1686100510540-4c29a46de6e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3Jwb3JhdGUlMjBvZmZpY2V8ZW58MHx8fHwxNzYxMjIyMTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "corporate office",
       "width": 600,
       "height": 800
@@ -219,7 +219,7 @@
     {
       "id": "service-family-law",
       "description": "A happy family",
-      "imageUrl": "https://images.unsplash.com/photo-1588979355313-6711a095479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseXxlbnwwfHx8fDE3NjEyNTgzNTB8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1588979355313-6711a095479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseXxlbnwwfHx8fDE3NjEyNTgzNTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "happy family",
       "width": 600,
       "height": 800
@@ -227,7 +227,7 @@
     {
       "id": "service-real-estate-law",
       "description": "A modern house",
-      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NjEyNzg5NTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NjEyNzg5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern house",
       "width": 600,
       "height": 800
@@ -235,7 +235,7 @@
     {
       "id": "service-ip-law",
       "description": "A lightbulb representing ideas",
-      "imageUrl": "https://images.unsplash.com/photo-1641733326251-e6acef18d3f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpZGVhJTIwbGlnaHRidWxifGVufDB8fHx8MTc2MTI1NjM0N3ww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1641733326251-e6acef18d3f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpZGVhJTIwbGlnaHRidWxifGVufDB8fHx8MTc2MTI1NjM0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "idea lightbulb",
       "width": 600,
       "height": 800
@@ -243,7 +243,7 @@
     {
       "id": "service-criminal-defense",
       "description": "A courtroom",
-      "imageUrl": "https://images.unsplash.com/photo-1562668457-bf6637adfd01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3VydHJvb20lMjBnYXZlbHxlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1562668457-bf6637adfd01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3VydHJvb20lMjBnYXZlbHxlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "courtroom gavel",
       "width": 600,
       "height": 800
@@ -251,7 +251,7 @@
     {
       "id": "service-immigration-law",
       "description": "A passport and a flag",
-      "imageUrl": "https://images.unsplash.com/photo-1612364461060-38075479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwYXNzcG9ydCUyMGZsYWd8ZW58MHx8fHwxNzYxMjk1OTU1fDA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1612364461060-38075479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwYXNzcG9ydCUyMGZsYWd8ZW58MHx8fHwxNzYxMjk1OTU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "passport flag",
       "width": 600,
       "height": 800
