@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { useState } from 'react';
@@ -27,7 +26,7 @@ export function CostCalculator() {
   };
 
   return (
-    <section className="bg-secondary py-12 sm:py-16">
+    <section className="bg-secondary pt-2 pb-12 sm:pb-16">
         <SlideIn>
           <div className="text-center mb-12">
             <p className="font-lato font-bold text-accent uppercase tracking-wider">Cost Efficiency</p>
