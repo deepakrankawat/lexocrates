@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { AboutHero } from '@/components/sections/about-hero';
 import { VisionMission } from '@/components/sections/vision-mission';
 import { Welcome } from '@/components/sections/welcome';
-import { Certifications } from '@/components/sections/certifications';
 import { CoreValues } from '@/components/sections/core-values';
 import { Jurisdictions } from '@/components/sections/jurisdictions';
 import { Experience } from '@/components/sections/experience';
@@ -25,7 +24,6 @@ export default function AboutPage() {
         <Welcome />
         <Jurisdictions />
         <VisionMission />
-        <Certifications />
       </div>
     </main>
   );
