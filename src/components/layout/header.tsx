@@ -84,7 +84,7 @@ export function Header() {
                   animate={{ rotate: isHoveringContact ? [0, -10, 10, 0] : 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Scale className="w-4 h-4 text-accent" />
+                  <Scale className="w-5 h-5 text-accent" />
                 </motion.div>
                 <span>Contact Us</span>
               </Link>
@@ -93,8 +93,8 @@ export function Header() {
           
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 rounded-full h-10 w-10">
-                <Menu className="h-6 w-6" />
+              <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 rounded-full h-12 w-12">
+                <Menu className="h-7 w-7" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
@@ -102,8 +102,8 @@ export function Header() {
               <SheetHeader className="p-6 flex flex-row items-center justify-between border-b border-black/5">
                 <Logo variant="dark" className="h-10 w-auto" />
                 <SheetClose asChild>
-                  <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 rounded-full h-10 w-10">
-                    <X className="h-6 w-6" />
+                  <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 rounded-full h-12 w-12">
+                    <X className="h-7 w-7" />
                   </Button>
                 </SheetClose>
               </SheetHeader>
@@ -125,7 +125,7 @@ export function Header() {
               <div className="p-8 border-t border-black/5 bg-secondary/20">
                 <Button asChild className="w-full h-16 bg-primary text-white font-black text-base rounded-2xl shadow-lg shadow-primary/10" onClick={() => setIsOpen(false)}>
                   <Link href="/contact" className="flex items-center justify-center gap-3">
-                    <Scale className="w-5 h-5 text-accent" />
+                    <Scale className="w-6 h-6 text-accent" />
                     Contact Us
                   </Link>
                 </Button>
