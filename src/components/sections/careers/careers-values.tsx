@@ -38,7 +38,7 @@ export function CareersValues() {
                             <div className="w-12 h-px bg-accent/30" />
                             <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs">Our Protocol</p>
                         </div>
-                        <h2 className="font-lato text-4xl sm:text-6xl font-black text-primary leading-tight tracking-tight mb-8">
+                        <h2 className="font-lato text-3xl sm:text-5xl md:text-6xl font-black text-primary leading-tight tracking-tight mb-8">
                             The Principles That <br /><span className="text-accent">Govern Us</span>
                         </h2>
                         <p className="text-xl text-foreground/70 leading-relaxed font-medium mb-12">

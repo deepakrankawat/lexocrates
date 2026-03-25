@@ -12,20 +12,20 @@ const featuredPosts = blogPosts.slice(0, 3);
 
 export function Blog() {
   return (
-    <section id="blog" className="bg-secondary/30 text-foreground py-20 sm:py-32 rounded-[4rem] my-20">
+    <section id="blog" className="bg-secondary/30 text-foreground py-14 sm:py-24 lg:py-32 rounded-[4rem] my-16 sm:my-20">
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1800px]">
         <SlideIn className="text-center mb-20">
             <div className="inline-flex items-center gap-4 px-4 py-2 rounded-full bg-white/50 border border-black/5 backdrop-blur-xl mb-6">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[10px]">Intellectual Capital</p>
             </div>
-            <h2 className="font-lato text-4xl sm:text-6xl font-black leading-tight text-primary mb-6 tracking-tight">
+            <h2 className="font-lato text-6xl sm:text-7xl md:text-8xl font-black leading-tight text-primary mb-6 tracking-tight">
               Legal <span className="text-accent">Insights</span>
             </h2>
-            <p className="text-xl text-foreground/60 font-medium max-w-2xl mx-auto">Staying ahead of the evolving global legal landscape through deep inquiry and technical precision.</p>
+            <p className="text-sm sm:text-base text-foreground/60 font-medium max-w-2xl mx-auto">Staying ahead of the evolving global legal landscape through deep inquiry and technical precision.</p>
         </SlideIn>
 
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
           {featuredPosts.map((post) => (
             <motion.div 
               key={post.id}
@@ -53,7 +53,7 @@ export function Blog() {
                           <span>{post.date}</span>
                       </div>
                   </div>
-                  <p className="text-foreground/60 text-base leading-relaxed mb-10 flex-grow">
+                  <p className="text-foreground/60 text-sm sm:text-base leading-relaxed mb-10 flex-grow">
                     {post.excerpt}
                   </p>
                    <div className="mt-auto pt-8 border-t border-black/5">

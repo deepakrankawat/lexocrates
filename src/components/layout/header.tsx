@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetClose, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetClose, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
 import { motion } from 'framer-motion';
@@ -35,16 +35,16 @@ export function Header() {
 
   return (
     <header className={cn(
-      'fixed top-0 z-50 w-full transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-black/5',
+      'fixed top-0 z-50 w-full transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-black/5 pt-[env(safe-area-inset-top)]',
       isScrolled ? 'py-1 shadow-md' : 'py-2 lg:py-4'
     )}>
-      <div className="mx-auto flex items-center justify-between px-5 sm:px-10 lg:px-20 max-w-[1920px]">
+      <div className="mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-20 max-w-[1920px]">
         
         <div className="flex-shrink-0">
           <Link href="/" className="group block transition-transform duration-300 hover:scale-105">
             <Logo variant="dark" className={cn(
               "w-auto transition-all duration-500",
-              isScrolled ? "h-14 lg:h-12" : "h-20 lg:h-20"
+              isScrolled ? "h-12 lg:h-12" : "h-16 lg:h-20"
             )} />
           </Link>
         </div>
@@ -100,6 +100,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-full bg-white border-0 p-0 flex flex-col">
               <SheetHeader className="p-6 flex flex-row items-center justify-between border-b border-black/5">
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <Logo variant="dark" className="h-10 w-auto" />
                 <SheetClose asChild>
                   <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 rounded-full h-12 w-12">
@@ -114,7 +115,7 @@ export function Header() {
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "text-2xl font-black tracking-tighter transition-colors uppercase",
+                      "text-xl sm:text-2xl font-black tracking-tighter transition-colors uppercase",
                       isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                     )}
                   >

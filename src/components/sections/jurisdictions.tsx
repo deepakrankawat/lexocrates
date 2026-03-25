@@ -60,7 +60,7 @@ export function Jurisdictions() {
                     </div>
                     <h4 className="font-roboto text-xl font-bold text-primary">{region.name}</h4>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-wrap">
                     {region.countries.map((c, i) => (
                       <Badge key={i} variant="outline" className="border-accent/30 text-accent font-black uppercase text-[10px] tracking-widest">{c}</Badge>
                     ))}

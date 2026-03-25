@@ -6,11 +6,12 @@ import { RelatedPosts } from '@/components/sections/related-posts';
 import { Metadata } from 'next';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const awaitedParams = await params;
+  const post = blogPosts.find((p) => p.slug === awaitedParams.slug);
   
   if (!post) return {};
 

@@ -18,12 +18,14 @@ export function AppImage({
   ...props
 }: AppImageProps) {
   const [isLoading, setIsLoading] = useState(true);
+  const isFill = (props as { fill?: boolean }).fill === true;
 
   return (
     <div
       className={cn(
         'relative overflow-hidden bg-muted',
         isLoading ? 'animate-pulse' : '',
+        isFill ? 'absolute inset-0 h-full w-full' : '',
         wrapperClassName
       )}
     >
@@ -36,7 +38,11 @@ export function AppImage({
         src={src}
         alt={alt}
         sizes={sizes}
-        placeholder={shimmerPlaceholder(props.width as number || 700, props.height as number || 475)}
+        placeholder="blur"
+        blurDataURL={shimmerPlaceholder(
+          (props.width as number) || 700,
+          (props.height as number) || 475
+        )}
         onLoad={() => setIsLoading(false)}
         {...props}
       />

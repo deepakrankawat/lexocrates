@@ -92,36 +92,6 @@ export const blogPosts = [
     `
   },
   {
-    id: 4,
-    title: 'Predictive Analytics in Litigation Support',
-    slug: 'predictive-analytics-litigation',
-    author: 'Hameer Singh',
-    date: 'February 02, 2025',
-    category: 'Litigation',
-    readingTime: '20 min read',
-    excerpt: 'Utilizing data-driven insights to model judicial outcomes and optimize settlement strategies for multi-million dollar claims.',
-    keyTakeaways: [
-      'Modeling judge-specific ruling patterns',
-      'Probabilistic outcome assessment for motion practice',
-      'Optimizing settlement timing based on historical data',
-      'Risk-adjusted valuation of claims'
-    ],
-    fullContent: `
-      <h3>The Quantified Courtroom</h3>
-      <p>Litigation is traditionally an exercise in intuition. Predictive analytics transforms it into a data-driven strategy. By analyzing tens of thousands of prior rulings, we can provide a <strong>probabilistic model</strong> of how a specific judge in the Southern District of New York might rule on a motion to dismiss. This isn't crystal ball gazing; it's high-fidelity data science applied to the law.</p>
-      <p>Our models analyze factors such as the judge's history with specific causes of action, the success rate of particular types of motions in their court, and even the "Time-to-Ruling" metrics that affect litigation financing. This intelligence allows lead counsel to tailor their arguments to the specific intellectual leanings and procedural preferences of the bench, turning the "Art of Advocacy" into a "Science of Strategy."</p>
-      
-      <h3>Resource Allocation Optimization</h3>
-      <p>Should a firm spend $100,000 on a motion that has a 15% chance of success? Predictive analytics allows partners to make these "Go/No-Go" decisions with unprecedented clarity. We provide the <strong>litigation intelligence</strong> that enables firms to allocate their best resources to the most winnable phases of a case. This "Risk-Adjusted" approach to litigation management ensures that client funds are used strategically rather than reactively, maximizing the ROI of every billable hour.</p>
-      
-      <h3>Settlement Strategy & The India Hub Advantage</h3>
-      <p>Our teams in Jaipur specialize in high-volume data extraction and categorization, feeding the predictive models with the high-fidelity data they require. By looking at "Settlement Clusters" in similar cases across the US and UK, we can identify the optimal "Settlement Window"—the point in the litigation lifecycle where the delta between the offer and the expected trial outcome is most favorable. We help GCs answer the $10M question: "When do we fold, and when do we fight?"</p>
-      
-      <h3>Damages Modeling: Precision over Guesswork</h3>
-      <p>We also provide <strong>Damages Modeling</strong>, using historical jury verdict data and inflationary adjustments to create a range of probable outcomes. This allows GCs to report more accurate risk profiles to their boards, turning "Legal Risk" into a quantifiable business metric. Our models account for jurisdictional variance, understanding that a "Pain and Suffering" award in Texas looks very different from one in London or Toronto.</p>
-    `
-  },
-  {
     id: 5,
     title: 'Automating Contract Redlining with AI',
     slug: 'automating-contract-redlining',

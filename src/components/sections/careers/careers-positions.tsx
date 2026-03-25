@@ -26,7 +26,7 @@ const portalFeatures = [
 
 export function CareersPositions() {
   return (
-    <section id="careers-portal" className="py-20 sm:py-32">
+    <section id="careers-portal" className="py-14 sm:py-24 lg:py-32">
         <SlideIn className="text-center mb-20">
           <div className="inline-flex items-center gap-4 px-5 py-2.5 rounded-full bg-accent/5 border border-accent/10 backdrop-blur-2xl mb-8">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
@@ -40,10 +40,10 @@ export function CareersPositions() {
           </p>
         </SlideIn>
         
-        <div className="grid lg:grid-cols-3 gap-10 items-stretch">
+        <div className="grid lg:grid-cols-3 gap-8 sm:gap-10 items-stretch">
             <div className="lg:col-span-2">
                 <SlideIn direction="left" className="h-full">
-                    <Card className="bg-primary text-white border-none rounded-[3rem] overflow-hidden shadow-2xl h-full flex flex-col justify-center p-10 sm:p-20 relative group">
+                    <Card className="bg-primary text-white border-none rounded-[3rem] overflow-hidden shadow-2xl h-full flex flex-col justify-center p-8 sm:p-16 lg:p-20 relative group">
                         <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -mr-48 -mt-48 transition-all duration-700 group-hover:scale-110" />
                         
                         <div className="relative z-10">

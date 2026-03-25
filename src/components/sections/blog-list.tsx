@@ -35,7 +35,7 @@ export function BlogList() {
                   </div>
 
                   <Link href={`/blog/${post.slug}`} className="group/title">
-                    <h4 className="font-opensans text-2xl font-bold text-primary mb-6 group-hover/title:text-accent transition-colors duration-300 leading-tight">
+                    <h4 className="font-opensans text-3xl font-bold text-primary mb-6 group-hover/title:text-accent transition-colors duration-300 leading-tight">
                       {post.title}
                     </h4>
                   </Link>
@@ -51,7 +51,7 @@ export function BlogList() {
                       </div>
                   </div>
 
-                  <p className="text-foreground/60 text-base leading-relaxed mb-10 flex-grow border-l-2 border-accent/10 pl-6 italic">
+                  <p className="text-foreground/60 text-sm sm:text-base leading-relaxed mb-10 flex-grow border-l-2 border-accent/10 pl-6 italic">
                     {post.excerpt}
                   </p>
 

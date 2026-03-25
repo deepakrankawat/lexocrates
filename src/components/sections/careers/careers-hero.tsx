@@ -10,7 +10,7 @@ export function CareersHero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-careers');
 
   return (
-    <section className="relative min-h-[50vh] fhd:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-10 pb-16 lg:pt-14">
+    <section className="relative min-h-[45vh] sm:min-h-[50vh] fhd:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-10 pb-16 lg:pt-14">
       <div className="absolute inset-0 z-0 overflow-hidden">
         {heroImage && (
           <AppImage 
@@ -45,7 +45,7 @@ export function CareersHero() {
             </div>
           </FadeIn>
           <SlideIn direction="up" delay={0.4}>
-            <h1 className="font-montserrat text-5xl sm:text-7xl fhd:text-8xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
+            <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl fhd:text-8xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
               Shape the <span className="text-accent">Future</span>
             </h1>
           </SlideIn>

@@ -41,11 +41,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
   .prose {
+    @apply break-words;
     h2, h3 {
       @apply font-black text-primary tracking-tight;
     }
     p, li {
       @apply text-foreground/70 leading-relaxed text-base lg:text-lg;
+    }
+    img, video, iframe {
+      @apply w-full h-auto rounded-2xl my-6;
     }
   }
 }

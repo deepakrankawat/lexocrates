@@ -22,7 +22,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
                       <h3 className="text-[10px] font-black text-accent uppercase tracking-[0.4em] mb-6 flex items-center gap-3">
                         <span className="w-8 h-px bg-accent/30" /> Technical Resource Overview
                       </h3>
-                      <p className="text-xl sm:text-2xl text-primary font-bold leading-relaxed mb-8">
+                      <p className="text-3xl sm:text-4xl lg:text-5xl text-primary font-bold leading-relaxed mb-8">
                         This strategic analysis explores the technical architecture and jurisdictional implications of {post.title.toLowerCase()}.
                       </p>
                       <div className="grid sm:grid-cols-2 gap-6">
@@ -43,11 +43,11 @@ export function BlogDetailContent({ post }: { post: Post }) {
                   </div>
 
                   {/* Deep Explanation Content */}
-                  <div className="prose prose-xl max-w-none 
+                  <div className="prose prose-lg max-w-none 
                     prose-headings:font-black prose-headings:text-primary prose-headings:tracking-tight
-                    prose-p:text-foreground/70 prose-p:leading-relaxed 
+                    prose-p:text-foreground/70 prose-p:leading-relaxed prose-p:my-6 prose-p:text-sm sm:prose-p:text-base
                     prose-li:text-foreground/70
-                    prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-6
+                    prose-h3:text-2xl md:prose-h3:text-3xl prose-h3:font-black prose-h3:mt-14 prose-h3:mb-6
                     prose-strong:text-primary" 
                     dangerouslySetInnerHTML={{ __html: post.fullContent }} />
                 </SlideIn>

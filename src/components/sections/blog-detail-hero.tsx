@@ -33,7 +33,7 @@ export function BlogDetailHero({ post }: { post: Post }) {
               <span className="w-2 h-2 rounded-full bg-accent" />
               <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-[10px]">{post.category}</p>
             </div>
-            <h1 className="font-montserrat text-4xl sm:text-6xl fhd:text-7xl font-black leading-tight text-white mb-10 tracking-tighter">
+            <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl fhd:text-8xl font-black leading-tight text-white mb-10 tracking-tighter">
               {post.title}
             </h1>
           </SlideIn>

@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 
 export function CareersAbout() {
   const image = PlaceHolderImages.find(img => img.id === 'service-corporate-law');
+  const overlayImage = PlaceHolderImages.find(img => img.id === 'service-detail-1');
 
   return (
     <section className="bg-background text-foreground py-20 sm:py-32 overflow-hidden">
@@ -25,7 +26,15 @@ export function CareersAbout() {
                 />
               )}
               {/* Sophisticated Architectural Overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent" />
+              {overlayImage && (
+                <AppImage
+                  src={overlayImage.imageUrl}
+                  alt={overlayImage.description}
+                  data-ai-hint={overlayImage.imageHint}
+                  fill
+                  className="object-cover"
+                />
+              )}
               <div className="absolute bottom-10 left-10 right-10 z-10">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-0.5 bg-accent" />
@@ -53,7 +62,7 @@ export function CareersAbout() {
                   className="flex items-center gap-6 group"
                 >
                   <span className="h-px w-8 bg-accent/20 group-hover:w-16 transition-all duration-700" />
-                  <h2 className="font-lato text-4xl sm:text-6xl font-black text-primary leading-tight tracking-tighter">Innovation,</h2>
+                  <h2 className="font-lato text-3xl sm:text-5xl md:text-6xl font-black text-primary leading-tight tracking-tighter">Innovation,</h2>
                 </motion.div>
                 
                 <motion.div 
@@ -64,7 +73,7 @@ export function CareersAbout() {
                   className="flex items-center gap-6 group"
                 >
                   <span className="h-px w-16 bg-accent/20 group-hover:w-24 transition-all duration-700" />
-                  <h2 className="font-lato text-4xl sm:text-6xl font-black text-primary leading-tight tracking-tighter">Collaboration,</h2>
+                  <h2 className="font-lato text-3xl sm:text-5xl md:text-6xl font-black text-primary leading-tight tracking-tighter">Collaboration,</h2>
                 </motion.div>
 
                 <motion.div 
@@ -75,12 +84,12 @@ export function CareersAbout() {
                   className="flex items-center gap-6 group"
                 >
                   <span className="h-px w-24 bg-accent group-hover:w-32 transition-all duration-700" />
-                  <h2 className="font-lato text-4xl sm:text-6xl font-black text-accent leading-tight tracking-tighter">and Excellence</h2>
+                  <h2 className="font-lato text-3xl sm:text-5xl md:text-6xl font-black text-accent leading-tight tracking-tighter">and Excellence</h2>
                 </motion.div>
               </div>
 
               <SlideIn direction="up" delay={0.9}>
-                <div className="text-lg text-foreground/60 space-y-8 font-medium leading-relaxed border-l-4 border-accent/10 pl-8 lg:pl-16">
+                <div className="text-lg text-foreground/60 space-y-8 font-medium leading-relaxed border-l-0 lg:border-l-4 border-accent/10 pl-0 lg:pl-16">
                   <p>
                     At Lexocrates, we foster a culture of continuous learning. We are a team of passionate professionals dedicated to pushing the boundaries of legal service delivery through precision and deep inquiry.
                   </p>

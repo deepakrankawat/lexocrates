@@ -30,12 +30,12 @@ export function LawyerHero() {
             </p>
           </FadeIn>
           <SlideIn direction="up" delay={0.4}>
-            <h1 className="font-montserrat text-5xl sm:text-7xl fhd:text-8xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
+            <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl fhd:text-8xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
               Expert <span className="text-accent">Visionaries</span>
             </h1>
           </SlideIn>
           <FadeIn delay={0.6}>
-            <p className="text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
+            <p className="text-base sm:text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
               Meet the collective of experienced professionals driving innovation and operational excellence across borders. Our leadership team bridges the gap between traditional legal mastery and modern technical strategy to ensure your firm's competitive edge in a global market.
             </p>
           </FadeIn>
