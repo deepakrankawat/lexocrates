@@ -12,26 +12,7 @@ export function CareersHero() {
   return (
     <section className="relative min-h-[45vh] sm:min-h-[50vh] fhd:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-10 pb-16 lg:pt-14">
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {heroImage && (
-          <AppImage 
-            src={heroImage.imageUrl} 
-            alt={heroImage.description} 
-            fill 
-            priority
-            className="object-cover opacity-20 grayscale brightness-[0.3]"
-            data-ai-hint={heroImage.imageHint}
-          />
-        )}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(184,134,11,0.15)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 opacity-[0.03]" 
-             style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] opacity-[0.05] pointer-events-none">
-          <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
-            <path d="M0 0L500 500L1000 0M0 1000L500 500L1000 1000" stroke="currentColor" strokeWidth="0.5" />
-            <path d="M200 200L500 500L800 200M200 800L500 500L800 800" stroke="currentColor" strokeWidth="0.5" />
-            <line x1="0" y1="500" x2="1000" y2="500" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
-          </svg>
-        </div>
       </div>
 
       <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px] text-center">

@@ -53,7 +53,7 @@ export function Jurisdictions() {
           <SlideIn direction="right" className="grid gap-6">
             {regions.map((region, index) => (
               <div key={index} className="relative p-8 rounded-3xl bg-secondary/50 border border-black/5 group hover:bg-white hover:shadow-2xl transition-all duration-500">
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex flex-col sm:flex-row items-start justify-between mb-4 w-full gap-4 sm:gap-0">
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/5 rounded-xl group-hover:bg-primary group-hover:text-white transition-colors">
                       <region.icon className="w-6 h-6" />

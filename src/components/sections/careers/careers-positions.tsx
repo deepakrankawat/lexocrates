@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { SlideIn } from '@/components/animations/slide-in';
 import Link from 'next/link';
 import { Briefcase, Users, Zap, ArrowRight } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { ActionCard } from '@/components/ui/action-card';
+import { Card } from '@/components/ui/card';
 
 const portalFeatures = [
   {
@@ -42,30 +43,15 @@ export function CareersPositions() {
         
         <div className="grid lg:grid-cols-3 gap-8 sm:gap-10 items-stretch">
             <div className="lg:col-span-2">
-                <SlideIn direction="left" className="h-full">
-                    <Card className="bg-primary text-white border-none rounded-[3rem] overflow-hidden shadow-2xl h-full flex flex-col justify-center p-8 sm:p-16 lg:p-20 relative group">
-                        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -mr-48 -mt-48 transition-all duration-700 group-hover:scale-110" />
-                        
-                        <div className="relative z-10">
-                            <h3 className="font-montserrat text-3xl sm:text-4xl font-black mb-8 tracking-tighter">
-                                Join Our Global <br /><span className="text-accent">Growth Network</span>
-                            </h3>
-                            <p className="text-lg sm:text-xl text-white/60 font-medium leading-relaxed mb-12 max-w-xl">
-                                We invite common-law trained lawyers, paralegals, and legal tech innovators to share their credentials for upcoming strategic expansions.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-6">
-                                <Button asChild size="xl" className="bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xs uppercase tracking-[0.3em] px-12 rounded-full shadow-2xl transition-all duration-500 hover:scale-105 active:scale-95">
-                                    <Link href="/contact" className="flex items-center gap-3">
-                                        Submit Credentials <ArrowRight className="w-5 h-5" />
-                                    </Link>
-                                </Button>
-                            </div>
-                        </div>
-                    </Card>
-                </SlideIn>
+                <ActionCard 
+                    title={<>Join Our Global <br /><span className="text-accent">Growth Network</span></>}
+                    description="We invite common-law trained lawyers, paralegals, and legal tech innovators to share their credentials for upcoming strategic expansions."
+                    buttonText="Submit Credentials"
+                    buttonHref="/contact"
+                />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-6">
                 {portalFeatures.map((feature, index) => (
                     <SlideIn key={index} direction="right" delay={0.2 * index} className="h-full">
                         <Card className="bg-secondary/30 border-black/5 rounded-[2.5rem] p-8 hover:bg-white hover:shadow-xl transition-all duration-500 group h-full flex flex-col justify-center">
