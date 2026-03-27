@@ -7,8 +7,8 @@ import { Jurisdictions } from '@/components/sections/jurisdictions';
 import { Experience } from '@/components/sections/experience';
 
 export const metadata: Metadata = {
-  title: 'About Us | Our Global Legal Vision & Leadership',
-  description: 'Learn about Lexocrates, a premier LPO firm bridging the gap between elite Indian legal expertise and law firms in the US, UK, and Canada.',
+  title: 'About Us | Global AI Legal Vision & Leadership',
+  description: 'Learn about Lexocrates, a premier AI-driven LPO firm bridging the gap between elite Indian legal expertise, predictive analytics, and law firms in the US, UK, and Canada.',
   alternates: {
     canonical: '/about',
   },

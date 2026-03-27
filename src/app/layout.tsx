@@ -38,19 +38,20 @@ const baseUrl = 'https://lexocrates.vercel.app';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Lexocrates | Expert Legal Process Outsourcing (LPO)',
-    template: '%s | Lexocrates',
+    default: 'Lexocrates | AI-Powered Legal Process Outsourcing (LPO)',
+    template: '%s | Lexocrates AI LPO',
   },
   description:
-    'Lexocrates provides elite, cost-effective legal process outsourcing (LPO) services including legal research, contract management, and document review for global law firms in the US, UK, and Canada.',
+    'Lexocrates is a premier AI-powered Legal Process Outsourcing (LPO) firm. We combine elite Indian legal expertise with advanced Generative AI to provide legal research, contract drafting, and eDiscovery for law firms in the US, UK, and Canada.',
   keywords: [
-    'Legal Process Outsourcing',
-    'LPO India',
-    'Legal Research Services',
-    'Contract Management Outsourcing',
-    'Document Review India',
-    'eDiscovery Services',
-    'Law Firm Support Services',
+    'AI Legal Process Outsourcing',
+    'AI-powered LPO India',
+    'Legal Tech Outsourcing',
+    'AI Legal Research Services',
+    'Automated Contract Management',
+    'AI Document Review eDiscovery',
+    'Law Firm Automation Support',
+    'Offshore Legal Services',
   ],
   alternates: {
     canonical: '/',

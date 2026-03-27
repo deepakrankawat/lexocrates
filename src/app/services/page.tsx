@@ -8,8 +8,8 @@ import { CostCalculator } from '@/components/sections/cost-calculator';
 import { Cta } from '@/components/sections/cta';
 
 export const metadata: Metadata = {
-  title: 'Legal Outsourcing Services | LPO Solutions for Global Law Firms',
-  description: 'Explore our elite LPO services including legal research, litigation support, and contract management tailored for US, UK, and Canadian jurisdictions.',
+  title: 'AI LPO Services | eDiscovery & Contract Automation',
+  description: 'Explore Lexocrates elite AI-powered LPO services, including predictive legal research, automated contract lifecycle management, and tech-assisted litigation support for global law firms.',
   alternates: {
     canonical: '/services',
   },
