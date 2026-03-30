@@ -38,7 +38,7 @@ export function Header() {
       'fixed top-0 z-50 w-full transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-black/5 pt-[env(safe-area-inset-top)]',
       isScrolled ? 'py-1 shadow-md' : 'py-2 lg:py-4'
     )}>
-      <div className="mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-20 max-w-[1920px]">
+      <div className="mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-28 xl:px-36 max-w-[1920px]">
         
         <div className="flex-shrink-0">
           <Link href="/" className="group block transition-transform duration-300 hover:scale-105">

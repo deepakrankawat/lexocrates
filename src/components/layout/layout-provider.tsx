@@ -10,7 +10,7 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow pt-[96px] sm:pt-[100px] lg:pt-[112px] bg-background">
+      <main className={`flex-grow bg-background ${pathname === '/' ? '' : 'pt-[96px] sm:pt-[100px] lg:pt-[112px]'}`}>
         {children}
       </main>
       <Footer />

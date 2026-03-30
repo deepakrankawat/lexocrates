@@ -10,7 +10,7 @@ import { Scale, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary py-12 lg:py-24">
+    <section className="relative min-h-screen lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary pt-[96px] sm:pt-[100px] lg:pt-[160px] pb-12 lg:pb-24">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Desktop Gradients */}
@@ -37,7 +37,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto w-full px-5 sm:px-10 lg:px-20 max-w-[1920px]">
+      <div className="relative z-10 mx-auto w-full px-5 sm:px-10 lg:px-28 xl:px-36 max-w-[1920px]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
