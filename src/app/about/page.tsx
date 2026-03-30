@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { AboutHero } from '@/components/sections/about-hero';
+import { OurStory } from '@/components/sections/our-story';
 import { VisionMission } from '@/components/sections/vision-mission';
 import { Welcome } from '@/components/sections/welcome';
 import { CoreValues } from '@/components/sections/core-values';
@@ -19,6 +20,7 @@ export default function AboutPage() {
     <main className="bg-background">
       <AboutHero />
       <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px]">
+        <OurStory />
         <Experience />
         <CoreValues />
         <Welcome />
