@@ -9,7 +9,7 @@ export function AboutHero() {
     <section className="relative min-h-[40vh] fhd:min-h-[50vh] flex items-center justify-center overflow-hidden bg-primary py-8 lg:py-12">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 opacity-[0.03]" 
+      <div className="absolute inset-0 opacity-[0.03]" 
              style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] opacity-[0.05] pointer-events-none">
           <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
@@ -21,7 +21,7 @@ export function AboutHero() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px] text-center">
+      <div className="relative z-10 container-balanced fhd:px-32 text-center">
         <div className="max-w-4xl mx-auto">
           <FadeIn delay={0.2}>
             <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm mb-6 lg:mb-8">

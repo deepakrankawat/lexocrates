@@ -13,7 +13,7 @@ const featuredPosts = blogPosts.slice(0, 3);
 export function Blog() {
   return (
     <section id="blog" className="bg-secondary/30 text-foreground py-14 sm:py-24 lg:py-32 rounded-[4rem] my-16 sm:my-20">
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1800px]">
+      <div className="container-balanced">
         <SlideIn className="text-center mb-20">
             <div className="inline-flex items-center gap-4 px-4 py-2 rounded-full bg-white/50 border border-black/5 backdrop-blur-xl mb-6">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />

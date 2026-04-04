@@ -7,7 +7,7 @@ import { ServiceFeatureItem } from './service-feature-item';
 export function Services() {
   return (
     <section id="services" className="bg-background text-foreground py-16 sm:py-24">
-      <div className="mx-auto w-full px-5 sm:px-10 lg:px-20 max-w-[1800px]">
+      <div className="container-balanced">
         <SlideIn className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
           <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-[10px] sm:text-sm">
             Solutions Spotlight

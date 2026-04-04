@@ -24,7 +24,7 @@ export default function ContactPage() {
                style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
         </div>
 
-        <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1800px] text-center">
+        <div className="relative z-10 container-balanced text-center">
           <div className="max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <div className="inline-flex items-center gap-4 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl mb-8 shadow-xl">
@@ -46,7 +46,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px]">
+      <div className="container-balanced">
           <section id="contact-form" className="py-16 md:py-24 lg:py-32">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
               <div className="space-y-12 sm:space-y-16">

@@ -22,7 +22,7 @@ export function LawyerHero() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px] text-center">
+      <div className="relative z-10 container-balanced fhd:px-32 text-center">
         <div className="max-w-4xl mx-auto">
           <FadeIn delay={0.2}>
             <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm mb-6 lg:mb-8">

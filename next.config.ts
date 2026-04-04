@@ -3,11 +3,12 @@
 const nextConfig = {
   output: 'standalone',
   transpilePackages: ['three', 'react-globe.gl', 'globe.gl', 'three-globe'],
+  // Enforce type and lint correctness in CI/production builds
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   images: {
     remotePatterns: [

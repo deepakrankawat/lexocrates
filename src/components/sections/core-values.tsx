@@ -30,7 +30,7 @@ const values = [
 export function CoreValues() {
   return (
     <section className="py-16 sm:py-24 bg-secondary/30 rounded-[3rem] my-16 overflow-hidden">
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24">
+      <div className="container-balanced">
         <SlideIn className="text-center mb-16">
           <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-sm">Our Foundation</p>
           <h2 className="font-lato text-4xl sm:text-6xl font-black text-primary leading-tight tracking-tight mb-8">

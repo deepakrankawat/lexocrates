@@ -32,7 +32,7 @@ const testimonials = [
 export function EmployeeTestimonials() {
   return (
     <section className="bg-secondary/30 text-foreground py-16 sm:py-24 rounded-[3rem] my-12">
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+      <div className="container-balanced">
         <SlideIn className="text-center mb-12">
           <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-xs">Voice of Leadership</p>
           <h2 className="mt-4 font-lato text-4xl md:text-5xl font-black text-primary tracking-tight">

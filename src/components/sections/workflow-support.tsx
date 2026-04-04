@@ -31,7 +31,7 @@ const workflowSteps = [
 export function WorkflowSupport() {
   return (
     <section className="py-24 sm:py-32 bg-secondary/30 rounded-[4rem] my-24 overflow-hidden relative">
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24">
+      <div className="container-balanced">
         <div className="grid lg:grid-cols-2 gap-20 items-center mb-24">
           <SlideIn direction="left">
             <div className="inline-flex items-center gap-4 px-4 py-2 rounded-full bg-white/50 border border-black/5 backdrop-blur-xl mb-6">

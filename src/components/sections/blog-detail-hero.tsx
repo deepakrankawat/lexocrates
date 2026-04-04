@@ -15,7 +15,7 @@ export function BlogDetailHero({ post }: { post: Post }) {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(184,134,11,0.15)_0%,transparent_50%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px]">
+      <div className="relative z-10 container-balanced fhd:px-32">
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn delay={0.2}>
             <Link 

@@ -14,7 +14,7 @@ export function About() {
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] relative z-10">
+      <div className="container-balanced relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-4 px-5 py-2.5 rounded-full bg-accent/5 border border-accent/10 backdrop-blur-2xl mb-10 shadow-sm">
             <span className="flex h-2 w-2 rounded-full bg-accent relative">

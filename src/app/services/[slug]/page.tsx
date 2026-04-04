@@ -1,92 +1,50 @@
-import { ServiceDetailHero } from '@/components/sections/service-detail-hero';
-import { LegalProcess } from '@/components/sections/legal-process';
-import { Team } from '@/components/sections/team';
-import { servicesList } from '@/lib/services-data';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Experience } from '@/components/sections/experience';
-import { ServiceFeatureItem } from '@/components/sections/service-feature-item';
-import { WorkflowSupport } from '@/components/sections/workflow-support';
-import { Metadata } from 'next';
+import { servicesList } from '@/lib/services-data';
+import { ServiceDetailHero } from '@/components/sections/service-detail-hero';
+import { ServiceDetailContent } from '@/components/sections/service-detail-content';
+import { buildMeta } from '@/lib/seo';
 
-type Props = {
-  params: { slug: string };
-};
+type Params = { slug: string };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const service = servicesList.find((s) => s.slug === params.slug);
-  
-  if (!service) return {};
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.lexocrates.com';
 
-  return {
-    title: service.name,
-    description: service.description,
-    alternates: {
-      canonical: `/services/${service.slug}`,
-    },
-    openGraph: {
-      title: service.name,
-      description: service.description,
-    },
-  };
+export function generateStaticParams() {
+  return servicesList.map((service) => ({ slug: service.slug }));
 }
 
-export default async function ServiceDetailPage({ params }: Props) {
-  const awaitedParams = await params;
-  const serviceIndex = servicesList.findIndex(s => s.slug === awaitedParams.slug);
-  const service = servicesList[serviceIndex];
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  const { slug } = await params;
+  const service = servicesList.find((s) => s.slug === slug);
+  if (!service) return {};
+
+  return buildMeta({
+    title: `${service.name} | Lexocrates Services`,
+    description: service.description,
+    canonical: `${siteUrl}/services/${service.slug}`,
+    keywords: [
+      service.name,
+      `${service.name} USA`,
+      `${service.name} UK`,
+      `${service.name} Canada`,
+      'legal process outsourcing',
+      'AI automation for law firms',
+    ],
+  });
+}
+
+export default async function ServiceDetailPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const service = servicesList.find((s) => s.slug === slug);
 
   if (!service) {
     notFound();
   }
 
-  // JSON-LD Service Schema
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: service.name,
-    description: service.longDescription,
-    provider: {
-      '@type': 'Organization',
-      name: 'Lexocrates',
-    },
-    areaServed: ['US', 'GB', 'CA'],
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Legal Support Services',
-      itemListElement: service.keyAreas.map((area) => ({
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: area,
-        },
-      })),
-    },
-  };
-
   return (
     <main className="bg-background">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ServiceDetailHero service={service} />
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px] py-24">
-        <ServiceFeatureItem 
-          service={service} 
-          index={serviceIndex} 
-          showLink={false}
-        />
-        <WorkflowSupport />
-        <LegalProcess />
-        <Team />
-        <Experience />
-      </div>
+      <ServiceDetailHero service={service!} />
+      <ServiceDetailContent service={service!} />
     </main>
   );
-}
-
-export function generateStaticParams() {
-  return servicesList.map((service) => ({
-    slug: service.slug,
-  }));
 }

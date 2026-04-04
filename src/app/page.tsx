@@ -6,8 +6,17 @@ import { Blog } from '@/components/sections/blog';
 import { Hero } from '@/components/sections/hero';
 
 export const metadata: Metadata = {
-  title: 'Lexocrates | Top AI-Powered Legal Process Outsourcing (LPO)',
-  description: 'Scale your law firm with Lexocrates. We integrate elite human legal talent with cutting-edge AI for research, contract lifecycle, and eDiscovery outsourcing.',
+  title: 'Legal Process Outsourcing & AI Automation for USA, UK, Canada | LexoCrates',
+  description:
+    'AI-assisted legal process outsourcing for US, UK, and Canadian law firms: contract review, eDiscovery automation, legal research, and paralegal support with compliance-first controls.',
+  keywords: [
+    'legal process outsourcing USA',
+    'legal process outsourcing UK',
+    'legal process outsourcing Canada',
+    'AI contract review',
+    'ediscovery automation',
+    'outsourced paralegal services',
+  ],
   alternates: {
     canonical: '/',
   },

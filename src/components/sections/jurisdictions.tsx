@@ -28,7 +28,7 @@ const regions = [
 export function Jurisdictions() {
   return (
     <section className="py-16 sm:py-24 bg-background overflow-hidden">
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24">
+      <div className="container-balanced">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <SlideIn direction="left">
             <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-sm">Global Compliance</p>

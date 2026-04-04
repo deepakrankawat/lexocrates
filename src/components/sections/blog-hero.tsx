@@ -18,7 +18,7 @@ export function BlogHero() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px] text-center">
+      <div className="relative z-10 container-balanced fhd:px-32 text-center">
         <div className="max-w-4xl mx-auto">
           <FadeIn delay={0.2}>
             <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-8 shadow-xl">

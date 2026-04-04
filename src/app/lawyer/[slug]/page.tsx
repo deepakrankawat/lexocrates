@@ -87,7 +87,7 @@ export default async function LawyerDetailPage({ params }: { params: { slug: str
     <main className="bg-background">
       <section className="relative text-white pt-36 pb-16 sm:pt-48 sm:pb-24">
         <div className="absolute inset-0 bg-black/50" />
-        <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] relative">
+        <div className="container-balanced relative">
           <div className="text-center">
               <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-black tracking-tight">{lawyer.name}</h1>
               <p className="mt-4 text-xl font-medium text-white/80 uppercase tracking-widest">{lawyer.title}</p>
@@ -95,7 +95,7 @@ export default async function LawyerDetailPage({ params }: { params: { slug: str
         </div>
       </section>
 
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px]">
+      <div className="container-balanced">
         <section className="py-12 sm:py-24">
               <div className="grid md:grid-cols-3 gap-16">
                   <div className="md:col-span-1">

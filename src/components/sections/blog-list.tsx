@@ -13,7 +13,7 @@ import { StaggerFadeIn } from '../animations/stagger-fade-in';
 export function BlogList() {
   return (
     <section id="blog-list" className="bg-background text-foreground py-20 sm:py-32">
-      <div className="mx-auto w-full px-6 max-w-[1400px]">
+      <div className="container-balanced">
         <StaggerFadeIn className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
             <motion.div 

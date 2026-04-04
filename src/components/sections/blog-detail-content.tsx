@@ -11,6 +11,7 @@ type Post = typeof blogPosts[0];
 export function BlogDetailContent({ post }: { post: Post }) {
   return (
     <section className="bg-background text-foreground py-20 sm:py-32">
+        <div className="container-balanced">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             {/* Main content */}
             <div className="lg:col-span-8">
@@ -112,6 +113,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
                     </div>
                 </div>
             </aside>
+        </div>
         </div>
     </section>
   );

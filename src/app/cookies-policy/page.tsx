@@ -21,7 +21,7 @@ export default function CookiesPolicyPage() {
             />
         )}
         <div className="absolute inset-0 bg-black/50" />
-        <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] relative text-center">
+        <div className="container-balanced relative text-center">
             <Cookie className="h-16 w-16 mx-auto text-accent mb-4" />
             <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold">Cookies Policy</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
@@ -30,7 +30,7 @@ export default function CookiesPolicyPage() {
         </div>
       </section>
 
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px]">
+      <div className="container-balanced">
         <section className="py-12 sm:py-24">
           <div className="prose prose-lg max-w-4xl mx-auto text-foreground/80">
             <h2>1. What Are Cookies?</h2>

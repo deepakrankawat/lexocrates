@@ -41,7 +41,7 @@ export function StrategicMethodology() {
              style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
       </div>
       
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 relative z-10">
+      <div className="container-balanced relative z-10">
         <SlideIn className="text-center mb-20">
           <div className="inline-flex items-center gap-4 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-6">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />

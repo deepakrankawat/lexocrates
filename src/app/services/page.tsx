@@ -8,8 +8,18 @@ import { CostCalculator } from '@/components/sections/cost-calculator';
 import { Cta } from '@/components/sections/cta';
 
 export const metadata: Metadata = {
-  title: 'AI LPO Services | eDiscovery & Contract Automation',
-  description: 'Explore Lexocrates elite AI-powered LPO services, including predictive legal research, automated contract lifecycle management, and tech-assisted litigation support for global law firms.',
+  title: 'AI LPO Services | Contract Review & eDiscovery Automation | LexoCrates',
+  description:
+    'Explore AI-powered LPO services for US, UK, and Canada: contract review automation, eDiscovery, legal research, and outsourced paralegal support with SOC 2, HIPAA, GDPR, and PIPEDA alignment.',
+  keywords: [
+    'AI LPO services',
+    'contract review automation',
+    'ediscovery automation',
+    'outsourced paralegal services',
+    'HIPAA compliant LPO',
+    'GDPR legal outsourcing',
+    'PIPEDA legal outsourcing',
+  ],
   alternates: {
     canonical: '/services',
   },
@@ -19,7 +29,7 @@ export default function ServicesPage() {
   return (
     <main className="bg-background">
       <ServicesHero />
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1400px] fhd:max-w-[1600px] qhd:max-w-[1800px]">
+      <div className="container-balanced">
         <Services />
         <WorkflowSupport />
         <CostCalculator />

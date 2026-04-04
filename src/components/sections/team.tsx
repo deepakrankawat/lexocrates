@@ -32,7 +32,7 @@ const teamMembers = [
 export function Team() {
   return (
     <section id="team" className="bg-background text-foreground py-14 sm:py-24">
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24 max-w-[1800px]">
+      <div className="container-balanced">
         <SlideIn className="text-center mb-16" direction="up">
             <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-sm">Our Leadership</p>
             <h2 className="font-lato text-4xl sm:text-6xl font-black leading-tight text-primary mb-6 tracking-tight">

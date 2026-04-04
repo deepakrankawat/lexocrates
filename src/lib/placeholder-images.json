@@ -2,65 +2,65 @@
   "placeholderImages": [
     {
       "id": "hero-home",
-      "description": "A law library with books on shelves",
+      "description": "AI-powered legal process outsourcing law library for global law firms",
       "imageUrl": "/images/hero-home3.jpg",
-      "imageHint": "law library",
+      "imageHint": "legal process outsourcing library",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-legal",
-      "description": "Legal scales and gavel",
+      "description": "Legal scales and gavel symbolizing compliant AI contract review",
       "imageUrl": "/images/legal.png",
-      "imageHint": "legal gavel",
+      "imageHint": "legal contract review gavel",
       "width": 600,
       "height": 800
     },
     {
       "id": "hero-about",
-      "description": "A gavel and law book on a wooden desk",
+      "description": "Gavel and law book representing secure legal outsourcing services",
       "imageUrl": "/images/hero-about.jpg",
-      "imageHint": "gavel law book",
+      "imageHint": "legal outsourcing gavel book",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-services",
-      "description": "A modern office building with glass windows",
+      "description": "Modern legal operations office for AI LPO services",
       "imageUrl": "/images/hero-services.jpg",
-      "imageHint": "office building",
+      "imageHint": "AI LPO office",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-team",
-      "description": "A group of diverse professionals in a meeting",
+      "description": "Diverse legal operations team delivering outsourced paralegal support",
       "imageUrl": "/images/hero-team.jpg",
-      "imageHint": "team meeting",
+      "imageHint": "outsourced paralegal team",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-careers",
-      "description": "A person working on a laptop in a modern office",
+      "description": "Professional working on a laptop in an AI-powered LPO office",
       "imageUrl": "https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JraW5nJTIwb2ZmaWNlfGVufDB8fHx8MTc2MTI3NDgxOXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "working office",
+      "imageHint": "AI LPO career office",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-blog",
-      "description": "A person writing in a notebook on a desk with a laptop",
+      "description": "Writing legal tech and LPO insights with AI automation",
       "imageUrl": "/images/hero-blog.jpg",
-      "imageHint": "writing notebook",
+      "imageHint": "legal tech blog writing",
       "width": 1920,
       "height": 1080
     },
     {
       "id": "hero-contact",
-      "description": "Close-up of an old-fashioned rotary telephone",
+      "description": "Contact LexoCrates LPO via secure communication",
       "imageUrl": "/images/contact_us.jpg",
-      "imageHint": "vintage telephone",
+      "imageHint": "LPO contact phone",
       "width": 1920,
       "height": 1080
     },
@@ -188,15 +188,15 @@
       "id": "service-detail-1",
       "description": "A professional legal setting",
       "imageUrl": "/images/about-1.png",
-      "imageHint": "legal office",
+      "imageHint": "legal outsourcing office",
       "width": 600,
       "height": 800
     },
     {
       "id": "service-detail-2",
-      "description": "Law books on a shelf",
+      "description": "Law books on a shelf for contract review and research outsourcing",
       "imageUrl": "https://images.unsplash.com/photo-1619771699034-fec6b1aabde3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsYXclMjBib29rc3xlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "law books",
+      "imageHint": "legal research outsourcing books",
       "width": 600,
       "height": 800
     },
@@ -210,49 +210,49 @@
     },
     {
       "id": "service-corporate-law",
-      "description": "Modern office building",
+      "description": "Modern corporate office for outsourced legal process automation",
       "imageUrl": "https://images.unsplash.com/photo-1686100510540-4c29a46de6e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3Jwb3JhdGUlMjBvZmZpY2V8ZW58MHx8fHwxNzYxMjIyMTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "corporate office",
+      "imageHint": "corporate legal automation office",
       "width": 600,
       "height": 800
     },
     {
       "id": "service-family-law",
-      "description": "A happy family",
+      "description": "Happy family supported by compliant legal document outsourcing",
       "imageUrl": "https://images.unsplash.com/photo-1588979355313-6711a095479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseXxlbnwwfHx8fDE3NjEyNTgzNTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "happy family",
+      "imageHint": "family law outsourcing support",
       "width": 600,
       "height": 800
     },
     {
       "id": "service-real-estate-law",
-      "description": "A modern house",
+      "description": "Modern house reflecting real estate contract outsourcing",
       "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NjEyNzg5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "modern house",
+      "imageHint": "real estate outsourcing house",
       "width": 600,
       "height": 800
     },
     {
       "id": "service-ip-law",
-      "description": "A lightbulb representing ideas",
+      "description": "Lightbulb representing IP law research and AI idea protection",
       "imageUrl": "https://images.unsplash.com/photo-1641733326251-e6acef18d3f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpZGVhJTIwbGlnaHRidWxifGVufDB8fHx8MTc2MTI1NjM0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "idea lightbulb",
+      "imageHint": "IP law research lightbulb",
       "width": 600,
       "height": 800
     },
     {
       "id": "service-criminal-defense",
-      "description": "A courtroom",
+      "description": "Courtroom illustrating litigation support outsourcing",
       "imageUrl": "https://images.unsplash.com/photo-1562668457-bf6637adfd01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3VydHJvb20lMjBnYXZlbHxlbnwwfHx8fDE3NjEyOTU5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "courtroom gavel",
+      "imageHint": "litigation support courtroom",
       "width": 600,
       "height": 800
     },
     {
       "id": "service-immigration-law",
-      "description": "A passport and a flag",
+      "description": "Passport and flag representing cross-border immigration legal support",
       "imageUrl": "https://images.unsplash.com/photo-1612364461060-38075479ec26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwYXNzcG9ydCUyMGZsYWd8ZW58MHx8fHwxNzYxMjk1OTU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "passport flag",
+      "imageHint": "immigration legal support passport",
       "width": 600,
       "height": 800
     }

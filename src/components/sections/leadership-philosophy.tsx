@@ -26,7 +26,7 @@ const tenets = [
 export function LeadershipPhilosophy() {
   return (
     <section className="py-12 sm:py-16 bg-primary text-white rounded-[3rem] my-8 overflow-hidden">
-      <div className="mx-auto w-full px-6 sm:px-12 lg:px-24">
+      <div className="container-balanced">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <SlideIn direction="right">
             <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-xs">Our Mindset</p>

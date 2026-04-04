@@ -15,7 +15,7 @@ export function CareersHero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(184,134,11,0.15)_0%,transparent_50%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24 fhd:px-32 max-w-[1800px] text-center">
+      <div className="relative z-10 container-balanced fhd:px-32 text-center">
         <div className="max-w-4xl mx-auto">
           <FadeIn delay={0.2}>
             <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-8">
