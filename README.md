@@ -1,98 +1,70 @@
+# Lexocrates
 
-# Lexocrates - Legal Process Outsourcing Website
+Live site: https://www.lexocrates.com/
 
-## Project Overview
+Lexocrates is a modern corporate website for an AI-assisted Legal Process Outsourcing (LPO) firm. The site presents legal services, leadership profiles, long-form blog content, careers, contact workflows, SEO metadata, sitemap/robots support, and brand assets for a polished public web presence.
 
-This project is a modern, fully-responsive corporate website for **Lexocrates**, a Legal Process Outsourcing (LPO) firm. It showcases the company's services, leadership team, blog, career opportunities, and contact information. The site is built with a focus on professional design, performance, and a seamless user experience, leveraging modern web technologies.
+The application is built with Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui-style primitives, Framer Motion, Lottie, Three.js/react-globe.gl visuals, and a Nodemailer-powered contact API.
+
+## Features
+
+- Responsive public website for Lexocrates legal outsourcing services.
+- App Router pages for home, about, services, service detail pages, blog, blog detail pages, team, team detail pages, lawyers, careers, contact, and legal policy pages.
+- Static service, team, and blog content managed from `src/lib`.
+- Contact form API at `src/app/api/contact/route.ts` using Gmail SMTP through Nodemailer.
+- SEO metadata, Open Graph image support, JSON-LD organization schema, dynamic sitemap, and robots configuration.
+- Google Analytics 4 support through `NEXT_PUBLIC_GA_ID`.
+- Animation and media support through Framer Motion, Lottie, Three.js, and curated assets under `public`.
+- Dockerfile and Firebase App Hosting configuration are included for deployment workflows.
 
 ## Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/) 14.x (App Router)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) with [ShadCN/UI](https://ui.shadcn.com/) for component primitives.
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/) for UI animations.
-- **Form Handling**: [React Hook Form](https://react-hook-form.com/) with [Zod](https://zod.dev/) for validation.
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **AI Features**: [Genkit](https://firebase.google.com/docs/genkit) for generative AI capabilities.
-- **Contact Form Backend**: [Nodemailer](https://nodemailer.com/) via Next.js API Routes.
-- **Analytics**: Google Analytics 4 (GA4).
+- Next.js 16 with App Router
+- React 18
+- TypeScript
+- Tailwind CSS
+- shadcn/ui-style component structure with Radix UI primitives
+- Framer Motion
+- Lottie React
+- Three.js, React Three Fiber, Drei, and react-globe.gl
+- React Hook Form and Zod
+- Nodemailer
+- next-sitemap
 
-## System Requirements
+## Requirements
 
-- **Node.js**: `v20.x` or higher
-- **Package Manager**: `npm`
-- **Operating System**: macOS, Windows, or Linux
+- Node.js 20 or newer
+- npm
 
-## Folder Structure
+## Quick Start
 
-The project follows a standard Next.js App Router structure with some key conventions:
-
-```
-.
-├── src/
-│   ├── app/                # Main application routes (pages)
-│   ├── components/         # Reusable React components
-│   │   ├── animations/     # Animation components (Framer Motion, Lottie)
-│   │   ├── forms/          # Form components (e.g., contact form)
-│   │   ├── layout/         # Layout components (Header, Footer)
-│   │   ├── sections/       # Large, reusable page sections (Hero, About, etc.)
-│   │   └── ui/             # Core UI components from ShadCN/UI
-│   ├── lib/                # Utility functions, data, and configs
-│   ├── ai/                 # Genkit configuration and AI flows
-│   └── hooks/              # Custom React hooks
-├── public/                 # Static assets (images, fonts, Lottie files)
-├── .env.local.example      # Example environment variables file
-├── next.config.ts          # Next.js configuration
-├── tailwind.config.ts      # Tailwind CSS configuration
-└── package.json            # Project dependencies and scripts
-```
-
-## Installation Guide
-
-Follow these steps to get the development environment running.
-
-### 1. Clone the Repository
-
-```bash
-git clone <your-repository-url>
-cd <project-folder>
-```
-
-### 2. Install Dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### 3. Set Up Environment Variables
+Create a `.env.local` file manually with the variables listed in the Environment Variables section below.
 
-Create a `.env.local` file in the root of the project by copying the example file:
-
-```bash
-cp .env.local.example .env.local
-```
-
-Then, fill in the required values in `.env.local`. See the [Environment Variables](#environment-variables) section for more details.
-
-### 4. Run the Development Server
-
-This command starts the Next.js development server on `http://localhost:9002`.
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-### 5. Build for Production
+The development server runs at:
 
-This command creates an optimized production build of the application.
+```text
+http://localhost:9002
+```
+
+Build for production:
 
 ```bash
 npm run build
 ```
 
-### 6. Start the Production Server
-
-This command starts the production server.
+Start the production server:
 
 ```bash
 npm run start
@@ -100,53 +72,153 @@ npm run start
 
 ## Environment Variables
 
-The project requires the following environment variables to be set in a `.env.local` file for full functionality:
+| Variable | Required | Used by | Description |
+| --- | --- | --- | --- |
+| `EMAIL_USER` | Yes for contact form | `src/app/api/contact/route.ts` | Gmail account used to send contact notifications and confirmation emails. |
+| `EMAIL_PASS` | Yes for contact form | `src/app/api/contact/route.ts` | Gmail app password for `EMAIL_USER`. Do not use a normal account password. |
+| `NEXT_PUBLIC_GA_ID` | Optional | `src/app/layout.tsx` | Google Analytics 4 measurement ID. Analytics scripts load only when this value is set. |
+| `NEXT_PUBLIC_SITE_URL` | Recommended | `src/app/sitemap.ts`, `src/app/robots.ts`, dynamic route metadata | Public site URL used for canonical sitemap, robots, and page metadata. Defaults to `https://www.lexocrates.com` in several app files. |
+| `SITE_URL` | Optional | `next-sitemap.config.js` | Site URL used by the `next-sitemap` postbuild step. Defaults to `https://lexocrates.vercel.app`. |
 
-| Variable      | Description                                                 | Example                          |
-|---------------|-------------------------------------------------------------|----------------------------------|
-| `GEMINI_API_KEY` | Your API key for the Google AI (Gemini) service, used by Genkit. | `AIzaSy...`                      |
-| `EMAIL_USER`  | The Gmail account username used by Nodemailer to send emails. | `your-email@gmail.com`           |
-| `EMAIL_PASS`  | An [App Password](https://support.google.com/accounts/answer/185833) for the `EMAIL_USER` Gmail account. | `your-app-password`              |
-| `NEXT_PUBLIC_GA_ID` | Google Analytics Measurement ID. | `G-XXXXXXXXXX` |
+Example `.env.local`:
 
-
-**`.env.local.example`:**
 ```env
-# Google AI API Key for Genkit
-GEMINI_API_KEY=
-
-# Nodemailer configuration for the contact form
-# Use a Gmail account and generate an App Password
 EMAIL_USER=
 EMAIL_PASS=
-
-# Google Analytics Measurement ID
 NEXT_PUBLIC_GA_ID=
+NEXT_PUBLIC_SITE_URL=https://www.lexocrates.com
+SITE_URL=https://www.lexocrates.com
 ```
 
 ## Available Scripts
 
-The `package.json` file includes the following scripts:
+| Script | Description |
+| --- | --- |
+| `npm run dev` | Starts the Next.js development server on port `9002`. |
+| `npm run build` | Creates a production build. The `postbuild` script runs `next-sitemap`. |
+| `npm run start` | Starts the production Next.js server. |
+| `npm run lint` | Runs Next.js linting. |
+| `npm run typecheck` | Runs TypeScript checks with `tsc --noEmit`. |
 
-- `npm run dev`: Starts the Next.js development server.
-- `npm run genkit:dev`: Starts the Genkit development server for AI flows.
-- `npm run build`: Creates a production-ready build.
-- `npm run start`: Runs the production server.
-- `npm run lint`: Lints the codebase using ESLint.
-- `npm run typecheck`: Performs a TypeScript type check.
+## Project Structure
 
-## Common Errors & Fixes
+```text
+.
+|-- src/
+|   |-- app/                 # App Router routes, metadata, API routes, sitemap, robots
+|   |-- components/
+|   |   |-- animations/      # Motion, Lottie, and animation helpers
+|   |   |-- forms/           # Contact form UI
+|   |   |-- layout/          # Header, footer, and layout provider
+|   |   |-- sections/        # Page-level website sections
+|   |   `-- ui/              # Reusable UI primitives and shared components
+|   |-- hooks/               # Custom React hooks
+|   `-- lib/                 # Site data, utilities, SEO helpers, image metadata
+|-- public/
+|   |-- blog/                # Blog images
+|   |-- images/              # Brand, hero, OG, and content images
+|   `-- lottie/              # Lottie animation files
+|-- docs/                    # Supporting documents and generated assets
+|-- Dockerfile               # Standalone Next.js container build
+|-- apphosting.yaml          # Firebase App Hosting configuration
+|-- next-sitemap.config.js   # Postbuild sitemap generation settings
+|-- next.config.ts           # Next.js configuration
+|-- tailwind.config.ts       # Tailwind theme and plugin configuration
+`-- package.json             # Scripts and dependencies
+```
 
-- **`EJSONPARSE` error on `npm install` or `npm run dev`**: This indicates that your `package.json` is malformed. This can happen due to unresolved merge conflicts. Ensure the file is valid JSON.
-- **Contact form fails to send**:
-    - Check that `EMAIL_USER` and `EMAIL_PASS` are correctly set in `.env.local`.
-    - Ensure you are using a Gmail **App Password**, not your regular account password.
-    - Verify that "Less secure app access" is configured correctly for the sending Gmail account if not using 2FA.
-- **AI features are not working**: Make sure the `GEMINI_API_KEY` is valid and has the necessary permissions.
+## Main Routes
 
-## Best Practices
+| Route | Purpose |
+| --- | --- |
+| `/` | Home page |
+| `/about` | Company overview |
+| `/services` | Service listing |
+| `/services/[slug]` | Individual service detail pages generated from `servicesList` |
+| `/blog` | Blog listing |
+| `/blog/[slug]` | Individual blog posts generated from `blogPosts` |
+| `/team` | Team listing |
+| `/team/[slug]` | Individual team profiles generated from `teamMembers` |
+| `/lawyer` and `/lawyer/[slug]` | Lawyer listing and profile pages. The detail route currently keeps its profile data in the route file. |
+| `/careers` | Careers page |
+| `/contact` | Contact page and form |
+| `/privacy-policy` | Privacy policy |
+| `/terms-and-conditions` | Terms and conditions |
+| `/cookies-policy` | Cookie policy |
+| `/api/contact` | Contact form POST endpoint |
 
-- **Component Structure**: Create reusable components in the `src/components` directory. Larger, page-specific components are organized into `sections`.
-- **Styling**: Use Tailwind CSS utility classes for styling. For new reusable styles, consider creating a new component or extending the Tailwind theme in `tailwind.config.ts`.
-- **Data Management**: Static data like blog posts and service descriptions are managed in the `src/lib` folder.
-- **Code Quality**: Before committing, run `npm run lint` and `npm run typecheck` to catch errors and maintain code consistency.
+## Content Editing Guide
+
+- Services are defined in `src/lib/services-data.ts`.
+- Team profiles used by `/team/[slug]` are defined in `src/lib/team-data.ts`.
+- Lawyer profiles used by `/lawyer/[slug]` are currently defined in `src/app/lawyer/[slug]/page.tsx`.
+- Blog posts are defined in `src/lib/blog-data.ts`.
+- Shared SEO helpers live in `src/lib/seo.ts`.
+- Placeholder and content image metadata lives in `src/lib/placeholder-images.ts` and `src/lib/placeholder-images.json`.
+- Header and footer navigation live under `src/components/layout`.
+- Large page sections live under `src/components/sections`.
+
+When adding a new service, team member, or blog post, update the relevant data file first. The dynamic routes and sitemap use those arrays to generate pages and URLs.
+
+## Deployment
+
+### Vercel or Node Hosting
+
+Run:
+
+```bash
+npm run build
+npm run start
+```
+
+Set the production environment variables in the hosting provider before deploying.
+
+### Docker
+
+The Dockerfile builds a standalone Next.js output using Node 20 Alpine:
+
+```bash
+docker build -t lexocrates .
+docker run -p 3000:3000 --env-file .env.local lexocrates
+```
+
+The container exposes port `3000`.
+
+### Firebase App Hosting
+
+`apphosting.yaml` is included with `maxInstances: 1`. Add any required secrets and runtime configuration in Firebase before deploying.
+
+## Current Notes
+
+- Both `next.config.ts` and `next.config.mjs` are present. Treat `next.config.ts` as the richer current configuration and reconcile the files before making major configuration changes.
+- `next-sitemap.config.js` and the App Router `sitemap.ts` use different fallback site URLs. Set `NEXT_PUBLIC_SITE_URL` and `SITE_URL` in production so canonical URLs stay consistent.
+
+## Quality Checks
+
+Before handing off or deploying changes, run:
+
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
+
+For contact form changes, also test a real form submission with valid Gmail app-password credentials in `.env.local`.
+
+## Troubleshooting
+
+### Contact form does not send
+
+- Confirm `EMAIL_USER` and `EMAIL_PASS` are set.
+- Use a Gmail app password for `EMAIL_PASS`.
+- Check the server logs for the `/api/contact` response.
+
+### Sitemap or robots URLs are wrong
+
+- Set both `NEXT_PUBLIC_SITE_URL` and `SITE_URL` to the same production domain.
+- Rebuild the project so generated sitemap output uses the latest environment.
+
+### Build fails on lint or TypeScript
+
+- `next.config.ts` currently enforces lint and TypeScript correctness during builds.
+- Run `npm run typecheck` and `npm run lint` locally to isolate the failing file before rebuilding.
