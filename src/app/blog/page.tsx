@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { BlogHero } from '@/components/sections/blog-hero';
 import { BlogList } from '@/components/sections/blog-list';
 import { BlogShowcase } from '@/components/sections/blog-showcase';
+import { getBlogPosts } from '@/lib/erpnext-blogs';
 
 export const metadata: Metadata = {
   title: 'Legal Insights & LPO Trends | Lexocrates Blog',
@@ -11,12 +12,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const blogPosts = await getBlogPosts();
+
   return (
     <main className="bg-background">
       <BlogHero />
       <div className="container-balanced">
-        <BlogList />
+        <BlogList posts={blogPosts} />
         <BlogShowcase />
       </div>
     </main>

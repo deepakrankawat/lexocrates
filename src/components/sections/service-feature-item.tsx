@@ -1,7 +1,7 @@
 
 'use client';
 
-import { CheckCircle2, ArrowRight, Search, Gavel, FileText, ShieldCheck, Users, LucideIcon } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Search, Gavel, FileText, ShieldCheck, Users, Database, LucideIcon } from 'lucide-react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -21,6 +21,7 @@ const iconMap: Record<string, LucideIcon> = {
   FileText,
   ShieldCheck,
   Users,
+  Database,
 };
 
 export function ServiceFeatureItem({ service, index, showLink = true }: { service: Service, index: number, showLink?: boolean }) {

@@ -1,6 +1,15 @@
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'Read the Lexocrates Privacy Policy to learn how we collect, use, store, and protect your personal information.',
+  alternates: {
+    canonical: '/privacy-policy',
+  },
+};
 
 export default function PrivacyPolicyPage() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');

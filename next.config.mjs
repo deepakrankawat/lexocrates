@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
+const erpNextRemotePattern = (() => {
+  try {
+    const url = new URL(process.env.ERPNEXT_URL);
+    return {
+      protocol: url.protocol.replace(':', ''),
+      hostname: url.hostname,
+      port: url.port,
+      pathname: '/files/**',
+    };
+  } catch {
+    return null;
+  }
+})();
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
 
   typescript: {
@@ -14,6 +29,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      ...(erpNextRemotePattern ? [erpNextRemotePattern] : []),
     ],
   },
 };

@@ -78,7 +78,6 @@ npm run start
 | `EMAIL_PASS` | Yes for contact form | `src/app/api/contact/route.ts` | Gmail app password for `EMAIL_USER`. Do not use a normal account password. |
 | `NEXT_PUBLIC_GA_ID` | Optional | `src/app/layout.tsx` | Google Analytics 4 measurement ID. Analytics scripts load only when this value is set. |
 | `NEXT_PUBLIC_SITE_URL` | Recommended | `src/app/sitemap.ts`, `src/app/robots.ts`, dynamic route metadata | Public site URL used for canonical sitemap, robots, and page metadata. Defaults to `https://www.lexocrates.com` in several app files. |
-| `SITE_URL` | Optional | `next-sitemap.config.js` | Site URL used by the `next-sitemap` postbuild step. Defaults to `https://lexocrates.vercel.app`. |
 
 Example `.env.local`:
 
@@ -87,7 +86,6 @@ EMAIL_USER=
 EMAIL_PASS=
 NEXT_PUBLIC_GA_ID=
 NEXT_PUBLIC_SITE_URL=https://www.lexocrates.com
-SITE_URL=https://www.lexocrates.com
 ```
 
 ## Available Scripts
@@ -95,7 +93,7 @@ SITE_URL=https://www.lexocrates.com
 | Script | Description |
 | --- | --- |
 | `npm run dev` | Starts the Next.js development server on port `9002`. |
-| `npm run build` | Creates a production build. The `postbuild` script runs `next-sitemap`. |
+| `npm run build` | Creates a production build. |
 | `npm run start` | Starts the production Next.js server. |
 | `npm run lint` | Runs Next.js linting. |
 | `npm run typecheck` | Runs TypeScript checks with `tsc --noEmit`. |
@@ -191,7 +189,7 @@ The container exposes port `3000`.
 ## Current Notes
 
 - Both `next.config.ts` and `next.config.mjs` are present. Treat `next.config.ts` as the richer current configuration and reconcile the files before making major configuration changes.
-- `next-sitemap.config.js` and the App Router `sitemap.ts` use different fallback site URLs. Set `NEXT_PUBLIC_SITE_URL` and `SITE_URL` in production so canonical URLs stay consistent.
+- The App Router generates `/sitemap.xml` and `/robots.txt` from `src/app/sitemap.ts` and `src/app/robots.ts`.
 
 ## Quality Checks
 
@@ -215,8 +213,8 @@ For contact form changes, also test a real form submission with valid Gmail app-
 
 ### Sitemap or robots URLs are wrong
 
-- Set both `NEXT_PUBLIC_SITE_URL` and `SITE_URL` to the same production domain.
-- Rebuild the project so generated sitemap output uses the latest environment.
+- Set `NEXT_PUBLIC_SITE_URL` to the canonical production origin.
+- Rebuild the project so the generated metadata routes use the latest environment.
 
 ### Build fails on lint or TypeScript
 

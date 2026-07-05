@@ -3,187 +3,297 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import { motion } from 'framer-motion';
+import {
+  CheckCircle2,
+  Loader2,
+  SendHorizonal,
+  ShieldCheck,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, CheckCircle, SendHorizonal } from 'lucide-react';
-import { motion } from 'framer-motion';
+import {
+  contactLeadSchema,
+  type ContactLeadValues,
+} from '@/lib/contact-schema';
 
-const formSchema = z.object({
-  fullName: z.string().min(2, { message: 'Full name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
-  phone: z.string().optional(),
-  company: z.string().optional(),
-  subject: z.string().min(3, { message: 'Subject must be at least 3 characters.' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
-});
+const inputClassName =
+  'h-12 rounded-xl border-black/10 bg-white px-4 font-semibold text-primary placeholder:text-black/30 focus:border-accent/50 focus:ring-accent/20 sm:h-14 sm:rounded-2xl sm:px-5';
 
-type FormValues = z.infer<typeof formSchema>;
+function FieldError({ message }: { message?: string }) {
+  if (!message) return null;
+
+  return (
+    <p className="ml-2 text-[9px] font-black uppercase tracking-widest text-destructive">
+      {message}
+    </p>
+  );
+}
+
+function FieldLabel({
+  htmlFor,
+  children,
+  optional = false,
+}: {
+  htmlFor: string;
+  children: React.ReactNode;
+  optional?: boolean;
+}) {
+  return (
+    <Label
+      htmlFor={htmlFor}
+      className="ml-2 text-[10px] font-black uppercase tracking-[0.18em] text-primary/75"
+    >
+      {children}
+      {optional ? (
+        <span className="ml-2 normal-case tracking-normal text-foreground/35">
+          optional
+        </span>
+      ) : (
+        <span className="ml-1 text-accent">*</span>
+      )}
+    </Label>
+  );
+}
 
 export function SimpleContactForm() {
   const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
+  const [leadReference, setLeadReference] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
-    formState: { errors },
     reset,
-  } = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactLeadValues>({
+    resolver: zodResolver(contactLeadSchema),
+    defaultValues: {
+      fullName: '',
+      email: '',
+      phone: '',
+      company: '',
+      subject: '',
+      message: '',
+      faxNumber: '',
+    },
   });
 
-  const onSubmit = async (data: FormValues) => {
-    setIsLoading(true);
-    
-    const formData = new FormData();
-    Object.entries(data).forEach(([key, value]) => {
-        if (value) {
-            formData.append(key, value);
-        }
-    });
-
+  async function onSubmit(values: ContactLeadValues) {
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
       });
-
       const result = await response.json();
 
-      if (response.ok && result.success) {
-        setIsSubmitted(true);
-        reset();
-      } else {
+      if (!response.ok || !result.success) {
+        if (result.fieldErrors) {
+          for (const [field, messages] of Object.entries(
+            result.fieldErrors as Record<string, string[]>
+          )) {
+            if (messages?.[0]) {
+              setError(field as keyof ContactLeadValues, {
+                type: 'server',
+                message: messages[0],
+              });
+            }
+          }
+        }
+
         toast({
           variant: 'destructive',
-          title: 'Submission Failed',
-          description: result.message || 'An unknown error occurred. Please try again.',
+          title: 'Message not submitted',
+          description:
+            result.message || 'Please review the form and try again.',
         });
+        return;
       }
-    } catch (error) {
+
+      setLeadReference(result.reference || 'Enquiry recorded');
+      reset();
+    } catch {
       toast({
         variant: 'destructive',
-        title: 'Submission Error',
-        description: 'Could not connect to the server. Please check your internet connection and try again.',
+        title: 'Connection error',
+        description:
+          'We could not send your message. Please try again or email sales@lexocrates.com.',
       });
-    } finally {
-      setIsLoading(false);
     }
-  };
-  
-  if (isSubmitted) {
+  }
+
+  if (leadReference) {
     return (
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="flex flex-col items-center justify-center h-full text-center bg-white p-10 sm:p-12 rounded-[2.5rem] sm:rounded-[3rem] shadow-2xl border border-black/5"
+      <motion.div
+        initial={{ opacity: 0, scale: 0.97 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="flex min-h-[520px] flex-col items-center justify-center rounded-[2.5rem] border border-black/5 bg-white p-8 text-center shadow-2xl sm:p-12"
+      >
+        <div className="mb-8 rounded-full bg-emerald-100 p-6">
+          <CheckCircle2 className="h-14 w-14 text-emerald-600" />
+        </div>
+        <p className="mb-3 text-[10px] font-black uppercase tracking-[0.3em] text-accent">
+          Message received
+        </p>
+        <h2 className="mb-4 font-montserrat text-3xl font-black tracking-tight text-primary">
+          Thank you for contacting us
+        </h2>
+        <p className="max-w-md font-medium leading-relaxed text-foreground/60">
+          Your enquiry has been added to our sales pipeline. Our team will
+          contact you within one business day.
+        </p>
+        <div className="mt-8 rounded-2xl bg-secondary/50 px-6 py-4">
+          <p className="text-[9px] font-black uppercase tracking-widest text-foreground/40">
+            Lead reference
+          </p>
+          <p className="mt-1 font-mono text-sm font-bold text-primary">
+            {leadReference}
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => setLeadReference(null)}
+          className="mt-9 text-[10px] font-black uppercase tracking-[0.25em] text-accent hover:underline"
         >
-            <div className="bg-green-100 p-6 rounded-full mb-8">
-              <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-600" />
-            </div>
-            <h2 className="font-montserrat text-2xl sm:text-3xl font-black text-primary mb-4 tracking-tight">Message Received</h2>
-            <p className="text-foreground/60 max-w-md mx-auto font-black leading-relaxed">
-                Thank you for reaching out. Our strategic response team has been notified and will contact you within 24 business hours.
-            </p>
-            <button onClick={() => setIsSubmitted(false)} className="mt-8 text-accent font-black uppercase tracking-[0.3em] text-[10px] hover:underline transition-all">
-              Send Another Message
-            </button>
-        </motion.div>
+          Send another message
+        </button>
+      </motion.div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-            <div className="space-y-2">
-                <Label htmlFor="fullName" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/80 ml-2 sm:ml-4">Full Name</Label>
-                <Input 
-                  id="fullName" 
-                  placeholder="John Doe" 
-                  {...register('fullName')} 
-                  className="h-12 sm:h-14 rounded-xl sm:rounded-2xl bg-white border-black/10 focus:border-accent/50 focus:ring-accent/20 transition-all px-4 sm:px-6 font-bold text-primary placeholder:text-black/30"
-                />
-                {errors.fullName && <p className="text-[9px] font-black text-destructive ml-2 uppercase tracking-widest">{errors.fullName.message}</p>}
-            </div>
+    <form
+      id="lpo-enquiry-form"
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      className="space-y-7"
+    >
+      <div>
+        <div className="mb-3 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-accent">
+          <ShieldCheck className="h-4 w-4" />
+          Contact us
+        </div>
+        <h2 className="font-montserrat text-3xl font-black tracking-tight text-primary sm:text-4xl">
+          How can we help?
+        </h2>
+        <p className="mt-3 text-sm font-medium leading-relaxed text-foreground/55 sm:text-base">
+          Share a few details and our team will get back to you shortly.
+        </p>
+      </div>
 
-            <div className="space-y-2">
-                <Label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/80 ml-2 sm:ml-4">Email Address</Label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  placeholder="john@example.com" 
-                  {...register('email')} 
-                  className="h-12 sm:h-14 rounded-xl sm:rounded-2xl bg-white border-black/10 focus:border-accent/50 focus:ring-accent/20 transition-all px-4 sm:px-6 font-bold text-primary placeholder:text-black/30"
-                />
-                {errors.email && <p className="text-[9px] font-black text-destructive ml-2 uppercase tracking-widest">{errors.email.message}</p>}
-            </div>
-
-            <div className="space-y-2">
-                <Label htmlFor="phone" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/80 ml-2 sm:ml-4">Phone Number</Label>
-                <Input 
-                  id="phone" 
-                  placeholder="+1 (555) 000-0000" 
-                  {...register('phone')} 
-                  className="h-12 sm:h-14 rounded-xl sm:rounded-2xl bg-white border-black/10 focus:border-accent/50 focus:ring-accent/20 transition-all px-4 sm:px-6 font-bold text-primary placeholder:text-black/30"
-                />
-            </div>
-
-            <div className="space-y-2">
-                <Label htmlFor="company" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/80 ml-2 sm:ml-4">Company</Label>
-                <Input 
-                  id="company" 
-                  placeholder="Lex Corp" 
-                  {...register('company')} 
-                  className="h-12 sm:h-14 rounded-xl sm:rounded-2xl bg-white border-black/10 focus:border-accent/50 focus:ring-accent/20 transition-all px-4 sm:px-6 font-bold text-primary placeholder:text-black/30"
-                />
-            </div>
-
-            <div className="sm:col-span-2 space-y-2">
-                <Label htmlFor="subject" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/80 ml-2 sm:ml-4">Subject</Label>
-                <Input 
-                  id="subject" 
-                  placeholder="How can we help?" 
-                  {...register('subject')} 
-                  className="h-12 sm:h-14 rounded-xl sm:rounded-2xl bg-white border-black/10 focus:border-accent/50 focus:ring-accent/20 transition-all px-4 sm:px-6 font-bold text-primary placeholder:text-black/30"
-                />
-                {errors.subject && <p className="text-[9px] font-black text-destructive ml-2 uppercase tracking-widest">{errors.subject.message}</p>}
-            </div>
-
-            <div className="sm:col-span-2 space-y-2">
-                <Label htmlFor="message" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/80 ml-2 sm:ml-4">Message</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Describe your requirements..." 
-                  {...register('message')} 
-                  rows={6} 
-                  className="rounded-2xl sm:rounded-3xl bg-white border-black/10 focus:border-accent/50 focus:ring-accent/20 transition-all p-4 sm:p-6 font-bold text-primary resize-none placeholder:text-black/30"
-                />
-                {errors.message && <p className="text-[9px] font-black text-destructive ml-2 uppercase tracking-widest">{errors.message.message}</p>}
-            </div>
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div className="space-y-2">
+          <FieldLabel htmlFor="fullName">Full name</FieldLabel>
+          <Input
+            id="fullName"
+            autoComplete="name"
+            placeholder="John Doe"
+            aria-invalid={Boolean(errors.fullName)}
+            {...register('fullName')}
+            className={inputClassName}
+          />
+          <FieldError message={errors.fullName?.message} />
         </div>
 
-        <div className="relative group pt-4">
-          <Button 
-            type="submit" 
-            size="xl" 
-            className="w-full h-14 bg-primary hover:bg-primary/95 text-white font-montserrat font-black text-xs uppercase tracking-[0.4em] rounded-full shadow-2xl transition-all duration-500 hover:scale-[1.02] active:scale-95 group/btn" 
-            disabled={isLoading}
-          >
-              <div className="relative z-10 flex items-center justify-center gap-4">
-                {isLoading ? (
-                  <Loader2 className="h-5 w-5 animate-spin text-accent" />
-                ) : (
-                  <SendHorizonal className="h-5 w-5 text-accent group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                )}
-                <span>{isLoading ? 'Processing...' : 'Send Message'}</span>
-              </div>
-          </Button>
+        <div className="space-y-2">
+          <FieldLabel htmlFor="email">Email address</FieldLabel>
+          <Input
+            id="email"
+            type="email"
+            autoComplete="email"
+            placeholder="john@example.com"
+            aria-invalid={Boolean(errors.email)}
+            {...register('email')}
+            className={inputClassName}
+          />
+          <FieldError message={errors.email?.message} />
         </div>
+
+        <div className="space-y-2">
+          <FieldLabel htmlFor="phone" optional>
+            Phone number
+          </FieldLabel>
+          <Input
+            id="phone"
+            type="tel"
+            autoComplete="tel"
+            placeholder="+1 (555) 000-0000"
+            aria-invalid={Boolean(errors.phone)}
+            {...register('phone')}
+            className={inputClassName}
+          />
+          <FieldError message={errors.phone?.message} />
+        </div>
+
+        <div className="space-y-2">
+          <FieldLabel htmlFor="company" optional>
+            Company
+          </FieldLabel>
+          <Input
+            id="company"
+            autoComplete="organization"
+            placeholder="Company name"
+            aria-invalid={Boolean(errors.company)}
+            {...register('company')}
+            className={inputClassName}
+          />
+          <FieldError message={errors.company?.message} />
+        </div>
+
+        <div className="space-y-2 sm:col-span-2">
+          <FieldLabel htmlFor="subject">Subject</FieldLabel>
+          <Input
+            id="subject"
+            placeholder="How can we help?"
+            aria-invalid={Boolean(errors.subject)}
+            {...register('subject')}
+            className={inputClassName}
+          />
+          <FieldError message={errors.subject?.message} />
+        </div>
+
+        <div className="space-y-2 sm:col-span-2">
+          <FieldLabel htmlFor="message">Message</FieldLabel>
+          <Textarea
+            id="message"
+            rows={6}
+            placeholder="Tell us about your requirement..."
+            aria-invalid={Boolean(errors.message)}
+            {...register('message')}
+            className="resize-none rounded-2xl border-black/10 bg-white p-5 font-semibold leading-relaxed text-primary placeholder:text-black/30 focus:border-accent/50 focus:ring-accent/20 sm:rounded-3xl"
+          />
+          <FieldError message={errors.message?.message} />
+        </div>
+      </div>
+
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <Label htmlFor="faxNumber">Fax number</Label>
+        <Input
+          id="faxNumber"
+          tabIndex={-1}
+          autoComplete="off"
+          {...register('faxNumber')}
+        />
+      </div>
+
+      <Button
+        type="submit"
+        size="xl"
+        disabled={isSubmitting}
+        className="h-14 w-full rounded-full bg-primary font-montserrat text-xs font-black uppercase tracking-[0.3em] text-white shadow-2xl hover:bg-primary/95"
+      >
+        {isSubmitting ? (
+          <Loader2 className="h-5 w-5 animate-spin text-accent" />
+        ) : (
+          <SendHorizonal className="h-5 w-5 text-accent" />
+        )}
+        <span>{isSubmitting ? 'Adding lead...' : 'Send message'}</span>
+      </Button>
     </form>
   );
 }

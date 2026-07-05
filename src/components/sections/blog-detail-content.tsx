@@ -2,13 +2,17 @@
 'use client';
 
 import Link from 'next/link';
-import { blogPosts } from '@/lib/blog-data';
+import type { BlogPost } from '@/lib/blog-types';
 import { ArrowRight, BookOpen, CheckCircle2, ChevronRight } from 'lucide-react';
 import { SlideIn } from '../animations/slide-in';
 
-type Post = typeof blogPosts[0];
-
-export function BlogDetailContent({ post }: { post: Post }) {
+export function BlogDetailContent({
+  post,
+  recommendedPosts,
+}: {
+  post: BlogPost;
+  recommendedPosts: BlogPost[];
+}) {
   return (
     <section className="bg-background text-foreground py-20 sm:py-32">
         <div className="container-balanced">
@@ -84,7 +88,7 @@ export function BlogDetailContent({ post }: { post: Post }) {
                           <h3 className="font-lato text-xl font-black text-primary tracking-tight uppercase tracking-widest text-xs">Recommended Deep Dives</h3>
                         </div>
                         <ul className="space-y-8">
-                            {blogPosts.filter(p => p.id !== post.id).slice(0, 3).map((recPost) => (
+                            {recommendedPosts.map((recPost) => (
                             <li key={recPost.id}>
                                 <Link href={`/blog/${recPost.slug}`} className="group block">
                                     <p className="text-[9px] font-black text-accent uppercase tracking-widest mb-2">{recPost.category}</p>

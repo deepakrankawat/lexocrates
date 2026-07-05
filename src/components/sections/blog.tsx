@@ -1,16 +1,16 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar, User } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, Star, User } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { blogPosts } from '@/lib/blog-data';
+import type { BlogPost } from '@/lib/blog-types';
 import { motion } from 'framer-motion';
 import { SlideIn } from '../animations/slide-in';
 import { Card, CardContent } from '../ui/card';
 import { Badge } from '../ui/badge';
 
-const featuredPosts = blogPosts.slice(0, 3);
-
-export function Blog() {
+export function Blog({ posts }: { posts: BlogPost[] }) {
+  const featuredPosts = posts.slice(0, 3);
   return (
     <section id="blog" className="bg-secondary/30 text-foreground py-14 sm:py-24 lg:py-32 rounded-[4rem] my-16 sm:my-20">
       <div className="container-balanced">
@@ -34,10 +34,31 @@ export function Blog() {
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Card className="bg-background border-black/5 rounded-[2.5rem] overflow-hidden h-full flex flex-col shadow-sm hover:shadow-2xl transition-all duration-500">
+                {post.metaImage && (
+                  <Link href={`/blog/${post.slug}`} className="relative block h-52 overflow-hidden">
+                    <Image
+                      src={post.metaImage}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </Link>
+                )}
                 <CardContent className="p-10 flex flex-col flex-grow">
-                  <Badge variant="secondary" className="bg-accent/10 text-accent font-black uppercase tracking-widest text-[10px] px-4 py-1.5 rounded-full w-fit mb-8">
-                    {post.category}
-                  </Badge>
+                  <div className="mb-8 flex items-center justify-between gap-4">
+                    <Badge variant="secondary" className="bg-accent/10 text-accent font-black uppercase tracking-widest text-[10px] px-4 py-1.5 rounded-full w-fit">
+                      {post.category}
+                    </Badge>
+                    <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-foreground/30">
+                      {post.featured ? (
+                        <Star className="h-3.5 w-3.5 fill-accent text-accent" />
+                      ) : (
+                        <Clock className="h-3.5 w-3.5 text-accent" />
+                      )}
+                      <span>{post.readingTime}</span>
+                    </div>
+                  </div>
                   <Link href={`/blog/${post.slug}`} className="group/title">
                     <h4 className="font-opensans text-2xl font-bold text-primary mb-6 group-hover/title:text-accent transition-colors duration-300 leading-tight">
                       {post.title}

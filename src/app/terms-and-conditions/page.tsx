@@ -1,6 +1,15 @@
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FileText } from 'lucide-react';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms and Conditions',
+  description: 'Read the Lexocrates Terms and Conditions governing the use of our website, services, and operations.',
+  alternates: {
+    canonical: '/terms-and-conditions',
+  },
+};
 
 export default function TermsAndConditionsPage() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');

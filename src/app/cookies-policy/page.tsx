@@ -1,6 +1,15 @@
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Cookie } from 'lucide-react';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cookies Policy',
+  description: 'Read the Lexocrates Cookies Policy to learn how we use cookies and tracking technologies to improve our website experience and services.',
+  alternates: {
+    canonical: '/cookies-policy',
+  },
+};
 
 export default function CookiesPolicyPage() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-services');

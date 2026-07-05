@@ -1,27 +1,27 @@
 
 'use client';
 
-import { Mail, Search, MessageSquare, CheckCircle } from 'lucide-react';
+import { ClipboardCheck, Search, MessageSquare, CheckCircle } from 'lucide-react';
 import { SlideIn } from '../animations/slide-in';
 import { StaggerFadeIn } from '../animations/stagger-fade-in';
 
 const processSteps = [
-    { icon: Mail, title: 'Inquiry Submitted', description: 'Your message reaches our strategic response team.' },
-    { icon: Search, title: 'Expert Allocation', description: 'We assign the most relevant legal expert to your specific inquiry.' },
-    { icon: MessageSquare, title: 'Consultation', description: 'We reach out within 24 business hours to discuss your workflow.' },
-    { icon: CheckCircle, title: 'Strategy Execution', description: 'We define the engagement scope and integrate with your team.' },
+    { icon: ClipboardCheck, title: 'Structured Intake', description: 'Your requirements are recorded as a qualified sales enquiry.' },
+    { icon: Search, title: 'Scope & Risk Review', description: 'We assess jurisdiction, volume, security, supervision, and conflicts.' },
+    { icon: MessageSquare, title: 'Expert Consultation', description: 'A relevant delivery specialist contacts you within one business day.' },
+    { icon: CheckCircle, title: 'Pilot or Engagement Plan', description: 'We define deliverables, controls, service levels, and launch steps.' },
 ];
 
 export function ContactProcess() {
   return (
     <div className="relative z-10">
       <SlideIn className="text-center mb-16">
-          <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-xs">The Next Steps</p>
+          <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-xs">From Enquiry to Delivery</p>
           <h2 className="font-lato text-4xl sm:text-5xl font-black text-white leading-tight tracking-tight">
-              Our Communication <br /><span className="text-accent">Protocol</span>
+              Our LPO Qualification <br /><span className="text-accent">Protocol</span>
           </h2>
           <p className="mt-6 max-w-2xl mx-auto text-white/60 font-medium text-lg">
-              We value precision in communication. Here is how we handle your initial outreach.
+              A disciplined intake gives both teams a clearer, safer path into a pilot or managed engagement.
           </p>
       </SlideIn>
       

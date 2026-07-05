@@ -1,88 +1,184 @@
-
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import {
+  contactLeadSchema,
+  type ContactLeadValues,
+} from '@/lib/contact-schema';
+import {
+  createERPNextLead,
+  ERPNextLeadError,
+} from '@/lib/erpnext-leads';
+
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX_REQUESTS = 5;
+const submissionsByIp = new Map<
+  string,
+  { count: number; resetAt: number }
+>();
+
+function getClientIp(request: Request): string {
+  return (
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    request.headers.get('x-real-ip') ||
+    'unknown'
+  );
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const current = submissionsByIp.get(ip);
+
+  if (!current || current.resetAt <= now) {
+    submissionsByIp.set(ip, {
+      count: 1,
+      resetAt: now + RATE_LIMIT_WINDOW_MS,
+    });
+    return false;
+  }
+
+  current.count += 1;
+  return current.count > RATE_LIMIT_MAX_REQUESTS;
+}
+
+function escapeHtml(value: string): string {
+  return value.replace(
+    /[&<>"']/g,
+    (character) =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;',
+      })[character] || character
+  );
+}
+
+async function sendLeadEmails(
+  values: ContactLeadValues,
+  leadReference: string
+): Promise<void> {
+  const emailUser = process.env.EMAIL_USER?.trim();
+  const emailPass = process.env.EMAIL_PASS?.trim();
+  if (!emailUser || !emailPass) return;
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: emailUser,
+      pass: emailPass,
+    },
+  });
+  const safe = Object.fromEntries(
+    Object.entries(values).map(([key, value]) => [
+      key,
+      escapeHtml(String(value)),
+    ])
+  );
+
+  const internalEmail = `
+    <h1 style="color:#0c2b56">New Website Lead: ${escapeHtml(leadReference)}</h1>
+    <p>A contact-form enquiry has been created in the sales pipeline.</p>
+    <table style="width:100%;border-collapse:collapse">
+      <tr><td style="padding:10px;border:1px solid #ddd"><strong>Name</strong></td><td style="padding:10px;border:1px solid #ddd">${safe.fullName}</td></tr>
+      <tr><td style="padding:10px;border:1px solid #ddd"><strong>Email</strong></td><td style="padding:10px;border:1px solid #ddd">${safe.email}</td></tr>
+      <tr><td style="padding:10px;border:1px solid #ddd"><strong>Phone</strong></td><td style="padding:10px;border:1px solid #ddd">${safe.phone || 'Not provided'}</td></tr>
+      <tr><td style="padding:10px;border:1px solid #ddd"><strong>Company</strong></td><td style="padding:10px;border:1px solid #ddd">${safe.company || 'Not provided'}</td></tr>
+      <tr><td style="padding:10px;border:1px solid #ddd"><strong>Subject</strong></td><td style="padding:10px;border:1px solid #ddd">${safe.subject}</td></tr>
+      <tr><td style="padding:10px;border:1px solid #ddd"><strong>Message</strong></td><td style="padding:10px;border:1px solid #ddd">${safe.message}</td></tr>
+    </table>
+  `;
+
+  const results = await Promise.allSettled([
+    transporter.sendMail({
+      from: `"Lexocrates Website" <${emailUser}>`,
+      to: emailUser,
+      replyTo: values.email,
+      subject: `New Website Lead: ${values.subject}`,
+      html: internalEmail,
+    }),
+    transporter.sendMail({
+      from: `"Lexocrates" <${emailUser}>`,
+      to: values.email,
+      subject: `We received your legal support enquiry — ${leadReference}`,
+      html: `<p>Dear ${safe.fullName},</p>
+        <p>Thank you for contacting Lexocrates. Your enquiry has been recorded as <strong>${escapeHtml(
+          leadReference
+        )}</strong>.</p>
+        <p>Our legal operations team will review the scope and contact you within one business day.</p>
+        <p>Best regards,<br>Lexocrates Legal Services</p>`,
+    }),
+  ]);
+
+  for (const result of results) {
+    if (result.status === 'rejected') {
+      console.error('Lead email notification failed:', result.reason);
+    }
+  }
+}
 
 export async function POST(request: Request) {
+  const ip = getClientIp(request);
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Too many submissions. Please try again in a few minutes.',
+      },
+      { status: 429 }
+    );
+  }
+
   try {
-    const formData = await request.formData();
-    
-    const fullName = formData.get('fullName') as string;
-    const email = formData.get('email') as string;
-    const phone = formData.get('phone') as string | null;
-    const company = formData.get('company') as string | null;
-    const subject = formData.get('subject') as string;
-    const message = formData.get('message') as string;
-    
-    if (!fullName || !email || !subject || !message) {
-      return NextResponse.json({ success: false, message: 'Missing required fields.' }, { status: 400 });
+    const body = await request.json();
+
+    // Honeypot: bots commonly fill every field. Return a neutral success without
+    // creating a CRM record.
+    if (typeof body?.faxNumber === 'string' && body.faxNumber.trim()) {
+      return NextResponse.json({ success: true });
     }
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+    const parsed = contactLeadSchema.safeParse(body);
+    if (!parsed.success) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Please review the highlighted fields.',
+          fieldErrors: parsed.error.flatten().fieldErrors,
+        },
+        { status: 400 }
+      );
+    }
+
+    const leadReference = await createERPNextLead(parsed.data);
+    await sendLeadEmails(parsed.data, leadReference);
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your enquiry has been recorded successfully.',
+        reference: leadReference,
       },
-    });
-    
-    const emailBody = `
-      <h1 style="color: #0c2b56;">New Contact Form Submission</h1>
-      <p>You have received a new message from your website's contact form.</p>
-      <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-        <tr style="background-color: #f2f2f2;">
-          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Full Name</td>
-          <td style="padding: 12px; border: 1px solid #ddd;">${fullName}</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Email</td>
-          <td style="padding: 12px; border: 1px solid #ddd;">${email}</td>
-        </tr>
-        ${phone ? `
-        <tr style="background-color: #f2f2f2;">
-          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Phone</td>
-          <td style="padding: 12px; border: 1px solid #ddd;">${phone}</td>
-        </tr>
-        ` : ''}
-        ${company ? `
-        <tr>
-          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Company</td>
-          <td style="padding: 12px; border: 1px solid #ddd;">${company}</td>
-        </tr>
-        ` : ''}
-        <tr style="background-color: #f2f2f2;">
-          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Subject</td>
-          <td style="padding: 12px; border: 1px solid #ddd;">${subject}</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #0c2b56;">Message</td>
-          <td style="padding: 12px; border: 1px solid #ddd;">${message}</td>
-        </tr>
-      </table>
-    `;
-
-    // Main email to business
-    await transporter.sendMail({
-      from: `"${fullName}" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
-      subject: `New Inquiry: ${subject}`,
-      html: emailBody,
-    });
-
-    // Confirmation email to user
-    await transporter.sendMail({
-      from: `"Lexocrates" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: 'Thank you for your inquiry!',
-      html: `<p>Dear ${fullName},</p>
-<p>Thank you for contacting us. We have received your message and a member of our team will get back to you shortly.</p>
-<p>Best regards,<br>The Lexocrates Team</p>`,
-    });
-
-    return NextResponse.json({ success: true, message: 'Form submitted successfully!' });
-
+      { status: 201 }
+    );
   } catch (error) {
-    console.error('Error sending email:', error);
-    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-    return NextResponse.json({ success: false, message: `Failed to send email: ${errorMessage}` }, { status: 500 });
+    const status =
+      error instanceof ERPNextLeadError && error.status === 409 ? 409 : 502;
+
+    console.error(
+      'Contact Lead submission failed:',
+      error instanceof Error ? error.message : error
+    );
+
+    return NextResponse.json(
+      {
+        success: false,
+        message:
+          status === 409
+            ? 'An enquiry with this email already exists. Please contact sales@lexocrates.com for an update.'
+            : 'We could not record your enquiry right now. Please try again or email sales@lexocrates.com.',
+      },
+      { status }
+    );
   }
 }

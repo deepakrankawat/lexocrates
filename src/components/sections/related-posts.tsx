@@ -3,16 +3,14 @@
 
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { blogPosts } from '@/lib/blog-data';
+import type { BlogPost } from '@/lib/blog-types';
 import { SlideIn } from '../animations/slide-in';
 import { StaggerFadeIn } from '../animations/stagger-fade-in';
 import { Badge } from '../ui/badge';
 import { ArrowRight, Calendar, User } from 'lucide-react';
 import { Button } from '../ui/button';
 
-type Post = typeof blogPosts[0];
-
-export function RelatedPosts({ posts }: { posts: Post[] }) {
+export function RelatedPosts({ posts }: { posts: BlogPost[] }) {
   if (!posts || posts.length === 0) return null;
 
   return (

@@ -4,6 +4,7 @@ import { WhyChooseUs } from '@/components/sections/why-choose-us';
 import { Team } from '@/components/sections/team';
 import { Blog } from '@/components/sections/blog';
 import { Hero } from '@/components/sections/hero';
+import { getBlogPosts } from '@/lib/erpnext-blogs';
 
 export const metadata: Metadata = {
   title: 'Legal Process Outsourcing & AI Automation for USA, UK, Canada | LexoCrates',
@@ -22,7 +23,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const blogPosts = await getBlogPosts();
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
@@ -47,7 +49,7 @@ export default function HomePage() {
       <Services />
       <WhyChooseUs />
       <Team />
-      <Blog />
+      <Blog posts={blogPosts} />
     </main>
   );
 }

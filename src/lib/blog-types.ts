@@ -1,0 +1,21 @@
+export type BlogPost = {
+  id: string;
+  title: string;
+  slug: string;
+  author: string;
+  date: string;
+  publishedOn: string;
+  lastModified: string;
+  category: string;
+  categorySlug: string;
+  featured: boolean;
+  readingMinutes: number;
+  readingTime: string;
+  excerpt: string;
+  keyTakeaways: string[];
+  fullContent: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  metaImage?: string;
+  authorAvatar?: string;
+};

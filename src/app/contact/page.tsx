@@ -5,6 +5,7 @@ import { SimpleContactForm } from "@/components/forms/SimpleContactForm";
 import { ContactDetails } from "@/components/sections/contact-details";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ContactProcess } from "@/components/sections/contact-process";
+import { Scale, ShieldCheck, Workflow } from "lucide-react";
 
 // Metadata is handled via a separate export in Client Components if needed, 
 // but since this is 'use client', standard metadata often lives in a parent page.tsx.
@@ -32,14 +33,14 @@ export default function ContactPage() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                 </span>
                 <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-[10px] sm:text-xs">
-                  Connect With Us
+                  LPO Consultation & Scoping
                 </p>
               </div>
               <h1 className="font-montserrat text-4xl sm:text-6xl lg:text-7xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
-                Get In <span className="text-accent">Touch</span>
+                Build the Right <span className="text-accent">Legal Delivery Model</span>
               </h1>
               <p className="text-base sm:text-xl lg:text-2xl text-white/70 font-medium leading-relaxed max-w-2xl mx-auto">
-                Reach out to discuss how our strategic legal operations can drive efficiency for your practice.
+                Tell us what work needs to move, where it sits, and when it must be delivered. We&apos;ll shape a secure, supervised support model around it.
               </p>
             </FadeIn>
           </div>
@@ -48,20 +49,51 @@ export default function ContactPage() {
 
       <div className="container-balanced">
           <section id="contact-form" className="py-16 md:py-24 lg:py-32">
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-              <div className="space-y-12 sm:space-y-16">
+            <div className="grid items-start gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+              <div className="space-y-10 sm:space-y-12 lg:sticky lg:top-28">
                 <div className="text-center lg:text-left">
                   <h2 className="font-lato text-3xl sm:text-5xl font-black text-primary tracking-tight mb-6 sm:mb-8">
                     Let&apos;s Start a <span className="text-accent">Conversation</span>
                   </h2>
                   <p className="text-base sm:text-xl text-foreground/60 font-medium leading-relaxed border-l-0 lg:border-l-4 border-accent/10 lg:pl-8">
-                    Whether you have a specific project in mind or just want to learn more about our global capabilities, we are ready to assist.
+                    Tell us what you need. We&apos;ll add your enquiry to our
+                    sales pipeline and connect you with the right person.
                   </p>
+                </div>
+
+                <div className="grid gap-4">
+                  {[
+                    {
+                      icon: Scale,
+                      title: "Tell us what you need",
+                      text: "A short subject and message are enough to get the conversation started.",
+                    },
+                    {
+                      icon: ShieldCheck,
+                      title: "Direct CRM follow-up",
+                      text: "Every valid submission is added as a lead for our team to review.",
+                    },
+                    {
+                      icon: Workflow,
+                      title: "Quick response",
+                      text: "The right team member will contact you within one business day.",
+                    },
+                  ].map((item) => (
+                    <div key={item.title} className="flex gap-4 rounded-2xl border border-black/5 bg-secondary/25 p-5">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10">
+                        <item.icon className="h-5 w-5 text-accent" />
+                      </div>
+                      <div>
+                        <h3 className="font-montserrat text-sm font-black text-primary">{item.title}</h3>
+                        <p className="mt-1 text-sm font-medium leading-relaxed text-foreground/55">{item.text}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
                 <ContactDetails />
               </div>
               
-              <div className="bg-secondary/30 p-6 sm:p-10 lg:p-12 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3.5rem] border border-black/5 shadow-sm hover:shadow-2xl transition-all duration-500 group">
+              <div className="rounded-[2rem] border border-black/5 bg-secondary/30 p-6 shadow-xl transition-all duration-500 sm:rounded-[2.5rem] sm:p-10 lg:p-12">
                 <SimpleContactForm />
               </div>
             </div>
