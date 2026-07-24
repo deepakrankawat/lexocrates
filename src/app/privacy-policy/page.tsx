@@ -1,6 +1,4 @@
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ShieldCheck } from 'lucide-react';
-import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,24 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-home');
-
   return (
     <main className="bg-background">
-      <section className="relative text-white pt-32 pb-12 sm:pt-36 sm:pb-16">
-        {heroImage && (
-            <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                width={heroImage.width}
-                height={heroImage.height}
-                sizes="100vw"
-                className="object-cover absolute inset-0 w-full h-full"
-                priority
-                data-ai-hint={heroImage.imageHint}
-            />
-        )}
-        <div className="absolute inset-0 bg-black/50" />
+      <section className="relative bg-primary text-white pt-32 pb-12 sm:pt-36 sm:pb-16 border-b border-white/10">
         <div className="container-balanced relative text-center">
             <ShieldCheck className="h-16 w-16 mx-auto text-accent mb-4" />
             <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold">Privacy Policy</h1>

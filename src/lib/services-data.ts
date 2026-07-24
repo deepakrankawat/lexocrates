@@ -32,94 +32,96 @@ export const servicesList: Service[] = [
     slug: 'legal-research-writing',
     iconName: 'Search',
     description:
-      'Multi-jurisdictional research, authority analysis, and lawyer-ready drafting for litigation, transactions, and regulatory matters.',
+      'Reliable, source-backed legal research and writing services across Canada, the UK, and the USA for law firms and in-house legal departments.',
     longDescription:
-      'Our legal research and writing team helps law firms and corporate legal departments convert complex questions into clear, source-linked work product. We work from the client’s issue statement, procedural posture, jurisdiction, preferred authorities, and output format. The service can support early case assessment, motion practice, appellate work, regulatory interpretation, contract disputes, and recurring knowledge-management needs. Every assignment is designed to reduce senior-lawyer review time while preserving attorney control over legal judgment and strategy.',
+      'Our legal research and writing services support law firms and in-house legal departments with reliable, source-backed legal analysis across Canada, the UK, and the USA. Every assignment is tailored to the client\'s legal issue, jurisdiction, procedural posture, preferred authorities, and required deliverable. Whether assisting with litigation, regulatory interpretation, contract disputes, appellate matters, or corporate legal work, we deliver clear, well-structured research that strengthens legal decision-making while allowing your team to retain complete control over legal strategy and client advice.',
     keyAreas: [
-      'Multi-State Case Law Synthesis (US)',
-      'UK Common Law & Statutory Interpretation',
-      'Canadian Federal and Provincial Research',
-      'Motion, Brief, and Memorandum Support',
-      'Inter-Jurisdictional Comparative Surveys',
-      'Regulatory and Compliance Memoranda',
+      'Canadian, UK & US Legal Research',
+      'Case Law & Precedent Analysis',
+      'Legal Memoranda & Research Notes',
+      'Motion & Brief Drafting Support',
+      'Appellate Research & Writing',
+      'Regulatory & Compliance Research',
     ],
     bestFor: [
-      'Research-intensive litigation and motion practice',
-      'Overflow work during filing or transaction deadlines',
-      'Multi-jurisdictional surveys and 50-state reviews',
-      'Teams that need repeatable research and citation standards',
+      'Law firms managing high-volume research requirements',
+      'In-house legal departments requiring scalable research support',
+      'Litigation and dispute resolution matters',
+      'Corporate and commercial legal teams',
+      'Cross-border legal matters across Canada, the UK, and the USA',
+      'Legal teams seeking reliable, source-backed analysis',
     ],
     process: [
       {
-        title: 'Issue framing and instruction review',
+        title: '01. Understanding the Assignment',
         description:
-          'We confirm the legal question, jurisdiction, procedural posture, relevant facts, deadline, exclusions, preferred databases, citation style, and the decision the work product must support.',
+          'We begin by reviewing the legal issue, jurisdiction, procedural posture, relevant facts, deadlines, preferred research sources, citation requirements, and the intended purpose of the final work product.',
       },
       {
-        title: 'Research plan and authority hierarchy',
+        title: '02. Research Strategy & Authority Review',
         description:
-          'The team builds a search plan covering controlling law, persuasive authority, statutes, regulations, secondary sources, defined terms, and likely adverse lines of authority.',
+          'Our team develops a research plan based on applicable statutes, regulations, case law, persuasive authorities, and recognised secondary sources, while identifying any potential adverse or conflicting authorities.',
       },
       {
-        title: 'Source collection and currency checks',
+        title: '03. Legal Research & Source Verification',
         description:
-          'Researchers collect primary sources, validate their current status through available citator tools, and record source links, dates, court level, and jurisdictional relevance.',
+          'Researchers collect and analyse relevant legal authorities, verify the current status of primary sources where applicable, and document all supporting references for accuracy and traceability.',
       },
       {
-        title: 'Analysis and adverse-authority review',
+        title: '04. Legal Analysis & Draft Preparation',
         description:
-          'Authorities are compared against the client’s facts. Conflicting rules, exceptions, minority positions, unsettled issues, and practical litigation risks are surfaced rather than hidden.',
+          'The research is translated into clear, practical work product, whether a legal memorandum, case analysis, comparative survey, draft argument, or research summary, using the client\'s preferred format and citation style.',
       },
       {
-        title: 'Drafting in the requested decision format',
+        title: '05. Independent Quality Review',
         description:
-          'We prepare a concise answer, research memorandum, case matrix, chronology, draft argument, or annotated source pack using the client’s template and citation requirements.',
+          'Every assignment undergoes an independent review to verify legal authorities, citation accuracy, issue coverage, logical consistency, and adherence to client instructions before delivery.',
       },
       {
-        title: 'Senior legal and citation quality control',
+        title: '06. Final Delivery',
         description:
-          'A second reviewer checks issue coverage, legal propositions, source support, quotations, pin cites, treatment of adverse authority, defined assumptions, and formatting before delivery.',
+          'The completed work product is delivered securely in the agreed format, with ongoing support available for clarifications, revisions, or additional research where required.',
       },
     ],
     deliverables: [
-      'Research memoranda with executive summaries',
-      'Case-law and authority matrices',
-      'Draft motions, briefs, and argument sections',
-      '50-state or multi-jurisdictional surveys',
+      'Legal research memoranda',
+      'Case law and precedent matrices',
+      'Motion and brief drafting support',
+      'Multi-jurisdictional legal research',
       'Statutory and regulatory comparison tables',
       'Citation tables and source-linked research packs',
-      'Chronologies and factual issue maps',
-      'Research updates and change alerts',
+      'Chronologies and factual issue summaries',
+      'Legal research updates and monitoring',
     ],
     benefits: [
       {
-        title: 'More senior-lawyer leverage',
+        title: 'Greater Leverage for Senior Lawyers',
         description:
-          'Partners and in-house counsel spend less time collecting and organizing authorities and more time applying judgment, advising clients, and shaping strategy.',
+          'Reduce the time spent on research and authority collection, allowing lawyers to focus on legal analysis, client advice, negotiation, and advocacy.',
       },
       {
-        title: 'Faster access to usable answers',
+        title: 'Faster Access to Reliable Research',
         description:
-          'A structured research plan and parallel review can compress turnaround without reducing the traceability of the underlying authorities.',
+          'Structured research methodologies and parallel workflows help accelerate turnaround without compromising quality or traceability.',
       },
       {
-        title: 'More defensible legal analysis',
+        title: 'Well-Supported Legal Analysis',
         description:
-          'Currency checks, authority hierarchy, adverse-authority searches, and source-linked conclusions make the work easier to verify and defend.',
+          'Every assignment is backed by verified legal authorities, clear citations, and documented reasoning, making the work easier to review and rely upon.',
       },
       {
-        title: 'Consistent work product',
+        title: 'Consistent Work Product',
         description:
-          'Client templates, citation rules, issue taxonomies, and reusable research protocols create consistency across matters and reviewers.',
+          'Standardised research methods, client-specific templates, and documented review processes help maintain consistency across matters and legal teams.',
       },
     ],
     qualityControls: [
-      'Issue checklist approved before substantive research begins',
-      'Primary-source preference and authority hierarchy review',
-      'Current-status and negative-treatment checks where tools permit',
-      'Independent quotation, pin-cite, and proposition verification',
-      'Mandatory adverse-authority and exception analysis',
-      'Senior reviewer sign-off with assumptions and open questions identified',
+      'Defined scope and research objectives',
+      'Review of applicable primary and secondary authorities',
+      'Authority verification and currency checks where applicable',
+      'Citation and reference verification',
+      'Adverse authority and exception review',
+      'Independent legal quality review before final delivery',
     ],
     securityControls: [
       {
@@ -167,98 +169,100 @@ export const servicesList: Service[] = [
     ),
   },
   {
-    name: 'Litigation Support Services',
+    name: 'Litigation Support',
     slug: 'litigation-support',
     iconName: 'Gavel',
     description:
-      'Operational litigation support from matter intake through discovery, deposition analysis, motion preparation, and trial readiness.',
+      'Operational litigation support from case preparation and discovery to testimony review and trial readiness.',
     longDescription:
-      'Our litigation support teams organize the high-volume work that sits behind effective advocacy. We help counsel build reliable matter records, understand testimony, manage deadlines, prepare discovery materials, and assemble hearing or trial-ready deliverables. The client retains control of legal strategy, privilege decisions, filing positions, and advocacy. We provide the structured execution, documentation, and quality control needed to keep the matter moving under deadline pressure.',
+      'Our litigation support services help law firms and corporate legal departments manage the operational demands of litigation with accuracy, consistency, and efficiency. From case preparation and discovery support to document management, testimony review, and trial preparation, we work as an extension of your legal team to streamline litigation workflows while allowing counsel to retain full control over legal strategy, advocacy, and client representation.',
     keyAreas: [
-      'Deposition Analytics & Summarization',
-      'Trial Exhibit Management & Indexing',
-      'Case Chronology Construction',
-      'Discovery Request and Response Support',
-      'Witness and Factual Issue Files',
-      'Pleading Formatting & E-Filing Support',
+      'Case File & Matter Management',
+      'Discovery Review & Response Support',
+      'Witness Statement & Testimony Review',
+      'Hearing & Trial Preparation',
+      'Deadline & Docket Management',
+      'Litigation Document Quality Control',
     ],
     bestFor: [
-      'Complex matters with large pleadings or discovery records',
-      'Teams facing deposition, hearing, or trial deadlines',
-      'Recurring litigation operations and docket support',
-      'Counsel that needs overnight or follow-the-sun execution',
+      'Law firms handling complex litigation matters',
+      'Corporate legal departments managing disputes',
+      'Commercial and civil litigation support',
+      'Discovery-intensive matters',
+      'Hearing and trial preparation',
+      'Legal teams requiring scalable litigation support',
     ],
     process: [
       {
-        title: 'Matter intake and protocol design',
+        title: '01. Matter Assessment & Planning',
         description:
-          'We document the claims, defenses, parties, jurisdictions, deadlines, governing orders, confidentiality restrictions, source repositories, deliverables, and attorney escalation contacts.',
+          'We review the case background, litigation stage, jurisdiction, deadlines, required deliverables, and client-specific instructions to establish the scope of support.',
       },
       {
-        title: 'Matter map and source organization',
+        title: '02. Case Organisation & Document Review',
         description:
-          'Pleadings, discovery, testimony, correspondence, and key evidence are indexed by date, witness, issue, allegation, and source so later work remains traceable.',
+          'Our team organises case materials, reviews pleadings and supporting documents, prepares chronologies, and structures information for efficient access throughout the matter.',
       },
       {
-        title: 'Workstream production',
+        title: '03. Discovery & Evidence Support',
         description:
-          'The assigned team prepares chronologies, deposition summaries, discovery trackers, exhibit lists, witness files, research packs, or filing support under a documented playbook.',
+          'We assist with document review, discovery preparation, witness materials, exhibit organisation, and evidence management while maintaining documented review procedures and confidentiality.',
       },
       {
-        title: 'Issue and escalation management',
+        title: '04. Litigation Document Preparation',
         description:
-          'Potential privilege concerns, missing records, contradictory testimony, deadline risks, unclear instructions, and strategically significant facts are logged and escalated.',
+          'We prepare litigation-ready work product, including discovery materials, hearing bundles, case summaries, witness files, and supporting documentation in accordance with client requirements.',
       },
       {
-        title: 'Attorney-facing quality review',
+        title: '05. Quality Review',
         description:
-          'A senior reviewer checks source references, page-line citations, dates, names, issue coding, completeness, formatting, and consistency with the attorney-approved protocol.',
+          'Every deliverable undergoes an independent quality review to verify completeness, consistency, formatting, document accuracy, and compliance with client instructions.',
       },
       {
-        title: 'Delivery, update, and trial-readiness control',
+        title: '06. Secure Delivery & Ongoing Support',
         description:
-          'Final deliverables are released through approved channels, versioned, and updated as the record develops. Open items and next deadlines remain visible to the client team.',
+          'Completed work is delivered securely and on schedule, with continued support available for updates, additional documentation, or evolving litigation requirements.',
       },
     ],
     deliverables: [
-      'Pleading, motion, and evidence indexes',
-      'Master and issue-specific chronologies',
-      'Page-line and narrative deposition summaries',
-      'Discovery request and response trackers',
-      'Witness, custodian, and fact files',
-      'Exhibit lists and trial-binder materials',
-      'Citation and record-reference checks',
-      'Docket, deadline, and filing checklists',
+      'Case Chronologies',
+      'Discovery Support Documents',
+      'Witness Statement Summaries',
+      'Hearing & Trial Bundles',
+      'Exhibit Lists & Document Indexes',
+      'Case Status Reports',
+      'Litigation Document Formatting',
+      'Matter Progress Updates',
     ],
     benefits: [
       {
-        title: 'Stronger command of the record',
+        title: 'Greater Efficiency',
         description:
-          'Searchable chronologies, testimony summaries, and issue maps help lawyers find the fact, exhibit, or contradiction they need without reopening the full record.',
+          'Reduce the administrative workload associated with litigation, allowing your legal team to focus on case strategy, advocacy, and client representation.',
       },
       {
-        title: 'More predictable deadlines',
+        title: 'Better Matter Organisation',
         description:
-          'Central trackers, handoff rules, and escalation paths reduce the operational risk that important tasks or dependencies remain invisible.',
+          'Well-structured case files and organised documentation improve accessibility and help legal teams work more efficiently throughout the litigation process.',
       },
       {
-        title: 'Lower attorney administrative burden',
+        title: 'Reliable Litigation Support',
         description:
-          'Structured preparation work moves away from senior lawyers while legal judgment and advocacy remain with the client’s attorneys.',
+          'Consistent workflows, documented procedures, and quality reviews help maintain accuracy across every stage of a matter.',
       },
       {
-        title: 'Scalable matter capacity',
+        title: 'Scalable Resources',
         description:
-          'The team can expand for depositions, discovery peaks, dispositive motions, or trial preparation and contract when the surge passes.',
+          'Access additional litigation support as workloads increase without disrupting your existing legal operations.',
       },
     ],
     qualityControls: [
-      'Matter-specific protocol and sample deliverable approval',
-      'Page-line, date, exhibit, and source-reference verification',
-      'Defined treatment for unclear testimony and missing materials',
-      'Second-level review of high-risk or attorney-facing deliverables',
-      'Version control across working and final files',
-      'Open-issue, deadline, and escalation logs maintained through delivery',
+      'Clearly defined scope and matter requirements',
+      'Structured document organisation and review',
+      'Discovery and evidence quality checks',
+      'Formatting, completeness, and accuracy verification',
+      'Independent quality assurance before delivery',
+      'Secure delivery under attorney supervision',
     ],
     securityControls: [
       {
@@ -310,94 +314,96 @@ export const servicesList: Service[] = [
     slug: 'contract-review-management',
     iconName: 'FileText',
     description:
-      'Playbook-led drafting, review, negotiation support, obligation capture, and portfolio control across the contract lifecycle.',
+      'Structured contract drafting, review, negotiation support, obligation tracking, and portfolio management throughout the contract lifecycle.',
     longDescription:
-      'Our contract lifecycle support turns recurring contract work into a controlled operating process. We help legal departments and law firms define preferred positions, fallback language, risk thresholds, approval routes, and escalation triggers. Reviewers then apply that playbook consistently across contracts while business-sensitive, high-value, or unusual issues return to designated counsel. The same structure can support intake, drafting, redlining, negotiation tracking, signature readiness, obligation extraction, renewal management, and portfolio reporting.',
+      'Our contract lifecycle management services help law firms and in-house legal teams manage contracts with greater consistency, visibility, and efficiency. From contract drafting and review to negotiation support, obligation tracking, and renewal management, we provide structured legal operations support throughout the contract lifecycle. Every engagement is tailored to your review standards, risk thresholds, approval workflows, and internal processes, while your legal team retains full control over legal advice, negotiation strategy, and final approvals.',
     keyAreas: [
-      'Contract Review Playbook Creation',
-      'Multi-Jurisdictional Drafting & Redlining',
-      'NDA, Vendor, Customer, and Employment Agreements',
-      'Obligation and Renewal Tracking',
-      'M&A and Portfolio Due Diligence',
-      'Template and Clause Library Governance',
+      'Contract Drafting & Review',
+      'Contract Redlining & Negotiation Support',
+      'Contract Risk Assessment',
+      'Approval Workflow Management',
+      'Obligation & Renewal Tracking',
+      'Contract Portfolio Management',
     ],
     bestFor: [
-      'Legal teams managing contract backlogs',
-      'High-volume recurring agreement types',
-      'Businesses needing faster first-pass review',
-      'Contract portfolios with inconsistent data and renewal visibility',
+      'Law firms managing commercial contracts',
+      'In-house legal departments',
+      'Vendor and procurement contracts',
+      'Contract-heavy business operations',
+      'Cross-border contract management',
+      'Legal teams seeking scalable contract support',
     ],
     process: [
       {
-        title: 'Contract intake and portfolio segmentation',
+        title: '01. Contract Intake & Scope Review',
         description:
-          'Agreements are classified by type, counterparty, value, jurisdiction, business owner, deadline, data sensitivity, and risk so the correct review path is applied.',
+          'We review the contract type, commercial objectives, applicable jurisdiction, review standards, timelines, and client-specific instructions before work begins.',
       },
       {
-        title: 'Playbook and escalation design',
+        title: '02. Review Framework & Risk Assessment',
         description:
-          'We document preferred clauses, acceptable fallbacks, non-negotiables, risk ratings, approval authorities, commercial variables, and mandatory attorney escalation events.',
+          'Our team applies agreed review guidelines, identifies key legal and commercial risks, reviews contract terms, and follows client-approved playbooks and escalation protocols.',
       },
       {
-        title: 'Drafting, review, and redlining',
+        title: '03. Drafting, Review & Redlining',
         description:
-          'Reviewers compare the agreement against the approved template and playbook, propose language, record deviations, and prepare concise issue notes for decision-makers.',
+          'We prepare, review, or revise contracts, suggest redlines where appropriate, and document observations for client review while maintaining consistency with agreed standards.',
       },
       {
-        title: 'Negotiation and exception support',
+        title: '04. Negotiation & Version Management',
         description:
-          'Counterparty changes are tracked across versions. Unusual exposure, regulatory issues, high-value departures, and business decisions are routed to the designated owner.',
+          'We support negotiation tracking, manage document versions, record changes, and maintain an organised review history throughout the contract lifecycle.',
       },
       {
-        title: 'Final quality and signature-readiness review',
+        title: '05. Quality Review',
         description:
-          'Names, dates, defined terms, cross-references, exhibits, schedules, commercial terms, approval evidence, redlines, and execution requirements are checked before release.',
+          'Every contract undergoes an independent quality review to verify accuracy, consistency, drafting quality, formatting, and compliance with client instructions.',
       },
       {
-        title: 'Obligation capture and portfolio reporting',
+        title: '06. Delivery & Ongoing Lifecycle Support',
         description:
-          'Key dates, notice requirements, payment terms, service levels, renewals, termination rights, and owner assignments are extracted into the client’s CLM or tracker.',
+          'Final documents are delivered securely, with continued support available for obligation tracking, renewals, amendments, and portfolio management where required.',
       },
     ],
     deliverables: [
-      'Client-specific contract review playbooks',
-      'Drafts, redlines, and clean comparison versions',
-      'Clause deviation and risk reports',
-      'Contract abstracts and metadata sheets',
-      'Obligation, notice, and renewal trackers',
-      'Template and fallback clause libraries',
-      'Due-diligence matrices and exception reports',
-      'Portfolio dashboards and backlog reporting',
+      'Contract Drafts',
+      'Contract Review & Redlines',
+      'Clause Comparison Reports',
+      'Contract Risk Summaries',
+      'Obligation & Renewal Trackers',
+      'Contract Approval Records',
+      'Contract Portfolio Reports',
+      'Contract Amendment Support',
     ],
     benefits: [
       {
-        title: 'Shorter contract cycle times',
+        title: 'Faster Contract Turnaround',
         description:
-          'Repeatable intake, tiered review, approved fallback language, and clear escalation reduce avoidable waiting and rework.',
+          'Streamline contract review and approval processes while maintaining consistency and quality.',
       },
       {
-        title: 'More consistent risk positions',
+        title: 'Improved Contract Visibility',
         description:
-          'A common playbook helps different reviewers apply the same standards across business units, regions, and agreement types.',
+          'Structured contract management provides better oversight of obligations, approvals, renewals, and key milestones.',
       },
       {
-        title: 'Better use of in-house counsel',
+        title: 'Consistent Contract Review',
         description:
-          'Counsel focuses on material exceptions, negotiation strategy, and business decisions instead of every first-pass clause comparison.',
+          'Client-specific playbooks, review guidelines, and quality checks help ensure consistency across every contract.',
       },
       {
-        title: 'Improved portfolio visibility',
+        title: 'Scalable Legal Operations',
         description:
-          'Structured metadata and obligation capture make renewals, notices, commitments, and recurring negotiation issues easier to manage.',
+          'Expand contract review capacity without increasing the workload on your internal legal team.',
       },
     ],
     qualityControls: [
-      'Agreement-type checklist and playbook version control',
-      'Clause-by-clause deviation and fallback verification',
-      'Defined-term, cross-reference, exhibit, and schedule checks',
-      'Commercial-term and metadata reconciliation',
-      'Mandatory attorney escalation for high-risk exceptions',
-      'Clean-versus-redline comparison before signature readiness',
+      'Clearly defined review scope and client instructions',
+      'Review against agreed playbooks and risk thresholds',
+      'Clause consistency and drafting verification',
+      'Formatting and document quality checks',
+      'Independent quality assurance before delivery',
+      'Secure delivery under attorney supervision',
     ],
     securityControls: [
       {
@@ -446,97 +452,99 @@ export const servicesList: Service[] = [
   },
   {
     name: 'eDiscovery & Document Review',
-    slug: 'document-review-ediscovery',
+    slug: 'ediscovery-document-review',
     iconName: 'Database',
     description:
-      'Defensible review operations for relevance, issue coding, privilege, redaction, chronology, and production quality control.',
+      'Defensible eDiscovery and document review services for first-level review, relevance coding, privilege, redaction, and production preparation.',
     longDescription:
-      'Our eDiscovery and document review support combines trained reviewers, matter-specific protocols, review-platform discipline, calibration, sampling, and documented escalation. We support investigations, litigation, regulatory responses, internal reviews, and data-intensive due diligence. Technology can prioritize and organize material, but responsiveness, privilege, confidentiality, and production decisions remain subject to human review and supervising-counsel direction.',
+      'Our eDiscovery and document review services help law firms and corporate legal departments manage large volumes of electronically stored information with accuracy, consistency, and confidentiality. From first-level document review and relevance coding to privilege review, redaction support, and production preparation, we combine structured review workflows with technology-assisted processes to deliver efficient, defensible results. Every engagement is tailored to your review protocol, platform requirements, and quality standards, while your legal team retains full control over legal strategy, privilege decisions, and production determinations.',
     keyAreas: [
-      'Review Protocol and Calibration Design',
-      'First-Pass Relevance and Issue Review',
-      'TAR and Predictive Coding Support',
-      'Privilege, Work-Product, and Redaction Review',
-      'Chronology and Factual Data Extraction',
-      'Production and Privilege-Log Quality Control',
+      'First-Level Document Review',
+      'Relevance & Issue Coding',
+      'Privilege Review & Redaction Support',
+      'Technology-Assisted Review (TAR) Support',
+      'Production Preparation & Quality Control',
+      'eDiscovery Platform Support',
     ],
     bestFor: [
-      'High-volume litigation and regulatory collections',
-      'Internal investigations and compliance reviews',
-      'Privilege-intensive matters',
-      'Teams needing scalable, measured reviewer capacity',
+      'Litigation and dispute resolution matters',
+      'Internal investigations',
+      'Regulatory and compliance reviews',
+      'Due diligence and corporate transactions',
+      'Large-scale document review projects',
+      'Law firms and in-house legal departments requiring scalable review support',
     ],
     process: [
       {
-        title: 'Matter protocol and data-risk assessment',
+        title: '01. Matter Assessment & Review Planning',
         description:
-          'Counsel-approved definitions cover responsiveness, issues, privilege, confidentiality, redaction, hot documents, escalation, quality thresholds, and prohibited handling.',
+          'We review the scope of the matter, document volumes, review objectives, jurisdiction, timelines, platform requirements, and client-specific review protocols before work begins.',
       },
       {
-        title: 'Secure workspace and reviewer onboarding',
+        title: '02. Review Protocol & Workflow Setup',
         description:
-          'Access groups, authentication, platform permissions, training materials, conflicts, confidentiality acknowledgments, and reviewer assignments are confirmed before review.',
+          'Our team applies agreed coding guidelines, privilege protocols, issue categories, escalation procedures, and quality standards to ensure a consistent review process.',
       },
       {
-        title: 'Calibration and seed review',
+        title: '03. Document Review & Classification',
         description:
-          'Reviewers code a controlled sample, compare decisions, discuss edge cases, refine examples, and establish a measurable baseline before full-volume review.',
+          'Documents are reviewed for relevance, responsiveness, privilege, confidentiality, and issue coding using client-approved workflows and review platforms where applicable.',
       },
       {
-        title: 'Scaled review and technology assistance',
+        title: '04. Redaction & Production Preparation',
         description:
-          'First-pass review, email threading, deduplication, analytics, TAR prioritization, issue coding, and factual extraction proceed under daily throughput and quality monitoring.',
+          'We support document redactions, privilege logs, production set preparation, and document organisation while maintaining complete review consistency and auditability.',
       },
       {
-        title: 'Privilege, redaction, and escalation',
+        title: '05. Quality Review',
         description:
-          'Potentially privileged, sensitive, ambiguous, high-risk, or technically problematic documents move to designated second-level reviewers or supervising counsel.',
+          'Every review project undergoes an independent quality check to verify coding accuracy, document classifications, redactions, privilege decisions, and production readiness.',
       },
       {
-        title: 'Quality sampling and production validation',
+        title: '06. Secure Delivery & Ongoing Support',
         description:
-          'Targeted and statistical samples, overturn analysis, privilege checks, redaction validation, metadata checks, and production-set reconciliation are completed and documented.',
+          'Final review outputs are delivered securely, with continued support available for rolling productions, additional review phases, or evolving matter requirements.',
       },
     ],
     deliverables: [
-      'Matter-specific review protocols and coding manuals',
-      'Reviewer training and calibration packs',
-      'Responsiveness, issue, and confidentiality coding',
-      'Privilege review and privilege-log support',
-      'Redaction review and validation logs',
-      'Hot-document, witness, and chronology reports',
-      'Daily throughput, quality, and escalation dashboards',
-      'Production-set and quality-control reports',
+      'First-Level Document Review',
+      'Relevance & Responsiveness Coding',
+      'Privilege Review Support',
+      'Redaction Logs',
+      'Privilege Logs',
+      'Production-Ready Document Sets',
+      'Review Progress Reports',
+      'Quality Control Reports',
     ],
     benefits: [
       {
-        title: 'Scalable review capacity',
+        title: 'Faster Review Timelines',
         description:
-          'Reviewer teams can expand around data volume and deadlines while maintaining common protocols, supervision, and performance reporting.',
+          'Structured review workflows and technology-assisted processes help accelerate document review while maintaining accuracy and consistency.',
       },
       {
-        title: 'More defensible decisions',
+        title: 'Defensible Review Process',
         description:
-          'Calibration, documented protocols, escalation logs, sampling, and overturn analysis create evidence of a reasonable and repeatable process.',
+          'Documented review protocols, quality controls, and privilege review procedures support reliable and defensible document productions.',
       },
       {
-        title: 'Lower cost of finding critical material',
+        title: 'Improved Review Consistency',
         description:
-          'Analytics and technology-assisted prioritization focus human attention where it is most useful without delegating final legal judgment to the tool.',
+          'Standardised coding guidelines and independent quality reviews help maintain consistency across large-scale review projects.',
       },
       {
-        title: 'Reduced privilege and production risk',
+        title: 'Scalable Review Capacity',
         description:
-          'Layered privilege review, redaction validation, and pre-production checks help identify leakage, inconsistency, and technical defects before release.',
+          'Expand document review resources quickly without increasing the burden on your internal legal team.',
       },
     ],
     qualityControls: [
-      'Protocol-based reviewer certification before live review',
-      'Daily calibration and tracked reviewer agreement',
-      'Targeted QC for privilege, hot documents, and key issues',
-      'Random or statistical sampling based on matter needs',
-      'Overturn-rate, rework, and escalation analysis',
-      'Final production, redaction, metadata, and privilege validation',
+      'Clearly defined review scope and coding protocols',
+      'Consistent application of review guidelines',
+      'Privilege and confidentiality verification',
+      'Redaction and production quality checks',
+      'Independent quality assurance before delivery',
+      'Secure delivery under attorney supervision',
     ],
     securityControls: [
       {
@@ -583,97 +591,99 @@ export const servicesList: Service[] = [
   },
   {
     name: 'Compliance & Regulatory Support',
-    slug: 'compliance-regulatory',
+    slug: 'compliance-regulatory-support',
     iconName: 'ShieldCheck',
     description:
-      'Structured regulatory research, gap assessment, policy operations, control evidence, and monitoring support across evolving obligations.',
+      'Structured regulatory research, policy drafting, AML/KYC support, gap assessments, risk tracking, and regulatory monitoring.',
     longDescription:
-      'Our compliance and regulatory support helps legal and risk teams turn broad obligations into actionable controls, policies, evidence, and reporting. We support regulatory inventories, gap assessments, policy drafting, due diligence, AML/KYC operations, privacy programs, risk registers, control testing, and regulatory-change monitoring. The client’s compliance officers and counsel retain ownership of legal interpretations, risk acceptance, regulatory engagement, and final policy approval.',
+      'Our compliance and regulatory support services help law firms and corporate legal departments manage evolving regulatory requirements with greater confidence and consistency. From regulatory research and policy drafting to compliance reviews, AML/KYC support, risk assessments, and ongoing regulatory monitoring, we provide structured legal operations support that helps organisations strengthen their compliance frameworks. Every engagement is tailored to your jurisdiction, internal policies, and regulatory obligations, while your legal and compliance teams retain full control over legal interpretation, regulatory engagement, and strategic decision-making.',
     keyAreas: [
-      'Cross-Border Regulatory Monitoring',
-      'AML, KYC, and Due-Diligence Support',
-      'Privacy and Data-Protection Gap Reviews',
-      'Compliance Policy and Procedure Drafting',
-      'Risk Register and Control-Evidence Maintenance',
-      'Internal Governance and Readiness Reviews',
+      'Regulatory Research & Compliance Analysis',
+      'Compliance Policy & Procedure Drafting',
+      'AML & KYC Support',
+      'Regulatory Gap Assessments',
+      'Risk Register & Control Documentation',
+      'Regulatory Monitoring & Reporting',
     ],
     bestFor: [
-      'Growing businesses formalizing compliance operations',
-      'Regulated teams managing recurring evidence and reviews',
-      'Cross-border privacy or third-party risk programs',
-      'Organizations preparing for audits or control assessments',
+      'Law firms advising on regulatory compliance',
+      'Corporate legal and compliance teams',
+      'Financial services and regulated industries',
+      'Privacy and data protection programmes',
+      'Cross-border compliance requirements',
+      'Organisations seeking scalable compliance support',
     ],
     process: [
       {
-        title: 'Scope, entity, and obligation mapping',
+        title: '01. Requirement Assessment & Scope Definition',
         description:
-          'We identify relevant entities, products, jurisdictions, regulators, data types, third parties, business processes, existing policies, and the specific decision or readiness goal.',
+          'We begin by understanding your regulatory environment, applicable jurisdictions, internal policies, compliance objectives, timelines, and reporting requirements.',
       },
       {
-        title: 'Regulatory and control inventory',
+        title: '02. Regulatory Review & Gap Assessment',
         description:
-          'Applicable obligations are organized into a traceable matrix and mapped to policies, procedures, control owners, systems, evidence, and review frequencies.',
+          'Our team reviews applicable laws, regulations, and internal processes to identify compliance gaps, operational risks, and areas requiring remediation or policy updates.',
       },
       {
-        title: 'Gap and risk assessment',
+        title: '03. Documentation & Compliance Support',
         description:
-          'Missing, inconsistent, outdated, or weakly evidenced controls are documented with impact, likelihood, dependencies, and attorney or compliance-owner questions.',
+          'We assist with policy drafting, regulatory documentation, AML/KYC support, due diligence, control documentation, and evidence preparation in accordance with your internal standards.',
       },
       {
-        title: 'Remediation and document development',
+        title: '04. Monitoring & Risk Management',
         description:
-          'We support policy, procedure, checklist, notice, questionnaire, control description, risk-register, and training-material updates under client approval.',
+          'We support ongoing regulatory monitoring, maintain risk registers, track regulatory developments, and help keep compliance documentation current and organised.',
       },
       {
-        title: 'Evidence and implementation support',
+        title: '05. Quality Review',
         description:
-          'Control evidence, owner attestations, due-diligence files, issue remediation, and readiness trackers are organized so implementation can be monitored.',
+          'Every assignment undergoes an independent quality review to verify accuracy, consistency, completeness, and alignment with client instructions before delivery.',
       },
       {
-        title: 'Monitoring and reporting',
+        title: '06. Delivery & Ongoing Support',
         description:
-          'Regulatory changes, recurring reviews, exceptions, incidents, overdue actions, and control metrics are summarized for legal, compliance, and management stakeholders.',
+          'Final deliverables are provided securely, with continued support available for regulatory updates, policy revisions, additional documentation, and evolving compliance requirements.',
       },
     ],
     deliverables: [
-      'Regulatory obligation and applicability matrices',
-      'Gap assessments and remediation roadmaps',
-      'Policies, procedures, notices, and checklists',
-      'AML/KYC and third-party due-diligence files',
-      'Privacy, retention, and data-mapping support',
-      'Risk registers and control libraries',
-      'Audit-readiness and evidence trackers',
-      'Regulatory change alerts and executive summaries',
+      'Regulatory Research Reports',
+      'Compliance Gap Assessment Reports',
+      'Compliance Policies & Procedures',
+      'AML & KYC Documentation Support',
+      'Due Diligence Reports',
+      'Risk Registers & Control Documentation',
+      'Regulatory Monitoring Updates',
+      'Compliance Status Reports',
     ],
     benefits: [
       {
-        title: 'Clearer ownership of obligations',
+        title: 'Stronger Compliance Frameworks',
         description:
-          'Structured matrices connect requirements to policies, controls, evidence, owners, and review dates instead of leaving them in isolated legal documents.',
+          'Build structured compliance processes that help reduce operational risk and support ongoing regulatory readiness.',
       },
       {
-        title: 'More efficient compliance operations',
+        title: 'Better Regulatory Visibility',
         description:
-          'Repeatable checklists, evidence standards, and review workflows reduce manual coordination and make recurring obligations easier to manage.',
+          'Stay informed of evolving legal and regulatory requirements through organised monitoring and timely reporting.',
       },
       {
-        title: 'Faster readiness and remediation',
+        title: 'Consistent Compliance Documentation',
         description:
-          'Prioritized gaps, dependencies, and action tracking help teams focus resources on issues with the greatest operational or regulatory significance.',
+          'Standardised processes and quality reviews help maintain consistency across policies, reports, and regulatory records.',
       },
       {
-        title: 'Better management visibility',
+        title: 'Scalable Compliance Support',
         description:
-          'Dashboards and concise summaries help stakeholders understand open risks, overdue actions, evidence gaps, and regulatory developments.',
+          'Expand your compliance capabilities without increasing pressure on your internal legal and compliance teams.',
       },
     ],
     qualityControls: [
-      'Defined scope, entity, jurisdiction, and effective-date assumptions',
-      'Requirement-to-source and requirement-to-control traceability',
-      'Independent review of citations, dates, and obligation summaries',
-      'Owner validation of process and evidence descriptions',
-      'Controlled policy versions and approval records',
-      'Open-question and legal-interpretation escalation to client counsel',
+      'Clearly defined scope and regulatory requirements',
+      'Review of applicable laws, regulations, and internal policies',
+      'Documentation accuracy and consistency checks',
+      'Independent quality assurance before delivery',
+      'Secure handling of confidential compliance information',
+      'Delivery under client-defined review and approval processes',
     ],
     securityControls: [
       {
@@ -722,97 +732,99 @@ export const servicesList: Service[] = [
   },
   {
     name: 'Paralegal & Virtual Operations',
-    slug: 'paralegal-assistant',
+    slug: 'paralegal-virtual-operations',
     iconName: 'Users',
     description:
-      'Embedded paralegal and legal operations capacity for case administration, docketing, filings, billing, intake, and recurring workflow support.',
+      'Dependable paralegal and virtual legal operations support for matter intake, document preparation, docketing, filing, and practice management.',
     longDescription:
-      'Our paralegal and virtual legal operations teams take ownership of defined, repeatable work that consumes lawyer and in-house team capacity. Support can include matter intake, document organization, calendar and docket updates, filing preparation, proofreading, billing support, conflict-check coordination, client communication administration, and practice-management maintenance. The model is built around documented procedures, least-privilege system access, clear attorney supervision, daily visibility, and escalation when legal judgment is required.',
+      'Our paralegal and virtual legal operations services help law firms and corporate legal departments manage the day-to-day legal and administrative work that supports efficient legal practice. From matter management and document preparation to docket coordination, legal administration, and client communication support, we provide dependable operational assistance that integrates seamlessly with your existing workflows. Every engagement is tailored to your firm\'s procedures, systems, and supervision requirements, while your legal team retains full control over legal advice, strategic decisions, and client relationships.',
     keyAreas: [
-      'Practice and Matter Management Support',
-      'Conflict Check and Client Intake Coordination',
-      'Master Calendar and Docket Administration',
-      'Billing, Time, and Invoice Operations',
-      'Court Filing and Document Production Support',
-      'Proofreading, Formatting, and Citation Checks',
+      'Matter Intake & Case Management',
+      'Legal Document Preparation',
+      'Calendar & Docket Management',
+      'Filing & Document Coordination',
+      'Legal Billing & Administrative Support',
+      'Virtual Legal Operations Support',
     ],
     bestFor: [
-      'Law firms that need stable non-lawyer operational capacity',
-      'Legal departments with recurring administrative backlogs',
-      'Teams seeking follow-the-sun matter support',
-      'Organizations standardizing fragmented legal workflows',
+      'Law firms requiring ongoing paralegal support',
+      'Corporate legal departments',
+      'High-volume legal practices',
+      'Growing firms seeking operational support',
+      'Multi-jurisdictional legal teams',
+      'Legal teams looking to scale efficiently',
     ],
     process: [
       {
-        title: 'Workflow and responsibility mapping',
+        title: '01. Requirement Assessment & Onboarding',
         description:
-          'We document tasks, systems, inputs, outputs, deadlines, owners, attorney-review points, client communication limits, risk levels, and tasks that must never be delegated.',
+          'We begin by understanding your workflows, practice areas, systems, priorities, timelines, and supervision requirements to establish a clear scope of support.',
       },
       {
-        title: 'SOP, access, and escalation setup',
+        title: '02. Workflow Integration',
         description:
-          'Client procedures, templates, naming conventions, calendars, permissions, communication channels, quality checks, and escalation contacts are configured before live work.',
+          'Our team aligns with your internal procedures, document standards, communication protocols, and practice management systems to ensure seamless collaboration.',
       },
       {
-        title: 'Controlled pilot',
+        title: '03. Paralegal & Administrative Support',
         description:
-          'A limited set of matters or task types is processed first so instructions, turnaround expectations, access, output quality, and exception handling can be calibrated.',
+          'We assist with matter intake, document preparation, calendar management, filing coordination, billing support, conflict-check coordination, document organisation, and other routine legal operations in accordance with your instructions.',
       },
       {
-        title: 'Daily task execution',
+        title: '04. Matter Monitoring & Coordination',
         description:
-          'Assigned paralegals manage approved intake, docket, document, filing, billing, proofreading, correspondence, and platform tasks using shared trackers and priorities.',
+          'We maintain organised matter records, track deadlines, coordinate documentation, and provide regular updates to help keep work progressing efficiently.',
       },
       {
-        title: 'Quality review and legal escalation',
+        title: '05. Quality Review',
         description:
-          'Checklists and senior review cover critical dates, names, filing requirements, document completeness, billing data, and formatting. Legal questions return to supervising counsel.',
+          'Every assignment undergoes an independent quality review to verify accuracy, completeness, consistency, and compliance with client instructions before delivery.',
       },
       {
-        title: 'Performance and capacity management',
+        title: '06. Ongoing Operational Support',
         description:
-          'The team reports workload, turnaround, exceptions, rework, backlog, upcoming deadlines, and process-improvement opportunities at the agreed cadence.',
+          'Support continues as your matters evolve, allowing your legal team to scale resources efficiently while maintaining established workflows and service standards.',
       },
     ],
     deliverables: [
-      'Matter intake and opening packs',
-      'Conflict-check and client-data trackers',
-      'Calendars, docket updates, and deadline reports',
-      'Formatted, proofread, and filing-ready documents',
-      'Exhibit, correspondence, and matter indexes',
-      'Billing, time-entry, and invoice support files',
-      'Daily or weekly operations dashboards',
-      'SOPs, checklists, and knowledge-base updates',
+      'Matter Intake Records',
+      'Organised Case Files',
+      'Calendar & Docket Updates',
+      'Legal Document Preparation',
+      'Filing & Administrative Support',
+      'Billing & Time Entry Support',
+      'Matter Status Reports',
+      'Practice Management Updates',
     ],
     benefits: [
       {
-        title: 'More lawyer time for legal work',
+        title: 'Increased Operational Efficiency',
         description:
-          'Recurring coordination and administrative execution move to a managed support layer while lawyers retain supervision and legal decision-making.',
+          'Reduce the administrative burden on lawyers and in-house legal teams, allowing them to focus on legal analysis, client service, and strategic work.',
       },
       {
-        title: 'More reliable operations',
+        title: 'Better Matter Organisation',
         description:
-          'Documented procedures, backup coverage, shared trackers, and quality checklists reduce dependence on informal knowledge and individual memory.',
+          'Maintain organised files, accurate records, and well-managed workflows that support efficient legal operations.',
       },
       {
-        title: 'Flexible, scalable capacity',
+        title: 'Consistent Administrative Support',
         description:
-          'Support can expand around filings, matter intake, billing cycles, diligence, and litigation peaks without rebuilding the internal team for each surge.',
+          'Documented procedures, quality reviews, and structured workflows help ensure consistency across every assignment.',
       },
       {
-        title: 'Better workflow visibility',
+        title: 'Scalable Legal Operations',
         description:
-          'Task status, deadlines, bottlenecks, exceptions, and service levels are made visible through agreed reporting rather than managed through scattered messages.',
+          'Expand operational capacity quickly without increasing the demands on your internal legal team.',
       },
     ],
     qualityControls: [
-      'Task-specific SOPs, checklists, and sample outputs',
-      'Dual control for critical dates and filing information',
-      'Defined attorney approval points and prohibited tasks',
-      'Template, naming, and matter-filing conventions',
-      'Daily exception and overdue-task review',
-      'Rework, turnaround, backlog, and service-level reporting',
+      'Clearly defined scope and client instructions',
+      'Compliance with documented workflows and procedures',
+      'Accuracy and completeness verification',
+      'Document formatting and quality checks',
+      'Independent quality assurance before delivery',
+      'Secure handling of client information under attorney supervision',
     ],
     securityControls: [
       {
