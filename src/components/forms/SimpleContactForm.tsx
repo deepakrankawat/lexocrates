@@ -285,7 +285,7 @@ export function SimpleContactForm() {
         type="submit"
         size="xl"
         disabled={isSubmitting}
-        className="h-14 w-full rounded-full bg-primary font-montserrat text-xs font-black uppercase tracking-[0.3em] text-white shadow-2xl hover:bg-primary/95"
+        className="h-11 sm:h-14 w-full rounded-full bg-primary font-montserrat text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white shadow-2xl hover:bg-primary/95"
       >
         {isSubmitting ? (
           <Loader2 className="h-5 w-5 animate-spin text-accent" />

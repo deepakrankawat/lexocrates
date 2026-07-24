@@ -3,38 +3,38 @@
 
 import { SlideIn } from '../animations/slide-in';
 import { FadeIn } from '../animations/fade-in';
-import { Scale, Lightbulb, ShieldCheck } from 'lucide-react';
+import { Scale, ShieldCheck, Globe2 } from 'lucide-react';
 
 const tenets = [
   {
     icon: Scale,
-    title: "Intellectual Rigor",
-    description: "Every legal process we manage is treated with the same depth of inquiry as a high-stakes litigation, ensuring no detail is overlooked."
-  },
-  {
-    icon: Lightbulb,
-    title: "Ethical Vision",
-    description: "Our leadership is guided by the Socratic belief that the unexamined life—and the unexamined legal process—is not worth pursuing."
+    title: "Rigor in Every Engagement",
+    description: "Every legal process we manage receives the same level of care and quality oversight, regardless of its size or complexity. Consistency is built into every stage of our workflow."
   },
   {
     icon: ShieldCheck,
-    title: "Global Stewardship",
-    description: "We lead with a sense of responsibility toward the international legal communities we serve, upholding their standards as our own."
+    title: "An Ethical Baseline, Not a Talking Point",
+    description: "Confidentiality, professionalism, and ethical conduct are fundamental to how we operate. They are not differentiators — they are the standard every client should expect."
+  },
+  {
+    icon: Globe2,
+    title: "Responsibility Across Jurisdictions",
+    description: "Supporting clients across jurisdictions means understanding the legal standards, professional expectations, and jurisdictional requirements unique to every market we serve."
   }
 ];
 
 export function LeadershipPhilosophy() {
   return (
-    <section className="py-12 sm:py-16 bg-primary text-white rounded-[3rem] my-8 overflow-hidden">
+    <section className="py-16 sm:py-24 bg-primary text-white rounded-[3rem] my-12 overflow-hidden">
       <div className="container-balanced">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <SlideIn direction="right">
-            <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-xs">Our Mindset</p>
-            <h2 className="font-lato text-4xl sm:text-5xl font-black leading-tight tracking-tight mb-8">
-              Leadership Beyond <br /><span className="text-accent">Management</span>
+            <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-xs">OUR APPROACH TO LEADERSHIP</p>
+            <h2 className="font-lato text-3xl sm:text-5xl font-black leading-tight tracking-tight mb-8">
+              Leadership as Stewardship, Not Hierarchy
             </h2>
-            <p className="text-xl text-white/70 font-medium leading-relaxed mb-12 border-l-4 border-accent/20 pl-8">
-              At Lexocrates, leadership is not about hierarchy; it is about the stewardship of excellence. We foster an environment where every lawyer is empowered to think critically and act ethically.
+            <p className="text-lg text-white/80 font-medium leading-relaxed mb-12 border-l-4 border-accent/30 pl-6">
+              We see leadership not as a management structure, but as a responsibility to uphold the highest standards — for our clients, our people, and every engagement we undertake. That commitment is reflected in three guiding principles.
             </p>
           </SlideIn>
 
@@ -47,7 +47,7 @@ export function LeadershipPhilosophy() {
                   </div>
                   <div>
                     <h4 className="font-roboto text-xl font-bold mb-2">{tenet.title}</h4>
-                    <p className="text-white/60 font-medium leading-relaxed">{tenet.description}</p>
+                    <p className="text-white/70 font-medium text-sm leading-relaxed">{tenet.description}</p>
                   </div>
                 </div>
               </FadeIn>

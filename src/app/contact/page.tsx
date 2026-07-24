@@ -18,7 +18,7 @@ export default function ContactPage() {
   return (
     <main className="bg-background">
       {/* Refined Contact Hero */}
-      <section className="relative min-h-[40vh] sm:min-h-[45vh] flex items-center justify-center overflow-hidden bg-primary py-16 sm:py-24">
+      <section className="relative min-h-[40vh] sm:min-h-[45vh] flex items-center justify-center overflow-hidden bg-primary pt-[84px] sm:pt-[100px] lg:pt-[130px] pb-16 sm:pb-24">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
           <div className="absolute inset-0 opacity-[0.03]" 
@@ -36,7 +36,7 @@ export default function ContactPage() {
                   LPO Consultation & Scoping
                 </p>
               </div>
-              <h1 className="font-montserrat text-4xl sm:text-6xl lg:text-7xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
+              <h1 className="font-montserrat text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
                 Build the Right <span className="text-accent">Legal Delivery Model</span>
               </h1>
               <p className="text-base sm:text-xl lg:text-2xl text-white/70 font-medium leading-relaxed max-w-2xl mx-auto">

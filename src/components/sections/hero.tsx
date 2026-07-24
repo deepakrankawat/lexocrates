@@ -10,7 +10,7 @@ import { Scale, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary pt-[96px] sm:pt-[100px] lg:pt-[160px] pb-12 lg:pb-24">
+    <section className="relative min-h-screen lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary pt-[84px] sm:pt-[100px] lg:pt-[140px] pb-12 lg:pb-24">
       {/* High-End Architectural Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Desktop Gradients */}
@@ -47,56 +47,43 @@ export function Hero() {
                   <span className="flex h-1.5 w-1.5 rounded-full bg-accent relative">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                   </span>
-                  <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[8px] sm:text-xs">
-                    Jurisdictional Rigor • Global Delivery
+                  <p className="font-lato font-black text-accent uppercase tracking-[0.2em] text-[8px] sm:text-xs">
+                    SUPPORTING LAW FIRMS &amp; CORPORATE LEGAL TEAMS ACROSS CANADA, THE UK &amp; THE USA · GLOBAL DELIVERY
                   </p>
                 </div>
               </SlideIn>
 
               <SlideIn direction="up" delay={0.2}>
-                <h1 className="font-montserrat text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] text-white mb-6 tracking-tighter">
-                  Strategic <br />
-                  <span className="text-accent">Legal</span> <br className="hidden sm:block" />
-                  Operations
+                <h1 className="font-montserrat text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black leading-[1.15] sm:leading-[1.1] text-white mb-6 tracking-tight">
+                  Legal Process Outsourcing, Built Around How Your Team Actually Works
                 </h1>
               </SlideIn>
 
-              <SlideIn direction="up" delay={0.25}>
-                <p className="text-accent font-montserrat font-bold text-base sm:text-xl lg:text-2xl mb-8 tracking-tight max-w-2xl mx-auto lg:mx-0">
-                  Where Confidentiality, Precision, and Speed Converge
-                </p>
-              </SlideIn>
-
               <SlideIn direction="up" delay={0.35} className="space-y-6 lg:space-y-4 mb-10 w-full flex flex-col items-center lg:items-start">
-                <h2 className="text-sm sm:text-xl font-montserrat font-bold tracking-tight border-l-0 lg:border-l-4 border-accent lg:pl-8 inline-block lg:block text-white uppercase lg:normal-case tracking-[0.2em] lg:tracking-tight">
-                  Elite LPO Support for Global Law Firms
-                </h2>
-                
-                <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 font-medium leading-relaxed lg:pl-8 mx-auto lg:mx-0 px-4 lg:px-0">
-                  Partnering with the world&apos;s leading practices in the US, UK, and Canada. We integrate elite Indian expertise with advanced AI technology to transform high-stakes legal workflows into high-performance operational successes.
+                <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/80 font-medium leading-relaxed mx-auto lg:mx-0 px-4 lg:px-0">
+                  Lexocrates partners with law firms and corporate legal departments in Canada, the UK, and the USA, managing the process-intensive legal work that keeps your team from focusing on what matters most. From legal research and litigation support to contract lifecycle management, eDiscovery, compliance, and paralegal services, our legal professionals work within structured, quality-driven processes built to fit your workflow — not the other way around.
                 </p>
               </SlideIn>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start lg:ml-8 w-full sm:w-auto px-6 lg:px-0">
-                <SlideIn direction="up" delay={0.45}>
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start w-full sm:w-auto px-2 sm:px-0">
+                <SlideIn direction="up" delay={0.45} className="w-full sm:w-auto">
                   <Button
                     asChild
                     size="xl"
-                    className="w-full sm:w-auto h-14 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105"
+                    className="w-full sm:w-auto h-11 sm:h-13 lg:h-14 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-[10px] sm:text-xs lg:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] px-6 sm:px-10 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105"
                   >
                     <Link href="/services" className="flex items-center justify-center gap-2">
-                      Explore Solutions <ArrowRight className="w-4 h-4" />
+                      Explore Our Services <ArrowRight className="w-4 h-4" />
                     </Link>
                   </Button>
                 </SlideIn>
-                <SlideIn direction="up" delay={0.5}>
+                <SlideIn direction="up" delay={0.5} className="w-full sm:w-auto">
                   <Button
                     asChild
                     size="xl"
-                    variant="outline"
-                    className="w-full sm:w-auto h-14 bg-white/5 backdrop-blur-xl text-white border-white/20 hover:bg-white hover:text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-[0.25em] px-10 rounded-full transition-all duration-500 hover:scale-105"
+                    className="w-full sm:w-auto h-11 sm:h-13 lg:h-14 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-montserrat font-black text-[10px] sm:text-xs lg:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] px-6 sm:px-10 rounded-full transition-all duration-500 hover:scale-105"
                   >
-                    <Link href="/contact">Strategy Call</Link>
+                    <Link href="/contact">Contact Us</Link>
                   </Button>
                 </SlideIn>
               </div>

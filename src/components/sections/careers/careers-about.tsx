@@ -49,52 +49,17 @@ export function CareersAbout() {
             <SlideIn direction="right">
               <div className="inline-flex items-center gap-4 px-4 py-2 rounded-full bg-accent/5 border border-accent/10 backdrop-blur-xl mb-8">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[10px]">The Lexocrates DNA</p>
+                <p className="font-lato font-black text-accent uppercase tracking-[0.3em] text-[10px]">LIFE AT LEXOCRATES</p>
               </div>
               
-              {/* Simple Animated UI for Keywords */}
-              <div className="space-y-4 mb-12 relative">
-                <motion.div 
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-                  className="flex items-center gap-6 group"
-                >
-                  <span className="h-px w-8 bg-accent/20 group-hover:w-16 transition-all duration-700" />
-                  <h2 className="font-lato text-3xl sm:text-5xl md:text-6xl font-black text-primary leading-tight tracking-tighter">Innovation,</h2>
-                </motion.div>
-                
-                <motion.div 
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-                  className="flex items-center gap-6 group"
-                >
-                  <span className="h-px w-16 bg-accent/20 group-hover:w-24 transition-all duration-700" />
-                  <h2 className="font-lato text-3xl sm:text-5xl md:text-6xl font-black text-primary leading-tight tracking-tighter">Collaboration,</h2>
-                </motion.div>
+              <h2 className="font-lato text-3xl sm:text-5xl md:text-6xl font-black text-primary leading-tight tracking-tighter mb-8">
+                Professional Growth <br /><span className="text-accent">Through Meaningful Work</span>
+              </h2>
 
-                <motion.div 
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
-                  className="flex items-center gap-6 group"
-                >
-                  <span className="h-px w-24 bg-accent group-hover:w-32 transition-all duration-700" />
-                  <h2 className="font-lato text-3xl sm:text-5xl md:text-6xl font-black text-accent leading-tight tracking-tighter">and Excellence</h2>
-                </motion.div>
-              </div>
-
-              <SlideIn direction="up" delay={0.9}>
-                <div className="text-lg text-foreground/60 space-y-8 font-medium leading-relaxed border-l-0 lg:border-l-4 border-accent/10 pl-0 lg:pl-16">
+              <SlideIn direction="up" delay={0.4}>
+                <div className="text-base sm:text-lg text-foreground/80 font-medium leading-relaxed border-l-4 border-accent/20 pl-6">
                   <p>
-                    At Lexocrates, we foster a culture of continuous learning. We are a team of passionate professionals dedicated to pushing the boundaries of legal service delivery through precision and deep inquiry.
-                  </p>
-                  <p>
-                    We value diversity, creativity, and a proactive mindset. If you are driven by excellence and want to make a real impact in the global legal tech space, you&apos;ll find a rewarding career at Lexocrates.
+                    At Lexocrates, professional growth comes through meaningful work, collaboration, and continuous learning. We encourage curiosity, accountability, and knowledge sharing, creating an environment where legal professionals can build practical skills while contributing to high-quality legal support across multiple jurisdictions.
                   </p>
                 </div>
               </SlideIn>

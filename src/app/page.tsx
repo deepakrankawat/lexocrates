@@ -1,42 +1,33 @@
 import { Metadata } from 'next';
-import { Services } from '@/components/sections/services';
-import { WhyChooseUs } from '@/components/sections/why-choose-us';
-import { Team } from '@/components/sections/team';
-import { Blog } from '@/components/sections/blog';
 import { Hero } from '@/components/sections/hero';
-import { getBlogPosts } from '@/lib/erpnext-blogs';
+import { About } from '@/components/sections/about';
+import { WhyChooseUs } from '@/components/sections/why-choose-us';
+import { LegalProcess } from '@/components/sections/legal-process';
+import { Cta } from '@/components/sections/cta';
+import { HomeServices } from '@/components/sections/home-services';
 
 export const metadata: Metadata = {
-  title: 'Legal Process Outsourcing & AI Automation for USA, UK, Canada | LexoCrates',
+  title: 'Legal Process Outsourcing | Lexocrates',
   description:
-    'AI-assisted legal process outsourcing for US, UK, and Canadian law firms: contract review, eDiscovery automation, legal research, and paralegal support with compliance-first controls.',
-  keywords: [
-    'legal process outsourcing USA',
-    'legal process outsourcing UK',
-    'legal process outsourcing Canada',
-    'AI contract review',
-    'ediscovery automation',
-    'outsourced paralegal services',
-  ],
+    'Lexocrates partners with law firms and corporate legal departments in Canada, the UK, and the USA, managing process-intensive legal work.',
   alternates: {
     canonical: '/',
   },
 };
 
-export default async function HomePage() {
-  const blogPosts = await getBlogPosts();
+export default function HomePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
-    name: 'Lexocrates AI Legal Process Outsourcing',
-    description: 'Lexocrates provides AI-accelerated Legal Process Outsourcing (LPO) for global law firms, specializing in eDiscovery, contract drafting, and multi-jurisdictional legal research.',
+    name: 'Lexocrates Legal Process Outsourcing',
+    description:
+      'Lexocrates provides Legal Process Outsourcing (LPO) for global law firms, specializing in eDiscovery, contract drafting, and multi-jurisdictional legal research.',
     url: 'https://lexocrates.vercel.app',
     areaServed: ['US', 'UK', 'Canada'],
-    knowsAbout: ['Legal Research', 'AI eDiscovery', 'Contract Management', 'Intellectual Property Outsourcing', 'Litigation Support'],
     provider: {
       '@type': 'Organization',
       name: 'Lexocrates',
-    }
+    },
   };
 
   return (
@@ -46,10 +37,11 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <Services />
+      <About />
+      <HomeServices />
       <WhyChooseUs />
-      <Team />
-      <Blog posts={blogPosts} />
+      <LegalProcess />
+      <Cta />
     </main>
   );
 }

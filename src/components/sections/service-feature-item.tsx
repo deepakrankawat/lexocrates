@@ -1,7 +1,7 @@
 
 'use client';
 
-import { CheckCircle2, ArrowRight, Search, Gavel, FileText, ShieldCheck, Users, Database, LucideIcon } from 'lucide-react';
+import { ArrowRight, Search, Gavel, FileText, ShieldCheck, Users, Database, LucideIcon } from 'lucide-react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -81,20 +81,11 @@ export function ServiceFeatureItem({ service, index, showLink = true }: { servic
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 lg:pt-10 border-t border-black/5">
-             {service.keyAreas.map((area, i) => (
-               <div key={i} className="flex items-start gap-3 p-4 bg-secondary/30 rounded-2xl group/area hover:bg-white hover:shadow-xl transition-all duration-500">
-                  <div className="p-1 bg-accent/10 rounded-full mt-0.5 group-hover/area:bg-accent transition-colors">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-accent group-hover/area:text-white transition-colors" />
-                  </div>
-                  <span className="text-sm font-bold text-primary/80 tracking-tight">{area}</span>
-               </div>
-             ))}
-          </div>
+
 
           <div className="pt-8 lg:pt-10 flex flex-col sm:flex-row items-center gap-4 lg:gap-8">
             {showLink && (
-              <Button asChild size="xl" className="w-full sm:w-auto h-14 bg-primary text-white hover:bg-accent font-montserrat font-black text-xs uppercase tracking-[0.3em] px-10 rounded-full shadow-xl transition-all duration-300">
+              <Button asChild size="xl" className="w-full sm:w-auto h-11 sm:h-13 lg:h-14 bg-primary text-white hover:bg-accent font-montserrat font-black text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] px-6 sm:px-10 rounded-full shadow-xl transition-all duration-300">
                 <Link href={`/services/${service.slug}`}>Deep Service Overview</Link>
               </Button>
             )}

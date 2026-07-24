@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Scale } from 'lucide-react';
+import { Menu, X, Scale, Home, Info, Briefcase, Users, GraduationCap, FileText, Mail, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetClose, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -11,12 +11,13 @@ import { Logo } from '@/components/ui/logo';
 import { motion } from 'framer-motion';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/team', label: 'Team' },
-  { href: '/careers', label: 'Careers' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/', label: 'Home', icon: Home },
+  { href: '/about', label: 'About', icon: Info },
+  { href: '/services', label: 'Services', icon: Briefcase },
+  { href: '/team', label: 'Team', icon: Users },
+  { href: '/careers', label: 'Careers', icon: GraduationCap },
+  { href: '/blog', label: 'Blog', icon: FileText },
+  { href: '/contact', label: 'Contact', icon: Mail },
 ];
 
 export function Header() {
@@ -36,22 +37,24 @@ export function Header() {
   return (
     <header className={cn(
       'fixed top-0 z-50 w-full transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-black/5 pt-[env(safe-area-inset-top)]',
-      isScrolled ? 'py-1 shadow-md' : 'py-2 lg:py-4'
+      isScrolled ? 'py-0.5 shadow-md' : 'py-1.5 lg:py-3'
     )}>
       <div className="mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-28 xl:px-36 max-w-[1920px]">
         
         <div className="flex-shrink-0">
-          <Link href="/" className="group block transition-transform duration-300 hover:scale-105">
+          <Link href="/" className="group block transition-transform duration-300 hover:scale-105 active:scale-95">
             <Logo variant="dark" className={cn(
               "w-auto transition-all duration-500",
-              isScrolled ? "h-12 lg:h-12" : "h-16 lg:h-20"
+              isScrolled 
+                ? "h-10 sm:h-12 lg:h-14 max-w-[190px] sm:max-w-[240px] lg:max-w-none" 
+                : "h-12 sm:h-16 lg:h-20 max-w-[220px] sm:max-w-[300px] lg:max-w-none"
             )} />
           </Link>
         </div>
         
         <nav className="hidden lg:flex flex-grow justify-center">
           <ul className="flex items-center gap-6 xl:gap-10">
-            {navLinks.map((link) => (
+            {navLinks.filter(l => l.href !== '/contact').map((link) => (
               <li key={link.href}>
                 <Link 
                   href={link.href} 
@@ -77,7 +80,7 @@ export function Header() {
               asChild 
               onMouseEnter={() => setIsHoveringContact(true)}
               onMouseLeave={() => setIsHoveringContact(false)}
-              className="hidden lg:flex h-12 bg-primary hover:bg-primary/90 text-white font-montserrat font-black text-[11px] uppercase tracking-[0.2em] px-8 rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden group/btn"
+              className="hidden lg:flex h-11 bg-primary hover:bg-primary/90 text-white font-montserrat font-black text-[11px] uppercase tracking-[0.2em] px-7 rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden group/btn"
             >
               <Link href="/contact" className="relative z-10 flex items-center gap-3">
                 <motion.div
@@ -93,41 +96,59 @@ export function Header() {
           
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 rounded-full h-12 w-12">
-                <Menu className="h-7 w-7" />
+              <Button variant="ghost" size="icon" className="lg:hidden text-primary hover:bg-black/5 active:scale-90 rounded-full h-11 w-11 sm:h-12 sm:w-12 transition-transform">
+                <Menu className="h-6 w-6 sm:h-7 sm:w-7" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full bg-white border-0 p-0 flex flex-col">
-              <SheetHeader className="p-6 flex flex-row items-center justify-between border-b border-black/5">
+            <SheetContent side="right" className="w-full sm:max-w-md bg-white border-0 p-0 flex flex-col">
+              <SheetHeader className="p-5 sm:p-6 flex flex-row items-center justify-between border-b border-black/5 bg-secondary/30">
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                <Logo variant="dark" className="h-10 w-auto" />
+                <Logo variant="dark" className="h-12 sm:h-14 w-auto max-w-[220px]" />
                 <SheetClose asChild>
-                  <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 rounded-full h-12 w-12">
-                    <X className="h-7 w-7" />
+                  <Button variant="ghost" size="icon" className="text-primary hover:bg-black/5 active:scale-90 rounded-full h-10 w-10 sm:h-12 sm:w-12 transition-transform">
+                    <X className="h-6 w-6 sm:h-7 sm:w-7" />
                   </Button>
                 </SheetClose>
               </SheetHeader>
-              <nav className="flex flex-col p-8 gap-8 flex-grow">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "text-xl sm:text-2xl font-black tracking-tighter transition-colors uppercase",
-                      isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+              <nav className="flex flex-col p-5 sm:p-6 gap-3 flex-grow overflow-y-auto">
+                {navLinks.map((link) => {
+                  const Icon = link.icon;
+                  const active = isActive(link.href);
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={cn(
+                        "flex items-center justify-between p-4 rounded-2xl transition-all duration-300 active:scale-[0.98]",
+                        active 
+                          ? "bg-primary text-white shadow-md shadow-primary/20 font-bold" 
+                          : "bg-secondary/40 text-primary hover:bg-secondary font-semibold"
+                      )}
+                    >
+                      <div className="flex items-center gap-3.5">
+                        <div className={cn(
+                          "p-2.5 rounded-xl transition-colors",
+                          active ? "bg-accent text-accent-foreground" : "bg-primary/5 text-accent"
+                        )}>
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <span className="text-base tracking-tight">{link.label}</span>
+                      </div>
+                      <ChevronRight className={cn(
+                        "w-5 h-5 transition-transform",
+                        active ? "text-accent translate-x-1" : "text-primary/30"
+                      )} />
+                    </Link>
+                  );
+                })}
               </nav>
-              <div className="p-8 border-t border-black/5 bg-secondary/20">
-                <Button asChild className="w-full h-16 bg-primary text-white font-black text-base rounded-2xl shadow-lg shadow-primary/10" onClick={() => setIsOpen(false)}>
+              <div className="p-5 sm:p-6 border-t border-black/5 bg-secondary/30">
+                <Button asChild className="w-full h-14 bg-primary text-white font-black text-sm rounded-2xl shadow-lg shadow-primary/10 active:scale-95 transition-transform" onClick={() => setIsOpen(false)}>
                   <Link href="/contact" className="flex items-center justify-center gap-3">
-                    <Scale className="w-6 h-6 text-accent" />
-                    Contact Us
+                    <Scale className="w-5 h-5 text-accent" />
+                    Request a Consultation
                   </Link>
                 </Button>
               </div>

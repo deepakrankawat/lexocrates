@@ -48,7 +48,7 @@ const BLOG_CACHE_TAG = 'erpnext-blogs';
 const TAKEAWAYS_PATTERN =
   /<!--LEXOCRATES_KEY_TAKEAWAYS_BASE64:([A-Za-z0-9+/=]+)-->/;
 
-function getConfig(): ERPNextConfig {
+function getConfig(): ERPNextConfig | null {
   const baseUrl = process.env.ERPNEXT_URL?.trim().replace(/\/+$/, '');
   const apiKey = process.env.ERPNEXT_API_KEY?.trim();
   const apiSecret = process.env.ERPNEXT_API_SECRET?.trim();
@@ -57,9 +57,7 @@ function getConfig(): ERPNextConfig {
   );
 
   if (!baseUrl || !apiKey || !apiSecret) {
-    throw new Error(
-      'ERPNext blog integration is not configured. Set ERPNEXT_URL, ERPNEXT_API_KEY, and ERPNEXT_API_SECRET.'
-    );
+    return null;
   }
 
   return {
@@ -81,6 +79,7 @@ async function getERPNextList<T>(
   }
 ): Promise<T[]> {
   const config = getConfig();
+  if (!config) return [];
   const search = new URLSearchParams({
     fields: JSON.stringify(fields),
     limit_page_length: '1000',
@@ -174,8 +173,132 @@ function absoluteAssetUrl(baseUrl: string, asset?: string): string | undefined {
   return new URL(asset, `${baseUrl}/`).toString();
 }
 
+const FALLBACK_ARTICLES: BlogPost[] = [
+  {
+    id: '1',
+    title: 'The Anatomy of a Secure Legal Delivery Center',
+    slug: 'the-anatomy-of-a-secure-legal-delivery-center',
+    author: 'Lexocrates Research Desk',
+    date: 'March 15, 2026',
+    publishedOn: '2026-03-15',
+    lastModified: '2026-03-15',
+    category: 'DATA SECURITY',
+    categorySlug: 'data-security',
+    featured: true,
+    readingMinutes: 5,
+    readingTime: '5 min read',
+    excerpt: 'What law firms and legal departments should expect from secure infrastructure, trained teams, access controls, monitoring, and delivery governance.',
+    keyTakeaways: [
+      'Secure infrastructure and access controls are fundamental for LPO operations.',
+      'Continuous monitoring and delivery governance protect client data.',
+    ],
+    fullContent: 'What law firms and legal departments should expect from secure infrastructure, trained teams, access controls, monitoring, and delivery governance.',
+  },
+  {
+    id: '2',
+    title: 'How to Onboard an Offshore Legal Pod in 30 Days',
+    slug: 'how-to-onboard-an-offshore-legal-pod-in-30-days',
+    author: 'Lexocrates Research Desk',
+    date: 'March 10, 2026',
+    publishedOn: '2026-03-10',
+    lastModified: '2026-03-10',
+    category: 'LPO STRATEGY',
+    categorySlug: 'lpo-strategy',
+    featured: true,
+    readingMinutes: 6,
+    readingTime: '6 min read',
+    excerpt: 'A practical 30-day roadmap for launching a legal outsourcing pod with scope, security, training, workflow integration, QA, and reporting.',
+    keyTakeaways: [
+      'Clear scope definition accelerates pod onboarding.',
+      'Workflow integration and reporting ensure continuous alignment.',
+    ],
+    fullContent: 'A practical 30-day roadmap for launching a legal outsourcing pod with scope, security, training, workflow integration, QA, and reporting.',
+  },
+  {
+    id: '3',
+    title: 'Matter Intake Checklists for Outsourced Legal Work',
+    slug: 'matter-intake-checklists-for-outsourced-legal-work',
+    author: 'Lexocrates Research Desk',
+    date: 'March 05, 2026',
+    publishedOn: '2026-03-05',
+    lastModified: '2026-03-05',
+    category: 'LEGAL OPERATIONS',
+    categorySlug: 'legal-operations',
+    featured: false,
+    readingMinutes: 4,
+    readingTime: '4 min read',
+    excerpt: 'The intake information law firms and legal departments should provide to improve speed, quality, confidentiality, and delivery accuracy.',
+    keyTakeaways: [
+      'Structured intake checklists minimize back-and-forth delays.',
+      'Comprehensive documentation boosts initial accuracy and delivery speed.',
+    ],
+    fullContent: 'The intake information law firms and legal departments should provide to improve speed, quality, confidentiality, and delivery accuracy.',
+  },
+  {
+    id: '4',
+    title: 'The Role of Human Review in AI-Assisted Legal Work',
+    slug: 'the-role-of-human-review-in-ai-assisted-legal-work',
+    author: 'Lexocrates Research Desk',
+    date: 'February 28, 2026',
+    publishedOn: '2026-02-28',
+    lastModified: '2026-02-28',
+    category: 'AI GOVERNANCE',
+    categorySlug: 'ai-governance',
+    featured: false,
+    readingMinutes: 5,
+    readingTime: '5 min read',
+    excerpt: 'Why legal AI creates value only when paired with trained reviewers, legal reasoning, citation checks, privilege analysis, and disciplined escalation.',
+    keyTakeaways: [
+      'AI tools augment legal analysis but cannot replace expert human review.',
+      'Disciplined escalation and citation checks prevent legal hallucination risks.',
+    ],
+    fullContent: 'Why legal AI creates value only when paired with trained reviewers, legal reasoning, citation checks, privilege analysis, and disciplined escalation.',
+  },
+  {
+    id: '5',
+    title: 'Why AI Alone Cannot Replace Legal Process Discipline',
+    slug: 'why-ai-alone-cannot-replace-legal-process-discipline',
+    author: 'Lexocrates Research Desk',
+    date: 'February 20, 2026',
+    publishedOn: '2026-02-20',
+    lastModified: '2026-02-20',
+    category: 'AI GOVERNANCE',
+    categorySlug: 'ai-governance',
+    featured: false,
+    readingMinutes: 5,
+    readingTime: '5 min read',
+    excerpt: 'Why legal teams need workflow design, supervision, QA, escalation, and accountability around AI-assisted legal delivery.',
+    keyTakeaways: [
+      'Workflow supervision is crucial for high-quality legal outputs.',
+      'Process discipline ensures consistent accountability.',
+    ],
+    fullContent: 'Why legal teams need workflow design, supervision, QA, escalation, and accountability around AI-assisted legal delivery.',
+  },
+  {
+    id: '6',
+    title: 'A Practical QA Framework for Outsourced Legal Research',
+    slug: 'a-practical-qa-framework-for-outsourced-legal-research',
+    author: 'Lexocrates Research Desk',
+    date: 'February 15, 2026',
+    publishedOn: '2026-02-15',
+    lastModified: '2026-02-15',
+    category: 'LEGAL RESEARCH',
+    categorySlug: 'legal-research',
+    featured: false,
+    readingMinutes: 6,
+    readingTime: '6 min read',
+    excerpt: 'What a multi-level quality control, source validation, adverse authority checks, and jurisdictional review make outsourced legal research more defensible.',
+    keyTakeaways: [
+      'Multi-level quality control builds defensible research briefs.',
+      'Jurisdictional verification protects against adverse legal authority traps.',
+    ],
+    fullContent: 'What a multi-level quality control, source validation, adverse authority checks, and jurisdictional review make outsourced legal research more defensible.',
+  },
+];
+
 export async function getBlogPosts(): Promise<BlogPost[]> {
   const config = getConfig();
+  if (!config) return FALLBACK_ARTICLES;
   const [posts, categories, bloggers] = await Promise.all([
     getERPNextList<ERPNextBlogPost>('Blog Post', [
       'name',

@@ -49,11 +49,11 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
   const [page, setPage] = useState(1);
 
   const categories = useMemo(
-    () => [...new Set(posts.map((post) => post.category))].sort(),
+    () => Array.from(new Set(posts.map((post) => post.category))).sort(),
     [posts]
   );
   const authors = useMemo(
-    () => [...new Set(posts.map((post) => post.author))].sort(),
+    () => Array.from(new Set(posts.map((post) => post.author))).sort(),
     [posts]
   );
 

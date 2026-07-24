@@ -33,13 +33,13 @@ export function Team() {
   return (
     <section id="team" className="bg-background text-foreground py-14 sm:py-24">
       <div className="container-balanced">
-        <SlideIn className="text-center mb-16" direction="up">
-            <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-sm">Our Leadership</p>
-            <h2 className="font-lato text-4xl sm:text-6xl font-black leading-tight text-primary mb-6 tracking-tight">
-                Global Visionary Team
+        <SlideIn className="text-center mb-16 max-w-4xl mx-auto" direction="up">
+            <p className="font-lato font-black text-accent uppercase tracking-[0.3em] mb-4 text-xs sm:text-sm">LEADERSHIP TEAM</p>
+            <h2 className="font-lato text-3xl sm:text-5xl lg:text-6xl font-black leading-tight text-primary mb-6 tracking-tight">
+                The Team Leading Lexocrates
             </h2>
-            <p className="text-xl text-foreground/60 max-w-2xl mx-auto font-medium">
-              A collective of experienced professionals driving legal innovation and client success across borders.
+            <p className="text-base sm:text-lg text-foreground/70 max-w-3xl mx-auto font-medium leading-relaxed">
+              Our leadership team works closely with legal professionals, operations specialists, and technology experts to ensure every engagement reflects the quality, confidentiality, and consistency our clients expect from Lexocrates.
             </p>
         </SlideIn>
         

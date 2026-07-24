@@ -7,46 +7,46 @@ import { BookOpen, Target, Globe2, Cpu, Scale, Users, Sparkles } from 'lucide-re
 
 const storyMilestones = [
   {
-    year: 'The Beginning',
+    year: 'THE BEGINNING',
     icon: BookOpen,
-    title: 'Born from a Vision of Justice',
+    title: 'A Vision That Became Lexocrates',
     description:
-      'Lexocrates was founded by Yashvardhan Singh, a seasoned public interest litigator with extensive experience in the Supreme Court of India. Driven by the Socratic principle that "the unexamined life is not worth living," he envisioned a firm that would bring the same intellectual rigor to legal process outsourcing as to courtroom advocacy.',
+      'Lexocrates was founded by Yashvardhan Singh, whose years within the legal profession made clear a recurring gap—capable teams stretched thin by growing workloads, with process rarely given the attention it deserved. He set out to build an organisation that paired legal expertise with genuine operational discipline, allowing law firms and corporate legal departments to manage more without compromising on quality.\n\nThat founding idea has since grown into a trusted Legal Process Outsourcing (LPO) partner, built on a foundation of confidentiality, consistency, and long-term client relationships across jurisdictions.',
   },
   {
-    year: 'The Mission',
+    year: 'OUR MISSION',
     icon: Target,
-    title: 'Bridging Global Legal Gaps',
+    title: 'Strengthening Legal Teams Through Trusted Partnerships',
     description:
-      'Recognizing that law firms across the US, UK, and Canada needed more than just cost savings—they needed a trusted strategic partner—Lexocrates was built to serve as a seamless, high-fidelity extension of international legal teams, delivering work that meets the exacting standards of every jurisdiction we serve.',
+      'Our mission is to support law firms and corporate legal departments by managing process-intensive, high-volume work so that their teams can focus on matters requiring legal judgment and strategic input. Every engagement is carried out by experienced professionals within workflows designed for accuracy and confidentiality. Over time, this approach allows us to function less as an external service provider and more as a dependable extension of our clients\' own teams.',
   },
   {
-    year: 'The Approach',
+    year: 'THE APPROACH',
     icon: Scale,
-    title: 'Precision Meets Ethics',
+    title: 'Built on Precision, Driven by Partnership',
     description:
-      'From the outset, we embedded a culture of jurisdictional precision and ethical excellence into every workflow. Our teams are trained in US federal and state law, UK common law, and Canadian legal frameworks—ensuring every deliverable reflects deep domain expertise, not just mechanical output.',
+      'Every engagement begins with a clear understanding of a client\'s objectives, existing workflows, and expectations. From there, we assemble the right professionals, adapt our processes to fit theirs, and apply quality controls designed to identify issues before they reach the client. The result is a working relationship that functions less like a transaction and more like an ongoing partnership—one built on collaboration, accuracy, and confidentiality.',
   },
   {
-    year: 'The Innovation',
+    year: 'THE INNOVATION',
     icon: Cpu,
-    title: 'AI-Augmented Legal Intelligence',
+    title: 'Technology That Enhances Legal Expertise',
     description:
-      'As the legal industry evolved, so did we. We pioneered the integration of advanced AI tools—predictive analytics, intelligent document review, and NLP-powered research—into our workflows, dramatically increasing speed and accuracy while our human experts focus on nuance and strategy.',
+      'We regard technology as a means of strengthening legal expertise, not replacing it. AI-enabled tools are integrated thoughtfully into our workflows to improve efficiency, support accuracy, and streamline routine processes. The assessment of legal risk, nuance, and strategic judgment remains the responsibility of our legal professionals. This balance—technology in service of judgment, rather than in place of it—is central to how we work.',
   },
   {
-    year: 'The Scale',
+    year: 'THE SCALE',
     icon: Users,
-    title: 'A Team of Elite Specialists',
+    title: 'Growing with Our Clients',
     description:
-      'Today, Lexocrates is home to over 50 legal professionals—attorneys, paralegals, legal analysts, and technology specialists—all working in ISO 27001 certified, secure environments. We operate around the clock, leveraging the US-India time zone advantage to deliver overnight turnarounds.',
+      'As client needs continue to evolve, Lexocrates continues to grow alongside them. We invest deliberately in our people, our processes, and our long-term client relationships, expanding our capabilities in step with demand rather than ahead of it. This measured approach allows us to maintain the quality, confidentiality, and consistency our clients have come to expect as we take on new engagements.',
   },
   {
-    year: 'The Future',
+    year: 'THE FUTURE',
     icon: Globe2,
-    title: 'Redefining Legal Operations Globally',
+    title: 'Building the Future of Legal Process Outsourcing',
     description:
-      'Our journey is far from over. We continue to expand our capabilities, deepen our jurisdictional expertise, and push the boundaries of what legal process outsourcing can achieve—transforming from a service provider into a true strategic partner for the world\'s leading law firms.',
+      'As the legal industry continues to evolve, so does Lexocrates. We remain committed to expanding our capabilities and strengthening our expertise in support of law firms and corporate legal departments across Canada, the United Kingdom, and the United States. Our objective has remained unchanged since our founding: to build lasting client partnerships and deliver legal process outsourcing solutions that evolve with the needs of modern legal teams.',
   },
 ];
 
@@ -76,12 +76,12 @@ export function OurStory() {
             </div>
           </SlideIn>
           <SlideIn direction="up" delay={0.1}>
-            <h2 className="font-lato text-4xl sm:text-5xl lg:text-6xl font-black text-primary leading-[1.1] tracking-tighter mb-6">
+            <h2 className="font-lato text-2xl sm:text-4xl lg:text-6xl font-black text-primary leading-[1.15] sm:leading-[1.1] tracking-tight mb-6">
               The <span className="text-accent">Lexocrates</span> Story
             </h2>
           </SlideIn>
           <FadeIn delay={0.2}>
-            <p className="text-lg sm:text-xl text-foreground/60 font-medium leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-foreground/70 font-medium leading-relaxed max-w-3xl mx-auto">
               From a single founder&apos;s conviction that legal excellence should know no borders, 
               to a global operation redefining how law firms work—this is our story.
             </p>

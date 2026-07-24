@@ -12,37 +12,32 @@ export function Welcome() {
             <SlideIn direction="up">
                 <div className="inline-flex items-center gap-4 mb-8">
                     <div className="w-12 h-px bg-accent/40" />
-                    <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs">A Message from Our Founder</p>
+                    <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs">A MESSAGE FROM OUR FOUNDER</p>
                 </div>
                 
-                <h2 className="font-lato text-4xl sm:text-6xl font-black text-primary leading-[1.1] mb-12 tracking-tight">
-                    A Commitment to <br />
-                    <span className="text-accent">Intellectual</span> Excellence
+                <h2 className="font-lato text-2xl sm:text-4xl lg:text-6xl font-black text-primary leading-[1.15] sm:leading-[1.1] mb-10 tracking-tight">
+                    Built on a Belief in <br />
+                    <span className="text-accent">What the Law Should Do</span>
                 </h2>
 
                 <div className="relative max-w-4xl mx-auto">
-                    <Quote className="absolute -top-12 -left-12 h-24 w-24 text-accent/10 -z-10" />
-                    <div className="space-y-10 text-xl sm:text-2xl text-foreground/70 font-medium leading-relaxed italic border-l-4 border-accent/10 pl-10 text-left">
+                    <Quote className="absolute -top-8 -left-6 sm:-top-12 sm:-left-12 h-16 w-16 sm:h-24 sm:w-24 text-accent/10 -z-10" />
+                    <div className="space-y-6 sm:space-y-8 text-sm sm:text-lg lg:text-xl text-foreground/80 font-medium leading-relaxed border-l-2 sm:border-l-4 border-accent/20 pl-4 sm:pl-8 text-left">
                         <p>
-                            &quot;As a public interest litigator, I have spent my career championing causes that shape communities and protect the rights of individuals. From challenging unlawful toll collections to advocating for fair water distribution, my work in the Supreme Court of India has been guided by the belief that the law must serve justice above all.&quot;
+                            &quot;As a public interest litigator, I&apos;ve spent much of my career on cases that shape communities and protect individual rights — from challenging unlawful toll collections to advocating for fair water distribution, through work in the Supreme Court of India. That work was guided by a simple belief: the law has to serve justice, not just process.&quot;
                         </p>
                         <p>
-                            &quot;Lexocrates Legal Services was founded on that same principle. In an increasingly interconnected world, legal professionals must focus on what they do best—strategic counsel and client advocacy—while trusting capable partners to handle the complex, time-intensive processes that run in the background.&quot;
+                            &quot;Lexocrates was founded on that same principle, applied to a different problem. Legal professionals do their best work when they can focus on strategic counsel and client advocacy — not on the process-heavy, time-intensive work that has to happen alongside it. Our role is to take that work on, reliably enough that it never becomes a client&apos;s concern.&quot;
                         </p>
                         <p>
-                            &quot;Our team is trained in US, UK, and Canadian legal systems, equipped with advanced legal technology, and committed to the highest standards of confidentiality and precision. Whether assisting a law firm in New York with litigation support, aiding a London corporate in contract management, or helping a Canadian practice with compliance documentation, our mission is clear: to be a seamless extension of your legal team. I invite you to explore how Lexocrates can bring value, efficiency, and integrity to your practice.&quot;
+                            &quot;Our team is trained across US, UK, and Canadian legal systems, works within structured processes built for confidentiality and precision, and uses technology where it genuinely helps. Whether we&apos;re supporting litigation for a firm in New York, contract management for a corporate team in London, or compliance documentation for a practice in Canada, the goal is the same: to function as a dependable extension of our clients&apos; own teams.&quot;
                         </p>
                     </div>
                 </div>
 
-                <div className="mt-16 pt-12 border-t border-black/5 flex flex-col items-center text-center">
-                    <p className="font-montserrat font-black text-primary text-3xl tracking-tight">Yashvardhan Singh</p>
-                    <p className="text-accent font-black uppercase tracking-widest text-[11px] mt-2">Founder & CEO, Lexocrates Legal Services</p>
-                    <div className="mt-8 opacity-30">
-                        <svg className="w-48 h-12 text-primary" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 40C30 20 60 50 90 30C120 10 150 40 190 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
-                    </div>
+                <div className="mt-12 pt-8 border-t border-black/5 flex flex-col items-center text-center">
+                    <p className="font-montserrat font-black text-primary text-2xl tracking-tight">Yashvardhan Singh</p>
+                    <p className="text-accent font-black uppercase tracking-widest text-xs mt-2">Founder &amp; CEO, Lexocrates Legal Services</p>
                 </div>
             </SlideIn>
 

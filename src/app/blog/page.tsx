@@ -5,8 +5,9 @@ import { BlogShowcase } from '@/components/sections/blog-showcase';
 import { getBlogPosts } from '@/lib/erpnext-blogs';
 
 export const metadata: Metadata = {
-  title: 'Legal Insights & LPO Trends | Lexocrates Blog',
-  description: 'Stay updated with the latest trends in legal process outsourcing, data security in law, and AI-driven legal operations.',
+  title: 'Legal Insights & Perspectives | Lexocrates Insights',
+  description:
+    'Explore practical insights on legal process outsourcing, legal research, litigation support, contract lifecycle management, compliance, legal technology, and evolving legal operations.',
   alternates: {
     canonical: '/blog',
   },

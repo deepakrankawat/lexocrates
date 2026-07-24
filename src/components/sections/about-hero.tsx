@@ -6,7 +6,7 @@ import { SlideIn } from '../animations/slide-in';
 
 export function AboutHero() {
   return (
-    <section className="relative min-h-[40vh] fhd:min-h-[50vh] flex items-center justify-center overflow-hidden bg-primary py-8 lg:py-12">
+    <section className="relative min-h-[40vh] fhd:min-h-[50vh] flex items-center justify-center overflow-hidden bg-primary pt-[84px] sm:pt-[100px] lg:pt-[130px] pb-12 lg:pb-16">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
       <div className="absolute inset-0 opacity-[0.03]" 
@@ -25,17 +25,19 @@ export function AboutHero() {
         <div className="max-w-4xl mx-auto">
           <FadeIn delay={0.2}>
             <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm mb-6 lg:mb-8">
-              Our Identity
+              OUR JOURNEY
             </p>
           </FadeIn>
           <SlideIn direction="up" delay={0.4}>
-            <h1 className="font-montserrat text-5xl sm:text-7xl fhd:text-8xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
-              About <span className="text-accent">Lexocrates</span>
+            <h1 className="font-montserrat text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
+              The Lexocrates Story
             </h1>
           </SlideIn>
           <FadeIn delay={0.6}>
-            <p className="text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
-              Empowering global law firms through precision, ethics, and intellectual excellence. Founded on the Socratic principle of deep inquiry, we bridge the gap between complex legal needs and cost-effective, tech-driven delivery—acting as a seamless extension of your professional practice.
+            <p className="text-base sm:text-xl fhd:text-2xl text-white/80 font-medium leading-relaxed max-w-4xl mx-auto">
+              Legal teams have always operated under the same constraint: significant volume, limited time, and little room for error. Lexocrates was established to address that constraint directly.
+              <br /><br />
+              We are a legal process outsourcing partner that brings together experienced legal professionals, structured processes, and the considered use of technology, enabling law firms and corporate legal departments to manage their legal operations with greater efficiency and confidence.
             </p>
           </FadeIn>
         </div>

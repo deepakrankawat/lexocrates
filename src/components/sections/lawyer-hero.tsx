@@ -5,7 +5,7 @@ import { SlideIn } from '../animations/slide-in';
 
 export function LawyerHero() {
   return (
-    <section className="relative min-h-[50vh] fhd:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-10 pb-16 lg:pt-14">
+    <section className="relative min-h-[50vh] fhd:min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary pt-[84px] sm:pt-[100px] lg:pt-[130px] pb-12 lg:pb-16">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(184,134,11,0.1)_0%,transparent_50%)]" />
         <div className="absolute inset-0 opacity-[0.03]" 
@@ -26,17 +26,17 @@ export function LawyerHero() {
         <div className="max-w-4xl mx-auto">
           <FadeIn delay={0.2}>
             <p className="font-lato font-black text-accent uppercase tracking-[0.4em] text-xs fhd:text-sm mb-6 lg:mb-8">
-              Leadership
+              OUR TEAM
             </p>
           </FadeIn>
           <SlideIn direction="up" delay={0.4}>
-            <h1 className="font-montserrat text-4xl sm:text-6xl md:text-7xl fhd:text-8xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
-              Expert <span className="text-accent">Visionaries</span>
+            <h1 className="font-montserrat text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-white mb-6 lg:mb-8 tracking-tighter">
+              The People Behind Lexocrates
             </h1>
           </SlideIn>
           <FadeIn delay={0.6}>
-            <p className="text-base sm:text-xl fhd:text-2xl text-white/70 font-medium leading-relaxed">
-              Meet the collective of experienced professionals driving innovation and operational excellence across borders. Our leadership team bridges the gap between traditional legal mastery and modern technical strategy to ensure your firm's competitive edge in a global market.
+            <p className="text-base sm:text-xl fhd:text-2xl text-white/80 font-medium leading-relaxed max-w-4xl mx-auto">
+              Lexocrates is led by professionals who combine legal expertise, operational discipline, and technology to support law firms and corporate legal departments across jurisdictions. Together, they provide the leadership that ensures every engagement reflects the quality, consistency, and reliability our clients expect.
             </p>
           </FadeIn>
         </div>
