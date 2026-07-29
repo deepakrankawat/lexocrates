@@ -7,8 +7,8 @@ import { WritingBlogPostLottie } from '@/components/animations/writing-blog-post
 
 export function BlogShowcase() {
   return (
-    <section id="blog-showcase" className="bg-primary text-white py-16 sm:py-24 rounded-[3rem] my-16 overflow-hidden">
-      <div className="container-balanced">
+    <section id="blog-showcase" className="bg-primary text-white py-14 sm:py-20 rounded-[2.5rem] sm:rounded-[3rem] my-8 overflow-hidden shadow-2xl">
+      <div className="px-6 sm:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideIn direction="right">
             <div className="flex flex-col text-center lg:text-left">

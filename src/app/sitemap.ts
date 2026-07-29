@@ -55,10 +55,10 @@ function encodeRoutePath(path: string): string {
  * Appending UTC produces an unambiguous ISO 8601 timestamp for <lastmod>.
  */
 function blogDateToIso(date: string): string {
-  const parsedDate = new Date(`${date} UTC`);
+  const parsedDate = new Date(date);
 
   if (Number.isNaN(parsedDate.getTime())) {
-    throw new Error(`Invalid blog date in sitemap: ${date}`);
+    return new Date().toISOString();
   }
 
   return parsedDate.toISOString();

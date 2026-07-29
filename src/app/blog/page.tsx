@@ -4,6 +4,8 @@ import { BlogList } from '@/components/sections/blog-list';
 import { BlogShowcase } from '@/components/sections/blog-showcase';
 import { getBlogPosts } from '@/lib/erpnext-blogs';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'Legal Insights & Perspectives | Lexocrates Insights',
   description:
@@ -19,8 +21,8 @@ export default async function BlogPage() {
   return (
     <main className="bg-background">
       <BlogHero />
-      <div className="container-balanced">
-        <BlogList posts={blogPosts} />
+      <BlogList posts={blogPosts} />
+      <div className="container-balanced pb-20">
         <BlogShowcase />
       </div>
     </main>
