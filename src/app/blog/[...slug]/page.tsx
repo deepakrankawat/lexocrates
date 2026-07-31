@@ -9,6 +9,9 @@ type Params = { slug: string[] };
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.lexocrates.com';
 
+export const revalidate = 60;
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const blogPosts = await getBlogPosts();
   return blogPosts.map((post) => ({ slug: post.slug.split('/') }));
