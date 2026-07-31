@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { LayoutProvider } from '@/components/layout/layout-provider';
+import { WorkspaceProvider } from '@/lib/workspace-context';
 import { Lato, Montserrat, Open_Sans, Roboto } from 'next/font/google';
 import Script from 'next/script';
 
@@ -147,9 +148,11 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <LayoutProvider>
-          {children}
-        </LayoutProvider>
+        <WorkspaceProvider>
+          <LayoutProvider>
+            {children}
+          </LayoutProvider>
+        </WorkspaceProvider>
         <Toaster />
       </body>
     </html>

@@ -3,17 +3,19 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Scale, Home, Info, Briefcase, Users, GraduationCap, FileText, Mail, ChevronRight } from 'lucide-react';
+import { Menu, X, Scale, Home, Info, Briefcase, Users, GraduationCap, FileText, Mail, ChevronRight, LayoutDashboard, UserCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetClose, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
 import { motion } from 'framer-motion';
+import { useWorkspace } from '@/lib/workspace-context';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: Info },
   { href: '/services', label: 'Services', icon: Briefcase },
+  { href: '/dashboard', label: 'Workspace', icon: LayoutDashboard },
   { href: '/team', label: 'Team', icon: Users },
   { href: '/careers', label: 'Careers', icon: GraduationCap },
   { href: '/blog', label: 'Blog', icon: FileText },
@@ -25,6 +27,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHoveringContact, setIsHoveringContact] = useState(false);
   const pathname = usePathname();
+  const { openAuthModal, user } = useWorkspace();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -53,16 +56,19 @@ export function Header() {
         </div>
         
         <nav className="hidden lg:flex flex-grow justify-center">
-          <ul className="flex items-center gap-6 xl:gap-10">
+          <ul className="flex items-center gap-6 xl:gap-8">
             {navLinks.filter(l => l.href !== '/contact').map((link) => (
               <li key={link.href}>
                 <Link 
                   href={link.href} 
                   className={cn(
-                    "text-[11px] xl:text-[12px] font-black uppercase tracking-[0.3em] transition-all duration-300 py-2 relative group",
+                    "text-[11px] xl:text-[12px] font-black uppercase tracking-[0.25em] transition-all duration-300 py-2 relative group flex items-center gap-1.5",
                     isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                   )}
                 >
+                  {link.label === 'Workspace' && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent animate-ping" />
+                  )}
                   {link.label}
                   <span className={cn(
                     "absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 origin-left",
@@ -74,25 +80,32 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-4">
-          <div className="relative group">
-            <Button 
-              asChild 
-              onMouseEnter={() => setIsHoveringContact(true)}
-              onMouseLeave={() => setIsHoveringContact(false)}
-              className="hidden lg:flex h-11 bg-primary hover:bg-primary/90 text-white font-montserrat font-black text-[11px] uppercase tracking-[0.2em] px-7 rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden group/btn"
-            >
-              <Link href="/contact" className="relative z-10 flex items-center gap-3">
-                <motion.div
-                  animate={{ rotate: isHoveringContact ? [0, -10, 10, 0] : 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Scale className="w-5 h-5 text-accent" />
-                </motion.div>
-                <span>Contact Us</span>
-              </Link>
-            </Button>
-          </div>
+        <div className="flex items-center gap-3">
+          {/* Client Portal Button */}
+          <Button 
+            onClick={() => openAuthModal()}
+            className="hidden lg:flex h-11 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-[11px] uppercase tracking-[0.15em] px-6 rounded-full shadow-lg shadow-accent/20 transition-all duration-500 hover:scale-105 active:scale-95 items-center gap-2"
+          >
+            <UserCheck className="w-4 h-4" />
+            <span>{user.isLoggedIn ? 'Client Workspace' : 'Create Free Account'}</span>
+          </Button>
+
+          <Button 
+            asChild 
+            onMouseEnter={() => setIsHoveringContact(true)}
+            onMouseLeave={() => setIsHoveringContact(false)}
+            className="hidden xl:flex h-11 bg-primary hover:bg-primary/90 text-white font-montserrat font-black text-[11px] uppercase tracking-[0.15em] px-6 rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden"
+          >
+            <Link href="/contact" className="relative z-10 flex items-center gap-2">
+              <motion.div
+                animate={{ rotate: isHoveringContact ? [0, -10, 10, 0] : 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Scale className="w-4 h-4 text-accent" />
+              </motion.div>
+              <span>Contact Us</span>
+            </Link>
+          </Button>
           
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -144,12 +157,15 @@ export function Header() {
                   );
                 })}
               </nav>
-              <div className="p-5 sm:p-6 border-t border-black/5 bg-secondary/30">
-                <Button asChild className="w-full h-14 bg-primary text-white font-black text-sm rounded-2xl shadow-lg shadow-primary/10 active:scale-95 transition-transform" onClick={() => setIsOpen(false)}>
-                  <Link href="/contact" className="flex items-center justify-center gap-3">
-                    <Scale className="w-5 h-5 text-accent" />
-                    Request a Consultation
-                  </Link>
+              <div className="p-5 sm:p-6 border-t border-black/5 bg-secondary/30 space-y-3">
+                <Button 
+                  onClick={() => {
+                    setIsOpen(false);
+                    openAuthModal();
+                  }}
+                  className="w-full h-14 bg-accent text-accent-foreground font-black text-sm rounded-2xl shadow-lg active:scale-95 transition-transform"
+                >
+                  Create Free Workspace Account
                 </Button>
               </div>
             </SheetContent>
