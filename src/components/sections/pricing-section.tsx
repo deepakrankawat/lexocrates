@@ -1,0 +1,461 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Check, ShieldCheck, Zap, Sparkles, ArrowRight, Lock, Loader2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
+export type CurrencyCode = 'USD' | 'GBP' | 'CAD';
+
+export interface CurrencyConfig {
+  code: CurrencyCode;
+  symbol: string;
+  name: string;
+  country: string;
+  flag: string;
+}
+
+export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
+  USD: {
+    code: 'USD',
+    symbol: '$',
+    name: 'US Dollar',
+    country: 'United States',
+    flag: '🇺🇸',
+  },
+  GBP: {
+    code: 'GBP',
+    symbol: '£',
+    name: 'British Pound',
+    country: 'United Kingdom',
+    flag: '🇬🇧',
+  },
+  CAD: {
+    code: 'CAD',
+    symbol: 'CA$',
+    name: 'Canadian Dollar',
+    country: 'Canada',
+    flag: '🇨🇦',
+  },
+};
+
+export interface LexPackBundleTier {
+  id: string;
+  name: string;
+  subtitle: string;
+  prices: Record<CurrencyCode, number | string>;
+  lexPoints: number | string;
+  advantage: string;
+  isPopular?: boolean;
+  badge?: string;
+  features: string[];
+  ctaText: string;
+}
+
+export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
+  {
+    id: 'starter',
+    name: 'Starter Bundle',
+    subtitle: 'Ideal for boutique law firms starting with AI-powered LPO and contract reviews.',
+    prices: { USD: 299, GBP: 239, CAD: 399 },
+    lexPoints: 100,
+    advantage: 'Standard',
+    features: [
+      '100 LexPoints (LP) Capacity',
+      'No monthly expiration or auto-renewals',
+      'Full access to Lex Engine Estimator',
+      'Standard 48-Hour SLA Response',
+      'Secure Client Portal Workspace Access',
+    ],
+    ctaText: 'Buy Starter',
+  },
+  {
+    id: 'growth',
+    name: 'Growth Bundle',
+    subtitle: 'Designed for active law firms managing continuous contract review and litigation support.',
+    badge: 'MOST POPULAR',
+    isPopular: true,
+    prices: { USD: 899, GBP: 719, CAD: 1199 },
+    lexPoints: 350,
+    advantage: 'Save 14%',
+    features: [
+      '350 LexPoints (LP) Capacity',
+      'Save 14% vs Starter pricing ($2.56/LP)',
+      'No monthly expiration or rollover stress',
+      'Priority 24-Hour SLA Response',
+      'Dedicated Account Manager & Syncs',
+    ],
+    ctaText: 'Buy Growth',
+  },
+  {
+    id: 'professional',
+    name: 'Professional Bundle',
+    subtitle: 'High-volume legal capacity for corporate legal departments and busy litigation practices.',
+    prices: { USD: 1999, GBP: 1599, CAD: 2699 },
+    lexPoints: 900,
+    advantage: 'Save 26%',
+    features: [
+      '900 LexPoints (LP) Capacity',
+      'Save 26% vs Starter pricing ($2.22/LP)',
+      'Multi-jurisdictional research & M&A due diligence',
+      'Express 12-to-24 Hour Urgent SLA Option',
+      'Custom Enterprise Workflow Integration',
+    ],
+    ctaText: 'Buy Professional',
+  },
+  {
+    id: 'business',
+    name: 'Business Bundle',
+    subtitle: 'Enterprise scale pay-as-you-go capacity for multi-partner law firms and global legal teams.',
+    badge: 'BEST VALUE',
+    prices: { USD: 3999, GBP: 3199, CAD: 5399 },
+    lexPoints: 2000,
+    advantage: 'Save 33%',
+    features: [
+      '2,000 LexPoints (LP) Capacity',
+      'Save 33% maximum discount ($2.00/LP)',
+      'Unlimited user seats & paralegal workflows',
+      'SOC-2 / ISO 27001 Security compliance',
+      'Dedicated Senior Legal Lead & API access',
+    ],
+    ctaText: 'Buy Business',
+  },
+  {
+    id: 'enterprise',
+    name: 'Enterprise Bundle',
+    subtitle: 'Tailored enterprise volume, custom SLA, and dedicated commercial terms for large law firms.',
+    badge: 'COMMERCIAL',
+    prices: { USD: 'Custom', GBP: 'Custom', CAD: 'Custom' },
+    lexPoints: 'Custom',
+    advantage: 'Custom Commercial Terms',
+    features: [
+      'Custom LexPoints (LP) Capacity',
+      'Bespoke commercial terms & invoicing',
+      'Dedicated Senior Legal Lead & 24/7 SLA',
+      'Custom API & Enterprise Integration',
+      'Custom Security & Compliance SLA',
+    ],
+    ctaText: 'Contact Commercial',
+  },
+];
+
+export function PricingSection() {
+  const [currency, setCurrency] = useState<CurrencyCode>('USD');
+  const [loadingTierId, setLoadingTierId] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (tz.includes('London') || tz.includes('Europe')) {
+        setCurrency('GBP');
+      } else if (tz.includes('Toronto') || tz.includes('Vancouver') || tz.includes('Canada')) {
+        setCurrency('CAD');
+      } else {
+        setCurrency('USD');
+      }
+    } catch (e) {
+      setCurrency('USD');
+    }
+  }, []);
+
+  const handleCheckout = async (bundleId: string) => {
+    if (bundleId === 'enterprise') {
+      window.location.href = '/contact';
+      return;
+    }
+
+    setLoadingTierId(bundleId);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          tierId: bundleId,
+          billingCycle: 'one-time',
+          currency,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.url) {
+        throw new Error(data.error || 'Failed to initiate checkout session.');
+      }
+
+      window.location.href = data.url;
+    } catch (err: any) {
+      console.error('Checkout Error:', err);
+      setErrorMessage(err?.message || 'Unable to connect to payment provider. Please try again.');
+    } finally {
+      setLoadingTierId(null);
+    }
+  };
+
+  const curr = CURRENCIES[currency];
+
+  return (
+    <section className="pt-[110px] sm:pt-[130px] lg:pt-[150px] pb-10 sm:pb-14 bg-[#0B1736] text-white relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(229,169,30,0.06)_0%,transparent_70%)]" />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E5A91E]/15 border border-[#E5A91E]/30 text-[#E5A91E] text-[10px] font-montserrat font-black uppercase tracking-widest">
+            <Sparkles className="w-3 h-3" />
+            <span>Pay-As-You-Go Capacity • No Subscription Model</span>
+          </div>
+
+          <h2 className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
+            Lex Plan &amp; <span className="text-[#E5A91E]">Legal Capacity</span>
+          </h2>
+
+          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            Purchase capacity whenever required. Points never expire. Larger Lex Plan bundles offer better value with zero monthly retainer traps.
+          </p>
+        </div>
+
+        <div className="mt-6 flex items-center justify-center">
+          <div className="flex items-center gap-1.5 p-1 bg-slate-900/90 rounded-xl border border-slate-700/80 shadow-inner">
+            {(Object.keys(CURRENCIES) as CurrencyCode[]).map((code) => {
+              const c = CURRENCIES[code];
+              const isActive = currency === code;
+              return (
+                <button
+                  key={code}
+                  type="button"
+                  onClick={() => setCurrency(code)}
+                  className={cn(
+                    "flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-montserrat font-extrabold text-[11px] transition-all duration-300",
+                    isActive
+                      ? "bg-[#E5A91E] text-[#0B1736] shadow-md scale-[1.02]"
+                      : "text-slate-300 hover:text-white hover:bg-slate-800/80"
+                  )}
+                >
+                  <span className="text-xs">{c.flag}</span>
+                  <span>{c.code} ({c.symbol})</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mt-2 text-center">
+          <p className="text-[11px] text-slate-400 font-medium">
+            Displaying Lex Plan in <span className="text-white font-bold">{curr.flag} {curr.name} ({curr.code})</span> for law firms in {curr.country}.
+          </p>
+        </div>
+
+        <AnimatePresence>
+          {errorMessage && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="mt-4 max-w-xl mx-auto p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-[11px] font-semibold text-center flex items-center justify-center gap-2"
+            >
+              <span>{errorMessage}</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 items-stretch">
+          {LEXPACK_BUNDLES_DATA.map((bundle) => {
+            const price = bundle.prices[currency];
+            const isLoading = loadingTierId === bundle.id;
+
+            return (
+              <motion.div
+                key={bundle.id}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className={cn(
+                  "relative rounded-2xl px-4 pt-5 pb-4 flex flex-col justify-between transition-all duration-300",
+                  bundle.isPopular
+                    ? "bg-slate-900 border-2 border-[#E5A91E] shadow-xl shadow-[#E5A91E]/10"
+                    : "bg-slate-900/80 border border-slate-800 hover:border-slate-700 backdrop-blur-xl"
+                )}
+              >
+                {bundle.badge && (
+                  <div className={cn(
+                    "absolute -top-3 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full text-[9px] font-montserrat font-black uppercase tracking-wider shadow-md whitespace-nowrap",
+                    bundle.isPopular ? "bg-[#E5A91E] text-[#0B1736]" : "bg-slate-800 text-[#E5A91E] border border-[#E5A91E]/30"
+                  )}>
+                    {bundle.badge}
+                  </div>
+                )}
+
+                <div className="space-y-3">
+                  <div>
+                    <h3 className="font-montserrat text-sm font-black text-white">
+                      {bundle.name}
+                    </h3>
+                    <p className="text-[10px] text-slate-400 font-medium leading-normal mt-0.5 line-clamp-2">
+                      {bundle.subtitle}
+                    </p>
+                  </div>
+
+                  <div className={cn(
+                    "p-2.5 rounded-xl border transition-colors",
+                    bundle.isPopular
+                      ? "bg-slate-800/90 border-slate-700"
+                      : "bg-slate-950/60 border-slate-800"
+                  )}>
+                    <div className="flex items-baseline gap-1">
+                      <span className="font-montserrat text-xl font-black text-white tracking-tight">
+                        {typeof price === 'number' ? `${curr.symbol}${price.toLocaleString()}` : price}
+                      </span>
+                      <span className="text-[9px] text-slate-400 font-bold uppercase">
+                        {typeof price === 'number' ? '/ One-Time' : ''}
+                      </span>
+                    </div>
+
+                    <div className="mt-2 pt-2 border-t border-slate-800/80 space-y-1.5">
+                      <div className="flex items-center justify-between text-[11px]">
+                        <span className="text-slate-400 font-semibold text-[9px] uppercase tracking-wider">Capacity</span>
+                        <span className="text-[#E5A91E] font-black text-[11px]">
+                          {typeof bundle.lexPoints === 'number' ? `${bundle.lexPoints.toLocaleString()} LP` : `${bundle.lexPoints} LP`}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between text-[11px] gap-1">
+                        <span className="text-slate-400 font-semibold text-[9px] uppercase tracking-wider">Advantage</span>
+                        <span className={cn(
+                          "px-2 py-0.5 rounded-full text-[9px] font-black tracking-wide inline-block text-right",
+                          bundle.advantage.includes('Save')
+                            ? "bg-emerald-500 text-white shadow-sm"
+                            : bundle.advantage.includes('Commercial') || bundle.advantage.includes('Custom')
+                            ? "bg-amber-500/20 text-[#E5A91E] border border-[#E5A91E]/40"
+                            : "bg-slate-800 text-slate-300 border border-slate-700/60"
+                        )}>
+                          {bundle.advantage}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-1.5 my-2">
+                    {bundle.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5 text-[10px] text-slate-300 font-medium">
+                        <div className="p-0.5 rounded-full bg-[#E5A91E]/15 text-[#E5A91E] flex-shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 stroke-[3]" />
+                        </div>
+                        <span className="leading-tight">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-2">
+                  <Button
+                    onClick={() => handleCheckout(bundle.id)}
+                    disabled={isLoading}
+                    className={cn(
+                      "w-full h-9 py-1.5 px-2 rounded-xl font-montserrat font-black text-[10px] uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-1 group text-center overflow-hidden",
+                      bundle.isPopular
+                        ? "bg-[#E5A91E] hover:bg-[#d49b1a] text-[#0B1736] shadow-md shadow-[#E5A91E]/20"
+                        : "bg-slate-800 hover:bg-slate-700 text-white"
+                    )}
+                  >
+                    {isLoading ? (
+                      <div className="flex items-center justify-center gap-1.5">
+                        <Loader2 className="w-3.5 h-3.5 animate-spin flex-shrink-0" />
+                        <span className="truncate">Processing...</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-center gap-1 max-w-full overflow-hidden px-1">
+                        <span className="truncate">{bundle.ctaText}</span>
+                        <ArrowRight className="w-3 h-3 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                      </div>
+                    )}
+                  </Button>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Plan Bundle Matrix Comparison Table */}
+        <div className="mt-10 bg-slate-900/90 rounded-2xl border border-slate-800 p-4 sm:p-6 backdrop-blur-xl shadow-lg">
+          <div className="mb-4">
+            <h3 className="font-montserrat text-lg sm:text-xl font-black text-white">
+              Bundle &amp; Value Advantage Overview
+            </h3>
+            <p className="text-[11px] text-slate-400 mt-0.5">
+              Compare LexPoints capacity and discount structure across all 5 tiers.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/80">
+            <table className="w-full text-left text-[11px] border-collapse">
+              <thead>
+                <tr className="border-b border-slate-800 text-[#E5A91E] font-montserrat font-black uppercase text-[10px] tracking-wider bg-slate-900/80">
+                  <th className="py-2.5 px-4 border-r border-slate-800">Bundle</th>
+                  <th className="py-2.5 px-4 border-r border-slate-800">Price</th>
+                  <th className="py-2.5 px-4 border-r border-slate-800">LexPoints</th>
+                  <th className="py-2.5 px-4">Value Advantage</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800/80 font-medium">
+                <tr className="hover:bg-slate-800/40 transition-colors">
+                  <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800">Starter</td>
+                  <td className="py-2.5 px-4 text-slate-200 font-semibold border-r border-slate-800">{curr.symbol}299</td>
+                  <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">100 LP</td>
+                  <td className="py-2.5 px-4 text-slate-300 font-medium">Standard</td>
+                </tr>
+                <tr className="hover:bg-slate-800/40 transition-colors bg-amber-500/5">
+                  <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800 flex items-center gap-1.5">
+                    Growth <span className="bg-[#E5A91E] text-[#0B1736] text-[8px] font-black px-1.5 py-0.5 rounded">Popular</span>
+                  </td>
+                  <td className="py-2.5 px-4 text-slate-200 font-semibold border-r border-slate-800">{curr.symbol}899</td>
+                  <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">350 LP</td>
+                  <td className="py-2.5 px-4 font-extrabold text-white">Save 14%</td>
+                </tr>
+                <tr className="hover:bg-slate-800/40 transition-colors">
+                  <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800">Professional</td>
+                  <td className="py-2.5 px-4 text-slate-200 font-semibold border-r border-slate-800">{curr.symbol}1,999</td>
+                  <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">900 LP</td>
+                  <td className="py-2.5 px-4 font-extrabold text-white">Save 26%</td>
+                </tr>
+                <tr className="hover:bg-slate-800/40 transition-colors">
+                  <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800">Business</td>
+                  <td className="py-2.5 px-4 text-slate-200 font-semibold border-r border-slate-800">{curr.symbol}3,999</td>
+                  <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">2,000 LP</td>
+                  <td className="py-2.5 px-4 font-extrabold text-white">Save 33%</td>
+                </tr>
+                <tr className="hover:bg-slate-800/40 transition-colors bg-amber-500/5">
+                  <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800">Enterprise</td>
+                  <td className="py-2.5 px-4 text-amber-300 font-semibold border-r border-slate-800">Custom</td>
+                  <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">Custom LP</td>
+                  <td className="py-2.5 px-4 font-extrabold text-amber-400">
+                    Custom Commercial Terms
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="mt-8 pt-4 border-t border-slate-800/80 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+          <div className="flex items-center justify-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#E5A91E]" />
+            <span className="text-[11px] text-slate-300 font-semibold">256-Bit SSL Encrypted Checkout</span>
+          </div>
+          <div className="flex items-center justify-center gap-2">
+            <Lock className="w-4 h-4 text-[#E5A91E]" />
+            <span className="text-[11px] text-slate-300 font-semibold">Stripe Secure Multi-Currency Payment</span>
+          </div>
+          <div className="flex items-center justify-center gap-2">
+            <Zap className="w-4 h-4 text-[#E5A91E]" />
+            <span className="text-[11px] text-slate-300 font-semibold">Instant Client Portal &amp; LexPoints Allocation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

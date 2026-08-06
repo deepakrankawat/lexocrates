@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Scale, Home, Info, Briefcase, Users, GraduationCap, FileText, Mail, ChevronRight, LayoutDashboard, UserCheck } from 'lucide-react';
+import { Menu, X, Scale, Home, Info, Briefcase, CreditCard, Users, GraduationCap, FileText, Mail, ChevronRight, LayoutDashboard, UserCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetClose, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: Info },
   { href: '/services', label: 'Services', icon: Briefcase },
+  { href: '/pricing', label: 'Lex Plan', icon: CreditCard },
   { href: '/dashboard', label: 'Workspace', icon: LayoutDashboard },
   { href: '/team', label: 'Team', icon: Users },
   { href: '/careers', label: 'Careers', icon: GraduationCap },
