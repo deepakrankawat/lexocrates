@@ -130,7 +130,7 @@ export function LegalSecurityTrustAnimation() {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
               Real-time Compliance Monitoring
             </span>
-            <span>Zero-Retention Workspace</span>
+            <span>Zero-Retention Framework</span>
           </div>
         </motion.div>
       </AnimatePresence>

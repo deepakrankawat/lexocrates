@@ -5,12 +5,9 @@ import Link from 'next/link';
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
 import { LegalWorkflowAiAnimation } from '../animations/legal-workflow-ai-animation';
-import { Scale, ArrowRight, ShieldCheck, Zap, Sparkles, UserPlus } from 'lucide-react';
-import { useWorkspace } from '@/lib/workspace-context';
+import { Scale, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 
 export function Hero() {
-  const { openAuthModal } = useWorkspace();
-
   return (
     <section className="relative min-h-screen lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary pt-[84px] sm:pt-[100px] lg:pt-[140px] pb-12 lg:pb-24">
       {/* High-End Architectural Background */}
@@ -57,37 +54,35 @@ export function Hero() {
 
               <SlideIn direction="up" delay={0.2}>
                 <h1 className="font-montserrat text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black leading-[1.15] sm:leading-[1.1] text-white mb-6 tracking-tight">
-                  Start Working With Lexocrates
+                  Legal Process Outsourcing, Built Around How Your Team Actually Works
                 </h1>
               </SlideIn>
 
               <SlideIn direction="up" delay={0.35} className="space-y-6 lg:space-y-4 mb-10 w-full flex flex-col items-center lg:items-start">
                 <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-lg text-white/80 font-medium leading-relaxed mx-auto lg:mx-0 px-4 lg:px-0">
-                  Experience legal process outsourcing designed like a modern SaaS platform. Skip traditional long contact forms — create your free Lexocrates Workspace account in 30 seconds to launch legal research, contract drafting, litigation support, and document review matters instantly.
+                  Lexocrates partners with law firms and corporate legal departments in Canada, the UK, and the USA, managing the process-intensive legal work that keeps your team from focusing on what matters most. From legal research and litigation support to contract lifecycle management, eDiscovery, compliance, and paralegal services, our legal professionals work within structured, quality-driven processes built to fit your workflow — not the other way around.
                 </p>
               </SlideIn>
 
-              {/* CTAs - Matching PDF Page 2 */}
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start w-full sm:w-auto px-2 sm:px-0">
                 <SlideIn direction="up" delay={0.45} className="w-full sm:w-auto">
                   <Button
-                    onClick={() => openAuthModal()}
+                    asChild
                     size="xl"
                     className="w-full sm:w-auto h-11 sm:h-13 lg:h-14 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-[10px] sm:text-xs lg:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] px-6 sm:px-10 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105"
                   >
-                    <span className="flex items-center justify-center gap-2">
-                      <UserPlus className="w-4 h-4" /> Create Free Account <ArrowRight className="w-4 h-4" />
-                    </span>
+                    <Link href="/services" className="flex items-center justify-center gap-2">
+                      Explore Our Services <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </Button>
                 </SlideIn>
-                
                 <SlideIn direction="up" delay={0.5} className="w-full sm:w-auto">
                   <Button
                     asChild
                     size="xl"
                     className="w-full sm:w-auto h-11 sm:h-13 lg:h-14 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-montserrat font-black text-[10px] sm:text-xs lg:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] px-6 sm:px-10 rounded-full transition-all duration-500 hover:scale-105"
                   >
-                    <Link href="/dashboard">Explore Client Workspace</Link>
+                    <Link href="/contact">Contact Us</Link>
                   </Button>
                 </SlideIn>
               </div>
@@ -96,11 +91,11 @@ export function Hero() {
               <SlideIn direction="up" delay={0.6} className="mt-16 flex flex-wrap justify-center lg:justify-start gap-8 opacity-40 grayscale group hover:grayscale-0 transition-all duration-700 lg:ml-8">
                 <div className="flex items-center gap-3">
                   <ShieldCheck className="w-5 h-5 text-accent" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">ISO 27001 Certified Workspace</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">ISO 27001 Certified</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Zap className="w-5 h-5 text-accent" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">Behind-the-scenes ERPNext Operations</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">24/7 Global Sync</span>
                 </div>
               </SlideIn>
             </div>

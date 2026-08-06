@@ -66,7 +66,7 @@ export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
       'No monthly expiration or auto-renewals',
       'Full access to Lex Engine Estimator',
       'Standard 48-Hour SLA Response',
-      'Secure Client Portal Workspace Access',
+      'Secure Client Portal Access',
     ],
     ctaText: 'Buy Starter',
   },

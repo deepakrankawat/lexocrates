@@ -149,7 +149,7 @@ export async function POST(req: Request) {
     // 4. Handle Stripe Checkout API Session Creation
     const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
     const origin = req.headers.get('origin') || 'https://www.lexocrates.com';
-    const successUrl = `${origin}/dashboard?checkout=success&session_id={CHECKOUT_SESSION_ID}&tier=${tierId}&currency=${validCurrency}`;
+    const successUrl = `${origin}/pricing?checkout=success&session_id={CHECKOUT_SESSION_ID}&tier=${tierId}&currency=${validCurrency}`;
     const cancelUrl = `${origin}/pricing?checkout=cancelled&tier=${tierId}`;
 
     if (!stripeSecretKey) {

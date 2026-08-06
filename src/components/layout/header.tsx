@@ -3,20 +3,18 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Scale, Home, Info, Briefcase, CreditCard, Users, GraduationCap, FileText, Mail, ChevronRight, LayoutDashboard, UserCheck } from 'lucide-react';
+import { Menu, X, Scale, Home, Info, Briefcase, CreditCard, Users, GraduationCap, FileText, Mail, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetClose, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
 import { motion } from 'framer-motion';
-import { useWorkspace } from '@/lib/workspace-context';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: Info },
   { href: '/services', label: 'Services', icon: Briefcase },
   { href: '/pricing', label: 'Lex Plan', icon: CreditCard },
-  { href: '/dashboard', label: 'Workspace', icon: LayoutDashboard },
   { href: '/team', label: 'Team', icon: Users },
   { href: '/careers', label: 'Careers', icon: GraduationCap },
   { href: '/blog', label: 'Blog', icon: FileText },
@@ -28,7 +26,6 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHoveringContact, setIsHoveringContact] = useState(false);
   const pathname = usePathname();
-  const { openAuthModal, user } = useWorkspace();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -67,9 +64,6 @@ export function Header() {
                     isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                   )}
                 >
-                  {link.label === 'Workspace' && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent animate-ping" />
-                  )}
                   {link.label}
                   <span className={cn(
                     "absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 origin-left",
@@ -82,20 +76,11 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          {/* Client Portal Button */}
-          <Button 
-            onClick={() => openAuthModal()}
-            className="hidden lg:flex h-11 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-[11px] uppercase tracking-[0.15em] px-6 rounded-full shadow-lg shadow-accent/20 transition-all duration-500 hover:scale-105 active:scale-95 items-center gap-2"
-          >
-            <UserCheck className="w-4 h-4" />
-            <span>{user.isLoggedIn ? 'Client Workspace' : 'Create Free Account'}</span>
-          </Button>
-
           <Button 
             asChild 
             onMouseEnter={() => setIsHoveringContact(true)}
             onMouseLeave={() => setIsHoveringContact(false)}
-            className="hidden xl:flex h-11 bg-primary hover:bg-primary/90 text-white font-montserrat font-black text-[11px] uppercase tracking-[0.15em] px-6 rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden"
+            className="hidden lg:flex h-11 bg-primary hover:bg-primary/90 text-white font-montserrat font-black text-[11px] uppercase tracking-[0.15em] px-6 rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden"
           >
             <Link href="/contact" className="relative z-10 flex items-center gap-2">
               <motion.div
@@ -160,13 +145,13 @@ export function Header() {
               </nav>
               <div className="p-5 sm:p-6 border-t border-black/5 bg-secondary/30 space-y-3">
                 <Button 
-                  onClick={() => {
-                    setIsOpen(false);
-                    openAuthModal();
-                  }}
-                  className="w-full h-14 bg-accent text-accent-foreground font-black text-sm rounded-2xl shadow-lg active:scale-95 transition-transform"
+                  asChild
+                  onClick={() => setIsOpen(false)}
+                  className="w-full h-14 bg-accent text-accent-foreground font-black text-sm rounded-2xl shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2"
                 >
-                  Create Free Workspace Account
+                  <Link href="/contact">
+                    <span>Contact Us</span>
+                  </Link>
                 </Button>
               </div>
             </SheetContent>
