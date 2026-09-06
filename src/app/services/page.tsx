@@ -4,7 +4,6 @@ import { Services } from '@/components/sections/services';
 import { Experience } from '@/components/sections/experience';
 import { WhyChooseUs } from '@/components/sections/why-choose-us';
 import { WorkflowSupport } from '@/components/sections/workflow-support';
-import { CostCalculator } from '@/components/sections/cost-calculator';
 import { Cta } from '@/components/sections/cta';
 
 export const metadata: Metadata = {
@@ -32,7 +31,6 @@ export default function ServicesPage() {
       <div className="container-balanced">
         <Services />
         <WorkflowSupport />
-        <CostCalculator />
         <WhyChooseUs />
         <Experience />
       </div>

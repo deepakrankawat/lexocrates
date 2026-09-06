@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Scale, Home, Info, Briefcase, CreditCard, Users, GraduationCap, FileText, Mail, ChevronRight } from 'lucide-react';
+import { Menu, X, Scale, Home, Info, Briefcase, CreditCard, Users, GraduationCap, FileText, Mail, ChevronRight, LogIn, UserPlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetClose, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -40,7 +40,7 @@ export function Header() {
       'fixed top-0 z-50 w-full transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-black/5 pt-[env(safe-area-inset-top)]',
       isScrolled ? 'py-0.5 shadow-md' : 'py-1.5 lg:py-3'
     )}>
-      <div className="mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-28 xl:px-36 max-w-[1920px]">
+      <div className="mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-28 max-w-[1920px]">
         
         <div className="flex-shrink-0">
           <Link href="/" className="group block transition-transform duration-300 hover:scale-105 active:scale-95">
@@ -54,7 +54,7 @@ export function Header() {
         </div>
         
         <nav className="hidden lg:flex flex-grow justify-center">
-          <ul className="flex items-center gap-6 xl:gap-8">
+          <ul className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
             {navLinks.filter(l => l.href !== '/contact').map((link) => (
               <li key={link.href}>
                 <Link 
@@ -75,12 +75,31 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Combined Sign In / Sign Up Button Group */}
+          <div className="hidden sm:inline-flex items-center p-1 bg-black/[0.04] rounded-full border border-black/10 shadow-xs hover:border-black/20 transition-all duration-300">
+            <button
+              type="button"
+              className="px-3.5 xl:px-4 py-1.5 text-[11px] xl:text-[12px] font-montserrat font-black uppercase tracking-[0.12em] rounded-full transition-all duration-300 flex items-center gap-1.5 text-primary/75 hover:text-primary hover:bg-white active:scale-95"
+            >
+              <LogIn className="w-3.5 h-3.5 opacity-70" />
+              <span>Sign In</span>
+            </button>
+            <span className="w-px h-3.5 bg-black/15 mx-0.5" />
+            <button
+              type="button"
+              className="px-3.5 xl:px-4 py-1.5 text-[11px] xl:text-[12px] font-montserrat font-black uppercase tracking-[0.12em] rounded-full transition-all duration-300 flex items-center gap-1.5 bg-primary text-white hover:bg-primary/90 shadow-xs hover:shadow active:scale-95"
+            >
+              <UserPlus className="w-3.5 h-3.5" />
+              <span>Sign Up</span>
+            </button>
+          </div>
+
           <Button 
             asChild 
             onMouseEnter={() => setIsHoveringContact(true)}
             onMouseLeave={() => setIsHoveringContact(false)}
-            className="hidden lg:flex h-11 bg-primary hover:bg-primary/90 text-white font-montserrat font-black text-[11px] uppercase tracking-[0.15em] px-6 rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden"
+            className="hidden lg:flex h-11 bg-primary hover:bg-primary/90 text-white font-montserrat font-black text-[11px] uppercase tracking-[0.15em] px-5 xl:px-6 rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden"
           >
             <Link href="/contact" className="relative z-10 flex items-center gap-2">
               <motion.div
@@ -144,6 +163,26 @@ export function Header() {
                 })}
               </nav>
               <div className="p-5 sm:p-6 border-t border-black/5 bg-secondary/30 space-y-3">
+                {/* Combined Sign In / Sign Up for Mobile */}
+                <div className="grid grid-cols-2 p-1 bg-white rounded-2xl border border-black/10 shadow-xs">
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(false)}
+                    className="py-3 flex items-center justify-center gap-2 text-xs font-montserrat font-black uppercase tracking-wider rounded-xl transition-all text-primary/80 hover:text-primary hover:bg-black/5 active:scale-95"
+                  >
+                    <LogIn className="w-4 h-4 opacity-70" />
+                    <span>Sign In</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(false)}
+                    className="py-3 flex items-center justify-center gap-2 text-xs font-montserrat font-black uppercase tracking-wider rounded-xl transition-all bg-primary text-white hover:bg-primary/90 shadow-xs active:scale-95"
+                  >
+                    <UserPlus className="w-4 h-4" />
+                    <span>Sign Up</span>
+                  </button>
+                </div>
+
                 <Button 
                   asChild
                   onClick={() => setIsOpen(false)}

@@ -1,12 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Check, ShieldCheck, Zap, Sparkles, ArrowRight, Lock, Loader2 } from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Check, ShieldCheck, Zap, Sparkles, ArrowRight, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-export type CurrencyCode = 'USD' | 'GBP' | 'CAD';
+export type CurrencyCode = 'CAD' | 'USD' | 'GBP';
 
 export interface CurrencyConfig {
   code: CurrencyCode;
@@ -17,6 +18,13 @@ export interface CurrencyConfig {
 }
 
 export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
+  CAD: {
+    code: 'CAD',
+    symbol: 'CA$',
+    name: 'Canadian Dollar',
+    country: 'Canada',
+    flag: '🇨🇦',
+  },
   USD: {
     code: 'USD',
     symbol: '$',
@@ -30,13 +38,6 @@ export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
     name: 'British Pound',
     country: 'United Kingdom',
     flag: '🇬🇧',
-  },
-  CAD: {
-    code: 'CAD',
-    symbol: 'CA$',
-    name: 'Canadian Dollar',
-    country: 'Canada',
-    flag: '🇨🇦',
   },
 };
 
@@ -141,59 +142,22 @@ export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
 ];
 
 export function PricingSection() {
-  const [currency, setCurrency] = useState<CurrencyCode>('USD');
-  const [loadingTierId, setLoadingTierId] = useState<string | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [currency, setCurrency] = useState<CurrencyCode>('CAD');
 
   useEffect(() => {
     try {
       const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
       if (tz.includes('London') || tz.includes('Europe')) {
         setCurrency('GBP');
-      } else if (tz.includes('Toronto') || tz.includes('Vancouver') || tz.includes('Canada')) {
-        setCurrency('CAD');
-      } else {
+      } else if (tz.includes('New_York') || tz.includes('Chicago') || tz.includes('Los_Angeles') || tz.includes('Denver') || tz.includes('Phoenix')) {
         setCurrency('USD');
+      } else {
+        setCurrency('CAD');
       }
     } catch (e) {
-      setCurrency('USD');
+      setCurrency('CAD');
     }
   }, []);
-
-  const handleCheckout = async (bundleId: string) => {
-    if (bundleId === 'enterprise') {
-      window.location.href = '/contact';
-      return;
-    }
-
-    setLoadingTierId(bundleId);
-    setErrorMessage(null);
-
-    try {
-      const response = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          tierId: bundleId,
-          billingCycle: 'one-time',
-          currency,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok || !data.url) {
-        throw new Error(data.error || 'Failed to initiate checkout session.');
-      }
-
-      window.location.href = data.url;
-    } catch (err: any) {
-      console.error('Checkout Error:', err);
-      setErrorMessage(err?.message || 'Unable to connect to payment provider. Please try again.');
-    } finally {
-      setLoadingTierId(null);
-    }
-  };
 
   const curr = CURRENCIES[currency];
 
@@ -252,23 +216,9 @@ export function PricingSection() {
           </p>
         </div>
 
-        <AnimatePresence>
-          {errorMessage && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="mt-4 max-w-xl mx-auto p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-[11px] font-semibold text-center flex items-center justify-center gap-2"
-            >
-              <span>{errorMessage}</span>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 items-stretch">
           {LEXPACK_BUNDLES_DATA.map((bundle) => {
             const price = bundle.prices[currency];
-            const isLoading = loadingTierId === bundle.id;
 
             return (
               <motion.div
@@ -353,8 +303,7 @@ export function PricingSection() {
 
                 <div className="pt-2">
                   <Button
-                    onClick={() => handleCheckout(bundle.id)}
-                    disabled={isLoading}
+                    asChild
                     className={cn(
                       "w-full h-9 py-1.5 px-2 rounded-xl font-montserrat font-black text-[10px] uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-1 group text-center overflow-hidden",
                       bundle.isPopular
@@ -362,17 +311,10 @@ export function PricingSection() {
                         : "bg-slate-800 hover:bg-slate-700 text-white"
                     )}
                   >
-                    {isLoading ? (
-                      <div className="flex items-center justify-center gap-1.5">
-                        <Loader2 className="w-3.5 h-3.5 animate-spin flex-shrink-0" />
-                        <span className="truncate">Processing...</span>
-                      </div>
-                    ) : (
-                      <div className="flex items-center justify-center gap-1 max-w-full overflow-hidden px-1">
-                        <span className="truncate">{bundle.ctaText}</span>
-                        <ArrowRight className="w-3 h-3 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                      </div>
-                    )}
+                    <Link href={`/contact?plan=${encodeURIComponent(bundle.name)}`}>
+                      <span className="truncate">{bundle.ctaText}</span>
+                      <ArrowRight className="w-3 h-3 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
                   </Button>
                 </div>
               </motion.div>
@@ -402,40 +344,46 @@ export function PricingSection() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/80 font-medium">
-                <tr className="hover:bg-slate-800/40 transition-colors">
-                  <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800">Starter</td>
-                  <td className="py-2.5 px-4 text-slate-200 font-semibold border-r border-slate-800">{curr.symbol}299</td>
-                  <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">100 LP</td>
-                  <td className="py-2.5 px-4 text-slate-300 font-medium">Standard</td>
-                </tr>
-                <tr className="hover:bg-slate-800/40 transition-colors bg-amber-500/5">
-                  <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800 flex items-center gap-1.5">
-                    Growth <span className="bg-[#E5A91E] text-[#0B1736] text-[8px] font-black px-1.5 py-0.5 rounded">Popular</span>
-                  </td>
-                  <td className="py-2.5 px-4 text-slate-200 font-semibold border-r border-slate-800">{curr.symbol}899</td>
-                  <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">350 LP</td>
-                  <td className="py-2.5 px-4 font-extrabold text-white">Save 14%</td>
-                </tr>
-                <tr className="hover:bg-slate-800/40 transition-colors">
-                  <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800">Professional</td>
-                  <td className="py-2.5 px-4 text-slate-200 font-semibold border-r border-slate-800">{curr.symbol}1,999</td>
-                  <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">900 LP</td>
-                  <td className="py-2.5 px-4 font-extrabold text-white">Save 26%</td>
-                </tr>
-                <tr className="hover:bg-slate-800/40 transition-colors">
-                  <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800">Business</td>
-                  <td className="py-2.5 px-4 text-slate-200 font-semibold border-r border-slate-800">{curr.symbol}3,999</td>
-                  <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">2,000 LP</td>
-                  <td className="py-2.5 px-4 font-extrabold text-white">Save 33%</td>
-                </tr>
-                <tr className="hover:bg-slate-800/40 transition-colors bg-amber-500/5">
-                  <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800">Enterprise</td>
-                  <td className="py-2.5 px-4 text-amber-300 font-semibold border-r border-slate-800">Custom</td>
-                  <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">Custom LP</td>
-                  <td className="py-2.5 px-4 font-extrabold text-amber-400">
-                    Custom Commercial Terms
-                  </td>
-                </tr>
+                {LEXPACK_BUNDLES_DATA.map((bundle) => {
+                  const p = bundle.prices[currency];
+                  const formatted = typeof p === 'number' ? `${curr.symbol}${p.toLocaleString()}` : p;
+                  return (
+                    <tr
+                      key={bundle.id}
+                      className={cn(
+                        "hover:bg-slate-800/40 transition-colors",
+                        bundle.isPopular && "bg-amber-500/5"
+                      )}
+                    >
+                      <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800">
+                        <div className="flex items-center gap-1.5">
+                          <span>{bundle.name.replace(' Bundle', '')}</span>
+                          {bundle.isPopular && (
+                            <span className="bg-[#E5A91E] text-[#0B1736] text-[8px] font-black px-1.5 py-0.5 rounded">
+                              Popular
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="py-2.5 px-4 text-slate-200 font-semibold border-r border-slate-800">
+                        {formatted}
+                      </td>
+                      <td className="py-2.5 px-4 text-[#E5A91E] font-bold border-r border-slate-800">
+                        {typeof bundle.lexPoints === 'number' ? `${bundle.lexPoints.toLocaleString()} LP` : `${bundle.lexPoints} LP`}
+                      </td>
+                      <td className={cn(
+                        "py-2.5 px-4",
+                        bundle.advantage.includes('Save')
+                          ? "font-extrabold text-white"
+                          : bundle.advantage.includes('Custom')
+                          ? "font-extrabold text-amber-400"
+                          : "text-slate-300 font-medium"
+                      )}>
+                        {bundle.advantage}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -444,15 +392,15 @@ export function PricingSection() {
         <div className="mt-8 pt-4 border-t border-slate-800/80 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
           <div className="flex items-center justify-center gap-2">
             <ShieldCheck className="w-4 h-4 text-[#E5A91E]" />
-            <span className="text-[11px] text-slate-300 font-semibold">256-Bit SSL Encrypted Checkout</span>
+            <span className="text-[11px] text-slate-300 font-semibold">Enterprise-Grade Confidentiality &amp; NDA</span>
           </div>
           <div className="flex items-center justify-center gap-2">
             <Lock className="w-4 h-4 text-[#E5A91E]" />
-            <span className="text-[11px] text-slate-300 font-semibold">Stripe Secure Multi-Currency Payment</span>
+            <span className="text-[11px] text-slate-300 font-semibold">Transparent Pricing • No Hidden Retainers</span>
           </div>
           <div className="flex items-center justify-center gap-2">
             <Zap className="w-4 h-4 text-[#E5A91E]" />
-            <span className="text-[11px] text-slate-300 font-semibold">Instant Client Portal &amp; LexPoints Allocation</span>
+            <span className="text-[11px] text-slate-300 font-semibold">Dedicated Paralegal &amp; Legal Delivery Team</span>
           </div>
         </div>
       </div>
