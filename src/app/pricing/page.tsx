@@ -3,8 +3,8 @@ import { PricingSection } from '@/components/sections/pricing-section';
 import { Faq } from '@/components/sections/faq';
 
 export const metadata: Metadata = {
-  title: 'Lex Plan & Packages (CAD, USD, GBP) | Lexocrates Legal LPO',
-  description: 'Explore multi-currency pricing for Lexocrates Legal Process Outsourcing. Dedicated paralegals, legal research, and litigation support for law firms in Canada, the USA, and UK.',
+  title: 'LexPack™ Bundles (CAD, USD, GBP) | Lexocrates Legal LPO',
+  description: 'Explore multi-currency LexPack bundles for Lexocrates Legal Process Outsourcing. Dedicated paralegals, legal research, and litigation support with zero recurring retainers.',
 };
 
 export default function PricingPage() {

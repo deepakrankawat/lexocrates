@@ -9,12 +9,13 @@ import { Sheet, SheetContent, SheetHeader, SheetClose, SheetTrigger, SheetTitle 
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/logo';
 import { motion } from 'framer-motion';
+import { TrademarkBadge } from '@/components/ui/trademark-badge';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: Info },
   { href: '/services', label: 'Services', icon: Briefcase },
-  { href: '/pricing', label: 'Lex Plan', icon: CreditCard },
+  { href: '/pricing', label: 'LexPack', icon: CreditCard, hasTrademark: true },
   { href: '/team', label: 'Team', icon: Users },
   { href: '/careers', label: 'Careers', icon: GraduationCap },
   { href: '/blog', label: 'Blog', icon: FileText },
@@ -64,7 +65,12 @@ export function Header() {
                     isActive(link.href) ? "text-accent" : "text-primary/70 hover:text-primary"
                   )}
                 >
-                  {link.label}
+                  <span className="inline-flex items-center">
+                    <span>{link.label}</span>
+                    {link.hasTrademark && (
+                      <TrademarkBadge className="w-2 h-2 xl:w-2.5 xl:h-2.5 -translate-y-1 ml-0.5 transition-colors" />
+                    )}
+                  </span>
                   <span className={cn(
                     "absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 origin-left",
                     isActive(link.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
@@ -152,7 +158,15 @@ export function Header() {
                         )}>
                           <Icon className="w-5 h-5" />
                         </div>
-                        <span className="text-base tracking-tight">{link.label}</span>
+                        <span className="text-base tracking-tight inline-flex items-center">
+                          <span>{link.label}</span>
+                          {link.hasTrademark && (
+                            <TrademarkBadge className={cn(
+                              "w-2.5 h-2.5 -translate-y-1.5 ml-1",
+                              active ? "text-white" : "text-accent"
+                            )} />
+                          )}
+                        </span>
                       </div>
                       <ChevronRight className={cn(
                         "w-5 h-5 transition-transform",

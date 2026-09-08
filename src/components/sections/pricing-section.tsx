@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { Check, ShieldCheck, Zap, Sparkles, ArrowRight, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { TrademarkBadge } from '@/components/ui/trademark-badge';
 
 export type CurrencyCode = 'CAD' | 'USD' | 'GBP';
 
@@ -176,12 +177,15 @@ export function PricingSection() {
             <span>Pay-As-You-Go Capacity • No Subscription Model</span>
           </div>
 
-          <h2 className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
-            Lex Plan &amp; <span className="text-[#E5A91E]">Legal Capacity</span>
+          <h2 className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white flex items-center justify-center">
+            <span className="inline-flex items-center">
+              <span>Lex<span className="text-[#E5A91E]">Pack</span></span>
+              <TrademarkBadge className="w-3 h-3 sm:w-3.5 sm:h-3.5 -translate-y-2 sm:-translate-y-2.5 ml-0.5 text-[#E5A91E]" />
+            </span>
           </h2>
 
           <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
-            Purchase capacity whenever required. Points never expire. Larger Lex Plan bundles offer better value with zero monthly retainer traps.
+            Purchase capacity whenever required. Points never expire. Larger LexPack bundles offer better value with zero monthly retainer traps.
           </p>
         </div>
 
@@ -212,7 +216,7 @@ export function PricingSection() {
 
         <div className="mt-2 text-center">
           <p className="text-[11px] text-slate-400 font-medium">
-            Displaying Lex Plan in <span className="text-white font-bold">{curr.flag} {curr.name} ({curr.code})</span> for law firms in {curr.country}.
+            Displaying LexPack in <span className="text-white font-bold">{curr.flag} {curr.name} ({curr.code})</span> for law firms in {curr.country}.
           </p>
         </div>
 
