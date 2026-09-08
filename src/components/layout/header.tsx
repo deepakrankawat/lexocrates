@@ -15,7 +15,7 @@ const navLinks = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: Info },
   { href: '/services', label: 'Services', icon: Briefcase },
-  { href: '/pricing', label: 'LexPack', icon: CreditCard, hasTrademark: true },
+  { href: '/pricing', label: 'LexPacks', icon: CreditCard, hasTrademark: true },
   { href: '/team', label: 'Team', icon: Users },
   { href: '/careers', label: 'Careers', icon: GraduationCap },
   { href: '/blog', label: 'Blog', icon: FileText },

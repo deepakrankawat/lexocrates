@@ -58,7 +58,7 @@ export interface LexPackBundleTier {
 export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
   {
     id: 'starter',
-    name: 'Starter Bundle',
+    name: 'Starter LexPack',
     subtitle: 'Ideal for boutique law firms starting with AI-powered LPO and contract reviews.',
     prices: { USD: 299, GBP: 239, CAD: 399 },
     lexPoints: 100,
@@ -74,7 +74,7 @@ export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
   },
   {
     id: 'growth',
-    name: 'Growth Bundle',
+    name: 'Growth LexPack',
     subtitle: 'Designed for active law firms managing continuous contract review and litigation support.',
     badge: 'MOST POPULAR',
     isPopular: true,
@@ -92,7 +92,7 @@ export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
   },
   {
     id: 'professional',
-    name: 'Professional Bundle',
+    name: 'Professional LexPack',
     subtitle: 'High-volume legal capacity for corporate legal departments and busy litigation practices.',
     prices: { USD: 1999, GBP: 1599, CAD: 2699 },
     lexPoints: 900,
@@ -108,7 +108,7 @@ export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
   },
   {
     id: 'business',
-    name: 'Business Bundle',
+    name: 'Business LexPack',
     subtitle: 'Enterprise scale pay-as-you-go capacity for multi-partner law firms and global legal teams.',
     badge: 'BEST VALUE',
     prices: { USD: 3999, GBP: 3199, CAD: 5399 },
@@ -125,7 +125,7 @@ export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
   },
   {
     id: 'enterprise',
-    name: 'Enterprise Bundle',
+    name: 'Enterprise LexPack',
     subtitle: 'Tailored enterprise volume, custom SLA, and dedicated commercial terms for large law firms.',
     badge: 'COMMERCIAL',
     prices: { USD: 'Custom', GBP: 'Custom', CAD: 'Custom' },
@@ -352,7 +352,7 @@ export function PricingSection() {
             <table className="w-full text-left text-[11px] border-collapse">
               <thead>
                 <tr className="border-b border-slate-800 text-[#E5A91E] font-montserrat font-black uppercase text-[10px] tracking-wider bg-slate-900/80">
-                  <th className="py-2.5 px-4 border-r border-slate-800">Bundle</th>
+                  <th className="py-2.5 px-4 border-r border-slate-800">LexPack</th>
                   <th className="py-2.5 px-4 border-r border-slate-800">Price</th>
                   <th className="py-2.5 px-4 border-r border-slate-800">LexPoints</th>
                   <th className="py-2.5 px-4">Value Advantage</th>
@@ -372,7 +372,7 @@ export function PricingSection() {
                     >
                       <td className="py-2.5 px-4 font-bold text-white border-r border-slate-800">
                         <div className="flex items-center gap-1.5">
-                          <span>{bundle.name.replace(' Bundle', '')}</span>
+                          <span>{bundle.name.replace(/ (Bundle|LexPack)/, '')}</span>
                           {bundle.isPopular && (
                             <span className="bg-[#E5A91E] text-[#0B1736] text-[8px] font-black px-1.5 py-0.5 rounded">
                               Popular
