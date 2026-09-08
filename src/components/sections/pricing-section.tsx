@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Zap, Sparkles, ArrowRight, Lock } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Sparkles, ArrowRight, Lock, UserPlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { TrademarkBadge } from '@/components/ui/trademark-badge';
@@ -187,6 +187,13 @@ export function PricingSection() {
           <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
             Purchase capacity whenever required. Points never expire. Larger LexPack bundles offer better value with zero monthly retainer traps.
           </p>
+
+          <div className="pt-1">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 text-[10.5px]">
+              <UserPlus className="w-3 h-3 text-[#E5A91E]" />
+              <span>Select any plan below to proceed to the onboarding form &amp; create your account.</span>
+            </div>
+          </div>
         </div>
 
         <div className="mt-6 flex items-center justify-center">
@@ -315,11 +322,15 @@ export function PricingSection() {
                         : "bg-slate-800 hover:bg-slate-700 text-white"
                     )}
                   >
-                    <Link href={`/contact?plan=${encodeURIComponent(bundle.name)}`}>
+                    <Link href={`https://engine.lexocrates.com/client-registration?plan=${encodeURIComponent(bundle.id)}`}>
                       <span className="truncate">{bundle.ctaText}</span>
                       <ArrowRight className="w-3 h-3 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
                     </Link>
                   </Button>
+                  <p className="text-[9px] text-center text-slate-400 mt-1.5 font-medium flex items-center justify-center gap-1">
+                    <UserPlus className="w-2.5 h-2.5 text-[#E5A91E]" />
+                    <span>Creates your client account</span>
+                  </p>
                 </div>
               </motion.div>
             );

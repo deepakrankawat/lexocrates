@@ -84,21 +84,21 @@ export function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Combined Sign In / Sign Up Button Group */}
           <div className="hidden sm:inline-flex items-center p-1 bg-black/[0.04] rounded-full border border-black/10 shadow-xs hover:border-black/20 transition-all duration-300">
-            <button
-              type="button"
+            <Link
+              href="https://engine.lexocrates.com/client-login"
               className="px-3.5 xl:px-4 py-1.5 text-[11px] xl:text-[12px] font-montserrat font-black uppercase tracking-[0.12em] rounded-full transition-all duration-300 flex items-center gap-1.5 text-primary/75 hover:text-primary hover:bg-white active:scale-95"
             >
               <LogIn className="w-3.5 h-3.5 opacity-70" />
               <span>Sign In</span>
-            </button>
+            </Link>
             <span className="w-px h-3.5 bg-black/15 mx-0.5" />
-            <button
-              type="button"
+            <Link
+              href="https://engine.lexocrates.com/client-registration"
               className="px-3.5 xl:px-4 py-1.5 text-[11px] xl:text-[12px] font-montserrat font-black uppercase tracking-[0.12em] rounded-full transition-all duration-300 flex items-center gap-1.5 bg-primary text-white hover:bg-primary/90 shadow-xs hover:shadow active:scale-95"
             >
               <UserPlus className="w-3.5 h-3.5" />
               <span>Sign Up</span>
-            </button>
+            </Link>
           </div>
 
           <Button 
@@ -179,22 +179,22 @@ export function Header() {
               <div className="p-5 sm:p-6 border-t border-black/5 bg-secondary/30 space-y-3">
                 {/* Combined Sign In / Sign Up for Mobile */}
                 <div className="grid grid-cols-2 p-1 bg-white rounded-2xl border border-black/10 shadow-xs">
-                  <button
-                    type="button"
+                  <Link
+                    href="https://engine.lexocrates.com/client-login"
                     onClick={() => setIsOpen(false)}
                     className="py-3 flex items-center justify-center gap-2 text-xs font-montserrat font-black uppercase tracking-wider rounded-xl transition-all text-primary/80 hover:text-primary hover:bg-black/5 active:scale-95"
                   >
                     <LogIn className="w-4 h-4 opacity-70" />
                     <span>Sign In</span>
-                  </button>
-                  <button
-                    type="button"
+                  </Link>
+                  <Link
+                    href="https://engine.lexocrates.com/client-registration"
                     onClick={() => setIsOpen(false)}
                     className="py-3 flex items-center justify-center gap-2 text-xs font-montserrat font-black uppercase tracking-wider rounded-xl transition-all bg-primary text-white hover:bg-primary/90 shadow-xs active:scale-95"
                   >
                     <UserPlus className="w-4 h-4" />
                     <span>Sign Up</span>
-                  </button>
+                  </Link>
                 </div>
 
                 <Button 
