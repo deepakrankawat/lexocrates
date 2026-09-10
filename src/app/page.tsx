@@ -5,6 +5,7 @@ import { WhyChooseUs } from '@/components/sections/why-choose-us';
 import { LegalProcess } from '@/components/sections/legal-process';
 import { Cta } from '@/components/sections/cta';
 import { HomeServices } from '@/components/sections/home-services';
+import { AccountPortalPopup } from '@/components/modals/account-portal-popup';
 
 export const metadata: Metadata = {
   title: 'Legal Process Outsourcing | Lexocrates',
@@ -42,6 +43,8 @@ export default function HomePage() {
       <WhyChooseUs />
       <LegalProcess />
       <Cta />
+      <AccountPortalPopup />
     </main>
   );
 }
+

@@ -11,6 +11,7 @@ import { Logo } from '@/components/ui/logo';
 import { motion } from 'framer-motion';
 import { TrademarkBadge } from '@/components/ui/trademark-badge';
 
+
 const navLinks = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: Info },
@@ -97,9 +98,11 @@ export function Header() {
               className="px-3.5 xl:px-4 py-1.5 text-[11px] xl:text-[12px] font-montserrat font-black uppercase tracking-[0.12em] rounded-full transition-all duration-300 flex items-center gap-1.5 bg-primary text-white hover:bg-primary/90 shadow-xs hover:shadow active:scale-95"
             >
               <UserPlus className="w-3.5 h-3.5" />
-              <span>Sign Up</span>
+              <span>Create Account</span>
             </Link>
+
           </div>
+
 
           <Button 
             asChild 
@@ -193,9 +196,11 @@ export function Header() {
                     className="py-3 flex items-center justify-center gap-2 text-xs font-montserrat font-black uppercase tracking-wider rounded-xl transition-all bg-primary text-white hover:bg-primary/90 shadow-xs active:scale-95"
                   >
                     <UserPlus className="w-4 h-4" />
-                    <span>Sign Up</span>
+                    <span>Create Account</span>
                   </Link>
+
                 </div>
+
 
                 <Button 
                   asChild

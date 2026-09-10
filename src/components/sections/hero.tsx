@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { LegalWorkflowAiAnimation } from '../animations/legal-workflow-ai-animation';
 import { Scale, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 
+
 export function Hero() {
   return (
     <section className="relative min-h-screen lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary pt-[84px] sm:pt-[100px] lg:pt-[140px] pb-12 lg:pb-24">
@@ -65,14 +66,29 @@ export function Hero() {
               </SlideIn>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start w-full sm:w-auto px-2 sm:px-0">
+                <SlideIn direction="up" delay={0.4} className="w-full sm:w-auto">
+                  <Button
+                    asChild
+                    size="xl"
+                    className="w-full sm:w-auto h-11 sm:h-13 lg:h-14 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-[10px] sm:text-xs lg:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] px-6 sm:px-8 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105"
+                  >
+                    <Link
+                      href="https://engine.lexocrates.com/client-registration"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <span>Create Client Account</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </SlideIn>
                 <SlideIn direction="up" delay={0.45} className="w-full sm:w-auto">
                   <Button
                     asChild
                     size="xl"
-                    className="w-full sm:w-auto h-11 sm:h-13 lg:h-14 bg-accent text-accent-foreground hover:bg-white hover:text-primary font-montserrat font-black text-[10px] sm:text-xs lg:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] px-6 sm:px-10 rounded-full shadow-xl shadow-primary/20 transition-all duration-500 hover:scale-105"
+                    className="w-full sm:w-auto h-11 sm:h-13 lg:h-14 bg-white/10 hover:bg-white hover:text-primary text-white font-montserrat font-black text-[10px] sm:text-xs lg:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] px-6 sm:px-8 rounded-full border border-white/20 transition-all duration-500 hover:scale-105"
                   >
-                    <Link href="/services" className="flex items-center justify-center gap-2">
-                      Explore Our Services <ArrowRight className="w-4 h-4" />
+                    <Link href="/services">
+                      Explore Services
                     </Link>
                   </Button>
                 </SlideIn>
@@ -80,7 +96,7 @@ export function Hero() {
                   <Button
                     asChild
                     size="xl"
-                    className="w-full sm:w-auto h-11 sm:h-13 lg:h-14 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-montserrat font-black text-[10px] sm:text-xs lg:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] px-6 sm:px-10 rounded-full transition-all duration-500 hover:scale-105"
+                    className="w-full sm:w-auto h-11 sm:h-13 lg:h-14 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-montserrat font-black text-[10px] sm:text-xs lg:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] px-6 sm:px-8 rounded-full transition-all duration-500 hover:scale-105"
                   >
                     <Link href="/contact">Contact Us</Link>
                   </Button>
