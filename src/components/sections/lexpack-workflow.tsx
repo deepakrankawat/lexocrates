@@ -72,7 +72,7 @@ export function LexPackWorkflowSection() {
     {
       step: '03',
       phase: 'Production & Security',
-      title: 'Supervised Legal Execution & Dynamic Forensic Watermarking',
+      title: 'Supervised Legal Execution & Secure Forensic Watermarking',
       route: '#matters / #documents',
       badge: 'Senior Advocate QA',
       badgeColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
@@ -81,8 +81,8 @@ export function LexPackWorkflowSection() {
         'Specialized paralegals and legal researchers execute your research, contract review, or pleading drafting under strict Senior Advocate supervision and multi-tier quality control.',
       keyFeatures: [
         'Complete segregation of client-uploaded raw files from finalized work product',
-        'On-the-fly Dynamic Forensic Watermarking stamped on all preview & download documents',
-        'Watermark includes Client Name, User Email, IP Address, Timestamp & Document Hash',
+        'On-the-fly Secure Forensic Watermarking stamped on all preview & download documents',
+        'Every document carries a secure forensic watermark, uniquely identifiable and traceable through Lexocrates’ internal systems.',
         'Rigorous two-tier internal QA review before draft reaches your desk',
       ],
       output: 'High-fidelity deliverable submitted to Approvals Room',
@@ -128,9 +128,9 @@ export function LexPackWorkflowSection() {
   const safeguards = [
     {
       icon: ShieldCheck,
-      title: 'Dynamic Forensic Watermarking',
+      title: 'Secure Forensic Watermarking',
       tag: 'Data Leak Prevention',
-      desc: 'Every preview and download is stamped on-the-fly with authorized user name, email, IP address, and timestamp to eliminate unauthorized dissemination.',
+      desc: 'Every document carries a secure forensic watermark, uniquely identifiable and traceable through Lexocrates’ internal systems.',
     },
     {
       icon: ShieldAlert,
@@ -362,7 +362,7 @@ export function LexPackWorkflowSection() {
                           </div>
                           <div className="flex justify-between py-1.5 border-b border-slate-800/60">
                             <span className="text-slate-400">Security Standard:</span>
-                            <span className="font-semibold text-emerald-400">ClamAV + Dynamic Watermark</span>
+                            <span className="font-semibold text-emerald-400">ClamAV + Secure Watermark</span>
                           </div>
                           <div className="flex justify-between py-1.5 border-b border-slate-800/60">
                             <span className="text-slate-400">Billing Settlement:</span>

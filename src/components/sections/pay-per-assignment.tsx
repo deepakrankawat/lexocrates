@@ -14,6 +14,7 @@ import {
   Lock,
   Award
 } from 'lucide-react';
+import { MatterEstimator } from '@/components/sections/matter-estimator';
 
 
 export function PayPerAssignmentSection() {
@@ -100,6 +101,9 @@ export function PayPerAssignmentSection() {
             Not every law firm or corporate counsel needs bulk capacity. Whether you have an urgent one-time litigation brief, seasonal overflow, or simply wish to test our quality on a single matter or job, our on-demand model gives you complete financial control with zero upfront commitments.
           </p>
         </div>
+
+        {/* Interactive Instant Matter & Turnaround Estimator */}
+        <MatterEstimator />
 
         {/* Main Pay Per Matter or Job Spotlight Container */}
         <motion.div
