@@ -21,7 +21,11 @@ const faqs = [
     },
     {
         question: "How does the pricing model work?",
-        answer: "We offer flexible pricing models to suit your needs, including hourly rates, fixed-fee arrangements for specific projects, and dedicated full-time equivalent (FTE) professionals. We work with you to determine the most cost-effective solution."
+        answer: "First, use Lextimator™ to understand the expected scope, turnaround, and cost of your legal work before committing. You can then choose to Pay Per Assignment at the Confirmed Fixed Price, or choose a LexPack™ to purchase prepaid legal capacity with a 7% to 28% pricing advantage on ongoing legal requirements. LexPack is completely optional — the choice is always yours."
+    },
+    {
+        question: "What is the difference between Lextimator™ and LexPack™?",
+        answer: "Lextimator™ is our AI-powered legal work estimation engine that helps you understand the likely scope, complexity, turnaround time, and cost of an assignment before you commit. LexPack™ is our commercial pricing product for clients who expect continuing or multiple legal assignments, allowing you to prepay for legal capacity and receive a 7% to 28% pricing advantage. A client can always pay the Confirmed Fixed Price for an individual assignment without purchasing a LexPack."
     },
     {
         question: "How do I get started with Lexocrates?",

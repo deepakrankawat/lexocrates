@@ -196,8 +196,8 @@ export async function POST(req: NextRequest) {
         fileName: file ? file.name : undefined,
         fileSizeKb: file ? Math.round(file.size / 1024) : undefined,
         notice: n8nWebhookUrl
-          ? 'Estimated via Lexocrates smart engine (n8n pipeline fallback).'
-          : 'Estimated via Lexocrates instant pricing model.',
+          ? 'Estimated via Lextimator™ AI-powered legal work estimation engine (n8n pipeline fallback).'
+          : 'Estimated via Lextimator™ AI-powered legal work estimation engine.',
       });
     }
 

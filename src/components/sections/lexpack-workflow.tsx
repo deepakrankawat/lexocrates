@@ -54,20 +54,20 @@ export function LexPackWorkflowSection() {
     {
       step: '02',
       phase: 'Estimation & Lock',
-      title: 'Transparent Fixed Scope & LexPoint Quotation',
-      route: 'Lex Engine Estimator',
-      badge: 'Zero Hourly Surprise',
+      title: 'Lextimator™ Analysis & Confirmed Fixed Price',
+      route: 'Lextimator™ Engine',
+      badge: 'Zero Hourly Drift',
       badgeColor: 'bg-[#E5A91E]/15 text-[#E5A91E] border-[#E5A91E]/30',
       icon: Scale,
       description:
-        'A dedicated Senior Legal Lead conducts preliminary scope analysis. You receive an upfront, locked quotation in LexPoints (or fixed currency) with guaranteed turnaround before any work begins.',
+        'Lextimator™ conducts preliminary AI analysis of assignment scope, density, and turnaround. For complex requirements, a Senior Legal Lead validates the scope to provide an upfront Confirmed Fixed Price before work begins.',
       keyFeatures: [
-        'Locked fixed quote — zero billable hour drift or hidden administrative fees',
-        'Transparent points estimate benchmarked against document page count & complexity',
-        'One-click digital quote approval inside your Client Workspace',
+        'Locked Confirmed Fixed Price — zero billable hour drift or hidden administrative fees',
+        'Transparent preliminary scope & turnaround estimate produced via Lextimator™',
+        'One-click digital quote confirmation inside your Client Workspace',
         'Immediate conflict-of-interest check executed across institutional records',
       ],
-      output: 'Quote locked; LexPoints held safely in wallet escrow',
+      output: 'Confirmed Fixed Price locked; legal capacity or assignment payment confirmed',
     },
     {
       step: '03',
@@ -108,16 +108,16 @@ export function LexPackWorkflowSection() {
     {
       step: '05',
       phase: 'Settlement & Audit',
-      title: 'Seamless LexPoint Deduction & Cryptographic WORM Audit',
+      title: 'Prepaid Legal Capacity Deduction & Cryptographic WORM Audit',
       route: '#lexpack / #billing',
-      badge: 'Points Never Expire',
+      badge: 'Capacity Never Expires',
       badgeColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
       icon: Wallet,
       description:
-        'Upon your final approval, LexPoints are seamlessly deducted from your prepaid wallet balance. Receive automated tax-compliant invoices and immutable WORM audit trails.',
+        'Upon your final approval, legal capacity is seamlessly deducted from your prepaid balance (or settled individually). Receive automated tax-compliant invoices and immutable WORM audit trails.',
       keyFeatures: [
         'Deduction occurs ONLY when you approve the final deliverable',
-        'Prepaid LexPoints carry over indefinitely — zero monthly expiration or retainer traps',
+        'Prepaid Legal Capacity carries over indefinitely — zero monthly expiration or retainer traps',
         'Write-Once-Read-Many (WORM) audit trail logs every file upload, access, and sign-off',
         'Instant download of itemized, exportable GST/tax invoices for corporate accounting',
       ],
@@ -152,9 +152,9 @@ export function LexPackWorkflowSection() {
     },
     {
       icon: Wallet,
-      title: 'Prepaid LexPack Wallet',
-      tag: 'Zero Retainer Traps',
-      desc: 'Pre-purchase legal capacity at volume discounts. LexPoints never expire, carry zero recurring subscription fees, and roll over seamlessly.',
+      title: 'Prepaid Legal Capacity',
+      tag: '7%–28% Pricing Advantage',
+      desc: 'Pre-purchase legal capacity with a 7% to 28% pricing advantage. Your prepaid balance never expires, carries zero recurring subscription fees, and rolls over seamlessly.',
     },
     {
       icon: Lock,
@@ -167,61 +167,56 @@ export function LexPackWorkflowSection() {
   return (
     <section
       id="workflow"
-      className="relative py-16 sm:py-24 bg-[#070F26] text-white border-t border-slate-800/80 overflow-hidden scroll-mt-16"
+      className="relative py-16 sm:py-24 bg-white text-foreground border-t border-black/5 overflow-hidden scroll-mt-20"
     >
-      {/* Background ambient lighting */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 right-1/4 w-[600px] h-[600px] bg-[#E5A91E]/5 rounded-full blur-[140px]" />
-        <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(229,169,30,0.08)_0%,transparent_60%)]" />
-      </div>
-
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E5A91E]/15 border border-[#E5A91E]/30 text-[#E5A91E] text-[11px] font-montserrat font-black uppercase tracking-widest shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-[11px] font-montserrat font-black uppercase tracking-widest shadow-xs">
             <Sparkles className="w-3.5 h-3.5" />
             <span>OPERATIONAL PROTOCOL &amp; CLIENT GOVERNANCE</span>
           </div>
 
-          <h2 className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white leading-tight">
-            How LexPack<TrademarkBadge className="w-3.5 h-3.5 -translate-y-2.5 ml-0.5 text-[#E5A91E] inline-block" /> Works <br className="hidden sm:inline" />
-            <span className="text-[#E5A91E]">From Intake to Approved Deliverable</span>
+          <h2 className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-primary leading-tight">
+            How LexPack<TrademarkBadge className="w-3.5 h-3.5 sm:w-4 sm:h-4 -translate-y-2 sm:-translate-y-2.5 ml-0.5 text-accent inline-block" /> Works <br className="hidden sm:inline" />
+            <span className="text-accent">Prepaid Legal Capacity with 7%–28% Advantage</span>
           </h2>
 
-          <p className="text-slate-300 text-xs sm:text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-medium">
-            Every matter and job follows a battle-tested, 5-stage institutional workflow with upfront fixed quotes, senior advocate supervision, ClamAV document security, and our two-button Approvals Room.
+          <p className="text-foreground/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-medium">
+            Prepay for ongoing legal work and save more. Every assignment follows a battle-tested, 5-stage institutional workflow with Lextimator™ estimation, confirmed fixed prices, senior advocate supervision, and our two-button Approvals Room.
           </p>
 
           {/* View Toggles */}
           <div className="pt-3 flex items-center justify-center gap-2">
-            <button
-              type="button"
-              onClick={() => setActiveTab('steps')}
-              className={cn(
-                "px-4 py-2 rounded-xl text-xs sm:text-sm font-montserrat font-bold transition-all duration-300 flex items-center gap-2",
-                activeTab === 'steps'
-                  ? "bg-[#E5A91E] text-[#0B1736] shadow-lg shadow-[#E5A91E]/20"
-                  : "bg-slate-900/90 text-slate-300 border border-slate-700/80 hover:text-white"
-              )}
-            >
-              <Zap className="w-4 h-4" />
-              <span>5-Stage Client Journey</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab('safeguards')}
-              className={cn(
-                "px-4 py-2 rounded-xl text-xs sm:text-sm font-montserrat font-bold transition-all duration-300 flex items-center gap-2",
-                activeTab === 'safeguards'
-                  ? "bg-[#E5A91E] text-[#0B1736] shadow-lg shadow-[#E5A91E]/20"
-                  : "bg-slate-900/90 text-slate-300 border border-slate-700/80 hover:text-white"
-              )}
-            >
-              <ShieldCheck className="w-4 h-4" />
-              <span>Institutional Safeguards &amp; Security</span>
-            </button>
+            <div className="p-1.5 rounded-2xl bg-slate-100 border border-slate-200 inline-flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setActiveTab('steps')}
+                className={cn(
+                  "px-4 py-2 rounded-xl text-xs sm:text-sm font-montserrat font-bold transition-all duration-300 flex items-center gap-2",
+                  activeTab === 'steps'
+                    ? "bg-primary text-white shadow-md"
+                    : "text-primary/70 hover:text-primary hover:bg-slate-200/50"
+                )}
+              >
+                <Zap className="w-4 h-4" />
+                <span>5-Stage Client Journey</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('safeguards')}
+                className={cn(
+                  "px-4 py-2 rounded-xl text-xs sm:text-sm font-montserrat font-bold transition-all duration-300 flex items-center gap-2",
+                  activeTab === 'safeguards'
+                    ? "bg-primary text-white shadow-md"
+                    : "text-primary/70 hover:text-primary hover:bg-slate-200/50"
+                )}
+              >
+                <ShieldCheck className="w-4 h-4" />
+                <span>Institutional Safeguards &amp; Security</span>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -247,31 +242,31 @@ export function LexPackWorkflowSection() {
                       type="button"
                       onClick={() => setSelectedStep(idx)}
                       className={cn(
-                        "p-3.5 sm:p-4 rounded-2xl text-left transition-all duration-300 border relative overflow-hidden flex flex-col justify-between",
+                        "p-4 rounded-2xl text-left transition-all duration-300 border relative overflow-hidden flex flex-col justify-between",
                         isSelected
-                          ? "bg-slate-900 border-[#E5A91E] shadow-xl shadow-[#E5A91E]/10 ring-1 ring-[#E5A91E]"
-                          : "bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/90 text-slate-400"
+                          ? "bg-white border-2 border-accent shadow-lg shadow-accent/10 ring-2 ring-accent/15"
+                          : "bg-slate-50/70 border-slate-200 hover:border-slate-300 hover:bg-white text-foreground/60 shadow-xs"
                       )}
                     >
                       <div className="flex items-center justify-between mb-3">
                         <span className={cn(
-                          "font-montserrat font-black text-xs px-2 py-0.5 rounded-md",
-                          isSelected ? "bg-[#E5A91E] text-[#0B1736]" : "bg-slate-800 text-slate-400"
+                          "font-montserrat font-black text-xs px-2.5 py-0.5 rounded-lg",
+                          isSelected ? "bg-accent text-primary" : "bg-slate-200/80 text-primary font-bold"
                         )}>
                           Step {s.step}
                         </span>
-                        <Icon className={cn("w-4 h-4", isSelected ? "text-[#E5A91E]" : "text-slate-500")} />
+                        <Icon className={cn("w-4 h-4", isSelected ? "text-accent" : "text-foreground/40")} />
                       </div>
                       <div>
                         <div className={cn(
-                          "text-[11px] font-bold uppercase tracking-wider mb-0.5",
-                          isSelected ? "text-[#E5A91E]" : "text-slate-400"
+                          "text-[10px] font-black uppercase tracking-wider mb-0.5",
+                          isSelected ? "text-accent" : "text-foreground/50"
                         )}>
                           {s.phase}
                         </div>
                         <h4 className={cn(
                           "text-xs sm:text-[13px] font-bold font-montserrat leading-tight line-clamp-2",
-                          isSelected ? "text-white" : "text-slate-300"
+                          isSelected ? "text-primary" : "text-foreground/80"
                         )}>
                           {s.title}
                         </h4>
@@ -287,41 +282,39 @@ export function LexPackWorkflowSection() {
                 const StepIcon = step.icon;
 
                 return (
-                  <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl backdrop-blur-xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-[#E5A91E]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
-
+                  <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-slate-50/70 border border-slate-200 shadow-xl relative overflow-hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                       
                       {/* Left Details */}
                       <div className="lg:col-span-7 space-y-4">
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="font-montserrat font-black text-sm px-3 py-1 rounded-lg bg-[#E5A91E] text-[#0B1736]">
+                          <span className="font-montserrat font-black text-xs px-3 py-1 rounded-lg bg-accent text-primary">
                             STAGE {step.step} OF 05
                           </span>
-                          <span className={cn("text-xs font-semibold px-2.5 py-1 rounded-md border", step.badgeColor)}>
+                          <span className={cn("text-xs font-bold px-2.5 py-1 rounded-md border", step.badgeColor)}>
                             {step.badge}
                           </span>
-                          <span className="text-[11px] text-slate-400 font-mono bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700/60">
+                          <span className="text-[11px] text-primary/70 font-mono bg-white px-2.5 py-1 rounded-md border border-slate-200">
                             {step.route}
                           </span>
                         </div>
 
-                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-black font-montserrat text-white leading-snug">
+                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-black font-montserrat text-primary leading-snug">
                           {step.title}
                         </h3>
 
-                        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        <p className="text-foreground/70 text-sm sm:text-base leading-relaxed font-medium">
                           {step.description}
                         </p>
 
                         <div className="pt-2 space-y-2.5">
-                          <p className="text-[11px] font-montserrat font-bold text-[#E5A91E] uppercase tracking-wider">
+                          <p className="text-[11px] font-montserrat font-black text-accent uppercase tracking-wider">
                             Verified Protocol Actions:
                           </p>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                             {step.keyFeatures.map((feat, i) => (
-                              <div key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-200">
-                                <CheckCircle2 className="w-4 h-4 text-[#E5A91E] shrink-0 mt-0.5" />
+                              <div key={i} className="flex items-start gap-2 text-xs sm:text-sm text-foreground/80 font-medium">
+                                <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                                 <span className="leading-snug">{feat}</span>
                               </div>
                             ))}
@@ -329,66 +322,94 @@ export function LexPackWorkflowSection() {
                         </div>
 
                         <div className="pt-4 flex flex-wrap items-center gap-3">
-                          <div className="text-xs bg-slate-950/80 border border-slate-800 px-3.5 py-2 rounded-xl text-slate-300 flex items-center gap-2">
-                            <Check className="w-3.5 h-3.5 text-emerald-400" />
+                          <div className="text-xs bg-white border border-slate-200 px-4 py-2.5 rounded-xl text-primary font-semibold flex items-center gap-2 shadow-xs">
+                            <Check className="w-4 h-4 text-emerald-600" />
                             <span><strong>Milestone Gate:</strong> {step.output}</span>
                           </div>
                         </div>
                       </div>
 
                       {/* Right Visual Summary Card */}
-                      <div className="lg:col-span-5 bg-[#0B1736] p-6 rounded-2xl border border-slate-800/90 shadow-inner space-y-4">
-                        <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                      <div className="lg:col-span-5 bg-white p-6 sm:p-7 rounded-3xl border border-slate-200 shadow-md space-y-4">
+                        <div className="flex items-center justify-between pb-3 border-b border-slate-200">
                           <div className="flex items-center gap-2.5">
-                            <div className="w-9 h-9 rounded-lg bg-[#E5A91E]/20 flex items-center justify-center text-[#E5A91E]">
+                            <div className="w-10 h-10 rounded-xl bg-accent/15 flex items-center justify-center text-accent">
                               <StepIcon className="w-5 h-5" />
                             </div>
                             <div>
-                              <p className="text-xs font-montserrat font-black text-white">{step.phase}</p>
-                              <p className="text-[11px] text-slate-400">Standard Operational Procedure</p>
+                              <p className="text-xs font-montserrat font-black text-primary">{step.phase}</p>
+                              <p className="text-[11px] text-foreground/50 font-medium">Standard Operational Procedure</p>
                             </div>
                           </div>
-                          <span className="text-2xl font-black font-mono text-[#E5A91E]">{step.step}</span>
+                          <span className="text-2xl font-black font-mono text-accent">{step.step}</span>
                         </div>
 
-                        <div className="space-y-2.5 text-xs text-slate-300">
-                          <div className="flex justify-between py-1.5 border-b border-slate-800/60">
-                            <span className="text-slate-400">Responsible Roles:</span>
-                            <span className="font-semibold text-white">Client Admin &amp; Senior Legal Lead</span>
+                        {step.step === '05' ? (
+                          <div className="space-y-3 pt-1">
+                            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2.5">
+                              <div className="flex items-center justify-between text-[11px] pb-1.5 border-b border-slate-200">
+                                <span className="text-foreground/60 font-bold uppercase tracking-wider text-[10px]">Client Legal Capacity Wallet</span>
+                                <span className="text-emerald-700 font-black text-[10px] uppercase bg-emerald-100 px-2 py-0.5 rounded-md">Active Ledger</span>
+                              </div>
+                              <div className="space-y-2 text-xs">
+                                <div className="flex justify-between text-foreground/75 font-medium">
+                                  <span>Opening Legal Capacity:</span>
+                                  <span className="font-mono font-bold text-primary">CA$3,420</span>
+                                </div>
+                                <div className="flex justify-between text-rose-600 font-medium">
+                                  <span>Approved Assignment:</span>
+                                  <span className="font-mono font-bold">−CA$780</span>
+                                </div>
+                                <div className="pt-2 border-t border-slate-200 flex justify-between items-center">
+                                  <span className="font-bold text-primary">Available Legal Capacity:</span>
+                                  <span className="font-mono font-black text-base text-accent">CA$2,640</span>
+                                </div>
+                              </div>
+                            </div>
+                            <p className="text-[11px] text-foreground/55 leading-normal font-medium">
+                              Expressible directly in your currency (CAD, USD, or GBP). 100% transparent. No points to calculate or convert.
+                            </p>
                           </div>
-                          <div className="flex justify-between py-1.5 border-b border-slate-800/60">
-                            <span className="text-slate-400">Turnaround Commitment:</span>
-                            <span className="font-semibold text-[#E5A91E]">12h – 48h SLA Guarantee</span>
+                        ) : (
+                          <div className="space-y-2.5 text-xs text-foreground/75 font-medium">
+                            <div className="flex justify-between py-1.5 border-b border-slate-100">
+                              <span className="text-foreground/50">Responsible Roles:</span>
+                              <span className="font-bold text-primary">Client Admin &amp; Senior Legal Lead</span>
+                            </div>
+                            <div className="flex justify-between py-1.5 border-b border-slate-100">
+                              <span className="text-foreground/50">Turnaround Commitment:</span>
+                              <span className="font-bold text-accent">12h – 48h SLA Guarantee</span>
+                            </div>
+                            <div className="flex justify-between py-1.5 border-b border-slate-100">
+                              <span className="text-foreground/50">Security Standard:</span>
+                              <span className="font-bold text-emerald-700">ClamAV + Secure Watermark</span>
+                            </div>
+                            <div className="flex justify-between py-1.5 border-b border-slate-100">
+                              <span className="text-foreground/50">Billing Settlement:</span>
+                              <span className="font-bold text-primary">Prepaid Legal Capacity / Confirmed Price</span>
+                            </div>
+                            <div className="flex justify-between py-1.5">
+                              <span className="text-foreground/50">Audit Compliance:</span>
+                              <span className="font-bold text-primary">Immutable WORM Records</span>
+                            </div>
                           </div>
-                          <div className="flex justify-between py-1.5 border-b border-slate-800/60">
-                            <span className="text-slate-400">Security Standard:</span>
-                            <span className="font-semibold text-emerald-400">ClamAV + Secure Watermark</span>
-                          </div>
-                          <div className="flex justify-between py-1.5 border-b border-slate-800/60">
-                            <span className="text-slate-400">Billing Settlement:</span>
-                            <span className="font-semibold text-white">Prepaid LexPoints / Approved Quote</span>
-                          </div>
-                          <div className="flex justify-between py-1.5">
-                            <span className="text-slate-400">Audit Compliance:</span>
-                            <span className="font-semibold text-white">Immutable WORM Records</span>
-                          </div>
-                        </div>
+                        )}
 
                         <div className="pt-2 flex items-center justify-between">
                           <button
                             type="button"
                             onClick={() => setSelectedStep((prev) => (prev > 0 ? prev - 1 : workflowSteps.length - 1))}
-                            className="text-xs text-slate-400 hover:text-white px-2.5 py-1 rounded-lg hover:bg-slate-800"
+                            className="text-xs text-foreground/60 hover:text-primary px-3 py-1.5 rounded-lg hover:bg-slate-100 font-bold transition-all"
                           >
                             ← Previous
                           </button>
                           <button
                             type="button"
                             onClick={() => setSelectedStep((prev) => (prev < workflowSteps.length - 1 ? prev + 1 : 0))}
-                            className="text-xs bg-[#E5A91E] text-[#0B1736] font-montserrat font-bold px-3 py-1.5 rounded-lg hover:bg-amber-400 flex items-center gap-1"
+                            className="text-xs bg-primary text-white font-montserrat font-black px-3.5 py-2 rounded-xl hover:bg-primary/90 flex items-center gap-1.5 shadow-sm transition-all"
                           >
                             <span>Next Stage</span>
-                            <ArrowRight className="w-3 h-3" />
+                            <ArrowRight className="w-3 h-3 text-accent" />
                           </button>
                         </div>
                       </div>
@@ -408,30 +429,30 @@ export function LexPackWorkflowSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+              className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {safeguards.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={idx}
-                    className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-[#E5A91E]/50 transition-all duration-300 space-y-3 flex flex-col justify-between"
+                    className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200 hover:border-accent/40 shadow-sm hover:shadow-lg transition-all duration-300 space-y-3.5 flex flex-col justify-between"
                   >
-                    <div className="space-y-2.5">
+                    <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <div className="w-10 h-10 rounded-xl bg-[#E5A91E]/15 border border-[#E5A91E]/30 flex items-center justify-center text-[#E5A91E]">
+                        <div className="w-11 h-11 rounded-2xl bg-accent/15 border border-accent/25 flex items-center justify-center text-accent">
                           <Icon className="w-5 h-5" />
                         </div>
-                        <span className="text-[10.5px] font-bold font-montserrat text-slate-400 uppercase tracking-wider bg-slate-800/90 px-2 py-0.5 rounded">
+                        <span className="text-[10px] font-black font-montserrat text-foreground/50 uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-full">
                           {item.tag}
                         </span>
                       </div>
-                      <h4 className="text-base font-bold font-montserrat text-white">{item.title}</h4>
-                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{item.desc}</p>
+                      <h4 className="text-base font-bold font-montserrat text-primary">{item.title}</h4>
+                      <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed font-medium">{item.desc}</p>
                     </div>
 
-                    <div className="pt-3 border-t border-slate-800/80 flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium">
-                      <Check className="w-3.5 h-3.5" />
+                    <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-emerald-700 font-semibold">
+                      <Check className="w-4 h-4" />
                       <span>Institutional Client Workspace Standard</span>
                     </div>
                   </div>
@@ -443,8 +464,8 @@ export function LexPackWorkflowSection() {
 
         {/* User's Core Commitment Quote */}
         <div className="mt-12 text-center">
-          <p className="text-xs sm:text-sm text-slate-400 font-medium">
-            &ldquo;Choose a LexPack for greater value, or simply pay per matter or job based on your approved quote — <span className="text-[#E5A91E] font-semibold">the choice is always yours.</span>&rdquo;
+          <p className="text-xs sm:text-sm text-foreground/60 font-medium">
+            &ldquo;Choose a LexPack™ for greater value, or simply pay for this assignment at the confirmed fixed price — <span className="text-accent font-black">the choice is always yours.</span>&rdquo;
           </p>
         </div>
 
