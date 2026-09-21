@@ -64,19 +64,19 @@ export function PricingHero() {
           <FadeIn delay={0.55} className="mt-8 sm:mt-10">
             <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-1.5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-xl shadow-2xl max-w-full">
               <Link
-                href="#pricing"
+                href="#pay-per-assignment"
                 className="px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-montserrat font-black text-[11px] sm:text-xs uppercase tracking-wider bg-accent text-primary shadow-md hover:bg-accent/90 transition-all flex items-center gap-1.5"
               >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>LexPack™ Bundles (Save 7%–28%)</span>
+                <Scale className="w-3.5 h-3.5" />
+                <span>Lextimator™ Estimation</span>
               </Link>
 
               <Link
-                href="#pay-per-assignment"
+                href="#pricing"
                 className="px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-montserrat font-bold text-[11px] sm:text-xs uppercase tracking-wider text-white hover:bg-white/15 transition-all flex items-center gap-1.5 group"
               >
-                <Scale className="w-3.5 h-3.5 text-accent group-hover:scale-110 transition-transform" />
-                <span>Pay Per Assignment / Lextimator™</span>
+                <Sparkles className="w-3.5 h-3.5 text-accent group-hover:scale-110 transition-transform" />
+                <span>LexPack™ Bundles (Save 7%–28%)</span>
               </Link>
 
               <Link

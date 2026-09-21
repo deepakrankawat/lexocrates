@@ -14,8 +14,8 @@ export default function PricingPage() {
   return (
     <main className="bg-background min-h-screen">
       <PricingHero />
-      <PricingSection />
       <PayPerAssignmentSection />
+      <PricingSection />
       <LexPackWorkflowSection />
       <section id="faq" className="bg-white text-slate-900 border-t border-black/5">
         <Faq />

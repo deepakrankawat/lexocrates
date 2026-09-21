@@ -15,7 +15,9 @@ import {
   RotateCcw,
   AlertCircle,
   FileCheck,
-  UserPlus
+  UserPlus,
+  Zap,
+  Layers
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -30,6 +32,7 @@ export interface EstimateResult {
   currency: CurrencyCode;
   currencySymbol: string;
   pageCount: number;
+  estimatedHours?: number;
   estimatedPrice: number;
   finalPriceCad?: number;
   priceAmount?: string;
@@ -39,7 +42,7 @@ export interface EstimateResult {
   error?: string;
 }
 
-// Exactly matching n8n's ALLOWED_SERVICES (clean labels without hourly rates)
+// Exactly matching n8n's ALLOWED_SERVICES
 const N8N_SERVICES = [
   {
     id: 'Litigation Support',
@@ -83,7 +86,7 @@ const N8N_SERVICES = [
   },
 ];
 
-// Exactly matching n8n's Turnaround options (clean without multiplier surcharges)
+// Delivery Timeline options
 const TURNAROUND_OPTIONS = [
   {
     id: 'Standard (3-5 Business Days)',
@@ -102,23 +105,61 @@ const TURNAROUND_OPTIONS = [
   },
 ];
 
+// Live LexPack bundles showcase data
+const LEXPACK_SHOWCASE_TIERS = [
+  {
+    id: 'starter',
+    name: 'Starter',
+    deposit: { CAD: 399, USD: 299, GBP: 239 },
+    capacity: { CAD: 429, USD: 322, GBP: 257 },
+    discount: 7,
+    extra: { CAD: 30, USD: 23, GBP: 18 },
+  },
+  {
+    id: 'growth',
+    name: 'Growth',
+    isPopular: true,
+    deposit: { CAD: 1199, USD: 899, GBP: 719 },
+    capacity: { CAD: 1394, USD: 1045, GBP: 836 },
+    discount: 14,
+    extra: { CAD: 195, USD: 146, GBP: 117 },
+  },
+  {
+    id: 'professional',
+    name: 'Professional',
+    deposit: { CAD: 2699, USD: 1999, GBP: 1599 },
+    capacity: { CAD: 3416, USD: 2530, GBP: 2024 },
+    discount: 21,
+    extra: { CAD: 717, USD: 531, GBP: 425 },
+  },
+  {
+    id: 'business',
+    name: 'Business',
+    isBestValue: true,
+    deposit: { CAD: 5399, USD: 3999, GBP: 3199 },
+    capacity: { CAD: 7499, USD: 5554, GBP: 4443 },
+    discount: 28,
+    extra: { CAD: 2100, USD: 1555, GBP: 1244 },
+  },
+];
+
 export function getQualifyingLexPack(estimatedPrice: number, currency: CurrencyCode) {
   const price = estimatedPrice;
   if (currency === 'CAD') {
-    if (price >= 4500) return { tier: 'Business', discount: 28, planId: 'business' };
-    if (price >= 2000) return { tier: 'Professional', discount: 21, planId: 'professional' };
-    if (price >= 1000) return { tier: 'Growth', discount: 14, planId: 'growth' };
-    return { tier: 'Starter', discount: 7, planId: 'starter' };
+    if (price >= 4500) return { tier: 'Business', discount: 28, planId: 'business', capacity: 'CA$7,499', deposit: 'CA$5,399' };
+    if (price >= 2000) return { tier: 'Professional', discount: 21, planId: 'professional', capacity: 'CA$3,416', deposit: 'CA$2,699' };
+    if (price >= 1000) return { tier: 'Growth', discount: 14, planId: 'growth', capacity: 'CA$1,394', deposit: 'CA$1,199' };
+    return { tier: 'Starter', discount: 7, planId: 'starter', capacity: 'CA$429', deposit: 'CA$399' };
   } else if (currency === 'USD') {
-    if (price >= 3500) return { tier: 'Business', discount: 28, planId: 'business' };
-    if (price >= 1600) return { tier: 'Professional', discount: 21, planId: 'professional' };
-    if (price >= 750) return { tier: 'Growth', discount: 14, planId: 'growth' };
-    return { tier: 'Starter', discount: 7, planId: 'starter' };
+    if (price >= 3500) return { tier: 'Business', discount: 28, planId: 'business', capacity: '$5,554', deposit: '$3,999' };
+    if (price >= 1600) return { tier: 'Professional', discount: 21, planId: 'professional', capacity: '$2,530', deposit: '$1,999' };
+    if (price >= 750) return { tier: 'Growth', discount: 14, planId: 'growth', capacity: '$1,045', deposit: '$899' };
+    return { tier: 'Starter', discount: 7, planId: 'starter', capacity: '$322', deposit: '$299' };
   } else {
-    if (price >= 2800) return { tier: 'Business', discount: 28, planId: 'business' };
-    if (price >= 1300) return { tier: 'Professional', discount: 21, planId: 'professional' };
-    if (price >= 600) return { tier: 'Growth', discount: 14, planId: 'growth' };
-    return { tier: 'Starter', discount: 7, planId: 'starter' };
+    if (price >= 2800) return { tier: 'Business', discount: 28, planId: 'business', capacity: '£4,443', deposit: '£3,199' };
+    if (price >= 1300) return { tier: 'Professional', discount: 21, planId: 'professional', capacity: '£2,024', deposit: '£1,599' };
+    if (price >= 600) return { tier: 'Growth', discount: 14, planId: 'growth', capacity: '£836', deposit: '£719' };
+    return { tier: 'Starter', discount: 7, planId: 'starter', capacity: '£257', deposit: '£239' };
   }
 }
 
@@ -134,6 +175,8 @@ export function MatterEstimator() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [result, setResult] = useState<EstimateResult | null>(null);
+
+  const curr = CURRENCIES[currency];
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -158,7 +201,7 @@ export function MatterEstimator() {
     }
 
     if (!file) {
-      setErrorMessage('Please attach your brief or contract PDF to calculate your fixed quote.');
+      setErrorMessage('Please attach your brief or contract PDF (.pdf) for Lextimator™ analysis.');
       return;
     }
 
@@ -203,7 +246,7 @@ export function MatterEstimator() {
 
   return (
     <div className="mt-8 rounded-3xl p-6 sm:p-8 lg:p-10 bg-white border border-slate-200 shadow-xl relative overflow-hidden">
-      {/* Header */}
+      {/* Top Header Bar */}
       <div className="pb-6 border-b border-slate-200">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
@@ -224,7 +267,7 @@ export function MatterEstimator() {
           </div>
 
           {/* Currency Switcher */}
-          <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl border border-slate-200 self-start md:self-auto">
+          <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl border border-slate-200 self-start md:self-auto shadow-xs">
             {(Object.keys(CURRENCIES) as CurrencyCode[]).map((cur) => (
               <button
                 key={cur}
@@ -252,7 +295,7 @@ export function MatterEstimator() {
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-[11px] font-medium">
             <div className="flex items-center gap-1.5 text-foreground/75 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
               <span className="font-mono text-accent font-black">1.</span>
-              <span>Upload Documents</span>
+              <span>Upload / Scope</span>
             </div>
             <div className="flex items-center gap-1.5 text-foreground/75 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
               <span className="font-mono text-accent font-black">2.</span>
@@ -315,7 +358,7 @@ export function MatterEstimator() {
             {/* ESTIMATED COST SPOTLIGHT */}
             <div className="py-8 text-center border-b border-slate-200">
               <span className="text-[11px] font-montserrat font-black uppercase tracking-widest text-foreground/50 block mb-2">
-                Estimated Cost
+                Estimated Cost (Confirmed Fixed Price)
               </span>
               <div className="text-5xl sm:text-6xl font-black text-primary font-montserrat tracking-tight">
                 {result.priceAmount || `${result.currencySymbol}${result.estimatedPrice} ${result.currency}`}
@@ -383,7 +426,7 @@ export function MatterEstimator() {
                   </div>
 
                   <div className="p-4 rounded-2xl bg-accent/10 border border-accent/20 text-xs sm:text-sm text-primary leading-relaxed font-medium">
-                    Your current assignment qualifies for the <strong className="text-accent font-black">{qualifying.tier} LexPack</strong>, giving you a <strong className="text-emerald-700 font-black">{qualifying.discount}% value advantage</strong> compared with standard Pay Per Assignment pricing.
+                    Your current assignment qualifies for the <strong className="text-accent font-black">{qualifying.tier} LexPack</strong> ({qualifying.capacity} legal capacity for {qualifying.deposit}), giving you a <strong className="text-emerald-700 font-black">{qualifying.discount}% value advantage</strong> compared with standard Pay Per Assignment pricing.
                   </div>
 
                   <p className="text-xs text-foreground/60 italic font-medium">
@@ -449,175 +492,285 @@ export function MatterEstimator() {
             </div>
           </motion.div>
         ) : (
-          /* ================= CLEAN FORM (Pure Services & Document Upload) ================= */
-          <motion.form
-            key="form-view"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onSubmit={handleSubmit}
-            className="mt-8 space-y-6"
-          >
-            {errorMessage && (
-              <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 flex items-center gap-3 text-rose-700 text-xs font-semibold">
-                <AlertCircle className="w-4 h-4 flex-shrink-0" />
-                <span>{errorMessage}</span>
-              </div>
-            )}
+          /* ================= DUAL COLUMN: LEXTIMATOR FORM + LEXPACK SHOWCASE ================= */
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* LEFT COLUMN: Lextimator Interactive Form (7 Cols) */}
+            <motion.form
+              key="form-view"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onSubmit={handleSubmit}
+              className="lg:col-span-7 space-y-6"
+            >
+              {errorMessage && (
+                <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 flex items-center gap-3 text-rose-700 text-xs font-semibold">
+                  <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
 
-            {/* Field 1: Select Service */}
-            <div>
-              <label className="block text-[11px] font-montserrat font-bold uppercase tracking-wider text-primary mb-1.5">
-                Select Legal Service <span className="text-accent">*</span>
-              </label>
-              <select
-                value={service}
-                onChange={(e) => setService(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-primary text-xs sm:text-sm font-semibold focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-all cursor-pointer"
-              >
-                {N8N_SERVICES.map((s) => (
-                  <option key={s.id} value={s.id} className="bg-white text-primary">
-                    {s.label}
-                  </option>
-                ))}
-              </select>
-              <p className="text-[11px] text-foreground/55 mt-1 font-medium">
-                {N8N_SERVICES.find((s) => s.id === service)?.desc}
-              </p>
-            </div>
-
-            {/* Field 2 & 3: Email & Client Reference */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Field 1: Select Service */}
               <div>
                 <label className="block text-[11px] font-montserrat font-bold uppercase tracking-wider text-primary mb-1.5">
-                  Work / Law Firm Email <span className="text-accent">*</span>
+                  Select Legal Service <span className="text-accent">*</span>
                 </label>
-                <input
-                  type="email"
-                  required
-                  placeholder="counsel@yourfirm.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-primary placeholder:text-foreground/35 text-xs sm:text-sm font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-all"
-                />
+                <select
+                  value={service}
+                  onChange={(e) => setService(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-primary text-xs sm:text-sm font-semibold focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-all cursor-pointer"
+                >
+                  {N8N_SERVICES.map((s) => (
+                    <option key={s.id} value={s.id} className="bg-white text-primary">
+                      {s.label}
+                    </option>
+                  ))}
+                </select>
+                <p className="text-[11px] text-foreground/55 mt-1 font-medium">
+                  {N8N_SERVICES.find((s) => s.id === service)?.desc}
+                </p>
               </div>
 
+              {/* Field 2: Upload Assignment Brief (.pdf) */}
               <div>
                 <label className="block text-[11px] font-montserrat font-bold uppercase tracking-wider text-primary mb-1.5">
-                  Law Firm / Client Reference <span className="text-foreground/45 lowercase font-normal">(optional)</span>
+                  Upload Assignment Brief or Document (.pdf) <span className="text-accent">*</span>
                 </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Miller LLP / Matter #402"
-                  value={clientReference}
-                  onChange={(e) => setClientReference(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-primary placeholder:text-foreground/35 text-xs sm:text-sm font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-all"
-                />
-              </div>
-            </div>
 
-            {/* Field 4: Upload Document (PDF) */}
-            <div>
-              <label className="block text-[11px] font-montserrat font-bold uppercase tracking-wider text-primary mb-1.5">
-                Upload Assignment Brief or Document (.pdf) <span className="text-accent">*</span>
-              </label>
-              <div className="relative border-2 border-dashed border-slate-200 hover:border-accent/50 bg-slate-50/50 rounded-2xl p-5 transition-all flex items-center justify-between">
-                <input
-                  type="file"
-                  id="n8n-document-upload"
-                  accept=".pdf"
-                  required
-                  onChange={handleFileChange}
-                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                />
-                <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center text-accent flex-shrink-0">
-                    <FileCheck className="w-6 h-6" />
+                <div className="relative border-2 border-dashed border-slate-200 hover:border-accent/50 bg-slate-50/50 rounded-2xl p-5 transition-all flex items-center justify-between">
+                  <input
+                    type="file"
+                    id="n8n-document-upload"
+                    accept=".pdf"
+                    required
+                    onChange={handleFileChange}
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  />
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-12 h-12 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center text-accent flex-shrink-0">
+                      <FileCheck className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="text-xs sm:text-sm font-montserrat font-bold text-primary">
+                        {file ? file.name : 'Select or drag-and-drop assignment PDF'}
+                      </p>
+                      <p className="text-[10.5px] text-foreground/50 mt-0.5 font-medium">
+                        {file
+                          ? `${(file.size / 1024).toFixed(1)} KB attached • Ready for Lextimator™ analysis`
+                          : 'Upload documents to let Lextimator™ analyse the assignment scope, turnaround, and cost (Max 25MB).'}
+                      </p>
+                    </div>
+                  </div>
+                  {file ? (
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => setFile(null)}
+                      className="text-xs text-rose-600 hover:text-rose-700 relative z-10 font-bold"
+                    >
+                      Remove
+                    </Button>
+                  ) : (
+                    <span className="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-montserrat font-bold pointer-events-none shadow-xs">
+                      Browse PDF
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Field 4: Turnaround Speed */}
+              <div>
+                <label className="block text-[11px] font-montserrat font-bold uppercase tracking-wider text-primary mb-1.5">
+                  Delivery Timeline <span className="text-accent">*</span>
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  {TURNAROUND_OPTIONS.map((opt) => (
+                    <button
+                      key={opt.id}
+                      type="button"
+                      onClick={() => setTurnaround(opt.id)}
+                      className={cn(
+                        'p-3 rounded-xl border text-left transition-all',
+                        turnaround === opt.id
+                          ? 'bg-accent/10 border-2 border-accent text-primary shadow-xs ring-1 ring-accent/30'
+                          : 'bg-slate-50 border-slate-200 text-foreground/60 hover:border-slate-300 hover:bg-white'
+                      )}
+                    >
+                      <span className="text-xs font-montserrat font-bold text-primary block mb-0.5">
+                        {opt.label}
+                      </span>
+                      <span className="text-[10px] text-foreground/55 font-medium block">
+                        {opt.timeframe}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Field 5 & 6: Email & Client Reference */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-[11px] font-montserrat font-bold uppercase tracking-wider text-primary mb-1.5">
+                    Work / Law Firm Email <span className="text-accent">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="counsel@yourfirm.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-primary placeholder:text-foreground/35 text-xs sm:text-sm font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-[11px] font-montserrat font-bold uppercase tracking-wider text-primary mb-1.5">
+                    Matter Reference <span className="text-foreground/45 lowercase font-normal">(optional)</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Miller LLP / Matter #402"
+                    value={clientReference}
+                    onChange={(e) => setClientReference(e.target.value)}
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-primary placeholder:text-foreground/35 text-xs sm:text-sm font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-all"
+                  />
+                </div>
+              </div>
+
+              {/* Submit CTA */}
+              <div className="pt-2">
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-6 rounded-xl bg-primary hover:bg-primary/95 text-white font-montserrat font-black text-xs uppercase tracking-[0.15em] shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group transition-all"
+                >
+                  {loading ? (
+                    <>
+                      <RefreshCw className="w-4 h-4 animate-spin" />
+                      <span>Lextimator™ Analysing Scope...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Get Your Estimate from Lextimator™</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-accent" />
+                    </>
+                  )}
+                </Button>
+                <p className="text-[10.5px] text-center text-foreground/50 mt-2 font-medium flex items-center justify-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Strict bilateral NDA • Zero obligation • Guaranteed confirmed fixed pricing</span>
+                </p>
+              </div>
+            </motion.form>
+
+            {/* RIGHT COLUMN: LEXPACK PROMINENT SHOWCASE CARD (5 Cols) */}
+            <div className="lg:col-span-5 rounded-3xl p-6 sm:p-7 bg-gradient-to-b from-slate-50 via-amber-50/20 to-slate-50 border-2 border-accent/30 shadow-lg relative">
+              <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-xl bg-accent text-primary flex items-center justify-center font-black">
+                    <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm font-montserrat font-bold text-primary">
-                      {file ? file.name : 'Select or drag-and-drop assignment PDF'}
-                    </p>
-                    <p className="text-[10.5px] text-foreground/50 mt-0.5 font-medium">
-                      {file
-                        ? `${(file.size / 1024).toFixed(1)} KB attached • Ready for Lextimator™ analysis`
-                        : 'Upload documents to let Lextimator™ analyse the assignment scope, turnaround, and cost (Max 25MB).'}
+                    <h4 className="font-montserrat font-black text-primary text-base">
+                      Lex<span className="text-accent">Pack</span>™ Bundles
+                    </h4>
+                    <p className="text-[10px] text-accent font-bold uppercase tracking-wider">
+                      7% to 28% Value Advantage
                     </p>
                   </div>
                 </div>
-                {file ? (
+
+                <span className="px-2.5 py-0.5 rounded-full text-[9px] font-montserrat font-black bg-accent/20 text-primary border border-accent/40">
+                  {curr.code}
+                </span>
+              </div>
+
+              <p className="text-xs text-foreground/70 my-3 font-medium leading-relaxed">
+                Prefer ongoing legal support? Prepay legal capacity in {curr.code} and save up to 28% on all assignments. Zero monthly retainers.
+              </p>
+
+              {/* 4 Tier Quick Snapshot Cards */}
+              <div className="space-y-2.5 my-4">
+                {LEXPACK_SHOWCASE_TIERS.map((tier) => {
+                  const dep = tier.deposit[currency];
+                  const cap = tier.capacity[currency];
+                  const ext = tier.extra[currency];
+
+                  return (
+                    <div
+                      key={tier.id}
+                      className={cn(
+                        'p-3 rounded-2xl border transition-all flex items-center justify-between text-xs',
+                        tier.isPopular
+                          ? 'bg-white border-2 border-accent shadow-sm ring-1 ring-accent/20'
+                          : 'bg-white/80 border-slate-200 hover:border-slate-300'
+                      )}
+                    >
+                      <div>
+                        <div className="flex items-center gap-1.5">
+                          <span className="font-montserrat font-black text-primary text-xs">
+                            {tier.name}
+                          </span>
+                          {tier.isPopular && (
+                            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-black bg-accent text-primary">
+                              POPULAR
+                            </span>
+                          )}
+                          {tier.isBestValue && (
+                            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-black bg-emerald-600 text-white">
+                              BEST VALUE
+                            </span>
+                          )}
+                        </div>
+                        <span className="text-[10px] text-foreground/50 font-medium block">
+                          Deposit: {curr.symbol}{dep.toLocaleString()}
+                        </span>
+                      </div>
+
+                      <div className="text-right">
+                        <span className="font-montserrat font-black text-accent text-xs block">
+                          {curr.symbol}{cap.toLocaleString()} Capacity
+                        </span>
+                        <span className="text-[9px] font-bold text-emerald-700 bg-emerald-100/70 border border-emerald-200 px-1 rounded inline-block">
+                          +{curr.symbol}{ext.toLocaleString()} ({tier.discount}%)
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Reassurances & Direct Link to Pricing Section */}
+              <div className="pt-3 border-t border-slate-200 space-y-2 text-[11px] text-foreground/75 font-medium">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                  <span>Prepaid legal capacity never expires</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                  <span>Automatic Best-Value tier protection</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                  <span>Dedicated Senior Advocate &amp; Paralegal Pod</span>
+                </div>
+              </div>
+
+              <div className="mt-5">
+                <Link href="#pricing" className="block w-full">
                   <Button
                     type="button"
-                    size="sm"
-                    variant="ghost"
-                    onClick={() => setFile(null)}
-                    className="text-xs text-rose-600 hover:text-rose-700 relative z-10 font-bold"
+                    variant="outline"
+                    className="w-full py-4 rounded-xl border-accent/40 hover:bg-accent/10 text-primary font-montserrat font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all shadow-xs"
                   >
-                    Remove
+                    <Layers className="w-3.5 h-3.5 text-accent" />
+                    <span>View All LexPack Bundles &amp; Matrix ↓</span>
                   </Button>
-                ) : (
-                  <span className="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-montserrat font-bold pointer-events-none shadow-xs">
-                    Browse PDF
-                  </span>
-                )}
+                </Link>
               </div>
             </div>
-
-            {/* Field 5: Turnaround Speed */}
-            <div>
-              <label className="block text-[11px] font-montserrat font-bold uppercase tracking-wider text-primary mb-1.5">
-                Delivery Timeline <span className="text-accent">*</span>
-              </label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {TURNAROUND_OPTIONS.map((opt) => (
-                  <button
-                    key={opt.id}
-                    type="button"
-                    onClick={() => setTurnaround(opt.id)}
-                    className={cn(
-                      'p-3.5 rounded-xl border text-left transition-all',
-                      turnaround === opt.id
-                        ? 'bg-accent/10 border-2 border-accent text-primary shadow-xs ring-1 ring-accent/30'
-                        : 'bg-slate-50 border-slate-200 text-foreground/60 hover:border-slate-300 hover:bg-white'
-                    )}
-                  >
-                    <span className="text-xs font-montserrat font-bold text-primary block mb-1">
-                      {opt.label}
-                    </span>
-                    <span className="text-[10.5px] text-foreground/55 font-medium block">
-                      {opt.timeframe}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom Actions: Confidentiality & Submit */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-200">
-              <div className="flex items-center gap-2 text-xs text-foreground/60 font-medium">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>Protected under bilateral NDA • Guaranteed confirmed fixed pricing</span>
-              </div>
-
-              <Button
-                type="submit"
-                disabled={loading}
-                className="w-full sm:w-auto px-8 py-6 rounded-xl bg-primary hover:bg-primary/90 text-white font-montserrat font-black text-xs uppercase tracking-[0.15em] shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group transition-all"
-              >
-                {loading ? (
-                  <>
-                    <RefreshCw className="w-4 h-4 animate-spin" />
-                    <span>Lextimator™ Analysing Assignment...</span>
-                  </>
-                ) : (
-                  <>
-                    <span>Get Your Estimate from Lextimator™</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </>
-                )}
-              </Button>
-            </div>
-          </motion.form>
+          </div>
         )}
       </AnimatePresence>
     </div>

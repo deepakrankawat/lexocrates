@@ -13,68 +13,102 @@ interface EstimateParams {
 }
 
 const SERVICE_RATES: Record<string, { basePageRateUSD: number; name: string; standardTurnaround: string }> = {
-  'litigation-brief': {
-    basePageRateUSD: 24,
-    name: 'Litigation Briefs & Pleadings',
+  'Litigation Support': {
+    basePageRateUSD: 28,
+    name: 'Litigation Support',
     standardTurnaround: '48–72 Hours',
   },
-  'contract-review': {
-    basePageRateUSD: 18,
-    name: 'Contract Review & Drafting',
+  'Contract Review': {
+    basePageRateUSD: 24,
+    name: 'Contract Review',
     standardTurnaround: '24–48 Hours',
   },
-  'legal-research': {
-    basePageRateUSD: 22,
-    name: 'Legal Research & Memoranda',
-    standardTurnaround: '48 Hours',
+  'Legal Research & Writing': {
+    basePageRateUSD: 26,
+    name: 'Legal Research & Writing',
+    standardTurnaround: '48–72 Hours',
   },
-  'ediscovery': {
-    basePageRateUSD: 14,
+  'eDiscovery & Document Review': {
+    basePageRateUSD: 18,
     name: 'eDiscovery & Document Review',
     standardTurnaround: '24–48 Hours',
   },
+  'Contract Lifecycle Management (CLM)': {
+    basePageRateUSD: 25,
+    name: 'Contract Lifecycle Management (CLM)',
+    standardTurnaround: '48 Hours',
+  },
+  'Compliance & Regulatory Support': {
+    basePageRateUSD: 28,
+    name: 'Compliance & Regulatory Support',
+    standardTurnaround: '48–72 Hours',
+  },
+  'Paralegal & Virtual Legal Assistance': {
+    basePageRateUSD: 20,
+    name: 'Paralegal & Virtual Legal Assistance',
+    standardTurnaround: '24–48 Hours',
+  },
+  'Legal Operations Support': {
+    basePageRateUSD: 25,
+    name: 'Legal Operations Support',
+    standardTurnaround: '48 Hours',
+  },
+  // Legacy aliases
+  'litigation-brief': { basePageRateUSD: 28, name: 'Litigation Support', standardTurnaround: '48–72 Hours' },
+  'contract-review': { basePageRateUSD: 24, name: 'Contract Review', standardTurnaround: '24–48 Hours' },
+  'legal-research': { basePageRateUSD: 26, name: 'Legal Research & Writing', standardTurnaround: '48–72 Hours' },
+  'ediscovery': { basePageRateUSD: 18, name: 'eDiscovery & Document Review', standardTurnaround: '24–48 Hours' },
 };
 
 const CURRENCY_MULTIPLIERS: Record<string, { rate: number; symbol: string }> = {
   USD: { rate: 1.0, symbol: '$' },
-  CAD: { rate: 1.35, symbol: 'CA$' },
-  GBP: { rate: 0.8, symbol: '£' },
+  CAD: { rate: 1.38, symbol: 'CA$' },
+  GBP: { rate: 0.79, symbol: '£' },
 };
 
 function calculateFallbackEstimate(params: EstimateParams) {
-  const service = SERVICE_RATES[params.serviceType] || SERVICE_RATES['litigation-brief'];
-  const currencyInfo = CURRENCY_MULTIPLIERS[params.currency] || CURRENCY_MULTIPLIERS['USD'];
+  const service = SERVICE_RATES[params.serviceType] || SERVICE_RATES['Litigation Support'];
+  const currencyInfo = CURRENCY_MULTIPLIERS[params.currency] || CURRENCY_MULTIPLIERS['CAD'];
 
   const pages = Math.max(1, Math.min(params.pageCount || 10, 500));
-  const urgencyMultiplier = params.urgency === 'expedited' ? 1.35 : 1.0;
+  const urgencyMultiplier =
+    params.urgency === 'expedited'
+      ? 1.35
+      : 1.0;
 
-  // Base price calculation with scale volume tier discount
+  // Volume discount tiers for larger matters
   let volumeDiscount = 1.0;
   if (pages > 50) volumeDiscount = 0.85;
   else if (pages > 20) volumeDiscount = 0.92;
 
-  const basePriceUSD = pages * service.basePageRateUSD * urgencyMultiplier * volumeDiscount;
+  // Institutional legal floor: minimum USD $150 (approx CA$210, £120) to reflect dedicated advocate assignment
+  const calculatedUSD = pages * service.basePageRateUSD * urgencyMultiplier * volumeDiscount;
+  const basePriceUSD = Math.max(150, Math.round(calculatedUSD));
   const finalPrice = Math.round(basePriceUSD * currencyInfo.rate);
 
   const turnaround =
-    params.urgency === 'expedited' ? 'Guaranteed 24 Hours' : service.standardTurnaround;
+    params.urgency === 'expedited' ? 'Guaranteed 24–48 Hours' : service.standardTurnaround;
 
   const complexity = pages > 30 ? 'Complex Multi-Issue' : pages > 12 ? 'Moderate' : 'Standard';
+  const estimatedHours = Number((pages * 0.45 * (urgencyMultiplier > 1 ? 0.9 : 1)).toFixed(1));
 
   return {
     success: true,
     source: 'estimator_engine',
+    estimateId: `EST-LEX-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
     serviceType: service.name,
     jurisdiction: params.jurisdiction,
     currency: params.currency,
     currencySymbol: currencyInfo.symbol,
     pageCount: pages,
-    wordCount: pages * 280, // Avg 280 words/page legal standard
+    wordCount: pages * 280, // Approx 280 words/page legal standard
+    estimatedHours: Math.max(1.5, estimatedHours),
     estimatedPrice: finalPrice,
+    priceAmount: `${currencyInfo.symbol}${finalPrice.toLocaleString()} ${params.currency}`,
     turnaround,
     complexity,
-    oversightTier: 'Senior Associate Review + Multi-Tier QA',
-    summary: `${service.name} scope for ${pages} pages under ${params.jurisdiction} law jurisdiction with ${turnaround.toLowerCase()} delivery.`,
+    oversightTier: 'Senior Advocate Review + Multi-Tier QA',
+    summary: `${service.name} scope for ${pages} pages with ${turnaround.toLowerCase()} delivery.`,
   };
 }
 
@@ -125,14 +159,24 @@ export async function POST(req: NextRequest) {
             const n8nData = await n8nResponse.json();
 
             if (n8nData.status === 'success') {
-              const usdToCad = Number(n8nData.usd_to_cad) || 1.4002;
-              const cadPrice = Number(n8nData.final_price_cad) || 0;
+              const usdToCad = Number(n8nData.usd_to_cad) || 1.38;
+              const n8nFinalPriceCad = Number(n8nData.final_price_cad) || 0;
 
-              let finalPrice = cadPrice;
+              // Direct estimate directly from n8n webhook
+              let finalPrice = n8nFinalPriceCad;
+              let priceAmountFormatted = n8nData.price_amount || `CA$${n8nFinalPriceCad} CAD`;
+
               if (currency === 'USD') {
-                finalPrice = Math.round(cadPrice / usdToCad);
+                finalPrice = Math.max(1, Math.round(n8nFinalPriceCad / usdToCad));
+                priceAmountFormatted = `$${finalPrice.toLocaleString()} USD`;
               } else if (currency === 'GBP') {
-                finalPrice = Math.round((cadPrice / usdToCad) * 0.8);
+                finalPrice = Math.max(1, Math.round((n8nFinalPriceCad / usdToCad) * 0.79));
+                priceAmountFormatted = `£${finalPrice.toLocaleString()} GBP`;
+              } else {
+                finalPrice = n8nFinalPriceCad;
+                priceAmountFormatted = n8nData.price_amount
+                  ? (n8nData.price_amount.includes('CA$') ? n8nData.price_amount : n8nData.price_amount.replace('$', 'CA$'))
+                  : `CA$${finalPrice.toLocaleString()} CAD`;
               }
 
               const currencyInfo = CURRENCY_MULTIPLIERS[currency] || CURRENCY_MULTIPLIERS['CAD'];
@@ -141,7 +185,7 @@ export async function POST(req: NextRequest) {
                 success: true,
                 source: 'n8n',
                 estimateId: n8nData.estimate_id,
-                serviceType: n8nData.service_text || rawService,
+                serviceType: n8nData.service || n8nData.service_text || rawService,
                 jurisdiction,
                 currency,
                 currencySymbol: currencyInfo.symbol,
@@ -149,9 +193,9 @@ export async function POST(req: NextRequest) {
                 estimatedHours: n8nData.estimated_hours,
                 estimatedPrice: finalPrice,
                 rawPriceCad: n8nData.raw_price_cad,
-                finalPriceCad: cadPrice,
-                priceAmount: currency === 'CAD' ? n8nData.price_amount : `${currencyInfo.symbol}${finalPrice} ${currency}`,
-                turnaround: n8nData.turnaround_text,
+                finalPriceCad: n8nFinalPriceCad,
+                priceAmount: priceAmountFormatted,
+                turnaround: n8nData.turnaround || n8nData.turnaround_text,
                 turnaroundMultiplier: n8nData.turnaround_multiplier,
                 volumeText: n8nData.volume_text,
                 rateText: n8nData.rate_text,

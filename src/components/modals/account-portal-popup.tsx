@@ -17,16 +17,10 @@ export function AccountPortalPopup() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Show slider popup on homepage after 1.2s
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 1200);
-
     const handleTrigger = () => setIsOpen(true);
     window.addEventListener('lex-show-account-popup', handleTrigger);
 
     return () => {
-      clearTimeout(timer);
       window.removeEventListener('lex-show-account-popup', handleTrigger);
     };
   }, []);

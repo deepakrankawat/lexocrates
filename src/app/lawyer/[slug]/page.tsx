@@ -28,6 +28,18 @@ const teamMembers = [
     slug: 'sam-panwar',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-5'),
   },
+  {
+    name: 'Khushal Singh Shekhawat',
+    title: 'Marketing and Sales Manager',
+    slug: 'khushal-singh-shekhawat',
+    image: PlaceHolderImages.find(img => img.id === 'lawyer-4'),
+  },
+  {
+    name: 'Deepak Rankawat',
+    title: 'Software Engineer',
+    slug: 'deepak-rankawat',
+    image: PlaceHolderImages.find(img => img.id === 'lawyer-5'),
+  },
 ];
 
 const yashvardhanSinghExpertise = [
@@ -66,11 +78,31 @@ const samPanwarExpertise = [
     'Manages the engineering team and tech infrastructure',
 ];
 
+const khushalSinghShekhawatExpertise = [
+    'Drives strategic marketing initiatives and brand positioning globally',
+    'Manages enterprise legal sales and business development pipelines',
+    'Expands law firm and corporate legal department partnerships across Canada, the US, and the UK',
+    'Oversees client acquisition campaigns and commercial outreach',
+    'Coordinates go-to-market strategies for LexPack™ and Lextimator™ solutions',
+    'Maintains client satisfaction and long-term commercial relationships',
+];
+
+const deepakRankawatExpertise = [
+    'Architects and develops core web platforms and software applications',
+    'Builds and optimizes client portals and internal workflow automation systems',
+    'Integrates secure API infrastructure, estimation engines, and n8n webhooks',
+    'Ensures high performance, responsiveness, and clean code architecture',
+    'Implements institutional data security, encryption, and client confidentiality standards',
+    'Collaborates cross-functionally with legal ops and AI engineering teams',
+];
+
 const expertiseMap: { [key: string]: string[] } = {
     'yashvardhan-singh': yashvardhanSinghExpertise,
     'geetanjali': geetanjaliExpertise,
     'hameer-singh': hameerSinghExpertise,
     'sam-panwar': samPanwarExpertise,
+    'khushal-singh-shekhawat': khushalSinghShekhawatExpertise,
+    'deepak-rankawat': deepakRankawatExpertise,
 };
 
 export default async function LawyerDetailPage({ params }: { params: { slug: string } }) {

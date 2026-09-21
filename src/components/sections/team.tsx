@@ -6,28 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { User } from 'lucide-react';
 import { SlideIn } from '../animations/slide-in';
 
-const teamMembers = [
-  {
-    name: 'Yashvardhan Singh',
-    title: 'Chief Executive Officer',
-    slug: 'yashvardhan-singh',
-  },
-  {
-    name: 'Geetanjali',
-    title: 'Chief Operating Officer',
-    slug: 'geetanjali',
-  },
-  {
-    name: 'Hameer Singh',
-    title: 'Head of Legal Services',
-    slug: 'hameer-singh',
-  },
-  {
-    name: 'Sam Panwar',
-    title: 'Head of Technology',
-    slug: 'sam-panwar',
-  },
-];
+import { teamMembers } from '@/lib/team-data';
 
 export function Team() {
   return (
@@ -43,7 +22,7 @@ export function Team() {
             </p>
         </SlideIn>
         
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {teamMembers.map((member) => (
               <Card key={member.name} className="group relative h-full flex flex-col overflow-hidden bg-secondary/30 border-black/5 hover:border-accent/50 hover:shadow-2xl transition-all duration-500 rounded-3xl">
                   <CardContent className="p-10 flex flex-col items-center text-center h-full">

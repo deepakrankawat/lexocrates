@@ -75,12 +75,12 @@ export function PayPerAssignmentSection() {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-[11px] font-montserrat font-black uppercase tracking-widest shadow-xs">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Freedom of Choice • No Forced Bundles</span>
+            <span>Lextimator™ • AI-Powered Legal Work Estimation Engine</span>
           </div>
 
           <h2 className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-primary leading-tight">
-            Don&apos;t Need a LexPack™? <br className="hidden sm:inline" />
-            <span className="text-accent">Pay Per Assignment Instead.</span>
+            Lextimator™ Legal Work Estimation. <br className="hidden sm:inline" />
+            <span className="text-accent">Know the Scope &amp; Cost Before You Commit.</span>
           </h2>
 
           {/* User's Core Value Statement Banner */}
@@ -91,7 +91,7 @@ export function PayPerAssignmentSection() {
           </div>
 
           <p className="text-foreground/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-medium">
-            First, use Lextimator™ to understand the scope, turnaround and expected cost of your legal work. Then pay for that assignment at the confirmed fixed price — or choose a LexPack™ for greater value on ongoing legal requirements.
+            First, use Lextimator™ below to understand the scope, turnaround and expected cost of your legal work. Then pay for that assignment at the confirmed fixed price — or choose a LexPack™ for a 7% to 28% value advantage on ongoing requirements.
           </p>
         </div>
 
