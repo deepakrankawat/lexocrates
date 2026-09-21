@@ -33,6 +33,20 @@ const nextConfig = {
       ...(erpNextRemotePattern ? [erpNextRemotePattern] : []),
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/team/hameer-singh',
+        destination: '/team/ambika-shekhawat',
+        permanent: true,
+      },
+      {
+        source: '/lawyer/hameer-singh',
+        destination: '/lawyer/ambika-shekhawat',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

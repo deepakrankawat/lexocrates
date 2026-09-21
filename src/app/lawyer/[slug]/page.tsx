@@ -17,9 +17,9 @@ const teamMembers = [
     image: PlaceHolderImages.find(img => img.id === 'lawyer-2'),
   },
   {
-    name: 'Hameer Singh',
+    name: 'Ambika Shekhawat',
     title: 'Head of Legal Services',
-    slug: 'hameer-singh',
+    slug: 'ambika-shekhawat',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-3'),
   },
   {
@@ -60,7 +60,7 @@ const geetanjaliExpertise = [
     'Manages cross-functional teams to achieve business goals',
 ];
 
-const hameerSinghExpertise = [
+const ambikaShekhawatExpertise = [
     'Manages and supervises the legal services teams',
     'Ensures the quality and accuracy of all legal work',
     'Serves as the primary point of contact for complex legal matters',
@@ -99,7 +99,8 @@ const deepakRankawatExpertise = [
 const expertiseMap: { [key: string]: string[] } = {
     'yashvardhan-singh': yashvardhanSinghExpertise,
     'geetanjali': geetanjaliExpertise,
-    'hameer-singh': hameerSinghExpertise,
+    'ambika-shekhawat': ambikaShekhawatExpertise,
+    'hameer-singh': ambikaShekhawatExpertise,
     'sam-panwar': samPanwarExpertise,
     'khushal-singh-shekhawat': khushalSinghShekhawatExpertise,
     'deepak-rankawat': deepakRankawatExpertise,

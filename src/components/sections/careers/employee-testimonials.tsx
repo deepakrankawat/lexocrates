@@ -19,7 +19,7 @@ const testimonials = [
   },
   {
     quote: "The intellectual rigor we apply to every multi-jurisdictional case is unmatched. Lexocrates provides a unique platform where the best legal minds can truly excel in a global landscape.",
-    name: "Hameer Singh",
+    name: "Ambika Shekhawat",
     title: "Head of Legal Services",
   },
   {
