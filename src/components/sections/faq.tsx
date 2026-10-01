@@ -28,6 +28,10 @@ const faqs = [
         answer: "Lextimator™ is our AI-powered legal work estimation engine that helps you understand the likely scope, complexity, turnaround time, and cost of an assignment before you commit. LexPack™ is our commercial pricing product for clients who expect continuing or multiple legal assignments, allowing you to prepay for legal capacity and receive a 7% to 28% pricing advantage. A client can always pay the Confirmed Fixed Price for an individual assignment without purchasing a LexPack."
     },
     {
+        question: "What are your delivery timelines and turnaround commitments?",
+        answer: "Our standard delivery timeline is ordinarily 3–5 business days. For urgent requirements, priority turnaround of 2–3 business days is available subject to team capacity and written confirmation. For complex or high-volume projects, a dedicated schedule is established during initial legal scoping. Crucially, every assignment's scope, price, and final delivery date are confirmed in writing before work begins so you always have complete certainty."
+    },
+    {
         question: "How do I get started with Lexocrates?",
         answer: "Getting started is easy. Simply fill out our contact form to schedule a free, no-obligation consultation. We'll discuss your specific needs and challenges and provide a tailored proposal outlining how we can help."
     },

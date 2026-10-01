@@ -45,7 +45,7 @@ export function LexPackWorkflowSection() {
         'Log in to your secure Client Workspace Cockpit and initiate a new request in under two minutes. Couple strategic context (Matter) with a scoped production task (Job).',
       keyFeatures: [
         'Automatic ClamAV antivirus quarantine scanning on every uploaded brief/file',
-        'Direct SLA tier selection: Express (12–24h), Priority (24h), or Standard (48h)',
+        'Flexible delivery options: Standard (3–5 business days) or Priority (2–3 business days, subject to confirmation)',
         'Full multi-jurisdictional tagging: US Federal/State, Canada (Common Law & Quebec), UK & Wales',
         'Complete mutual NDA protection and encrypted storage isolation',
       ],
@@ -54,20 +54,20 @@ export function LexPackWorkflowSection() {
     {
       step: '02',
       phase: 'Estimation & Lock',
-      title: 'Lextimator™ Analysis & Confirmed Fixed Price',
+      title: 'Lextimator™ Analysis & Confirmed Scope, Price & Delivery Date',
       route: 'Lextimator™ Engine',
-      badge: 'Zero Hourly Drift',
+      badge: 'Zero Drift • Upfront Certainty',
       badgeColor: 'bg-[#E5A91E]/15 text-[#E5A91E] border-[#E5A91E]/30',
       icon: Scale,
       description:
-        'Lextimator™ conducts preliminary AI analysis of assignment scope, density, and turnaround. For complex requirements, a Senior Legal Lead validates the scope to provide an upfront Confirmed Fixed Price before work begins.',
+        'Lextimator™ conducts preliminary AI analysis of assignment scope, density, and turnaround. A Senior Legal Lead validates requirements to issue an upfront Confirmed Scope, Confirmed Price, and Confirmed Delivery Date before work begins.',
       keyFeatures: [
         'Locked Confirmed Fixed Price — zero billable hour drift or hidden administrative fees',
-        'Transparent preliminary scope & turnaround estimate produced via Lextimator™',
-        'One-click digital quote confirmation inside your Client Workspace',
+        'Confirmed delivery timeline locked in writing before client approves commencement',
+        'One-click digital quote & delivery date approval inside your Client Workspace',
         'Immediate conflict-of-interest check executed across institutional records',
       ],
-      output: 'Confirmed Fixed Price locked; legal capacity or assignment payment confirmed',
+      output: 'Confirmed Scope, Price & Delivery Date approved by client before work begins',
     },
     {
       step: '03',
@@ -378,7 +378,7 @@ export function LexPackWorkflowSection() {
                             </div>
                             <div className="flex justify-between py-1.5 border-b border-slate-100">
                               <span className="text-foreground/50">Turnaround Commitment:</span>
-                              <span className="font-bold text-accent">12h – 48h SLA Guarantee</span>
+                              <span className="font-bold text-accent">Confirmed Upfront (3–5d Standard)</span>
                             </div>
                             <div className="flex justify-between py-1.5 border-b border-slate-100">
                               <span className="text-foreground/50">Security Standard:</span>

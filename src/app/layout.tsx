@@ -106,10 +106,10 @@ export default function RootLayout({
     description: 'Elite Legal Process Outsourcing firm serving law firms in Canada, US, and UK.',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Floor 1, E-block, E-103, Ganpati Enclave, Sirsi Road',
+      streetAddress: 'Floor 1, E-103, Ganpati Enclave, Near Anchor Mall, Madrampura, Civil Lines',
       addressLocality: 'Jaipur',
       addressRegion: 'Rajasthan',
-      postalCode: '302041',
+      postalCode: '302006',
       addressCountry: 'IN',
     },
     contactPoint: {

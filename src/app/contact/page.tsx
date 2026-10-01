@@ -13,7 +13,7 @@ import { Scale, ShieldCheck, Workflow } from "lucide-react";
 // are best served from Server Components. I'll wrap this in a metadata-compatible structure.
 
 export default function ContactPage() {
-  const jaipurMapQuery = "Floor 1 , E-block, E-103 , Ganpati Enclave Jaipur Rajasthan, India. Pin 302041";
+  const jaipurMapQuery = "26.911533,75.783020";
 
   return (
     <main className="bg-background">
@@ -117,9 +117,9 @@ export default function ContactPage() {
                    <div className="p-6 sm:p-8 bg-secondary rounded-2xl sm:rounded-[2rem] border border-black/5 block text-left">
                       <p className="text-[10px] font-black text-primary uppercase tracking-widest mb-4">Visit Us At</p>
                       <address className="text-foreground/70 font-medium not-italic leading-relaxed text-sm sm:text-base">
-                        Floor 1, E-block, E-103,<br />
-                        Ganpati Enclave, Sirsi Road,<br />
-                        Jaipur, Rajasthan, 302041
+                        Floor 1, E-103, Ganpati Enclave,<br />
+                        Near Anchor Mall, Madrampura, Civil Lines,<br />
+                        Jaipur, Rajasthan 302006, India
                       </address>
                    </div>
                 </div>

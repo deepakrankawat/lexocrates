@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Zap, Sparkles, ArrowRight, Lock, UserPlus } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Sparkles, ArrowRight, Lock, UserPlus, Building2, PhoneCall } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { TrademarkBadge } from '@/components/ui/trademark-badge';
@@ -42,6 +42,9 @@ export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
   },
 };
 
+export { COMPLIMENTARY_PILOT_CONFIG, TRIAL_THRESHOLDS, getPilotLimit } from '@/data/pilot-config';
+export type { PilotMarketLimit } from '@/data/pilot-config';
+
 export interface LexPackBundleTier {
   id: string;
   name: string;
@@ -57,7 +60,7 @@ export interface LexPackBundleTier {
 
 export function calculateLegalCapacity(price: number | string, discountPercent: number): number | null {
   if (typeof price !== 'number' || discountPercent <= 0) return null;
-  return Math.round(price / (1 - discountPercent / 100));
+  return Math.round(price + (price * discountPercent / 100));
 }
 
 export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
@@ -67,14 +70,14 @@ export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
     subtitle: 'Ideal for boutique law firms starting with AI-powered legal work estimation and ongoing support.',
     prices: { USD: 299, GBP: 239, CAD: 399 },
     discountPercent: 7,
-    advantage: '7% Value Advantage',
+    advantage: '+7% Bonus Capacity',
     features: [
-      'Prepaid Legal Capacity with 7% discount applied',
-      'Receives bonus capacity (Price ÷ 0.93)',
-      'No monthly expiration or auto-renewals',
+      'Prepaid Legal Capacity with +7% bonus capacity',
+      'Receives +7% bonus legal capacity on deposit',
+      'Standard delivery (ordinarily 3–5 business days)',
+      'Scope, price & timeline confirmed before work begins',
       'Full access to Lextimator™ Estimation Engine',
-      'Standard 48-Hour SLA Response',
-      'Secure Client Portal Access',
+      'Secure Client Portal Access & No Auto-Renewals',
     ],
     ctaText: 'Buy Starter',
   },
@@ -86,13 +89,14 @@ export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
     isPopular: true,
     prices: { USD: 899, GBP: 719, CAD: 1199 },
     discountPercent: 14,
-    advantage: '14% Value Advantage',
+    advantage: '+14% Bonus Capacity',
     features: [
-      'Prepaid Legal Capacity with 14% discount applied',
-      'Receives bonus capacity (Price ÷ 0.86)',
+      'Prepaid Legal Capacity with +14% bonus capacity',
+      'Receives +14% bonus legal capacity on deposit',
+      'Priority queue & 2–3 business day delivery option*',
+      'Dedicated Account Support & Matter Docketing',
+      'Full access to Lextimator™ Estimation Engine',
       'No monthly expiration or rollover stress',
-      'Priority 24-Hour SLA Response',
-      'Dedicated Account Manager & Syncs',
     ],
     ctaText: 'Buy Growth',
   },
@@ -102,49 +106,51 @@ export const LEXPACK_BUNDLES_DATA: LexPackBundleTier[] = [
     subtitle: 'High-volume legal capacity for corporate legal departments and busy litigation practices.',
     prices: { USD: 1999, GBP: 1599, CAD: 2699 },
     discountPercent: 21,
-    advantage: '21% Value Advantage',
+    advantage: '+21% Bonus Capacity',
     features: [
-      'Prepaid Legal Capacity with 21% discount applied',
-      'Receives bonus capacity (Price ÷ 0.79)',
+      'Prepaid Legal Capacity with +21% bonus capacity',
+      'Receives +21% bonus legal capacity on deposit',
+      'Dedicated Senior Legal Lead assigned to your matters',
+      'Priority delivery scheduling across active briefs*',
       'Multi-jurisdictional research & M&A due diligence',
-      'Express 12-to-24 Hour Urgent SLA Option',
-      'Custom Enterprise Workflow Integration',
+      'Custom firm templates & workflow adaptation',
     ],
     ctaText: 'Buy Pro',
   },
   {
     id: 'business',
     name: 'Business LexPack',
-    subtitle: 'Enterprise scale pay-as-you-go capacity for multi-partner law firms and global legal teams.',
+    subtitle: 'Enterprise-scale pay-as-you-go capacity for multi-partner law firms and global legal teams.',
     badge: 'BEST VALUE',
     prices: { USD: 3999, GBP: 3199, CAD: 5399 },
     discountPercent: 28,
-    advantage: '28% Value Advantage',
+    advantage: '+28% Bonus Capacity',
     features: [
-      'Prepaid Legal Capacity with 28% discount applied',
-      'Receives bonus capacity (Price ÷ 0.72)',
-      'Unlimited user seats & paralegal workflows',
-      'SOC-2 / ISO 27001 Security compliance',
-      'Dedicated Senior Legal Lead & API access',
+      'Prepaid Legal Capacity with +28% bonus capacity',
+      'Receives +28% bonus legal capacity on deposit',
+      'Dedicated Senior Legal Team & Paralegal Pod',
+      'Custom workflow customization & practice integrations',
+      'Multi-partner seat allocation & usage governance',
+      'SOC-2 / ISO 27001 Security compliance & API access',
     ],
     ctaText: 'Buy Business',
   },
   {
     id: 'enterprise',
     name: 'Enterprise LexPack',
-    subtitle: 'Tailored enterprise volume, custom SLA, and dedicated commercial terms for large law firms.',
+    subtitle: 'Tailored enterprise volume, custom workflow, and dedicated commercial terms for large law firms and enterprise legal ops.',
     badge: 'COMMERCIAL',
     prices: { USD: 'Custom', GBP: 'Custom', CAD: 'Custom' },
     discountPercent: 0,
     advantage: 'Custom Terms',
     features: [
-      'Custom Prepaid Legal Capacity',
-      'Bespoke commercial terms & invoicing',
-      'Dedicated Senior Legal Lead & 24/7 SLA',
-      'Custom API & Enterprise Integration',
-      'Custom Security & Compliance SLA',
+      'Custom Prepaid Legal Capacity & bespoke volume terms',
+      'Dedicated Practice Group alignment & Senior Account Director',
+      'Custom API, document pipelines & practice management integrations',
+      'Enterprise governance, billing & consolidated invoicing arrangements',
+      'Tailored Security, Audit & Bilateral NDA Compliance Governance',
     ],
-    ctaText: 'Contact Us',
+    ctaText: 'Contact Enterprise',
   },
 ];
 
@@ -168,39 +174,52 @@ export function PricingSection() {
 
   const curr = CURRENCIES[currency];
 
+  const standardBundles = LEXPACK_BUNDLES_DATA.filter((b) => b.id !== 'enterprise');
+  const enterpriseBundle = LEXPACK_BUNDLES_DATA.find((b) => b.id === 'enterprise');
+
   return (
-    <section id="pricing" className="py-16 sm:py-24 bg-slate-50/70 text-foreground relative border-t border-black/5 overflow-hidden scroll-mt-20">
+    <section id="pricing" className="py-16 sm:py-24 bg-gradient-to-b from-slate-100/90 via-slate-50 to-slate-100/80 text-foreground relative border-t border-slate-200/90 overflow-hidden scroll-mt-20">
+      {/* Subtle ambient background glow */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-accent/10 to-transparent blur-3xl opacity-60" />
+      </div>
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-[11px] font-montserrat font-black uppercase tracking-widest shadow-xs">
-            <Sparkles className="w-3.5 h-3.5" />
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3.5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/15 border border-accent/30 text-amber-950 text-xs font-montserrat font-black uppercase tracking-widest shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-accent" />
             <span>Prepaid Legal Capacity • 7%–28% Value Advantage</span>
           </div>
 
-          <h2 className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-primary leading-tight">
+          <h2 className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 leading-tight">
             Lex<span className="text-accent">Pack</span>
             <TrademarkBadge className="w-3.5 h-3.5 sm:w-4 sm:h-4 -translate-y-2 sm:-translate-y-2.5 ml-0.5 text-accent inline-block" />{' '}
             Prepaid Legal Capacity
           </h2>
 
-          <p className="text-foreground/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-medium">
-            Prepay for ongoing legal work and save more. Purchase prepaid legal capacity whenever required. Zero monthly retainer traps or expiration dates.
+          <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+            Prepay for ongoing legal work and save more. Purchase prepaid legal capacity whenever required. Zero monthly retainer traps, zero hourly billing drift, and no expiration dates.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-2.5">
-            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white border border-black/10 text-foreground/75 text-[11px] font-medium shadow-xs">
-              <UserPlus className="w-3.5 h-3.5 text-accent" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/90 text-slate-700 text-xs font-semibold shadow-xs">
+              <UserPlus className="w-4 h-4 text-accent flex-shrink-0" />
               <span>Select any tier below to proceed to onboarding &amp; activate your legal capacity.</span>
             </div>
-            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-primary text-[11px] font-medium">
-              <span>Optional: You can always <Link href="#pay-per-assignment" className="underline hover:text-accent font-bold ml-1">Pay Per Assignment</Link> instead.</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/15 border border-accent/25 text-amber-950 text-xs font-semibold">
+              <span>Optional: You can always <Link href="#pay-per-assignment" className="underline hover:text-accent font-black ml-1">Pay Per Assignment</Link> instead.</span>
             </div>
           </div>
         </div>
 
         {/* Currency Switcher */}
-        <div className="mt-8 flex items-center justify-center">
-          <div className="flex items-center gap-1.5 p-1.5 bg-white rounded-2xl border border-black/10 shadow-sm">
+        <div className="mt-8 flex flex-col items-center justify-center gap-2">
+          <span className="text-[11px] font-montserrat font-black uppercase tracking-widest text-slate-500">
+            Select Billing Currency
+          </span>
+          <div className="flex items-center gap-1.5 p-1.5 bg-white rounded-2xl border border-slate-200 shadow-sm">
             {(Object.keys(CURRENCIES) as CurrencyCode[]).map((code) => {
               const c = CURRENCIES[code];
               const isActive = currency === code;
@@ -210,29 +229,26 @@ export function PricingSection() {
                   type="button"
                   onClick={() => setCurrency(code)}
                   className={cn(
-                    "flex items-center gap-1.5 px-4 py-2 rounded-xl font-montserrat font-black text-xs transition-all duration-300",
+                    "flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl font-montserrat font-black text-xs sm:text-sm transition-all duration-300",
                     isActive
                       ? "bg-primary text-white shadow-md scale-[1.02]"
-                      : "text-primary/70 hover:text-primary hover:bg-slate-100"
+                      : "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
                   )}
                 >
-                  <span>{c.flag}</span>
+                  <span className="text-base sm:text-lg">{c.flag}</span>
                   <span>{c.code} ({c.symbol})</span>
                 </button>
               );
             })}
           </div>
-        </div>
-
-        <div className="mt-2.5 text-center">
-          <p className="text-xs text-foreground/55 font-medium">
-            Displaying LexPack™ in <span className="text-primary font-bold">{curr.flag} {curr.name} ({curr.code})</span> for law firms in {curr.country}.
+          <p className="text-xs text-slate-600 font-medium mt-1">
+            Displaying LexPack™ in <strong className="text-slate-900 font-bold">{curr.flag} {curr.name} ({curr.code})</strong> for law firms in {curr.country}.
           </p>
         </div>
 
-        {/* LexPack Bundle Cards Grid */}
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 items-stretch">
-          {LEXPACK_BUNDLES_DATA.map((bundle) => {
+        {/* 4 Standard LexPack Bundle Cards (Spacious, High-Contrast 4-Column Grid) */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {standardBundles.map((bundle) => {
             const price = bundle.prices[currency];
             const capacity = calculateLegalCapacity(price, bundle.discountPercent);
             const extraValue = (typeof price === 'number' && typeof capacity === 'number') ? capacity - price : null;
@@ -240,114 +256,122 @@ export function PricingSection() {
             return (
               <motion.div
                 key={bundle.id}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -6 }}
                 transition={{ duration: 0.2 }}
                 className={cn(
-                  "relative rounded-2xl p-5 flex flex-col justify-between transition-all duration-300",
+                  "relative rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 bg-white",
                   bundle.isPopular
-                    ? "bg-white border-2 border-accent shadow-xl shadow-accent/10 ring-2 ring-accent/15"
-                    : "bg-white border border-slate-200/90 hover:border-accent/40 shadow-sm hover:shadow-xl"
+                    ? "border-2 border-accent shadow-xl shadow-accent/15 ring-4 ring-accent/10 lg:-translate-y-2"
+                    : "border border-slate-200 shadow-md hover:shadow-xl hover:border-slate-300"
                 )}
               >
+                {/* Top Badge */}
                 {bundle.badge && (
                   <div className={cn(
-                    "absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[9px] font-montserrat font-black uppercase tracking-wider shadow-md whitespace-nowrap",
+                    "absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[10px] sm:text-xs font-montserrat font-black uppercase tracking-wider shadow-md whitespace-nowrap",
                     bundle.isPopular ? "bg-accent text-primary" : "bg-primary text-white"
                   )}>
                     {bundle.badge}
                   </div>
                 )}
 
-                <div className="space-y-3">
+                <div className="space-y-4">
+                  {/* Title & Description */}
                   <div>
-                    <h3 className="font-montserrat text-base font-black text-primary">
+                    <h3 className="font-montserrat text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
                       {bundle.name}
                     </h3>
-                    <p className="text-[11px] text-foreground/60 font-medium leading-normal mt-1 line-clamp-2">
+                    <p className="text-xs sm:text-[13px] text-slate-600 font-medium leading-relaxed mt-2 min-h-[38px]">
                       {bundle.subtitle}
                     </p>
                   </div>
 
+                  {/* Financial Metrics Box */}
                   <div className={cn(
-                    "p-3 rounded-xl border transition-colors mt-3",
+                    "p-4 sm:p-5 rounded-2xl border transition-colors mt-3",
                     bundle.isPopular
-                      ? "bg-amber-500/[0.06] border-accent/30"
-                      : "bg-slate-50 border-slate-200/80"
+                      ? "bg-amber-500/[0.05] border-accent/40"
+                      : "bg-slate-50/90 border-slate-200/90"
                   )}>
+                    {/* Prepaid Deposit */}
                     <div>
-                      <span className="text-[9px] text-foreground/50 uppercase font-black tracking-wider block">
+                      <span className="text-[11px] text-slate-500 uppercase font-black tracking-wider block">
                         Prepaid Deposit
                       </span>
-                      <div className="flex items-baseline gap-1 mt-0.5">
-                        <span className="font-montserrat text-2xl font-black text-primary tracking-tight">
+                      <div className="flex items-baseline gap-1.5 mt-1">
+                        <span className="font-montserrat text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                           {typeof price === 'number' ? `${curr.symbol}${price.toLocaleString()}` : price}
                         </span>
-                        <span className="text-[10px] text-foreground/50 font-bold uppercase">
+                        <span className="text-xs text-slate-500 font-bold uppercase">
                           {typeof price === 'number' ? 'One-Time' : ''}
                         </span>
                       </div>
                     </div>
 
-                    <div className="mt-2.5 pt-2.5 border-t border-black/5 space-y-1.5">
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-foreground/60 font-bold text-[10px] uppercase tracking-wider">Legal Capacity</span>
-                        <span className="text-accent font-black text-sm">
+                    {/* Capacity & Advantage Divider */}
+                    <div className="mt-3 pt-3 border-t border-slate-200 space-y-2.5">
+                      <div className="flex items-center justify-between">
+                        <span className="text-slate-600 font-bold text-xs uppercase tracking-wider">
+                          Legal Capacity
+                        </span>
+                        <span className="font-montserrat font-black text-lg sm:text-xl text-primary">
                           {typeof capacity === 'number' ? `${curr.symbol}${capacity.toLocaleString()}` : 'Custom'}
                         </span>
                       </div>
 
-                      {extraValue !== null && extraValue > 0 && (
-                        <div className="flex items-center justify-between text-[11px]">
-                          <span className="text-foreground/60 font-medium text-[10px] uppercase tracking-wider">Extra Work</span>
-                          <span className="text-emerald-700 font-bold bg-emerald-100/70 border border-emerald-200 px-1.5 py-0.5 rounded text-[10px]">
-                            +{curr.symbol}{extraValue.toLocaleString()} Value
+                      {extraValue !== null && extraValue > 0 && typeof price === 'number' && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-slate-600 font-bold text-xs uppercase tracking-wider">
+                            Bonus Capacity
+                          </span>
+                          <span className="text-emerald-800 bg-emerald-50 border border-emerald-300 px-2.5 py-1 rounded-lg text-xs font-black shadow-2xs">
+                            +{curr.symbol}{extraValue.toLocaleString()} Bonus
                           </span>
                         </div>
                       )}
 
-                      <div className="flex items-center justify-between text-xs gap-1">
-                        <span className="text-foreground/60 font-bold text-[10px] uppercase tracking-wider">Advantage</span>
-                        <span className={cn(
-                          "px-2 py-0.5 rounded-full text-[10px] font-black tracking-wide inline-block text-right",
-                          bundle.discountPercent > 0
-                            ? "bg-accent/15 text-primary border border-accent/30"
-                            : "bg-primary/10 text-primary border border-primary/20"
-                        )}>
+                      <div className="flex items-center justify-between pt-0.5">
+                        <span className="text-slate-600 font-bold text-xs uppercase tracking-wider">
+                          Pricing Advantage
+                        </span>
+                        <span className="px-2.5 py-1 rounded-full text-xs font-black tracking-wide bg-accent/20 text-amber-950 border border-accent/40 whitespace-nowrap">
                           {bundle.advantage}
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  <ul className="space-y-2 my-3">
+                  {/* Feature Bullets */}
+                  <ul className="space-y-2.5 my-4">
                     {bundle.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-[11px] text-foreground/75 font-medium">
-                        <div className="p-0.5 rounded-full bg-accent/15 text-accent flex-shrink-0 mt-0.5">
-                          <Check className="w-3 h-3 stroke-[3]" />
+                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-slate-700 font-medium leading-snug">
+                        <div className="p-0.5 rounded-full bg-emerald-100 text-emerald-700 flex-shrink-0 mt-0.5">
+                          <Check className="w-3.5 h-3.5 stroke-[3]" />
                         </div>
-                        <span className="leading-tight">{feature}</span>
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="pt-2">
+                {/* Card CTA Button */}
+                <div className="pt-3">
                   <Button
                     asChild
                     className={cn(
-                      "w-full h-10 py-2 px-3 rounded-xl font-montserrat font-black text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-1.5 group text-center shadow-xs",
+                      "w-full h-11 py-2.5 px-4 rounded-xl font-montserrat font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 group text-center shadow-md",
                       bundle.isPopular
-                        ? "bg-accent hover:bg-accent/90 text-primary shadow-md shadow-accent/20"
+                        ? "bg-accent hover:bg-accent/90 text-primary shadow-accent/25"
                         : "bg-primary hover:bg-primary/95 text-white"
                     )}
                   >
                     <Link href={`https://engine.lexocrates.com/client-registration?plan=${encodeURIComponent(bundle.id)}`}>
                       <span className="whitespace-nowrap">{bundle.ctaText}</span>
-                      <ArrowRight className="w-3.5 h-3.5 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                      <ArrowRight className="w-4 h-4 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
                     </Link>
                   </Button>
-                  <p className="text-[10px] text-center text-foreground/50 mt-1.5 font-medium flex items-center justify-center gap-1">
-                    <UserPlus className="w-3 h-3 text-accent" />
+                  <p className="text-xs text-center text-slate-500 mt-2 font-medium flex items-center justify-center gap-1.5">
+                    <UserPlus className="w-3.5 h-3.5 text-accent" />
                     <span>Creates your client account</span>
                   </p>
                 </div>
@@ -356,67 +380,151 @@ export function PricingSection() {
           })}
         </div>
 
+        {/* Dedicated Full-Width Enterprise LexPack VIP Banner */}
+        {enterpriseBundle && (
+          <div className="mt-8 rounded-3xl bg-gradient-to-br from-primary via-slate-900 to-primary text-white border-2 border-accent/40 p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+            {/* Background luxury glow circles */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-accent/5 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              {/* Left Column: Heading, Subtitle & Commercial Terms */}
+              <div className="lg:w-5/12 space-y-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 border border-accent/40 text-accent text-xs font-montserrat font-black uppercase tracking-wider">
+                  <Building2 className="w-3.5 h-3.5" />
+                  <span>Enterprise &amp; Institutional</span>
+                </div>
+
+                <h3 className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
+                  {enterpriseBundle.name}
+                </h3>
+
+                <p className="text-white/80 text-xs sm:text-sm leading-relaxed font-medium">
+                  {enterpriseBundle.subtitle}
+                </p>
+
+                <div className="pt-2 flex items-baseline gap-2">
+                  <span className="font-montserrat text-2xl sm:text-3xl font-black text-accent">
+                    Custom Volume Terms
+                  </span>
+                  <span className="text-xs text-white/60 font-semibold uppercase">
+                    • Invoiced or Prepaid
+                  </span>
+                </div>
+              </div>
+
+              {/* Middle Column: Enterprise Inclusions */}
+              <div className="lg:w-4/12 border-t lg:border-t-0 lg:border-l border-white/15 pt-5 lg:pt-0 lg:pl-8">
+                <span className="text-xs font-montserrat font-black uppercase tracking-wider text-accent block mb-3">
+                  Enterprise Inclusions:
+                </span>
+                <ul className="space-y-2.5">
+                  {enterpriseBundle.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-white/90 font-medium leading-snug">
+                      <div className="p-0.5 rounded-full bg-accent/20 text-accent flex-shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 stroke-[3]" />
+                      </div>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right Column: CTA & Partner Consultation */}
+              <div className="lg:w-3/12 flex flex-col items-stretch lg:items-end justify-center gap-3 border-t lg:border-t-0 border-white/15 pt-5 lg:pt-0">
+                <Button
+                  asChild
+                  className="w-full sm:w-auto lg:w-full h-12 px-6 rounded-xl bg-accent hover:bg-accent/90 text-primary font-montserrat font-black text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-accent/20 transition-all flex items-center justify-center gap-2 group"
+                >
+                  <Link href="/contact">
+                    <span>Contact Enterprise</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+                <div className="text-center lg:text-right">
+                  <span className="text-xs text-white/70 font-semibold flex items-center justify-center lg:justify-end gap-1.5">
+                    <PhoneCall className="w-3.5 h-3.5 text-accent" />
+                    <span>Direct Senior Legal Team Consultation</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Plan Bundle Matrix Comparison Table in Website Theme */}
-        <div className="mt-12 bg-white rounded-3xl border border-slate-200 p-5 sm:p-8 shadow-lg">
-          <div className="mb-5">
-            <h3 className="font-montserrat text-xl sm:text-2xl font-black text-primary">
+        <div className="mt-14 bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-xl">
+          <div className="mb-6">
+            <h3 className="font-montserrat text-xl sm:text-2xl font-black text-slate-900">
               LexPack™ Legal Capacity &amp; Pricing Advantage Matrix
             </h3>
-            <p className="text-xs text-foreground/60 mt-1">
-              Legal capacity is calculated as <span className="text-primary font-bold font-mono">Prepaid Deposit ÷ (1 − Discount %)</span>, providing purchasing power greater than your deposit.
+            <p className="text-xs sm:text-sm text-slate-600 mt-1.5 font-medium leading-relaxed">
+              Legal capacity is calculated as <strong className="text-slate-900 font-mono">Prepaid Deposit + Bonus (Deposit × Bonus %)</strong>. For example, a Starter LexPack deposit of CA$399 yields CA$427 in legal capacity (+CA$28 bonus capacity, locking in a +7% bonus advantage on all legal work).
             </p>
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-slate-200">
-            <table className="w-full text-left text-xs border-collapse">
+            <table className="w-full text-left text-xs sm:text-sm border-collapse">
               <thead>
-                <tr className="border-b border-slate-200 text-white font-montserrat font-black uppercase text-[11px] tracking-wider bg-primary">
-                  <th className="py-3 px-4 sm:px-5 border-r border-white/10">LexPack™ Tier</th>
-                  <th className="py-3 px-4 sm:px-5 border-r border-white/10">Client Pays</th>
-                  <th className="py-3 px-4 sm:px-5 border-r border-white/10">Legal Capacity Received</th>
-                  <th className="py-3 px-4 sm:px-5 border-r border-white/10">Extra Work Value</th>
-                  <th className="py-3 px-4 sm:px-5">Value Advantage</th>
+                <tr className="border-b border-slate-200 text-white font-montserrat font-black uppercase text-[11px] sm:text-xs tracking-wider bg-slate-900">
+                  <th className="py-4 px-4 sm:px-6 border-r border-white/10">LexPack™ Tier</th>
+                  <th className="py-4 px-4 sm:px-6 border-r border-white/10">Client Pays</th>
+                  <th className="py-4 px-4 sm:px-6 border-r border-white/10">Legal Capacity Received</th>
+                  <th className="py-4 px-4 sm:px-6 border-r border-white/10">Bonus Capacity</th>
+                  <th className="py-4 px-4 sm:px-6">Bonus Advantage</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 font-medium">
-                {LEXPACK_BUNDLES_DATA.map((bundle) => {
+              <tbody className="divide-y divide-slate-200 font-medium">
+                {LEXPACK_BUNDLES_DATA.map((bundle, idx) => {
                   const p = bundle.prices[currency];
                   const cap = calculateLegalCapacity(p, bundle.discountPercent);
                   const formattedPay = typeof p === 'number' ? `${curr.symbol}${p.toLocaleString()}` : p;
                   const formattedCap = typeof cap === 'number' ? `${curr.symbol}${cap.toLocaleString()}` : 'Custom Capacity';
-                  const formattedExtra = (typeof p === 'number' && typeof cap === 'number') ? `+${curr.symbol}${(cap - p).toLocaleString()}` : 'Bespoke';
+                  const formattedExtra = (typeof p === 'number' && typeof cap === 'number')
+                    ? `+${curr.symbol}${(cap - p).toLocaleString()}`
+                    : 'Bespoke';
+                  
                   return (
                     <tr
                       key={bundle.id}
                       className={cn(
-                        "hover:bg-slate-50 transition-colors",
-                        bundle.isPopular && "bg-amber-50/40 font-semibold"
+                        "transition-colors",
+                        idx % 2 === 1 ? "bg-slate-50/70" : "bg-white",
+                        bundle.isPopular && "bg-amber-50/50 font-semibold"
                       )}
                     >
-                      <td className="py-3.5 px-4 sm:px-5 font-bold text-primary border-r border-slate-100">
+                      <td className="py-4 px-4 sm:px-6 font-bold text-slate-900 border-r border-slate-200">
                         <div className="flex items-center gap-2">
-                          <span>{bundle.name.replace(/ (Bundle|LexPack)/, '')}</span>
+                          <span className="font-montserrat font-black">{bundle.name.replace(/ (Bundle|LexPack)/, '')}</span>
                           {bundle.isPopular && (
-                            <span className="bg-accent text-primary text-[9px] font-montserrat font-black px-2 py-0.5 rounded-full shadow-xs">
+                            <span className="bg-accent text-primary text-[10px] font-montserrat font-black px-2.5 py-0.5 rounded-full shadow-xs">
                               Popular
                             </span>
                           )}
                         </div>
                       </td>
-                      <td className="py-3.5 px-4 sm:px-5 text-primary font-bold border-r border-slate-100">
+                      <td className="py-4 px-4 sm:px-6 text-slate-900 font-black border-r border-slate-200">
                         {formattedPay}
                       </td>
-                      <td className="py-3.5 px-4 sm:px-5 text-accent font-black border-r border-slate-100">
-                        {formattedCap}
+                      <td className="py-4 px-4 sm:px-6 border-r border-slate-200">
+                        <span className="px-3 py-1 rounded-lg bg-amber-100 text-amber-950 font-black border border-amber-300/80 inline-block shadow-2xs">
+                          {formattedCap}
+                        </span>
                       </td>
-                      <td className="py-3.5 px-4 sm:px-5 text-emerald-700 font-bold border-r border-slate-100">
-                        {formattedExtra}
+                      <td className="py-4 px-4 sm:px-6 border-r border-slate-200">
+                        <span className="px-3 py-1 rounded-lg bg-emerald-50 text-emerald-800 font-bold border border-emerald-300 inline-block shadow-2xs">
+                          {formattedExtra}
+                        </span>
                       </td>
-                      <td className={cn(
-                        "py-3.5 px-4 sm:px-5 font-black",
-                        bundle.discountPercent > 0 ? "text-primary" : "text-accent"
-                      )}>
-                        {bundle.advantage}
+                      <td className="py-4 px-4 sm:px-6">
+                        <span className={cn(
+                          "px-3 py-1 rounded-full font-black text-xs inline-block whitespace-nowrap",
+                          bundle.discountPercent > 0
+                            ? "bg-primary/10 text-primary border border-primary/20"
+                            : "bg-slate-100 text-slate-700 border border-slate-300"
+                        )}>
+                          {bundle.advantage}
+                        </span>
                       </td>
                     </tr>
                   );
@@ -424,34 +532,39 @@ export function PricingSection() {
               </tbody>
             </table>
           </div>
+
+          {/* Transparent Turnaround Policy Note */}
+          <div className="mt-4 px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+            <span className="font-bold text-slate-900">*Delivery Timeline Commitment:</span> Standard turnaround is ordinarily 3–5 business days. Priority delivery (2–3 business days) is subject to operational availability and written confirmation by Lexocrates. Complex or high-volume matters receive an individual delivery schedule during scoping. In every case, the final delivery timeline is confirmed and locked before work begins.
+          </div>
         </div>
 
         {/* Section 7 & 8: Best-Value Protection & Rolling 12-Month Relationship Pricing */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
-                <ShieldCheck className="w-5 h-5" />
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-lg transition-all">
+            <div className="flex items-center gap-3.5 mb-3.5">
+              <div className="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 shadow-xs">
+                <ShieldCheck className="w-6 h-6" />
               </div>
-              <h4 className="font-montserrat text-base sm:text-lg font-black text-primary">
+              <h4 className="font-montserrat text-base sm:text-xl font-black text-slate-900">
                 Automatic Best-Value Protection
               </h4>
             </div>
-            <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
               You are never penalized for starting with a smaller LexPack. If you select Starter but your transaction value qualifies for Growth, Professional, or Business, our system automatically identifies the higher tier and applies the greater value advantage (up to 28%) before checkout.
             </p>
           </div>
 
-          <div className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-xl bg-accent/15 text-accent flex items-center justify-center flex-shrink-0">
-                <Zap className="w-5 h-5" />
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-lg transition-all">
+            <div className="flex items-center gap-3.5 mb-3.5">
+              <div className="w-11 h-11 rounded-2xl bg-accent/20 text-amber-900 flex items-center justify-center flex-shrink-0 shadow-xs">
+                <Zap className="w-6 h-6 text-accent" />
               </div>
-              <h4 className="font-montserrat text-base sm:text-lg font-black text-primary">
+              <h4 className="font-montserrat text-base sm:text-xl font-black text-slate-900">
                 Rolling 12-Month Relationship Pricing
               </h4>
             </div>
-            <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
               Start small. As your relationship with Lexocrates grows, your pricing improves automatically. Cumulative qualifying purchases over the preceding 12 months advance your tier from 7% → 14% → 21% → 28% without requiring large upfront commitments.
             </p>
           </div>
@@ -459,17 +572,17 @@ export function PricingSection() {
 
         {/* Reassurance Guarantees */}
         <div className="mt-10 pt-6 border-t border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-          <div className="flex items-center justify-center gap-2 text-foreground/80">
+          <div className="flex items-center justify-center gap-2.5 text-slate-800">
             <ShieldCheck className="w-4 h-4 text-accent" />
-            <span className="text-xs font-semibold">Enterprise-Grade Confidentiality &amp; NDA</span>
+            <span className="text-xs sm:text-sm font-bold">Enterprise-Grade Confidentiality &amp; NDA</span>
           </div>
-          <div className="flex items-center justify-center gap-2 text-foreground/80">
+          <div className="flex items-center justify-center gap-2.5 text-slate-800">
             <Lock className="w-4 h-4 text-accent" />
-            <span className="text-xs font-semibold">Transparent Pricing • No Hidden Retainers</span>
+            <span className="text-xs sm:text-sm font-bold">Transparent Pricing • No Hidden Retainers</span>
           </div>
-          <div className="flex items-center justify-center gap-2 text-foreground/80">
+          <div className="flex items-center justify-center gap-2.5 text-slate-800">
             <Zap className="w-4 h-4 text-accent" />
-            <span className="text-xs font-semibold">Dedicated Paralegal &amp; Legal Delivery Team</span>
+            <span className="text-xs sm:text-sm font-bold">Dedicated Paralegal &amp; Legal Delivery Team</span>
           </div>
         </div>
       </div>

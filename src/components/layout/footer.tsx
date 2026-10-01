@@ -53,7 +53,7 @@ export function Footer() {
             <ul className="space-y-4 text-xs text-primary-foreground/80">
               <li className="flex flex-col gap-1">
                 <span className="text-accent font-bold uppercase text-[9px]">Headquarters</span>
-                <p className="font-medium">Floor 1, E-103, Ganpati Enclave, Jaipur, India. Pin 302041</p>
+                <p className="font-medium">Floor 1, E-103, Ganpati Enclave, Near Anchor Mall, Civil Lines, Jaipur - 302006, India</p>
               </li>
               <li className="flex flex-col gap-1">
                 <span className="text-accent font-bold uppercase text-[9px]">Email Support</span>

@@ -63,13 +63,13 @@ export function ContactDetails() {
                   <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
                     <Train className="h-4 w-4 text-accent" />
                   </div>
-                  <p>15 min from Jaipur Junction</p>
+                  <p>2 min from Jaipur Junction</p>
                 </div>
                 <div className="flex items-center justify-center sm:justify-start gap-4">
                   <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Bus className="h-4 w-4 text-accent" />
+                    <MapPin className="h-4 w-4 text-accent" />
                   </div>
-                  <p>5 min walk from Sirsi Stop</p>
+                  <p>Near Anchor Mall, Civil Lines</p>
                 </div>
                 <div className="flex items-center justify-center sm:justify-start gap-4">
                   <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">

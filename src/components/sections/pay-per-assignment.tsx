@@ -31,17 +31,22 @@ export function PayPerAssignmentSection() {
     },
     {
       num: '03',
-      title: 'Human Review & Confirmed Price',
-      desc: 'Senior Legal Leads validate requirements where needed, issuing your guaranteed Confirmed Fixed Price before any work begins.',
+      title: 'Senior Review & Terms Confirmation',
+      desc: 'Senior Legal Leads validate requirements, issuing your Confirmed Scope, Confirmed Fixed Price, and Confirmed Delivery Date before work begins.',
     },
     {
       num: '04',
-      title: 'Pay Per Assignment or LexPack™',
-      desc: 'Pay for this single assignment at the confirmed price, or apply prepaid LexPack™ legal capacity for a 7%–28% pricing advantage.',
+      title: 'Complimentary Pilot Engagement or Pay Per Assignment',
+      desc: 'Eligible new clients may begin with one limited-scope assignment, up to the applicable complimentary pilot value, at no charge upon scope approval. Larger scopes proceed at confirmed fixed price or LexPack™.',
     },
   ];
 
   const highlights = [
+    {
+      icon: Sparkles,
+      title: 'Complimentary Pilot Engagement',
+      desc: 'Limited-scope assignment at no cost for eligible new law firms and corporate legal teams, subject to scope confirmation.',
+    },
     {
       icon: Lock,
       title: 'Confirmed Fixed Price',
@@ -51,11 +56,6 @@ export function PayPerAssignmentSection() {
       icon: Clock,
       title: 'Zero Retainer Commitments',
       desc: 'No subscriptions, no mandatory upfront bundles. Pay solely for your confirmed assignment.',
-    },
-    {
-      icon: Award,
-      title: 'Senior Advocate Oversight',
-      desc: 'Every deliverable undergoes rigorous supervisory review by senior advocates before reaching your desk.',
     },
     {
       icon: ShieldCheck,
@@ -91,7 +91,7 @@ export function PayPerAssignmentSection() {
           </div>
 
           <p className="text-foreground/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-medium">
-            First, use Lextimator™ below to understand the scope, turnaround and expected cost of your legal work. Then pay for that assignment at the confirmed fixed price — or choose a LexPack™ for a 7% to 28% value advantage on ongoing requirements.
+            First, use Lextimator™ below to understand the scope, turnaround, and expected cost of your legal work. Eligible new clients may begin with a <strong>Complimentary Pilot Engagement</strong> (limited-scope assignment at no cost, up to the applicable complimentary pilot value). For larger assignments, pay at the confirmed fixed price — or choose a LexPack™ for a 7% to 28% value advantage on ongoing requirements.
           </p>
         </div>
 
@@ -199,7 +199,7 @@ export function PayPerAssignmentSection() {
                 Confirmed Fixed Pricing
               </h4>
               <p className="text-xs text-foreground/60 mt-1 font-medium leading-relaxed">
-                Every assignment scope is locked in writing with guaranteed turnaround. No scope creep or billable hour surprises.
+                Every assignment scope, fixed price, and delivery timeline are confirmed in writing before work begins. No scope creep or surprises.
               </p>
             </div>
           </div>
@@ -213,7 +213,7 @@ export function PayPerAssignmentSection() {
                 Optional LexPack™ Savings
               </h4>
               <p className="text-xs text-foreground/60 mt-1 font-medium leading-relaxed">
-                Start with a single assignment today. If your volume grows, easily activate a LexPack™ for a 7%–28% pricing advantage.
+                Expect more legal work? A Starter LexPack (CA$399 for CA$427 legal capacity) provides an immediate +7% bonus capacity advantage on ongoing assignments.
               </p>
             </div>
           </div>

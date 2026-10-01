@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { SlideIn } from '../animations/slide-in';
 import { motion } from 'framer-motion';
 import { LegalWorkflowAiAnimation } from '../animations/legal-workflow-ai-animation';
-import { Scale, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { Scale, ArrowRight, Zap } from 'lucide-react';
 
 
 export function Hero() {
@@ -105,10 +105,6 @@ export function Hero() {
 
               {/* Trust Indicators */}
               <SlideIn direction="up" delay={0.6} className="mt-16 flex flex-wrap justify-center lg:justify-start gap-8 opacity-40 grayscale group hover:grayscale-0 transition-all duration-700 lg:ml-8">
-                <div className="flex items-center gap-3">
-                  <ShieldCheck className="w-5 h-5 text-accent" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">ISO 27001 Certified</span>
-                </div>
                 <div className="flex items-center gap-3">
                   <Zap className="w-5 h-5 text-accent" />
                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">24/7 Global Sync</span>

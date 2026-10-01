@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getPilotLimit } from '@/data/pilot-config';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -16,48 +17,48 @@ const SERVICE_RATES: Record<string, { basePageRateUSD: number; name: string; sta
   'Litigation Support': {
     basePageRateUSD: 28,
     name: 'Litigation Support',
-    standardTurnaround: '48–72 Hours',
+    standardTurnaround: '3–5 Business Days',
   },
   'Contract Review': {
     basePageRateUSD: 24,
     name: 'Contract Review',
-    standardTurnaround: '24–48 Hours',
+    standardTurnaround: '3–5 Business Days',
   },
   'Legal Research & Writing': {
     basePageRateUSD: 26,
     name: 'Legal Research & Writing',
-    standardTurnaround: '48–72 Hours',
+    standardTurnaround: '3–5 Business Days',
   },
   'eDiscovery & Document Review': {
     basePageRateUSD: 18,
     name: 'eDiscovery & Document Review',
-    standardTurnaround: '24–48 Hours',
+    standardTurnaround: '3–5 Business Days',
   },
   'Contract Lifecycle Management (CLM)': {
     basePageRateUSD: 25,
     name: 'Contract Lifecycle Management (CLM)',
-    standardTurnaround: '48 Hours',
+    standardTurnaround: '3–5 Business Days',
   },
   'Compliance & Regulatory Support': {
     basePageRateUSD: 28,
     name: 'Compliance & Regulatory Support',
-    standardTurnaround: '48–72 Hours',
+    standardTurnaround: '3–5 Business Days',
   },
   'Paralegal & Virtual Legal Assistance': {
     basePageRateUSD: 20,
     name: 'Paralegal & Virtual Legal Assistance',
-    standardTurnaround: '24–48 Hours',
+    standardTurnaround: '3–5 Business Days',
   },
   'Legal Operations Support': {
     basePageRateUSD: 25,
     name: 'Legal Operations Support',
-    standardTurnaround: '48 Hours',
+    standardTurnaround: '3–5 Business Days',
   },
   // Legacy aliases
-  'litigation-brief': { basePageRateUSD: 28, name: 'Litigation Support', standardTurnaround: '48–72 Hours' },
-  'contract-review': { basePageRateUSD: 24, name: 'Contract Review', standardTurnaround: '24–48 Hours' },
-  'legal-research': { basePageRateUSD: 26, name: 'Legal Research & Writing', standardTurnaround: '48–72 Hours' },
-  'ediscovery': { basePageRateUSD: 18, name: 'eDiscovery & Document Review', standardTurnaround: '24–48 Hours' },
+  'litigation-brief': { basePageRateUSD: 28, name: 'Litigation Support', standardTurnaround: '3–5 Business Days' },
+  'contract-review': { basePageRateUSD: 24, name: 'Contract Review', standardTurnaround: '3–5 Business Days' },
+  'legal-research': { basePageRateUSD: 26, name: 'Legal Research & Writing', standardTurnaround: '3–5 Business Days' },
+  'ediscovery': { basePageRateUSD: 18, name: 'eDiscovery & Document Review', standardTurnaround: '3–5 Business Days' },
 };
 
 const CURRENCY_MULTIPLIERS: Record<string, { rate: number; symbol: string }> = {
@@ -69,11 +70,12 @@ const CURRENCY_MULTIPLIERS: Record<string, { rate: number; symbol: string }> = {
 function calculateFallbackEstimate(params: EstimateParams) {
   const service = SERVICE_RATES[params.serviceType] || SERVICE_RATES['Litigation Support'];
   const currencyInfo = CURRENCY_MULTIPLIERS[params.currency] || CURRENCY_MULTIPLIERS['CAD'];
+  const thresholdObj = getPilotLimit(params.currency);
 
   const pages = Math.max(1, Math.min(params.pageCount || 10, 500));
   const urgencyMultiplier =
     params.urgency === 'expedited'
-      ? 1.35
+      ? 1.25
       : 1.0;
 
   // Volume discount tiers for larger matters
@@ -81,13 +83,22 @@ function calculateFallbackEstimate(params: EstimateParams) {
   if (pages > 50) volumeDiscount = 0.85;
   else if (pages > 20) volumeDiscount = 0.92;
 
-  // Institutional legal floor: minimum USD $150 (approx CA$210, £120) to reflect dedicated advocate assignment
+  // Document pricing calculation with flexible floor for trial scopes
   const calculatedUSD = pages * service.basePageRateUSD * urgencyMultiplier * volumeDiscount;
-  const basePriceUSD = Math.max(150, Math.round(calculatedUSD));
+  const basePriceUSD = Math.max(25, Math.round(calculatedUSD));
   const finalPrice = Math.round(basePriceUSD * currencyInfo.rate);
 
+  // Compute CAD equivalent and currency trial qualification (CA$200 / US$150 / £120)
+  const usdToCad = CURRENCY_MULTIPLIERS['CAD'].rate;
+  const finalPriceCad = params.currency === 'CAD'
+    ? finalPrice
+    : Math.round(basePriceUSD * usdToCad);
+  const isTrialEligible = finalPrice <= thresholdObj.amount;
+
   const turnaround =
-    params.urgency === 'expedited' ? 'Guaranteed 24–48 Hours' : service.standardTurnaround;
+    params.urgency === 'expedited'
+      ? '2–3 Business Days (Subject to Confirmation)'
+      : '3–5 Business Days (Standard)';
 
   const complexity = pages > 30 ? 'Complex Multi-Issue' : pages > 12 ? 'Moderate' : 'Standard';
   const estimatedHours = Number((pages * 0.45 * (urgencyMultiplier > 1 ? 0.9 : 1)).toFixed(1));
@@ -104,11 +115,19 @@ function calculateFallbackEstimate(params: EstimateParams) {
     wordCount: pages * 280, // Approx 280 words/page legal standard
     estimatedHours: Math.max(1.5, estimatedHours),
     estimatedPrice: finalPrice,
-    priceAmount: `${currencyInfo.symbol}${finalPrice.toLocaleString()} ${params.currency}`,
+    finalPriceCad,
+    isTrialEligible,
+    isPilotEligible: isTrialEligible,
+    pilotValueLimit: thresholdObj.formatted,
+    pilotValueLimitAmount: thresholdObj.amount,
+    trialLimitAmount: thresholdObj.amount,
+    trialLimitFormatted: thresholdObj.formatted,
+    trialLimitCad: 200,
+    priceAmount: `${currencyInfo.symbol}${finalPrice.toLocaleString()}`,
     turnaround,
     complexity,
     oversightTier: 'Senior Advocate Review + Multi-Tier QA',
-    summary: `${service.name} scope for ${pages} pages with ${turnaround.toLowerCase()} delivery.`,
+    summary: `${service.name} scope for ${pages} pages with ${turnaround.toLowerCase()} delivery. Timeline confirmed prior to commencement.`,
   };
 }
 
@@ -126,7 +145,7 @@ export async function POST(req: NextRequest) {
       const clientReference = (formData.get('client_reference') as string) || (formData.get('fullName') as string) || '';
       const turnaround = (formData.get('turnaround') as string) || 'Standard (3-5 Business Days)';
       const urgency: 'standard' | 'expedited' =
-        turnaround.includes('Rush') || turnaround.includes('Emergency')
+        turnaround.includes('Priority') || turnaround.includes('expedited')
           ? 'expedited'
           : 'standard';
       const jurisdiction = (formData.get('jurisdiction') as string) || 'US';
@@ -168,18 +187,21 @@ export async function POST(req: NextRequest) {
 
               if (currency === 'USD') {
                 finalPrice = Math.max(1, Math.round(n8nFinalPriceCad / usdToCad));
-                priceAmountFormatted = `$${finalPrice.toLocaleString()} USD`;
+                priceAmountFormatted = `$${finalPrice.toLocaleString()}`;
               } else if (currency === 'GBP') {
                 finalPrice = Math.max(1, Math.round((n8nFinalPriceCad / usdToCad) * 0.79));
-                priceAmountFormatted = `£${finalPrice.toLocaleString()} GBP`;
+                priceAmountFormatted = `£${finalPrice.toLocaleString()}`;
               } else {
                 finalPrice = n8nFinalPriceCad;
-                priceAmountFormatted = n8nData.price_amount
+                const rawClean = n8nData.price_amount
                   ? (n8nData.price_amount.includes('CA$') ? n8nData.price_amount : n8nData.price_amount.replace('$', 'CA$'))
-                  : `CA$${finalPrice.toLocaleString()} CAD`;
+                  : `CA$${finalPrice.toLocaleString()}`;
+                priceAmountFormatted = rawClean.replace(/\s*(CAD|USD|GBP)/gi, '').trim();
               }
 
               const currencyInfo = CURRENCY_MULTIPLIERS[currency] || CURRENCY_MULTIPLIERS['CAD'];
+              const thresholdObj = getPilotLimit(currency);
+              const isTrialEligible = finalPrice <= thresholdObj.amount;
 
               return NextResponse.json({
                 success: true,
@@ -194,6 +216,13 @@ export async function POST(req: NextRequest) {
                 estimatedPrice: finalPrice,
                 rawPriceCad: n8nData.raw_price_cad,
                 finalPriceCad: n8nFinalPriceCad,
+                isTrialEligible,
+                isPilotEligible: isTrialEligible,
+                pilotValueLimit: thresholdObj.formatted,
+                pilotValueLimitAmount: thresholdObj.amount,
+                trialLimitAmount: thresholdObj.amount,
+                trialLimitFormatted: thresholdObj.formatted,
+                trialLimitCad: 200,
                 priceAmount: priceAmountFormatted,
                 turnaround: n8nData.turnaround || n8nData.turnaround_text,
                 turnaroundMultiplier: n8nData.turnaround_multiplier,
