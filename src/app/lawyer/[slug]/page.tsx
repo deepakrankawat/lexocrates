@@ -29,7 +29,7 @@ const teamMembers = [
     image: PlaceHolderImages.find(img => img.id === 'lawyer-5'),
   },
   {
-    name: 'Khushal Singh Shekhawat',
+    name: 'Khushal Singh',
     title: 'Marketing and Sales Manager',
     slug: 'khushal-singh-shekhawat',
     image: PlaceHolderImages.find(img => img.id === 'lawyer-4'),
