@@ -10,8 +10,14 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/*', '/private'],
       },
+      // Allow AI Search indexing and citation bots for Generative Engine Optimization (GEO)
       {
-        userAgent: 'GPTBot',
+        userAgent: ['OAI-SearchBot', 'PerplexityBot', 'Claude-SearchBot', 'Google-Extended', 'Applebot-Extended'],
+        allow: '/',
+      },
+      // Restrict bulk foundation model training crawlers if desired
+      {
+        userAgent: ['GPTBot', 'CCBot'],
         disallow: '/',
       },
     ],
@@ -19,3 +25,4 @@ export default function robots(): MetadataRoute.Robots {
     host: siteUrl,
   };
 }
+

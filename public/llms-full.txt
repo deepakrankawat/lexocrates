@@ -1,0 +1,44 @@
+# Lexocrates - Full Site Context for AI Agents & Search Engines
+
+Lexocrates is a premier AI-powered Legal Process Outsourcing (LPO) firm serving law firms, corporate legal departments, and legal tech innovators across the United States, the United Kingdom, and Canada.
+
+## Strategic Value Proposition
+- Cost Reduction: 40% to 70% cost savings compared to traditional on-shore domestic billing rates.
+- Turnaround Speed: Standard deliverables within 3-5 business days; expedited delivery available within 2-3 business days.
+- Security & Confidentiality: Aligned with SOC 2, HIPAA, GDPR, UK DPA 2018, and Canadian PIPEDA standards. All matter data encrypted at rest and in transit.
+- Supervision: Elite Indian legal talent supervised by experienced multi-jurisdictional legal operations leads.
+
+## Service Catalog
+
+### 1. Legal Research & Writing
+URL: https://www.lexocrates.com/services/legal-research-writing
+Scope: Multi-jurisdictional legal research across federal, state, and provincial jurisdictions in the US, UK, and Canada. Comprehensive legal memoranda, trial briefs, appellate research, and statutory interpretation notes.
+
+### 2. Litigation Support
+URL: https://www.lexocrates.com/services/litigation-support
+Scope: Drafting pleadings, motion support, exhibit preparation, deposition digests, privilege logging, court filing compilation, and case chronologies.
+
+### 3. Contract Lifecycle Management (CLM)
+URL: https://www.lexocrates.com/services/contract-review-management
+Scope: High-volume contract review, playbook redlining, NDA triage, vendor agreements, M&A due diligence summarization, and compliance audits.
+
+### 4. eDiscovery & Document Review
+URL: https://www.lexocrates.com/services/ediscovery-document-review
+Scope: TAR and AI-assisted document review, first-pass relevance assessment, privilege review, redactions, and production bundle preparation.
+
+### 5. Compliance & Regulatory Support
+URL: https://www.lexocrates.com/services/compliance-regulatory-support
+Scope: Continuous monitoring of multi-jurisdictional regulatory changes, internal governance policies, AML/KYC checks, and data privacy impact evaluations.
+
+## Pricing Architecture
+URL: https://www.lexocrates.com/pricing
+- Pay Per Assignment: Confirmed fixed price per assignment without recurring commitments.
+- LexPack™ Prepaid Legal Capacity: Flexible capacity credits offering a 7% to 28% commercial rate advantage for ongoing matters.
+- Lextimator™ Engine: AI-driven scoping and work estimation tool providing cost, complexity, and delivery predictability before commitment.
+
+## Headquarters & Contact
+- Website: https://www.lexocrates.com
+- Inquiries: Support@lexocrates.com
+- Address: Floor 1, E-103, Ganpati Enclave, Near Anchor Mall, Madrampura, Civil Lines, Jaipur, Rajasthan 302006, India
+- Consultation: https://www.lexocrates.com/contact
+

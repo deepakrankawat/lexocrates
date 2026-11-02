@@ -15,18 +15,37 @@ export const metadata: Metadata = {
   },
 };
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.lexocrates.com').replace(/\/+$/, '');
+
 export default function HomePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
     name: 'Lexocrates Legal Process Outsourcing',
+    alternateName: 'Lexocrates',
     description:
       'Lexocrates provides Legal Process Outsourcing (LPO) for global law firms, specializing in eDiscovery, contract drafting, and multi-jurisdictional legal research.',
-    url: 'https://lexocrates.vercel.app',
-    areaServed: ['US', 'UK', 'Canada'],
+    url: siteUrl,
+    logo: `${siteUrl}/images/logo-dark.svg`,
+    image: `${siteUrl}/images/og-image.jpg`,
+    priceRange: '$$',
+    currenciesAccepted: 'USD, GBP, CAD',
+    areaServed: [
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'Canada' },
+    ],
+    serviceType: [
+      'Legal Research and Writing',
+      'Contract Lifecycle Management',
+      'eDiscovery and Document Review',
+      'Litigation Support',
+      'Compliance and Regulatory Support',
+    ],
     provider: {
       '@type': 'Organization',
       name: 'Lexocrates',
+      url: siteUrl,
     },
   };
 

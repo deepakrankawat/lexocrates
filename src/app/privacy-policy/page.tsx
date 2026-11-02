@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
         <section className="py-12 sm:py-24">
           <div className="prose prose-lg max-w-4xl mx-auto text-foreground/80">
             <h2>1. Introduction</h2>
-            <p>Lexocrates ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://lexocrates.vercel.app/. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
+            <p>Lexocrates ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://www.lexocrates.com/. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
 
             <h2>2. Information We Collect</h2>
             <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>

@@ -26,7 +26,7 @@ export default function TermsAndConditionsPage() {
         <section className="py-12 sm:py-24">
           <div className="prose prose-lg max-w-4xl mx-auto text-foreground/80">
             <h2>1. Introduction</h2>
-            <p>Welcome to Lexocrates ("Company", "we", "our", "us"). These Terms and Conditions govern your use of our website located at https://lexocrates.vercel.app/ (the "Website"). By accessing or using our Website, you agree to be bound by these Terms and Conditions. If you disagree with any part of the terms, then you may not access the Website.</p>
+            <p>Welcome to Lexocrates ("Company", "we", "our", "us"). These Terms and Conditions govern your use of our website located at https://www.lexocrates.com/ (the "Website"). By accessing or using our Website, you agree to be bound by these Terms and Conditions. If you disagree with any part of the terms, then you may not access the Website.</p>
 
             <h2>2. Intellectual Property Rights</h2>
             <p>Other than the content you own, under these Terms, Lexocrates and/or its licensors own all the intellectual property rights and materials contained in this Website. You are granted a limited license only for purposes of viewing the material contained on this Website.</p>

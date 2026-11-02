@@ -1,0 +1,31 @@
+# Legal Process Outsourcing | Lexocrates
+
+> Lexocrates is an AI-powered Legal Process Outsourcing (LPO) firm delivering scalable legal research, contract review, and eDiscovery for law firms and in-house corporate legal teams across the United States, United Kingdom, and Canada.
+
+## Core Services
+
+- [Services Overview](https://www.lexocrates.com/services): End-to-end legal support workflows.
+- [Legal Research & Writing](https://www.lexocrates.com/services/legal-research-writing): Reliable, multi-jurisdictional research, case law analysis, and memo drafting.
+- [Litigation Support](https://www.lexocrates.com/services/litigation-support): Pleading preparation, trial notebooks, exhibits, and docket management.
+- [Contract Lifecycle Management](https://www.lexocrates.com/services/contract-review-management): Playbook-driven redlining, extraction, and compliance auditing.
+- [eDiscovery & Document Review](https://www.lexocrates.com/services/ediscovery-document-review): Multi-tiered document review, privilege logs, and production assistance.
+- [Compliance & Regulatory Support](https://www.lexocrates.com/services/compliance-regulatory-support): Cross-border regulatory monitoring and governance alignment.
+
+## Commercial & Pricing Models
+
+- [LexPack™ & Pricing](https://www.lexocrates.com/pricing): Fixed-price per-assignment work or prepaid LexPack™ legal capacity with a 7% to 28% pricing advantage.
+- [Lextimator™ Engine](https://www.lexocrates.com/pricing): AI-powered scoping tool to estimate effort, turnaround, and cost upfront.
+
+## Company & Leadership
+
+- [About Lexocrates](https://www.lexocrates.com/about): Mission, security posture, and legal operating standards.
+- [Leadership Team](https://www.lexocrates.com/team): Profiles of legal operations and tech leadership.
+- [Contact & Consultation](https://www.lexocrates.com/contact): Direct scoping and confidential matter consultation.
+- [Legal Blog](https://www.lexocrates.com/blog): Industry analysis, LPO best practices, and legal tech developments.
+
+## Policies & Compliance
+
+- [Privacy Policy](https://www.lexocrates.com/privacy-policy): Client confidentiality, data privacy, and handling.
+- [Terms & Conditions](https://www.lexocrates.com/terms-and-conditions): Service terms and engagement guidelines.
+- [Cookies Policy](https://www.lexocrates.com/cookies-policy): Cookie usage and preferences.
+

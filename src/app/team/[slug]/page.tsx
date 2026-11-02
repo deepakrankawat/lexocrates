@@ -32,8 +32,57 @@ export default async function TeamMemberPage({ params }: { params: Promise<Param
     notFound();
   }
 
+  const profileJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    mainEntity: {
+      '@type': 'Person',
+      name: member.name,
+      jobTitle: member.title,
+      worksFor: {
+        '@type': 'Organization',
+        name: 'Lexocrates',
+        url: siteUrl,
+      },
+      url: `${siteUrl}/team/${member.slug}`,
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Leadership Team',
+        item: `${siteUrl}/team`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: member.name,
+        item: `${siteUrl}/team/${member.slug}`,
+      },
+    ],
+  };
+
   return (
     <main className="bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-24 bg-primary text-white">
         <div className="mx-auto max-w-5xl px-6 sm:px-12">
           <p className="text-xs font-black uppercase tracking-[0.35em] text-accent mb-4">Leadership Profile</p>

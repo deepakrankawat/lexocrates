@@ -41,8 +41,72 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
     notFound();
   }
 
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.name,
+    description: service.description,
+    serviceType: 'Legal Process Outsourcing',
+    url: `${siteUrl}/services/${service.slug}`,
+    provider: {
+      '@type': 'LegalService',
+      name: 'Lexocrates',
+      url: siteUrl,
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'Canada' },
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `${service.name} Deliverables`,
+      itemListElement: service.deliverables?.map((item, idx) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: item,
+        },
+        position: idx + 1,
+      })),
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Services',
+        item: `${siteUrl}/services`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: service.name,
+        item: `${siteUrl}/services/${service.slug}`,
+      },
+    ],
+  };
+
   return (
     <main className="bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <ServiceDetailHero service={service!} />
       <ServiceDetailContent service={service!} />
     </main>

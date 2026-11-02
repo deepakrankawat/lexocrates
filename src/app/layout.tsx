@@ -33,7 +33,7 @@ const openSans = Open_Sans({
   display: 'swap',
 });
 
-const baseUrl = 'https://lexocrates.vercel.app';
+const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.lexocrates.com').replace(/\/+$/, '');
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -99,11 +99,15 @@ export default function RootLayout({
   // JSON-LD Organization Schema
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'LegalService',
     name: 'Lexocrates Legal Services',
+    alternateName: 'Lexocrates',
     url: baseUrl,
     logo: `${baseUrl}/images/logo-dark.svg`,
+    image: `${baseUrl}/images/og-image.jpg`,
     description: 'Elite Legal Process Outsourcing firm serving law firms in Canada, US, and UK.',
+    priceRange: '$$',
+    currenciesAccepted: 'USD, GBP, CAD',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Floor 1, E-103, Ganpati Enclave, Near Anchor Mall, Madrampura, Civil Lines',
@@ -116,6 +120,7 @@ export default function RootLayout({
       '@type': 'ContactPoint',
       contactType: 'customer support',
       email: 'Support@lexocrates.com',
+      availableLanguage: ['English'],
     },
   };
 
