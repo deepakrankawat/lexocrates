@@ -62,7 +62,7 @@ export default async function LawyerDetailPage({ params }: { params: Promise<{ s
                     fill
                     priority
                     sizes="(max-width: 768px) 160px, 192px"
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                   />
                 </div>
 

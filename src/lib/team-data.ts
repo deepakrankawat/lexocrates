@@ -64,7 +64,7 @@ export const teamMembers: TeamMember[] = [
     degree: 'LL.M., B.A. LL.B.',
     qualification:
       'LL.M. in Corporate & Commercial Laws, Queen Mary University of London | B.A. LL.B. (Hons.), Manipal University Jaipur',
-    image: '/images/team/ambika-shekhawat-v2.jpg',
+    image: '/images/team/ambika-shekhawat-v3.jpg',
     tagline: 'Leading legal service delivery with precision, accountability and purpose.',
     bio: 'At Lexocrates, legal quality is not left to chance. As Senior Manager – Legal Services & Delivery, Ambika Shekhawat oversees legal service delivery, team development and the implementation of quality standards. Her focus is on ensuring that legal assignments are supported by sound legal reasoning, structured processes and clear accountability.',
     noteHeading: 'A Note from Our Senior Manager – Legal Services & Delivery',

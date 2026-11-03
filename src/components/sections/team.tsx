@@ -45,7 +45,7 @@ export function Team() {
                       alt={member.name}
                       fill
                       sizes="(max-width: 640px) 144px, 160px"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       onError={() => setImageErrors((prev) => ({ ...prev, [member.slug]: true }))}
                       priority={member.slug === 'yashvardhan-singh'}
                     />

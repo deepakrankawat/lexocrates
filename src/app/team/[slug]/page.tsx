@@ -141,7 +141,7 @@ export default async function TeamMemberPage({ params }: { params: Promise<Param
                     fill
                     priority
                     sizes="(max-width: 768px) 160px, 192px"
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                   />
                 </div>
 
