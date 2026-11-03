@@ -38,6 +38,7 @@ export const teamMembers: TeamMember[] = [
     ],
     noteSignoffOrg: 'Lexocrates Legal Services',
     email: 'Support@lexocrates.com',
+    linkedin: 'https://www.linkedin.com/in/yashvardhan-singh-b849988/',
   },
   {
     name: 'Geetanjali',
@@ -77,6 +78,7 @@ export const teamMembers: TeamMember[] = [
       'At Lexocrates, my focus is on developing a team that brings sound legal judgement, attention to detail and a strong sense of ownership to every assignment. I believe that quality comes from setting clear expectations, maintaining consistent standards and taking responsibility for the work we deliver. Ultimately, our goal is to earn our clients’ trust through reliable, thoughtful legal support and become a team they can confidently depend on.”',
     ],
     email: 'Support@lexocrates.com',
+    linkedin: 'https://www.linkedin.com/in/ambika-shekhawat/',
   },
   {
     name: 'Rayan Singh Virdi',
@@ -98,6 +100,7 @@ export const teamMembers: TeamMember[] = [
       'Applies solution-oriented legal methodologies to multi-jurisdictional assignments',
     ],
     email: 'Support@lexocrates.com',
+    linkedin: 'https://www.linkedin.com/in/rayan-singh-virdi-3b1b74187/',
   },
   {
     name: 'Shreya',
@@ -118,6 +121,7 @@ export const teamMembers: TeamMember[] = [
       'Delivers high-precision legal operations support aligned with institutional standards',
     ],
     email: 'Support@lexocrates.com',
+    linkedin: 'https://www.linkedin.com/in/shreya-sahu-48052a235/',
   },
   {
     name: 'Vaanya Mathur',
@@ -139,6 +143,7 @@ export const teamMembers: TeamMember[] = [
       'Delivers research-driven, practical legal support for international enterprise operations',
     ],
     email: 'Support@lexocrates.com',
+    linkedin: 'https://www.linkedin.com/in/vaanya-mathur-8310b220b/',
   },
   {
     name: 'Sam Panwar',
@@ -159,6 +164,7 @@ export const teamMembers: TeamMember[] = [
       'Manages scalable software infrastructure and API integrity',
     ],
     email: 'Support@lexocrates.com',
+    linkedin: 'https://www.linkedin.com/in/sam-panwar-7524b014/',
   },
   {
     name: 'Khushal Singh',
@@ -179,6 +185,7 @@ export const teamMembers: TeamMember[] = [
       'Conducts strategic legal operations assessments for prospective clients',
     ],
     email: 'Support@lexocrates.com',
+    linkedin: 'https://www.linkedin.com/in/khushal-singh-shekhawat-b2476518b/',
   },
   {
     name: 'Deepak Rankawat',
@@ -199,5 +206,6 @@ export const teamMembers: TeamMember[] = [
       'Collaborates cross-functionally with legal ops and AI engineering teams',
     ],
     email: 'Support@lexocrates.com',
+    linkedin: 'https://www.linkedin.com/in/deepak-rankawat-658b0a259/',
   },
 ];

@@ -1,6 +1,6 @@
 import { teamMembers } from '@/lib/team-data';
 import { notFound } from 'next/navigation';
-import { Check, Calendar, ArrowLeft } from 'lucide-react';
+import { Check, Calendar, ArrowLeft, Linkedin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -82,13 +82,25 @@ export default async function LawyerDetailPage({ params }: { params: Promise<{ s
                   </div>
 
                   <div className="space-y-2.5 pt-2">
-                    <Link
-                      href="/contact"
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-accent text-primary font-montserrat font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors shadow-sm"
-                    >
-                      <Calendar className="h-4 w-4" />
-                      Book Consultation
-                    </Link>
+                    {lawyer.linkedin ? (
+                      <a
+                        href={lawyer.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-accent text-primary font-montserrat font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors shadow-sm"
+                      >
+                        <Linkedin className="h-4 w-4" />
+                        Connect on LinkedIn
+                      </a>
+                    ) : (
+                      <Link
+                        href="/contact"
+                        className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-accent text-primary font-montserrat font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors shadow-sm"
+                      >
+                        <Calendar className="h-4 w-4" />
+                        Book Consultation
+                      </Link>
+                    )}
                     <Link
                       href="/team"
                       className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-6 rounded-full border border-black/10 text-foreground/80 font-montserrat font-bold text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors"

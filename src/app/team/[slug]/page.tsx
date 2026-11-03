@@ -4,7 +4,7 @@ import { teamMembers } from '@/lib/team-data';
 import { buildMeta } from '@/lib/seo';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Check, ArrowLeft, Calendar } from 'lucide-react';
+import { Check, ArrowLeft, Calendar, Linkedin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 type Params = { slug: string };
@@ -161,13 +161,25 @@ export default async function TeamMemberPage({ params }: { params: Promise<Param
                   </div>
 
                   <div className="space-y-2.5 pt-2">
-                    <Link
-                      href="/contact"
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-accent text-primary font-montserrat font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors shadow-sm"
-                    >
-                      <Calendar className="h-4 w-4" />
-                      Book Consultation
-                    </Link>
+                    {member.linkedin ? (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-accent text-primary font-montserrat font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors shadow-sm"
+                      >
+                        <Linkedin className="h-4 w-4" />
+                        Connect on LinkedIn
+                      </a>
+                    ) : (
+                      <Link
+                        href="/contact"
+                        className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-accent text-primary font-montserrat font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors shadow-sm"
+                      >
+                        <Calendar className="h-4 w-4" />
+                        Book Consultation
+                      </Link>
+                    )}
 
                     <Link
                       href="/team"
