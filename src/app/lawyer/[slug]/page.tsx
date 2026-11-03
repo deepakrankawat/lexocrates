@@ -1,171 +1,190 @@
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { teamMembers } from '@/lib/team-data';
 import { notFound } from 'next/navigation';
-import { User, Check } from 'lucide-react';
+import { Check, Calendar, ArrowLeft } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const teamMembers = [
-  {
-    name: 'Yashvardhan Singh',
-    title: 'Chief Executive Officer',
-    slug: 'yashvardhan-singh',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-4'),
-  },
-  {
-    name: 'Geetanjali',
-    title: 'Chief Operating Officer',
-    slug: 'geetanjali',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-2'),
-  },
-  {
-    name: 'Ambika Shekhawat',
-    title: 'Head of Legal Services',
-    slug: 'ambika-shekhawat',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-3'),
-  },
-  {
-    name: 'Sam Panwar',
-    title: 'Head of Technology',
-    slug: 'sam-panwar',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-5'),
-  },
-  {
-    name: 'Khushal Singh',
-    title: 'Marketing and Sales Manager',
-    slug: 'khushal-singh-shekhawat',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-4'),
-  },
-  {
-    name: 'Deepak Rankawat',
-    title: 'Software Engineer',
-    slug: 'deepak-rankawat',
-    image: PlaceHolderImages.find(img => img.id === 'lawyer-5'),
-  },
-];
-
-const yashvardhanSinghExpertise = [
-    'Sets the company’s strategic vision and direction',
-    'Leads business development and key client relationships',
-    'Drives company growth and market expansion',
-    'Represents the company in the legal and business communities',
-    'Ensures financial performance and operational excellence',
-    'Champions the company’s mission and ethical values',
-];
-
-const geetanjaliExpertise = [
-    'Manages day-to-day operations and service delivery',
-    'Implements operational policies and procedures',
-    'Ensures quality control and client satisfaction',
-    'Oversees resource allocation and workflow management',
-    'Drives process optimization and efficiency improvements',
-    'Manages cross-functional teams to achieve business goals',
-];
-
-const ambikaShekhawatExpertise = [
-    'Manages and supervises the legal services teams',
-    'Ensures the quality and accuracy of all legal work',
-    'Serves as the primary point of contact for complex legal matters',
-    'Develops and implements training programs for legal staff',
-    'Stays abreast of changes in international law and regulations',
-    'Oversees compliance with legal best practices',
-];
-
-const samPanwarExpertise = [
-    'Leads all technology initiatives at Lexocrates',
-    'Oversees product development and technical strategy',
-    'Ensures security, scalability, and system reliability',
-    'Coordinates with legal and operations teams for tech-driven solutions',
-    'Drives innovation, automation, and digital transformation',
-    'Manages the engineering team and tech infrastructure',
-];
-
-const khushalSinghShekhawatExpertise = [
-    'Drives strategic marketing initiatives and brand positioning globally',
-    'Manages enterprise legal sales and business development pipelines',
-    'Expands law firm and corporate legal department partnerships across Canada, the US, and the UK',
-    'Oversees client acquisition campaigns and commercial outreach',
-    'Coordinates go-to-market strategies for LexPack™ and Lextimator™ solutions',
-    'Maintains client satisfaction and long-term commercial relationships',
-];
-
-const deepakRankawatExpertise = [
-    'Architects and develops core web platforms and software applications',
-    'Builds and optimizes client portals and internal workflow automation systems',
-    'Integrates secure API infrastructure, estimation engines, and n8n webhooks',
-    'Ensures high performance, responsiveness, and clean code architecture',
-    'Implements institutional data security, encryption, and client confidentiality standards',
-    'Collaborates cross-functionally with legal ops and AI engineering teams',
-];
-
-const expertiseMap: { [key: string]: string[] } = {
-    'yashvardhan-singh': yashvardhanSinghExpertise,
-    'geetanjali': geetanjaliExpertise,
-    'ambika-shekhawat': ambikaShekhawatExpertise,
-    'hameer-singh': ambikaShekhawatExpertise,
-    'sam-panwar': samPanwarExpertise,
-    'khushal-singh-shekhawat': khushalSinghShekhawatExpertise,
-    'deepak-rankawat': deepakRankawatExpertise,
-};
-
-export default async function LawyerDetailPage({ params }: { params: { slug: string } }) {
+export default async function LawyerDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const awaitedParams = await params;
-  const lawyer = teamMembers.find(member => member.slug === awaitedParams.slug);
+  const lawyer = teamMembers.find((member) => member.slug === awaitedParams.slug);
 
   if (!lawyer) {
     notFound();
   }
 
-  const expertise = expertiseMap[lawyer.slug];
-
   return (
     <main className="bg-background">
-      <section className="relative text-white pt-36 pb-16 sm:pt-48 sm:pb-24">
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="container-balanced relative">
-          <div className="text-center">
-              <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-black tracking-tight">{lawyer.name}</h1>
-              <p className="mt-4 text-xl font-medium text-white/80 uppercase tracking-widest">{lawyer.title}</p>
+      <section className="relative text-white pt-28 pb-16 sm:pt-36 sm:pb-20 bg-primary">
+        <div className="container-balanced">
+          <div className="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-accent mb-4">
+            <Link href="/" className="hover:text-white transition-colors">
+              Home
+            </Link>
+            <span>/</span>
+            <Link href="/team" className="hover:text-white transition-colors">
+              Leadership
+            </Link>
+            <span>/</span>
+            <span className="text-white/60">{lawyer.name}</span>
+          </div>
+
+          <div className="text-left max-w-4xl">
+            <p className="text-xs font-black uppercase tracking-[0.3em] text-accent mb-3">
+              Leadership Profile
+            </p>
+            <h1 className="font-montserrat text-3xl sm:text-5xl font-black leading-tight">
+              {lawyer.name}
+            </h1>
+            <p className="mt-3 text-lg sm:text-xl text-white/80 font-medium">
+              {lawyer.title}
+              {(lawyer.degree || lawyer.qualification) && (
+                <span className="text-accent font-semibold ml-2">
+                  ({lawyer.degree || lawyer.qualification})
+                </span>
+              )}
+            </p>
           </div>
         </div>
       </section>
 
       <div className="container-balanced">
-        <section className="py-12 sm:py-24">
-              <div className="grid md:grid-cols-3 gap-16">
-                  <div className="md:col-span-1">
-                      <Card className="group overflow-hidden bg-secondary border-none rounded-[2.5rem] shadow-sm">
-                          <CardContent className="p-12 flex flex-col items-center">
-                              <div className="p-8 bg-accent/10 rounded-full mb-8">
-                                  <User className="h-20 w-20 text-accent" />
-                              </div>
-                              <h4 className="font-opensans text-2xl font-black text-primary">{lawyer.name}</h4>
-                              <p className="text-accent font-black uppercase tracking-widest text-xs mt-2">{lawyer.title}</p>
-                          </CardContent>
-                      </Card>
+        <section className="py-14 sm:py-20">
+          <div className="grid md:grid-cols-12 gap-10 lg:gap-14 items-start">
+            
+            {/* Left Column: Simple Circular Portrait Card */}
+            <div className="md:col-span-5 lg:col-span-4">
+              <Card className="sticky top-28 bg-secondary/30 border border-black/5 rounded-3xl p-6 sm:p-8 text-center shadow-sm">
+                <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden ring-4 ring-white shadow-lg mx-auto mb-6 shrink-0 bg-secondary">
+                  <Image
+                    src={lawyer.image}
+                    alt={lawyer.name}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 160px, 192px"
+                    className="object-cover object-top"
+                  />
+                </div>
+
+                <CardContent className="p-0 space-y-5">
+                  <div>
+                    <h3 className="font-opensans text-2xl font-bold text-primary">
+                      {lawyer.name}
+                    </h3>
+                    {(lawyer.degree || lawyer.qualification) && (
+                      <p className="text-xs font-semibold text-foreground/60 mt-1">
+                        {lawyer.degree || lawyer.qualification}
+                      </p>
+                    )}
+                    <p className="text-accent font-extrabold uppercase tracking-widest text-xs mt-1.5">
+                      {lawyer.title}
+                    </p>
                   </div>
-                  <div className="md:col-span-2 space-y-10 text-foreground/70">
-                      <h2 className="font-lato text-4xl font-black text-primary tracking-tight">About {lawyer.name}</h2>
-                      <div className="prose prose-xl max-w-none text-foreground/70 space-y-6">
-                        <p>An accomplished professional, {lawyer.name} has been a cornerstone of Lexocrates since its inception. With a sharp mind and a passion for excellence, {lawyer.name} specializes in {lawyer.title.replace('Head of ', '')}.</p>
-                        <p>Clients appreciate a results-driven approach, combined with a deep sense of partnership and a commitment to achieving the best possible outcomes. When not leading the team, {lawyer.name} is an avid reader and a community volunteer.</p>
-                      </div>
-                      
-                      {expertise && expertise.length > 0 && (
-                          <div className="pt-12">
-                              <h3 className="font-roboto text-3xl font-black text-primary tracking-tight mb-8">Expertise &amp; Responsibilities</h3>
-                              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                  {expertise.map((item, index) => (
-                                      <li key={index} className="flex items-start gap-4 p-6 bg-secondary/30 rounded-2xl">
-                                          <div className="flex-shrink-0 mt-1">
-                                              <Check className="h-6 w-6 text-accent" />
-                                          </div>
-                                          <span className="font-medium text-foreground/80">{item}</span>
-                                      </li>
-                                  ))}
-                              </ul>
-                          </div>
-                      )}
+
+                  <div className="space-y-2.5 pt-2">
+                    <Link
+                      href="/contact"
+                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-accent text-primary font-montserrat font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors shadow-sm"
+                    >
+                      <Calendar className="h-4 w-4" />
+                      Book Consultation
+                    </Link>
+                    <Link
+                      href="/team"
+                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-6 rounded-full border border-black/10 text-foreground/80 font-montserrat font-bold text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors"
+                    >
+                      <ArrowLeft className="h-4 w-4" />
+                      Back to Team
+                    </Link>
                   </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Right Column: Narrative & Details */}
+            <div className="md:col-span-7 lg:col-span-8 space-y-10">
+              <div>
+                {lawyer.tagline ? (
+                  <h2 className="font-montserrat text-2xl sm:text-3xl font-black text-primary tracking-tight mb-6 leading-snug">
+                    {lawyer.tagline}
+                  </h2>
+                ) : (
+                  <h2 className="font-lato text-3xl font-black text-primary tracking-tight mb-4">
+                    About {lawyer.name}
+                  </h2>
+                )}
+
+                <div className="text-base sm:text-lg text-foreground/80 leading-relaxed space-y-4 font-medium">
+                  <p>{lawyer.bio}</p>
+                  {!lawyer.noteParagraphs && (
+                    <p>
+                      {lawyer.name} works closely with US, UK, and Canadian law firms and corporate legal departments, delivering reliable legal process support under strict institutional security and ethical controls.
+                    </p>
+                  )}
+                </div>
               </div>
+
+              {/* Note / Statement Section (e.g. for Ambika Shekhawat) */}
+              {lawyer.noteParagraphs && lawyer.noteParagraphs.length > 0 && (
+                <div className="pt-8 border-t border-black/10 space-y-6">
+                  {lawyer.noteHeading && (
+                    <h3 className="font-montserrat text-2xl font-black text-primary tracking-tight">
+                      {lawyer.noteHeading}
+                    </h3>
+                  )}
+
+                  <div className="p-7 sm:p-9 rounded-3xl bg-secondary/40 border border-black/5 text-foreground/85 space-y-5 leading-relaxed text-base sm:text-lg font-medium">
+                    {lawyer.noteParagraphs.map((para, idx) => (
+                      <p key={idx} className="text-foreground/80">
+                        {para}
+                      </p>
+                    ))}
+
+                    <div className="pt-6 border-t border-black/10 space-y-1">
+                      <p className="font-montserrat font-black text-xl text-primary">
+                        {lawyer.name}
+                      </p>
+                      <p className="text-xs font-extrabold uppercase tracking-widest text-accent">
+                        {lawyer.title}
+                      </p>
+                      {lawyer.qualification && (
+                        <p className="text-xs font-semibold text-foreground/60 pt-1">
+                          {lawyer.qualification}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Only show generic expertise if member does not have custom note */}
+              {(!lawyer.noteParagraphs || lawyer.noteParagraphs.length === 0) &&
+                lawyer.expertise &&
+                lawyer.expertise.length > 0 && (
+                  <div className="pt-6 border-t border-black/5">
+                    <h3 className="font-roboto text-2xl font-bold text-primary tracking-tight mb-6">
+                      Key Responsibilities &amp; Expertise
+                    </h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {lawyer.expertise.map((item, index) => (
+                        <li
+                          key={index}
+                          className="flex items-start gap-3.5 p-4 bg-secondary/30 rounded-2xl border border-black/5"
+                        >
+                          <div className="mt-0.5 shrink-0">
+                            <Check className="h-5 w-5 text-accent" />
+                          </div>
+                          <span className="text-sm font-medium text-foreground/80 leading-snug">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+            </div>
+
+          </div>
         </section>
       </div>
     </main>
