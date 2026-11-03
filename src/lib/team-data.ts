@@ -173,8 +173,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Client Partnerships',
     degree: 'MBA',
     qualification: 'MBA (Marketing)',
-    image:
-      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: '/images/team/khushal-singh.jpg',
     bio: 'Drives commercial strategy, law firm partnerships, and strategic expansion across Canada, the US, and the UK. Connects managing partners with flexible, cost-advantaged legal capacity.',
     expertise: [
       'Expands law firm and corporate legal department partnerships',
