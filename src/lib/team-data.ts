@@ -117,6 +117,27 @@ export const teamMembers: TeamMember[] = [
     email: 'Support@lexocrates.com',
   },
   {
+    name: 'Vaanya Mathur',
+    title: 'Associate – Corporate & Financial Law',
+    slug: 'vaanya-mathur',
+    department: 'Legal Services & Delivery',
+    degree: 'LL.M., B.Com. LL.B.',
+    qualification:
+      'LL.M. in Corporate & Financial Law & Policy, O.P. Jindal Global University | B.Com. LL.B. (Hons.), Nirma University, Ahmedabad',
+    image: '/images/team/vaanya-mathur.jpg',
+    tagline: 'Delivering precise cross-border legal research, contract drafting and regulatory support.',
+    bio: 'Vaanya Mathur holds an LL.M. in Corporate and Financial Law & Policy from O.P. Jindal Global University and a B.Com. LL.B. (Hons.) from Nirma University, Ahmedabad. Her work spans cross-border legal research, contract management, drafting and case analysis across different jurisdictions. Her background in corporate and commercial law, regulatory compliance and foreign investment brings a broad legal and business perspective to her work. She focuses on sound research, precise drafting and practical legal support for businesses operating across borders.',
+    expertise: [
+      'Executes cross-border legal research, contract management, and multi-jurisdictional drafting',
+      'Provides strategic corporate and commercial advisory, compliance, and governance support',
+      'Conducts foreign investment legal reviews, FDI diligence, and cross-border structuring',
+      'Performs in-depth statutory case analysis, precedent tracking, and regulatory analysis',
+      'Drafts, reviews, and redlines commercial agreements and corporate documentation',
+      'Delivers research-driven, practical legal support for international enterprise operations',
+    ],
+    email: 'Support@lexocrates.com',
+  },
+  {
     name: 'Sam Panwar',
     title: 'Head of Technology',
     slug: 'sam-panwar',
