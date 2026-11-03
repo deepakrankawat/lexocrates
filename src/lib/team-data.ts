@@ -24,8 +24,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Executive Leadership',
     degree: 'LL.M., B.A. LL.B.',
     qualification: 'LL.M., B.A. LL.B. (Hons)',
-    image:
-      'https://images.unsplash.com/photo-1658250646172-227c363047af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: '/images/team/lexocrates-logo-avatar.jpg',
     tagline: 'Guiding Lexocrates with purpose and a commitment to lasting client relationships.',
     bio: "Yashvardhan Singh brings experience in public interest litigation to his leadership of Lexocrates, including work before the Supreme Court of India. His legal experience includes matters concerning unlawful toll collections and fair water distribution.\n\nAs Founder & CEO, he leads the company's strategy, culture and long-term growth.",
     noteHeading: 'A Message from Our Founder & CEO',
@@ -47,8 +46,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Operations & Delivery',
     degree: 'MBA, B.Tech',
     qualification: 'MBA (Operations), B.Tech',
-    image:
-      'https://images.unsplash.com/photo-1580196979522-c4f177b34981?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: '/images/team/lexocrates-logo-avatar.jpg',
     bio: 'Manages day-to-day operations and service delivery centers. Implements stringent quality controls, confidentiality safeguards, and workflow optimization across cross-border matters.',
     expertise: [
       'Manages 24/7 cross-border operations and matter intake',
@@ -152,8 +150,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Technology & AI',
     degree: 'B.Tech',
     qualification: 'B.Tech (Computer Science)',
-    image:
-      'https://images.unsplash.com/photo-1546572797-e8c933a75a1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: '/images/team/lexocrates-logo-avatar.jpg',
     bio: 'Architects enterprise AI infrastructure, security frameworks, and workflow automation powering Lexocrates. Combines machine learning with strict SOC 2 compliance for law firm clients.',
     expertise: [
       'Leads enterprise AI engineering and legal tech integrations',
@@ -193,8 +190,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Engineering',
     degree: 'MCA',
     qualification: 'MCA',
-    image:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: '/images/team/lexocrates-logo-avatar.jpg',
     bio: 'Builds secure client portals, estimation engines, API architectures, and AI-enabled legal review pipelines. Focuses on high-performance web systems and bulletproof data security.',
     expertise: [
       'Architects core client web portal and interactive legal tools',
