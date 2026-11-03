@@ -77,7 +77,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Rayan Singh Virdi',
-    title: 'Associate – Corporate & Commercial Law',
+    title: 'Junior Legal Associate',
     slug: 'rayan-singh-virdi',
     department: 'Legal Services & Delivery',
     degree: 'LL.M., B.A. LL.B.',
@@ -98,7 +98,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Shreya',
-    title: 'Associate – Legal Services',
+    title: 'Junior Legal Associate',
     slug: 'shreya',
     department: 'Legal Services & Delivery',
     degree: 'B.A. LL.B. (Hons)',
@@ -118,7 +118,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Vaanya Mathur',
-    title: 'Associate – Corporate & Financial Law',
+    title: 'Junior Legal Associate',
     slug: 'vaanya-mathur',
     department: 'Legal Services & Delivery',
     degree: 'LL.M., B.Com. LL.B.',
