@@ -76,6 +76,27 @@ export const teamMembers: TeamMember[] = [
     email: 'Support@lexocrates.com',
   },
   {
+    name: 'Rayan Singh Virdi',
+    title: 'Associate – Corporate & Commercial Law',
+    slug: 'rayan-singh-virdi',
+    department: 'Legal Services & Delivery',
+    degree: 'LL.M., B.A. LL.B.',
+    qualification:
+      'LL.M. in Criminal Law, Dr. Bhimrao Ambedkar Law University, Jaipur | B.A. LL.B. (Hons.), Manipal University Jaipur',
+    image: '/images/team/rayan-singh-virdi.jpg',
+    tagline: 'Delivering analytical precision and practical corporate legal solutions.',
+    bio: 'Rayan Singh Virdi is a legal professional with a strong foundation in corporate and commercial law. He holds a B.A. LL.B. (Hons.) from Manipal University Jaipur and an LL.M. in Criminal Law from Dr. Bhimrao Ambedkar Law University, Jaipur. With experience in contract management, legal advisory, and research, he brings an analytical mindset, a solution-oriented approach, and a commitment to continuous learning and professional excellence.',
+    expertise: [
+      'Drafts, reviews, and negotiates commercial contracts and vendor agreements',
+      'Conducts comprehensive legal research on corporate and regulatory compliance',
+      'Assists law firms and legal departments with contract lifecycle management',
+      'Provides practical legal advisory on transactional and statutory matters',
+      'Prepares thorough due diligence reports and corporate legal documentation',
+      'Applies solution-oriented legal methodologies to multi-jurisdictional assignments',
+    ],
+    email: 'Support@lexocrates.com',
+  },
+  {
     name: 'Sam Panwar',
     title: 'Head of Technology',
     slug: 'sam-panwar',
