@@ -64,7 +64,7 @@ export const teamMembers: TeamMember[] = [
     degree: 'LL.M., B.A. LL.B.',
     qualification:
       'LL.M. in Corporate & Commercial Laws, Queen Mary University of London | B.A. LL.B. (Hons.), Manipal University Jaipur',
-    image: '/images/team/ambika-shekhawat-v3.jpg',
+    image: '/images/team/ambika-shekhawat-v5.jpg',
     tagline: 'Leading legal service delivery with precision, accountability and purpose.',
     bio: 'At Lexocrates, legal quality is not left to chance. As Senior Manager – Legal Services & Delivery, Ambika Shekhawat oversees legal service delivery, team development and the implementation of quality standards. Her focus is on ensuring that legal assignments are supported by sound legal reasoning, structured processes and clear accountability.',
     noteHeading: 'A Note from Our Senior Manager – Legal Services & Delivery',
@@ -83,7 +83,7 @@ export const teamMembers: TeamMember[] = [
     degree: 'LL.M., B.A. LL.B.',
     qualification:
       'LL.M. in Criminal Law, Dr. Bhimrao Ambedkar Law University, Jaipur | B.A. LL.B. (Hons.), Manipal University Jaipur',
-    image: '/images/team/rayan-singh-virdi.jpg',
+    image: '/images/team/rayan-singh-virdi-v3.jpg',
     tagline: 'Delivering analytical precision and practical corporate legal solutions.',
     bio: 'Rayan Singh Virdi is a legal professional with a strong foundation in corporate and commercial law. He holds a B.A. LL.B. (Hons.) from Manipal University Jaipur and an LL.M. in Criminal Law from Dr. Bhimrao Ambedkar Law University, Jaipur. With experience in contract management, legal advisory, and research, he brings an analytical mindset, a solution-oriented approach, and a commitment to continuous learning and professional excellence.',
     expertise: [
@@ -103,7 +103,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Legal Services & Delivery',
     degree: 'B.A. LL.B. (Hons)',
     qualification: 'B.A. LL.B. (Hons.), National Law University, Delhi',
-    image: '/images/team/shreya.jpg',
+    image: '/images/team/shreya-v3.jpg',
     tagline: 'Delivering accurate, research-driven legal and contract support.',
     bio: 'Shreya is a B.A. LL.B. (Hons.) graduate from National Law University, Delhi, with a strong foundation in corporate and commercial law. Her experience spans legal research, contract review, litigation support, regulatory compliance and case analysis through internships with law firms, an in-house legal team and judicial chambers. She has worked on commercial agreements, due diligence, dispute-related research and legal drafting. At Lexocrates, she is focused on applying her legal skills to Canadian legal services and delivering accurate, research-driven support to clients.',
     expertise: [
