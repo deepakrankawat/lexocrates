@@ -222,11 +222,15 @@ export default async function TeamMemberPage({ params }: { params: Promise<Param
                       <p className="text-xs font-extrabold uppercase tracking-widest text-accent">
                         {member.title}
                       </p>
-                      {member.qualification && (
+                      {member.noteSignoffOrg ? (
+                        <p className="text-xs font-semibold text-foreground/60 pt-1">
+                          {member.noteSignoffOrg}
+                        </p>
+                      ) : member.qualification ? (
                         <p className="text-xs font-semibold text-foreground/60 pt-1">
                           {member.qualification}
                         </p>
-                      )}
+                      ) : null}
                     </div>
                   </div>
                 </div>

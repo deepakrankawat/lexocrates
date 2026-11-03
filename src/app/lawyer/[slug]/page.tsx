@@ -147,11 +147,15 @@ export default async function LawyerDetailPage({ params }: { params: Promise<{ s
                       <p className="text-xs font-extrabold uppercase tracking-widest text-accent">
                         {lawyer.title}
                       </p>
-                      {lawyer.qualification && (
+                      {lawyer.noteSignoffOrg ? (
+                        <p className="text-xs font-semibold text-foreground/60 pt-1">
+                          {lawyer.noteSignoffOrg}
+                        </p>
+                      ) : lawyer.qualification ? (
                         <p className="text-xs font-semibold text-foreground/60 pt-1">
                           {lawyer.qualification}
                         </p>
-                      )}
+                      ) : null}
                     </div>
                   </div>
                 </div>

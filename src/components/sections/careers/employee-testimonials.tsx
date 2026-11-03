@@ -10,7 +10,7 @@ const testimonials = [
   {
     quote: "Our mission at Lexocrates is to redefine global legal delivery. It is inspiring to see our team integrate elite Indian expertise with advanced AI technology every day to drive client success.",
     name: "Yashvardhan Singh",
-    title: "Chief Executive Officer",
+    title: "Founder & CEO",
   },
   {
     quote: "Leading operations here means ensuring excellence at every step. The collaborative energy and professional dedication of our diverse legal experts is what truly drives our operational success.",

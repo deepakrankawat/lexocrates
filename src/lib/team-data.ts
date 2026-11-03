@@ -10,6 +10,7 @@ export type TeamMember = {
   bio: string;
   noteHeading?: string;
   noteParagraphs?: string[];
+  noteSignoffOrg?: string;
   expertise?: string[];
   email?: string;
   linkedin?: string;
@@ -18,22 +19,24 @@ export type TeamMember = {
 export const teamMembers: TeamMember[] = [
   {
     name: 'Yashvardhan Singh',
-    title: 'Chief Executive Officer',
+    title: 'Founder & CEO',
     slug: 'yashvardhan-singh',
     department: 'Executive Leadership',
     degree: 'LL.M., B.A. LL.B.',
     qualification: 'LL.M., B.A. LL.B. (Hons)',
     image:
       'https://images.unsplash.com/photo-1658250646172-227c363047af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    bio: 'Visionary legal operations executive spearheading AI-powered Legal Process Outsourcing for North American and European practices. Leads long-term strategic direction, enterprise partnerships, and operational governance.',
-    expertise: [
-      'Sets strategic vision and multi-jurisdictional delivery direction',
-      'Leads enterprise law firm and corporate legal partnerships',
-      'Drives company growth, service scaling, and global expansion',
-      'Represents Lexocrates in global legal and technology forums',
-      'Ensures strict adherence to ethics, ABA, and SRA guidelines',
-      'Oversees financial performance, transparency, and operational rigor',
+    tagline: 'Guiding Lexocrates with purpose and a commitment to lasting client relationships.',
+    bio: "Yashvardhan Singh brings experience in public interest litigation to his leadership of Lexocrates, including work before the Supreme Court of India. His legal experience includes matters concerning unlawful toll collections and fair water distribution.\n\nAs Founder & CEO, he leads the company's strategy, culture and long-term growth.",
+    noteHeading: 'A Message from Our Founder & CEO',
+    noteParagraphs: [
+      '“Trust is built when the work lives up to the promise.”',
+      'I founded Lexocrates because I believe legal professionals deserve support they can rely on, particularly when deadlines are pressing and attention to detail matters most.',
+      "Our approach begins with understanding each client's practice, priorities and expectations. We aim to work closely with their teams, respect their processes, communicate openly and approach every assignment with the care and responsibility it deserves.",
+      'As CEO, my responsibility is to ensure that our people have the guidance, resources and confidence to do their best work. I believe in building a culture where questions are encouraged, challenges are addressed early and every individual understands the value of their contribution. Technology helps us work more efficiently, but professional judgment, confidentiality and attention to quality remain central to everything we do.',
+      "My ambition is to build Lexocrates into a trusted and valued part of our clients' legal operations, while creating an environment where talented professionals can learn, grow and build meaningful careers. For me, our success will be measured not just by how much we grow, but by the trust we earn, the quality we maintain and the people we develop along the way.",
     ],
+    noteSignoffOrg: 'Lexocrates Legal Services',
     email: 'Support@lexocrates.com',
   },
   {
