@@ -209,7 +209,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Engineering',
     degree: 'BCA, MCA',
     qualification: 'BCA, MCA',
-    image: '/images/team/lexocrates-logo-avatar.jpg',
+    image: '/images/team/deepak-rankawat.jpg',
     tagline: 'Engineering secure, high-performance technology that powers modern legal operations.',
     bio: 'Deepak Rankawat leads software development and web systems at Lexocrates. He specializes in building secure client portals, interactive estimation engines, and robust technology infrastructure that support seamless legal delivery and client collaboration.',
     noteHeading: 'A Note from Our Software Engineer',
