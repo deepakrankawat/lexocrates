@@ -65,7 +65,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Technology & AI',
     degree: 'B.Tech',
     qualification: 'B.Tech (Computer Science)',
-    image: '/images/team/lexocrates-logo-avatar.jpg',
+    image: '/images/team/sam-panwar.jpg',
     tagline: 'Leading technological innovation, AI architecture and institutional security for global legal delivery.',
     bio: 'As Chief Technology Officer, Sam Panwar leads enterprise technology strategy, artificial intelligence infrastructure, and security frameworks at Lexocrates. He oversees the development of proprietary legal tech platforms and ensures institutional data governance across cross-border client operations.',
     noteHeading: 'A Note from Our Chief Technology Officer',
