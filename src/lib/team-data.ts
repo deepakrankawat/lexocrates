@@ -98,14 +98,14 @@ export const teamMembers: TeamMember[] = [
     linkedin: 'https://www.linkedin.com/in/ambika-shekhawat/',
   },
   {
-    name: 'Khushal Singh Shekhawat',
+    name: 'Khushal Singh',
     title: 'Sales & Marketing Manager',
     slug: 'khushal-singh-shekhawat',
     department: 'Client Partnerships',
     degree: 'B.Com, MBA',
     qualification: 'B.Com, MBA',
     image: '/images/team/khushal-singh.jpg',
-    bio: 'Khushal Singh Shekhawat manages sales, marketing and client engagement at Lexocrates. He works closely with the legal delivery team to communicate the company’s services clearly and connect with organisations seeking legal support.',
+    bio: 'Khushal Singh manages sales, marketing and client engagement at Lexocrates. He works closely with the legal delivery team to communicate the company’s services clearly and connect with organisations seeking legal support.',
     noteHeading: 'A Note from Our Sales & Marketing Manager',
     noteParagraphs: [
       'My work starts with understanding what a prospective client needs. What is taking up their team’s time? Where do they need additional support? These conversations help me connect them with the right people and services at Lexocrates.',
