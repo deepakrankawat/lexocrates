@@ -44,9 +44,9 @@ export const teamMembers: TeamMember[] = [
     title: 'Chief Operating Officer',
     slug: 'geetanjali',
     department: 'Operations & Delivery',
-    degree: 'MBA, B.Tech',
-    qualification: 'MBA (Operations), B.Tech',
-    image: '/images/team/lexocrates-logo-avatar.jpg',
+    degree: 'BA, MBA',
+    qualification: 'BA, MBA',
+    image: '/images/team/geetanjali.jpg',
     bio: 'Manages day-to-day operations and service delivery centers. Implements stringent quality controls, confidentiality safeguards, and workflow optimization across cross-border matters.',
     expertise: [
       'Manages 24/7 cross-border operations and matter intake',
