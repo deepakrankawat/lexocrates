@@ -136,7 +136,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Rayan Singh Virdi',
-    title: 'Junior Legal Associate',
+    title: 'Legal Associate',
     slug: 'rayan-singh-virdi',
     department: 'Legal Services & Delivery',
     degree: 'LL.M., B.A. LL.B.',
@@ -158,7 +158,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Shreya',
-    title: 'Junior Legal Associate',
+    title: 'Legal Associate',
     slug: 'shreya',
     department: 'Legal Services & Delivery',
     degree: 'B.A. LL.B. (Hons)',
@@ -179,7 +179,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Vaanya Mathur',
-    title: 'Junior Legal Associate',
+    title: 'Legal Associate',
     slug: 'vaanya-mathur',
     department: 'Legal Services & Delivery',
     degree: 'LL.M., B.Com. LL.B.',
@@ -201,14 +201,14 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Yash Upasani',
-    title: 'Junior Legal Associate',
+    title: 'Legal Associate',
     slug: 'yash-upasani',
     department: 'Legal Services & Delivery',
     degree: 'BBA. LL.B.',
     qualification: 'BBA. LL.B., University of Mumbai | LL.M. & MBA Candidate',
     image: '/images/team/yash-upasani.jpg',
     tagline: 'Bridging courtroom litigation experience and structured cross-border legal delivery.',
-    bio: 'Yash Upasani is a law graduate (BBA. LL.B.) from the University of Mumbai, based in Nagpur. He previously practised as an advocate before the Nagpur High Court and District Courts, working mainly on civil law, family law, SDO matters and cooperative court matters, appearing for clients in court including before the JMFC.\n\nHe is currently pursuing an LL.M. alongside an MBA in Human Resources, and joined Lexocrates in October 2026 as a Junior Legal Associate. He also writes on Substack. At Lexocrates, Yash focuses on legal research, legal drafting and Canadian legal services, bringing his courtroom advocacy and management background together to deliver high-quality support to clients.',
+    bio: 'Yash Upasani is a law graduate (BBA. LL.B.) from the University of Mumbai, based in Nagpur. He previously practised as an advocate before the Nagpur High Court and District Courts, working mainly on civil law, family law, SDO matters and cooperative court matters, appearing for clients in court including before the JMFC.\n\nHe is currently pursuing an LL.M. alongside an MBA in Human Resources, and joined Lexocrates in October 2026 as a Legal Associate. He also writes on Substack. At Lexocrates, Yash focuses on legal research, legal drafting and Canadian legal services, bringing his courtroom advocacy and management background together to deliver high-quality support to clients.',
     expertise: [
       'Executes legal research, case law analysis, and legal drafting for Canadian legal services',
       'Leverages active courtroom advocacy experience before the High Court and District Courts',
