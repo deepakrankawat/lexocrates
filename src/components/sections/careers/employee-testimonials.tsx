@@ -25,7 +25,7 @@ const testimonials = [
   {
     quote: "Bridging the gap between law and technology is a challenge we've turned into our greatest strength. Our tech-driven workflow represents the next evolution of legal process outsourcing.",
     name: "Sam Panwar",
-    title: "Head of Technology",
+    title: "Chief Technology Officer",
   }
 ];
 
