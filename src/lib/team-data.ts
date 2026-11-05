@@ -157,7 +157,7 @@ export const teamMembers: TeamMember[] = [
     linkedin: 'https://www.linkedin.com/in/rayan-singh-virdi-3b1b74187/',
   },
   {
-    name: 'Shreya',
+    name: 'Shreya Sahu',
     title: 'Legal Associate',
     slug: 'shreya',
     department: 'Legal Services & Delivery',
